@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Origin of the Universe — Illustrated UPSC Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7FB;
+    --card:#FFFFFF;
+    --ink:#14152E;
+    --muted:#565884;
+    --deep:#1B1D51;
+    --deep2:#33357F;
+    --gold:#E0A11C;
+    --gold-soft:#FBF1D8;
+    --nebula:#B5388B;
+    --nebula-soft:#F7E4F1;
+    --teal:#1F8AA6;
+    --teal-soft:#DDF0F5;
+    --line:#DCDFEF;
+    --line-strong:#C3C7E3;
+    --star:#FFD25A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px 90px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    margin:0 -22px 46px;
+    padding:56px 42px 50px;
+    background:
+      radial-gradient(1200px 380px at 78% -10%, #3a2a72 0%, transparent 60%),
+      radial-gradient(900px 420px at 8% 120%, #7a1f66 0%, transparent 55%),
+      linear-gradient(160deg,#141541 0%,#1B1D51 55%,#241a4d 100%);
+    color:#fff;
+    overflow:hidden;
+    border-radius:0 0 26px 26px;
+  }
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--star);margin-bottom:16px;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;font-size:clamp(32px,6vw,54px);
+    line-height:1.02;margin:0 0 14px;letter-spacing:-.5px;
+  }
+  .hero h1 em{font-style:italic;color:#EBD9FF;}
+  .hero p.sub{
+    max-width:600px;font-size:16.5px;color:#D9D9F2;margin:0 0 26px;
+  }
+  .hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .hero .chip{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;
+    padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+    color:#EDE9FF;background:rgba(255,255,255,.06);
+  }
+  .hero .bignum{
+    position:absolute;right:34px;bottom:22px;text-align:right;line-height:1;
+  }
+  .hero .bignum b{
+    display:block;font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(40px,9vw,86px);color:var(--star);letter-spacing:-1px;
+  }
+  .hero .bignum span{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:#C9C6EE;
+  }
+  @media(max-width:640px){.hero .bignum{position:static;text-align:left;margin-top:18px;}}
+
+  /* ---------- MENTOR CALLOUT ---------- */
+  .mentor{
+    background:var(--card);border:1px solid var(--line);
+    border-left:5px solid var(--nebula);
+    border-radius:14px;padding:20px 22px;margin:26px 0;
+    box-shadow:0 4px 18px rgba(20,21,46,.05);
+  }
+  .mentor .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--nebula);font-weight:600;
+    display:flex;align-items:center;gap:8px;margin-bottom:8px;
+  }
+  .mentor p{margin:0;color:#33344f;font-size:15px;}
+  .mentor p + p{margin-top:9px;}
+
+  /* ---------- SECTION ---------- */
+  section{margin:52px 0 0;scroll-margin-top:20px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;}
+  .sec-num{
+    font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;
+    color:var(--gold);letter-spacing:.05em;
+  }
+  h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(23px,4vw,31px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;
+  }
+  h3{
+    font-family:'Fraunces',serif;font-weight:600;font-size:19px;
+    color:var(--deep2);margin:28px 0 10px;
+  }
+  p.lead{color:#33344f;}
+  .divider{height:1px;background:var(--line);border:0;margin:8px 0 20px;}
+
+  /* ---------- FIGURE ---------- */
+  figure{margin:26px 0;padding:0;}
+  .fig-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 20px 12px;box-shadow:0 4px 18px rgba(20,21,46,.045);
+  }
+  figcaption{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+    letter-spacing:.03em;margin-top:12px;text-align:center;
+  }
+  figcaption b{color:var(--deep2);}
+  svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+
+  /* ---------- TABLES ---------- */
+  .table-scroll{overflow-x:auto;margin:22px 0;-webkit-overflow-scrolling:touch;}
+  table{
+    width:100%;border-collapse:collapse;background:var(--card);
+    border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;
+    font-size:14.5px;min-width:520px;
+  }
+  caption{
+    caption-side:top;text-align:left;font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--muted);padding:0 0 9px 2px;
+  }
+  thead th{
+    background:var(--deep);color:#fff;font-weight:600;text-align:left;
+    padding:11px 14px;font-size:13.5px;letter-spacing:.01em;
+  }
+  tbody td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+  tbody tr:nth-child(even){background:#FAFBFE;}
+  tbody th{
+    padding:11px 14px;border-top:1px solid var(--line);text-align:left;
+    font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:nowrap;
+  }
+  .yes{color:#177a4d;font-weight:600;}
+  .no{color:#b23b3b;font-weight:600;}
+
+  /* ---------- PRELIMS GRID ---------- */
+  .prelims{
+    background:linear-gradient(180deg,#fffdf7,#fdf6e4);
+    border:1px solid #EBD9A8;border-radius:16px;padding:22px 22px 10px;margin:24px 0;
+  }
+  .prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 16px;margin-top:6px;}
+  @media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+  .pgrid .item{
+    display:flex;gap:9px;font-size:14px;color:#4a3d18;padding-bottom:10px;
+    border-bottom:1px dashed #E4D2A2;
+  }
+  .pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+  .pgrid .item b{color:#7a5502;}
+
+  /* ---------- TIP / NOTE PILLS ---------- */
+  .tip{
+    display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;
+    border-radius:12px;padding:14px 16px;margin:18px 0;font-size:14.5px;color:#134b59;
+  }
+  .tip .ic{font-size:18px;flex:none;line-height:1.4;}
+  .tip b{color:#0d3d49;}
+  .trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+  .trap b{color:#8a2168;}
+
+  /* ---------- RECALL ---------- */
+  .recall{
+    background:var(--deep);color:#EDECFF;border-radius:18px;padding:28px 26px;margin:44px 0 0;
+    box-shadow:0 12px 32px rgba(27,29,81,.28);
+  }
+  .recall h2{color:#fff;margin-bottom:4px;}
+  .recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+  .recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+  @media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+  .recall li{font-size:14px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+  .recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+  .recall li b{color:#fff;}
+
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.7;}
+
+  @media print{
+    body{background:#fff;}
+    .hero{border-radius:0;}
+    .fig-card,.mentor,table,.recall{box-shadow:none;}
+    section{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="eyebrow">Geography · Lecture 1 · Physical Geography</div>
+    <h1>Origin of the <em>Universe</em></h1>
+    <p class="sub">Mentor-guided topper notes — Mains-ready prose, prelims-locked facts, and every concept drawn out as a diagram, flow or table.</p>
+    <div class="chips">
+      <span class="chip">Big Bang Theory</span>
+      <span class="chip">Expanding Universe</span>
+      <span class="chip">Hubble</span>
+      <span class="chip">Star &amp; Galaxy Formation</span>
+    </div>
+    <div class="bignum"><b>13.7</b><span>Billion Years Old</span></div>
+  </header>
+
+  <div class="mentor">
+    <div class="tag">◆ Mentor's opening note</div>
+    <p>This is the <b>first brick</b> of your entire Physical Geography wall. It looks "science-y" and skippable — it is not. Prelims has repeatedly mined this chapter (Big Bang, light-year, star vs planet), and for Mains it is your <b>launchpad</b>: Universe → Solar System → Earth → Interior.</p>
+    <p>Read the <b>prose</b> for Mains, burn the <b>gold PRELIMS boxes</b> into memory, study every <b>diagram</b> until you can redraw it, and revise the dark <b>recall sheet</b> at the end thrice before the exam.</p>
+  </div>
+
+  <!-- ============ 1. SYLLABUS ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Where this sits in your syllabus</h2></div>
+    <hr class="divider">
+    <p class="lead">Before the content, fix the <b>logical chain</b>. Every later chapter of physical geography hangs off this single origin story — which is exactly why examiners use it as a foundation question.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 900 150" role="img" aria-label="Chain from Universe to Earth">
+        <defs>
+          <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#33357F"/>
+          </marker>
+        </defs>
+        <!-- nodes -->
+        <g font-family="Inter" font-size="14" font-weight="600" text-anchor="middle">
+          <g>
+            <rect x="12" y="52" width="140" height="46" rx="10" fill="#1B1D51"/>
+            <text x="82" y="80" fill="#fff">Universe</text>
+          </g>
+          <g>
+            <rect x="192" y="52" width="140" height="46" rx="10" fill="#33357F"/>
+            <text x="262" y="80" fill="#fff">Galaxies</text>
+          </g>
+          <g>
+            <rect x="372" y="52" width="140" height="46" rx="10" fill="#B5388B"/>
+            <text x="442" y="80" fill="#fff">Stars</text>
+          </g>
+          <g>
+            <rect x="552" y="52" width="150" height="46" rx="10" fill="#1F8AA6"/>
+            <text x="627" y="80" fill="#fff">Solar System</text>
+          </g>
+          <g>
+            <rect x="742" y="52" width="146" height="46" rx="10" fill="#E0A11C"/>
+            <text x="815" y="80" fill="#3a2900">Planets / Earth</text>
+          </g>
+        </g>
+        <g stroke="#33357F" stroke-width="2.4" marker-end="url(#arw)" fill="none">
+          <line x1="154" y1="75" x2="188" y2="75"/>
+          <line x1="334" y1="75" x2="368" y2="75"/>
+          <line x1="514" y1="75" x2="548" y2="75"/>
+          <line x1="704" y1="75" x2="738" y2="75"/>
+        </g>
+        <text x="450" y="26" text-anchor="middle" font-family="IBM Plex Mono" font-size="12" fill="#565884" letter-spacing="2">THE MASTER CHAIN — MEMORISE THIS SEQUENCE</text>
+      </svg>
+      <figcaption><b>Fig 1.</b> The logical spine of physical geography — today's lecture is the far-left brick.</figcaption>
+    </div></figure>
+
+    <div class="table-scroll">
+    <table>
+      <caption>Exam relevance map</caption>
+      <thead><tr><th>Exam stage</th><th>How this topic appears</th></tr></thead>
+      <tbody>
+        <tr><th>Prelims</th><td>Factual / definition MCQs — Big Bang, light-year, star vs planet, galaxy vs constellation, Steady State theory.</td></tr>
+        <tr><th>GS-I (Mains)</th><td>Foundation / introduction for "salient features of world's physical geography" and origin of the Earth.</td></tr>
+        <tr><th>Essay &amp; GS-III</th><td>Springboard to India's space missions — AstroSat, Aditya-L1 (bridge static ↔ current affairs).</td></tr>
+        <tr><th>Geography Optional</th><td>Geomorphology — "Origin and evolution of the Earth" presupposes this.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- ============ 2. VOCABULARY + HIERARCHY ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">02</span><h2>The cosmic vocabulary &amp; hierarchy</h2></div>
+    <hr class="divider">
+    <p class="lead">Prelims loves <i>definition-swaps</i> — calling a galaxy a constellation, or a light-year a unit of time. Lock the hierarchy and the definitions first.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 860 300" role="img" aria-label="Nested cosmic hierarchy">
+        <rect x="0" y="0" width="860" height="300" fill="#0f1030" rx="14"/>
+        <!-- starfield -->
+        <g fill="#ffffff" opacity="0.5">
+          <circle cx="70" cy="40" r="1.3"/><circle cx="200" cy="26" r="1"/><circle cx="330" cy="52" r="1.4"/>
+          <circle cx="470" cy="30" r="1"/><circle cx="620" cy="44" r="1.3"/><circle cx="780" cy="28" r="1"/>
+          <circle cx="120" cy="250" r="1.1"/><circle cx="410" cy="268" r="1.3"/><circle cx="700" cy="255" r="1"/>
+          <circle cx="820" cy="150" r="1.2"/><circle cx="40" cy="160" r="1"/>
+        </g>
+        <!-- concentric containment -->
+        <g font-family="Inter" text-anchor="middle">
+          <ellipse cx="430" cy="150" rx="415" ry="128" fill="none" stroke="#7c7ad6" stroke-width="1.6" stroke-dasharray="4 5"/>
+          <text x="430" y="46" fill="#c9c6ff" font-size="13" font-weight="600" letter-spacing="1">UNIVERSE — everything that exists</text>
+
+          <ellipse cx="430" cy="162" rx="300" ry="96" fill="#2b2c66" opacity="0.55" stroke="#9a97ea" stroke-width="1.3"/>
+          <text x="430" y="86" fill="#e5e3ff" font-size="12.5" font-weight="600">GALAXY (Milky Way / Akash Ganga)</text>
+
+          <ellipse cx="430" cy="170" rx="185" ry="66" fill="#4a2a63" opacity="0.7" stroke="#d98fc9" stroke-width="1.3"/>
+          <text x="430" y="126" fill="#ffd7f0" font-size="12" font-weight="600">STAR SYSTEM (Solar System)</text>
+
+          <circle cx="430" cy="178" r="26" fill="#FFD25A"/>
+          <text x="430" y="182" fill="#5a3d00" font-size="11" font-weight="700">STAR</text>
+
+          <circle cx="345" cy="178" r="7" fill="#1F8AA6" stroke="#bfe6f0"/>
+          <circle cx="515" cy="178" r="9" fill="#B5388B" stroke="#f0cbe4"/>
+          <text x="515" y="205" fill="#f3c9e6" font-size="10.5">planet</text>
+        </g>
+      </svg>
+      <figcaption><b>Fig 2.</b> Nested scale — a Star sits inside a Star System, inside a Galaxy, inside the Universe. Size order: <b>Universe &gt; Galaxy &gt; Star System &gt; Star &gt; Planet</b>.</figcaption>
+    </div></figure>
+
+    <div class="table-scroll">
+    <table>
+      <caption>Core definitions — the words examiners swap</caption>
+      <thead><tr><th>Term</th><th>What it is</th><th>Anchor example / trap</th></tr></thead>
+      <tbody>
+        <tr><th>Galaxy</th><td>Gravitationally-bound system of billions of stars, gas &amp; dust.</td><td>Milky Way (our own); Andromeda (nearest large).</td></tr>
+        <tr><th>Star</th><td><span class="yes">Self-luminous</span> — makes own light/heat via <b>nuclear fusion</b>.</td><td>The Sun = nearest star.</td></tr>
+        <tr><th>Nebula</th><td>Cloud of gas (hydrogen) &amp; dust — the <b>nursery of stars</b>.</td><td>Where every star is born.</td></tr>
+        <tr><th>Constellation</th><td><i>Apparent</i> pattern of stars as seen from Earth — <span class="no">not</span> physically bound.</td><td>Saptarishi (Ursa Major), Orion.</td></tr>
+        <tr><th>Light Year</th><td>Unit of <b>DISTANCE</b> (~9.46 × 10¹² km) — <span class="no">not time</span>.</td><td>Classic UPSC trap.</td></tr>
+        <tr><th>Astronomical Unit</th><td>Mean Earth–Sun distance (~149.6 M km) — used <i>within</i> solar system.</td><td>1 AU.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="tip trap"><span class="ic">⚠</span><div><b>Trap alert:</b> If an option calls the <b>light-year a unit of time</b>, it is wrong — it measures <b>distance</b>. Chant once: <i>"Light-year is distance, not time."</i></div></div>
+  </section>
+
+  <!-- ============ 3. BIG BANG (SIGNATURE) ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">03</span><h2>The Big Bang Theory</h2></div>
+    <hr class="divider">
+    <p class="lead">The most widely accepted explanation of cosmic origin — also called the <b>Expanding Universe Hypothesis</b>. Idea of a "primeval atom" first floated by <b>Georges Lemaître</b>; observational backbone supplied by <b>Edwin Hubble</b>.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 880 340" role="img" aria-label="Big Bang expansion timeline">
+        <defs>
+          <linearGradient id="cone" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#B5388B"/>
+            <stop offset="0.5" stop-color="#5b3e9e"/>
+            <stop offset="1" stop-color="#1F8AA6"/>
+          </linearGradient>
+          <radialGradient id="flash" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#FFF3C4"/><stop offset="0.5" stop-color="#FFD25A"/><stop offset="1" stop-color="#E0A11C"/>
+          </radialGradient>
+        </defs>
+        <!-- expansion cone -->
+        <path d="M60,170 L820,40 L820,300 Z" fill="url(#cone)" opacity="0.16"/>
+        <path d="M60,170 L820,40 L820,300 Z" fill="none" stroke="#7c7ad6" stroke-width="1" stroke-dasharray="3 6" opacity="0.6"/>
+        <!-- singularity -->
+        <circle cx="60" cy="170" r="20" fill="url(#flash)"/>
+        <circle cx="60" cy="170" r="20" fill="none" stroke="#E0A11C" stroke-width="1.5"/>
+
+        <!-- milestone markers -->
+        <g font-family="Inter" font-size="12.5" text-anchor="middle">
+          <!-- 1 singularity -->
+          <line x1="60" y1="170" x2="60" y2="238" stroke="#9a97c9" stroke-width="1.2"/>
+          <circle cx="60" cy="170" r="4.5" fill="#fff"/>
+          <text x="60" y="258" font-weight="600" fill="#1B1D51">Singularity</text>
+          <text x="60" y="274" fill="#565884" font-size="11">"tiny ball": ∞ density,<tspan x="60" dy="13">∞ temp, tiny volume</tspan></text>
+
+          <!-- 2 big bang -->
+          <line x1="235" y1="146" x2="235" y2="238" stroke="#9a97c9" stroke-width="1.2"/>
+          <circle cx="235" cy="146" r="5" fill="#B5388B"/>
+          <text x="235" y="258" font-weight="600" fill="#1B1D51">BIG BANG</text>
+          <text x="235" y="274" fill="#565884" font-size="11">~13.7 bn yrs ago;<tspan x="235" dy="13">energy → matter</tspan></text>
+
+          <!-- 3 first atoms -->
+          <line x1="420" y1="122" x2="420" y2="238" stroke="#9a97c9" stroke-width="1.2"/>
+          <circle cx="420" cy="122" r="5" fill="#5b3e9e"/>
+          <text x="420" y="258" font-weight="600" fill="#1B1D51">First atoms</text>
+          <text x="420" y="274" fill="#565884" font-size="11">within <tspan font-weight="700" fill="#8a2168">3 minutes</tspan></text>
+
+          <!-- 4 transparent -->
+          <line x1="605" y1="98" x2="605" y2="238" stroke="#9a97c9" stroke-width="1.2"/>
+          <circle cx="605" cy="98" r="5" fill="#2f6fa0"/>
+          <text x="605" y="258" font-weight="600" fill="#1B1D51">Transparent universe</text>
+          <text x="605" y="274" fill="#565884" font-size="11"><tspan font-weight="700" fill="#0d3d49">3,00,000 yrs</tspan>, ~4,500 K</text>
+
+          <!-- 5 galaxies/stars -->
+          <line x1="790" y1="72" x2="790" y2="238" stroke="#9a97c9" stroke-width="1.2"/>
+          <circle cx="790" cy="72" r="5" fill="#1F8AA6"/>
+          <text x="790" y="258" font-weight="600" fill="#1B1D51">Galaxies &amp; stars</text>
+          <text x="790" y="274" fill="#565884" font-size="11">gravity clumps matter</text>
+        </g>
+        <text x="60" y="150" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#8a2168" font-weight="600">EXPANSION →→→ (continues today)</text>
+        <text x="440" y="322" text-anchor="middle" font-family="IBM Plex Mono" font-size="11.5" fill="#565884" letter-spacing="2">TIME  →</text>
+      </svg>
+      <figcaption><b>Fig 3.</b> Signature flow — the expanding cone of the Big Bang. Memory hook: <b>1 ball → 13.7 bn → 3 min → 3 lakh yrs</b>.</figcaption>
+    </div></figure>
+
+    <h3>The stages, in sequence</h3>
+    <div class="table-scroll">
+    <table>
+      <caption>Big Bang — chronological stages (examiners reward the order)</caption>
+      <thead><tr><th>Stage</th><th>When</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><th>1 · Singularity</th><td>t = 0</td><td>All matter in one "tiny ball" (singular atom): unimaginably small volume, infinite density, infinite temperature.</td></tr>
+        <tr><th>2 · Big Bang</th><td>~13.7 bya</td><td>The tiny ball explodes violently → huge, very rapid expansion; some energy converts into matter; expansion later slows.</td></tr>
+        <tr><th>3 · First atoms</th><td>First 3 minutes</td><td>Cooling particle-soup forms the first atoms — hydrogen, then helium.</td></tr>
+        <tr><th>4 · Transparency</th><td>Within 3,00,000 yrs</td><td>Temperature falls to ~4,500 K → atomic matter forms; universe becomes transparent (origin of CMB).</td></tr>
+        <tr><th>5 · Structure</th><td>Hundreds of Myr</td><td>Gravity pulls matter into galaxies; inside them, nebulae collapse into stars.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="tip"><span class="ic">🧠</span><div><b>Memory hook "1–3–3":</b> <b>1</b> tiny ball → Bang at <b>13.7</b> bn yrs → <b>3</b> minutes (atoms) → <b>3,00,000</b> years (transparent, 4,500 K).</div></div>
+  </section>
+
+  <!-- ============ 4. EVIDENCE ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Evidence — the four pillars</h2></div>
+    <hr class="divider">
+    <p class="lead">A topper never just <i>asserts</i> a theory — you <b>defend</b> it. These four proofs turn a bald claim into an analytical Mains answer.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 880 250" role="img" aria-label="Four pillars of Big Bang evidence">
+        <g font-family="Inter" text-anchor="middle">
+          <!-- roof -->
+          <rect x="40" y="26" width="800" height="34" rx="8" fill="#1B1D51"/>
+          <text x="440" y="49" fill="#fff" font-size="14" font-weight="600">BIG BANG THEORY — supported by four independent observations</text>
+          <!-- pillars -->
+          <g>
+            <rect x="60" y="80" width="180" height="120" rx="12" fill="#F7E4F1" stroke="#B5388B"/>
+            <text x="150" y="112" font-size="26">🌌</text>
+            <text x="150" y="142" font-size="13.5" font-weight="700" fill="#8a2168">Expanding</text>
+            <text x="150" y="160" font-size="13.5" font-weight="700" fill="#8a2168">Universe</text>
+            <text x="150" y="182" font-size="11" fill="#6d1f52">galaxies recede;<tspan x="150" dy="13">farther = faster</tspan></text>
+          </g>
+          <g>
+            <rect x="255" y="80" width="180" height="120" rx="12" fill="#FBF1D8" stroke="#E0A11C"/>
+            <text x="345" y="112" font-size="26">🔴</text>
+            <text x="345" y="142" font-size="13.5" font-weight="700" fill="#9a6b04">Redshift</text>
+            <text x="345" y="176" font-size="11" fill="#7a5502">light shifts to red<tspan x="345" dy="13">= moving away</tspan></text>
+          </g>
+          <g>
+            <rect x="450" y="80" width="180" height="120" rx="12" fill="#DDF0F5" stroke="#1F8AA6"/>
+            <text x="540" y="112" font-size="26">📡</text>
+            <text x="540" y="142" font-size="13.5" font-weight="700" fill="#0d3d49">CMB</text>
+            <text x="540" y="176" font-size="11" fill="#134b59">faint afterglow —<tspan x="540" dy="13">strongest proof</tspan></text>
+          </g>
+          <g>
+            <rect x="645" y="80" width="180" height="120" rx="12" fill="#E9E9FA" stroke="#33357F"/>
+            <text x="735" y="112" font-size="26">⚛</text>
+            <text x="735" y="142" font-size="13.5" font-weight="700" fill="#2b2c66">Light elements</text>
+            <text x="735" y="176" font-size="11" fill="#3a3b70">H : He ratio matches<tspan x="735" dy="13">predictions</tspan></text>
+          </g>
+          <!-- base -->
+          <rect x="40" y="212" width="800" height="14" rx="6" fill="#33357F"/>
+        </g>
+      </svg>
+      <figcaption><b>Fig 4.</b> Four pillars holding up the theory. In a Mains answer, cite at least the <b>CMB</b> (the single strongest proof) and <b>redshift</b>.</figcaption>
+    </div></figure>
+  </section>
+
+  <!-- ============ 5. EXPANDING UNIVERSE ============ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">05</span><h2>The expanding universe &amp; Hubble</h2></div>
+    <hr class="divider">
+    <p class="lead"><b>Edwin Hubble (1920s)</b> proved the universe is expanding: galaxies drift ever farther apart, and the distance between them keeps growing. The crucial, frequently-tested nuance is <i>what</i> expands.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 780 230" role="img" aria-label="Balloon analogy of expansion">
+        <g font-family="Inter" text-anchor="middle">
+          <text x="390" y="26" font-family="IBM Plex Mono" font-size="12" fill="#565884" letter-spacing="1.5">THE BALLOON ANALOGY — dots stay the same size, gaps grow</text>
+          <!-- small balloon -->
+          <circle cx="200" cy="130" r="66" fill="#F7E4F1" stroke="#B5388B" stroke-width="2"/>
+          <g fill="#8a2168"><circle cx="176" cy="108" r="6"/><circle cx="228" cy="118" r="6"/><circle cx="188" cy="156" r="6"/><circle cx="224" cy="158" r="6"/></g>
+          <text x="200" y="214" font-size="12.5" font-weight="600" fill="#1B1D51">Earlier universe</text>
+          <!-- arrow -->
+          <text x="390" y="136" font-size="30" fill="#E0A11C">→</text>
+          <text x="390" y="160" font-size="11" fill="#9a6b04">inflate</text>
+          <!-- big balloon -->
+          <circle cx="580" cy="130" r="96" fill="#F7E4F1" stroke="#B5388B" stroke-width="2"/>
+          <g fill="#8a2168"><circle cx="536" cy="92" r="6"/><circle cx="624" cy="112" r="6"/><circle cx="552" cy="176" r="6"/><circle cx="628" cy="176" r="6"/></g>
+          <text x="580" y="244" font-size="12.5" font-weight="600" fill="#1B1D51">Later universe</text>
+        </g>
+      </svg>
+      <figcaption><b>Fig 5.</b> The <b>space between galaxies</b> increases; the galaxies (dots) themselves do <b>not</b> expand.</figcaption>
+    </div></figure>
+
+    <div class="tip trap"><span class="ic">⚠</span><div><b>Statement check:</b> "Galaxies are expanding" → <b>FALSE</b>. Correct phrasing: "the <b>space between</b> galaxies is increasing." This one distinction has decided prelims marks.</div></div>
+  </section>
+
+  <!-- ============ 6. STAR LIFE CYCLE ============ -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">06</span><h2>How stars &amp; planets formed</h2></div>
+    <hr class="divider">
+    <p class="lead">Once matter existed, gravity organised it. The same condensation that <i>lit up the stars</i> also gathered leftover material into planets — this is your bridge into the origin of the solar system.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 880 210" role="img" aria-label="Star formation flowchart">
+        <defs>
+          <marker id="arw2" markerWidth="11" markerHeight="11" refX="7" refY="3.2" orient="auto">
+            <path d="M0,0 L8,3.2 L0,6.4 Z" fill="#B5388B"/>
+          </marker>
+        </defs>
+        <g font-family="Inter" text-anchor="middle" font-size="13">
+          <!-- nebula -->
+          <circle cx="90" cy="95" r="46" fill="#4a2a63" opacity="0.85"/>
+          <circle cx="72" cy="82" r="9" fill="#7c4f96"/><circle cx="104" cy="88" r="12" fill="#6b4488"/><circle cx="92" cy="112" r="8" fill="#8a5aa8"/>
+          <text x="90" y="164" font-weight="700" fill="#1B1D51">Nebula</text>
+          <text x="90" y="181" font-size="11" fill="#565884">gas + dust cloud</text>
+
+          <line x1="140" y1="95" x2="192" y2="95" stroke="#B5388B" stroke-width="2.4" marker-end="url(#arw2)"/>
+
+          <!-- collapse -->
+          <circle cx="255" cy="95" r="34" fill="none" stroke="#B5388B" stroke-width="2" stroke-dasharray="3 4"/>
+          <circle cx="255" cy="95" r="14" fill="#5b3e9e"/>
+          <text x="255" y="164" font-weight="700" fill="#1B1D51">Gravity pulls in</text>
+          <text x="255" y="181" font-size="11" fill="#565884">cloud contracts, heats</text>
+
+          <line x1="300" y1="95" x2="352" y2="95" stroke="#B5388B" stroke-width="2.4" marker-end="url(#arw2)"/>
+
+          <!-- protostar -->
+          <circle cx="415" cy="95" r="26" fill="#E0A11C"/>
+          <text x="415" y="164" font-weight="700" fill="#1B1D51">Protostar</text>
+          <text x="415" y="181" font-size="11" fill="#565884">core dense &amp; hot</text>
+
+          <line x1="452" y1="95" x2="504" y2="95" stroke="#B5388B" stroke-width="2.4" marker-end="url(#arw2)"/>
+
+          <!-- fusion / star -->
+          <g>
+            <circle cx="575" cy="95" r="30" fill="#FFD25A"/>
+            <g stroke="#E0A11C" stroke-width="2.4"><line x1="575" y1="52" x2="575" y2="40"/><line x1="575" y1="150" x2="575" y2="138"/><line x1="532" y1="95" x2="520" y2="95"/><line x1="630" y1="95" x2="618" y2="95"/></g>
+          </g>
+          <text x="575" y="164" font-weight="700" fill="#1B1D51">STAR born</text>
+          <text x="575" y="181" font-size="11" fill="#565884">nuclear fusion ignites</text>
+
+          <line x1="620" y1="95" x2="672" y2="95" stroke="#B5388B" stroke-width="2.4" marker-end="url(#arw2)"/>
+
+          <!-- planets -->
+          <g>
+            <circle cx="770" cy="95" r="18" fill="#FFD25A"/>
+            <ellipse cx="770" cy="95" rx="52" ry="20" fill="none" stroke="#1F8AA6" stroke-width="1.4"/>
+            <circle cx="822" cy="95" r="6" fill="#1F8AA6"/><circle cx="718" cy="95" r="5" fill="#B5388B"/>
+          </g>
+          <text x="770" y="164" font-weight="700" fill="#1B1D51">Planetesimals</text>
+          <text x="770" y="181" font-size="11" fill="#565884">→ planets → solar system</text>
+        </g>
+      </svg>
+      <figcaption><b>Fig 6.</b> Flow of star &amp; planet birth. The dust left orbiting a young star accretes into <b>planetesimals</b> → planets.</figcaption>
+    </div></figure>
+
+    <div class="mentor">
+      <div class="tag">◆ Mentor bridge line for your answer</div>
+      <p>"The same gravitational condensation that lit up the stars also gathered the leftover nebular material into planetesimals — thus the origin of the universe flows seamlessly into the origin of our solar system and Earth." A sentence like this shows <b>synthesis</b> and earns marks.</p>
+    </div>
+  </section>
+
+  <!-- ============ 7. VENN: STAR vs PLANET ============ -->
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Star vs Planet — a Venn view</h2></div>
+    <hr class="divider">
+    <p class="lead">The single most swapped pair in prelims. A Venn makes the shared traits and the decisive differences unmissable.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 820 360" role="img" aria-label="Venn diagram of star versus planet">
+        <g font-family="Inter">
+          <!-- circles -->
+          <circle cx="300" cy="180" r="165" fill="#FBF1D8" fill-opacity="0.75" stroke="#E0A11C" stroke-width="2.5"/>
+          <circle cx="520" cy="180" r="165" fill="#DDF0F5" fill-opacity="0.7" stroke="#1F8AA6" stroke-width="2.5"/>
+          <!-- titles -->
+          <text x="205" y="46" text-anchor="middle" font-size="18" font-weight="700" fill="#9a6b04">STAR ☀</text>
+          <text x="618" y="46" text-anchor="middle" font-size="18" font-weight="700" fill="#0d3d49">PLANET 🪐</text>
+
+          <!-- star-only -->
+          <g text-anchor="middle" font-size="12.5" fill="#7a5502">
+            <text x="205" y="150" font-weight="700">Self-luminous</text>
+            <text x="205" y="170">makes own light</text>
+            <text x="205" y="198">Nuclear FUSION</text>
+            <text x="205" y="218">(H → He)</text>
+            <text x="205" y="246">Very high temp</text>
+            <text x="205" y="266">e.g. the Sun</text>
+          </g>
+          <!-- overlap -->
+          <g text-anchor="middle" font-size="12" fill="#3a3b70">
+            <text x="410" y="150" font-weight="700" fill="#1B1D51">Shared</text>
+            <text x="410" y="172">Celestial bodies</text>
+            <text x="410" y="192">Roughly spherical</text>
+            <text x="410" y="212">Held by gravity</text>
+            <text x="410" y="232">Part of a</text>
+            <text x="410" y="250">galaxy</text>
+          </g>
+          <!-- planet-only -->
+          <g text-anchor="middle" font-size="12.5" fill="#134b59">
+            <text x="615" y="150" font-weight="700">Non-luminous</text>
+            <text x="615" y="170">reflects starlight</text>
+            <text x="615" y="198">No fusion</text>
+            <text x="615" y="226">Orbits a star</text>
+            <text x="615" y="254">e.g. Earth</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption><b>Fig 7.</b> The decisive line: a <b>star is self-luminous</b> (fusion); a <b>planet only reflects</b> light and orbits a star.</figcaption>
+    </div></figure>
+  </section>
+
+  <!-- ============ 8. COMPETING THEORIES ============ -->
+  <section id="s8">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Competing theories — know them to contrast</h2></div>
+    <hr class="divider">
+    <p class="lead">Knowing the rejected theories lets you write <i>"unlike X, the Big Bang explains Y"</i> — pure analytical value.</p>
+
+    <div class="table-scroll">
+    <table>
+      <caption>Big Bang vs its rivals</caption>
+      <thead><tr><th>Theory</th><th>Key proponent</th><th>Core idea</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <th>Big Bang / Expanding Universe</th><td>Lemaître; Hubble (evidence)</td>
+          <td>Universe began from a singularity ~13.7 bya and has expanded ever since.</td>
+          <td class="yes">Accepted — backed by CMB, redshift.</td>
+        </tr>
+        <tr>
+          <th>Steady State</th><td>Fred Hoyle (&amp; others)</td>
+          <td>Universe looks the same at all times/places; new matter is continuously created to keep density constant — no beginning, no end.</td>
+          <td class="no">Largely rejected — can't explain CMB.</td>
+        </tr>
+        <tr>
+          <th>Pulsating / Oscillating</th><td>—</td>
+          <td>Universe alternately expands &amp; contracts in cycles (Bang → expansion → "Big Crunch" → next Bang).</td>
+          <td>Speculative; not currently favoured.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="tip"><span class="ic">💡</span><div><b>Irony worth quoting:</b> Fred Hoyle championed the rival Steady State theory, yet it was <i>he</i> who coined the term <b>"Big Bang"</b> — originally mockingly.</div></div>
+  </section>
+
+  <!-- ============ 9. TIMELINE NUMBERS ============ -->
+  <section id="s9">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Timeline anchors — the numbers</h2></div>
+    <hr class="divider">
+    <div class="table-scroll">
+    <table>
+      <caption>Numbers examiners love</caption>
+      <thead><tr><th>Value</th><th>What it dates</th></tr></thead>
+      <tbody>
+        <tr><th>13.7 billion yrs</th><td>Age of the <b>universe</b> / time since Big Bang.</td></tr>
+        <tr><th>~4.6 billion yrs</th><td>Age of the <b>Sun &amp; Solar System</b>.</td></tr>
+        <tr><th>~4.6 billion yrs</th><td>Approximate age of the <b>Earth</b>.</td></tr>
+        <tr><th>3 minutes</th><td>First atoms formed after the Bang.</td></tr>
+        <tr><th>3,00,000 yrs</th><td>Universe became transparent; temp ~4,500 K.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="tip trap"><span class="ic">⚠</span><div>Keep the two "billions" distinct — <b>13.7 bn = universe</b>, <b>4.6 bn = Sun/Earth</b>. Swapping them is a common self-goal.</div></div>
+  </section>
+
+  <!-- ============ 10. PRELIMS ============ -->
+  <section id="s10">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Prelims quick-fire</h2></div>
+    <hr class="divider">
+    <div class="prelims">
+      <h3>🔴 Memorise verbatim</h3>
+      <div class="pgrid">
+        <div class="item"><span class="dot">▸</span><span><b>Big Bang = Expanding Universe Hypothesis</b> — most accepted.</span></div>
+        <div class="item"><span class="dot">▸</span><span>Age of universe ≈ <b>13.7 billion years</b>.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Edwin Hubble</b> (1920s) → proved expansion.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Light Year = distance</b> (~9.46 trillion km), not time.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Nebula</b> = birthplace of stars (gas + dust).</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Star</b> self-luminous (fusion); <b>planet</b> reflects light.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Sun</b> = nearest star; <b>Milky Way</b> = our galaxy; <b>Andromeda</b> nearest major.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>CMB radiation</b> = strongest proof of Big Bang.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Redshift</b> → galaxies moving away (Doppler).</span></div>
+        <div class="item"><span class="dot">▸</span><span>Expansion = <b>space between</b> galaxies grows, not galaxies.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Steady State → Fred Hoyle</b> (rejected).</span></div>
+        <div class="item"><span class="dot">▸</span><span>First atoms in <b>3 min</b>; transparent in <b>3 lakh yrs</b> at 4,500 K.</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Constellation</b> = apparent pattern (Saptarishi, Orion).</span></div>
+        <div class="item"><span class="dot">▸</span><span><b>Lemaître</b> = proposer of the "primeval atom".</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. MAINS ============ -->
+  <section id="s11">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Mains angle — how to deploy this</h2></div>
+    <hr class="divider">
+    <p class="lead">Rarely a standalone 15-marker, but a frequent <b>foundation</b> for questions on the origin of the Earth and the geological time scale, and strong <b>Essay</b> fodder linking cosmos, curiosity and India's space ambitions.</p>
+
+    <div class="mentor">
+      <div class="tag">◆ Model intro line — memorise</div>
+      <p>"The prevailing scientific consensus locates the origin of the universe in the Big Bang some 13.7 billion years ago — a violent expansion of a primordial singularity, corroborated by Hubble's expanding-universe observations and the cosmic microwave background — from which galaxies, stars and eventually our own solar system condensed."</p>
+    </div>
+
+    <div class="table-scroll">
+    <table>
+      <caption>Value-additions that impress</caption>
+      <thead><tr><th>Device</th><th>Use it like this</th></tr></thead>
+      <tbody>
+        <tr><th>Correct name-drops</th><td><b>Lemaître</b> (primeval atom), <b>Hubble</b> (expansion), <b>Hoyle</b> (Steady State + coined "Big Bang").</td></tr>
+        <tr><th>Analogy</th><td>The <b>balloon analogy</b> for expansion — signals conceptual clarity.</td></tr>
+        <tr><th>India link</th><td><b>AstroSat</b> (India's first dedicated space observatory), <b>Aditya-L1</b> (solar mission) — bridge static ↔ current affairs.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- ============ 12. PYQ ANALYSIS ============ -->
+  <section id="s12">
+    <div class="sec-head"><span class="sec-num">12</span><h2>PYQ analysis — UPSC CSE (2013 onward)</h2></div>
+    <hr class="divider">
+
+    <div class="mentor">
+      <div class="tag">◆ Straight talk before you memorise anything</div>
+      <p>Be honest with your time. <b>UPSC has NOT set a single direct question purely on the "origin of the universe / Big Bang" — in Prelims or Mains — in the 2013–2025 window.</b> The rare cosmology-flavoured questions are older (pre-2013) or sit in the <i>adjacent</i> Universe–Solar System cluster (nearest star, galaxies, space weather).</p>
+      <p>So treat this as a <b>concept-clarity + fact-recall</b> topic, not a heavy answer-writing topic. The payoff is indirect: it feeds Prelims one-liners and gives your <b>origin-of-the-Earth</b> Mains answers a confident opening. Below: what is genuinely verifiable, and what is realistically <i>expected</i> — clearly separated so you never mistake a practice question for a real PYQ.</p>
+    </div>
+
+    <h3>A · Genuine PYQs — direct on this topic</h3>
+    <div class="tip trap"><span class="ic">⚠</span><div><b>Reality check:</b> There is <b>no direct Prelims MCQ or GS-I Mains question on the Big Bang / origin of the universe from 2013 to 2025.</b> Anyone selling you a long "PYQ list" on this exact topic is recycling adjacent or pre-2013 questions. Don't be misled.</div></div>
+
+    <h3>B · Adjacent PYQs — the Universe &amp; Solar System cluster</h3>
+    <p class="lead">These are the questions UPSC <i>actually</i> asks around this theme. Study the pattern, not just the answer.</p>
+    <div class="table-scroll">
+    <table>
+      <caption>Verifiable questions from the broader cluster</caption>
+      <thead><tr><th>Year</th><th>Stage</th><th>Question (gist)</th><th>Answer / key idea</th></tr></thead>
+      <tbody>
+        <tr><td>1997</td><td>Prelims</td><td>Which star is nearest to the Earth? (Polaris / Alpha Centauri / Sun / Sirius)</td><td><b>Sun</b> — nearest star to Earth (Proxima Centauri is nearest <i>beyond</i> the Sun).</td></tr>
+        <tr><td>2025</td><td>Prelims</td><td>Statement-based: Earth's rotation/axis shift; solar flares &amp; CMEs bombarding the outer atmosphere; polar-ice melt moving water toward the equator.</td><td>Space-weather &amp; Earth-dynamics cluster — <i>adjacent</i>, not origin-of-universe.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="lead" style="font-size:14px;color:#565884;">Note: the wider "Introduction to Earth &amp; Universe" bucket has ~30 questions across 1997–2025, but they concentrate on the <b>solar system, planets, rotation–revolution and Earth's structure</b> — not the Big Bang. Verify any specific year against an official UPSC paper before quoting it in a test.</p>
+
+    <h3>C · Where the Mains marks actually go (GS-I, 2013–2025)</h3>
+    <p class="lead">Physical-geography Mains questions have skipped cosmic origins entirely and clustered on Earth-surface processes. Knowing this stops you over-preparing:</p>
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 860 220" role="img" aria-label="Where physical geography Mains marks concentrate">
+        <g font-family="Inter" text-anchor="middle">
+          <text x="430" y="24" font-family="IBM Plex Mono" font-size="11.5" fill="#565884" letter-spacing="1.5">GS-I PHYSICAL GEOGRAPHY — WHERE QUESTIONS LAND</text>
+          <!-- bars -->
+          <g>
+            <rect x="70" y="70" width="120" height="110" rx="9" fill="#1F8AA6"/>
+            <text x="130" y="122" fill="#fff" font-size="13" font-weight="700">Geomorph-</text>
+            <text x="130" y="140" fill="#fff" font-size="13" font-weight="700">ology</text>
+            <text x="130" y="200" fill="#134b59" font-size="11.5">volcanoes, plates,<tspan x="130" dy="13">landforms</tspan></text>
+          </g>
+          <g>
+            <rect x="230" y="70" width="120" height="110" rx="9" fill="#33357F"/>
+            <text x="290" y="130" fill="#fff" font-size="13" font-weight="700">Climatology</text>
+            <text x="290" y="200" fill="#2b2c66" font-size="11.5">cyclones, jet<tspan x="290" dy="13">streams, monsoon</tspan></text>
+          </g>
+          <g>
+            <rect x="390" y="70" width="120" height="110" rx="9" fill="#B5388B"/>
+            <text x="450" y="130" fill="#fff" font-size="13" font-weight="700">Oceanography</text>
+            <text x="450" y="200" fill="#8a2168" font-size="11.5">currents, salinity,<tspan x="450" dy="13">coral</tspan></text>
+          </g>
+          <g>
+            <rect x="550" y="70" width="120" height="110" rx="9" fill="#E0A11C"/>
+            <text x="610" y="130" fill="#3a2900" font-size="13" font-weight="700">Distribution</text>
+            <text x="610" y="200" fill="#7a5502" font-size="11.5">resources,<tspan x="610" dy="13">industry, biomes</tspan></text>
+          </g>
+          <!-- origin bar, tiny -->
+          <g>
+            <rect x="710" y="158" width="120" height="22" rx="7" fill="#C3C7E3"/>
+            <text x="770" y="173" fill="#3a3b70" font-size="12" font-weight="700">Origin of universe</text>
+            <text x="770" y="200" fill="#565884" font-size="11.5">≈ 0 direct Mains Qs</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption><b>Fig 8.</b> The origin of the universe is a <b>sliver</b> of GS-I geography weight — invest accordingly.</figcaption>
+    </div></figure>
+
+    <h3>D · Expected / probable questions <span style="font-weight:400;font-size:13px;color:#8a2168;">(NOT real PYQs — practice only)</span></h3>
+    <div class="table-scroll">
+    <table>
+      <caption>High-probability framings to rehearse</caption>
+      <thead><tr><th>Stage</th><th>Practice prompt</th><th>Trap / key</th></tr></thead>
+      <tbody>
+        <tr><th>Prelims</th><td>"Light year" is a unit of ___</td><td><b>Distance</b> (not time).</td></tr>
+        <tr><th>Prelims</th><td>Which theory involves continuous creation of matter to keep density constant?</td><td><b>Steady State</b> (Hoyle).</td></tr>
+        <tr><th>Prelims</th><td>Consider statements on the Big Bang (expansion / CMB / redshift) — which are correct?</td><td>Expansion = space <i>between</i> galaxies grows; <b>CMB</b> = strongest proof.</td></tr>
+        <tr><th>Prelims</th><td>Match: Nebula / Constellation / Galaxy / Star with definitions.</td><td>Constellation = <i>apparent</i> pattern; Nebula = star nursery.</td></tr>
+        <tr><th>Mains (10m)</th><td>"The Big Bang remains the most robust explanation for the origin of the universe." Elaborate with supporting evidence.</td><td>Lead with CMB + redshift + expansion; contrast Steady State.</td></tr>
+        <tr><th>Mains (15m)</th><td>Trace the sequence from the Big Bang to the formation of the solar system.</td><td>Use the 1–3–3 timeline → nebula → star + planetesimals bridge.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="mentor">
+      <div class="tag">◆ Mentor's closing counsel</div>
+      <p>This is a <b>one-sitting, low-yield-for-PYQs</b> topic — do not gold-plate it. Nail the <b>1–3–3 timeline</b>, the <b>Hubble/expansion nuance</b>, the <b>light-year trap</b>, and the <b>Big Bang vs Steady State</b> contrast. That covers every realistic Prelims angle.</p>
+      <p>Then move confidently to <b>Origin of the Solar System</b> (Nebular Hypothesis — Kant &amp; Laplace) and <b>Origin of the Earth</b> — the topics that <i>actually</i> feed GS-I Mains. Consistency beats intensity; revise this sheet three times before Prelims.</p>
+    </div>
+  </section>
+
+  <!-- ============ RECALL ============ -->
+  <div class="recall">
+    <div class="rk">One-page recall sheet</div>
+    <h2>Say it from memory</h2>
+    <ul>
+      <li><b>Theory:</b> Big Bang = Expanding Universe</li>
+      <li><b>Age:</b> 13.7 billion years</li>
+      <li><b>Proposer:</b> Lemaître · <b>Expansion:</b> Hubble</li>
+      <li><b>Proofs:</b> Expansion + Redshift + CMB + light elements</li>
+      <li><b>Timeline:</b> Ball → Bang → 3 min → 3 lakh yrs (4,500 K)</li>
+      <li><b>Nuance:</b> space between galaxies grows, not galaxies</li>
+      <li><b>Rival:</b> Steady State (Hoyle) — rejected</li>
+      <li><b>Traps:</b> light-year = distance; star = self-luminous</li>
+      <li><b>Bridge:</b> nebula → collapse → star + planetesimals</li>
+      <li><b>India link:</b> AstroSat, Aditya-L1</li>
+    </ul>
+  </div>
+
+  <footer>
+    Source base — NCERT <i>Fundamentals of Physical Geography</i> (Ch. 2), standard UPSC geography lecture content, InsightsIAS.<br>
+    Structured for topper-style layered revision · Mains prose + Prelims bullets + diagrams · Print-friendly (Ctrl/Cmd + P → Save as PDF).
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Normalise line endings so files committed from Linux and edited on Windows
+# don't show up as wholly-changed on the next commit.
+* text=auto
+
+# Binary — never touch these
+*.pdf   binary
+*.pptx  binary
+*.png   binary
+*.jpg   binary

@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC CSE Prep — Navigator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+--sidebar-w:270px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;height:100%;}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;height:100vh;overflow:hidden;}
+
+/* ===== SIDEBAR ===== */
+.sidebar{width:var(--sidebar-w);flex:none;background:var(--deep);color:#EDECFF;padding:22px 18px;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:18px;}
+.brand{padding:0 4px;}
+.brand .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--star);margin-bottom:6px;}
+.brand h1{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin:0;color:#fff;letter-spacing:-.2px;}
+
+.search{position:relative;}
+.search input{width:100%;font-family:'Inter',sans-serif;font-size:13.5px;padding:9px 12px 9px 32px;border-radius:10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;outline:none;}
+.search input::placeholder{color:#B9B6E8;}
+.search input:focus{background:rgba(255,255,255,.14);border-color:var(--star);}
+.search .ic{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#B9B6E8;font-size:12.5px;}
+.searchhint{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#B9B6E8;padding:0 2px;display:none;}
+
+nav.navtree{display:flex;flex-direction:column;gap:16px;}
+.navgroup .navhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#9C99CF;margin:0 0 6px 4px;}
+.navitem{display:flex;align-items:flex-start;flex-wrap:nowrap;justify-content:space-between;gap:10px;width:100%;text-align:left;background:transparent;border:none;color:#D8D6F5;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;padding:8px 10px;border-radius:9px;cursor:pointer;transition:background .12s ease,color .12s ease;}
+.navitem:hover{background:rgba(255,255,255,.07);color:#fff;}
+.navitem.active{background:var(--nebula);color:#fff;font-weight:600;}
+.navitem .cntgroup{display:flex;align-items:center;gap:4px;flex:none;}
+.navitem .cnt{font-family:'IBM Plex Mono',monospace;font-size:10px;background:rgba(255,255,255,.12);border-radius:10px;padding:1px 7px;flex:none;white-space:nowrap;}
+.navitem .cnt-topics{background:rgba(255,255,255,.10);color:#C9C6F0;}
+.navitem .cnt-notes{background:rgba(255,209,90,.18);color:var(--star);}
+.navitem.active .cnt{background:rgba(255,255,255,.22);}
+.navitem.active .cnt-topics{background:rgba(255,255,255,.22);color:#fff;}
+.navitem.active .cnt-notes{background:rgba(255,209,90,.3);color:var(--star);}
+.navitem.dim{color:#8481B0;}
+.navitem.dim .cnt{background:rgba(255,255,255,.06);}
+.navitem.dim .cnt-notes{background:rgba(255,209,90,.08);color:#8481B0;}
+
+.sidefoot{margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7d7aad;padding:0 4px;line-height:1.7;}
+
+/* ===== MAIN CONTENT ===== */
+main{flex:1;min-width:0;height:100%;overflow-y:auto;padding:30px 40px 70px;box-sizing:border-box;transition:padding .1s ease;}
+main.reader-mode{padding:14px 14px 0;display:flex;flex-direction:column;}
+.view#view-reader{display:none;flex-direction:column;height:100%;}
+.view#view-reader.active{display:flex;}
+.crumb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3vw,28px);color:var(--deep);margin:0 0 6px;letter-spacing:-.3px;}
+.pagenote{font-size:13.5px;color:var(--muted);display:block;}
+
+.pageheader{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px 24px;margin:0 0 18px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+.pageheader-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.pageheader-top .crumb{margin:0;}
+.pageheader .syllink{margin:14px 0 0;}
+
+.syllink{display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--deep2);background:var(--gold-soft);border:1.5px solid var(--gold);border-radius:20px;padding:7px 16px;margin:2px 0 22px;cursor:pointer;transition:background .12s ease,transform .12s ease;width:fit-content;}
+.syllink:hover{background:var(--gold);transform:translateY(-1px);}
+.syllink.disabled{opacity:.55;cursor:default;background:var(--card);border-color:var(--line-strong);color:var(--muted);}
+.syllink.disabled:hover{transform:none;background:var(--card);}
+
+.view{display:none;}
+.view.active{display:block;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
+
+.card{display:block;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--deep2);border-radius:14px;padding:18px 19px;text-decoration:none;color:inherit;box-shadow:0 4px 16px rgba(20,21,46,.045);transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;cursor:pointer;}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,21,46,.12);border-color:var(--line-strong);}
+.card:focus-visible{outline:2px solid var(--nebula);outline-offset:2px;}
+.card .top{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.card .num{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:2px 10px;flex:none;}
+.card .ftype{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--teal);background:var(--teal-soft);border-radius:20px;padding:2px 9px;flex:none;}
+.card .ftype.newtab{color:var(--nebula);background:var(--nebula-soft);}
+.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;color:var(--deep);margin:0 0 7px;line-height:1.3;}
+.card p{margin:0;font-size:13.5px;color:#4a4c6e;line-height:1.5;}
+.card .chip{display:inline-block;margin-top:11px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:#177a4d;background:#E4F5EC;border-radius:20px;padding:2px 9px;}
+
+.topiccard{display:block;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--nebula);border-radius:14px;padding:18px 19px;box-shadow:0 4px 16px rgba(20,21,46,.045);transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;cursor:pointer;}
+.topiccard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,21,46,.12);border-color:var(--line-strong);}
+.topiccard:focus-visible{outline:2px solid var(--nebula);outline-offset:2px;}
+.topiccard .tc-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;}
+.topiccard .tc-num{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:#fff;background:var(--nebula);border-radius:20px;padding:2px 10px;flex:none;}
+.topiccard .tc-status{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.05em;color:var(--muted);background:var(--paper);border:1px solid var(--line-strong);border-radius:20px;padding:2px 9px;white-space:nowrap;}
+.topiccard .tc-status.done{color:#177a4d;background:#E4F5EC;border-color:#bfe6d2;}
+.topiccard h3{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;color:var(--deep);margin:0 0 7px;line-height:1.3;}
+.topiccard p{margin:0;font-size:13.5px;color:#4a4c6e;line-height:1.5;}
+.topiccard.disabled{cursor:default;opacity:.68;border-top-color:var(--line-strong);}
+.topiccard.disabled:hover{transform:none;box-shadow:0 4px 16px rgba(20,21,46,.045);border-color:var(--line);}
+
+/* ===== READING PROGRESS ===== */
+.hubprogress{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:0 0 20px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+.hubprogress-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.hubprogress-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.hubprogress-frac{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:700;color:var(--deep2);}
+.hubprogress-track{height:9px;background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+.hubprogress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--nebula));border-radius:20px;transition:width .25s ease;}
+.hubprogress.empty .hubprogress-frac{color:var(--muted);font-weight:500;}
+.hubprogress.empty .hubprogress-fill{background:var(--line-strong);}
+
+.tc-progress-track{height:6px;background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:10px;}
+.tc-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--nebula));border-radius:20px;transition:width .25s ease;}
+.tc-progress-frac{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-top:5px;display:block;}
+
+.readtoggle{display:flex;align-items:center;gap:6px;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);cursor:pointer;user-select:none;}
+.readtoggle input{width:14px;height:14px;accent-color:var(--nebula);cursor:pointer;flex:none;}
+.readtoggle.checked{color:#177a4d;font-weight:600;}
+
+.progressio{display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);}
+.pio-btn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;color:#D8D6F5;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:7px 10px;cursor:pointer;text-align:left;transition:background .12s ease;}
+.pio-btn:hover{background:rgba(255,255,255,.14);}
+
+.emptystate{text-align:center;padding:50px 20px;color:var(--muted);font-size:14px;background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;}
+.emptystate b{color:var(--deep2);display:block;font-family:'Fraunces',serif;font-size:19px;margin-bottom:6px;}
+
+.searchresults{display:none;}
+.searchresults.active{display:block;}
+.resultgroup{margin-bottom:28px;}
+.resultgroup .rg-crumb{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;}
+#noresults{text-align:center;color:var(--muted);padding:50px 0;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+
+/* ===== READER (in-page note viewer) ===== */
+.readerbar{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;flex:none;}
+.backbtn{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--nebula);background:var(--nebula-soft);border:1px solid #EBC4DE;border-radius:20px;padding:8px 15px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .12s ease;}
+.backbtn.small{padding:7px 13px;font-size:12px;flex:none;}
+.backbtn:hover{background:#f0d0e6;}
+.readercrumb{font-family:'Fraunces',serif;font-size:15px;color:var(--deep);font-weight:600;flex:1;min-width:160px;}
+.readercrumb span{color:var(--muted);font-weight:400;font-size:13px;}
+.opennewtab{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal);text-decoration:none;border:1px solid var(--teal-soft);background:var(--teal-soft);border-radius:20px;padding:7px 13px;white-space:nowrap;}
+.opennewtab:hover{background:#c9ecf3;}
+.readerframe-wrap{flex:1;min-height:0;display:flex;}
+#readerFrame{width:100%;flex:1;min-height:0;border:0;display:block;background:#fff;}
+
+footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:center;line-height:1.8;}
+.hidden{display:none !important;}
+
+@media(max-width:860px){
+  body{flex-direction:column;height:auto;overflow:visible;}
+  .sidebar{width:100%;height:auto;position:relative;flex-direction:column;}
+  main{height:auto;overflow:visible;padding:22px 18px 60px;}
+  .view#view-reader{height:auto;}
+  .view#view-reader.active{display:flex;}
+  main.reader-mode{padding:14px 14px 0;}
+  #readerFrame{height:70vh;flex:none;}
+}
+
+.foldergroup{margin:0 0 30px;}
+.folderhead{display:flex;align-items:baseline;gap:11px;margin:0 0 4px;padding:0 2px;}
+.folderhead .fh-ic{font-size:15px;line-height:1;color:var(--gold);}
+.folderhead h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--deep);margin:0;letter-spacing:-.2px;}
+.folderhead .fh-count{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);background:#F1F2FA;border-radius:20px;padding:2px 9px;}
+.folderpath{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin:0 0 13px;padding:0 2px;}
+.foldergroup .grid{gap:14px;}
+.foldergroup .card{border-top-width:2px;}
+.kind{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:20px;padding:2px 9px;}
+.kind-plan{color:#7a5502;background:var(--gold-soft);}
+.kind-paper{color:#33357F;background:#EEF0FA;}
+.kind-key{color:#12707f;background:var(--teal-soft);}
+.kind-result{color:#8a2168;background:var(--nebula-soft);}
+.kind-mock{color:#177a4d;background:#E9F7EE;}
+.kind-ref{color:#565884;background:#F1F2FA;}
+
+.navitem .nav-label{flex:1 1 auto;min-width:0;line-height:1.35;}
+.navitem .cnt,.navitem .cntgroup{flex:0 0 auto;margin-top:1px;}
+.navitem .cntgroup{flex-wrap:nowrap;}
+
+@media(max-width:700px){
+  .sidebar{padding:14px 14px 10px;gap:10px;}
+  .sidebar .navtree{display:none;}
+  .sidebar.open .navtree{display:block;}
+  .sidebar .sidefoot{display:none;}
+  .sidebar.open .sidefoot{display:block;}
+  #menuToggle{display:block;}
+  .brand{margin-bottom:0;}
+  main{padding:16px 14px 60px;}
+  .grid{grid-template-columns:1fr;gap:12px;}
+  .pageheader{padding:16px 16px 18px;border-radius:14px;}
+  .pageheader h2{font-size:20px;}
+  .card{padding:14px 15px;}
+  .topiccard{padding:14px 15px;}
+  .foldergroup{margin-bottom:22px;}
+  .search{font-size:16px;}
+  #readerFrame{height:78vh;}
+}
+#menuToggle{display:none;width:100%;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#EDECFF;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:9px 12px;cursor:pointer;text-align:left;}
+.kind-local{color:#8a2168;background:var(--nebula-soft);}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+<div class="brand">
+<div class="eyebrow">Personal UPSC CSE Prep</div>
+<h1>Navigator</h1>
+</div>
+
+<button id="menuToggle" type="button">☰ Menu</button>
+<div class="search">
+<span class="ic">⌕</span>
+<input id="q" type="text" placeholder="Search everything...">
+</div>
+<div class="searchhint" id="searchhint">Showing matches across all papers</div>
+
+<nav class="navtree" id="navtree">
+
+<div class="navgroup">
+<div class="navhead">GS Paper II</div>
+<button class="navitem active" data-view="polity"><span class="nav-label">Polity &amp; Constitution</span> <span class="cntgroup"><span class="cnt cnt-topics">9 topics</span><span class="cnt cnt-notes">24 notes</span></span></button>
+<button class="navitem dim" data-view="governance"><span class="nav-label">Governance</span> <span class="cntgroup"><span class="cnt cnt-topics">3 topics</span><span class="cnt cnt-notes">0 notes</span></span></button>
+<button class="navitem dim" data-view="ir"><span class="nav-label">International Relations</span> <span class="cntgroup"><span class="cnt cnt-topics">4 topics</span><span class="cnt cnt-notes">0 notes</span></span></button>
+<button class="navitem dim" data-view="socialjustice"><span class="nav-label">Social Justice</span> <span class="cntgroup"><span class="cnt cnt-topics">4 topics</span><span class="cnt cnt-notes">0 notes</span></span></button>
+</div>
+
+<div class="navgroup">
+<div class="navhead">GS Paper I</div>
+<button class="navitem" data-view="geography"><span class="nav-label">Geography</span> <span class="cnt">1</span></button>
+</div>
+
+<div class="navgroup">
+<div class="navhead">Current Affairs</div>
+<button class="navitem" data-view="ca"><span class="nav-label">Monthly Hubs</span> <span class="cnt">2</span></button>
+</div>
+
+<div class="navgroup">
+<div class="navhead">Reference</div>
+<button class="navitem" data-view="resources"><span class="nav-label">Resources &amp; Syllabus</span> <span class="cnt">20</span></button>
+<button class="navitem" data-view="kb"><span class="nav-label">Knowledge Base</span> <span class="cnt">5</span></button>
+</div>
+
+</nav>
+
+<div class="sidefoot">Click a section above,<br>or search across all of them.
+<div class="progressio">
+<button class="pio-btn" onclick="exportProgress()">⬇ Export reading progress (JSON)</button>
+<button class="pio-btn" onclick="document.getElementById('importFile').click()">⬆ Import reading progress (JSON)</button>
+<input type="file" id="importFile" accept="application/json" style="display:none" onchange="importProgress(this)">
+</div>
+</div>
+</aside>
+
+<main>
+
+<!-- ================= POLITY & CONSTITUTION — TOPIC HUB ================= -->
+<div class="view active" id="view-polity">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">GS Paper II → Polity &amp; Constitution</div></div>
+<h2>Polity &amp; Constitution — 9 topics</h2>
+<span class="pagenote">Pick a topic to see its notes · 3 of 9 topics started</span>
+<div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
+</div>
+<div class="hubprogress" id="hubprogress-polity">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-polity">0 of 24 notes read (0%)</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-polity"></div></div>
+</div>
+<div class="grid">
+
+<div class="topiccard" tabindex="0" onclick="setActiveNav('polity-t1')">
+<div class="tc-top"><span class="tc-num">Topic 1</span><span class="tc-status done">11 notes</span></div>
+<h3>Indian Constitution</h3>
+<p>Indian Constitution — historical underpinnings, evolution, features, amendments, significant provisions and basic structure.</p>
+<div class="tc-progress-track"><div class="tc-progress-fill" id="tcfill-polity-t1"></div></div>
+<span class="tc-progress-frac" id="tcfrac-polity-t1">0/11 read</span>
+</div>
+
+<div class="topiccard" tabindex="0" onclick="setActiveNav('polity-t2')">
+<div class="tc-top"><span class="tc-num">Topic 2</span><span class="tc-status done">3 notes</span></div>
+<h3>Functions of the Union &amp; States</h3>
+<p>Functions and responsibilities of the Union and the States, issues and challenges pertaining to the federal structure, devolution of powers and finances up to local levels and challenges therein.</p>
+<div class="tc-progress-track"><div class="tc-progress-fill" id="tcfill-polity-t2"></div></div>
+<span class="tc-progress-frac" id="tcfrac-polity-t2">0/3 read</span>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 3</span><span class="tc-status">Not started</span></div>
+<h3>Separation of Powers</h3>
+<p>Separation of powers between various organs, dispute redressal mechanisms and institutions.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 4</span><span class="tc-status">Not started</span></div>
+<h3>Comparative Constitutions</h3>
+<p>Comparison of the Indian constitutional scheme with that of other countries.</p>
+</div>
+
+<div class="topiccard" tabindex="0" onclick="setActiveNav('polity-t5')">
+<div class="tc-top"><span class="tc-num">Topic 5</span><span class="tc-status done">5 notes</span></div>
+<h3>Parliament &amp; State Legislatures</h3>
+<p>Parliament and State legislatures — structure, functioning, conduct of business, powers &amp; privileges and issues arising out of these.</p>
+<div class="tc-progress-track"><div class="tc-progress-fill" id="tcfill-polity-t5"></div></div>
+<span class="tc-progress-frac" id="tcfrac-polity-t5">0/5 read</span>
+</div>
+
+<div class="topiccard" tabindex="0" onclick="setActiveNav('polity-t6')">
+<div class="tc-top"><span class="tc-num">Topic 6</span><span class="tc-status done">5 notes</span></div>
+<h3>Executive &amp; Judiciary</h3>
+<p>Structure, organization and functioning of the Executive and the Judiciary — Ministries and Departments; pressure groups and formal/informal associations and their role in the Polity.</p>
+<div class="tc-progress-track"><div class="tc-progress-fill" id="tcfill-polity-t6"></div></div>
+<span class="tc-progress-frac" id="tcfrac-polity-t6">0/5 read</span>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 7</span><span class="tc-status">Not started</span></div>
+<h3>Representation of the People's Act</h3>
+<p>Salient features of the Representation of People's Act.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 8</span><span class="tc-status">Not started</span></div>
+<h3>Constitutional Bodies</h3>
+<p>Appointment to various Constitutional posts, powers, functions and responsibilities of various Constitutional Bodies.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 9</span><span class="tc-status">Not started</span></div>
+<h3>Statutory &amp; Regulatory Bodies</h3>
+<p>Statutory, regulatory and various quasi-judicial bodies.</p>
+</div>
+
+</div>
+</div>
+
+<!-- ================= POLITY & CONSTITUTION — TOPIC 1 NOTES ================= -->
+<div class="view" id="view-polity-t1">
+<div class="pageheader">
+<div class="pageheader-top">
+<div class="crumb">GS Paper II → Polity &amp; Constitution → Topic 1</div>
+<button class="backbtn small" onclick="setActiveNav('polity')">← Back to topics</button>
+</div>
+<h2>Indian Constitution</h2>
+<span class="pagenote">All 10 notes, complete · Read 00 first, then 01→09 in order.</span>
+</div>
+<div class="hubprogress" id="hubprogress-polity-t1">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress — this topic</span><span class="hubprogress-frac" id="hubfrac-polity-t1">0 of 10 notes read (0%)</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-polity-t1"></div></div>
+</div>
+<div class="grid">
+
+<div class="card" tabindex="0" data-s="00 concept constitution constitutionalism constitutional government morality dicey rule of law" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/00%20Concept%20of%20the%20Constitution%20and%20Constitutionalism.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="00 · Concept of the Constitution &amp; Constitutionalism" onclick="cardClick(this)">
+<div class="top"><span class="num">00</span><span class="ftype">HTML</span></div>
+<h3>Concept of the Constitution &amp; Constitutionalism</h3>
+<p>The theoretical primer beneath everything else — constitutionalism, constitutional government, Dicey's Rule of Law, and the constitutional morality timeline (Grote → Ambedkar → Navtej Singh Johar).</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/00%20Concept%20of%20the%20Constitution%20and%20Constitutionalism.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="01 historical underpinnings evolution constituent assembly government of india act 1935" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/01%20Historical%20Underpinnings%20and%20Evolution.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="01 · Historical Underpinnings &amp; Evolution" onclick="cardClick(this)">
+<div class="top"><span class="num">01</span><span class="ftype">HTML</span></div>
+<h3>Historical Underpinnings &amp; Evolution</h3>
+<p>From the Regulating Act, 1773 through the Government of India Act, 1935 to the Constituent Assembly — the administrative scaffolding the Constitution was built on.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/01%20Historical%20Underpinnings%20and%20Evolution.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="02 salient features preamble borrowed features quasi federal" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/02%20Salient%20Features%20and%20the%20Preamble.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="02 · Salient Features &amp; the Preamble" onclick="cardClick(this)">
+<div class="top"><span class="num">02</span><span class="ftype">HTML</span></div>
+<h3>Salient Features &amp; the Preamble</h3>
+<p>What India borrowed from Britain, the USA, Ireland and others; the Preamble's legal status doctrine (Berubari → Kesavananda Bharati → LIC of India).</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/02%20Salient%20Features%20and%20the%20Preamble.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="03 union territory article 1 2 3 4 state reorganisation" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/03%20Union%20and%20its%20Territory.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="03 · Union and its Territory" onclick="cardClick(this)">
+<div class="top"><span class="num">03</span><span class="ftype">HTML</span></div>
+<h3>Union and its Territory</h3>
+<p>Articles 1–4 — how Parliament admits, forms, and resizes States; the full 1950s-to-2019 state reorganisation timeline.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/03%20Union%20and%20its%20Territory.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="04 citizenship citizenship act 1955 oci domicile" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/04%20Citizenship.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="04 · Citizenship" onclick="cardClick(this)">
+<div class="top"><span class="num">04</span><span class="ftype">HTML</span></div>
+<h3>Citizenship</h3>
+<p>Part II of the Constitution, the Citizenship Act, 1955 and its amendments, and the domicile/OCI distinctions UPSC keeps testing.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/04%20Citizenship.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="05 amendment article 368 special majority ratification" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/05%20Amendment%20of%20the%20Constitution.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="05 · Amendment of the Constitution" onclick="cardClick(this)">
+<div class="top"><span class="num">05</span><span class="ftype">HTML</span></div>
+<h3>Amendment of the Constitution</h3>
+<p>Article 368's three amendment routes, the full 1st-to-103rd amendment history, and the "which majority for which provision" traps.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/05%20Amendment%20of%20the%20Constitution.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="06 basic structure doctrine golaknath kesavananda bharati minerva mills njac" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/06%20Basic%20Structure%20Doctrine.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="06 · Basic Structure Doctrine" onclick="cardClick(this)">
+<div class="top"><span class="num">06</span><span class="ftype">HTML</span></div>
+<h3>Basic Structure Doctrine</h3>
+<p>Shankari Prasad → Golaknath → Kesavananda Bharati → Minerva Mills → NJAC — the judiciary's most consequential invention, case by case.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/06%20Basic%20Structure%20Doctrine.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="07 fundamental rights articles 12 35 writs puttaswamy privacy" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/07%20Fundamental%20Rights.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="07 · Fundamental Rights" onclick="cardClick(this)">
+<div class="top"><span class="num">07</span><span class="ftype">HTML</span></div>
+<h3>Fundamental Rights</h3>
+<p>Articles 12–35, the five writs, and the Article 21 expansion arc from Gopalan to Maneka Gandhi to Puttaswamy — the highest-yield note in the series.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/07%20Fundamental%20Rights.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="08 directive principles state policy dpsp article 36 37 31c champakam minerva mills" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/08%20Directive%20Principles%20of%20State%20Policy.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="08 · Directive Principles of State Policy" onclick="cardClick(this)">
+<div class="top"><span class="num">08</span><span class="ftype">HTML</span></div>
+<h3>Directive Principles of State Policy</h3>
+<p>Articles 36–51, Gandhian/Socialist/Liberal classification, the Article 31C tug-of-war with Fundamental Rights from Champakam Dorairajan to Minerva Mills.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/08%20Directive%20Principles%20of%20State%20Policy.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="09 fundamental duties article 51a 42nd amendment swaran singh verma committee" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/09%20Fundamental%20Duties.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="09 · Fundamental Duties" onclick="cardClick(this)">
+<div class="top"><span class="num">09</span><span class="ftype">HTML</span></div>
+<h3>Fundamental Duties</h3>
+<p>Article 51A's 11 duties, the Swaran Singh Committee origin story, and the 86th Amendment — the note that closes out Topic 1.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/09%20Fundamental%20Duties.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="10 emergency provisions article 352 356 360 national emergency president rule financial emergency 358 359 44th amendment bommai adm jabalpur" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/10%20Emergency%20Provisions.html" data-parent="polity-t1" data-parentlabel="Topic 1 · Indian Constitution" data-title="10 · Emergency Provisions" onclick="cardClick(this)">
+<div class="top"><span class="num">10</span><span class="ftype">HTML</span></div>
+<h3>Emergency Provisions</h3>
+<p>All three emergencies in one place — the master comparison table, Articles 352–360, the 38th/42nd/44th arc, Articles 358 vs 359, and the Bommai holdings. Week 4, Days 3 &amp; 4.</p>
+<span class="chip">Week 4 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%201%20-%20Indian%20Constitution/10%20Emergency%20Provisions.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="99 exceptions ledger carve-outs only never numbers with a twin implied confidence money defeat budget rejected" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/99%20Exceptions%20Ledger.html" data-parent="polity-t1" data-parentlabel="Cross-cutting reference" data-title="★ · Exceptions Ledger" onclick="cardClick(this)">
+<div class="top"><span class="num">★</span><span class="ftype">HTML</span></div>
+<h3>The Exceptions Ledger</h3>
+<p>Every rule with a carve-out, every "only" that is nearly true, and every number with a near-identical twin — gathered in one place, because this is the category statement questions are built from. Revise the evening before each test.</p>
+<span class="chip">Cross-cutting · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/99%20Exceptions%20Ledger.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+</div>
+</div>
+
+<!-- ================= POLITY — TOPIC 2 NOTES ================= -->
+<div class="view" id="view-polity-t2">
+<div class="pageheader">
+<div class="pageheader-top">
+<div class="crumb">GS Paper II → Polity &amp; Constitution → Topic 2</div>
+<button class="backbtn small" onclick="setActiveNav('polity')">← Back to topics</button>
+</div>
+<h2>Functions of the Union &amp; States</h2>
+<span class="pagenote">3 of 4 syllabus elements covered · Read 01 → 02 → 03 in order.</span>
+</div>
+<div class="hubprogress" id="hubprogress-polity-t2">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress — this topic</span><span class="hubprogress-frac" id="hubfrac-polity-t2">0 of 3 notes read (0%)</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-polity-t2"></div></div>
+</div>
+<div class="grid">
+
+<div class="card" tabindex="0" data-s="01 federal system quasi-federal wheare austin jennings morris-jones bommai" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%202%20-%20Functions%20of%20the%20Union%20%26%20States/01%20Federal%20System.html" data-parent="polity-t2" data-parentlabel="Topic 2 · Functions of the Union &amp; States" data-title="01 · Federal System" onclick="cardClick(this)">
+<div class="top"><span class="num">01</span><span class="ftype">HTML</span></div>
+<h3>Federal System</h3>
+<p>Federal vs unitary features of the Constitution, the quasi-federal debate, and the four scholarly labels (Wheare, Austin, Jennings, Morris-Jones) UPSC tests as a matching exercise.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%202%20-%20Functions%20of%20the%20Union%20%26%20States/01%20Federal%20System.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="02 centre state relations legislative administrative financial article 254 finance commission gst council" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%202%20-%20Functions%20of%20the%20Union%20%26%20States/02%20Centre-State%20Relations.html" data-parent="polity-t2" data-parentlabel="Topic 2 · Functions of the Union &amp; States" data-title="02 · Centre-State Relations" onclick="cardClick(this)">
+<div class="top"><span class="num">02</span><span class="ftype">HTML</span></div>
+<h3>Centre-State Relations</h3>
+<p>Articles 245–293 — legislative, administrative and financial relations, plus the Sarkaria/Punchhi Commissions and the cooperative-vs-competitive federalism trend.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%202%20-%20Functions%20of%20the%20Union%20%26%20States/02%20Centre-State%20Relations.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="03 inter state relations water disputes article 262 263 inter-state council zonal councils trade commerce" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%202%20-%20Functions%20of%20the%20Union%20%26%20States/03%20Inter-State%20Relations.html" data-parent="polity-t2" data-parentlabel="Topic 2 · Functions of the Union &amp; States" data-title="03 · Inter-State Relations" onclick="cardClick(this)">
+<div class="top"><span class="num">03</span><span class="ftype">HTML</span></div>
+<h3>Inter-State Relations</h3>
+<p>Water disputes &amp; tribunals (Art 262), the Inter-State Council (Art 263), full faith &amp; credit (Art 261), free trade &amp; commerce (Arts 301–307), and the five Zonal Councils.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%202%20-%20Functions%20of%20the%20Union%20%26%20States/03%20Inter-State%20Relations.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+</div>
+</div>
+
+<!-- ================= POLITY — TOPIC 5 NOTES ================= -->
+<div class="view" id="view-polity-t5">
+<div class="pageheader">
+<div class="pageheader-top">
+<div class="crumb">GS Paper II → Polity &amp; Constitution → Topic 5</div>
+<button class="backbtn small" onclick="setActiveNav('polity')">← Back to topics</button>
+</div>
+<h2>Parliament &amp; State Legislatures</h2>
+<span class="pagenote">4 notes built — foundational primer plus the full structure/powers/budget/privileges sequence, reverse-engineered from Week 1 &amp; 2 test-depth patterns ahead of Week 3.</span>
+</div>
+<div class="hubprogress" id="hubprogress-polity-t5">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress — this topic</span><span class="hubprogress-frac" id="hubfrac-polity-t5">0 of 4 notes read (0%)</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-polity-t5"></div></div>
+</div>
+<div class="grid">
+
+<div class="card" tabindex="0" data-s="00 parliamentary system presidential government article 74 75 collective responsibility indian vs british model" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/00%20Parliamentary%20System%20and%20Presidential%20Government.html" data-parent="polity-t5" data-parentlabel="Topic 5 · Parliament &amp; State Legislatures" data-title="00 · Parliamentary System &amp; Presidential Government" onclick="cardClick(this)">
+<div class="top"><span class="num">00</span><span class="ftype">HTML</span></div>
+<h3>Parliamentary System &amp; Presidential Government</h3>
+<p>Why India chose a Parliamentary system over a Presidential one — features, merits/demerits, and the precise differences between the Indian and British models.</p>
+<span class="chip">✓ PYQ-verified</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/00%20Parliamentary%20System%20and%20Presidential%20Government.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="01 structure composition parliament lok sabha rajya sabha electoral college speaker deputy speaker joint sitting article 108" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/01%20Structure%20and%20Composition%20of%20Parliament.html" data-parent="polity-t5" data-parentlabel="Topic 5 · Parliament &amp; State Legislatures" data-title="01 · Structure &amp; Composition of Parliament" onclick="cardClick(this)">
+<div class="top"><span class="num">01</span><span class="ftype">HTML</span></div>
+<h3>Structure &amp; Composition of Parliament</h3>
+<p>Lok Sabha vs Rajya Sabha composition, election methods, qualifications, Speaker/Deputy Speaker, and Article 108 joint sittings — Week 3, Day 4.</p>
+<span class="chip">Week 3 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/01%20Structure%20and%20Composition%20of%20Parliament.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="02 powers functions legislative process money bill financial bill ordinary bill article 110 117 private members bill" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/02%20Powers%20Functions%20and%20Legislative%20Process.html" data-parent="polity-t5" data-parentlabel="Topic 5 · Parliament &amp; State Legislatures" data-title="02 · Powers, Functions &amp; Legislative Process" onclick="cardClick(this)">
+<div class="top"><span class="num">02</span><span class="ftype">HTML</span></div>
+<h3>Powers, Functions &amp; Legislative Process</h3>
+<p>The six-category powers checklist, Bill types, and the Money Bill vs Financial Bill distinction that's this test's favourite trap — Week 3, Day 5.</p>
+<span class="chip">Week 3 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/02%20Powers%20Functions%20and%20Legislative%20Process.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="03 budget sessions parliamentary privileges annual financial statement cut motion guillotine article 105 194 not codified" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/03%20Budget%20Sessions%20and%20Parliamentary%20Privileges.html" data-parent="polity-t5" data-parentlabel="Topic 5 · Parliament &amp; State Legislatures" data-title="03 · Budget, Sessions &amp; Parliamentary Privileges" onclick="cardClick(this)">
+<div class="top"><span class="num">03</span><span class="ftype">HTML</span></div>
+<h3>Budget, Sessions &amp; Parliamentary Privileges</h3>
+<p>Session/adjournment/prorogation/dissolution, the Budget's stage-by-stage journey, cut motions, and why privileges are barely codified — Week 3, Day 6.</p>
+<span class="chip">Week 3 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/03%20Budget%20Sessions%20and%20Parliamentary%20Privileges.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="04 state legislature vidhan sabha vidhan parishad article 168 169 170 171 172 legislative council abolition joint sitting article 200" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/04%20State%20Legislature.html" data-parent="polity-t5" data-parentlabel="Topic 5 · Parliament &amp; State Legislatures" data-title="04 · State Legislature" onclick="cardClick(this)">
+<div class="top"><span class="num">04</span><span class="ftype">HTML</span></div>
+<h3>State Legislature</h3>
+<p>Vidhan Sabha and Vidhan Parishad — Article 169 creation and abolition, the six categories of Article 171, and why there is no joint sitting at State level. Week 4, Day 6.</p>
+<span class="chip">Week 4 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%205%20-%20Parliament%20%26%20State%20Legislatures/04%20State%20Legislature.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+</div>
+</div>
+
+<!-- ================= POLITY — TOPIC 6 NOTES ================= -->
+<div class="view" id="view-polity-t6">
+<div class="pageheader">
+<div class="pageheader-top">
+<div class="crumb">GS Paper II → Polity &amp; Constitution → Topic 6</div>
+<button class="backbtn small" onclick="setActiveNav('polity')">← Back to topics</button>
+</div>
+<h2>Executive &amp; Judiciary</h2>
+<span class="pagenote">3 notes built — President &amp; VP, Governor, and PM &amp; Council of Ministers — Week 3, Days 1–3.</span>
+</div>
+<div class="hubprogress" id="hubprogress-polity-t6">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress — this topic</span><span class="hubprogress-frac" id="hubfrac-polity-t6">0 of 3 notes read (0%)</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-polity-t6"></div></div>
+</div>
+<div class="grid">
+
+<div class="card" tabindex="0" data-s="00 president vice president electoral college electoral college vote value formula article 61 impeachment article 72 pardon kehar singh epuru sudhakar" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/00%20President%20and%20Vice-President.html" data-parent="polity-t6" data-parentlabel="Topic 6 · Executive &amp; Judiciary" data-title="00 · President &amp; Vice-President" onclick="cardClick(this)">
+<div class="top"><span class="num">00</span><span class="ftype">HTML</span></div>
+<h3>President &amp; Vice-President</h3>
+<p>Electoral College &amp; vote-value formula, Article 61 impeachment, the 42nd/44th Amendment discretion story, veto types, and the Article 72 vs 161 pardon distinction — Week 3, Day 1.</p>
+<span class="chip">Week 3 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/00%20President%20and%20Vice-President.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="01 governor discretionary powers article 200 article 356 bommai nabam rebia rameshwar prasad pardoning power article 161" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/01%20Governor.html" data-parent="polity-t6" data-parentlabel="Topic 6 · Executive &amp; Judiciary" data-title="01 · Governor" onclick="cardClick(this)">
+<div class="top"><span class="num">01</span><span class="ftype">HTML</span></div>
+<h3>Governor</h3>
+<p>Appointment &amp; pleasure-of-President removal, the full discretionary-powers list, Article 200's Bill-reservation asymmetry, and case law from Bommai to Nabam Rebia — Week 3, Day 2.</p>
+<span class="chip">Week 3 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/01%20Governor.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="02 prime minister council of ministers 91st amendment 15 percent cap collective responsibility article 75 individual responsibility cabinet" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/02%20Prime%20Minister%20and%20Council%20of%20Ministers.html" data-parent="polity-t6" data-parentlabel="Topic 6 · Executive &amp; Judiciary" data-title="02 · Prime Minister &amp; Council of Ministers" onclick="cardClick(this)">
+<div class="top"><span class="num">02</span><span class="ftype">HTML</span></div>
+<h3>Prime Minister &amp; Council of Ministers</h3>
+<p>Appointment mechanics, the 91st Amendment's 15% ministry-size cap, and the collective vs individual responsibility distinction under Article 75(3) — Week 3, Day 3.</p>
+<span class="chip">Week 3 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/02%20Prime%20Minister%20and%20Council%20of%20Ministers.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="03 chief minister state council of ministers article 163 164 167 tribal welfare minister 91st amendment shamsher singh" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/03%20Chief%20Minister%20and%20State%20Council%20of%20Ministers.html" data-parent="polity-t6" data-parentlabel="Topic 6 · Executive &amp; Judiciary" data-title="03 · Chief Minister &amp; State Council of Ministers" onclick="cardClick(this)">
+<div class="top"><span class="num">03</span><span class="ftype">HTML</span></div>
+<h3>Chief Minister &amp; State Council of Ministers</h3>
+<p>Articles 163–164 — the State mirror of the PM, examined on where the mirror breaks: the minimum of twelve, the Tribal Welfare Minister, and an Article 163 that was never amended. Week 4, Day 2.</p>
+<span class="chip">Week 4 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/03%20Chief%20Minister%20and%20State%20Council%20of%20Ministers.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+<div class="card" tabindex="0" data-s="04 cabinet committees parliamentary forums article 77(3) rules of business CCS CCEA appointments committee empowered group of ministers" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/04%20Cabinet%20Committees%20and%20Parliamentary%20Forums.html" data-parent="polity-t6" data-parentlabel="Topic 6 · Executive &amp; Judiciary" data-title="04 · Cabinet Committees &amp; Parliamentary Forums" onclick="cardClick(this)">
+<div class="top"><span class="num">04</span><span class="ftype">HTML</span></div>
+<h3>Cabinet Committees &amp; Parliamentary Forums</h3>
+<p>Two extra-constitutional bodies, examined almost entirely on who chairs what — Article 77(3), the standing committees, and forums that decide nothing. Week 4, Day 5.</p>
+<span class="chip">Week 4 · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/Polity%20%26%20Constitution/Topic%206%20-%20Executive%20%26%20Judiciary/04%20Cabinet%20Committees%20and%20Parliamentary%20Forums.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+</div>
+</div>
+
+<!-- ================= GOVERNANCE — TOPIC HUB ================= -->
+<div class="view" id="view-governance">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">GS Paper II → Governance</div></div>
+<h2>Governance — 3 topics</h2>
+<span class="pagenote">Cheapest cluster — piggybacks on the other three · 0 of 3 topics started</span>
+<div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="governance" data-parentlabel="Governance" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
+</div>
+<div class="hubprogress empty" id="hubprogress-governance">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-governance">No notes written yet — nothing to mark read</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-governance"></div></div>
+</div>
+<div class="grid">
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 1</span><span class="tc-status">Not started</span></div>
+<h3>Government Policies &amp; Interventions</h3>
+<p>Government policies and interventions for development in various sectors and issues arising out of their design and implementation.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 2</span><span class="tc-status">Not started</span></div>
+<h3>Governance, Transparency &amp; E-Governance</h3>
+<p>Important aspects of governance, transparency and accountability, e-governance — applications, models, successes, limitations, and potential; citizens charters, transparency &amp; accountability and institutional and other measures.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 3</span><span class="tc-status">Not started</span></div>
+<h3>Role of Civil Services</h3>
+<p>Role of civil services in a democracy.</p>
+</div>
+
+</div>
+</div>
+
+<!-- ================= INTERNATIONAL RELATIONS — TOPIC HUB ================= -->
+<div class="view" id="view-ir">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">GS Paper II → International Relations</div></div>
+<h2>International Relations — 4 topics</h2>
+<span class="pagenote">Frameworks + headlines, kept light but continuous · 0 of 4 topics started</span>
+<div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="ir" data-parentlabel="International Relations" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
+</div>
+<div class="hubprogress empty" id="hubprogress-ir">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-ir">No notes written yet — nothing to mark read</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-ir"></div></div>
+</div>
+<div class="grid">
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 1</span><span class="tc-status">Not started</span></div>
+<h3>India &amp; its Neighbourhood</h3>
+<p>India and its neighborhood — relations.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 2</span><span class="tc-status">Not started</span></div>
+<h3>Groupings &amp; Agreements</h3>
+<p>Bilateral, regional and global groupings and agreements involving India and/or affecting India's interests.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 3</span><span class="tc-status">Not started</span></div>
+<h3>Great-Power Politics &amp; Diaspora</h3>
+<p>Effect of policies and politics of developed and developing countries on India's interests; Indian diaspora.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 4</span><span class="tc-status">Not started</span></div>
+<h3>International Institutions</h3>
+<p>Important International institutions, agencies and fora — their structure, mandate.</p>
+</div>
+
+</div>
+</div>
+
+<!-- ================= SOCIAL JUSTICE — TOPIC HUB ================= -->
+<div class="view" id="view-socialjustice">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">GS Paper II → Social Justice</div></div>
+<h2>Social Justice — 4 topics</h2>
+<span class="pagenote">Your differentiator — most aspirants write it poorly · 0 of 4 topics started</span>
+<div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="socialjustice" data-parentlabel="Social Justice" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
+</div>
+<div class="hubprogress empty" id="hubprogress-socialjustice">
+<div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-socialjustice">No notes written yet — nothing to mark read</span></div>
+<div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-socialjustice"></div></div>
+</div>
+<div class="grid">
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 1</span><span class="tc-status">Not started</span></div>
+<h3>Development Processes &amp; the Development Industry</h3>
+<p>Development processes and the development industry — the role of NGOs, SHGs, various groups and associations, donors, charities, institutional and other stakeholders.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 2</span><span class="tc-status">Not started</span></div>
+<h3>Welfare Schemes for Vulnerable Sections</h3>
+<p>Welfare schemes for vulnerable sections by the Centre and States and their performance; mechanisms, laws, institutions and Bodies constituted for the protection and betterment of these vulnerable sections.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 3</span><span class="tc-status">Not started</span></div>
+<h3>Social Sector: Health, Education, HR</h3>
+<p>Issues relating to development and management of Social Sector/Services relating to Health, Education, Human Resources.</p>
+</div>
+
+<div class="topiccard disabled" tabindex="-1">
+<div class="tc-top"><span class="tc-num">Topic 4</span><span class="tc-status">Not started</span></div>
+<h3>Poverty &amp; Hunger</h3>
+<p>Issues relating to poverty and hunger.</p>
+</div>
+
+</div>
+</div>
+
+<!-- ================= GEOGRAPHY (GS Paper I) ================= -->
+<div class="view" id="view-geography">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">GS Paper I → Geography</div></div>
+<h2>Geography</h2>
+<div class="syllink disabled" title="GS Paper I syllabus not yet added — ask to have it built">📖 GS Paper I Syllabus — not added yet</div>
+</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="origin of the universe geography gs paper 1" data-href="UPSC-CSE/GS%20Paper%20I/Geography/Origin_of_Universe_Illustrated_UPSC_Notes.html" data-parent="geography" data-parentlabel="Geography" data-title="Origin of the Universe" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span></div>
+<h3>Origin of the Universe</h3>
+<p>Illustrated concept note — the only GS Paper I note built so far.</p>
+</div>
+</div>
+</div>
+
+<!-- ================= CURRENT AFFAIRS ================= -->
+<div class="view" id="view-ca">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">UPSC-CSE → Current Affairs</div></div>
+<h2>Current Affairs</h2>
+<p class="pagenote"><b>One file per month. Weeks are tabs inside it.</b> Open a month, click the week you want — no second file, no dead links. Weeks run <b>Sunday to Saturday</b>: read Saturday evening, tested Sunday morning. Every topic card carries <b>what · who · when · where · how much</b> for Prelims, the <b>static hook</b> for linkage questions, and <b>why · how · pros · cons · way forward</b> for Mains. Method: <b>CURRENT_AFFAIRS_METHOD.md</b>.</p>
+</div>
+
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">◷</span><h3>2026</h3><span class="fh-count">2 months</span></div>
+<div class="folderpath">UPSC-CSE / Current Affairs / 2026</div>
+<div class="grid">
+
+<div class="card" tabindex="0" data-s="current affairs august 2026 rbi mpc repo census 2027 semicon vibrant villages ramsar cites bonn weekly tabs" data-href="UPSC-CSE/Current%20Affairs/2026/2026-08%20August.html" data-parent="ca" data-parentlabel="Current Affairs" data-title="August 2026" onclick="cardClick(this)">
+<div class="top"><span class="num">08</span><span class="ftype">HTML</span><span class="kind kind-ref">5 week tabs</span></div>
+<h3>August 2026</h3>
+<p><b>Week 1 (Sun 02 – Sat 08) built.</b> RBI Monetary Policy · Census 2027 · Semicon 2.0 · Vibrant Villages · coastal &amp; Ramsar. Tabs for all five weeks, an entity index, the question bank, cross-week themes and a month recall.</p>
+<span class="chip">Weeks as tabs · new</span>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/Current%20Affairs/2026/2026-08%20August.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+<div class="card" tabindex="0" data-s="current affairs july 2026 monsoon session bills semicon samudra manthan pm kisan seafarer msme supreme court judges linkage" data-href="UPSC-CSE/Current%20Affairs/2026/2026-07%20July.html" data-parent="ca" data-parentlabel="Current Affairs" data-title="July 2026" onclick="cardClick(this)">
+<div class="top"><span class="num">07</span><span class="ftype">HTML</span><span class="kind kind-ref">Monthly</span></div>
+<h3>July 2026</h3>
+<p>17 fact cards, a static linkage map, 4 budget-checked Mains answers and 19 questions — 11 of them linkage. Built before the weekly format, so it is organised by subject rather than by week.</p>
+<label class="readtoggle" onclick="event.stopPropagation()"><input type="checkbox" data-readkey="UPSC-CSE/Current%20Affairs/2026/2026-07%20July.html" onchange="toggleRead(this)"> <span>Mark as read</span></label>
+</div>
+
+</div>
+</div>
+
+<div class="emptystate" style="margin-top:6px;">September 2026 opens at the start of the month. One card per month, however many weeks it holds.</div>
+</div>
+
+
+
+<!-- ================= RESOURCES & SYLLABUS ================= -->
+<div class="view" id="view-resources">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">UPSC-CSE → Reference material</div></div>
+<h2>Syllabus, plans &amp; source PDFs</h2>
+<p class="pagenote">Grouped exactly as the folders sit on disk. Within each week: the <b>plan</b>, then the <b>question papers</b>, then the <b>answer keys</b>, then the <b>result</b>. Notes are not listed here — they live under their own topics.</p>
+</div>
+
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">◆</span><h3>Syllabus</h3><span class="fh-count">1 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / CLAUDE_NOTES</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="gs2 syllabus annotated" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-ref">Syllabus</span></div>
+<h3>GS Paper II Syllabus (annotated)</h3>
+<p>The syllabus-analysis copy every note is mapped against. Start here when deciding what to build next.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">①</span><h3>Week 1 Plan</h3><span class="fh-count">6 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 1 Plan</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="week 1 study plan polity governance" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/Week%201%20Study%20Plan%20Indian%20Polity%20%26%20Governance.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 1 Study Plan" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-plan">Plan</span></div>
+<h3>Week 1 Study Plan</h3>
+<p>Day-wise NCERT and Laxmikanth chapter sequence.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 prelims test paper" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/1910326UG%20SSP%20Week%20-%201%20Polity.pdf_UG%20SSP%20Week%20-%201%20Polity.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Prelims Test — 50 questions" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-paper">Question paper</span></div>
+<h3>Prelims Test — 50 questions</h3>
+<p>The Week 1 objective paper as set.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 prelims answers explanations key" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/6488391UG%20SSP%20Week%20-%201%20Polity%20Ans%20Sheet.pdf_UG%20SSP%20Week%20-%201%20Polity%20Ans%20Sheet.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Prelims Answers &amp; Explanations" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-key">Answer key</span></div>
+<h3>Prelims Answers &amp; Explanations</h3>
+<p>Official solutions — the source for the depth calibration in TEST_INTELLIGENCE.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 mains test paper" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/706563612717736300.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Mains Test — 5 questions" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-paper">Question paper</span></div>
+<h3>Mains Test — 5 questions</h3>
+<p>The Week 1 Mains paper.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 mains model answers" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/227308823029341600.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Mains Model Answers" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-key">Answer key</span></div>
+<h3>Mains Model Answers</h3>
+<p>Official model answers for the Week 1 Mains paper.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 test result rank 6 38.78" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/Test%20Result.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Test Result — 38.78 / 100" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-result">Result</span></div>
+<h3>Test Result — 38.78 / 100</h3>
+<p>Rank 6. 25 correct, 17 wrong, 7 skipped.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">②</span><h3>Week 2 Plan</h3><span class="fh-count">3 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 2 Plan</div>
+<div class="grid">
+<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
+<h3>Week 2 Schedule</h3>
+<p>Day-wise topic schedule for Week 2.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="week 2 test result 18.80" data-href="UPSC-CSE/GS%20Paper%20II/Week%202%20Plan/Test%20Result.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Test Result — 18.80 / 100" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-result">Result</span></div>
+<h3>Test Result — 18.80 / 100</h3>
+<p>Rank 2. The endgame collapse: 13 unattempted, 8 of them in the last 11 questions.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 2 battle plan postmortem question dna" data-href="UPSC-CSE/GS%20Paper%20II/Week%202%20Plan/Week%202%20Battle%20Plan.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 2 Battle Plan" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-ref">Analysis</span></div>
+<h3>Week 2 Battle Plan</h3>
+<p>Postmortem and question-DNA analysis written after the Week 2 paper.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">③</span><h3>Week 3 Plan</h3><span class="fh-count">3 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 3 Plan</div>
+<div class="grid">
+<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
+<h3>Week 3 Plan</h3>
+<p>President, Vice-President, Governor, PM &amp; Council, Parliament.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="week 3 mock test 50 questions ugssp" data-href="UPSC-CSE/GS%20Paper%20II/Week%203%20Plan/Week%203%20Mock%20Test.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 3 Mock Test" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
+<h3>Week 3 Mock Test</h3>
+<p>50 questions, 60 minutes. Scored 92.68 — but built from your own notes.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 3 test result 62.08" data-href="UPSC-CSE/GS%20Paper%20II/Week%203%20Plan/Test%20Result%20Week%203.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Test Result — 62.08 / 100" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-result">Result</span></div>
+<h3>Test Result — 62.08 / 100</h3>
+<p>35 correct, 12 wrong, 3 skipped. Negative format 2/2, Statements 64%.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">④</span><h3>Week 4 Plan</h3><span class="fh-count">2 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 4 Plan</div>
+<div class="grid">
+<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
+<h3>Week 4 Plan</h3>
+<p>Committees &amp; devices, CM &amp; State CoM, Emergency (2 days), Cabinet Committees, State Legislature.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="week 4 mock test 50 questions statements" data-href="UPSC-CSE/GS%20Paper%20II/Week%204%20Plan/Week%204%20Mock%20Test.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 4 Mock Test" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
+<h3>Week 4 Mock Test</h3>
+<p>50 questions weighted to Statements (18 of 50), with a balanced a/b/c/d key.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">◈</span><h3>Reference material</h3><span class="fh-count">3 items</span></div>
+<div class="folderpath">UPSC-CSE / Resources</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="microtheme prelims pyqs 2009 2025 civilsdaily" data-href="UPSC-CSE/Resources/Microtheme%20Prelims%20%5BPYQs%202009-2025%5D%20Civilsdailyias.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Microtheme Prelims PYQs, 2009–2025" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-ref">Reference</span></div>
+<h3>Microtheme Prelims PYQs, 2009–2025</h3>
+<p>Seventeen years of Prelims PYQs grouped by microtheme — the PYQ source of record.</p>
+</div>
+<div class="card" tabindex="0" data-s="50 ai prompts upsc preparation" data-href="UPSC-CSE/Resources/50%20Ready%20to%20Use%20AI%20Prompts%20for%20UPSC%20Preparation%20.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="50 Ready-to-Use AI Prompts" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-ref">Reference</span></div>
+<h3>50 Ready-to-Use AI Prompts</h3>
+<p>Prompt patterns for UPSC preparation.</p>
+</div>
+<div class="card" tabindex="0" data-s="ai for upsc preparation lecture deck" data-href="UPSC-CSE/Resources/AI_for_UPSC_Preparation_Lecture.pptx" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="AI for UPSC Preparation — Lecture" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PPTX</span><span class="kind kind-ref">Reference</span></div>
+<h3>AI for UPSC Preparation — Lecture</h3>
+<p>Lecture deck on using AI tools in preparation.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">⌘</span><h3>Generator prompts</h3><span class="fh-count">2 items</span></div>
+<div class="folderpath">UPSC-CSE / PROMPTS</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="notes generator prompt template" data-href="UPSC-CSE/PROMPTS/CLAUDE_NOTES_GENERATOR_PROMPT.txt" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Notes — Generator Prompt" onclick="cardClick(this)">
+<div class="top"><span class="ftype">TXT</span><span class="kind kind-ref">Prompt</span></div>
+<h3>Notes — Generator Prompt</h3>
+<p>The template contract every note file is built against.</p>
+</div>
+<div class="card" tabindex="0" data-s="syllabus analysis generator prompt" data-href="UPSC-CSE/PROMPTS/CLAUDE_SYLLABUS_ANALYSIS_GENERATOR_PROMPT.md" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Syllabus Analysis — Generator Prompt" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span><span class="kind kind-ref">Prompt</span></div>
+<h3>Syllabus Analysis — Generator Prompt</h3>
+<p>Prompt used to produce the annotated syllabus.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ================= KNOWLEDGE BASE ================= -->
+<div class="view" id="view-kb">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">AI_KNOWLEDGE_BASE (system docs, not exam content)</div></div>
+<h2>How this whole system works</h2>
+</div>
+<div class="grid">
+
+<div class="card" tabindex="0" data-s="current affairs method prelims fact cards mains material revision schedule" data-href="AI_KNOWLEDGE_BASE/CURRENT_AFFAIRS_METHOD.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="CURRENT_AFFAIRS_METHOD.md" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>Current Affairs — Method</h3>
+<p>Built from the 2013–2024 question counts and the actual Prelims 2025 CA questions. Fact cards for Prelims, separate material for Mains, monthly files, and a revision schedule. Replaces the two archived prompt files.</p>
+</div>
+<div class="card" tabindex="0" data-s="prep system overview orientation index" data-href="AI_KNOWLEDGE_BASE/PREP_SYSTEM_OVERVIEW.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="System Overview" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>System Overview</h3>
+<p>Start here — orientation and index to the other six knowledge-base files.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="agent mentor persona tone rules" data-href="AI_KNOWLEDGE_BASE/AGENT_MENTOR_PERSONA.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="Agent Mentor Persona" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>Agent Mentor Persona</h3>
+<p>The mentor role, tone rules, and non-negotiables Claude follows in this project.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="note generation workflow" data-href="AI_KNOWLEDGE_BASE/NOTE_GENERATION_WORKFLOW.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="Note Generation Workflow" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>Note Generation Workflow</h3>
+<p>The step-by-step process for turning a syllabus line into a finished note file.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="folder and file structure naming convention" data-href="AI_KNOWLEDGE_BASE/FOLDER_AND_FILE_STRUCTURE.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="Folder &amp; File Structure" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>Folder &amp; File Structure</h3>
+<p>The naming and foldering convention, with the worked Topic 1 example — the rulebook this dashboard mirrors.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="test intelligence prelims question dna error patterns negative how many assertion reason question gauntlet postmortem loop coverage audit" data-href="AI_KNOWLEDGE_BASE/TEST_INTELLIGENCE.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="Test Intelligence — Prelims" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>★ Test Intelligence — Prelims</h3>
+<p>Built from the Week 1 &amp; 2 postmortems: the test-maker's question DNA, the six-source coverage contract, your measured error patterns (negative-phrased 0%, endgame collapse) with countermeasures, the question-gauntlet rules every note must meet, and the weekly postmortem loop.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="mains answer craft writing directive words examine critically analyse value addition archetypes rubric examiner evaluation 250 words" data-href="AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="Mains Answer Craft" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>★ Mains Answer Craft</h3>
+<p>How to write a scoring Mains answer: the examiner's real reading behaviour, where marks actually come from, the directive-word table, the six GS-II question archetypes, the value-addition arsenal, time discipline and a self-scoring rubric.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="preparation strategy clusters topics concepts study plan" data-href="AI_KNOWLEDGE_BASE/PREPARATION_STRATEGY.md" data-parent="kb" data-parentlabel="Knowledge Base" data-title="Preparation Strategy" onclick="cardClick(this)">
+<div class="top"><span class="ftype">MD</span></div>
+<h3>Preparation Strategy</h3>
+<p>The big-picture orientation — how the syllabus decomposes into subjects, clusters, topics, and concepts.</p>
+</div>
+
+</div>
+</div>
+
+<!-- ================= SEARCH RESULTS (flattened, all views) ================= -->
+<div class="searchresults" id="searchresults">
+<div class="pageheader">
+<div class="pageheader-top"><div class="crumb">Search results</div></div>
+<h2>Matching files</h2>
+</div>
+<div id="resultsgrid"></div>
+<div id="noresults" class="hidden">No files match that search.</div>
+</div>
+
+<!-- ================= READER (in-page note viewer) ================= -->
+<div class="view" id="view-reader">
+<div class="readerbar">
+<button class="backbtn" onclick="goBackToParent()">← Back to <span id="readerParentLabel">Topic 1</span></button>
+<div class="readercrumb"><span id="readerParentCrumb">Topic 1</span> → <span id="readerTitle">Note</span></div>
+<a class="opennewtab" id="readerOpenNewTab" href="#" target="_blank">Open in new tab ↗</a>
+</div>
+<div class="readerframe-wrap">
+<iframe id="readerFrame" src="" title="Note viewer"></iframe>
+</div>
+</div>
+
+<footer>
+UPSC CSE Prep Navigator — a plain local index, regenerate any time the Prep folder changes.<br>
+Open this file directly from the Prep folder root; every link above is a relative path to a file in this same folder tree.
+</footer>
+
+</main>
+
+<script>
+const q = document.getElementById('q');
+const hint = document.getElementById('searchhint');
+const navitems = Array.from(document.querySelectorAll('.navitem'));
+const views = Array.from(document.querySelectorAll('.view'));
+const searchresults = document.getElementById('searchresults');
+const resultsgrid = document.getElementById('resultsgrid');
+const noresults = document.getElementById('noresults');
+
+let currentParent = 'polity';
+
+// Build a lookup of view-name -> {label, crumb, cards[]}
+function collectSourceCards() {
+  const map = {};
+  views.forEach(v => {
+    if (v.id === 'view-reader') return;
+    const name = v.id.replace('view-', '');
+    const crumb = v.querySelector('.crumb') ? v.querySelector('.crumb').innerText : name;
+    const cards = Array.from(v.querySelectorAll('[data-s]'));
+    map[name] = { crumb, cards };
+  });
+  return map;
+}
+const sourceMap = collectSourceCards();
+
+const mainEl = document.querySelector('main');
+
+function setActiveNav(name, opts) {
+  const topLevel = name.split('-')[0];
+  navitems.forEach(b => b.classList.toggle('active', b.dataset.view === topLevel));
+  views.forEach(v => v.classList.toggle('active', v.id === 'view-' + name));
+  searchresults.classList.remove('active');
+  mainEl.classList.toggle('reader-mode', name === 'reader');
+  if (name !== 'reader') currentParent = name;
+  window.scrollTo(0, 0);
+  if (!opts || !opts.skipSave) saveNavState({ type: 'nav', name: name });
+}
+
+navitems.forEach(b => b.addEventListener('click', () => {
+  setActiveNav(b.dataset.view);
+  q.value = '';
+  hint.style.display = 'none';
+}));
+
+function openReader(href, parent, parentlabel, title, opts) {
+  document.getElementById('readerFrame').src = href;
+  document.getElementById('readerOpenNewTab').href = href;
+  document.getElementById('readerParentLabel').innerText = parentlabel;
+  document.getElementById('readerParentCrumb').innerText = parentlabel;
+  document.getElementById('readerTitle').innerText = title;
+  document.getElementById('readerTitle').dataset.parent = parent;
+  currentParent = parent;
+  const parentTopLevel = parent.split('-')[0];
+  navitems.forEach(b => b.classList.toggle('active', b.dataset.view === parentTopLevel));
+  views.forEach(v => v.classList.toggle('active', v.id === 'view-reader'));
+  searchresults.classList.remove('active');
+  mainEl.classList.add('reader-mode');
+  window.scrollTo(0, 0);
+  if (!opts || !opts.skipSave) saveNavState({ type: 'reader', href: href, parent: parent, parentlabel: parentlabel, title: title });
+}
+
+function cardClick(el) {
+  const href = el.dataset.href;
+  const embed = el.dataset.embed !== 'false';
+  if (!embed) { window.open(href, '_blank'); return; }
+  openReader(href, el.dataset.parent, el.dataset.parentlabel, el.dataset.title);
+}
+
+function goBackToParent() {
+  setActiveNav(currentParent);
+}
+
+/* ===== PERSIST CURRENT VIEW ACROSS REFRESH (via URL hash, no server needed) ===== */
+function saveNavState(state) {
+  try {
+    history.replaceState(null, '', '#s=' + encodeURIComponent(JSON.stringify(state)));
+  } catch (e) { /* ignore */ }
+}
+
+function restoreNavState() {
+  const h = location.hash;
+  if (!h || h.indexOf('#s=') !== 0) return false;
+  try {
+    const state = JSON.parse(decodeURIComponent(h.slice(3)));
+    if (state && state.type === 'reader' && state.href) {
+      openReader(state.href, state.parent, state.parentlabel, state.title, { skipSave: true });
+      saveNavState(state);
+      return true;
+    }
+    if (state && state.type === 'nav' && state.name) {
+      setActiveNav(state.name, { skipSave: true });
+      saveNavState(state);
+      return true;
+    }
+  } catch (e) { /* malformed hash — fall through to default view */ }
+  return false;
+}
+
+q.addEventListener('input', () => {
+  const term = q.value.trim().toLowerCase();
+  if (!term) {
+    hint.style.display = 'none';
+    setActiveNav(currentParent || 'polity');
+    return;
+  }
+  hint.style.display = 'block';
+  navitems.forEach(b => b.classList.remove('active'));
+  views.forEach(v => v.classList.remove('active'));
+  searchresults.classList.add('active');
+
+  resultsgrid.innerHTML = '';
+  let any = false;
+  Object.keys(sourceMap).forEach(name => {
+    const { crumb, cards } = sourceMap[name];
+    const matches = cards.filter(c => c.getAttribute('data-s').includes(term) || c.innerText.toLowerCase().includes(term));
+    if (matches.length) {
+      any = true;
+      const groupDiv = document.createElement('div');
+      groupDiv.className = 'resultgroup';
+      const crumbEl = document.createElement('div');
+      crumbEl.className = 'rg-crumb';
+      crumbEl.innerText = crumb;
+      groupDiv.appendChild(crumbEl);
+      const gridEl = document.createElement('div');
+      gridEl.className = 'grid';
+      matches.forEach(c => gridEl.appendChild(c.cloneNode(true)));
+      groupDiv.appendChild(gridEl);
+      resultsgrid.appendChild(groupDiv);
+    }
+  });
+  noresults.classList.toggle('hidden', any);
+});
+
+/* ===== READING PROGRESS: state, checkboxes, progress bars, JSON export/import ===== */
+const READ_STORAGE_KEY = 'upscReadProgress';
+let readState = {};
+
+// Maps each topic-view id to the subject hub it belongs to and how many notes it has.
+// Extend this object whenever a new topic gets its own notes view (e.g. 'polity-t2': {subject:'polity', totalNotes: N}).
+const TOPIC_CONFIG = {
+  'polity-t1': { subject: 'polity', totalNotes: 11 },
+  'polity-t2': { subject: 'polity', totalNotes: 3 },
+  'polity-t5': { subject: 'polity', totalNotes: 5 },
+  'polity-t6': { subject: 'polity', totalNotes: 5 }
+};
+const SUBJECTS = ['polity', 'governance', 'ir', 'socialjustice'];
+
+function loadReadState() {
+  try { readState = JSON.parse(localStorage.getItem(READ_STORAGE_KEY) || '{}'); }
+  catch (e) { readState = {}; }
+}
+
+function saveReadState() {
+  localStorage.setItem(READ_STORAGE_KEY, JSON.stringify(readState));
+}
+
+function applyReadStateToCheckboxes() {
+  document.querySelectorAll('input[type="checkbox"][data-readkey]').forEach(cb => {
+    cb.checked = !!readState[cb.dataset.readkey];
+    const label = cb.closest('.readtoggle');
+    if (label) label.classList.toggle('checked', cb.checked);
+  });
+}
+
+function toggleRead(cb) {
+  readState[cb.dataset.readkey] = cb.checked;
+  const label = cb.closest('.readtoggle');
+  if (label) label.classList.toggle('checked', cb.checked);
+  saveReadState();
+  computeAndRenderProgress();
+}
+
+function computeAndRenderProgress() {
+  const bySubject = {};
+  SUBJECTS.forEach(s => { bySubject[s] = { read: 0, total: 0 }; });
+
+  Object.keys(TOPIC_CONFIG).forEach(topicId => {
+    const cfg = TOPIC_CONFIG[topicId];
+    const view = document.getElementById('view-' + topicId);
+    const total = cfg.totalNotes;
+    let read = 0;
+    if (view) {
+      read = Array.from(view.querySelectorAll('input[type="checkbox"][data-readkey]')).filter(b => b.checked).length;
+    }
+    const pct = total ? Math.round((read / total) * 100) : 0;
+
+    const tcFill = document.getElementById('tcfill-' + topicId);
+    const tcFrac = document.getElementById('tcfrac-' + topicId);
+    if (tcFill) tcFill.style.width = pct + '%';
+    if (tcFrac) tcFrac.textContent = read + '/' + total + ' read';
+
+    const hubFill = document.getElementById('hubfill-' + topicId);
+    const hubFrac = document.getElementById('hubfrac-' + topicId);
+    if (hubFill) hubFill.style.width = pct + '%';
+    if (hubFrac) hubFrac.textContent = read + ' of ' + total + ' notes read (' + pct + '%)';
+
+    if (bySubject[cfg.subject]) {
+      bySubject[cfg.subject].read += read;
+      bySubject[cfg.subject].total += total;
+    }
+  });
+
+  SUBJECTS.forEach(subj => {
+    const agg = bySubject[subj];
+    const wrap = document.getElementById('hubprogress-' + subj);
+    const fill = document.getElementById('hubfill-' + subj);
+    const frac = document.getElementById('hubfrac-' + subj);
+    if (!wrap) return;
+    if (agg.total === 0) {
+      wrap.classList.add('empty');
+      if (frac) frac.textContent = 'No notes written yet — nothing to mark read';
+      if (fill) fill.style.width = '0%';
+    } else {
+      const pct = Math.round((agg.read / agg.total) * 100);
+      wrap.classList.remove('empty');
+      if (fill) fill.style.width = pct + '%';
+      if (frac) frac.textContent = agg.read + ' of ' + agg.total + ' notes read (' + pct + '%)';
+    }
+  });
+}
+
+function exportProgress() {
+  const blob = new Blob([JSON.stringify(readState, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'upsc-reading-progress.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function importProgress(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      readState = (data && typeof data === 'object') ? data : {};
+      saveReadState();
+      applyReadStateToCheckboxes();
+      computeAndRenderProgress();
+      const readCount = Object.keys(readState).filter(k => readState[k]).length;
+      alert('Progress imported — ' + readCount + ' note(s) marked read.');
+    } catch (err) {
+      alert('Could not read that file. Make sure it is a JSON file previously exported from this dashboard.');
+    }
+  };
+  reader.readAsText(file);
+  input.value = '';
+}
+
+loadReadState();
+applyReadStateToCheckboxes();
+computeAndRenderProgress();
+restoreNavState();
+</script>
+
+
+<script>
+(function(){
+  var t=document.getElementById('menuToggle');
+  var sb=document.querySelector('.sidebar');
+  if(!t||!sb) return;
+  t.addEventListener('click',function(){
+    var open=sb.classList.toggle('open');
+    t.textContent = open ? '✕ Close menu' : '☰ Menu';
+  });
+  sb.addEventListener('click',function(e){
+    if(e.target.closest('.navitem') && window.matchMedia('(max-width:700px)').matches){
+      sb.classList.remove('open'); t.textContent='☰ Menu';
+    }
+  });
+})();
+</script>
+</body>
+</html>

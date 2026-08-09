@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exceptions Ledger | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Why this exists</button>
+<button class="notetab" data-tab="s1">01 · Confidence &amp; the executive</button>
+<button class="notetab" data-tab="s2">02 · "Only" and "never"</button>
+<button class="notetab" data-tab="s3">03 · Numbers with a twin</button>
+<button class="notetab" data-tab="s4">04 · Rules with a carve-out</button>
+<button class="notetab" data-tab="s5">05 · Drill</button>
+<button class="notetab railrevision" data-tab="revision">★ One-screen recall</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Cross-cutting reference</div>
+<h1>The Exceptions Ledger</h1>
+<p class="sub">Every rule in the syllabus that has a carve-out, every "only" that is nearly true, and every number that has a near-identical twin — collected in one place, because this is the category UPSC builds statement questions from.</p>
+<div class="chips">
+<span class="chip">Cross-topic</span>
+<span class="chip">Statement-question fuel</span>
+<span class="chip">Updated after every test</span>
+</div>
+<div class="bignum"><b>1</b><span>word is usually all that separates a true statement from a false one</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this note exists</div>
+<p>In the Week 3 test you were asked what happens when the Budget fails to pass the Lok Sabha, and you answered in eleven seconds that it is modified and presented again. The correct answer is that the entire Council of Ministers resigns — a Budget defeat is an <b>implied vote of no confidence</b>. That fact is not hard. It was simply never surfaced as a <i>rule with an exception</i>, so there was nothing to recall.</p>
+<p>You then asked, correctly, that such exceptions not be missed. This note is the answer. It is not new content — every entry lives in a topic note as well — but exceptions scattered across twenty notes are invisible, and gathered into one they become a pattern you can revise in ten minutes.</p>
+<p><b>The working principle:</b> an examiner cannot easily build a question from a rule everybody knows. They build it from the <i>edge</i> of that rule. So the edge is what you learn.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 How to use this</div>
+<p>Read it last, not first — it assumes you already know the rules these are exceptions to. Then revisit it the evening before every test. Four families are enough to hold in mind:</p>
+<p><b>(1) Confidence exceptions</b> — defeats that topple a government without a no-confidence motion, and the one that looks like it should but doesn't. <b>(2) "Only" and "never"</b> — powers that belong to exactly one body, where a statement naming any other body is wrong. <b>(3) Numbers with a twin</b> — pairs of near-identical figures where the question is simply which one goes where. <b>(4) Rules with a carve-out</b> — general propositions that are true except in a named case.</p>
+<div class="bridge">Every entry names the note it comes from, so you can go back to the reasoning.</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Confidence &amp; the executive</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>The rule you know</th><th>The exception that gets asked</th></tr></thead>
+<tbody>
+<tr><th>A government falls when a no-confidence motion is passed</th><td>It <b>also</b> falls on rejection of the <b>Budget</b>, on any <b>cut motion</b> carried against it, on defeat of the <b>Motion of Thanks</b>, and on losing a <b>confidence motion</b> it moved itself. <b>Money defeat = confidence defeat.</b> <i>(T5 N03)</i></td></tr>
+<tr><th>A motion that criticises the government threatens it</th><td><b>Censure</b> is the exception — if passed, the Council <b>need not resign</b>; it must seek the confidence of the House as soon as possible. An <b>adjournment motion</b> likewise compels nothing. <i>(T5 N03)</i></td></tr>
+<tr><th>Ministers hold office during the President's pleasure</th><td>The pleasure is exercised <b>on the Prime Minister's advice</b>, so a PM with a majority cannot be dismissed. The Lok Sabha <b>cannot remove an individual Minister</b> at all — only the Council as a whole. <i>(T6 N02)</i></td></tr>
+<tr><th>The Council of Ministers answers to Parliament</th><td>To the <b>Lok Sabha alone</b> — never the Rajya Sabha, and at State level never the Legislative Council. <i>(T6 N02, N03)</i></td></tr>
+<tr><th>The President acts on ministerial advice</th><td>True after the 42nd Amendment — but the <b>Governor</b> retains an express discretionary sphere under <b>Article 163</b>, which was <b>never amended</b>. <i>(T6 N01, N03)</i></td></tr>
+<tr><th>The CM's advice binds the Governor</th><td>Not for <b>recommending President's Rule</b>, <b>reserving a Bill</b> under Art 200, or the Art 371-series duties. <i>(T6 N03)</i></td></tr>
+<tr><th>The death of a Minister creates a vacancy</th><td>Unless it is the <b>PM or CM</b> — that dissolves the <b>entire Council</b>. <i>(T6 N02, N03)</i></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>"Only" and "never" — powers belonging to exactly one body</h2></div>
+<hr class="divider">
+<p class="lead">In each row, a statement naming any body other than the one in bold is false. These are the cheapest marks in the paper and the easiest to lose.</p>
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Power</th><th>Belongs exclusively to</th></tr></thead>
+<tbody>
+<tr><th>Pardon a <b>death sentence</b></th><td>The <b>President</b> alone. But the Governor <i>can</i> suspend, remit or commute one — losing only the pardon. On a <b>court martial</b> the Governor has no power at all. <i>(T6 N00, N01)</i></td></tr>
+<tr><th>Introduce a <b>Money Bill</b></th><td>The <b>Lok Sabha</b> — and at State level the <b>Legislative Assembly</b>. <i>(T5 N02, N04)</i></td></tr>
+<tr><th>Initiate removal of the <b>Vice-President</b></th><td>The <b>Rajya Sabha</b> alone, though the Lok Sabha must agree. <i>(T6 N00)</i></td></tr>
+<tr><th>Resolve to end a <b>National Emergency</b></th><td>The <b>Lok Sabha</b> alone, on one-tenth notice. <i>(T1 N10)</i></td></tr>
+<tr><th>Authorise legislation on a <b>State List</b> subject in the national interest (Art 249), or a new <b>All-India Service</b> (Art 312)</th><td>The <b>Rajya Sabha</b> alone. <i>(T5 N01)</i></td></tr>
+<tr><th>Ratify a constitutional amendment on behalf of a State</th><td>The <b>Legislative Assembly</b> alone — a Legislative Council has no role. <i>(T5 N04)</i></td></tr>
+<tr><th>Decide a <b>Tenth Schedule</b> disqualification</th><td>The <b>Speaker or Chairman</b> — not the President, not the Election Commission. On <b>Article 102</b> grounds it is the <b>President</b>, bound by the EC's opinion; the EC has <b>no suo motu power</b>. <i>(T5 N01)</i></td></tr>
+<tr><th>Hear disputes about a <b>Presidential or Vice-Presidential election</b></th><td>The <b>Supreme Court</b>, finally — and acts done before an election is voided stay valid (Art 71). <i>(T6 N00)</i></td></tr>
+<tr><th>Summon a <b>joint sitting</b></th><td>The <b>President</b>, and only for Parliament. <b>No joint sitting exists at State level</b>, and none for a Money Bill or a Constitutional Amendment Bill. <i>(T5 N01, N04)</i></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Numbers with a twin</h2></div>
+<hr class="divider">
+<p class="lead">Each pair is two near-identical figures. The question is never "what is the number" — it is "which of the two goes here".</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Context</th><th>One figure</th><th>Its twin</th></tr></thead>
+<tbody>
+<tr><th>Ministry size cap</th><td>Union — 15%, <b>no floor</b></td><td>State — 15%, <b>minimum 12</b> <i>(T6 N03)</i></td></tr>
+<tr><th>Emergency approval</th><td>Art 352 — <b>special</b> majority, <b>1 month</b></td><td>Arts 356 &amp; 360 — <b>simple</b> majority, <b>2 months</b> <i>(T1 N10)</i></td></tr>
+<tr><th>Emergency duration</th><td>Art 356 — max <b>3 years</b></td><td>Art 352 renews indefinitely; Art 360 needs <b>no renewal</b> <i>(T1 N10)</i></td></tr>
+<tr><th>Nomination fields</th><td>Rajya Sabha, Art 80(3) — <b>four</b></td><td>Legislative Council, Art 171(5) — <b>five</b>, adding co-operative movement <i>(T5 N01, N04)</i></td></tr>
+<tr><th>Nomination subscribers</th><td>President — <b>50 + 50</b></td><td>Vice-President — <b>20 + 20</b> <i>(T6 N00)</i></td></tr>
+<tr><th>House strength</th><td>Assembly — max <b>500</b>, min <b>60</b></td><td>Council — max <b>1/3</b> of Assembly, min <b>40</b> <i>(T5 N04)</i></td></tr>
+<tr><th>Lok Sabha</th><td>Max <b>550</b> post-104th Amdt</td><td>Current actual <b>543</b> — 552 and 545 are both pre-2020 <i>(T5 N01)</i></td></tr>
+<tr><th>Bill delay</th><td>Rajya Sabha, Money Bill — <b>14 days</b></td><td>Legislative Council, ordinary Bill — <b>3 + 1 = 4 months</b> <i>(T5 N02, N04)</i></td></tr>
+<tr><th>Committee size</th><td>PAC and COPU — <b>22</b> (15+7)</td><td>Estimates <b>30</b> (LS only) · DRSCs <b>31</b> (21+10) · Official Language <b>30</b> (20+10) <i>(T5 N03)</i></td></tr>
+<tr><th>Motion support</th><td>No-confidence and adjournment — <b>50 members</b></td><td>Emergency revocation notice — <b>1/10th</b>; impeachment charge — <b>1/4th</b> <i>(T1 N10, T5 N03)</i></td></tr>
+<tr><th>Membership age</th><td>Lok Sabha and Assembly — <b>25</b></td><td>Rajya Sabha and Council — <b>30</b>; President, VP and Governor — <b>35</b> <i>(T5 N01, N04)</i></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Rules with a carve-out</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>The general rule</th><th>Except</th></tr></thead>
+<tbody>
+<tr><th>A candidate for the Lok Sabha may be an elector in <i>any</i> constituency in India</th><td>Seats in the <b>autonomous districts of Assam</b>, <b>Lakshadweep</b> and <b>Sikkim</b> require a local elector. The word "any" is the trap. <i>(T5 N01)</i></td></tr>
+<tr><th>Nominated members are excluded from the Presidential electoral college</th><td>Nominated members <b>do vote</b> in the <b>Vice-Presidential</b> election. <i>(T6 N00)</i></td></tr>
+<tr><th>The Speaker presides over parliamentary forums</th><td>Except the Forum on <b>Population and Public Health</b>, where the <b>Rajya Sabha Chairman</b> does. <i>(T6 N04)</i></td></tr>
+<tr><th>The Prime Minister chairs the major Cabinet Committees</th><td>Except <b>Parliamentary Affairs</b> and <b>Accommodation</b> — the <b>Home Minister</b>. <i>(T6 N04)</i></td></tr>
+<tr><th>The Speaker appoints committee chairmen</th><td>True of the PAC too — what is special is that the appointee is from the <b>Opposition</b> by convention since 1967. <i>(T5 N03)</i></td></tr>
+<tr><th>Question Hour comes first, Zero Hour after</th><td>True in the <b>Lok Sabha</b>. In the <b>Rajya Sabha</b> since <b>2014</b> Zero Hour is at 11 a.m. and Question Hour at noon. <i>(T5 N03)</i></td></tr>
+<tr><th>A law changing a State legislature's composition is a constitutional amendment</th><td><b>Article 169</b> expressly says a law creating or abolishing a Legislative Council is <b>not</b> an Art 368 amendment. <i>(T5 N04)</i></td></tr>
+<tr><th>Judicial salaries cannot be reduced</th><td>They <b>can</b> during a <b>Financial Emergency</b> under Art 360 — expressly including Supreme Court and High Court judges. <i>(T1 N10)</i></td></tr>
+<tr><th>Fundamental Rights cannot be suspended</th><td>They can under a <b>National Emergency</b> — but <b>never Articles 20 and 21</b>, and Art 358 only on war or external aggression. <i>(T1 N10)</i></td></tr>
+<tr><th>The President consults the Chief Minister before appointing a Governor</th><td>The President <b>may</b>; there is <b>no obligation</b>. "Should" or "must" makes the statement false. <i>(T6 N01)</i></td></tr>
+<tr><th>Ninth Schedule laws are immune from judicial review</th><td>Not after <b>24 April 1973</b> — <i>I.R. Coelho</i> (2007) reopened them to basic-structure challenge. <i>(T1 N06)</i></td></tr>
+<tr><th>The Speaker's Money Bill certificate is final</th><td>Final for <i>procedure</i>; its <b>reviewability is an open question</b> before a seven-judge bench after <i>Rojer Mathew</i> (2019). <i>(T5 N02)</i></td></tr>
+<tr><th>Removal of the Vice-President needs no special formality</th><td><b>14 days' notice is required</b> under Art 67(b) — what is absent is a stated <b>ground</b>, not the notice. <i>(T6 N00)</i></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Drill</h2></div>
+<hr class="divider">
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following:</p>
+<ol class="subs"><li>Rejection of the Budget by the Lok Sabha</li><li>Passing of a censure motion against the Council of Ministers</li><li>Defeat of the Motion of Thanks on the President\'s Address</li><li>Passing of an adjournment motion</li></ol>
+<p class="qtext">After how many of the above must the Council of Ministers resign?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li><b>1 and 3 compel resignation</b> — a money defeat and a defeated Motion of Thanks are both implied votes of no confidence.</li><li><b>2 does not</b> — after a censure motion the Council must seek the confidence of the House, not resign.</li><li><b>4 does not</b> — an adjournment motion carries censure but compels nothing.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>A Governor can commute a death sentence for an offence against a State law.</li><li>A registered voter in India can contest a Lok Sabha election from any constituency in India.</li><li>Nominated members of the Rajya Sabha vote in the election of the Vice-President.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li><b>1 is correct</b> — the Governor loses only the power to <i>pardon</i> a death sentence, not to commute it.</li><li><b>2 is wrong</b> because of the exception: Assam\'s autonomous districts, Lakshadweep and Sikkim require a local elector. "Any" is the trap.</li><li><b>3 is correct</b> — nominated members are excluded from the <i>Presidential</i> college but vote in the <i>Vice-Presidential</i> one.</li><li>Three exceptions, one question. This is exactly how the format is built.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) A Financial Emergency permits the reduction of judges\' salaries</li><li>(b) A law abolishing a State Legislative Council is not an amendment under Article 368</li><li>(c) In the Rajya Sabha, Question Hour precedes Zero Hour</li><li>(d) Articles 20 and 21 cannot be suspended during a National Emergency</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<ul class="vwhy"><li>Since <b>2014</b> the Rajya Sabha takes <b>Zero Hour at 11 a.m.</b> and Question Hour at noon. The familiar order holds in the Lok Sabha only.</li><li>(a), (b) and (d) are all accurate — and all three are exceptions in their own right.</li></ul>
+</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>One-screen recall — the exceptions</h2>
+<ul>
+<li><b>Money defeat = confidence defeat.</b> Budget rejected · cut motion carried · Motion of Thanks defeated · confidence motion lost → <b>resign</b>. Censure or adjournment motion passed → <b>do not resign</b>.</li>
+<li><b>Death sentence:</b> Governor cannot <i>pardon</i>, but <b>can</b> suspend/remit/commute. Court martial → Governor has nothing.</li>
+<li><b>Nominated members:</b> out of the Presidential college, <b>in</b> the Vice-Presidential one.</li>
+<li><b>"Any constituency"</b> — false. Assam autonomous districts, Lakshadweep, Sikkim need a local elector.</li>
+<li><b>VP removal:</b> 14 days\' notice IS required. What is missing is a stated ground.</li>
+<li><b>Governor appointment:</b> President <i>may</i> consult the CM, never <i>must</i>.</li>
+<li><b>Art 169</b> — abolishing a Legislative Council is <b>not</b> an Art 368 amendment.</li>
+<li><b>Judicial salaries</b> reducible only under <b>Art 360</b>.</li>
+<li><b>Arts 20 and 21</b> never suspendable. Art 358 only on war/external aggression.</li>
+<li><b>Zero Hour first</b> in the Rajya Sabha since 2014; Question Hour first in the Lok Sabha.</li>
+<li><b>Home Minister</b> chairs Parliamentary Affairs and Accommodation; PM chairs the rest.</li>
+<li><b>RS Chairman</b> presides over the Population &amp; Public Health Forum; Speaker over the rest.</li>
+<li><b>No joint sitting</b> at State level, or for Money Bills and Constitutional Amendment Bills.</li>
+<li><b>Ninth Schedule</b> laws post-24 April 1973 are reviewable (<i>I.R. Coelho</i>, 2007).</li>
+<li><b>Money Bill certificate</b> — reviewability is open, not closed (<i>Rojer Mathew</i>, 2019).</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> this ledger is updated after every weekly test. When a question turns on an exception you did not have, the exception is added here as well as to its topic note.
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Cross-cutting reference — the Exceptions Ledger<br>
+Built from the edges of rules, because that is where questions are set.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

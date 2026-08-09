@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget, Sessions &amp; Parliamentary Privileges | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Sessions, adjournment &amp; dissolution</button>
+<button class="notetab" data-tab="s2">02 · Budgetary process</button>
+<button class="notetab" data-tab="s3">03 · Cut motions &amp; special grants</button>
+<button class="notetab" data-tab="s4">04 · Parliamentary privileges</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 5 of 9 · Note 03 — Week 3, Day 6</div>
+<h1>Budget, Sessions &amp; Parliamentary Privileges</h1>
+<p class="sub">Senior-mentor notes closing out the Parliament block — how the calendar year's sessions actually work, the Budget's own multi-stage journey through the House, and the one fact this test has already shown a real weakness for: parliamentary privileges are barely codified at all.</p>
+<div class="chips">
+<span class="chip">Article 85 — 6-month gap rule</span>
+<span class="chip">Cut Motions</span>
+<span class="chip">Guillotine</span>
+<span class="chip">Article 105 — Privileges</span>
+<span class="chip">Not Codified</span>
+</div>
+<div class="bignum"><b>6 months</b><span>Max gap allowed between two sessions</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ The theme tying this note together: things Parliament runs on habit, not hard rules</div>
+<p>Sessions are called at the President's discretion (on Cabinet advice) with only one hard rule — a maximum 6-month gap. Cut motions and the Guillotine are procedural tools born from the Lok Sabha's own Rules of Procedure, not the Constitution's text. And privileges — the topic this note ends on — are the clearest example of all: mostly uncodified, resting on a patchwork of Article 105, House rules, conventions, and judicial precedent rather than one clean list. Treat "is this written in the Constitution, or is this a convention/rule" as the running question for this whole note.</p>
+<p>Week 3, Day 6 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapter 23.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Parliament doesn't sit all year round — it meets in blocks of time called "sessions" (traditionally three: Budget, Monsoon, Winter), and between sessions it is "prorogued" — a formal pause, distinct from a daily "adjournment" (a short break within a sitting) and from "dissolution" (the Lok Sabha's term ending entirely, requiring fresh elections). Only the Lok Sabha can be dissolved; the Rajya Sabha, being permanent, is never dissolved, only prorogued.</p>
+<p>The Budget session is Parliament's biggest annual event because that's when the government asks Parliament's permission to spend money for the coming year — and Parliament's tools for pushing back (cut motions, the "Guillotine" that force-closes debate on unfinished spending demands) are really just different ways of saying "we haven't fully agreed to this yet." The final section, on privileges, explains something that surprises most students: MPs' special protections (like immunity for what they say in the House) are barely written down as one clean list anywhere — which is itself the single most tested fact about them.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 5 note series —</b>
+<span class="done">✓ 00 Parliamentary System &amp; Presidential Government</span> · <span class="done">✓ 01 Structure &amp; Composition of Parliament</span> · <span class="done">✓ 02 Powers, Functions &amp; Legislative Process</span> · <span class="done">✓ 03 Budget, Sessions &amp; Parliamentary Privileges (this file)</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Sessions, adjournment, prorogation &amp; dissolution — Articles 85, 108</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><th>Session</th><td>The period between the first sitting of a House and its prorogation — conventionally three per year: <b>Budget</b> (Feb–May), <b>Monsoon</b> (Jul–Sep), <b>Winter</b> (Nov–Dec). Not fixed by the Constitution — purely convention.</td></tr>
+<tr><th>Summoning rule (Art 85)</th><td>The gap between the last sitting of one session and the first sitting of the next <b>cannot exceed 6 months</b> — the only hard constitutional rule governing session frequency, meaning Parliament must meet at least twice a year at minimum.</td></tr>
+<tr><th>Adjournment</th><td>Suspends a sitting for a specified time — hours, days, or weeks — the House meets again at the appointed time without any fresh summons needed.</td></tr>
+<tr><th>Adjournment sine die</th><td>Terminates a sitting <b>without any date fixed</b> for the next one — the power to do this rests with the presiding officer (Speaker/Chairman).</td></tr>
+<tr><th>Prorogation</th><td>Ends a <i>session</i> (not just a sitting) — done by the <b>President</b>, usually after (but sometimes before) an adjournment sine die. All pending notices lapse, though pending Bills do <b>not</b> lapse on prorogation.</td></tr>
+<tr><th>Dissolution</th><td>Ends the Lok Sabha's very life — happens automatically at the end of its 5-year term or earlier if the President dissolves it. <b>Only the Lok Sabha can be dissolved; the Rajya Sabha never is</b> (Note 01).</td></tr>
+<tr><th>Lame-duck session</th><td>The last session of an <i>outgoing</i> Lok Sabha, held after a new House has already been elected — the members who lost their seats ("lame ducks") still sit until the new House is constituted. Occasionally tested as a definitional one-liner.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap — what survives dissolution:</b> when the Lok Sabha is dissolved, all pending <i>Bills</i> in the Lok Sabha lapse (except a Bill pending in the Rajya Sabha but not yet passed by the Lok Sabha, which does <b>not</b> lapse), but Bills pending in, or already passed by, the Rajya Sabha and <i>not yet passed</i> by the Lok Sabha do <b>not</b> lapse. Joint-sitting-pending Bills, once the President has notified an intention to summon one, also do not lapse. This "what lapses on dissolution" list is a classic multi-statement trap.</p>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Quorum:</b> to constitute a valid sitting of either House, at least <b>1/10th of the total membership</b> of that House must be present. If quorum is not met, the presiding officer either adjourns the House or suspends the sitting until quorum is restored.</p>
+</div>
+
+<h3>Question Hour &amp; Zero Hour — the three kinds of question</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Type</th><th>Distinguishing features</th></tr></thead>
+<tbody>
+<tr><th>Starred question</th><td>Marked with an <b>asterisk</b>; requires an <b>oral</b> answer on the floor; <b>supplementary questions can follow</b>. Notice period: 10 days.</td></tr>
+<tr><th>Unstarred question</th><td>Requires a <b>written</b> answer laid on the table; <b>no supplementaries</b> permitted. Notice period: 10 days.</td></tr>
+<tr><th>Short notice question</th><td>On a matter of <b>urgent public importance</b>, asked with <b>less than 10 days' notice</b>; answered orally.</td></tr>
+<tr><th>Question to a private member</th><td>Addressed to a private member (not a Minister) when the subject relates to a Bill or matter for which that member is responsible — the forgotten fourth category.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Question Hour</b> is governed by the rules; <b>Zero Hour</b> is an <b>Indian innovation</b> found nowhere in the Rules of Procedure, dating from the 1960s, for raising matters <i>without prior notice</i>. <b>The order differs by House, and this is the sharp edge of the topic:</b> in the <b>Lok Sabha</b>, Question Hour runs first (11 am–12 noon) and Zero Hour follows from 12 noon. In the <b>Rajya Sabha</b>, the Chairman shifted Question Hour to <b>12 noon in 2014</b> to protect it from disruption — so the Rajya Sabha's day now <b>begins with Zero Hour at 11 am</b>. A bare statement that "Zero Hour follows Question Hour" is therefore true only of the Lok Sabha.</p>
+</div>
+
+<h3>Motions and resolutions — the full family, and the differences that get asked</h3>
+<p>A <b>motion</b> is a proposal put to the House for its decision; a <b>resolution</b> is a specific kind of motion that expresses the House's opinion or will. Every resolution is a motion; not every motion is a resolution.</p>
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Device</th><th>What it is, and the fact that gets tested</th></tr></thead>
+<tbody>
+<tr><th>Three classes of motion</th><td><b>Substantive</b> — a self-contained independent proposal (impeachment of the President, removal of a judge). <b>Substitute</b> — moved in substitution of an original motion, offering an alternative. <b>Subsidiary</b> — has no meaning by itself and depends on the original motion; subdivided into ancillary, superseding and amendment motions.</td></tr>
+<tr><th><b>Closure</b> motion</th><td>To cut short debate and put the matter to vote. <b>Four kinds:</b> <i>simple</i> closure (matter sufficiently discussed), <i>closure by compartments</i> (clauses grouped in advance and each group voted together), <i>kangaroo</i> closure (only important clauses taken up, the rest skipped), and <i>guillotine</i> closure (undiscussed clauses or demands put to vote when the allotted time expires).</td></tr>
+<tr><th><b>Privilege</b> motion</th><td>Moved by a member against a Minister alleged to have <b>withheld or distorted facts</b>. Its purpose is censure of the Minister, not removal of the government.</td></tr>
+<tr><th><b>Calling Attention</b> motion</th><td>A member, with prior permission, calls a Minister's attention to a matter of urgent public importance and seeks an authoritative statement. It is an <b>Indian innovation</b> not found in British practice, and unlike a question it need not be preceded by a notice period of the usual kind.</td></tr>
+<tr><th><b>Adjournment</b> motion</th><td>Interrupts normal business to discuss a definite matter of <b>urgent public importance</b>; needs <b>50 members'</b> support. Because it carries an <b>element of censure</b>, the <b>Rajya Sabha cannot use it</b>. Distinct from the routine adjournment of a sitting.</td></tr>
+<tr><th><b>No-Confidence</b> motion</th><td><b>Lok Sabha only</b>; needs <b>50 members'</b> support for admission; <b>states no reasons</b>; if passed, the <b>entire Council of Ministers falls</b>. It can be moved against the government only, never against an individual Minister.</td></tr>
+<tr><th><b>Censure</b> motion</th><td>The contrast that carries the marks. It <b>must state the reasons</b>; it may be moved against an <b>individual Minister, a group of Ministers, or the whole Council</b>; it can be moved in the <b>Lok Sabha only</b>; and if passed, the Council <b>need not resign</b> — it must merely explain itself. A no-confidence motion is about survival; a censure motion is about reprimand.</td></tr>
+<tr><th><b>Motion of Thanks</b></th><td>Moved on the President's address under Article 87. It <b>must be passed</b>; failure is treated as a defeat of the government, which makes it one of the few floor tests hidden inside routine business.</td></tr>
+<tr><th><b>No-Day-Yet-Named</b> motion</th><td>A motion admitted by the Speaker for which no date of discussion has yet been fixed.</td></tr>
+<tr><th><b>Point of Order</b></th><td>Raised on a <b>procedural</b> irregularity only — a breach of the rules or of a constitutional provision. It is <b>not</b> a device to raise the merits of a policy, it needs no notice, it suspends proceedings, and no debate is allowed on it. Statement questions routinely define it as a device to question policy; that is wrong.</td></tr>
+<tr><th><b>Half-an-Hour Discussion</b></th><td>On a matter of sufficient public importance that has <b>already been the subject of a question</b>, where the answer needs elucidation on a point of fact. Three sittings a week are allotted; no formal motion, no voting.</td></tr>
+<tr><th><b>Short Duration Discussion</b></th><td>Also called a <b>two-hour discussion</b>. On an urgent matter of public importance, raised with the support of two members; two sittings a week; again <b>no formal motion and no voting</b>.</td></tr>
+<tr><th><b>Special Mention / Rule 377</b></th><td>A matter not raisable under other devices may be <b>mentioned</b> — called a <b>Special Mention</b> in the Rajya Sabha, and a <b>Mention Under Rule 377</b> in the Lok Sabha.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap"><span class="ic">!</span><div><b>The three discriminators worth memorising.</b> <b>(1) No-confidence vs censure:</b> no reasons vs reasons stated; against the government only vs against any Minister; resignation compelled vs not compelled. <b>(2) Adjournment motion vs Calling Attention:</b> both need urgency, but only the adjournment motion carries censure — which is why the Rajya Sabha is barred from one and not the other. <b>(3) Half-an-Hour vs Short Duration:</b> the first follows an <i>earlier question</i>; the second does not. Neither involves voting.</div></div>
+
+<h3>The hidden confidence votes — defeats that bring a government down without a no-confidence motion</h3>
+<p class="lead">This is the highest-value exception in the whole Parliament chapter, and it is invisible unless someone points it out: <b>a government can fall without anyone ever moving a motion of no confidence.</b> Certain defeats are treated by convention as an implied withdrawal of the Lok Sabha's confidence, and the Council of Ministers must resign.</p>
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>What happens on the floor</th><th>Consequence for the government</th></tr></thead>
+<tbody>
+<tr><th>A <b>no-confidence motion</b> is passed</th><td><b>Must resign.</b> The explicit route — Lok Sabha only, 50 members to admit, no reasons stated.</td></tr>
+<tr><th>A <b>confidence motion</b> moved by the government is defeated</th><td><b>Must resign.</b> The mirror image, used to prove a majority the government claims it has.</td></tr>
+<tr><th>The <b>Budget is rejected</b> — the Annual Financial Statement, Demands for Grants, the Appropriation Bill or the Finance Bill</th><td><b>Must resign.</b> A government that cannot carry its own money through the House has, by definition, lost its majority. <i>No motion of any kind is needed.</i></td></tr>
+<tr><th>Any <b>cut motion</b> is passed</th><td><b>Must resign.</b> Passing a policy, economy or token cut against the government's wishes operates as a no-confidence vote — which is why cut motions are almost never carried.</td></tr>
+<tr><th>The <b>Motion of Thanks</b> on the President's Address is defeated</th><td><b>Must resign.</b> The motion must be passed; its defeat is treated as a defeat of the government.</td></tr>
+<tr><th>A <b>government Bill is rejected</b> in the Lok Sabha</th><td><b>Must resign</b> where the government has staked its position on the Bill. An ordinary legislative defeat does not automatically topple a government, but a defeat on a measure central to its programme does.</td></tr>
+<tr><th>A <b>censure motion</b> is passed</th><td><b>Need NOT resign</b> — the exception inside the exception. The Council must instead <b>seek the confidence of the Lok Sabha as soon as possible</b>. Censure is reprimand, not removal.</td></tr>
+<tr><th>An <b>adjournment motion</b> is passed</th><td><b>Need not resign.</b> It carries an element of censure — which is why the Rajya Sabha cannot use it — but it does not compel resignation.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap"><span class="ic">!</span><div><b>Why this is a favourite question, and how it is framed.</b> The stem never says "no-confidence". It says something like <i>"When the annual budget fails to be passed by the Lok Sabha after it is put to vote, which of the following takes place?"</i> — and offers plausible administrative answers: the budget is modified and presented again, it is referred to the Rajya Sabha, the Finance Minister is asked to resign. All three <b>sound</b> like what a government would do. The correct answer is the constitutional one: <b>the Prime Minister submits the resignation of the entire Council of Ministers.</b> The test is not whether you know the Budget process; it is whether you recognise a <b>money defeat as a confidence defeat</b>.<br><br>The single rule to carry: <b>money and confidence are the same thing.</b> Anything the Lok Sabha refuses the government on money — the Budget, a Demand for Grant, an Appropriation or Finance Bill, or a cut motion carried against it — is a loss of confidence. Everything else is criticism.</div></div>
+
+<h3>Parliamentary devices &amp; motions — the family a Week 2 question tested</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Device</th><th>What it is, precisely</th></tr></thead>
+<tbody>
+<tr><th>No-Confidence Motion</th><td>Lok Sabha only; needs <b>50 members'</b> support for admission; states no reasons; if passed, the entire Council of Ministers falls. Can be moved against the government only, never against an individual Minister.</td></tr>
+<tr><th>Censure Motion</th><td>Must state the reasons; can target an individual Minister, a group, or the whole Council; if passed, the government need <b>not</b> resign (it signals displeasure, not removal) — the classic contrast with no-confidence.</td></tr>
+<tr><th>Adjournment Motion</th><td>Interrupts normal business to discuss a <b>definite matter of urgent public importance</b>; needs 50 members' support; involves an element of censure, so the Rajya Sabha cannot use it. Distinct from the routine adjournment of a sitting.</td></tr>
+<tr><th>Calling Attention</th><td>A member calls a Minister's attention to an urgent public matter and seeks an authoritative statement — an Indian innovation, no vote, no censure element.</td></tr>
+<tr><th>Zero Hour</th><td>The informal slot right after Question Hour (from 12 noon) for raising matters without prior notice — another Indian procedural innovation, found in no rulebook.</td></tr>
+<tr><th>President's Special Address (Article 87)</th><td>Under Article 87, the President addresses <b>both Houses together</b> at the first session after each general election and the first session of each year — outlining government policy; the address is followed by a Motion of Thanks, whose defeat is treated as a government defeat.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap pairing:</b> no-confidence (no reasons, government-wide, fatal if passed) vs censure (reasons required, can be individual, non-fatal) vs adjournment motion (urgent specific matter, censure element, Lok Sabha only). Multi-statement questions swap exactly these attributes between the three.</p>
+</div>
+
+<h3>The rest of the device toolkit — closure, discussions and points of order</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Device</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><th>Closure Motion — four types</th><td>A motion to cut short debate and put the matter to vote. <b>Simple closure</b> (a member moves that a matter having been sufficiently discussed be put to vote); <b>closure by compartments</b> (clauses are grouped in advance and each group voted together); <b>kangaroo closure</b> (only <i>important</i> clauses are taken up for debate — the rest are "hopped over" and passed); <b>guillotine</b> (undiscussed clauses/demands are voted along with the discussed ones when time expires).</td></tr>
+<tr><th>Privilege Motion</th><td>Moved by a member against a Minister for a breach of privilege — e.g., withholding facts or giving distorted/incorrect information to the House. Its purpose is to <b>censure the Minister concerned</b>.</td></tr>
+<tr><th>Point of Order</th><td>Raised when proceedings depart from the normal rules; it is addressed to the presiding officer, whose decision is final. It carries <b>no debate</b> and is an <b>extraordinary device</b> — it suspends the proceedings before the House. Note: it relates to <i>interpretation or enforcement of the Rules</i>, not to the substance of a matter.</td></tr>
+<tr><th>Half-an-Hour Discussion</th><td>For a matter of sufficient public importance that has <b>already been the subject of a question</b> and needs elucidation on a point of fact. Conventionally held on three sittings a week; <b>no formal motion, no voting</b>.</td></tr>
+<tr><th>Short Duration Discussion</th><td>Also called a "two-hour discussion" — on an urgent matter of public importance, held twice a week; again <b>no formal motion and no voting</b>.</td></tr>
+<tr><th>Special Mention</th><td>A matter that is <b>not</b> a point of order or raisable under other devices may be mentioned with the presiding officer's prior permission. In the Lok Sabha the equivalent device is called <b>"Notice (Mention) Under Rule 377."</b></td></tr>
+<tr><th>Resolutions — three types</th><td><b>Private Member's Resolution</b> (moved by a private member, discussed on alternate Fridays); <b>Government Resolution</b> (moved by a Minister); <b>Statutory Resolution</b> (moved under a provision of the Constitution or an Act — e.g., approving an Emergency proclamation). All resolutions are <b>substantive motions and must be voted upon</b> — unlike many motions, every resolution ends in a decision of the House.</td></tr>
+<tr><th>No-Day-Yet-Named Motion</th><td>A motion admitted by the Speaker for which <b>no date has yet been fixed</b> for discussion — it sits in the queue until time is allotted.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>The highest-value distinctions in this table:</b> (1) <b>Kangaroo closure</b> skips unimportant clauses; the <b>guillotine</b> force-votes everything undiscussed when time runs out — different mechanisms, routinely swapped. (2) Half-an-Hour and Short Duration discussions involve <b>no voting</b>; every <b>resolution</b> must be voted on. (3) A <b>Point of Order</b> concerns the <i>rules</i>, not the merits — and it alone suspends business immediately.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Budgetary process — the Annual Financial Statement, Article 112</h2></div>
+<hr class="divider">
+<p class="lead">The Budget (formally the "Annual Financial Statement") is a statement of the Union government's estimated receipts and expenditure for the coming financial year — presented, discussed, and voted on in a fixed multi-stage sequence.</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 800 150" role="img" aria-label="Stages of the Union Budget process">
+<g font-family="Inter" font-size="11">
+<rect x="8" y="25" width="145" height="70" rx="8" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.3"/>
+<text x="80" y="48" text-anchor="middle" font-weight="700" fill="#134b59">Presentation</text>
+<text x="80" y="64" text-anchor="middle" font-size="10" fill="#134b59">By Finance Minister,</text>
+<text x="80" y="78" text-anchor="middle" font-size="10" fill="#134b59">Lok Sabha</text>
+
+<line x1="155" y1="60" x2="180" y2="60" stroke="#9598c9" stroke-width="1.6" marker-end="url(#arrB)"/>
+
+<rect x="184" y="25" width="145" height="70" rx="8" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.3"/>
+<text x="256" y="48" text-anchor="middle" font-weight="700" fill="#8a5c00">General</text>
+<text x="256" y="64" text-anchor="middle" font-size="10" fill="#8a5c00">Discussion</text>
+<text x="256" y="78" text-anchor="middle" font-size="10" fill="#8a5c00">(no voting yet)</text>
+
+<line x1="331" y1="60" x2="356" y2="60" stroke="#9598c9" stroke-width="1.6" marker-end="url(#arrB)"/>
+
+<rect x="360" y="25" width="145" height="70" rx="8" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.3"/>
+<text x="432" y="45" text-anchor="middle" font-weight="700" fill="#7a1f66">Scrutiny by</text>
+<text x="432" y="61" text-anchor="middle" font-size="10" fill="#7a1f66">Departmental</text>
+<text x="432" y="75" text-anchor="middle" font-size="10" fill="#7a1f66">Standing Committees</text>
+
+<line x1="507" y1="60" x2="532" y2="60" stroke="#9598c9" stroke-width="1.6" marker-end="url(#arrB)"/>
+
+<rect x="536" y="25" width="130" height="70" rx="8" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.3"/>
+<text x="601" y="45" text-anchor="middle" font-weight="700" fill="#134b59">Voting on</text>
+<text x="601" y="61" text-anchor="middle" font-size="10" fill="#134b59">Demands for Grants</text>
+<text x="601" y="75" text-anchor="middle" font-size="10" fill="#134b59">(Lok Sabha only)</text>
+
+<line x1="666" y1="60" x2="691" y2="60" stroke="#9598c9" stroke-width="1.6" marker-end="url(#arrB)"/>
+
+<rect x="695" y="25" width="100" height="70" rx="8" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.3"/>
+<text x="745" y="45" text-anchor="middle" font-weight="700" fill="#177a4d">Appropriation</text>
+<text x="745" y="61" text-anchor="middle" font-size="10" fill="#177a4d">&amp; Finance</text>
+<text x="745" y="75" text-anchor="middle" font-size="10" fill="#177a4d">Bills passed</text>
+</g>
+<defs><marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9598c9"/></marker></defs>
+</svg>
+<figcaption><b>Fig 1.</b> Only the "Voting on Demands for Grants" stage is Lok-Sabha-exclusive — everything before and after involves both Houses in some form.</figcaption>
+</div></figure>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Stage</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Voting on Demands for Grants</th><td>Happens <b>only in the Lok Sabha</b> — each Ministry's spending request ("Demand for Grant") is voted on separately; the Rajya Sabha only discusses the Budget generally and has no vote here, mirroring its limited Money Bill power (Note 02).</td></tr>
+<tr><th>Appropriation Bill</th><td>Passed after voting on grants, to legally authorise withdrawal of the voted (and "charged") sums from the Consolidated Fund of India — without this, no money can legally leave the Fund even after grants are voted.</td></tr>
+<tr><th>Finance Bill</th><td>Gives effect to the government's taxation proposals for the year — must be passed within <b>75 days</b> of introduction, per the Rules of Procedure.</td></tr>
+<tr><th>Charged expenditure</th><td>Certain expenditures (President's/Governors' emoluments, Supreme Court/High Court judges' salaries, CAG's salary, debt charges) are "charged" on the Consolidated Fund — <b>not voted</b> on at all, only discussed, since they are meant to stay outside day-to-day political bargaining.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Parliamentary Committees — the financial trio and the standing system</h3>
+<p class="lead">Explicitly listed in the Week 3 schedule under the budgetary process, and heavily numeric — the three financial committees' composition figures are the single most testable cluster here.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Committee</th><th>Strength &amp; composition</th><th>Function and the fact that gets tested</th></tr></thead>
+<tbody>
+<tr><th>Public Accounts Committee (PAC)</th><td><b>22 members</b> — 15 Lok Sabha + 7 Rajya Sabha; 1-year term. Ministers cannot be members.</td><td>Examines the CAG's audit reports — scrutinises spending <i>after</i> it happens ("post-mortem" of expenditure), checking money was spent lawfully on the purpose voted. <b>By convention since 1967 the Chairman is from the Opposition</b> — the most-asked PAC fact.</td></tr>
+<tr><th>Estimates Committee</th><td><b>30 members — all from the Lok Sabha only</b>; no Rajya Sabha representation at all; 1-year term. Ministers cannot be members.</td><td>Examines the Budget estimates and suggests economies — scrutiny <i>before/around</i> spending. Nicknamed the "continuous economy committee." The trap: its Lok-Sabha-only composition, versus PAC and COPU which are joint.</td></tr>
+<tr><th>Committee on Public Undertakings (COPU)</th><td><b>22 members</b> — 15 Lok Sabha + 7 Rajya Sabha (raised from an original 15).</td><td>Examines the reports and accounts of public sector undertakings, and the CAG's reports on them.</td></tr>
+<tr><th>Departmental Standing Committees</th><td><b>24 committees</b>, each of <b>31 members</b> — 21 Lok Sabha + 10 Rajya Sabha; established 1993.</td><td>Each shadows a cluster of ministries; examines their <b>Demands for Grants</b> before voting (the scrutiny stage in Fig 1) and Bills referred to them. This is where most detailed Budget scrutiny actually happens.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Three traps in one cluster:</b> (1) the <b>Estimates Committee has no Rajya Sabha members</b> — PAC and COPU both do; (2) <b>a Minister can never be a member</b> of PAC, Estimates or COPU (and if elected, ceases to be one on becoming a Minister); (3) PAC works <b>after</b> expenditure via CAG reports, Estimates works on <b>proposed</b> estimates — swap those two functions and the statement is false. Also note the standing criticism: committee recommendations are <b>advisory, not binding</b> on the government.</p>
+</div>
+
+<h3>Standing · Select · Joint · Ad hoc — the taxonomy questions are built on</h3>
+<p>Four words that get used loosely in ordinary speech and precisely in exams. The classification runs on <b>two independent axes</b>, and confusing them is the commonest error here.</p>
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Type</th><th>What defines it</th></tr></thead>
+<tbody>
+<tr><th><b>Standing</b> committee</th><td>Defined by <b>permanence</b>. Constituted every year or periodically, works continuously, is reconstituted rather than dissolved. The financial trio (PAC, Estimates, Public Undertakings), the 24 Departmentally Related Standing Committees, and the housekeeping committees (Business Advisory, Privileges, Ethics, Rules, Government Assurances, Subordinate Legislation, Petitions) are all standing.</td></tr>
+<tr><th><b>Ad hoc</b> committee</th><td>Defined by <b>impermanence</b>. Appointed for a specific purpose and <b>ceases to exist once it reports</b>. Two sub-kinds: <b>Inquiry Committees</b> and <b>Advisory Committees</b> — and Select and Joint Committees on Bills fall inside the advisory sub-kind.</td></tr>
+<tr><th><b>Select</b> committee</th><td>Defined by <b>membership drawn from one House only</b>. A Bill referred to a Select Committee of the Lok Sabha contains only Lok Sabha members. It is an <b>ad hoc</b> body: it examines the Bill clause by clause, may take evidence, reports back, and then dissolves.</td></tr>
+<tr><th><b>Joint</b> committee</th><td>Defined by <b>membership drawn from both Houses</b>. Also ad hoc when constituted on a particular Bill — a <b>Joint Parliamentary Committee</b> — with the convention of roughly twice as many Lok Sabha members as Rajya Sabha members. The <b>129th Constitutional Amendment Bill</b> on simultaneous elections went to a JPC in 2024.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap"><span class="ic">!</span><div><b>The two axes, kept apart.</b> <b>Permanent vs temporary</b> is one axis: standing versus ad hoc. <b>One House vs both</b> is the other: select versus joint. They are not alternatives to each other — a Select Committee is <i>both</i> ad hoc <i>and</i> single-House. A statement that "a Select Committee is a Standing Committee" is <b>false</b>; so is one claiming a Joint Committee must be permanent. And note the vocabulary trap: a <b>Joint Parliamentary Committee</b> on a scam is an <i>inquiry</i> committee, while a Joint Committee on a Bill is an <i>advisory</i> one — same phrase, different function.</div></div>
+
+<div class="tip"><span class="ic">✚</span><div><b>Where a Bill can be sent, and by whom.</b> After the first reading, a Bill may be (1) taken up for consideration straight away, (2) referred to a <b>Select Committee</b> of the House, (3) referred to a <b>Joint Committee</b> of both Houses, or (4) circulated to elicit <b>public opinion</b>. Separately, the presiding officer may refer it to the relevant <b>Departmentally Related Standing Committee</b> — which is the ordinary route today, while Select and Joint Committees are reserved for contentious Bills. All committee recommendations are <b>advisory, not binding</b> on the House.</div></div>
+
+<h3>The wider committee system — standing vs ad hoc</h3>
+<div class="tip trap"><span class="ic">!</span><div><b>Committee numbers, in one line each — because these are pure recall and pure marks.</b> PAC <b>22</b> (15 LS + 7 RS) · Estimates <b>30</b> (Lok Sabha only) · Public Undertakings <b>22</b> (15 LS + 7 RS) · Departmentally Related Standing Committees <b>24 committees of 31</b> (21 LS + 10 RS) · <b>Official Language 30</b> (20 LS + 10 RS). The Official Language Committee is the only one with a <b>20:10</b> split — every other mixed committee runs roughly 15:7 or 21:10, so "20 members, 10 and 10" is a manufactured wrong answer that looks plausible.</div></div>
+<p class="lead">Parliamentary committees divide into <b>Standing</b> (permanent, reconstituted periodically) and <b>Ad hoc</b> (created for a specific purpose, dissolved on reporting). The financial trio above are Standing Financial Committees; these are the rest that get named in questions.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Committee</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><th>Committee on Government Assurances</th><td>Checks whether the <b>assurances, promises and undertakings given by Ministers</b> on the floor of the House have actually been fulfilled — and how far.</td></tr>
+<tr><th>Committee on Subordinate Legislation</th><td>Examines whether the executive is properly exercising the power to make rules, regulations and by-laws <b>delegated by Parliament</b> or conferred by the Constitution — i.e., policing delegated legislation. <i>(Asked directly in UPSC Prelims 2015.)</i></td></tr>
+<tr><th>Committee of Parliament on <b>Official Language</b></th><td>The odd one out in this list, and the reason it gets asked: it is the <b>only parliamentary committee created by the Constitution itself</b> — <b>Article 344(4)</b> — and was constituted in <b>1957</b>. It reviews the progress in the use of <b>Hindi</b> for the Union's official purposes and reports, with recommendations, <b>directly to the President</b>. <b>30 members: 20 from the Lok Sabha and 10 from the Rajya Sabha</b>, elected by proportional representation through the single transferable vote. Its <b>Chairman is elected by the committee's own members</b> — by convention the <b>Union Home Minister</b>, which is why it is <i>not</i> chaired by the Speaker.</td></tr>
+<tr><th>Committee of Privileges</th><td>Semi-judicial in character; examines breaches of privilege of the House or its members and recommends appropriate action.</td></tr>
+<tr><th>Ethics Committee</th><td>Enforces the code of conduct of members; examines cases of misconduct and recommends action.</td></tr>
+<tr><th>Business Advisory Committee</th><td>Regulates the programme and time-table of the House — it <b>allots time</b> for the discussion of government legislative and other business.</td></tr>
+<tr><th>Committee on Petitions</th><td>Considers petitions from citizens on Bills and matters of general public importance; also examines representations.</td></tr>
+<tr><th>Rules Committee</th><td>Considers matters of procedure and conduct of business, and recommends amendments to the Rules.</td></tr>
+<tr><th>Ad hoc committees</th><td>Created for a specific purpose and cease to exist on submitting their report — the two most cited kinds are <b>Select/Joint Committees on a Bill</b> and Committees of Inquiry (e.g., a Joint Parliamentary Committee constituted to probe a specific matter).</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Constitutional anchor:</b> parliamentary committees derive from <b>Articles 105</b> (privileges) and <b>118</b> (each House's power to make rules regulating its procedure). Chairmen of these committees are appointed by the <b>Speaker</b> from among the committee's own members — <i>including</i> the Public Accounts Committee. What is special about the PAC is not <i>who appoints</i> its chairman but <i>whom the Speaker appoints</i>: by convention since 1967, a member of the <b>Opposition</b>.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 03 ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Cut motions, the Guillotine &amp; special grants</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><th>Policy Cut Motion</th><td>MP proposes reducing a Demand for Grant's amount to <b>Re. 1</b>, as a way to record disapproval of the policy underlying the expenditure.</td></tr>
+<tr><th>Economy Cut Motion</th><td>Proposes reducing the Demand by a <b>specific amount</b>, to express that the expenditure figure itself should be lower — an economy objection, not a policy one.</td></tr>
+<tr><th>Token Cut Motion</th><td>Proposes reducing the Demand by <b>Rs. 100</b>, purely to ventilate a specific grievance falling within the government's responsibility, without objecting to the policy or the amount as such.</td></tr>
+<tr><th>The Guillotine</th><td>At the end of the time allotted for the Budget discussion, the Speaker puts <i>all</i> outstanding Demands for Grants to vote together, whether or not they have actually been discussed — the mechanism that forces the Budget process to a hard close within a fixed calendar.</td></tr>
+<tr><th>Vote on Account</th><td>Grants an advance to cover government expenditure for a short period (usually 1–2 months) while the full Budget is still being discussed and voted — keeps government spending legal in the interim.</td></tr>
+<tr><th>Vote of Credit / Exceptional Grant</th><td>Vote of Credit: for unforeseen, large-scale needs (e.g., a sudden war) that can't be detailed in advance. Exceptional Grant: for a purpose entirely outside the current year's normal Budget, forming no part of ordinary services.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The other grants — the full six, since questions list them together</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Grant</th><th>When it is used</th></tr></thead>
+<tbody>
+<tr><th>Supplementary Grant</th><td>The amount authorised for a service <b>this year</b> proves insufficient and more is needed <i>during the same year</i>.</td></tr>
+<tr><th>Additional Grant</th><td>A <b>new service not contemplated</b> in the Budget of that year requires spending.</td></tr>
+<tr><th>Excess Grant</th><td>Money has <b>already been spent in excess</b> of the amount granted — voted <i>after</i> the financial year ends, and it must first be examined by the <b>Public Accounts Committee</b>. This PAC linkage is the most-tested fact of the six.</td></tr>
+<tr><th>Vote on Account</th><td>Advance to keep spending legal while the Budget is still under consideration.</td></tr>
+<tr><th>Vote of Credit</th><td>Unexpected demand of magnitude/indefinite character that cannot be stated with Budget-style detail.</td></tr>
+<tr><th>Exceptional Grant</th><td>For a special purpose forming no part of the current year's ordinary service.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The three funds — a permanent Prelims favourite</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Fund</th><th>Article</th><th>Key features</th></tr></thead>
+<tbody>
+<tr><th>Consolidated Fund of India</th><td>266(1)</td><td>All revenues received, loans raised, and repayments received by the Union. <b>No money can be withdrawn without Parliament's authorisation</b> (an Appropriation Act). "Charged" expenditure is met from here without a vote.</td></tr>
+<tr><th>Public Account of India</th><td>266(2)</td><td>Money where government acts as a <b>banker/trustee</b> — provident funds, small savings, remittances. <b>Withdrawals do NOT require Parliamentary appropriation</b>; they are made by executive action. This is the distinction most often tested.</td></tr>
+<tr><th>Contingency Fund of India</th><td>267</td><td>Held by the <b>President</b>, an <b>imprest</b> (standing advance) for meeting unforeseen expenditure pending Parliament's authorisation. Operated by the Finance Secretary on behalf of the President. The corpus was raised to <b>₹30,000 crore</b> in 2021.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> "all three funds require Parliamentary authorisation before withdrawal" is <b>false</b> — only the Consolidated Fund does. The Public Account operates by executive action, and the Contingency Fund is at the President's disposal for unforeseen needs (with subsequent regularisation).</p>
+</div>
+</section>
+
+<!-- ===== SECTION 04 ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Parliamentary privileges — Article 105 (Union), Article 194 (State)</h2></div>
+<hr class="divider">
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>The single most important fact in this section: parliamentary privileges in India are largely NOT codified into one clean law.</b> They rest on four different sources at once — (1) specific constitutional provisions (Articles 105, 194); (2) laws made by Parliament (very few actually exist); (3) the Rules of Procedure of each House; and (4) constitutional conventions and judicial interpretation built up case by case. Any MCQ statement claiming "privileges are fully codified in a single Act" is false — this remains, deliberately, an open-ended, evolving body of protections rather than a fixed list.</p>
+</div>
+
+<h3>Individual privileges — belonging to each MP personally</h3>
+<div class="prelims">
+<h3>🔴 Individual privileges</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span><b>Freedom of speech</b> in Parliament (Art 105(1)) — no MP can be held liable in any court for anything said, or any vote given, in Parliament or its committees.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Freedom from arrest</b> in civil cases during the session, and 40 days before and after it — <i>criminal-case arrest is not protected at all</i>, a frequent trap.</span></div>
+<div class="item"><span class="dot">●</span><span>Exemption from <b>jury service</b> while Parliament is in session.</span></div>
+<div class="item"><span class="dot">●</span><span>Right to receive prompt information of a fellow member's <b>arrest, detention, conviction, imprisonment, or release.</b></span></div>
+</div>
+</div>
+
+<h3>Collective privileges — belonging to the House as a whole</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Privilege</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><th>Right to publish debates/proceedings</th><td>The House can publish its own reports without needing prior government permission — but this does not extend to a private individual publishing an unauthorised version of proceedings.</td></tr>
+<tr><th>Right to exclude strangers</th><td>Each House can hold a secret sitting, excluding non-members entirely.</td></tr>
+<tr><th>Right to make rules</th><td>Each House regulates its own procedure and conduct of business, and no court can question the validity of proceedings on grounds of an alleged procedural irregularity (Art 122/212).</td></tr>
+<tr><th>Right to punish for breach of privilege / contempt</th><td>A House can reprimand, admonish, or even imprison a member or outsider for breach of its privileges — a power exercised sparingly but real.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap: freedom of speech under Article 105(1) is not unlimited</b> — it is subject to the Constitution's other provisions and to the House's own Rules of Procedure; it does not protect a member from action for, say, contempt of court committed through a parliamentary speech, or from the House's own internal disciplinary action.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Recent-judgment layer — Sita Soren v. Union of India (2024), the most important privileges ruling in a generation.</b> A seven-judge bench unanimously <b>overruled P.V. Narasimha Rao (1998)</b> — the JMM-bribery-era precedent that had shielded legislators who took bribes and then voted as paid. The Court held that Articles 105(2)/194(2) immunity attaches to what is <i>necessary</i> for legislative functioning, and <b>bribery is never necessary for a vote or speech</b>: the offence is complete the moment the bribe is accepted, regardless of whether the member ultimately votes as promised, votes the other way, or never votes at all. Concept behind the holding: privilege belongs to the <i>House's collective functioning</i>, not to the member as personal armour — a member claiming individual immunity must show the act falls within what the House needs to function freely, and corruption fails that test by definition. Any statement claiming a legislator's vote-linked bribery is protected by parliamentary privilege is now flatly wrong.</p>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 Pros / cons / way forward — should privileges be codified?</div>
+<p>The classic Mains debate this note's "largely uncodified" fact sets up. <b>For codification:</b> certainty for citizens and the press (today nobody can list the full set of acts constituting "breach of privilege"); prevents arbitrary or self-serving use of the contempt power against critics; aligns with the rule-of-law principle that punishable conduct must be knowable in advance. <b>Against:</b> a fixed statutory list would freeze what must evolve with parliamentary practice; codification would invite constant judicial interpretation, entangling courts in the legislature's internal affairs and diluting separation of powers; the House's flexible self-protection is itself part of legislative independence. <b>Way forward (liftable):</b> a middle path — codify the citizen-facing edges (what outsiders can be punished for, with procedural safeguards) while leaving the House's internal discipline flexible; cite Sita Soren (2024) as evidence that courts already police the outer boundary where privilege collides with criminal law.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>PYQ analysis &amp; practice questions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> parliamentary committees are the highest-frequency item in this note — UPSC asks them by <b>function</b> ("which committee does X?") and by <b>size</b> ("which is the largest?"), both of which are pure recall from the composition table in Section 02. Budget devices and the Rajya Sabha's financial limits follow. Genuine PYQs first.</p>
+
+<h3>(A) Genuine UPSC PYQs</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Direct <b>(Week 3 test — you answered "the budget is modified and presented again")</b></span>
+<p class="qtext">When the annual budget fails to be passed by the Lok Sabha after it is put to vote, which of the following takes place?</p>
+<ul class="opts single"><li>(a) The budget is modified and presented again</li><li>(b) The budget is referred to the Rajya Sabha for suggestions</li><li>(c) The Union Finance Minister is asked to resign</li><li>(d) The Prime Minister submits the resignation of the Council of Ministers</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<ul class="vwhy"><li>Rejection of the Budget is an <b>implied vote of no confidence</b>. A government that cannot carry its own money through the Lok Sabha has lost its majority, and the <b>entire Council of Ministers</b> must resign — no motion of any kind is required.</li><li>(a), (b) and (c) all describe things a government might <i>administratively</i> do, which is exactly why they are offered. (b) is doubly wrong: the Rajya Sabha has no vote on Demands for Grants at all.</li><li>(c) is the sharpest distractor — it isolates the Finance Minister. But responsibility here is <b>collective</b> under Article 75(3), not individual.</li><li><b>The transferable rule: money defeat = confidence defeat.</b> The same applies to a cut motion carried against the government and to defeat of the Motion of Thanks.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many <b>(Week 4)</b></span>
+<p class="qtext">Consider the following events in the Lok Sabha:</p>
+<ol class="subs"><li>A cut motion is passed against the government.</li><li>The Motion of Thanks on the President's Address is defeated.</li><li>A censure motion against the Council of Ministers is passed.</li><li>An adjournment motion is passed.</li></ol>
+<p class="qtext">After how many of the above is the Council of Ministers required to resign?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li><b>1 and 2 compel resignation.</b> A carried cut motion operates as a no-confidence vote; the Motion of Thanks must be passed, and its defeat is a defeat of the government.</li><li><b>3 does not.</b> A passed censure motion requires the Council to <b>seek the confidence of the House as soon as possible</b> — it does not itself remove the government.</li><li><b>4 does not.</b> An adjournment motion carries an element of censure, which is why the Rajya Sabha cannot use it, but it compels nothing.</li><li>Sort them by the rule: <b>money and confidence topple; criticism does not.</b></li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice · Statements <b>(Week 4, Day 1)</b></span>
+<p class="qtext">Consider the following statements regarding parliamentary committees:</p>
+<ol class="subs"><li>A Select Committee on a Bill consists of members drawn from one House only.</li><li>A Select Committee is a Standing Committee of that House.</li><li>A Joint Committee on a Bill ceases to exist once it presents its report.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li><b>Statements 1 and 3 are correct.</b> "Select" means single-House; a Joint or Select Committee on a Bill dissolves on reporting.</li><li><b>Statement 2 is wrong.</b> A Select Committee is <b>ad hoc</b>, not standing. The two axes are independent: permanent-versus-temporary is one, single-House-versus-both is the other.</li><li>Hold the rule: <i>Select = one House and temporary. Joint = both Houses. Standing = permanent.</i></li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements <b>(Week 4, Day 1)</b></span>
+<p class="qtext">With reference to a censure motion, consider the following statements:</p>
+<ol class="subs"><li>It must state the reasons for its adoption.</li><li>It can be moved against an individual Minister.</li><li>If passed, the Council of Ministers must resign.</li></ol>
+<p class="qtext">Which of the statements given above are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 and 2 only</b>
+<ul class="vwhy"><li><b>Statements 1 and 2 are correct</b> — a censure motion states reasons and may target an individual Minister, a group, or the whole Council.</li><li><b>Statement 3 is wrong.</b> A passed censure motion does <b>not</b> compel resignation; the Council must explain itself. Only a <b>no-confidence motion</b> brings the government down.</li><li>The contrast in one line: no-confidence is about <b>survival</b>, censure is about <b>reprimand</b>.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative <b>(Week 4, Day 1)</b></span>
+<p class="qtext">Which one of the following statements about a Point of Order is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) It relates to the interpretation or enforcement of the Rules of Procedure</li><li>(b) It may be used to raise the merits of a policy under discussion</li><li>(c) It requires no prior notice and suspends the proceedings</li><li>(d) No debate is allowed on a Point of Order</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>A Point of Order is strictly <b>procedural</b> — it raises a breach of the Rules or of a constitutional provision, never the merits of a policy.</li><li>(a), (c) and (d) are all accurate; it is an <b>extraordinary device</b> because it interrupts business without notice.</li><li>To raise substance rather than procedure, the correct devices are a Short Duration Discussion or a Calling Attention motion.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice · Statements <b>(Week 3 test — you skipped this after 13 seconds)</b></span>
+<p class="qtext">With reference to the Committee of Parliament on Official Language, consider the following statements:</p>
+<ol class="subs"><li>It consists of 20 members, 10 from the Lok Sabha and 10 from the Rajya Sabha.</li><li>The Speaker of the Lok Sabha is the Chairman of the Committee.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — neither</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong on both numbers.</b> The Committee has <b>30</b> members — <b>20 from the Lok Sabha and 10 from the Rajya Sabha</b>, elected by proportional representation through the single transferable vote.</li><li><b>Statement 2 is wrong.</b> The Chairman is <b>elected by the Committee's own members</b>; by convention the <b>Union Home Minister</b> holds the chair.</li><li>Worth knowing for its own sake: this is the <b>only parliamentary committee created by the Constitution itself</b>, under <b>Article 344(4)</b>, constituted in 1957, and it reports directly to the <b>President</b>.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2013</span><span class="stg">Prelims</span>
+<p class="qtext">Which one of the following is the largest Committee of the Parliament?</p>
+<ul class="opts single"><li>(a) The Committee on Public Accounts</li><li>(b) The Committee on Estimates</li><li>(c) The Committee on Public Undertakings</li><li>(d) The Committee on Petitions</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>The <b>Estimates Committee has 30 members</b> — larger than the PAC and COPU at 22 each — and, uniquely, all 30 come from the Lok Sabha alone.</li><li>Verdict: direct hit on Section 02's committee table.</li><li>The size ranking and the no-Rajya-Sabha fact are two separate marks from one row.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">Prelims</span>
+<p class="qtext">With reference to the Parliament of India, which of the following Parliamentary Committees scrutinizes and reports to the House whether the powers to make regulations, rules, sub-rules, by-laws, etc. conferred by the Constitution or delegated by the Parliament are being properly exercised by the Executive within the scope of such delegation?</p>
+<ul class="opts single"><li>(a) Committee on Government Assurances</li><li>(b) Committee on Subordinate Legislation</li><li>(c) Rules Committee</li><li>(d) Business Advisory Committee</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>Verdict: direct hit on Section 02's wider-committee table.</li><li>Note the distractor design — all four are real committees, and the question is won purely by knowing each one's remit.</li><li>Government Assurances tracks ministerial promises;</li><li>The Rules Committee handles the House's own procedure; Business Advisory allots time.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2021</span><span class="stg">Prelims</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>Rajya Sabha has no power either to reject or to amend a Money Bill.</li><li>Rajya Sabha cannot vote on the Demands for Grants.</li><li>Rajya Sabha cannot discuss the Annual Financial Statement.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>The Rajya Sabha <b>can discuss</b> the Annual Financial Statement — it simply cannot vote on Demands for Grants.</li><li>This is precisely the discuss-versus-vote distinction flagged in Section 02 and in Note 01's equal/unequal table, and UPSC has now tested it directly.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2012</span><span class="stg">Prelims</span>
+<p class="qtext">The Parliament of India exercises control over the functions of the Council of Ministers through</p>
+<ol class="subs"><li>Adjournment motion</li><li>Question hour</li><li>Supplementary questions</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<ul class="vwhy"><li>All three. A rare "all correct" answer, and worth noting for your instinct: candidates routinely reject option (d) on the assumption that at least one item must be wrong.</li><li>Verify each independently — all three are genuine instruments of executive accountability (Section 01's devices tables).</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions — same format, not real PYQs</h3>
+<p class="lead"><b>Integrity note:</b> self-generated, built in the shapes this weekly test repeatedly uses — a codification-status trap, a lapse-on-dissolution list, and a cut-motion definitional pairing.</p>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to parliamentary privileges in India, consider the following statements:</p><ol class="subs"><li>They are fully codified in the Parliament (Privileges) Act</li><li>Freedom of speech under Article 105</li><li>is absolute and subject to no other constitutional provision</li><li>A member enjoys freedom from arrest in civil cases during a session and 40 days before/after it</li></ol><p class="qtext">How many of the statements given above are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: only 1 correct (statement 3)</b>
+<p class="vone">Statements 1 and 2 are both traps; privileges are not fully codified, and Art 105(1) is expressly subject to other constitutional provisions and House rules (Section 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Which of the following Bills lapse on the dissolution of the Lok Sabha?</p>
+<ol class="subs"><li>A Bill passed by the Lok Sabha but pending in the Rajya Sabha</li><li>A Bill pending in the Lok Sabha, not yet passed by it</li><li>A Bill passed by both Houses but pending the President's assent</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) 1 and 2 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>Only a Bill still pending in the Lok Sabha itself lapses.</li><li>A Bill already passed by the Lok Sabha and pending in the never-dissolved Rajya Sabha survives, and a Bill awaiting only Presidential assent survives too (Section 01's trap box).</li></ul>
+</div>
+</div>
+
+
+
+<h3>Deep drill — devices, committees, grants &amp; funds</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Negative ⚠</span>
+<p class="qtext">With reference to the Question Hour, which one of the following statements is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) A starred question requires an oral answer and permits supplementary questions.</li><li>(b) An unstarred question requires a written answer and permits no supplementaries.</li><li>(c) A short notice question is asked with less than ten days' notice on a matter of urgent public importance.</li><li>(d) In the <b>Lok Sabha</b>, Zero Hour precedes Question Hour in the daily order of business.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<ul class="vwhy"><li>In the <b>Lok Sabha</b> Question Hour is the first hour (11 am–12 noon) and Zero Hour follows from 12 noon — so the statement inverts the order.</li><li>Note the qualifier "in the Lok Sabha". Since <b>2014</b> the <b>Rajya Sabha</b> takes Zero Hour at 11 am and Question Hour at 12 noon, so without naming the House the statement would be arguable rather than wrong.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of device and description:</p>
+<ol class="subs"><li>Kangaroo closure — only important clauses are debated and the rest are passed over</li><li>Guillotine — undiscussed demands are put to vote together when the allotted time expires</li><li>Point of Order — raised on the merits of a policy under discussion</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Pairs 1 and 2. A Point of Order concerns the <i>interpretation or enforcement of the Rules</i>, never the merits; it carries no debate and the presiding officer's decision on it is final.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many ⚠</span>
+<p class="qtext">Consider the following parliamentary devices:</p>
+<ol class="subs"><li>Half-an-Hour Discussion</li><li>Short Duration Discussion</li><li>Statutory Resolution</li><li>Calling Attention Motion</li></ol>
+<p class="qtext">In how many of the above does the House take a formal vote?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">Only the Statutory Resolution. Every resolution is a substantive motion and must be voted upon; the two discussions and the Calling Attention device involve no formal motion and no voting.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">With reference to the Public Accounts Committee, consider the following statements:</p>
+<ol class="subs"><li>It consists of 22 members drawn from both Houses of Parliament.</li><li>A Minister can be elected to it if the House so decides.</li><li>By convention its Chairman is appointed from the Opposition.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 1 and 3 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">A Minister can <b>never</b> be a member of the PAC, Estimates Committee or COPU — and ceases to be one on becoming a Minister.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative ⚠</span>
+<p class="qtext">Which one of the following statements about parliamentary committees is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) The Estimates Committee consists of 30 members, all from the Lok Sabha.</li><li>(b) The Committee on Subordinate Legislation examines the executive's exercise of delegated rule-making power.</li><li>(c) The Business Advisory Committee allots time for government business in the House.</li><li>(d) Recommendations of parliamentary committees are binding on the government.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<p class="vone">Committee recommendations are <b>advisory</b> — this is the standing criticism of the whole system.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of grant and situation:</p>
+<ol class="subs"><li>Supplementary Grant — the amount authorised for a service this year proves insufficient</li><li>Additional Grant — money has already been spent in excess of the amount granted</li><li>Vote of Credit — a demand of magnitude or indefinite character that cannot be stated in Budget detail</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Pairs 1 and 3. Pair 2 describes an <b>Excess Grant</b> (voted after the year ends, and first examined by the PAC); an Additional Grant is for a <i>new service not contemplated</i> in the Budget.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many ⚠</span>
+<p class="qtext">Consider the following statements regarding the funds of the Government of India:</p>
+<ol class="subs"><li>No money can be withdrawn from the Consolidated Fund of India without Parliamentary authorisation.</li><li>Withdrawals from the Public Account require an appropriation made by law.</li><li>The Contingency Fund of India is placed at the disposal of the President.</li><li>Charged expenditure is met from the Consolidated Fund of India.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<p class="vone">Statements 1, 3 and 4. The Public Account is operated by <b>executive action</b>; the government acts there as banker/trustee, so no appropriation is needed. That single exception is the whole question.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason ⚠</span>
+<p class="qtext"><b>Statement-I:</b> An Excess Grant is voted by the Lok Sabha only after the financial year to which it relates has ended.<br><b>Statement-II:</b> Such expenditure must first be examined and recommended by the Public Accounts Committee.</p>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both Statement-I and Statement-II are correct and Statement-II is the correct explanation of Statement-I</li><li>(b) Both Statement-I and Statement-II are correct but Statement-II is not the correct explanation of Statement-I</li><li>(c) Statement-I is correct but Statement-II is incorrect</li><li>(d) Statement-I is incorrect but Statement-II is correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">The PAC's prior scrutiny of over-spending is precisely why the regularisation vote can only come after the year closes.</p>
+</div>
+</div>
+
+<h3>Format drill — your weak patterns, this note's content</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) Prorogation ends a session of the House</li><li>(b) Bills pending in Parliament lapse on prorogation</li><li>(c) Adjournment sine die fixes no date for the next sitting</li><li>(d) Only the Lok Sabha can be dissolved</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>Pending notices lapse on prorogation; pending Bills do not.</li><li>Bills lapse only on dissolution, with exceptions (Section 01).</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to parliamentary privileges, which of the following is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) Articles 105 and 194 are the core constitutional provisions</li><li>(b) The House may punish outsiders for contempt</li><li>(c) Parliament has consolidated all privileges into a single comprehensive statute</li><li>(d) Courts cannot question proceedings for mere procedural irregularity</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">Privileges remain largely uncodified, resting on the Constitution, sparse statutes, House rules and precedent (Section 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Which of the following are "charged" on the Consolidated Fund of India (discussed, never voted)?</p><ol class="subs"><li>Salaries of Supreme Court judges</li><li>The CAG's salary</li><li>The Prime Minister's office expenditure as a Demand for Grants</li><li>The President's emoluments</li></ol><p class="qtext">How many are charged?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Only three (1, 2, 4)</b>
+<p class="vone">A Ministry's or office's Demand for Grants is precisely the voted category (Section 02).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> Some Demands for Grants are voted on without ever being discussed. <b>Statement-II:</b> When the allotted Budget time expires, the Speaker applies the Guillotine, putting all outstanding Demands to vote together. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">The Guillotine is the exact mechanism that produces undiscussed-but-voted Demands (Section 03).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs of cut motion and meaning:</p><ol class="subs"><li>Policy Cut — reduce the Demand to Re. 1</li><li>Economy Cut — reduce the Demand by Rs. 100</li><li>Token Cut — reduce the Demand by a specific amount</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — Only one (pair 1)</b>
+<p class="vone">Pairs 2 and 3 have swapped definitions: Economy Cut is the specific-amount reduction, Token Cut is the Rs. 100 grievance signal (Section 03).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Statements</span>
+<p class="qtext">With reference to Sita Soren v. Union of India (2024), consider:</p><ol class="subs"><li>It overruled P.V. Narasimha Rao (1998)</li><li>It held bribery linked to a vote in the House is protected by privilege</li><li>It was decided by a seven-judge bench</li></ol><p class="qtext">Which is/are correct?</p><ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 1 and 3 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 1 and 3 only</b>
+<p class="vone">The entire point of the ruling is that bribery is NEVER protected; the offence completes on accepting the bribe (Section 04's recent-judgment box).</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M29</span><span class="prac">Practice</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">The absence of full codification of parliamentary privileges has both protected legislative independence and created scope for arbitrary use. Discuss.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Discuss" a two-sided claim.</b> The quotation itself hands you the structure — protection on one side, arbitrariness on the other. Follow it exactly, then resolve. The 2024 Sita Soren ruling is the freshest possible evidence and should feature.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Art 105 + the four sources</li><li>How non-codification protects independence</li><li>How it enables arbitrariness</li><li>The judicial boundary</li><li>Verdict: middle path</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 105</b> (and <b>Article 194</b> for the States) guarantees freedom of speech in Parliament and such other privileges as Parliament may define by law — but no code has ever been enacted. Privileges therefore rest on four sources: the Constitution, a few statutes, each House's Rules of Procedure, and convention with judicial precedent.</p>
+<p><span class="sh">How non-codification protects independence</span></p>
+<p>It keeps privileges flexible, evolving with practice rather than frozen in statute. It avoids continuous judicial interpretation of the legislature's internal affairs, consistent with <b>Articles 122 and 212</b>, which bar courts from questioning proceedings for procedural irregularity. And it lets the House protect itself against executive or external interference without fresh legislation.</p>
+<p><span class="sh">How it enables arbitrariness</span></p>
+<p>No citizen or journalist can know in advance what constitutes a breach — offending the rule-of-law principle that punishable conduct must be knowable. The House acts as complainant, judge and executioner in its own cause, and the power has been used against journalists and critics with no defined procedure or appeal, in direct tension with <b>Article 19(1)(a)</b>.</p>
+<p><span class="sh">The judicial boundary</span></p>
+<p><b>Sita Soren (2024)</b>, seven judges, unanimously overruled <b>P.V. Narasimha Rao (1998)</b>: a legislator who accepts a bribe for a vote or speech enjoys no privilege immunity — the offence completes on acceptance, and bribery can never be "necessary" to legislative functioning. <b>Raja Ram Pal (2007)</b> had already held expulsion of members judicially reviewable.</p>
+<p><span class="sh">Verdict</span></p>
+<p>Both halves of the claim are true, so the answer is <b>partial codification</b>: codify the citizen-facing edge — what outsiders may be punished for, with notice, hearing and appeal — leaving the House's internal discipline flexible. That preserves independence where it is needed and removes arbitrariness where it harms.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 105, 194, 122, 212, 19(1)(a) · the four sources of privilege · complainant-judge-executioner critique · Sita Soren (2024, 7 judges) overruling P.V. Narasimha Rao (1998) · Raja Ram Pal (2007) · the partial-codification proposal.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 271 / 250 words.</b> <b>Cut:</b> "able to evolve with parliamentary practice" shortened, the separate outsiders sentence merged into the Article 19(1)(a) line, and "v. Union of India" from the case name. <b>Bought:</b> nothing new — length only, 324 → budget over two passes. The 1998 → 2024 overruling stays: a question about codification is really a question about who draws the boundary, which is precisely what <i>Sita Soren</i> answers.</div>
+<div class="cost"><b>What would cost you marks:</b> arguing only one side; missing Sita Soren (2024), the single most current and relevant authority; proposing full codification without acknowledging what would be lost.</div>
+</div>
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">★ 90-second recall</span>
+<h2>Last-mile revision — Budget, Sessions &amp; Privileges</h2>
+<ul>
+<li>Art 85: max 6-month gap between sessions — the only hard constitutional rule on session timing.</li>
+<li>Adjournment (short pause) → adjournment sine die (no date fixed) → prorogation (ends session, by President) → dissolution (ends Lok Sabha's life, LS only, never RS).</li>
+<li>Bills pending in RS (not yet passed by LS) survive dissolution; Bills pending in LS itself lapse.</li>
+<li>Quorum: 1/10th of total House membership.</li>
+<li>Budget stages: Presentation → General Discussion → Standing Committee scrutiny → Voting on Demands for Grants (<b>LS only</b>) → Appropriation Bill → Finance Bill (75-day rule).</li>
+<li>Charged expenditure: discussed, never voted (President/Governor emoluments, judges' salaries, CAG salary, debt charges).</li>
+<li>Cut motions: Policy (cut to Re. 1) / Economy (specific amount) / Token (Rs. 100, grievance only).</li>
+<li>Guillotine: force-votes all undiscussed Demands when time runs out.</li>
+<li>Vote on Account: short-term advance while full Budget is pending.</li>
+<li>Parliamentary privileges: <b>NOT fully codified</b> — rest on Art 105/194 + rare statutes + House Rules + convention/case law.</li>
+<li>Freedom of speech (Art 105(1)): not absolute — subject to other constitutional provisions and House rules.</li>
+<li>Freedom from arrest: civil cases only, session + 40 days before/after — never protects against criminal arrest.</li>
+<li><b>Sita Soren (2024, 7 judges):</b> overruled P.V. Narasimha Rao — NO privilege immunity for bribery linked to a vote/speech; offence complete on accepting the bribe.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> this completes the Topic 5 Parliament series (Notes 00–03) and, together with Topic 6's three new notes, fully covers Week 3, Days 1–6 of the study plan ahead of Day 7's revision and test.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='02%20Powers%20Functions%20and%20Legislative%20Process.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">02 · Powers, Functions &amp; Legislative Process</span></button>
+<button class="tabflow-btn tabflow-next" disabled><span class="tabflow-dir">Next →</span><span class="tabflow-label">— end of Topic 5 series —</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 5 — Parliament &amp; State Legislatures · Note 03 of 4<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 23.
+</footer>
+
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

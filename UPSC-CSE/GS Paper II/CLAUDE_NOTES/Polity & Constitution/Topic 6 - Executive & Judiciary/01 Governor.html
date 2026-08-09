@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governor | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Appointment &amp; qualifications</button>
+<button class="notetab" data-tab="s2">02 · Term &amp; removal</button>
+<button class="notetab" data-tab="s3">03 · Powers of the Governor</button>
+<button class="notetab" data-tab="s4">04 · Discretionary powers</button>
+<button class="notetab" data-tab="s5">05 · Case law — Bommai to Nabam Rebia</button>
+<button class="notetab" data-tab="s6">06 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">07 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 6 of 9 · Note 01 — Week 3, Day 2</div>
+<h1>Governor</h1>
+<p class="sub">Senior-mentor notes on the State's nominal executive head — appointed, not elected, holding office "during the pleasure of the President," and carrying a discretionary-powers list far longer and far more politically contested than the President's, precisely because a Governor sits between an elected State government and an appointing Union government.</p>
+<div class="chips">
+<span class="chip">Articles 153–167</span>
+<span class="chip">Article 200 — three-way veto</span>
+<span class="chip">Discretionary Powers</span>
+<span class="chip">S.R. Bommai (1994)</span>
+<span class="chip">Nabam Rebia (2016)</span>
+</div>
+<div class="bignum"><b>Art 163</b><span>Discretion only where the Constitution expressly requires it</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why the Governor gets more exam attention than the office's ceremony suggests</div>
+<p>On paper, the Governor is the President's mirror image at State level — nominal head, acts on ministerial advice. In practice, the Governor's office generates far more Supreme Court litigation and far more live current-affairs material (Assembly floor tests, Bill reservations, delayed assent) than the President's ever does, because the Governor is <i>appointed by the Union</i> while the State government is <i>elected locally</i> — a structural tension the President's office simply doesn't have. That tension is exactly why this note spends an entire section on discretionary powers and another on case law — that's where nearly all the real marks are.</p>
+<p>Week 3, Day 2 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapter 30.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Think of the Governor as the Union government's representative sitting inside every State's own government machinery — appointed by the President (in practice, on the Union Cabinet's advice), not elected by anyone in the State, and answerable upward to the President rather than downward to the State's voters. For nearly everything the Governor does, they act exactly like the President does at the Union level: sign what the elected State government (the Chief Minister and Council of Ministers) advises.</p>
+<p>The exam-relevant twist is that the list of situations where a Governor is allowed to use personal judgment instead of just following advice is <b>longer and murkier</b> than the President's — and because Governors sit at the fault line between Union and State politics, those discretionary moments (a hung Assembly, a floor test, a Bill sent up to the President instead of being signed locally) show up constantly in the news and just as constantly in MCQs.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 6 note series —</b>
+<span class="done">✓ 00 President &amp; Vice-President</span> · <span class="done">✓ 01 Governor (this file)</span> · <span class="todo">○ 02 Prime Minister &amp; Council of Ministers</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Appointment &amp; qualifications — Articles 153–157</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Appointment</th><td>By the <b>President</b> — by warrant under his hand and seal — effectively on the advice of the Union Council of Ministers. There is <b>no election and no nomination by the State's Council of Ministers</b> — a frequently tested contrast with how a State's own government is formed.</td></tr>
+<tr><th>Common Governor for two or more States</th><td>Permitted since the <b>7th Amendment, 1956</b> — one person may serve as Governor of more than one State simultaneously.</td></tr>
+<tr><th>Qualifications (Art 157)</th><td>Citizen of India; at least <b>35 years</b> of age. That's the complete list — <i>unlike the President, there is no requirement that the Governor be qualified for election to any legislative house.</i></td></tr>
+<tr><th>Conventions (not binding law)</th><td>By convention, the Governor is usually an "outsider" — not a permanent resident of the State they are appointed to — and is appointed after informal consultation with the State's Chief Minister, a practice recommended by the <b>Sarkaria Commission</b> to reduce Centre-State friction. <b>Read the modal verb in any statement about this.</b> The President <b>may</b> consult the Chief Minister; the President is <b>not required to</b>. A statement saying the President "<i>should</i>" or "<i>must</i>" consult the Chief Minister before appointing a Governor is <b>incorrect</b> — the convention has never been made mandatory, which is exactly why Sarkaria, and later Punchhi, had to recommend that it be.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> "Office of profit" disqualification applies to the Governor too, but sitting Governors, like sitting Presidents, are specifically exempted while they hold office — so a Governor's own post is never treated as disqualifying them from later contesting for President or Vice-President.</p>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 Constituent Assembly ammunition — why an appointed Governor at all?</div>
+<p>The Assembly seriously considered a <b>directly elected</b> Governor (the Draft Constitution even carried the option) and deliberately rejected it. The arguments that won: an elected Governor with a State-wide mandate would become a <i>rival to the elected Chief Minister</i>, replicating at State level exactly the dual-power problem avoided at the Union; direct election would inflame separatist and provincial tendencies the framers feared in 1949; and an appointed Governor would serve as a <b>constitutional link between Union and State</b> — the agent of national unity inside each State's machinery. Members like K.T. Shah pushed back, warning an appointed Governor would become the Centre's political instrument — a warning the subsequent seven decades of Article 356 misuse and Bill-reservation stand-offs largely vindicated. For any "do we need the office of Governor?" Mains question: open with the framers' unity logic, concede Shah's prophecy with Bommai/Rameshwar Prasad as evidence, close with Punchhi's unimplemented tenure fix as the way forward.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Term &amp; removal — Article 156</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Term</th><td><b>5 years</b> — but this is not a fixed guarantee; the Governor holds office "during the pleasure of the President," meaning the term can end earlier at any time.</td></tr>
+<tr><th>Removal</th><td>The President can remove a Governor <b>at any time, without giving any reason, and without any impeachment-style process</b> — the single sharpest contrast with the President's own Article 61 removal, which requires a specific ground and a 2/3rd-majority quasi-judicial process in Parliament. A Governor has essentially no security of tenure against the Union government of the day.</td></tr>
+<tr><th>Resignation</th><td>Submitted in writing to the President.</td></tr>
+<tr><th>Continuation</th><td>Like the President, a Governor continues in office beyond the 5-year term until a successor takes charge.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Punchhi Commission (2010) recommendation, frequently tested as a "has this been implemented" trap:</b> that Governors should have a fixed 5-year tenure and be removable only for proven misconduct after a due process, similar to judges — explicitly to end the practice of Governors being replaced en masse whenever the ruling party changes at the Centre. This recommendation has <b>not</b> been constitutionally implemented; "at the pleasure of the President" (Art 156) remains the operative legal rule.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 03 ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Powers of the Governor</h2></div>
+<hr class="divider">
+<p class="lead">The same six-category checklist as the President (Executive, Legislative, Financial, Judicial — no Diplomatic or Military role at State level) — but each category has State-specific content and at least one important gap versus the President's equivalent power.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Category</th><th>Key content</th></tr></thead>
+<tbody>
+<tr><th>Executive</th><td>Appoints the Chief Minister and, on the CM's advice, other State Ministers; appoints the State's Advocate General, State Election Commissioner's staff support, and members of the State Public Service Commission (jointly with UPSC in some matters); can seek information from the CM on State administration (State-level parallel to the President's Article 78).</td></tr>
+<tr><th>Legislative</th><td>Summons, prorogues the State Legislature, can dissolve the Legislative Assembly; addresses the Legislature; nominates <b>1/6th of the members of a Legislative Council</b> (where one exists) from persons with special knowledge in literature, science, art, cooperative movement, or social service. <i>The Governor's power to nominate one Anglo-Indian member to the Legislative Assembly was, like the President's equivalent, abolished by the 104th Amendment, 2019.</i></td></tr>
+<tr><th>Financial</th><td>Money Bills can only be introduced in the State Legislature with the Governor's prior recommendation; State Budget laid on the Governor's behalf; controls the State Contingency Fund.</td></tr>
+<tr><th>Ordinance-making (Article 213)</th><td>The Governor's mirror of the President's Article 123 power — promulgated when the State Legislature (or, in a bicameral State, either House) is not in session; same force as a State Act; must be laid before the Legislature and <b>ceases six weeks from reassembly</b> unless approved earlier. <b>The extra condition that distinguishes it from Article 123:</b> for certain matters — where a Bill on the subject would have required the President's prior sanction, or would need reservation for the President's consideration — the Governor <b>needs the President's prior instruction</b> before promulgating. Same case law applies: re-promulgation is unconstitutional (D.C. Wadhwa, 1987; Krishna Kumar Singh, 2017).</td></tr>
+<tr><th>Judicial</th><td>Appoints District Judges and other members of the State's judicial service, in consultation with the State High Court. Pardoning power under <b>Article 161</b> — covers only offences against State laws, and (Section 04 of the President/VP note) excludes <b>court-martial sentences</b> entirely — those are President-only. On a <b>death sentence</b> the line is finer, and it is exactly what gets tested: the Governor <b>cannot grant a pardon</b>, but <b>can suspend, remit or commute</b> it. Only the President can <i>pardon</i> a death sentence.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 04 ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Discretionary powers — the longest list in this note series</h2></div>
+<hr class="divider">
+<p class="lead">Article 163 says the Governor acts on the aid and advice of the Council of Ministers <i>"except in so far as he is by or under this Constitution required to exercise his functions... in his discretion"</i> — meaning discretion here is textually anchored, unlike the President's mostly unwritten discretion.</p>
+
+<div class="prelims">
+<h3>🔴 The core discretionary-powers list</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span><b>Reserving a Bill</b> passed by the State Legislature for the President's consideration (Art 200) — see the Bill-assent table below.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Recommending President's Rule</b> in the State under Article 356, based on a report that the State's government cannot be carried on per the Constitution.</span></div>
+<div class="item"><span class="dot">●</span><span>Exercising functions as <b>Administrator of an adjoining Union Territory</b>, if additionally appointed to that role.</span></div>
+<div class="item"><span class="dot">●</span><span>Determining amounts payable by a State to an autonomous Sixth Schedule district as royalty (Assam, Meghalaya, Tripura, Mizoram).</span></div>
+<div class="item"><span class="dot">●</span><span><b>Choosing a Chief Minister</b> when no party has a clear Assembly majority — the direct State-level parallel to the President's PM-selection discretion.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Dismissing</b> a CM/Council of Ministers that has lost its majority but won't resign, or dissolving the Assembly on the same logic.</span></div>
+</div>
+</div>
+
+<h3>Special Article 371-series discretionary responsibilities — a distinct, State-specific list</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Governor of</th><th>Special discretionary responsibility</th></tr></thead>
+<tbody>
+<tr><th>Maharashtra &amp; Gujarat (Art 371)</th><td>Separate development boards for regions like Vidarbha, Marathwada, Saurashtra, Kutch.</td></tr>
+<tr><th>Nagaland (Art 371A)</th><td>Special responsibility for law and order relating to Naga insurgency-affected areas, exercised in individual judgment after consulting the Council of Ministers.</td></tr>
+<tr><th>Assam (Art 371B), Manipur (Art 371C)</th><td>Responsibilities connected to tribal-area committees within the State Assembly.</td></tr>
+<tr><th>Sikkim (Art 371F)</th><td>Special responsibility for peace and for the social and economic advancement of different sections of Sikkim's population.</td></tr>
+<tr><th>Arunachal Pradesh (Art 371H)</th><td>Special responsibility for law and order, exercised in individual judgment.</td></tr>
+<tr><th>Karnataka (Art 371J)</th><td>Special responsibility for the establishment of a separate development board for the Hyderabad-Karnataka region.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Article 200 — the Governor's three-way choice on a Bill, and why it's more complex than the President's</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Option</th><th>What happens next</th></tr></thead>
+<tbody>
+<tr><th>(a) Assent</th><td>Bill becomes an Act — closed.</td></tr>
+<tr><th>(b) Withhold assent</th><td>Bill fails to become law.</td></tr>
+<tr><th>(c) Return the Bill</th><td>Only for non-Money Bills, for reconsideration by the State Legislature. If passed again with or without amendments, the Governor <b>must</b> give assent — same suspensive-veto logic as the President's Article 111.</td></tr>
+<tr><th>(d) Reserve the Bill for the President's consideration</th><td>The Governor's <b>extra option the President doesn't have</b> over their own Bills. Once reserved, the President may assent, withhold assent, or (for non-Money Bills) direct the Governor to return it to the State Legislature for reconsideration. <b>Critical asymmetry:</b> even if the State Legislature re-passes a reserved-and-returned Bill, the <i>President is not bound to give assent</i> — unlike the Governor's own suspensive veto, there is no forced second-round assent once a Bill has gone up to the President.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> the Governor's decision to reserve a Bill for the President is itself listed as a discretionary function under Article 200's proviso — the Governor does not need Council of Ministers' advice to decide <i>whether</i> to reserve a Bill, even though signing an ordinary Bill is otherwise done on advice.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Case law — from S.R. Bommai to Nabam Rebia</h2></div>
+<hr class="divider">
+<p class="lead">Three judgments, each closing off a different way the Governor's discretion had been misused in practice — worth learning as one sequence, not three isolated facts.</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 800 190" role="img" aria-label="Three landmark cases limiting Governor's discretionary powers">
+<g font-family="Inter" font-size="11.5">
+<rect x="10" y="20" width="245" height="90" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="132" y="42" text-anchor="middle" font-weight="700" fill="#7a1f66">S.R. Bommai (1994)</text>
+<text x="132" y="62" text-anchor="middle" font-size="10.5" fill="#7a1f66">Art 356 proclamations ARE</text>
+<text x="132" y="78" text-anchor="middle" font-size="10.5" fill="#7a1f66">judicially reviewable; majority</text>
+<text x="132" y="94" text-anchor="middle" font-size="10.5" fill="#7a1f66">must be tested on the House floor.</text>
+
+<rect x="278" y="20" width="245" height="90" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="400" y="42" text-anchor="middle" font-weight="700" fill="#8a5c00">Rameshwar Prasad (2006)</text>
+<text x="400" y="62" text-anchor="middle" font-size="10.5" fill="#8a5c00">Bihar Assembly's 2006 dissolution</text>
+<text x="400" y="78" text-anchor="middle" font-size="10.5" fill="#8a5c00">on the Governor's report was mala</text>
+<text x="400" y="94" text-anchor="middle" font-size="10.5" fill="#8a5c00">fide — but not reversed in practice.</text>
+
+<rect x="546" y="20" width="245" height="90" rx="10" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.5"/>
+<text x="668" y="42" text-anchor="middle" font-weight="700" fill="#177a4d">Nabam Rebia (2016)</text>
+<text x="668" y="62" text-anchor="middle" font-size="10.5" fill="#177a4d">Governor cannot summon/prorogue</text>
+<text x="668" y="78" text-anchor="middle" font-size="10.5" fill="#177a4d">Assembly on own judgment over mere</text>
+<text x="668" y="94" text-anchor="middle" font-size="10.5" fill="#177a4d">internal party dissidence.</text>
+</g>
+</svg>
+<figcaption><b>Fig 1.</b> Each case narrows the same underlying question — how far can a Governor act without, or against, elected advice?</figcaption>
+</div></figure>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>S.R. Bommai v. Union of India (1994)</b> — the single most important Governor/President's-Rule case. A 9-judge bench held: (1) the majority of a Council of Ministers must be tested on the <b>floor of the Assembly</b>, not by the Governor's own subjective assessment; (2) a proclamation under Article 356 is <b>subject to judicial review</b> — courts can strike it down if mala fide or based on irrelevant grounds; (3) if a proclamation is struck down, the Assembly (if dissolved) or the dismissed government can be restored. This case is the standard citation whenever a question probes limits on Article 356.</p>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Rameshwar Prasad v. Union of India (2006)</b> — the Supreme Court held Bihar Governor Buta Singh's 2005 report recommending Assembly dissolution (to pre-empt a possible majority-claim by a coalition) was unconstitutional and mala fide — but declined to restore the dissolved Assembly since fresh elections had already been notified by the time of judgment. A key lesson examiners like to draw out: judicial review can declare an action unconstitutional <i>without necessarily being able to undo its practical consequences</i>.</p>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Nabam Rebia and Bamang Felix v. Deputy Speaker (2016)</b> — arising from the Arunachal Pradesh political crisis, the Supreme Court held that a Governor's power to summon, prorogue, or advance an Assembly session is <b>ordinarily exercised on the aid and advice of the Council of Ministers</b>, not the Governor's own discretion — a Governor cannot use internal dissidence within the ruling party as a ground to unilaterally advance a session or alter its agenda. This case sharply narrowed how "discretionary" the summoning power really is in day-to-day practice.</p>
+</div>
+
+<h3>The 2025 assent-timeline saga — the most current-affairs-live Governor topic there is</h3>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>State of Tamil Nadu v. Governor of Tamil Nadu (April 2025)</b> — Article 200 sets <i>no</i> time limit for a Governor to act on a Bill, and Tamil Nadu's Governor had sat on multiple Bills for years. A <b>two-judge bench</b> held that "as soon as possible" in Article 200 has real content: acting on ministerial advice, the Governor should act within about <b>1 month</b>; withholding assent contrary to advice requires the Bill's return, and reserving it for the President should happen within about <b>3 months</b>; a Bill re-passed by the Assembly should receive assent within about <b>1 month</b>. Using Article 142, the Court even deemed the long-pending Tamil Nadu Bills to have received assent.</p>
+<p><b>The counter-move:</b> the President then invoked <b>Article 143</b> (advisory jurisdiction) and referred a set of questions to the Supreme Court — including whether courts can prescribe timelines the Constitution's text omits, and whether a two-judge bench could effectively interpret constitutional provisions at all, given <b>Article 145(3)</b> requires a minimum <b>five-judge Constitution Bench</b> for substantial questions of constitutional interpretation. In <b>November 2025, the five-judge bench answering the reference substantially pulled the timelines back</b> — holding that fixed judicial deadlines and "deemed assent" cannot be imposed on the Governor or President, while still affirming that indefinite inaction is not constitutionally open and remains subject to judicial review in egregious cases.</p>
+<p><b>Why this matters for the test:</b> this is exactly the "recent judgment layer" a current-affairs-aware question setter reaches for. Testable anchors: the two-judge vs five-judge (Art 145(3)) tension; Article 143 being used to revisit a judgment's logic; Article 142 as the deemed-assent device; and the final position — <i>no fixed timelines, no deemed assent, but no indefinite sitting on Bills either</i>.</p>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 The story, told once properly — then the flowchart to remember it by</div>
+<p>Tamil Nadu's Assembly passes Bills — mostly about state universities — and sends them to the Governor. The Governor simply does not act. Not a rejection, not a return, just silence, for years, because Article 200's phrase "as soon as possible" has no number attached. The State finally sues. In <b>April 2025</b>, two judges of the Supreme Court decide that "as soon as possible" cannot mean "never": they read in working timelines (about a month to act on advice, about three to reserve against advice) and then do something extraordinary — using Article 142's complete-justice power, they declare the ten stuck Bills to have been <i>deemed assented</i>, as though the Governor had signed. For the first time in the Republic's history, laws came into force that no Governor and no President ever signed.</p>
+<p>The Union blinks. The <b>President invokes Article 143</b> — the advisory jurisdiction — and asks the Court itself: can judges impose deadlines the Constitution's text deliberately omitted? And could two judges even do this, when Article 145(3) demands five for substantial constitutional interpretation? In <b>November 2025</b>, a five-judge bench answers: the timelines and deemed assent go — courts cannot rewrite Article 200's silence into a schedule — but the Governor wins no licence to sit forever either: prolonged, unexplained inaction remains challengeable case by case. The saga ends where good constitutional stories usually do — both sides restrained, the text unchanged, and the conventions around it permanently sharpened.</p>
+</div>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 800 150" role="img" aria-label="Timeline of the 2025 Governor assent saga">
+<g font-family="Inter" font-size="10.5">
+<rect x="8" y="30" width="150" height="66" rx="8" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.3"/>
+<text x="83" y="50" text-anchor="middle" font-weight="700" fill="#7a1f66">Years of silence</text>
+<text x="83" y="66" text-anchor="middle" fill="#7a1f66">TN Bills pending;</text>
+<text x="83" y="80" text-anchor="middle" fill="#7a1f66">Art 200 has no deadline</text>
+
+<line x1="158" y1="63" x2="184" y2="63" stroke="#9598c9" stroke-width="1.6" marker-end="url(#arrS)"/>
+
+<rect x="188" y="30" width="160" height="66" rx="8" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.3"/>
+<text x="268" y="48" text-anchor="middle" font-weight="700" fill="#8a5c00">April 2025 · 2 judges</text>
+<text x="268" y="64" text-anchor="middle" fill="#8a5c00">~1/3-month timelines;</text>
+<text x="268" y="78" text-anchor="middle" fill="#8a5c00">Art 142 deemed assent</text>
+
+<line x1="348" y1="63" x2="374" y2="63" stroke="#9598c9" stroke-width="1.6" marker-end="url(#arrS)"/>
+
+<rect x="378" y="30" width="160" height="66" rx="8" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.3"/>
+<text x="458" y="48" text-anchor="middle" font-weight="700" fill="#134b59">President → Art 143</text>
+<text x="458" y="64" text-anchor="middle" fill="#134b59">Reference questions incl.</text>
+<text x="458" y="78" text-anchor="middle" fill="#134b59">Art 145(3) 5-judge rule</text>
+
+<line x1="538" y1="63" x2="564" y2="63" stroke="#9598c9" stroke-width="1.6" marker-end="url(#arrS)"/>
+
+<rect x="568" y="30" width="224" height="66" rx="8" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.3"/>
+<text x="680" y="48" text-anchor="middle" font-weight="700" fill="#177a4d">Nov 2025 · 5 judges</text>
+<text x="680" y="64" text-anchor="middle" fill="#177a4d">No fixed timelines, no deemed assent —</text>
+<text x="680" y="78" text-anchor="middle" fill="#177a4d">but indefinite inaction stays reviewable</text>
+</g>
+<defs><marker id="arrS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9598c9"/></marker></defs>
+</svg>
+<figcaption><b>Fig 2.</b> Four beats: silence → timelines imposed → Presidential reference → timelines withdrawn but inaction still reviewable. Any statement question on this saga tests one of these four beats.</figcaption>
+</div></figure>
+</section>
+
+<!-- ===== SECTION 06 ===== -->
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>PYQ analysis &amp; practice questions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> the Governor is one of UPSC's most dependable Prelims subjects, and it asks the office in a very particular way — never "list the Governor's powers," but always <i>which specific function is discretionary</i>, or <i>what personal immunities attach to the office</i>. Mains, meanwhile, treats the Governor as the standing case study in Centre-State friction. Genuine PYQs first; practice questions in identical format after.</p>
+
+<h3>(A) Genuine UPSC PYQs</h3>
+<p class="lead" style="font-size:13.5px;">Attempt each before reading the verdict. Cross-check years against official UPSC papers as a habit.</p>
+
+<div class="pyq">
+<span class="stg">Practice · Statements <b>(Week 3 test — you answered "2 only")</b></span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The President should consult the Chief Minister of the State while appointing the Governor.</li><li>The Election Commission can take a suo motu decision to disqualify a Member of Parliament.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — neither</b>
+<ul class="vwhy"><li><b>Statement 1 fails on the modal verb.</b> The President <i>may</i> consult the Chief Minister; there is no requirement to. The consultation is a convention the <b>Sarkaria</b> and <b>Punchhi</b> Commissions recommended be made binding — which it never was. "Should" converts a courtesy into an obligation, and that is the trick.</li><li><b>Statement 2 inverts the machinery.</b> On Article 102 grounds the <b>President</b> decides; the Election Commission only tenders an opinion, which binds the President. The EC has no power to disqualify an MP on its own motion.</li><li>Two different tricks in one question — a modal verb in the first, a reversed actor in the second. Both are standard.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">With reference to the Governor's power under Article 161, consider the following statements:</p>
+<ol class="subs"><li>The Governor can commute a death sentence awarded for an offence against a State law.</li><li>The Governor can grant a pardon in a case where a death sentence has been awarded.</li><li>The Governor can remit a sentence awarded by a court martial held in the State.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — only one</b>
+<ul class="vwhy"><li><b>Statement 1 is correct.</b> Suspension, remission and commutation of a death sentence are all within the Governor's Article 161 power. This is the half of the rule most candidates get wrong.</li><li><b>Statement 2 is wrong.</b> A <i>pardon</i> in a death-sentence case is exclusively the President's, under Article 72.</li><li><b>Statement 3 is wrong.</b> Court-martial sentences are outside Article 161 altogether — the Governor has no power over them of any kind.</li><li>The pattern to hold: on a death sentence the Governor loses only the <b>pardon</b>; on a court martial the Governor loses <b>everything</b>.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2013</span><span class="stg">Prelims</span>
+<p class="qtext">Which of the following are the discretionary powers given to the Governor of a State?</p>
+<ol class="subs"><li>Sending a report to the President of India for imposing the President's rule</li><li>Appointing the Ministers</li><li>Reserving certain bills passed by the State Legislature for consideration of the President of India</li><li>Making the rules to conduct the business of the State Government</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 1 and 3 only</li><li>(c) 2, 3 and 4 only</li><li>(d) 1, 2, 3 and 4</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>Verdict: direct hit on Section 04's discretionary list.</li><li>Appointing Ministers is done on the Chief Minister's advice, and framing rules of business is an ordinary executive act — neither is discretionary.</li><li>Note how closely this mirrors the practice question below it: the setter's technique is to smuggle one or two routine functions into a discretion list.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2018</span><span class="stg">Prelims</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>No criminal proceedings shall be instituted against the Governor of a State in any court during his term of office.</li><li>The emoluments and allowances of the Governor of a State shall not be diminished during his term of office.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li>Both are correct, under Article 361. The Governor enjoys <b>personal immunity from criminal proceedings during the term of office</b> (and from civil proceedings relating to personal acts unless 2 months' notice is given), and emoluments cannot be reduced mid-term.</li><li>A precise Bare Act question — Article 361 protections apply identically to the President.</li></ul>
+</div>
+</div>
+
+
+
+<h3>(B) Practice questions — same format, not real PYQs</h3>
+<p class="lead"><b>Integrity note:</b> self-generated, built in the shapes this weekly test repeatedly uses — a discretionary-powers list-counting question, a Governor-vs-President asymmetry trap, and a case-law pairing. Formats are labelled so you can drill your weak ones deliberately.</p>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to a Bill reserved by a Governor for the President's consideration under Article 200, consider the following statements:</p><ol class="subs"><li>The President must give assent if the State Legislature re-passes the Bill after the President returns it</li><li>A Money Bill can be reserved for the President's consideration</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: neither is correct</b>
+<ul class="vwhy"><li>Statement 1 is the classic asymmetry trap (President is never bound to assent, unlike the Governor's own suspensive veto);</li><li>Statement 2 is wrong because only non-Money Bills can be returned for reconsideration in the first place (Section 04's table).</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Which of the following is/are listed as discretionary functions of a Governor?</p><ol class="subs"><li>Recommending President's Rule</li><li>Appointing the Advocate General of the State</li><li>Reserving a Bill for the President's consideration</li><li>Dismissing a State Public Service Commission member</li></ol><p class="qtext">How many of the above are correctly classified as discretionary?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: 2 correct (1 and 3)</b>
+<p class="vone">Appointing the Advocate General and dealing with SPSC members are ordinary executive functions exercised on ministerial advice, not discretionary ones.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to the 2025 litigation on the Governor's assent to Bills, consider the following statements:</p><ol class="subs"><li>The April 2025 two-judge judgment prescribed indicative timelines for the Governor to act under Article 200</li><li>The President sought the Supreme Court's opinion on the matter under Article 143</li><li>The five-judge bench answering the reference upheld fixed judicial timelines and the concept of "deemed assent."</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: 1 and 2 only</b>
+<ul class="vwhy"><li>The Constitution Bench pulled the fixed timelines and deemed-assent back, while holding indefinite inaction still isn't constitutionally open (Section 05's 2025 saga box).</li><li>Statement 3 inverts the outcome — the classic recent-judgment trap.</li></ul>
+</div>
+</div>
+
+
+
+<h3>Format drill — your weak patterns, this note's content</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements about the Governor is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) The minimum age is 35 years</li><li>(b) The appointment is made by the President</li><li>(c) The Governor enjoys a secure, fixed five-year tenure</li><li>(d) One person can serve as Governor of two or more States</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">The 5-year term operates entirely "during the pleasure of the President"; there is no security of tenure at all (Section 02).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following is <b>NOT</b> a discretionary function of the Governor?</p><ul class="opts single"><li>(a) Reserving a Bill for the President's consideration</li><li>(b) Recommending President's Rule under Article 356</li><li>(c) Appointing as Chief Minister the leader of a party with a clear Assembly majority</li><li>(d) Determining royalty payable to Sixth Schedule district councils</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT discretionary</b>
+<p class="vone">With a clear majority there is no choice to exercise; discretion in CM appointment arises only in a hung Assembly (Section 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following statements:</p><ol class="subs"><li>The Punchhi Commission recommended deleting the pleasure doctrine for Governors</li><li>That recommendation has been implemented by constitutional amendment</li><li>The Sarkaria Commission recommended consulting the Chief Minister before appointing a Governor</li><li>A Governor's resignation is addressed to the President</li></ol><p class="qtext">How many are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Only three (1, 3, 4)</b>
+<p class="vone">Statement 2 is false; Article 156 stands unamended (Sections 01–02).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> After Nabam Rebia (2016), a Governor cannot unilaterally advance an Assembly session because of dissidence within the ruling party. <b>Statement-II:</b> The power to summon and prorogue the Assembly is ordinarily exercised on the aid and advice of the Council of Ministers. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">Statement-II is the precise ratio on which Statement-I's restriction rests (Section 05).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs of cases and holdings:</p><ol class="subs"><li>S.R. Bommai — majority must be tested on the floor of the House</li><li>Nabam Rebia — summoning the Assembly is ordinarily on ministerial advice</li><li>Rameshwar Prasad — the 2005 Bihar Assembly dissolution was upheld as valid</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">Rameshwar Prasad held the dissolution unconstitutional and mala fide, though it declined to revive the Assembly (Section 05).</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M23</span><span class="yr">2019 · GS-II</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">Whether the Supreme Court Judgement (July 2018) can settle the political tussle between the Lt. Governor and the elected government of Delhi? Examine.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Whether… Examine."</b> A yes/no framed question demanding dissection — but the honest answer is qualified. Examine the judgment's holdings, then test its actual settling power against what followed. Events after 2018 are legitimate and powerful evidence.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Art 239AA + the dispute</li><li>What the 2018 judgment held</li><li>Why it did not settle matters</li><li>What would actually settle it</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Delhi's peculiar status flows from <b>Article 239AA</b>: the NCT has a legislative assembly but not land, police or public order; the <b>Lieutenant Governor</b> acts on the Council of Ministers' aid and advice, but may refer a "difference of opinion" to the President.</p>
+<p><span class="sh">What the 2018 Constitution Bench held</span></p>
+<p>The LG is not an independent decision-maker and has no general discretionary power; he is bound by the elected government's advice except on the three reserved subjects. The difference-of-opinion reference must be <b>exceptional</b>, not routine, and must rest on cogent reasons. The Court anchored this in <b>constitutional morality, representative democracy and collective responsibility</b>, expressly rejecting any requirement of the LG's concurrence for every executive act.</p>
+<p><span class="sh">Why it did not settle the tussle</span></p>
+<p>The structural ambiguity survived the judgment. It laid down principles but left subject-allocation unresolved: a two-judge bench <b>split in 2019</b> over "services", requiring a further reference; a Constitution Bench in <b>May 2023</b> then held that services outside land, police and public order fall to the elected government; and within months Parliament enacted the <b>GNCTD (Amendment) Act, 2023</b>, creating an authority with the LG's primacy over services — reversing the judicial outcome by legislation. That challenge is pending.</p>
+<p><span class="sh">Verdict</span></p>
+<p>The judgment settled the constitutional principle but not the political dispute. Where Parliament can alter the statutory basis of an arrangement, adjudication alone cannot end the contest. Durable settlement requires either full statehood, or an explicit constitutional demarcation of Delhi's subjects with a defined, time-bound procedure for the LG's reference — the same institutional lesson the 2025 Governor-assent litigation delivered for the States.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 239AA + the three reserved subjects · the 2018 holdings · the 2019 two-judge split · May 2023 Constitution Bench · GNCTD (Amendment) Act, 2023 · link to the 2025 assent saga.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 259 / 250 words.</b> <b>Cut:</b> the opening restatement of Article 239AA's structure in prose, and "because the underlying structural ambiguity survived" as a separate sentence. <b>Bought:</b> nothing new — length only, 293 → budget. The 2018 → 2019 → 2023 → Act sequence <i>is</i> the lineage, and it survives intact; that sequence is what answers "can it settle" better than any additional citation could.</div>
+<div class="cost"><b>What would cost you marks:</b> answering only "yes it settled it"; ignoring post-2018 developments, which are the strongest evidence available; not naming Article 239AA.</div>
+</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M24</span><span class="prac">Practice</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"Judicial review has narrowed the Governor's discretion more than any constitutional amendment has." Examine with reference to S.R. Bommai (1994) and Nabam Rebia (2016).</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Examine" a comparative claim.</b> The comparison is the point: judiciary <i>versus</i> amendment. So the answer must show what courts did AND what amendments did <i>not</i> do — otherwise the comparison is never actually made.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Art 163's textual discretion</li><li>What judicial review narrowed</li><li>What amendments did not do</li><li>The limits of judicial narrowing</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 163</b> requires the Governor to act on ministerial advice "except in so far as he is by or under this Constitution required to exercise his functions in his discretion" — deliberately open-ended language that the text has never since narrowed.</p>
+<p><span class="sh">What judicial review narrowed</span></p>
+<p><b>S.R. Bommai (1994)</b>, nine judges, transformed <b>Article 356</b>: majority must be tested on the floor of the House, not by the Governor's subjective assessment; a proclamation is justiciable and may be struck down for mala fides or irrelevant grounds; and a dissolved Assembly can be revived. <b>Rameshwar Prasad (2006)</b> applied this, holding the Bihar dissolution on the Governor's report unconstitutional. <b>Nabam Rebia (2016)</b> narrowed a different power — summoning, prorogation and advancing a session are ordinarily exercised on ministerial advice, and intra-party dissidence is no ground for unilateral action. The <b>2025 assent litigation</b> kept indefinite inaction on Bills judicially examinable, even after the Constitution Bench declined to fix timelines.</p>
+<p><span class="sh">What amendments did not do</span></p>
+<p>Article 163 stands unamended. <b>Article 156</b> still holds the Governor in office "during the pleasure of the President" — removable at will, without cause or process. The <b>Sarkaria</b> and <b>Punchhi Commissions</b> recommended fixed tenure, removal only for proven misconduct, and consultation with the Chief Minister before appointment. None has been enacted.</p>
+<p><span class="sh">The limits of judicial narrowing</span></p>
+<p>Courts act only after the event, and remedies are often hollow — in <i>Rameshwar Prasad</i> the dissolution was declared mala fide, yet the Assembly was not revived, elections having been notified.</p>
+<p>The claim therefore holds: every meaningful restraint on the Governor has come from the bench, not from Parliament. But judicial narrowing is remedial and episodic; a structural fix still requires the constitutional amendment that has never come.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 163 text quoted · Bommai (1994) three holdings · Rameshwar Prasad (2006) · Nabam Rebia (2016) · the 2025 assent saga · Art 156 unamended · Sarkaria + Punchhi unimplemented · the remedy-gap insight.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 279 / 250 words.</b> <b>Cut:</b> "Most recently" as a connective and the expanded phrasing on what <i>Nabam Rebia</i> concerned. <b>Bought:</b> nothing new — length only, 304 → budget. The remedy-gap point (declared mala fide, Assembly not revived) is the sharpest thing in this answer and it survives; that observation is worth more than an extra case name.</div>
+<div class="cost"><b>What would cost you marks:</b> describing the cases without ever making the judiciary-vs-amendment comparison the question demands; omitting that the reform commissions' proposals were never enacted, which is what proves the claim.</div>
+</div>
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">★ 90-second recall</span>
+<h2>Last-mile revision — Governor</h2>
+<ul>
+<li>Appointed by President, on Union Cabinet's advice — no election, no State CoM role in the appointment itself.</li>
+<li>Qualifications: citizen, 35+. <b>No</b> legislative-membership qualification, unlike the President.</li>
+<li>One person can be Governor of 2+ States (7th Amendment, 1956).</li>
+<li>Term 5 years, but holds office "during the pleasure of the President" — removable anytime, no grounds needed, no impeachment-style process.</li>
+<li>Punchhi Commission recommended fixed tenure/misconduct-only removal — <b>not implemented.</b></li>
+<li>Article 161: State-law offences only; no power at all over court-martial sentences. On a death sentence the Governor <b>cannot pardon</b> but <b>can suspend, remit or commute</b> — only the President can pardon one.</li>
+<li>Article 200: assent / withhold / return (non-Money Bills, forces re-assent if re-passed) / <b>reserve for President</b> (Governor's extra option).</li>
+<li>Reserved-Bill asymmetry: President is <b>never</b> bound to assent even if State Legislature re-passes it — unlike the Governor's own forced second-round assent.</li>
+<li>Discretionary list: reserve a Bill, recommend Art 356, UT administrator role, Sixth Schedule royalty amounts, choosing/dismissing a CM in a hung/no-confidence scenario.</li>
+<li>Special Art 371-series discretion: Nagaland (371A), Sikkim (371F), Arunachal (371H), Karnataka (371J) — law/order or regional-development responsibilities.</li>
+<li>Bommai (1994): floor test required, Art 356 is judicially reviewable. Rameshwar Prasad (2006): mala fide dissolution struck down but not reversible in practice. Nabam Rebia (2016): summoning/proroguing Assembly is ordinarily on ministerial advice, not Governor's own call.</li>
+<li>2025 assent saga: Apr 2025 two-judge TN judgment set ~1/3-month timelines + Art 142 deemed assent → President's Art 143 reference → Nov 2025 five-judge bench: <b>no fixed timelines, no deemed assent, but indefinite inaction still reviewable</b>.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> next in Topic 6 — <i>02 Prime Minister &amp; Council of Ministers</i> (Week 3, Day 3), where the "real executive" half of this Union/State comparison finally appears.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='00%20President%20and%20Vice-President.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">00 · President &amp; Vice-President</span></button>
+<button class="tabflow-btn tabflow-next" onclick="location.href='02%20Prime%20Minister%20and%20Council%20of%20Ministers.html'"><span class="tabflow-dir">Next →</span><span class="tabflow-label">02 · Prime Minister &amp; Council of Ministers</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 6 — Executive &amp; Judiciary · Note 01 of 3<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 30.
+</footer>
+
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structure &amp; Composition of Parliament | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Bicameral structure</button>
+<button class="notetab" data-tab="s2">02 · Rajya Sabha composition</button>
+<button class="notetab" data-tab="s3">03 · Lok Sabha composition</button>
+<button class="notetab" data-tab="s4">04 · Qualifications, disqualifications &amp; presiding officers</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 5 of 9 · Note 01 — Week 3, Day 4</div>
+<h1>Structure &amp; Composition of Parliament</h1>
+<p class="sub">Senior-mentor notes on who actually sits in Lok Sabha and Rajya Sabha, how each House is filled, and the precise numeric caps and qualification rules — the single most number-dense corner of the entire Polity syllabus.</p>
+<div class="chips">
+<span class="chip">Articles 79–88</span>
+<span class="chip">Rajya Sabha — indirect election</span>
+<span class="chip">Lok Sabha — direct election</span>
+<span class="chip">Speaker &amp; Deputy Speaker</span>
+<span class="chip">Joint Sitting — Article 108</span>
+</div>
+<div class="bignum"><b>245 / 552</b><span>Max strength: Rajya Sabha / Lok Sabha</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why numbers dominate this note</div>
+<p>Topic 5's official syllabus line — "Parliament and State legislatures: structure, functioning, conduct of business..." — starts with structure for a reason: nearly every Prelims question on this ground is really just asking "do you know the exact number, the exact term, the exact qualifying age." This note is built to be numbers-first, because that's genuinely what gets tested here, more than in almost any other Polity topic.</p>
+<p>Week 3, Day 4 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapter 23.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Parliament has two Houses, and the easiest way to hold them apart is to remember what each one represents. The <b>Lok Sabha</b> ("House of the People") represents citizens directly — you vote for your own MP, every seat is up for election together, and the whole House can be dissolved and re-elected. The <b>Rajya Sabha</b> ("Council of States") represents the States as political units, not citizens directly — State MLAs vote to send representatives to it, it is never dissolved as a whole, and a rolling one-third of its members retire every two years instead.</p>
+<p>That single distinction — direct-and-dissolvable vs indirect-and-permanent — explains almost every structural difference in this note: why Rajya Sabha has a fixed retirement cycle and Lok Sabha doesn't, why Money Bills only start in Lok Sabha (the directly-elected House controls the purse), and why the Vice-President, not an elected MP, chairs the Rajya Sabha.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 5 note series —</b>
+<span class="done">✓ 00 Parliamentary System &amp; Presidential Government</span> · <span class="done">✓ 01 Structure &amp; Composition of Parliament (this file)</span> · <span class="todo">○ 02 Powers, Functions &amp; Legislative Process</span> · <span class="todo">○ 03 Budget, Sessions &amp; Parliamentary Privileges</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Bicameral structure — Article 79</h2></div>
+<hr class="divider">
+<p class="lead">Parliament consists of the President <i>plus</i> two Houses — a fact worth holding precisely, since the President is constitutionally part of Parliament even though not a member of either House, which is why Presidential assent is needed to turn any Bill into law.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Lok Sabha</th><th>Rajya Sabha</th></tr></thead>
+<tbody>
+<tr><th>Nature</th><td>Directly elected "House of the People."</td><td>Indirectly elected "Council of States" — a permanent, continuing body.</td></tr>
+<tr><th>Maximum strength</th><td><b>550</b> (up to 530 from States, up to 20 from UTs). It stood at <b>552</b> until the two-seat Anglo-Indian nomination was abolished by the <b>104th Amendment, 2019</b> (in force 25 January 2020) — so <i>552 is the pre-2020 figure, 550 the current one</i>.</td><td><b>250</b> maximum (238 elected representatives of States/UTs + <b>12 nominated</b> by the President).</td></tr>
+<tr><th>Current effective cap in practice</th><td><b>543</b> elected members. The older figure of 545 counted the two Anglo-Indian nominees and has been wrong since January 2020.</td><td><b>245</b> (233 elected + 12 nominated) — the number most commonly tested.</td></tr>
+<tr><th>Duration</th><td><b>5 years</b>, extendable by 1 year at a time during a National Emergency; can be dissolved earlier.</td><td>Permanent — never dissolved. <b>1/3rd of members retire every 2 years.</b></td></tr>
+<tr><th>Presiding officer</th><td>Speaker (elected by the House itself) and Deputy Speaker.</td><td>Vice-President of India, ex-officio Chairman (not a member of the House) — plus an elected Deputy Chairman.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 02 ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Rajya Sabha composition — Article 80</h2></div>
+<hr class="divider">
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Election method:</b> State representatives are elected by the elected members of the State's Legislative Assembly (MLAs) — <i>not</i> directly by citizens — through proportional representation by means of the <b>single transferable vote</b>. Seats are allocated to States roughly by population, so larger States get more Rajya Sabha seats — unlike the US Senate's equal-representation model, a frequently tested comparative point.</p>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Two features unique to the Rajya Sabha ballot — both heavily tested.</b> <b>(1) Open ballot.</b> Since 2003, voting in a Rajya Sabha election is by <b>open ballot</b>: an MLA must show the marked ballot to the party's authorised agent. Secrecy is deliberately removed, precisely so that cross-voting can be detected and the Tenth Schedule can operate. <b>(2) No NOTA.</b> In <b>Shailesh Manubhai Parmar v. Election Commission of India (2018)</b> the Supreme Court held that <b>NOTA has no place in Rajya Sabha elections</b>. Its reasoning: NOTA was created in <i>PUCL v. Union of India</i> (2013) for <b>direct</b> elections under universal adult suffrage, whereas <b>Article 80(4)</b> prescribes <b>indirect</b> election by proportional representation. Applying NOTA to an indirect election would defeat the value of the elector's vote, undercut the open-ballot discipline and open the door to defection and corruption. The trap version pairs this with a false <i>reason</i> — that NOTA "reduces voter turnout". Turnout is not the Court's ground; the mismatch with <b>indirect representation</b> is.</p>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>The 12 nominated members</b> are chosen by the President from persons with special knowledge or practical experience in <b>literature, science, art and social service</b> — <b>four</b> fields, under <b>Article 80(3)</b>. Do <i>not</i> merge this with the Governor's list for a State Legislative Council: <b>Article 171(5)</b> carries <b>five</b> fields, adding <b>co-operative movement</b>. That one-word gap between the two lists is a ready-made pairing question.</p>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap: the "domicile" requirement was relaxed.</b> Originally, a Rajya Sabha candidate had to be an elector in the specific State they wished to represent. This was changed — a candidate now only needs to be an elector <i>anywhere in India</i> to contest a Rajya Sabha seat from any State, a change upheld by the Supreme Court in <i>Kuldip Nayar v. Union of India</i> (2006) against a challenge that it violated federal principles.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 03 ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Lok Sabha composition — Articles 81, 331</h2></div>
+<hr class="divider">
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Election method:</b> members are directly elected by voters in territorial constituencies, using the first-past-the-post system. Seats are allotted to States so that the ratio of seats to population is, as far as practicable, the same across all States — the mechanism behind why larger States get proportionally more seats.</p>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap — the delimitation freeze:</b> Lok Sabha seat allocation among States has been <b>frozen based on the 1971 Census</b> since the 42nd Amendment (1976), and this freeze has been repeatedly extended — most recently intended to last until after the first census following 2026. The freeze exists to avoid penalising States that successfully controlled population growth by giving them fewer seats relative to high-growth States. An MCQ testing "current" seat numbers by population is almost always testing whether you know this freeze exists, not asking you to calculate live population ratios.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Recent-amendment layer — the 106th Amendment, 2023 (Nari Shakti Vandan Adhiniyam):</b> reserves <b>one-third of all seats</b> in the Lok Sabha, State Legislative Assemblies, and the Delhi Assembly for women (including within the existing SC/ST reserved seats). Two heavily testable implementation riders: it takes effect only <b>after the first delimitation following the first Census conducted after commencement</b> — so it is law on the books but not yet operative in any sitting House — and the reservation is set to run for <b>15 years</b> from commencement, extendable by Parliament. Note also what it does <i>not</i> cover: the <b>Rajya Sabha and State Legislative Councils have no women's reservation</b> under it — a clean negative-question trap.</p>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 Constituent Assembly ammunition — why have a Rajya Sabha at all?</div>
+<p>"Is the Rajya Sabha a true federal chamber or an obstruction?" is a perennial Mains framing, and the Assembly's own debate supplies the answer's spine. Gopalaswami Ayyangar's defence, moving the provision: a second chamber exists to <b>"hold dignified debates"</b> and to <b>delay legislation which might be the outcome of passions of the moment"</b> — the cooling-chamber logic. The concrete version: if a sudden wave of public anger pressures the directly-elected Lok Sabha into a hasty or draconian law, the indirectly-elected, never-dissolved Rajya Sabha exists to slow that Bill down until the sentiment cools. Add the federal argument (States as political units get a voice in Union law-making, though seats are population-weighted rather than equal like the US Senate) and the continuity argument (a permanent body keeps Parliament alive even when the Lok Sabha stands dissolved). For balance, cite the standing criticism — a house of party-ticket politicians duplicating the Lok Sabha's composition rarely behaves as a States' chamber in practice — and close on the revisory record (Money Bill limits aside, it has repeatedly forced genuine redrafting). Framers' argument + live criticism + evidence = a complete answer.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 04 ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Qualifications, disqualifications &amp; presiding officers</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Requirement</th><th>Lok Sabha</th><th>Rajya Sabha</th></tr></thead>
+<tbody>
+<tr><th>Minimum age</th><td><b>25 years</b></td><td><b>30 years</b></td></tr>
+<tr><th>Citizenship</th><td colspan="2">Must be a citizen of India (both Houses).</td></tr>
+<tr><th>Other qualifications</th><td colspan="2">Must be an elector for a Parliamentary constituency; must not be of unsound mind or an undischarged insolvent; must not hold an office of profit; other conditions as Parliament may prescribe by law.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Disqualifications — the three separate sources (Laxmikanth's full list)</h3>
+<p class="lead">A recurring Prelims theme, because disqualification grounds come from <b>three different places</b> and questions mix them deliberately.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Source</th><th>Grounds</th></tr></thead>
+<tbody>
+<tr><th>Constitution (Art 102)</th><td>Holds an <b>office of profit</b> under the Union or a State (other than exempted offices); is of unsound mind and so declared by a court; is an undischarged insolvent; is not a citizen of India, or has voluntarily acquired foreign citizenship / acknowledged allegiance to a foreign State; is disqualified under any law made by Parliament.</td></tr>
+<tr><th>Representation of the People Act, 1951</th><td>Convicted for certain election offences or corrupt practices; <b>convicted of any offence and sentenced to imprisonment of 2 years or more</b> (note: preventive detention does not count); failed to lodge election expenses in time; has an interest in government contracts/works/services; is a director or managing agent of a government corporation with more than 25% government stake; dismissed from government service for corruption or disloyalty; convicted for promoting enmity between groups or for the offence of bribery; punished for preaching/practising social crimes like untouchability, dowry or sati.</td></tr>
+<tr><th>Tenth Schedule (anti-defection)</th><td>Voluntarily giving up party membership; voting or abstaining contrary to the party whip without prior permission and without condonation within 15 days; an independent member joining a party after election; a nominated member joining a party <b>after 6 months</b> of taking a seat. <i>Exception:</i> a <b>merger</b> is protected if at least <b>two-thirds</b> of that party's legislators agree (the 91st Amendment deleted the old one-third "split" exemption).</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Who decides?</b> For Article 102 grounds, the <b>President</b> decides, but <b>must obtain the Election Commission's opinion and act according to it</b> — the EC's opinion is binding here, which is the single most-tested nuance. Note the direction of travel: the Election Commission <b>cannot disqualify a Member of Parliament of its own motion</b> — it only <i>advises</i> the President, who then acts. A statement giving the EC a suo motu power of disqualification is wrong. For Tenth Schedule grounds, the <b>presiding officer</b> (Speaker/Chairman) decides; <i>Kihoto Hollohan</i> (1992) made that decision subject to judicial review, and <i>Keisham Meghachandra</i> (2020) proposed shifting it to an independent tribunal (Topic 6, Note 02).</p>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Where a candidate may contest — the rule and its three exceptions.</b> Under <b>Section 4 of the RPA, 1951</b>, a candidate for a <i>general</i> Lok Sabha seat needs only to be an <b>elector in any parliamentary constituency in India</b> — not in the constituency, or even the State, being contested. But three cases require the candidate to be an elector <i>locally</i>: seats reserved for Scheduled Tribes in the <b>autonomous districts of Assam</b>, the <b>Lakshadweep</b> seat, and the <b>Sikkim</b> seat. So the flat statement "a registered voter can contest from any constituency in India" is <b>incorrect</b> — the exceptions are the whole question. Contrast the Rajya Sabha, where the domicile requirement was dropped entirely (upheld in <i>Kuldip Nayar</i>, 2006).</p>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>The disqualification clock, in full.</b> Under <b>Section 8(3), RPA 1951</b>, conviction for any offence with a sentence of <b>two years or more</b> disqualifies a person <b>from the date of conviction</b> — and the disqualification continues for a <b>further six years from the date of release</b>. Candidates routinely remember the two years and forget the six; the six-year tail is what makes the disqualification bite. (Section 8(1) and 8(2) list specific offences that disqualify regardless of sentence length.)</p>
+</div>
+
+<h3>Vacation of seats — four distinct routes</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Route</th><th>Rule (the numbers get tested)</th></tr></thead>
+<tbody>
+<tr><th>Double membership — both Houses</th><td>A person cannot be a member of both Houses; if elected to both, they must vacate one within <b>10 days</b>, failing which the <b>Rajya Sabha</b> seat automatically falls vacant.</td></tr>
+<tr><th>Double membership — two seats, same House</th><td>Must vacate one within the time prescribed; if not, <b>both</b> seats fall vacant.</td></tr>
+<tr><th>Parliament + State Legislature</th><td>Must resign the State seat within <b>14 days</b>, otherwise the <b>Parliament</b> seat falls vacant.</td></tr>
+<tr><th>Absence</th><td>The House may declare a seat vacant if the member is absent from all meetings for <b>60 days</b> without permission (excluding periods of prorogation or adjournment for more than 4 consecutive days).</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Reservation of seats:</b> the Constitution reserves Lok Sabha seats for <b>Scheduled Castes and Scheduled Tribes</b> on a population basis — this is reservation <i>of seats</i> in specified constituencies, <b>not</b> a reservation of candidates by party. Note two things examiners exploit: the reservation was originally for 10 years but has been extended repeatedly (most recently by the <b>104th Amendment, 2019</b>, which simultaneously <i>ended</i> Anglo-Indian nomination while <i>extending</i> SC/ST reservation to 2030); and in a reserved constituency <b>every voter votes</b> — only the candidate must belong to the reserved category.</p>
+</div>
+
+<h3>Speaker, Deputy Speaker &amp; the Anti-Defection connection</h3>
+<div class="tip">
+<span class="ic">✚</span>
+<p>The <b>Speaker</b> is elected by the Lok Sabha from among its own members, usually holds office for the House's full term, but must vacate the office if they cease to be a member of the House. The Speaker has a <b>casting vote</b> only in case of a tie — not an ordinary vote in the first round like other members. The Speaker also decides whether a Bill is a <b>Money Bill</b> under Article 110 — a decision Article 110(3) declares final, though whether courts can review it is now an open question pending before a seven-judge bench (see Note 02's Rojer Mathew box).</p>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> the Speaker's resignation letter goes to the <b>Deputy Speaker</b>, not the President — mirroring the general pattern of resignations going "one step down" in the chain rather than to the very top.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Removal and the rest of the presiding machinery</b> — the schedule lists all four presiding officers, so hold the full set. <b>Removal of the Speaker or Deputy Speaker:</b> by a resolution of the Lok Sabha passed by an <b>effective majority</b>, after <b>14 days' advance notice</b>. Critically, while such a resolution is under consideration the <b>Speaker cannot preside</b> over the sitting (though they may speak and vote in the first instance — the one occasion the Speaker votes normally rather than only to break a tie). <b>Pro-tem Speaker:</b> the outgoing Speaker vacates office immediately before the first meeting of a newly elected Lok Sabha, so the <b>President appoints</b> a sitting member as Speaker Pro Tem — by convention the <b>senior-most member</b>. Three facts get tested and all three are about <i>who does what</i>: the Pro-tem Speaker is <b>appointed by the President</b> (not elected by the House, not nominated by the outgoing Speaker, not chosen by the majority party); the <b>President personally administers the oath to the Pro-tem Speaker</b>; and the Pro-tem Speaker then administers the oath to the new members and presides over the election of the regular Speaker, after which the office ends. <b>Panel of Chairpersons (Lok Sabha) / Panel of Vice-Chairpersons (Rajya Sabha):</b> members nominated by the Speaker/Chairman who preside when both the Speaker and Deputy Speaker (or Chairman and Deputy Chairman) are absent. <b>Deputy Chairman of the Rajya Sabha</b> is elected by that House from among its own members and is removable by an effective majority with 14 days' notice — and takes over presiding duties whenever the Vice-President is acting as President.</p>
+</div>
+
+<h3>Rajya Sabha's position — equal, unequal, and exclusive (Laxmikanth's three-column framing)</h3>
+<p class="lead">The cleanest way to answer any "is the Rajya Sabha a weak House?" question is to split its powers into three buckets rather than argue in generalities.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Equal status with Lok Sabha</th><th>Unequal (weaker) status</th><th>Exclusive to Rajya Sabha</th></tr></thead>
+<tbody>
+<tr><td>Introduction and passage of <b>ordinary bills</b>; constitutional amendment bills; financial bills involving non-Money-Bill matters. Election and impeachment of the President; removal of the Vice-President (though the resolution must <i>originate</i> in RS). Election of Vice-President. Removal of judges of SC/HC, CEC, CAG. Approving Ordinances, proclamations of all three Emergencies. Selecting Ministers (Ministers may come from either House). Consideration of CAG and UPSC reports. Enlargement of Supreme Court's jurisdiction.</td><td><b>Money Bills</b> can be introduced only in LS; RS gets 14 days, advisory only. A <b>Financial Bill I</b> can be introduced only in LS. RS <b>cannot vote on Demands for Grants</b> (it may discuss the Budget generally). RS cannot pass a resolution for discontinuance of a National Emergency. In a <b>joint sitting</b>, the larger LS usually prevails. The <b>Council of Ministers is responsible only to the LS</b> — RS can criticise but not remove the government.</td><td><b>Article 249</b> — authorise Parliament to legislate on a State List subject in the national interest (2/3 of members present and voting; one year at a time).<br><br><b>Article 312</b> — authorise Parliament to create a <b>new All India Service</b> (same 2/3 majority).<br><br><i>Both flow from the RS's role as the States' chamber, and neither requires the Lok Sabha's concurrence to be passed.</i></td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Two traps here:</b> (1) the Rajya Sabha <b>can</b> discuss the Annual Financial Statement — it simply cannot <i>vote</i> on Demands for Grants; a statement saying it "cannot discuss the Budget" is false. (2) The removal resolution for the <b>Vice-President must originate in the Rajya Sabha</b>, but the removal of the <i>President</i> can be initiated in <b>either</b> House — students routinely swap these.</p>
+</div>
+
+<h3>Rajya Sabha's exclusive powers — the two the Lok Sabha cannot touch</h3>
+<div class="tip">
+<span class="ic">✚</span>
+<p>The standard "why do we need a Rajya Sabha" answer needs these two, since they belong to it <i>alone</i>: <b>Article 249</b> — by a resolution supported by <b>two-thirds of members present and voting</b>, the Rajya Sabha can authorise Parliament to legislate on a <b>State List</b> subject in the national interest, for up to one year at a time (renewable). <b>Article 312</b> — by the same two-thirds resolution, it can authorise Parliament to create a <b>new All India Service</b> (like the IAS/IPS/IFS) binding on all States. Both exist because these decisions intrude into State autonomy, so the Constitution routes them through the House that represents States. Trap: the Lok Sabha cannot initiate either, and neither resolution needs Lok Sabha concurrence to be passed — the Rajya Sabha's role here is genuinely exclusive, not merely concurrent.</p>
+</div>
+
+<h3>Joint Sitting — Article 108</h3>
+<p class="lead">If the two Houses disagree on an ordinary Bill (or one House sits on it for more than 6 months without acting), the President may summon a joint sitting of both Houses to resolve the deadlock — presided over by the <b>Speaker of the Lok Sabha</b> (or, in their absence, the Deputy Speaker; if neither is present, the Deputy Chairman of Rajya Sabha).</p>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap: a joint sitting cannot be called for a Money Bill or a Constitutional Amendment Bill</b> — both are excluded by design. Since Lok Sabha almost always has more members than Rajya Sabha, a joint sitting structurally favours whichever position the Lok Sabha holds — only <b>three</b> joint sittings have ever been held in India's history (the Dowry Prohibition Bill 1961, the Banking Service Commission (Repeal) Bill 1978, and the Prevention of Terrorism Bill (POTA) 2002).</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>PYQ analysis &amp; practice questions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> the Speaker's office is the single most-tested element of this note — UPSC returns to it repeatedly, and always on the same axis: what the Constitution <i>actually</i> says versus what convention or popular belief assumes. Composition numbers and the RS's position come next. Genuine PYQs first.</p>
+
+<h3>(A) Genuine UPSC PYQs</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason <b>(Week 3 test)</b></span>
+<p class="qtext"><b>Statement-I:</b> Applying the None of the Above (NOTA) option to Rajya Sabha elections contradicts the essence of indirect electoral representation.</p>
+<p class="qtext"><b>Statement-II:</b> The use of NOTA reduces voter turnout in Rajya Sabha elections, thereby diluting the democratic process.</p>
+<p class="qtext">Which one of the following is correct?</p>
+<ul class="opts single"><li>(a) Both are correct and Statement-II is the correct explanation of Statement-I</li><li>(b) Both are correct but Statement-II is not the correct explanation of Statement-I</li><li>(c) Statement-I is correct but Statement-II is incorrect</li><li>(d) Statement-I is incorrect but Statement-II is correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li><b>Statement-I is correct.</b> In <i>Shailesh Manubhai Parmar</i> (2018) the Supreme Court struck down NOTA in Rajya Sabha elections precisely because NOTA was devised in <i>PUCL</i> (2013) for <b>direct</b> elections, while <b>Article 80(4)</b> prescribes indirect election by proportional representation.</li><li><b>Statement-II is incorrect.</b> Turnout was never the Court's ground. Its concerns were devaluing the elector's vote, defeating the <b>open ballot</b>, and opening the door to defection and corruption.</li><li>Assertion–Reason questions are often decided by a <i>plausible but unused</i> reason. Ask what the Court actually said, not what sounds sensible.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice · Statements <b>(Week 3 test — you answered "both correct")</b></span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>A registered voter in India can contest an election to the Lok Sabha from any constituency in India.</li><li>Under the Representation of the People Act, 1951, a person convicted of any offence and sentenced to imprisonment of two years or more is disqualified from contesting an election.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 2 only</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong because of three exceptions.</b> The general rule under Section 4, RPA 1951 is indeed "elector in any parliamentary constituency in India" — but seats in the <b>autonomous districts of Assam</b>, <b>Lakshadweep</b> and <b>Sikkim</b> require the candidate to be an elector locally. The word <i>any</i> is what makes the statement false.</li><li><b>Statement 2 is correct</b> under Section 8(3), and remember the tail: disqualification runs from the date of conviction and continues for a <b>further six years after release</b>.</li><li>The lesson is general: when a statement contains "any", "all" or "every", hunt for the exception before accepting it.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice · Direct <b>(Week 3 test — you answered "nominated by the outgoing Speaker")</b></span>
+<p class="qtext">The Speaker Pro Tem of the Lok Sabha is:</p>
+<ul class="opts single"><li>(a) Elected by the members of the Lok Sabha</li><li>(b) Nominated by the outgoing Speaker</li><li>(c) Nominated by the party in the majority</li><li>(d) Appointed by the President</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — appointed by the President</b>
+<ul class="vwhy"><li>The outgoing Speaker vacates office <b>immediately before</b> the first meeting of the new Lok Sabha, so there is no Speaker to nominate anyone — which is exactly why (b) is built to look reasonable.</li><li>The <b>President appoints</b> a sitting member, by convention the senior-most, and <b>personally administers the oath</b> to them.</li><li>The Pro Tem Speaker then swears in the new members and presides over the election of the regular Speaker, and the office ends there.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">Prelims</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>In the election for Lok Sabha or State Assembly, the winning candidate shall get at least 50 percent of the votes polled, to be declared elected.</li><li>According to the provisions laid down in the Constitution of India, in Lok Sabha, the Speaker's post goes to the majority party and the Deputy Speaker's post goes to the opposition.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<ul class="vwhy"><li>Neither. India uses <b>first-past-the-post</b>: the candidate with the most votes wins, with no 50% threshold.</li><li>And the Speaker/Deputy Speaker arrangement is a <b>convention</b>, not a constitutional provision — the phrase "according to the provisions laid down in the Constitution" is the trap.</li><li>A perfect example of the convention-vs-text axis.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2018</span><span class="stg">Prelims</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The Speaker of the Legislative Assembly shall vacate his/her office if he/she ceases to be a member of the Assembly.</li><li>Whenever the Legislative Assembly is dissolved, the Speaker shall vacate his/her office immediately.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>On dissolution the Speaker does <b>not</b> vacate immediately — the office continues until <b>immediately before the first meeting of the newly-elected Assembly</b>, so that someone is always in the chair.</li><li>This continuity rule applies identically to the Lok Sabha Speaker and is among the most repeated Speaker facts in UPSC papers.</li></ul>
+</div>
+</div>
+
+
+
+<h3>(B) Practice questions — same format, not real PYQs</h3>
+<p class="lead"><b>Integrity note:</b> self-generated, built in the shapes this weekly test repeatedly uses — a numeric-composition trap, a joint-sitting exclusion trap, and a case-law reference.</p>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to the Rajya Sabha, consider the following statements:</p><ol class="subs"><li>A person must be an elector in the specific State they wish to represent</li><li>Members are elected by the State Legislative Assembly through proportional representation by single transferable vote</li><li>The Vice-President is a member of the Rajya Sabha and its Chairman</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>Only statement 2. Statement 1 is outdated (the State-domicile requirement was relaxed, upheld in Kuldip Nayar, 2006);</li><li>Statement 3 is the classic trap — the Vice-President chairs the House without being a member of it (Section 01's table).</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">A joint sitting of both Houses of Parliament under Article 108 can be summoned in respect of which of the following?</p>
+<ol class="subs"><li>An ordinary Bill on which the two Houses disagree</li><li>A Money Bill held up in the Rajya Sabha</li><li>A Constitutional Amendment Bill</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 1 and 2 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">Money Bills and Constitutional Amendment Bills are both excluded from the joint-sitting mechanism — a Money Bill needs no joint sitting (the 14-day deemed-passage rule settles it), and an Amendment Bill must clear each House separately by special majority (Section 04).</p>
+</div>
+</div>
+
+
+
+<h3>Deep drill — disqualifications, vacation of seats &amp; the RS's position</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">With reference to the disqualification of a Member of Parliament, consider the following statements:</p>
+<ol class="subs"><li>On questions of disqualification under Article 102, the President decides after obtaining the opinion of the Election Commission.</li><li>The President is bound to act according to that opinion.</li><li>Disqualification on the ground of defection is decided by the President.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 1 and 2 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Defection cases are decided by the <b>presiding officer</b> of the House, not the President — and that decision is judicially reviewable after Kihoto Hollohan (1992).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many ⚠</span>
+<p class="qtext">Consider the following grounds of disqualification for membership of Parliament:</p>
+<ol class="subs"><li>Holding an office of profit under the Union or a State</li><li>Being convicted and sentenced to imprisonment for two years or more</li><li>Voluntarily acquiring the citizenship of a foreign State</li><li>Being detained under a preventive detention law</li></ol>
+<p class="qtext">How many of the above are valid grounds of disqualification?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<p class="vone">Grounds 1, 2 and 3. <b>Preventive detention is not a conviction</b> and does not disqualify; the two-year rule under the RPA applies to a sentence following conviction.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs relating to vacation of seats:</p>
+<ol class="subs"><li>Elected to both Houses of Parliament — must vacate one within 10 days, failing which the Rajya Sabha seat falls vacant</li><li>Elected to Parliament and a State Legislature — must resign the State seat within 14 days</li><li>Absent from all meetings without permission — the House may declare the seat vacant after 30 days</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Pairs 1 and 2. The absence threshold is <b>60 days</b>, not 30 (excluding prorogation and adjournments longer than four consecutive days).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative ⚠</span>
+<p class="qtext">With reference to the powers of the Rajya Sabha, which one of the following statements is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) It cannot vote on the Demands for Grants.</li><li>(b) It cannot discuss the Annual Financial Statement.</li><li>(c) It alone can authorise Parliament to legislate on a State List subject in the national interest.</li><li>(d) It alone can authorise the creation of a new All India Service.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>The Rajya Sabha <b>can discuss</b> the Budget — it simply cannot <i>vote</i> on Demands for Grants.</li><li>Discussion and voting are different powers, and this is the single most reliable Rajya Sabha trap.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason ⚠</span>
+<p class="qtext"><b>Statement-I:</b> A resolution for the removal of the Vice-President can be moved only in the Rajya Sabha.<br><b>Statement-II:</b> Proceedings for the impeachment of the President may be initiated in either House of Parliament.</p>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both Statement-I and Statement-II are correct and Statement-II is the correct explanation of Statement-I</li><li>(b) Both Statement-I and Statement-II are correct but Statement-II is not the correct explanation of Statement-I</li><li>(c) Statement-I is correct but Statement-II is incorrect</li><li>(d) Statement-I is incorrect but Statement-II is correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Both statements are true, but they are independent rules about two different offices — Statement-II does not <i>explain</i> Statement-I. This is the classic "both true, no causal link" A-R trap, and the reason the explanation step must be judged separately from the truth step.</p>
+</div>
+</div>
+
+<h3>Format drill — your weak patterns, this note's content</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) The Rajya Sabha's constitutional maximum strength is 250</li><li>(b) The Lok Sabha's maximum strength is 550</li><li>(c) The Rajya Sabha is dissolved once every six years</li><li>(d) One-third of Rajya Sabha members retire every second year</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">The Rajya Sabha is a permanent body and is never dissolved; retirement is rolling, not by dissolution (Section 01).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to the 106th Amendment, 2023, which of the following is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) It reserves one-third of Lok Sabha seats for women</li><li>(b) It extends to State Legislative Assemblies</li><li>(c) It reserves one-third of Rajya Sabha seats for women</li><li>(d) It takes effect only after a delimitation following the next Census</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">The Rajya Sabha and Legislative Councils are entirely outside the women's reservation scheme (Section 03's box).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">India's three joint sittings were held for which Bills? Consider:</p><ol class="subs"><li>Dowry Prohibition Bill, 1961</li><li>Prevention of Terrorism Bill, 2002</li><li>The GST (101st Amendment) Bill</li><li>Banking Service Commission (Repeal) Bill, 1978</li></ol><p class="qtext">How many of the above were actually joint-sitting Bills?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Only three (1, 2, 4)</b>
+<p class="vone">A Constitutional Amendment Bill like GST can never go to a joint sitting at all (Section 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following statements:</p><ol class="subs"><li>The quorum for either House is one-tenth of its total membership</li><li>The Speaker's resignation is addressed to the Deputy Speaker</li><li>The Vice-President is a member of the Rajya Sabha</li><li>The President nominates 12 members to the Rajya Sabha</li></ol><p class="qtext">How many are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Only three (1, 2, 4)</b>
+<p class="vone">The Vice-President chairs the Rajya Sabha without ever being a member of it (Sections 01, 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> A deadlock over a Money Bill can never lead to a joint sitting. <b>Statement-II:</b> If the Rajya Sabha fails to return a Money Bill within 14 days, it is deemed passed by both Houses. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">The deemed-passage rule means a Money Bill deadlock is constitutionally impossible, which is exactly why Article 108 excludes it (Section 04 + Note 02).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs of amendment and effect:</p><ol class="subs"><li>104th Amendment — ended Anglo-Indian nominations</li><li>106th Amendment — women's reservation in LS and Assemblies</li><li>42nd Amendment — froze delimitation at 1971 Census levels</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — All three</b>
+<p class="vone">One of the rare "all correct" sets; resist the instinct that at least one pair must always be wrong (Sections 01, 03).</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M26</span><span class="yr">2020 · GS-II</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"Once a Speaker, Always a Speaker"! Do you think this practice should be adopted to impart objectivity to the office of the Speaker of Lok Sabha? What could be its implications for the robust functioning of parliamentary business in India?</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Do you think… What could be its implications."</b> An opinion question with a mandatory consequence-analysis. You must take a position — but a qualified, reasoned one. The implications half must cover both positive and negative consequences.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: what the British convention is</li><li>Why reform is sought — the problem</li><li>Implications in favour</li><li>Implications against</li><li>Qualified position + phased reform</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>The phrase describes the British convention under which the Speaker resigns party membership on election, is returned unopposed at subsequent elections, and remains politically neutral for life. India adopted the office but not the convention.</p>
+<p><span class="sh">The problem it addresses</span></p>
+<p>The Indian Speaker remains a party politician who must seek re-election on a party ticket, yet exercises powers demanding strict neutrality: certifying a Money Bill under <b>Article 110(3)</b> — a certificate whose reviewability is pending before a seven-judge bench after <b>Rojer Mathew (2019)</b> — deciding disqualification under the <b>Tenth Schedule</b>, and regulating debate and discipline. <b>Kihoto Hollohan (1992)</b> made defection decisions judicially reviewable; <b>Keisham Meghachandra (2020)</b> criticised prolonged inaction and urged Parliament to consider transferring defection cases to an independent tribunal.</p>
+<p><span class="sh">Implications in favour</span></p>
+<p>Greater objectivity in defection and Money Bill decisions; institutional credibility; insulation from party pressure; and stronger opposition confidence in the fairness of proceedings, which would itself reduce disruption.</p>
+<p><span class="sh">Implications against</span></p>
+<p>A constituency effectively loses competitive representation; an unopposed return requires cross-party consensus India's fragmented polity may not sustain; there is no career path after demitting office, deterring able candidates; and coalition parties may resist surrendering a strategically important post.</p>
+<p><span class="sh">Position</span></p>
+<p>The objective is right; wholesale adoption is impractical at present. Sequence the reform: first, remove defection adjudication from the Speaker to an <b>independent tribunal</b>, as <i>Keisham Meghachandra</i> suggests, since that is the sharpest conflict of interest; second, institutionalise conventions — the Deputy Speaker going to the Opposition, the Speaker abstaining from party campaigning; and only then consider the full British convention. Objectivity is better secured by removing conflicted functions than by relying on a convention the political system may not honour.</p>
+</div>
+<div class="va"><b>Value additions used:</b> the British convention's three elements · Art 110(3) + the pending Rojer Mathew (2019) reference · Tenth Schedule · Kihoto Hollohan (1992) · Keisham Meghachandra (2020) tribunal proposal · Deputy Speaker convention · a phased reform sequence.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 271 / 250 words.</b> <b>Cut:</b> "disciplinary action" spelled out separately from regulating debate, and the explanatory clause on what makes the Speaker's position conflicted, which the opening sentence already establishes. <b>Bought:</b> nothing new — length only, 305 → budget. Note what was <i>protected</i> from the cut: the phased reform in the Position block. A dated, sequenced recommendation is the highest-scoring part of any "do you think" question and must never be the thing you trim.</div>
+<div class="cost"><b>What would cost you marks:</b> giving no position at all — the question asks what <i>you</i> think; ignoring the implications half; failing to name the specific powers where neutrality is compromised.</div>
+</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M27</span><span class="prac">Practice</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">The Lok Sabha's seat allocation among States has remained frozen at 1971 Census levels for five decades. Discuss the constitutional rationale for this freeze and the federal tension it has created.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Discuss" two named things — rationale and tension.</b> Both halves are compulsory. This is a rare Polity question with a demographic-federal dimension, so the value-addition comes from population data and the 2026 timeline.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Art 81/82 + the freeze</li><li>The rationale</li><li>The federal tension</li><li>The 2026 cliff-edge</li><li>Way forward</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 81</b> requires Lok Sabha seats to be allocated so that the ratio of seats to population is, so far as practicable, the same for all States; <b>Article 82</b> requires readjustment after every census. The <b>42nd Amendment (1976)</b> froze allocation at 1971 Census figures until 2000; the <b>84th Amendment (2001)</b> extended the freeze to the first census taken after 2026.</p>
+<p><span class="sh">The constitutional rationale</span></p>
+<p>The freeze was a deliberate incentive for <b>population stabilisation</b>. Without it, States that successfully reduced fertility would lose parliamentary seats to States with higher growth — penalising the very policy the national family-planning programme pursued. It severed the link between demographic performance and political representation. The same 1971 baseline is also used for computing vote values in the Presidential election.</p>
+<p><span class="sh">The federal tension</span></p>
+<p>Two opposing grievances now coexist. <b>Southern and smaller States</b> — Kerala, Tamil Nadu, Andhra Pradesh, Karnataka, Punjab — argue that having reached replacement-level fertility they will be punished for success if seats are reallocated on current population. <b>Northern States</b> — Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan — argue the reverse: their citizens are under-represented, each MP standing for far more people, which offends the one-person-one-vote principle Article 81 itself asserts. The freeze also interacts with the <b>106th Amendment (2023)</b>: women's reservation takes effect only after the first delimitation following the next census.</p>
+<p><span class="sh">Way forward</span></p>
+<p>Extend the freeze again; enlarge the House so that no State loses seats in absolute terms while relative weights adjust; strengthen the Rajya Sabha as a genuine chamber of State equality; or compensate through fiscal devolution rather than seats. The question is ultimately about the terms of federal union, and any settlement will need broad political consensus rather than a bare majority.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 81 and 82 · the 42nd (1976) and 84th (2001) Amendments · population-stabilisation rationale · the 1971 baseline's second use in Presidential vote value · both sides' grievances with named States · 106th Amendment linkage · four reform options.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 277 / 250 words.</b> <b>Cut:</b> "preserving consistency" as an explanatory tail, and the "options include" framing before the way-forward list. <b>Bought:</b> nothing new — length only, 302 → budget. The four named options survive; on a federal-tension question, offering a menu rather than a single prescription is what signals balance.</div>
+<div class="cost"><b>What would cost you marks:</b> presenting only the southern States' grievance — the northern under-representation argument is equally constitutional; missing the 106th Amendment connection, which makes the issue urgent.</div>
+</div>
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">★ 90-second recall</span>
+<h2>Last-mile revision — Structure &amp; Composition of Parliament</h2>
+<ul>
+<li>Parliament = President + Lok Sabha + Rajya Sabha (President is part of Parliament, not a House member).</li>
+<li>Lok Sabha: max <b>550</b> post-104th Amendment (552 before it), current actual <b>543</b>; directly elected; 5-year term (extendable by 1 year at a time only during National Emergency).</li>
+<li>Rajya Sabha: max 250, current effective 245 (233 elected + 12 nominated); permanent body; 1/3rd retire every 2 years.</li>
+<li>RS election: State MLAs vote, proportional representation, single transferable vote. Domicile requirement relaxed — upheld in Kuldip Nayar (2006).</li>
+<li>12 nominated RS members: literature, science, art, social service — <b>four</b> fields (Art 80(3)). The Governor's Legislative Council list has <b>five</b> (Art 171(5)), adding <b>co-operative movement</b>.</li>
+<li>Age: Lok Sabha 25, Rajya Sabha 30.</li>
+<li>Anglo-Indian nomination (both Houses) abolished by 104th Amendment, 2019.</li>
+<li>Lok Sabha seats frozen at 1971 Census figures since the 42nd Amendment, 1976.</li>
+<li>106th Amendment (2023): 1/3rd women's reservation in LS + Assemblies — operative only after post-Census delimitation; 15-year sunset; <b>no RS/Council coverage</b>.</li>
+<li>Speaker: casting vote only on a tie; decides Money Bill status finally, non-justiciable; resigns to Deputy Speaker.</li>
+<li>Joint sitting (Art 108): Speaker presides; excludes Money Bills and Constitutional Amendment Bills; used only 3 times ever.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> next in Topic 5 — <i>02 Powers, Functions &amp; Legislative Process</i> (Week 3, Day 5) — how a Bill actually becomes law, and the different Bill categories.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='00%20Parliamentary%20System%20and%20Presidential%20Government.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">00 · Parliamentary System &amp; Presidential Government</span></button>
+<button class="tabflow-btn tabflow-next" onclick="location.href='02%20Powers%20Functions%20and%20Legislative%20Process.html'"><span class="tabflow-dir">Next →</span><span class="tabflow-label">02 · Powers, Functions &amp; Legislative Process</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 5 — Parliament &amp; State Legislatures · Note 01 of 4<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 23.
+</footer>
+
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

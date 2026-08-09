@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC GS Paper-II — Syllabus &amp; Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7FB;--card:#FFFFFF;--ink:#14152E;--muted:#565884;
+    --deep:#1B1D51;--deep2:#33357F;--line:#DCDFEF;--line-strong:#C3C7E3;
+    --polity:#33357F;--polity-soft:#E9E9FA;
+    --gov:#1F8AA6;--gov-soft:#DDF0F5;
+    --justice:#B5388B;--justice-soft:#F7E4F1;
+    --ir:#E0A11C;--ir-soft:#FBF1D8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 80px;}
+
+  /* HERO */
+  .hero{position:relative;margin:0 -22px 40px;padding:52px 40px 44px;
+    background:radial-gradient(1100px 340px at 82% -20%,#3a2a72 0,transparent 60%),
+      radial-gradient(800px 380px at 5% 120%,#7a1f66 0,transparent 55%),
+      linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+    color:#fff;overflow:hidden;border-radius:0 0 24px 24px;}
+  .hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.26em;
+    text-transform:uppercase;color:#FFD25A;margin-bottom:14px;}
+  .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);
+    line-height:1.04;margin:0 0 12px;letter-spacing:-.4px;}
+  .hero p{max-width:660px;color:#D9D9F2;margin:0;font-size:15.5px;}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .hero .pill{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;
+    padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+    color:#EDE9FF;background:rgba(255,255,255,.06);}
+
+  /* NOTE */
+  .note{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--justice);
+    border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 16px rgba(20,21,46,.05);}
+  .note .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--justice);font-weight:600;margin-bottom:7px;}
+  .note p{margin:0;font-size:14.5px;color:#33344f;}
+  .note p + p{margin-top:8px;}
+  .note.deep{border-left-color:var(--gov);}
+  .note.deep .tag{color:var(--gov);}
+
+  /* SECTION */
+  section{margin:48px 0 0;scroll-margin-top:18px;}
+  .sec-head{display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+  .sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--ir);}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);
+    color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+  .divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+  p.lead{color:#33344f;}
+  .big-line{font-family:'Fraunces',serif;font-size:clamp(19px,3vw,24px);color:var(--deep2);
+    line-height:1.3;margin:8px 0;font-weight:500;}
+  .big-line b{color:var(--justice);font-weight:600;}
+
+  /* FIGURE */
+  figure{margin:24px 0;}
+  .fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+  figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);
+    text-align:center;margin-top:10px;}
+  figcaption b{color:var(--deep2);}
+  svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+
+  /* TABLES */
+  .table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;background:var(--card);
+    border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.5px;min-width:560px;}
+  thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:11px 14px;font-size:13.5px;}
+  tbody td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+  tbody tr:nth-child(even){background:#FAFBFE;}
+  tbody th{padding:11px 14px;border-top:1px solid var(--line);text-align:left;font-weight:600;
+    color:var(--deep2);background:#F1F2FA;white-space:nowrap;}
+
+  /* AT-A-GLANCE + CLUSTER CARDS */
+  .cluster{margin:22px 0 0;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    background:var(--card);box-shadow:0 4px 16px rgba(20,21,46,.04);}
+  .cluster-head{padding:15px 22px;display:flex;align-items:center;gap:12px;color:#fff;flex-wrap:wrap;}
+  .cluster-head .cnum{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;opacity:.9;
+    border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:3px 9px;}
+  .cluster-head h3{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(18px,3vw,23px);
+    margin:0;letter-spacing:-.2px;flex:1;min-width:180px;}
+  .cluster-head .badge{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.03em;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 10px;}
+  .c-polity .cluster-head{background:var(--polity);}
+  .c-gov .cluster-head{background:var(--gov);}
+  .c-justice .cluster-head{background:var(--justice);}
+  .c-ir .cluster-head{background:var(--ir);color:#3a2900;}
+  .c-ir .cluster-head .cnum{border-color:rgba(58,41,0,.35);}
+  .c-ir .cluster-head .badge{background:rgba(58,41,0,.12);border-color:rgba(58,41,0,.28);color:#5a3d00;}
+
+  ul.topics{list-style:none;margin:0;padding:6px 0;}
+  ul.topics li{display:flex;gap:13px;padding:12px 22px;border-top:1px solid var(--line);
+    font-size:14.5px;color:#26273f;line-height:1.5;}
+  ul.topics li:first-child{border-top:0;}
+  .box{flex:none;width:16px;height:16px;border-radius:5px;border:2px solid var(--line-strong);margin-top:3px;}
+  .c-polity .box{border-color:var(--polity);}
+  .c-gov .box{border-color:var(--gov);}
+  .c-justice .box{border-color:var(--justice);}
+  .c-ir .box{border-color:var(--ir);}
+  ul.topics li .t-num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+    flex:none;width:20px;margin-top:1px;font-weight:600;}
+
+  .hot{margin:0;padding:14px 22px 16px;background:#FBFAF4;border-top:1px dashed var(--line-strong);}
+  .hot .hl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:#9a6b04;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+  .hot .chips{display:flex;flex-wrap:wrap;gap:7px;}
+  .hot .rc{font-size:12.5px;background:var(--ir-soft);border:1px solid #EBD9A8;color:#7a5502;
+    border-radius:8px;padding:5px 10px;font-weight:500;}
+
+  /* TIERS */
+  .tiers{display:grid;gap:12px;margin:20px 0;}
+  .tier{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;box-shadow:0 3px 12px rgba(20,21,46,.04);align-items:flex-start;}
+  .tier .rank{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1;flex:none;width:44px;text-align:center;}
+  .tier.t1{border-left:5px solid var(--polity);} .tier.t1 .rank{color:var(--polity);}
+  .tier.t2{border-left:5px solid var(--justice);} .tier.t2 .rank{color:var(--justice);}
+  .tier.t3{border-left:5px solid var(--ir);} .tier.t3 .rank{color:var(--ir);}
+  .tier.t4{border-left:5px solid var(--gov);} .tier.t4 .rank{color:var(--gov);}
+  .tier h4{margin:0 0 3px;font-size:15.5px;color:var(--deep);font-weight:700;}
+  .tier p{margin:0;font-size:14px;color:#3a3b56;}
+
+  /* SIX LENS */
+  .lens{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  @media(max-width:640px){.lens{grid-template-columns:1fr;}}
+  .lens .step{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px 17px;}
+  .lens .step .n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ir);font-weight:600;letter-spacing:.05em;}
+  .lens .step h4{margin:4px 0 4px;font-size:15px;color:var(--deep2);font-weight:700;}
+  .lens .step p{margin:0;font-size:13.5px;color:#3a3b56;line-height:1.5;}
+
+  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.7;}
+
+  @media print{
+    body{background:#fff;}.hero{border-radius:0;}
+    .cluster,.note,.fig-card,.tier,.lens .step,table{box-shadow:none;}
+    section,.cluster,.tier{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">UPSC Civil Services (Mains) · Paper-III</div>
+    <h1>General Studies&nbsp;–&nbsp;II</h1>
+    <p>Governance, Constitution, Polity, Social Justice &amp; International Relations — the official syllabus <b>plus</b> a senior-mentor strategy read: weightage, repeaters, priority order and the method behind it.</p>
+    <div class="meta">
+      <span class="pill">Mains · 250 marks</span>
+      <span class="pill">20 questions</span>
+      <span class="pill">4 thematic clusters</span>
+      <span class="pill">Syllabus + Strategy</span>
+    </div>
+  </header>
+
+  <div class="note">
+    <div class="tag">◆ How to read this file</div>
+    <p>The syllabus text is the <b>official UPSC wording, kept verbatim</b>; I've grouped the twenty points under the paper's four named themes so you can see its architecture and tick topics off. Everything else — weightage, repeaters, priority order — is <b>strategic analysis</b> to give you the terrain before you march.</p>
+    <p>Note: this is <b>GS-II</b> by content, sitting as <b>Paper-III</b> in the overall Mains sequence (Essay → GS-I → GS-II → GS-III → GS-IV).</p>
+  </div>
+
+  <!-- ===== 01 CHARACTER ===== -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">01</span><h2>The character of this paper</h2></div>
+    <hr class="divider">
+    <p class="lead">Before deciding <i>how much</i> of each topic to do, understand <i>what kind</i> of paper GS-II is. This single realisation reshapes your whole approach:</p>
+    <p class="big-line">GS-II is a <b>hybrid</b> — a static skeleton (Constitution &amp; institutions) wrapped in a current-affairs skin.</p>
+    <p class="lead">You cannot mug it. Across recent years, well over half the questions ask you to <b>apply</b> a static concept to something in the news — a bill, a judgment, a scheme, a summit. So your preparation runs on two tracks at once: a one-time static push, and a continuous current-affairs drip that never stops until the exam.</p>
+  </section>
+
+  <!-- ===== 02 WEIGHTAGE ===== -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Weightage — where the marks live</h2></div>
+    <hr class="divider">
+    <p class="lead">The four clusters are <b>never</b> split evenly. Trend analysis of recent years shows Polity dominating, with the other three trailing. Weight decides where your hours go — not the number of syllabus lines.</p>
+
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 820 250" role="img" aria-label="GS-II weightage by cluster">
+        <g font-family="Inter" font-size="13">
+          <text x="410" y="22" text-anchor="middle" font-family="IBM Plex Mono" font-size="11.5" fill="#565884" letter-spacing="1.5">APPROX. SHARE OF QUESTIONS (DIRECTIONAL — NOT OFFICIAL)</text>
+          <!-- axis baseline -->
+          <line x1="210" y1="48" x2="210" y2="220" stroke="#DCDFEF" stroke-width="1"/>
+          <!-- Polity -->
+          <text x="198" y="72" text-anchor="end" font-weight="600" fill="#33357F">Polity &amp; Const.</text>
+          <rect x="210" y="58" width="480" height="26" rx="6" fill="#33357F"/>
+          <text x="700" y="76" font-size="12.5" font-weight="700" fill="#33357F">35–45%</text>
+          <!-- Social Justice -->
+          <text x="198" y="116" text-anchor="end" font-weight="600" fill="#B5388B">Social Justice</text>
+          <rect x="210" y="102" width="276" height="26" rx="6" fill="#B5388B"/>
+          <text x="496" y="120" font-size="12.5" font-weight="700" fill="#B5388B">20–25%</text>
+          <!-- IR -->
+          <text x="198" y="160" text-anchor="end" font-weight="600" fill="#B8850F">Intl. Relations</text>
+          <rect x="210" y="146" width="264" height="26" rx="6" fill="#E0A11C"/>
+          <text x="484" y="164" font-size="12.5" font-weight="700" fill="#B8850F">20–25%</text>
+          <!-- Governance -->
+          <text x="198" y="204" text-anchor="end" font-weight="600" fill="#1F8AA6">Governance</text>
+          <rect x="210" y="190" width="200" height="26" rx="6" fill="#1F8AA6"/>
+          <text x="420" y="208" font-size="12.5" font-weight="700" fill="#1F8AA6">15–20%</text>
+        </g>
+      </svg>
+      <figcaption><b>Fig 1.</b> Polity is the backbone — roughly <b>40%</b> of the paper is directly or indirectly polity. Shares overlap because UPSC blurs the boundaries deliberately.</figcaption>
+    </div></figure>
+
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>Cluster</th><th>Rough weight</th><th>Nature</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><th>Polity &amp; Constitution</th><td>~35–45% (7–9 Qs)</td><td>Static core + current application</td><td>Backbone — master first</td></tr>
+        <tr><th>Social Justice</th><td>~20–25% (4–6 Qs)</td><td>Mostly dynamic (schemes, data)</td><td>High-yield, low-competition</td></tr>
+        <tr><th>International Relations</th><td>~20–25% (4–6 Qs)</td><td>Almost fully dynamic</td><td>Scoring if current affairs strong</td></tr>
+        <tr><th>Governance</th><td>~15–20% (3–5 Qs)</td><td>Dynamic + conceptual</td><td>Overlaps — cheap to cover</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note deep">
+      <div class="tag">◆ Why the overlap is a gift</div>
+      <p>A single question on RTI is Governance <i>and</i> Polity <i>and</i> Social Justice at once. Because UPSC blurs boundaries, covering the <b>core well pays across multiple clusters</b> — you're never studying just one box.</p>
+    </div>
+  </section>
+
+  <!-- ===== 03 CLUSTERS ===== -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">03</span><h2>The four clusters — syllabus &amp; repeaters</h2></div>
+    <hr class="divider">
+    <p class="lead">Official syllabus points (tick as you cover), each cluster tagged with its <b>priority tier</b>, <b>nature</b>, and the <b>repeaters</b> UPSC returns to almost every year — your non-negotiables.</p>
+
+    <!-- A POLITY -->
+    <div class="cluster c-polity">
+      <div class="cluster-head">
+        <span class="cnum">A</span><h3>Polity &amp; Constitution</h3>
+        <span class="badge">PRIORITY 1</span><span class="badge">MOSTLY STATIC</span><span class="badge">9 topics</span>
+      </div>
+      <ul class="topics">
+        <li><span class="box"></span><span class="t-num">1</span><span>Indian Constitution — historical underpinnings, evolution, features, amendments, significant provisions and basic structure.</span></li>
+        <li><span class="box"></span><span class="t-num">2</span><span>Functions and responsibilities of the Union and the States, issues and challenges pertaining to the federal structure, devolution of powers and finances up to local levels and challenges therein.</span></li>
+        <li><span class="box"></span><span class="t-num">3</span><span>Separation of powers between various organs, dispute redressal mechanisms and institutions.</span></li>
+        <li><span class="box"></span><span class="t-num">4</span><span>Comparison of the Indian constitutional scheme with that of other countries.</span></li>
+        <li><span class="box"></span><span class="t-num">5</span><span>Parliament and State legislatures — structure, functioning, conduct of business, powers &amp; privileges and issues arising out of these.</span></li>
+        <li><span class="box"></span><span class="t-num">6</span><span>Structure, organization and functioning of the Executive and the Judiciary — Ministries and Departments; pressure groups and formal/informal associations and their role in the Polity.</span></li>
+        <li><span class="box"></span><span class="t-num">7</span><span>Salient features of the Representation of People's Act.</span></li>
+        <li><span class="box"></span><span class="t-num">8</span><span>Appointment to various Constitutional posts, powers, functions and responsibilities of various Constitutional Bodies.</span></li>
+        <li><span class="box"></span><span class="t-num">9</span><span>Statutory, regulatory and various quasi-judicial bodies.</span></li>
+      </ul>
+      <div class="hot">
+        <div class="hl">🔥 Repeaters — the annual magnets</div>
+        <div class="chips">
+          <span class="rc">Federalism &amp; Centre–State tensions</span>
+          <span class="rc">Separation of powers / Judiciary vs Executive</span>
+          <span class="rc">Basic structure &amp; key amendments</span>
+          <span class="rc">Parliament — powers &amp; privileges</span>
+          <span class="rc">Constitutional vs Statutory vs Regulatory bodies</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- C SOCIAL JUSTICE -->
+    <div class="cluster c-justice">
+      <div class="cluster-head">
+        <span class="cnum">C</span><h3>Social Justice</h3>
+        <span class="badge">PRIORITY 2 · DIFFERENTIATOR</span><span class="badge">MOSTLY DYNAMIC</span><span class="badge">4 topics</span>
+      </div>
+      <ul class="topics">
+        <li><span class="box"></span><span class="t-num">11</span><span>Development processes and the development industry — the role of NGOs, SHGs, various groups and associations, donors, charities, institutional and other stakeholders.</span></li>
+        <li><span class="box"></span><span class="t-num">12</span><span>Welfare schemes for vulnerable sections by the Centre and States and their performance; mechanisms, laws, institutions and Bodies constituted for the protection and betterment of these vulnerable sections.</span></li>
+        <li><span class="box"></span><span class="t-num">13</span><span>Issues relating to development and management of Social Sector/Services relating to Health, Education, Human Resources.</span></li>
+        <li><span class="box"></span><span class="t-num">14</span><span>Issues relating to poverty and hunger.</span></li>
+      </ul>
+      <div class="hot">
+        <div class="hl">🔥 Repeaters — the annual magnets</div>
+        <div class="chips">
+          <span class="rc">Welfare schemes &amp; their performance</span>
+          <span class="rc">Health &amp; education as social sectors (NEP)</span>
+          <span class="rc">Poverty &amp; hunger — measurement, SDGs</span>
+          <span class="rc">NGO / SHG development-industry debate</span>
+          <span class="rc">Vulnerable sections — laws &amp; bodies</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- D IR -->
+    <div class="cluster c-ir">
+      <div class="cluster-head">
+        <span class="cnum">D</span><h3>International Relations</h3>
+        <span class="badge">PRIORITY 3</span><span class="badge">FULLY DYNAMIC</span><span class="badge">4 topics</span>
+      </div>
+      <ul class="topics">
+        <li><span class="box"></span><span class="t-num">17</span><span>India and its neighborhood — relations.</span></li>
+        <li><span class="box"></span><span class="t-num">18</span><span>Bilateral, regional and global groupings and agreements involving India and/or affecting India's interests.</span></li>
+        <li><span class="box"></span><span class="t-num">19</span><span>Effect of policies and politics of developed and developing countries on India's interests; Indian diaspora.</span></li>
+        <li><span class="box"></span><span class="t-num">20</span><span>Important International institutions, agencies and fora — their structure, mandate.</span></li>
+      </ul>
+      <div class="hot">
+        <div class="hl">🔥 Repeaters — the annual magnets</div>
+        <div class="chips">
+          <span class="rc">India–neighbourhood (China, B'desh, Sri Lanka…)</span>
+          <span class="rc">Groupings: QUAD, BRICS, SCO, G20, I2U2</span>
+          <span class="rc">Great-power politics &amp; India (US, Russia, West Asia)</span>
+          <span class="rc">Indian diaspora</span>
+          <span class="rc">Global institutions — structure &amp; mandate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- B GOVERNANCE -->
+    <div class="cluster c-gov">
+      <div class="cluster-head">
+        <span class="cnum">B</span><h3>Governance</h3>
+        <span class="badge">PRIORITY 4 · CONNECTIVE TISSUE</span><span class="badge">DYNAMIC + CONCEPTUAL</span><span class="badge">3 topics</span>
+      </div>
+      <ul class="topics">
+        <li><span class="box"></span><span class="t-num">10</span><span>Government policies and interventions for development in various sectors and issues arising out of their design and implementation.</span></li>
+        <li><span class="box"></span><span class="t-num">15</span><span>Important aspects of governance, transparency and accountability, e-governance — applications, models, successes, limitations, and potential; citizens charters, transparency &amp; accountability and institutional and other measures.</span></li>
+        <li><span class="box"></span><span class="t-num">16</span><span>Role of civil services in a democracy.</span></li>
+      </ul>
+      <div class="hot">
+        <div class="hl">🔥 Repeaters — the annual magnets</div>
+        <div class="chips">
+          <span class="rc">Transparency &amp; accountability / RTI / e-governance</span>
+          <span class="rc">Citizens' charters &amp; service delivery</span>
+          <span class="rc">Civil services reforms &amp; role in democracy</span>
+          <span class="rc">Policy design vs implementation gaps</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 STATIC vs DYNAMIC ===== -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Two-track routine — static vs dynamic</h2></div>
+    <hr class="divider">
+    <p class="lead">The static/dynamic split dictates your <b>daily habit</b>, not just your syllabus allocation.</p>
+    <figure><div class="fig-card">
+      <svg viewBox="0 0 820 200" role="img" aria-label="Two-track study routine">
+        <g font-family="Inter" font-size="13" text-anchor="middle">
+          <!-- track 1 -->
+          <rect x="30" y="40" width="360" height="120" rx="14" fill="#E9E9FA" stroke="#33357F"/>
+          <text x="210" y="70" font-size="15" font-weight="700" fill="#33357F">TRACK 1 · Static push</text>
+          <text x="210" y="98" font-size="12.5" fill="#3a3b70">One-time, bankable. Learn once,</text>
+          <text x="210" y="116" font-size="12.5" fill="#3a3b70">revise, done.</text>
+          <text x="210" y="142" font-size="12" font-weight="600" fill="#1B1D51">Polity's Constitution core → Laxmikanth</text>
+          <!-- track 2 -->
+          <rect x="430" y="40" width="360" height="120" rx="14" fill="#FBF1D8" stroke="#E0A11C"/>
+          <text x="610" y="70" font-size="15" font-weight="700" fill="#B8850F">TRACK 2 · Current-affairs drip</text>
+          <text x="610" y="98" font-size="12.5" fill="#7a5502">Renewable. Feed daily until the</text>
+          <text x="610" y="116" font-size="12.5" fill="#7a5502">exam — never stops.</text>
+          <text x="610" y="142" font-size="12" font-weight="600" fill="#5a3d00">Social Justice · IR · Governance</text>
+        </g>
+      </svg>
+      <figcaption><b>Fig 2.</b> Run both tracks in parallel from day one — a static block on Polity, a continuous drip on the rest.</figcaption>
+    </div></figure>
+  </section>
+
+  <!-- ===== 05 PRIORITY ===== -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Initial heads-up — what to do first</h2></div>
+    <hr class="divider">
+    <p class="lead">If sequencing GS-II from a cold start, this is the order that gives the best return on effort:</p>
+    <div class="tiers">
+      <div class="tier t1"><div class="rank">1</div><div>
+        <h4>Lock the Polity static core</h4>
+        <p>Largest, most stable, highest-overlap block — and it makes the other three easier. Bank it early from a standard text, then revise.</p></div></div>
+      <div class="tier t2"><div class="rank">2</div><div>
+        <h4>Make Social Justice your differentiator</h4>
+        <p>Most aspirants write it poorly, so a little extra effort visibly lifts your rank. Stock up on schemes, committees and data.</p></div></div>
+      <div class="tier t3"><div class="rank">3</div><div>
+        <h4>Keep IR light but continuous</h4>
+        <p>Frameworks + headlines, never rote. Build country/grouping templates and update them with the news.</p></div></div>
+      <div class="tier t4"><div class="rank">4</div><div>
+        <h4>Let Governance ride the coattails</h4>
+        <p>Cheapest cluster — it piggybacks on the other three plus a thin layer of 2nd ARC concepts. Don't over-invest.</p></div></div>
+    </div>
+    <p class="big-line" style="margin-top:22px;">Mental model: <b>Polity is the foundation, Social Justice the differentiator, IR the current-affairs test, and Governance the connective tissue.</b></p>
+  </section>
+
+  <!-- ===== 06 METHOD ===== -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">06</span><h2>The method — how to read <em>any</em> syllabus</h2></div>
+    <hr class="divider">
+    <p class="lead">The transferable skill. Run any paper's syllabus through these six lenses and you'll produce this same terrain map yourself.</p>
+    <div class="lens">
+      <div class="step"><div class="n">LENS 1</div><h4>Decompose</h4><p>Break each fat syllabus line into its smallest examinable units. One point often hides 3–4 topics.</p></div>
+      <div class="step"><div class="n">LENS 2</div><h4>Cluster</h4><p>Group the units into natural families. This shows where the <i>mass</i> of the paper sits.</p></div>
+      <div class="step"><div class="n">LENS 3</div><h4>Weight</h4><p>Assign each cluster a rough mark-share from PYQ frequency. The step that decides where your hours go.</p></div>
+      <div class="step"><div class="n">LENS 4</div><h4>Classify static vs dynamic</h4><p>Book-answered or newspaper-answered? This decides <i>how</i> you study each unit, not just how much.</p></div>
+      <div class="step"><div class="n">LENS 5</div><h4>Spot anchors &amp; repeaters</h4><p>Find the 3–4 themes UPSC returns to yearly in each cluster. These are your non-negotiables.</p></div>
+      <div class="step"><div class="n">LENS 6</div><h4>Map the overlaps</h4><p>Note where topics bleed across GS papers, Essay and interview. High-overlap = best return on effort.</p></div>
+    </div>
+  </section>
+
+  <div class="note">
+    <div class="tag">◆ One honest caveat</div>
+    <p>The weightage percentages are <b>directional averages from trend analysis, not official counts</b> — UPSC publishes no weightage and it fluctuates year to year. Before finalising your strategy, count the last 3–4 years' actual papers yourself; doing that count <i>is</i> the exercise, and it cements the terrain far better than reading mine.</p>
+  </div>
+
+  <footer>
+    UPSC Civil Services (Main) · General Studies Paper-II · 250 marks<br>
+    Official syllabus verbatim · Strategic analysis by cluster · Weightage is directional, not official · Print or save as PDF (Ctrl/Cmd + P).
+  </footer>
+
+</div>
+</body>
+</html>

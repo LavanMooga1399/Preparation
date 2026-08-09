@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inter-State Relations | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Syllabus placement</button>
+<button class="notetab" data-tab="s2">02 · Inter-State Water Disputes</button>
+<button class="notetab" data-tab="s3">03 · Inter-State Council</button>
+<button class="notetab" data-tab="s4">04 · Public Acts, Records &amp; Judicial Proceedings</button>
+<button class="notetab" data-tab="s5">05 · Trade &amp; Commerce, Zonal Councils</button>
+<button class="notetab" data-tab="s6">06 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">07 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 2 of 9 · Note 03 of 3 — closes out this batch</div>
+<h1>Inter-State Relations</h1>
+<p class="sub">Senior-mentor notes on how States deal with each other rather than with the Centre — water disputes and their tribunals, the Inter-State Council, mutual recognition of each other's public acts and judicial proceedings, free trade &amp; commerce across State lines, and the Zonal Councils that quietly keep neighbouring States talking.</p>
+<div class="chips">
+<span class="chip">Article 262</span>
+<span class="chip">Article 263</span>
+<span class="chip">Article 261</span>
+<span class="chip">Articles 301-307</span>
+<span class="chip">Zonal Councils</span>
+</div>
+<div class="bignum"><b>5</b><span>zones under the States Reorganisation Act, 1956</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this note exists</div>
+<p>Notes 01 and 02 covered the Union-State axis of federalism. This note covers the other axis — State-to-State — which UPSC tests just as often, especially through current-affairs-driven water-sharing disputes and the periodic revival of Inter-State Council meetings. This closes out the three-note Topic 2 batch built for Week 2, Days 4-6 of the study plan.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Every note in this Topic so far has been about the Centre versus a State. This one is about something different: 28 States sharing one country, and inevitably bumping into each other — a river that flows through three States, a court judgment in one State that needs to be recognised in another, goods that need to cross a State border freely rather than face a local tax barrier. None of these problems involve the Centre taking sides against a State; they are States needing rules to deal fairly with <i>each other</i>.</p>
+<p>The Constitution's solution, mostly, is to hand the Centre a neutral referee role rather than a rulebook that decides every case in advance: Parliament can set up a water-dispute Tribunal when States can't agree (Article 262), the President can set up a standing forum for States to talk things through (the Inter-State Council, Article 263), and a separate, purely administrative set of five regional Zonal Councils exists to keep neighbouring States talking informally, without any binding power at all. None of these bodies can force an outcome the way a court judgment can — they exist to make cooperation easier, not to compel it, which is exactly why "how much teeth does this body actually have" is the recurring exam question across this entire note.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 2 note series —</b>
+<span class="done">✓ 01 Federal System</span> · <span class="done">✓ 02 Centre-State Relations</span> · <span class="done">✓ 03 Inter-State Relations (this file)</span> · <span class="todo">○ 04 Devolution of Powers &amp; Finances to Local Bodies (planned)</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 : SYLLABUS PLACEMENT ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Where this fits &amp; the logical chain</h2></div>
+<hr class="divider">
+<p class="lead">This note completes the "issues and challenges pertaining to the federal structure" element of Topic 2's syllabus line (Note 01, Section 01) from its inter-state angle. Laxmikanth treats it as Chapter 10, "Inter-State Relations" — the natural third act after Federal System (the vocabulary) and Centre-State Relations (the Union-State machinery).</p>
+<div class="tip">
+<span class="ic">🔗</span>
+<p><b>Logical chain:</b> Federal System (Note 01) → Centre-State Relations (Note 02 — Union vs one State) → Inter-State Relations (this file — State vs State, with the Union as referee rather than a direct party).</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 : WATER DISPUTES ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Inter-State Water Disputes — Article 262</h2></div>
+<hr class="divider">
+<p class="lead">Rivers do not respect State boundaries, and water is a State subject (Entry 17, State List) except for the regulation of inter-State rivers, which Parliament can occupy (Entry 56, Union List) — this split is exactly why Article 262 exists.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Provision</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><th>Article 262(1)</th><td>Parliament may by law provide for the adjudication of any dispute relating to the waters of, or in, any inter-State river or river valley.</td></tr>
+<tr><th>Article 262(2)</th><td>Parliament may by law bar the Supreme Court and other courts from exercising jurisdiction over such a dispute — an unusual, explicit ouster of judicial review for this one category.</td></tr>
+<tr><th>Inter-State River Water Disputes Act, 1956</th><td>The enabling law under Article 262 — allows the Union government to set up an ad hoc Water Disputes Tribunal when a State's request cannot be resolved through negotiation.</td></tr>
+<tr><th>Tribunal composition</th><td>A Chairman and two other members nominated by the Chief Justice of India from among sitting Supreme Court or High Court judges.</td></tr>
+<tr><th>Effect</th><td>Once notified, a Tribunal's decision has the force of a Supreme Court decree — but enforcement in practice has been the recurring weak link (no independent enforcement machinery of its own).</td></tr>
+<tr><th>Finality</th><td>Under the original 1956 Act's design, a Water Disputes Tribunal's award was meant to be <b>final, with no appeal to the Supreme Court</b> — Article 262(2) exists precisely to let Parliament exclude ordinary court appeals from these disputes (Section 02's trap box above). In practice, parties have still approached the Supreme Court via writ petitions challenging a Tribunal's process rather than a direct "appeal," which is the nuance examiners sometimes probe.</td></tr>
+<tr><th>Reform debate (pros/cons/way forward)</th><td>The standing criticism of the ad-hoc-tribunal model: decades-long delays (Cauvery's tribunal took 17 years to a final award), no enforcement machinery, and serial litigation despite "finality." The proposed fix — the Inter-State River Water Disputes (Amendment) Bill — would replace ad hoc tribunals with <b>one standing permanent Tribunal with multiple benches</b>, preceded by a mandatory <b>Dispute Resolution Committee</b> (DRC) stage, with fixed timelines for awards. <b>For:</b> speed, institutional memory, consistent jurisprudence. <b>Against:</b> water is a State List subject (Entry 17) and States fear a permanent central body tilting the field; timelines without enforcement teeth may replicate the old problem. <b>Way forward (liftable):</b> pair the permanent tribunal with a transparent, basin-wide data authority — most water disputes are at bottom disputes about contested flow data.</td></tr>
+<tr><th>River Boards Act, 1956 — the forgotten twin</th><td>Parliament passed <b>two</b> laws under Article 262's neighbourhood in 1956, and a Week 2 question paired them: the Inter-State River Water <b>Disputes</b> Act (Union government constitutes ad hoc Tribunals — adjudicatory) and the <b>River Boards Act</b> (Union government may establish River Boards to <i>advise</i> on the regulation and development of an inter-State river, on request of the State governments — purely <b>advisory</b>, and in practice a dead letter: <b>no River Board has ever been created</b>). Trap pairing: Disputes Act = tribunal = binding award; River Boards Act = board = advice only, never used.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Common trap:</b> Article 262(2)'s court-ouster power is often confused with a blanket bar — it only applies to the specific dispute Parliament has legislated to route through a Tribunal. General constitutional questions arising incidentally (e.g., a fundamental-rights challenge) are not automatically barred from ordinary courts.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Which States fight over which river — the memorisable map.</b> A Week 2 question asked exactly this for the Narmada, so hold the full set:</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Dispute</th><th>States involved</th></tr></thead>
+<tbody>
+<tr><th>Narmada</th><td><b>Gujarat, Madhya Pradesh, Maharashtra, Rajasthan</b> — note Rajasthan's inclusion and Chhattisgarh's absence, the exact trap the test used.</td></tr>
+<tr><th>Cauvery</th><td>Tamil Nadu, Karnataka, Kerala, Puducherry.</td></tr>
+<tr><th>Krishna</th><td>Maharashtra, Karnataka, Andhra Pradesh, Telangana (Telangana joined post-2014 bifurcation).</td></tr>
+<tr><th>Mahadayi / Mandovi</th><td>Goa, Karnataka, Maharashtra.</td></tr>
+<tr><th>Vansadhara</th><td>Odisha, Andhra Pradesh.</td></tr>
+<tr><th>Ravi-Beas</th><td>Punjab, Haryana, Rajasthan.</td></tr>
+</tbody>
+</table></div>
+<p>Memory hook: for the Narmada, follow the river — it rises in MP, flows between Maharashtra and Gujarat; Rajasthan is in because it <i>receives canal water</i> from Sardar Sarovar despite the river never touching it. If a State's claim comes from a canal, not the river, it still counts as a party.</p>
+</div>
+
+<div class="tip">
+<span class="ic">◆</span>
+<p><b>Value-addition — live disputes:</b> the Cauvery dispute (Karnataka-Tamil Nadu-Kerala-Puducherry), the Krishna dispute (Karnataka-Andhra Pradesh-Telangana-Maharashtra), and the Mahadayi/Mandovi dispute (Karnataka-Goa-Maharashtra) are the three most consistently current-affairs-active examples worth naming in any answer on this theme.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 03 : INTER-STATE COUNCIL ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Inter-State Council — Article 263</h2></div>
+<hr class="divider">
+<p class="lead">Article 263 is the constitutional basis; the Council itself is not automatic — it needed a Presidential order to actually come into being, decades after 1950.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Constitutional basis</th><td>Article 263 empowers (does not mandate) the President to establish an Inter-State Council if it appears that doing so would serve the public interest.</td></tr>
+<tr><th>Establishment</th><td>Actually set up in 1990 by a Presidential Order, following a recommendation of the Sarkaria Commission (Note 02, Section 05) — a 40-year gap between the constitutional power and its use.</td></tr>
+<tr><th>Composition</th><td>Chaired by the Prime Minister; members include Chief Ministers of all States and of Union Territories with a Legislative Assembly, and Administrators of UTs without one.</td></tr>
+<tr><th>Functions</th><td>Investigating and discussing subjects of common interest between the Union and States, or among States; making recommendations for better coordination of policy.</td></tr>
+<tr><th>Decision-making</th><td>By consensus — meant to be a recommendatory forum, not a voting body with binding power.</td></tr>
+<tr><th>Meeting frequency</th><td>Meant to meet at least three times a year, though in practice it has met infrequently — a real gap of nearly a decade preceded its most recent revival, discussed alongside the pending Sarkaria and Punchhi Commission recommendations.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : PUBLIC ACTS, RECORDS & JUDICIAL PROCEEDINGS ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Public Acts, Records &amp; Judicial Proceedings — Article 261</h2></div>
+<hr class="divider">
+<p class="lead">The least-tested but most conceptually clean provision in this note — it exists to stop India's States from behaving like separate legal jurisdictions that ignore each other's official acts.</p>
+
+<div class="tip">
+<span class="ic">◆</span>
+<p><b>Article 261, in three parts:</b> (1) full faith and credit shall be given throughout India to public acts, records and judicial proceedings of the Union and every State; (2) Parliament may by law prescribe the manner of proving such acts, records and proceedings, and their effect; (3) a final civil-court judgment or order from one part of India is executable anywhere in India according to law — a decree from a Mumbai court, for instance, does not need to be re-litigated to be enforced in Kolkata.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 : TRADE, COMMERCE & ZONAL COUNCILS ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Inter-State Trade &amp; Commerce, and Zonal Councils</h2></div>
+<hr class="divider">
+<p class="lead">The final two elements of this note — one constitutional (freedom of trade), one purely statutory (the zones) — both exist to stop India's internal market and administration from fragmenting along State lines.</p>
+
+<h3>Inter-State trade &amp; commerce — Articles 301-307</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><th>Article 301</th><td>Trade, commerce and intercourse throughout India shall be free — the constitutional foundation of India as a single economic unit.</td></tr>
+<tr><th>Article 302</th><td>Parliament can impose restrictions on this freedom in the public interest.</td></tr>
+<tr><th>Article 303</th><td>Neither Parliament nor a State legislature can give preference to one State over another, or discriminate between States, in trade/commerce matters — subject to Article 302's public-interest exception in cases of scarcity.</td></tr>
+<tr><th>Article 304</th><td>A State legislature can impose reasonable restrictions in the public interest, including non-discriminatory taxes on goods from other States, but needs the President's prior sanction for certain restrictive Bills.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Zonal Councils</h3>
+<figure><div class="fig-card">
+<svg viewBox="0 0 780 210" role="img" aria-label="The five statutory Zonal Councils of India">
+<g font-family="Inter" font-size="12">
+<circle cx="390" cy="105" r="52" fill="#1B1D51"/>
+<text x="390" y="99" text-anchor="middle" fill="#fff" font-weight="700" font-size="12">UNION HOME</text>
+<text x="390" y="115" text-anchor="middle" fill="#FFD25A" font-weight="700" font-size="12">MINISTER</text>
+<text x="390" y="131" text-anchor="middle" fill="#C9C6EE" font-size="9.5">common Chairman, all 5 zones</text>
+
+<rect x="10" y="10" width="170" height="52" rx="9" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.2"/>
+<text x="95" y="32" text-anchor="middle" font-weight="700" font-size="11" fill="#134b59">Northern Zone</text>
+<text x="95" y="48" text-anchor="middle" font-size="9.5" fill="#134b59">Punjab, Haryana, Delhi +</text>
+
+<rect x="600" y="10" width="170" height="52" rx="9" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.2"/>
+<text x="685" y="32" text-anchor="middle" font-weight="700" font-size="11" fill="#8a5c00">Eastern Zone</text>
+<text x="685" y="48" text-anchor="middle" font-size="9.5" fill="#8a5c00">Bihar, WB, Odisha +</text>
+
+<rect x="10" y="148" width="170" height="52" rx="9" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.2"/>
+<text x="95" y="170" text-anchor="middle" font-weight="700" font-size="11" fill="#7a1f66">Western Zone</text>
+<text x="95" y="186" text-anchor="middle" font-size="9.5" fill="#7a1f66">Maharashtra, Gujarat +</text>
+
+<rect x="600" y="148" width="170" height="52" rx="9" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.2"/>
+<text x="685" y="170" text-anchor="middle" font-weight="700" font-size="11" fill="#177a4d">Southern Zone</text>
+<text x="685" y="186" text-anchor="middle" font-size="9.5" fill="#177a4d">TN, Karnataka, Kerala, AP, Telangana</text>
+
+<rect x="305" y="148" width="170" height="52" rx="9" fill="#FDEFE3" stroke="#C9752E" stroke-width="1.2"/>
+<text x="390" y="170" text-anchor="middle" font-weight="700" font-size="11" fill="#8a4413">Central Zone</text>
+<text x="390" y="186" text-anchor="middle" font-size="9.5" fill="#8a4413">MP, UP, Chhattisgarh, Uttarakhand</text>
+
+<line x1="180" y1="36" x2="345" y2="85" stroke="#9598c9" stroke-width="1.1"/>
+<line x1="600" y1="36" x2="435" y2="85" stroke="#9598c9" stroke-width="1.1"/>
+<line x1="180" y1="174" x2="345" y2="125" stroke="#9598c9" stroke-width="1.1"/>
+<line x1="600" y1="174" x2="435" y2="125" stroke="#9598c9" stroke-width="1.1"/>
+<line x1="390" y1="148" x2="390" y2="157" stroke="#9598c9" stroke-width="1.1"/>
+</g>
+</svg>
+<figcaption><b>Fig 1.</b> Five statutory zones under the States Reorganisation Act, 1956 — a separate North Eastern Council was added later, under its own 1971 Act, and is not one of these five.</figcaption>
+</div></figure>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Legal status</th><td>Statutory, not constitutional — created under the States Reorganisation Act, 1956, unlike the constitutionally-rooted Inter-State Council.</td></tr>
+<tr><th>Composition</th><td>Union Home Minister as common Chairman; the Chief Minister of each member State takes a one-year turn as Vice-Chairman; other ministers and UT Administrators from the zone also sit on it.</td></tr>
+<tr><th>Powers</th><td>Purely advisory/recommendatory — a forum for cooperative federalism, not a binding decision-making body.</td></tr>
+<tr><th>North Eastern Council</th><td>A separate, sixth regional body for the Northeast, set up under its own North Eastern Council Act, 1971 — not one of the original five zones and not a UPSC trap to confuse with them.</td></tr>
+<tr><th>NITI Aayog's role</th><td>NITI Aayog nominates a person to serve as an <b>advisor</b> to each of the five Zonal Councils — this advisor attends meetings but has <b>no voting rights</b>. Each zone's Chief Secretary and Development Commissioner also sit as advisors alongside.</td></tr>
+<tr><th>Origin</th><td>Idea proposed by PM Jawaharlal Nehru in 1956 during the States Reorganisation Commission debates — grouping States into zones was meant to ease linguistic tensions and encourage cooperative, regional-scale planning.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 06 : PYQ ANALYSIS ===== -->
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>PYQ analysis</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> Prelims tests this note as a "which of these bodies is constitutional vs statutory" statement-MCQ — confirmed genuine and recent (2025), built on exactly the distinction Section 03 and Section 05 draw between the Inter-State Council (constitutional, Article 263) and Zonal Councils (statutory, 1956 Act).</p>
+
+<div class="pyq">
+<span class="yr">2025</span><span class="stg">Prelims</span>
+<p class="qtext">"With reference to India, consider the following: I. The Inter-State Council II. The National Security Council III. Zonal Councils — How many of the above were established as per the provisions of the Constitution of India?"</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All the three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit — Ans. (a) only one</b>
+<ul class="vwhy"><li>Only <b>one</b> body listed is constitutional — the <b>Inter-State Council, Article 263</b>.</li><li>The National Security Council is an <b>executive creation (1999)</b>, with no constitutional or statutory basis.</li><li>Zonal Councils are <b>statutory</b>, under the States Reorganisation Act, 1956 — see Sections 03 and 05.</li></ul>
+</div>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Integrity note:</b> Several older "which of these statements about Zonal Councils is correct" MCQs are widely circulated across coaching-site question banks, but this note cites only the 2025 question above, which could be independently confirmed with an exact year, source and answer key. Treat any other Zonal Council or Inter-State Council MCQ encountered elsewhere as unverified practice material unless you can confirm it against an official UPSC paper yourself.</p>
+</div>
+
+<h3>Predicted Questions — reverse-engineered for Week 2 (not real PYQs, exam-pattern practice)</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) Zonal Councils are statutory bodies under the States Reorganisation Act, 1956</li><li>(b) The Union Home Minister chairs each Zonal Council</li><li>(c) The Inter-State Council is a statutory body created by the 1956 Act</li><li>(d) NITI Aayog nominates a non-voting advisor to each Zonal Council</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">The Inter-State Council is constitutional (Article 263, established by Presidential Order in 1990), the exact inverse of the Zonal Councils' statutory status (Sections 03, 05).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to inter-State water disputes, which of the following is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) Article 262 lets Parliament exclude court jurisdiction over such disputes</li><li>(b) Tribunal members are nominated by the Chief Justice of India</li><li>(c) A Tribunal's award can be appealed to the Supreme Court as a matter of right</li><li>(d) A notified award has the force of a Supreme Court decree</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">The 1956 Act's design gives no appeal; parties reach the SC only via writ petitions attacking process, never a direct appeal (Section 02).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> Water-dispute awards have repeatedly failed to end the underlying disputes. <b>Statement-II:</b> Tribunals have no enforcement machinery of their own, and finality on paper has not prevented decades of further litigation. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">The enforcement gap is precisely why Cauvery and Krishna outlived their "final" awards (Section 02 + the reform-debate row).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs:</p><ol class="subs"><li>Inter-State Council — Article 263, created by Presidential Order in 1990</li><li>Zonal Councils — five statutory bodies, Home Minister as Chairman</li><li>North Eastern Council — one of the original five zones</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">The North Eastern Council is a separate sixth body under its own 1971 Act, never one of the five zones (Section 05's table).</p>
+</div>
+</div>
+<p class="lead">The genuine 2025 PYQ above is a constitutional-vs-statutory-body trap; expect the coaching test to run several close variants of exactly that shape.</p>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to Article 262 of the Constitution, consider the following statements:</p><ol class="subs"><li>Parliament may provide for adjudication of any dispute relating to inter-State river waters</li><li>Parliament may bar the Supreme Court and other courts from exercising jurisdiction over any dispute whatsoever between States</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (a) 1 only</b>
+<p class="vone">The exact trap in Section 02's box: Article 262(2)'s court-ouster power applies only to the specific water dispute Parliament has routed to a Tribunal, not to inter-State disputes in general.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Consider the following statements regarding Zonal Councils:</p><ol class="subs"><li>they are constitutional bodies created directly under Article 263</li><li>the Union Home Minister is the common Chairman of all five zones</li><li>the North Eastern Council is one of the original five zones</li></ol><p class="qtext">How many of the above statements are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (a) only one (statement 2)</b>
+<ul class="vwhy"><li>Statement 1 is false (Zonal Councils are statutory, under the States Reorganisation Act, 1956, unlike the constitutional Inter-State Council);</li><li>Statement 3 is false (the North Eastern Council is a separate sixth body under its own 1971 Act) — both traps directly flagged in Section 05's table.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Freedom of trade, commerce and intercourse throughout India under Article 301 can be restricted:</p><ul class="opts single"><li>(a) only by Parliament, never by a State legislature</li><li>(b) by Parliament in the public interest, and by a State legislature with the President's prior sanction for certain Bills</li><li>(c) only by a State legislature, with Union Cabinet approval</li><li>(d) by neither Parliament nor a State legislature — it is absolute</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (b)</b>
+<p class="vone">Section 05's Article 302/304 table. The Article 301 "freedom is not absolute" framing, paired with which body needs whose sanction, is a natural statement-based drill.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">The Inter-State Council under Article 263 was actually established in:</p><ul class="opts single"><li>(a) 1950, along with the Constitution's commencement</li><li>(b) 1956, under the States Reorganisation Act</li><li>(c) 1990, by a Presidential Order following the Sarkaria Commission's recommendation</li><li>(d) 2014, alongside the creation of NITI Aayog</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (c)</b>
+<p class="vone">Section 03's table. The "constitutional power ≠ automatic existence" gap (Article 263 dates to 1950, the Council itself only to 1990) is precisely the kind of date-trap the genuine 2025 PYQ above is built to test.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M19</span><span class="prac">Practice</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Discuss the constitutional and statutory mechanisms available in India for resolving inter-State disputes, with reference to river-water disputes.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Discuss… with reference to."</b> The tail narrows the illustration to river-water disputes, but the question asks about mechanisms <i>generally</i> — so cover the full architecture, then illustrate through water. Do not write only about water.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: constitutional vs statutory split</li><li>Constitutional mechanisms</li><li>Statutory mechanisms</li><li>Why they underperform</li><li>Reform + verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>The Constitution handles inter-State friction through <b>Articles 262–263</b>, supplemented by statute — a design that prefers tribunals and negotiation to ordinary litigation.</p>
+<p><span class="sh">Constitutional mechanisms</span></p>
+<p><b>Article 262</b> empowers Parliament to provide for adjudication of inter-State river-water disputes and, under <b>262(2)</b>, to bar the jurisdiction of all courts including the Supreme Court. <b>Article 263</b> allows an Inter-State Council — established in 1990 on the <b>Sarkaria Commission's</b> recommendation. <b>Article 131</b> gives the Supreme Court original jurisdiction over inter-State disputes generally.</p>
+<p><span class="sh">Statutory mechanisms</span></p>
+<p>Two Acts of 1956: the <b>Inter-State River Water Disputes Act</b>, under which ad hoc Tribunals are constituted (Chairman plus two members nominated by the CJI), the notified award carrying the force of a Supreme Court decree; and the <b>River Boards Act</b>, under which not one Board has ever been created.</p>
+<p><span class="sh">Why they underperform</span></p>
+<p>Delay — the Cauvery tribunal took some 17 years; no independent enforcement machinery; and "finality" undermined by writ petitions. Cauvery, Krishna, Mahadayi and Vansadhara remain live. A permanent tribunal with fixed timelines would help, but only if paired with a basin-wide data authority — most water disputes are ultimately disputes about contested flow data.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 262, 262(2), 263, 131 · Sarkaria Commission → Inter-State Council 1990 · both 1956 Acts · tribunal composition and decree-force of the award · no River Board ever created · Cauvery's 17-year delay · permanent tribunal + basin data authority.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 182 / 150 words.</b> <b>Cut:</b> Articles 301–307 and Zonal Councils (off-question), "Part XI", Narmada from the live list, and the President's role in constituting the Council. <b>Bought:</b> nothing new — length only, 242 → budget. The lesson worth keeping: Arts 301–307 were <i>correct</i> but outside the question's river-water framing, and correct-but-off-question content is the commonest way a well-prepared candidate loses marks.</div>
+<div class="cost"><b>What would cost you marks:</b> writing only about water and ignoring the general architecture; forgetting the River Boards Act, which is the classic paired trap with the Disputes Act.</div>
+</div>
+
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">◆ One-page recall sheet</span>
+<h2>Last-mile revision — Inter-State Relations</h2>
+<ul>
+<li>Art 262: Parliament can adjudicate inter-State river water disputes, and can bar courts from that specific dispute (262(2)).</li>
+<li>Inter-State River Water Disputes Act, 1956 — enables ad hoc Tribunals; Chairman + 2 members, sitting SC/HC judges nominated by CJI.</li>
+<li>Live disputes to name: Cauvery, Krishna, Mahadayi/Mandovi.</li>
+<li>Art 263: Inter-State Council — <b>constitutional</b>, but discretionary (President "may" establish). Actually set up only in 1990, on Sarkaria Commission's recommendation. Chaired by PM; decisions by consensus.</li>
+<li>Art 261: full faith &amp; credit for public acts, records, judicial proceedings across all of India — a decree from one State is executable in every other State.</li>
+<li>Arts 301-307: freedom of trade &amp; commerce throughout India (301); Parliament can restrict in public interest (302); no State-vs-State discrimination (303); States can tax non-discriminately with Presidential sanction (304).</li>
+<li>Zonal Councils: <b>statutory</b> (States Reorganisation Act, 1956), not constitutional. 5 zones — North, South, East, West, Central. Union Home Minister is common Chairman. North Eastern Council is separate (1971 Act) — not one of the 5.</li>
+<li>Genuine Prelims repeater: 2025 — only the Inter-State Council among ISC/NSC/Zonal Councils is a constitutional body.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Previous:</b> Note 02 — Centre-State Relations. <b>This batch is complete:</b> Notes 01-03 cover the Federal System, Centre-State Relations and Inter-State Relations elements of Topic 2's syllabus line. Devolution of powers and finances to local levels (Panchayati Raj, 73rd/74th Amendments) remains the one uncovered element — a future Note 04.
+</div>
+</section>
+
+<nav class="tabflow" id="tabflow">
+<button class="tabflow-btn tabflow-prev" id="tabflowPrev" type="button">
+<span class="tabflow-dir">&#8592; Previous</span>
+<span class="tabflow-label" id="tabflowPrevLabel"></span>
+</button>
+<button class="tabflow-btn tabflow-next" id="tabflowNext" type="button">
+<span class="tabflow-dir">Next &#8594;</span>
+<span class="tabflow-label" id="tabflowNextLabel"></span>
+</button>
+</nav>
+
+<footer>
+Inter-State Relations — Topic 2 of 9, Polity &amp; Constitution cluster, GS Paper II (Mains) · Note 3 of 3 in this Topic<br>
+Facts cross-checked against publicly available sources; PYQs never fabricated — see integrity note in Section 06.
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.notetab'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.tabsection'));
+  var ids = sections.map(function(s){ return s.id; });
+
+  var flowPrev = document.getElementById('tabflowPrev');
+  var flowNext = document.getElementById('tabflowNext');
+  var flowPrevLabel = document.getElementById('tabflowPrevLabel');
+  var flowNextLabel = document.getElementById('tabflowNextLabel');
+
+  function tabLabel(id){
+    var match = tabs.filter(function(t){ return t.dataset.tab === id; })[0];
+    return match ? match.textContent.trim() : '';
+  }
+
+  function updateTabflow(id){
+    if (!flowPrev || !flowNext) return;
+    var idx = ids.indexOf(id);
+    if (idx > 0) {
+      flowPrev.disabled = false;
+      flowPrev.dataset.target = ids[idx - 1];
+      flowPrevLabel.textContent = tabLabel(ids[idx - 1]);
+    } else {
+      flowPrev.disabled = true;
+      flowPrev.removeAttribute('data-target');
+      flowPrevLabel.textContent = '';
+    }
+    if (idx > -1 && idx < ids.length - 1) {
+      flowNext.disabled = false;
+      flowNext.dataset.target = ids[idx + 1];
+      flowNextLabel.textContent = tabLabel(ids[idx + 1]);
+    } else {
+      flowNext.disabled = true;
+      flowNext.removeAttribute('data-target');
+      flowNextLabel.textContent = '';
+    }
+  }
+
+  function activate(id, doScroll){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+    sections.forEach(function(s){ s.classList.toggle('active', s.id === id); });
+    if (doScroll) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    updateTabflow(id);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      activate(t.dataset.tab, true);
+      history.replaceState(null, '', '#' + t.dataset.tab);
+    });
+  });
+  [flowPrev, flowNext].forEach(function(btn){
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      if (btn.disabled || !btn.dataset.target) return;
+      activate(btn.dataset.target, true);
+      history.replaceState(null, '', '#' + btn.dataset.target);
+    });
+  });
+  var initial = (location.hash || '').replace('#','');
+  if (ids.indexOf(initial) === -1) initial = ids[0];
+  if (initial) activate(initial, false);
+})();
+</script>
+
+</div>
+</div>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

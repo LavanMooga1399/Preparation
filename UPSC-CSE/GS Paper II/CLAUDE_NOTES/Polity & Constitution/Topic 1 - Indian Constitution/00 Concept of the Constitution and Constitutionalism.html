@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept of the Constitution &amp; Constitutionalism | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;}
+.sec-head{display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+
+
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Syllabus placement</button>
+<button class="notetab" data-tab="s2">02 · What is a Constitution?</button>
+<button class="notetab" data-tab="s3">03 · Constitution vs. Constitutionalism</button>
+<button class="notetab" data-tab="s4">04 · Classifying Constitutions</button>
+<button class="notetab" data-tab="s5">05 · Constitutional Morality</button>
+<button class="notetab" data-tab="s6">06 · Mains craft</button>
+<button class="notetab" data-tab="s7">07 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">08 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 1 of 9 · Note 00 — foundational primer</div>
+<h1>Concept of the Constitution &amp; Constitutionalism</h1>
+<p class="sub">Senior-mentor notes on the theoretical layer beneath Topic 1 — what a "constitution" actually is, how it differs from "constitutionalism," how constitutions are classified, and the doctrine of constitutional morality that increasingly anchors Indian judgments.</p>
+<div class="chips">
+<span class="chip">Constitutionalism</span>
+<span class="chip">Constitutional Government</span>
+<span class="chip">Rule of Law</span>
+<span class="chip">Rigid vs Flexible</span>
+<span class="chip">Constitutional Morality</span>
+</div>
+<div class="bignum"><b>1846</b><span>Grote coins "constitutional morality"</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this note exists</div>
+<p>Newer editions of Laxmikanth's <i>Indian Polity</i> add an early chapter, commonly titled "Concept of the Constitution," covering constitutionalism, the descriptive terms used for a constitution, and the classical classification schemes — material that used to be assumed knowledge rather than a dedicated chapter. It is added here as <b>Note 00</b>, not because it is one of Topic 1's six syllabus elements (historical underpinnings, evolution, features, amendments, significant provisions, basic structure), but because it is the conceptual scaffolding all six sit on — particularly Basic Structure (Note 06), which is really constitutionalism enforced by the judiciary.</p>
+<p>Recent Mains questions on <b>constitutional morality</b> (2019 and 2021) confirm this theoretical layer is now directly examined, not just background reading — see the verified PYQs in Section 07.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Before any of the technical vocabulary: a <b>constitution</b> is simply the rulebook for how a country runs itself. It says who gets to make laws, who enforces them, who settles disputes, and — most importantly — what the government is <i>not</i> allowed to do to its own citizens, no matter how much power it holds. Every country needs one, written or unwritten, for the same reason a card game needs agreed rules before anyone can play: without them, whoever is strongest simply does whatever they want.</p>
+<p><b>"Constitutionalism"</b> looks like a bigger version of the same word, but it means something almost the opposite in spirit. It is the <i>idea</i> that even the government itself must obey the rulebook — that merely having a constitution is not enough if the people in power can bend or ignore it whenever it is inconvenient. A country can have a beautifully detailed constitution and still fail at constitutionalism (a dictatorship can write a fine rulebook and then simply not follow it); a country succeeds at constitutionalism only when power is actually, reliably limited by that rulebook in practice, not merely on paper.</p>
+<p>Once that one distinction is clear — <i>having</i> a rulebook versus actually <i>being bound</i> by it — everything else in this note is just detail: what kind of rulebook India chose (a very long, very specific one, discussed below), and how Indian courts have recently started treating certain unwritten values, like fairness and non-arbitrariness, as rules the government must follow even where the text is silent. That last idea is called <b>constitutional morality</b> — the newest and most Mains-tested concept in this note, and the one Sections 04-07 build toward.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 1 note series —</b>
+<span class="done">✓ 00 Concept of the Constitution &amp; Constitutionalism (this file)</span> · <span class="done">✓ 01 Historical Underpinnings &amp; Evolution</span> · <span class="done">✓ 02 Salient Features &amp; the Preamble</span> · <span class="done">✓ 03 Union &amp; its Territory</span> · <span class="done">✓ 04 Citizenship</span> · <span class="done">✓ 05 Amendment of the Constitution</span> · <span class="done">✓ 06 Basic Structure Doctrine</span> · <span class="done">✓ 07 Fundamental Rights</span> · <span class="done">✓ 08 Directive Principles of State Policy</span> · <span class="done">✓ 09 Fundamental Duties</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 : SYLLABUS PLACEMENT ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Where this fits &amp; the logical chain</h2></div>
+<hr class="divider">
+<p class="lead">This note sits <i>before</i> Topic 1's syllabus sequence, not inside it — think of it as Note 00. Historical Underpinnings (Note 01) assumes you already know what a "constitution" is and why it needs a special procedure to change; this note supplies that assumption explicitly, so nothing in the rest of the series is taken on faith.</p>
+<div class="tip">
+<span class="ic">🔗</span>
+<p><b>Logical chain:</b> Concept of the Constitution (this file — what a constitution is, and the difference between having one and living by its spirit) → Historical Underpinnings &amp; Evolution (Note 01 — how India got one) → ... → Basic Structure Doctrine (Note 06 — the judiciary enforcing constitutionalism against Parliament itself, the clearest real-world application of everything in this note).</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 : WHAT IS A CONSTITUTION ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>What is a "Constitution"?</h2></div>
+<hr class="divider">
+<p class="lead">Prelims rarely asks "define a constitution" directly, but it frequently tests the descriptive vocabulary scholars use for one — and Mains uses this vocabulary as the opening register for any high-scoring Polity answer. A constitution, in K.C. Wheare's classical formulation, is the document that establishes and regulates the principal organs of government and declares the principles governing their operation — but "the constitution" of a country is broader than just that document; it includes conventions, judicial interpretations, and practices that have grown around it.</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 760 340" role="img" aria-label="Nested diagram of descriptive terms used for a constitution">
+<g font-family="Inter" font-size="12">
+<circle cx="380" cy="170" r="150" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.5"/>
+<circle cx="380" cy="170" r="62" fill="#1B1D51"/>
+<text x="380" y="164" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">A</text>
+<text x="380" y="182" text-anchor="middle" fill="#EDECFF" font-size="11.5">CONSTITUTION</text>
+
+<g><circle cx="150" cy="60" r="6" fill="#B5388B"/><text x="150" y="44" text-anchor="middle" font-weight="700" fill="#7a1f66">Fundamental Law of the Land</text><text x="150" y="78" text-anchor="middle" font-size="10.5" fill="#5a1650">all other laws must conform to it</text></g>
+<g><circle cx="610" cy="60" r="6" fill="#B5388B"/><text x="610" y="44" text-anchor="middle" font-weight="700" fill="#7a1f66">Supreme Law of the State</text><text x="610" y="78" text-anchor="middle" font-size="10.5" fill="#5a1650">overrides ordinary legislation</text></g>
+<g><circle cx="90" cy="220" r="6" fill="#B5388B"/><text x="90" y="204" text-anchor="middle" font-weight="700" fill="#7a1f66">Grundnorm</text><text x="90" y="238" text-anchor="middle" font-size="10.5" fill="#5a1650">Hans Kelsen's "basic norm"</text></g>
+<g><circle cx="670" cy="220" r="6" fill="#B5388B"/><text x="670" y="204" text-anchor="middle" font-weight="700" fill="#7a1f66">Instrument of Government</text><text x="670" y="238" text-anchor="middle" font-size="10.5" fill="#5a1650">sets up organs &amp; their powers</text></g>
+<g><circle cx="220" cy="300" r="6" fill="#B5388B"/><text x="220" y="284" text-anchor="middle" font-weight="700" fill="#7a1f66">Basic Structure of the Polity</text></g>
+<g><circle cx="540" cy="300" r="6" fill="#B5388B"/><text x="540" y="284" text-anchor="middle" font-weight="700" fill="#7a1f66">Rules of the State</text></g>
+</g>
+</svg>
+<figcaption><b>Fig 1.</b> All six phrases describe the same object from different angles — legal supremacy (fundamental/supreme law), philosophical foundation (grundnorm), and functional purpose (instrument of government) are the three angles worth being able to name.</figcaption>
+</div></figure>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Descriptive term</th><th>What it emphasises</th><th>Associated with</th></tr></thead>
+<tbody>
+<tr><th>Fundamental law of the land</th><td>All ordinary laws must conform to it; an inconsistent law is void.</td><td>General constitutional theory; echoed in India's Article 13.</td></tr>
+<tr><th>Supreme law of the state</th><td>Legal supremacy over every other instrument of governance.</td><td>Written constitutions with judicial review, like India's.</td></tr>
+<tr><th>Grundnorm ("basic norm")</th><td>The ultimate source from which every other law derives its validity.</td><td>Hans Kelsen's pure theory of law.</td></tr>
+<tr><th>Instrument of government</th><td>A practical charter that creates and empowers organs of the state.</td><td>K.C. Wheare's functional definition.</td></tr>
+<tr><th>Basic structure of the polity</th><td>The constitution as the skeleton that gives the state its identity.</td><td>India's Basic Structure Doctrine (Note 06).</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 03 : CONSTITUTION VS CONSTITUTIONALISM ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Constitution vs. Constitutionalism</h2></div>
+<hr class="divider">
+<p class="lead">This is the single most important distinction in the whole primer, and the one Mains rewards most directly. A <b>constitution</b> is a document or set of rules. <b>Constitutionalism</b> is an idea — the belief that governmental power ought to be limited by law, made accountable, and exercised for the public good rather than arbitrarily. A country can have an elaborate constitution on paper and still lack constitutionalism in practice, if that document places no genuine restraint on those in power.</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 800 240" role="img" aria-label="Comparison of constitution as a document versus constitutionalism as a restraining idea">
+<g font-family="Inter" font-size="12.5">
+<rect x="20" y="20" width="340" height="150" rx="12" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.5"/>
+<text x="190" y="48" text-anchor="middle" font-weight="700" fill="#134b59" font-size="14">CONSTITUTION</text>
+<text x="190" y="72" text-anchor="middle" font-size="11" fill="#134b59">A document / body of rules that</text>
+<text x="190" y="90" text-anchor="middle" font-size="11" fill="#134b59">establishes organs of government</text>
+<text x="190" y="112" text-anchor="middle" font-size="11" fill="#134b59">Can exist even under authoritarian</text>
+<text x="190" y="130" text-anchor="middle" font-size="11" fill="#134b59">rule — a "façade" or "sham" constitution</text>
+<text x="190" y="152" text-anchor="middle" font-size="11" fill="#134b59">(Giovanni Sartori's term)</text>
+
+<rect x="440" y="20" width="340" height="150" rx="12" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="610" y="48" text-anchor="middle" font-weight="700" fill="#7a1f66" font-size="14">CONSTITUTIONALISM</text>
+<text x="610" y="72" text-anchor="middle" font-size="11" fill="#7a1f66">The IDEA that government power</text>
+<text x="610" y="90" text-anchor="middle" font-size="11" fill="#7a1f66">must be limited, accountable, and</text>
+<text x="610" y="112" text-anchor="middle" font-size="11" fill="#7a1f66">exercised through law, not fiat</text>
+<text x="610" y="134" text-anchor="middle" font-size="11" fill="#7a1f66">Genuine constitutionalism needs</text>
+<text x="610" y="152" text-anchor="middle" font-size="11" fill="#7a1f66">independent courts + rule of law</text>
+
+<rect x="260" y="188" width="280" height="40" rx="18" fill="#1B1D51"/>
+<text x="400" y="213" text-anchor="middle" fill="#FFD25A" font-family="IBM Plex Mono" font-size="11" font-weight="600">A CAN EXIST WITHOUT B</text>
+</g>
+</svg>
+<figcaption><b>Fig 2.</b> India is offered in comparative politics as a case where both hold together — a written, supreme constitution AND a judiciary (via the Basic Structure Doctrine, Note 06) actively enforcing constitutionalism against Parliament itself.</figcaption>
+</div></figure>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>A.V. Dicey's Rule of Law</b> (closely linked to constitutionalism): (1) supremacy of law over arbitrary power; (2) equality before the law, including for officials; (3) the constitution as a consequence of the ordinary law of the land (rights flow from judicial decisions, not a separate grant). Cite this trio whenever an answer needs to argue <i>why</i> a government action lacks constitutionalism, not just assert that it does.</p>
+</div>
+
+<h3>Constitutional Government — constitutionalism institutionalised</h3>
+<p class="lead">If constitutionalism is the <i>idea</i> that power must be limited, <b>constitutional government</b> is that idea made operational — a system in which government is actually conducted according to, and restrained by, a constitution, as opposed to "government" in the bare descriptive sense of whoever happens to rule. UPSC has tested this exact conceptual line three times at Prelims (2014, 2020, 2021 — Section 07), which makes it as high-yield as constitutionalism itself, even though most standard readings fold it into a single paragraph. Two names worth attaching to it: Carl J. Friedrich, who defined constitutionalism/constitutional government as the division and restraint of political power through law; and Herman Finer, who tied it to the practical machinery — an independent judiciary, a free press, and periodic elections — that keeps restraint real rather than nominal.</p>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Four working features of a constitutional government</b> (useful as an enumeration in any Mains answer): (1) <b>limited government</b> — authority is confined to what the constitution grants, not open-ended; (2) <b>rule of law</b> — officials and citizens alike are governed by pre-announced legal norms, not arbitrary discretion; (3) <b>separation of powers with checks</b> — no single organ concentrates unchecked authority; (4) <b>accountability and judicial review</b> — government action can be tested against the constitution and struck down if it fails. A state can be a "government" without being a "constitutional government" if it fails even one of these; a constitutional government is not defined by having elections alone, but by power being genuinely restrained in the interest of individual liberty.</p>
+</div>
+
+<div class="prelims">
+<h3>🔴 Prelims — verbatim-memorisable facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span><b>Constitution</b> = document/rules; <b>Constitutionalism</b> = the idea of limited, accountable government.</span></div>
+<div class="item"><span class="dot">●</span><span>Giovanni Sartori's term for a constitution without real constitutionalism: <b>"façade" (sham) constitution.</b></span></div>
+<div class="item"><span class="dot">●</span><span>A.V. Dicey's Rule of Law has <b>three</b> elements: supremacy of law, equality before law, judge-made constitutional rights.</span></div>
+<div class="item"><span class="dot">●</span><span>Indian courts have described constitutionalism as premised on the <b>Rule of Law</b>, substituting objective constitutional standards for subjective official discretion (a formulation echoed in <i>Rameshwar Prasad v. Union of India</i>, 2006).</span></div>
+<div class="item"><span class="dot">●</span><span><b>Constitutional government</b> = government whose authority is <b>effectively restricted</b> by the constitution in the interest of individual liberty — not merely a government that happens to have a constitution (tested at Prelims in 2014, 2020, 2021).</span></div>
+<div class="item"><span class="dot">●</span><span>Carl J. Friedrich linked constitutionalism to the <b>division and restraint of power through law</b>; Herman Finer tied it to working machinery — independent judiciary, free press, periodic elections.</span></div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : CLASSIFYING CONSTITUTIONS ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Classifying Constitutions</h2></div>
+<hr class="divider">
+<p class="lead">James Bryce's classical rigid/flexible classification (1901) is the one every textbook still opens with, even though comparative scholars now consider it dated — many "flexible" constitutions (Britain's) show remarkable long-run stability, and India's own "written" Constitution (Note 02) blends rigid and flexible amendment routes in a single document (Note 05), which classical categories struggle to capture cleanly.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Classification</th><th>Categories</th><th>Where India sits</th></tr></thead>
+<tbody>
+<tr><th>Written vs. Unwritten</th><td>Written = codified in a single document (USA, India); Unwritten = uncodified, built from statutes/conventions/case law (UK, New Zealand, Israel).</td><td>Written — the lengthiest written constitution in the world (Note 02).</td></tr>
+<tr><th>Rigid vs. Flexible (Bryce)</th><td>Rigid = special procedure required to amend, distinct from ordinary lawmaking; Flexible = amendable by the ordinary legislative process.</td><td>Blend of both (Note 05) — a feature classical Bryce categories were not designed to describe.</td></tr>
+<tr><th>Federal vs. Unitary</th><td>Federal = powers divided between two levels of government by the constitution itself; Unitary = all power constitutionally vested in the Centre.</td><td>Federal in form, unitary in spirit — "quasi-federal" (Note 02).</td></tr>
+<tr><th>Parliamentary vs. Presidential</th><td>Parliamentary = executive drawn from and responsible to the legislature; Presidential = executive independently elected, fixed term, separate from the legislature.</td><td>Parliamentary, at both Union and State levels (Note 02).</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Trap:</b> Do not assume "written" automatically means "rigid" — they are independent classifications along different axes. India is written AND a blend of rigid/flexible; the UK is unwritten AND flexible; a country could in principle be written yet fully flexible if its constitution can be amended by ordinary legislative majority.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 : CONSTITUTIONAL MORALITY ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Constitutional Morality</h2></div>
+<hr class="divider">
+<p class="lead">This is the highest-yield concept in this entire primer for Mains — tested directly in 2019 and 2021, and the subject of a live 2026 legal controversy (see the value-addition in Section 06). The phrase originates with the British historian George Grote's <i>History of Greece</i> (1846), describing the diffused public temperament needed to sustain a constitutional (as opposed to autocratic) form of government. Dr. B.R. Ambedkar borrowed it directly in his 4 November 1948 Constituent Assembly speech, warning that a constitution — however well drafted — is only as good as the constitutional morality of the people and administrators working it; without that morality, he warned, India's constitutional forms could turn out to be "only a top-dressing on an Indian soil which is essentially undemocratic."</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 840 270" role="img" aria-label="Timeline of the revival of constitutional morality in Indian case law">
+<g font-family="Inter" font-size="12">
+<rect x="10" y="10" width="820" height="50" rx="10" fill="#E9E9FA" stroke="#33357F" stroke-width="1.5"/>
+<text x="420" y="32" text-anchor="middle" font-weight="700" fill="#33357F">1846 — George Grote coins "constitutional morality" (History of Greece)</text>
+<text x="420" y="50" text-anchor="middle" font-size="11" fill="#5457a0">1948 — Ambedkar adopts the phrase for India in the Constituent Assembly</text>
+
+<line x1="420" y1="66" x2="420" y2="86" stroke="#9598c9" stroke-width="2" marker-end="url(#arrowE)"/>
+
+<rect x="10" y="88" width="820" height="56" rx="10" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.5"/>
+<text x="420" y="110" text-anchor="middle" font-weight="700" fill="#134b59">Naz Foundation v. Govt. of NCT of Delhi (2009)</text>
+<text x="420" y="128" text-anchor="middle" font-size="11" fill="#134b59">Delhi HC revives the doctrine to strike down Section 377 as failing constitutional, not majoritarian, morality</text>
+
+<line x1="420" y1="144" x2="420" y2="164" stroke="#9598c9" stroke-width="2" marker-end="url(#arrowE)"/>
+
+<rect x="10" y="166" width="400" height="56" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="210" y="188" text-anchor="middle" font-weight="700" fill="#8a5c00">Indian Young Lawyers Assn.</text>
+<text x="210" y="206" text-anchor="middle" font-size="11" fill="#8a5c00">v. State of Kerala (2018) — "Sabarimala"</text>
+
+<rect x="430" y="166" width="400" height="56" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="630" y="188" text-anchor="middle" font-weight="700" fill="#7a1f66">Navtej Singh Johar v. Union of</text>
+<text x="630" y="206" text-anchor="middle" font-size="11" fill="#7a1f66">India (2018) — Section 377 struck down</text>
+
+<line x1="420" y1="222" x2="420" y2="240" stroke="#9598c9" stroke-width="2" marker-end="url(#arrowE)"/>
+<text x="420" y="258" text-anchor="middle" font-size="11.5" fill="#33344f" font-weight="600">2026 — Union government challenges the doctrine's expansion in the Sabarimala Review</text>
+</g>
+<defs><marker id="arrowE" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9598c9"/></marker></defs>
+</svg>
+<figcaption><b>Fig 3.</b> Each revival case uses the same core move: constitutional morality (equality, dignity, individual liberty) is held to override social/majoritarian morality — the exact formulation Chief Justice Dipak Misra used in Navtej Singh Johar.</figcaption>
+</div></figure>
+
+<div class="prelims">
+<h3>🔴 Prelims — verbatim-memorisable facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span>"Constitutional morality" originates with <b>George Grote</b>, <i>History of Greece</i>, <b>1846.</b></span></div>
+<div class="item"><span class="dot">●</span><span><b>Ambedkar</b> adopted the phrase in his <b>4 November 1948</b> Constituent Assembly speech.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Navtej Singh Johar (2018):</b> "constitutional morality prevails over social morality" — Section 377 struck down.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Naz Foundation (2009, Delhi HC)</b> was the doctrine's first major modern revival, later echoed by the Supreme Court.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Sabarimala (2018)</b> — Indian Young Lawyers Association v. State of Kerala — used constitutional morality against a religious-practice exclusion.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Joseph Shine (2018):</b> adultery (IPC Section 497) decriminalised — the fourth member of the same constitutional-morality revival set.</span></div>
+</div>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 The competing view — the doctrine's critics, for a balanced Mains answer</div>
+<p>An answer that only celebrates constitutional morality reads half-finished. The standing criticism, pressed by senior members of the bar and governments alike: the doctrine is <b>vague and judicially self-defined</b> — since no text fixes its content, each bench can pour its own values into the phrase, making it (in the critics' words) a potentially "dangerous weapon" that substitutes judges' morality for the legislature's. The defenders' reply: every open-textured constitutional concept (due process, basic structure, reasonableness) works this way, and the doctrine's actual record — Navtej, Joseph Shine, Sabarimala — shows it deployed to protect constitutional rights against majoritarian pressure, which is precisely the counter-majoritarian job courts exist to do. State both sides, then land on Ambedkar: constitutional morality "is not a natural sentiment; it has to be cultivated" — the doctrine is less a judicial weapon than a discipline the whole polity, courts included, is still learning.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 06 : MAINS CRAFT ===== -->
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains craft — model intro &amp; value-additions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Model intro line (liftable):</b> <i>"Ambedkar's warning that a constitution is only as good as the constitutional morality of those who work it has proved prophetic — from Naz Foundation in 2009 to Navtej Singh Johar and Sabarimala in 2018, the Indian judiciary has repeatedly reached for exactly the borrowed vocabulary he gave it in 1948 to hold that constitutional values must prevail over majoritarian social morality."</i></p>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Value-additions to drop into any answer:</b> (1) Name-drop precisely — George Grote as the actual originator of the phrase, which most answers wrongly credit to Ambedkar alone; (2) Analogy — constitutionalism as the "software" running on the "hardware" of a written constitution, with constitutional morality as the operating discipline that keeps the software from crashing into arbitrariness; (3) Current link — the Union government's 2026 argument in the Sabarimala Review that constitutional morality has become a "vague and subjective" tool for judicial overreach is a live, citable controversy for any answer weighing the doctrine's strengths against its criticisms.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 07 : PYQ ANALYSIS ===== -->
+<section id="s7" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>PYQ analysis</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> Constitutional morality is now a confirmed, recurring Mains theme (two genuine questions below, three years apart) — treat it as core, not optional. "Constitutional government" is the recurring <i>Prelims</i> counterpart — verified genuine in 2014, 2020, and 2021, always tested as a statement-based/definitional MCQ built around the "limited government / restraint of power" formulation in Section 03. No standalone Prelims MCQ using the specific word "constitutionalism" could be confirmed as genuine for this note; the underlying concepts (rule of law, façade constitutions, rigid/flexible classification) are instead tested indirectly through the Basic Structure and federalism questions already verified in Notes 02 and 06.</p>
+
+<h3>(A) Genuine direct PYQs</h3>
+
+
+<div class="pyq">
+<span class="yr">2014</span><span class="stg">Prelims</span>
+<p class="qtext">A Constitutional Government is one which</p><ul class="opts single"><li>(a) is elected by the people through universal adult franchise</li><li>(b) places effective restrictions on the authority of the State in the interest of individual liberty</li><li>(c) is headed by a President rather than a monarch</li><li>(d) possesses a written constitution containing a bill of rights</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit — Ans. the "effective restriction on state authority for individual liberty" statement</b>
+<p class="vone">The same core idea developed in Section 03 above.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2020</span><span class="stg">Prelims</span>
+<p class="qtext">"'Constitutional Government' by definition is a:</p><ul class="opts"><li>(a) government by the legislature</li><li>(b) popular government</li><li>(c) multi-party government</li><li>(d) limited government."</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit — Ans. (d) limited government</b>
+<p class="vone">Confirms "limitation of power" as the exam's fixed definitional anchor for this term.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2021</span><span class="stg">Prelims</span>
+<p class="qtext">Constitutional government means</p><ul class="opts single"><li>(a) a government elected by the people</li><li>(b) a government run by a fixed constitution</li><li>(c) a government which places effective restrictions on the authority of the State</li><li>(d) a government headed by a Prime Minister</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit — Ans. the "government limited by the terms of the Constitution" option</b>
+<p class="vone">The third genuine repeater on this exact phrase, confirming it as a settled UPSC formula, not a one-off.</p>
+</div>
+</div>
+
+<h3>(C) Where the real marks go</h3>
+<p class="lead">Marks concentrate on correctly sourcing the phrase (Grote, not Ambedkar's invention), stating Ambedkar's actual warning accurately, and citing at least two of the three revival cases (Naz Foundation, Navtej Singh Johar, Sabarimala) with their core holding — not on abstract philosophising about morality in general.</p>
+
+<h3>(D) Expected/probable — NOT real PYQs, practice only</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) "Constitutional morality" originates with George Grote</li><li>(b) Ambedkar adopted the phrase in the Constituent Assembly</li><li>(c) Constitutionalism means simply possessing a written constitution</li><li>(d) Navtej Singh Johar used the doctrine against social morality</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">Constitutionalism means limited government under a constitution's spirit; a state can have a constitution without constitutionalism (Section 03).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following was <b>NOT</b> among the constitutional-morality revival cases?</p><ul class="opts"><li>(a) Naz Foundation (2009)</li><li>(b) Navtej Singh Johar (2018)</li><li>(c) Sabarimala (2018)</li><li>(d) A.K. Gopalan (1950)</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<p class="vone">Gopalan predates the revival entirely and belongs to the Article 21 narrow-reading era, not the constitutional-morality line (Section 05).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following:</p><ol class="subs"><li>Grote coined "constitutional morality" in 1846</li><li>Ambedkar said constitutional morality "has to be cultivated," not presumed</li><li>Joseph Shine (2018) decriminalised adultery invoking constitutional values</li><li>The doctrine is expressly defined in Article 13</li></ol><p class="qtext">How many statements are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Only three (1, 2, 3)</b>
+<p class="vone">No Article defines the doctrine anywhere; its uncodified nature is exactly what critics attack (Sections 05–06).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> Critics call constitutional morality a potentially "dangerous weapon." <b>Statement-II:</b> Its content is not fixed by any text, so each bench can pour its own values into the phrase. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">The vagueness in Statement-II is precisely the ground of the criticism in Statement-I (Section 06's competing-view box).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs:</p><ol class="subs"><li>Navtej Singh Johar — Section 377 read down</li><li>Sabarimala — religious-practice exclusion tested against constitutional morality</li><li>Joseph Shine — Section 497 (adultery) upheld as valid</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">Joseph Shine STRUCK DOWN Section 497; "upheld" inverts the holding (Section 05).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Statements</span>
+<p class="qtext">Consider the following statements:</p><ol class="subs"><li>A country can have a constitution without constitutionalism</li><li>Constitutionalism requires limits on government power</li></ol><p class="qtext">Which is/are correct?</p><ul class="opts"><li>(a) Neither 1 nor 2</li><li>(b) 1 only</li><li>(c) 2 only</li><li>(d) Both 1 and 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Both</b>
+<p class="vone">The note's central distinction; authoritarian states with paper constitutions are the standing example (Section 03).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p>How many of the following are recognised checks that convert a written constitution into constitutionalism in practice? (1) Judicial review of legislation (2) Free and fair periodic elections (3) A hereditary head of state (4) Separation of powers between organs.</p>
+<div class="verdict">
+<b class="vans">Answer: Only three (1, 2, 4)</b>
+<p class="vone">A hereditary head is compatible with constitutionalism (Britain) but is not itself a check on power (Section 03).</p>
+</div>
+</div>
+<p class="lead">"Critics argue that 'constitutional morality' has become a vague, judge-invented standard for overturning majoritarian decisions. Examine this criticism with reference to recent cases." — a plausible framing built from the 2026 Sabarimala Review controversy; not a confirmed past question, use only for practice.</p>
+
+<h3>(E) Practice Prelims — Week 1 Self-Study Test (UPSC Guide coaching test, not a genuine PYQ)</h3>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"The 'rule of law' in a constitutional government implies:</p><ul class="opts single"><li>(a) the government has absolute power and authority</li><li>(b) all citizens are bound by the law, including the government</li><li>(c) the law is subject to interpretation by the executive branch</li><li>(d) the government can suspend laws in times of crisis." Coaching-test answer: (b)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">A coaching-institute drill question. Included because it directly tests this note's own Constitutional Government content (Section 03) and Dicey's Rule of Law trio.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">Statement-based: the feature of Separation of Powers in the Indian Constitution aims to</p><ol class="subs"><li>prevent the misuse of power through checks and balances among the three organs of government</li><li>promote accountability by ensuring each branch operates within its constitutional limits</li><li>ensure independence of the Judiciary to uphold the rule of law and protect fundamental rights</li><li>help the judiciary provide complete justice to weaker sections of society. "</li></ol><p class="qtext">Which of the statements given above is/are correct?" Coaching-test answer: 1, 2 and 3 only.</p><ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2, 3 and 4 only</li><li>(c) 1, 3 and 4 only</li><li>(d) 1, 2, 3 and 4</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<ul class="vwhy"><li>Statement 4 is the trap — the judiciary's Article 142 "complete justice" power is a separate, and sometimes criticised, discretionary tool, not a stated objective of Separation of Powers itself;</li><li>Don't fuse the two. Statements 1-3 spell out, in full, what this note's Section 03 compresses into a single phrase — "separation of powers with checks — no single organ concentrates unchecked authority."</li></ul>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">08</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M1</span><span class="yr">2019 · GS-II</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">What is meant by the term 'constitutional morality'? How does one uphold constitutional morality?</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "What is meant… / How does one…"</b> — a two-part <i>explain</i> question, not a debate. Part 1 demands a precise definition with its origin; Part 2 demands concrete mechanisms. Splitting the answer physically into these two halves is itself a scoring move.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Grote's origin + Ambedkar's adoption</li><li>What it means — four elements</li><li>How it is upheld — institutions, judiciary, citizens</li><li>Conclusion: Ambedkar's "has to be cultivated"</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Constitutional morality</b> means adherence to the spirit and core values of the Constitution, not mere obedience to its text. Coined by <b>George Grote (1846)</b> and adopted by <b>Ambedkar on 4 November 1948</b>, it lay dormant for decades, was revived in <b>Naz Foundation (2009)</b>, and matured in <b>Navtej Singh Johar</b>, <b>Sabarimala</b> and <b>Joseph Shine</b> (all 2018).</p>
+<p><span class="sh">Its content</span></p>
+<p>Constitutional supremacy over transient majorities; due process and institutional form; individual dignity against majoritarian pressure; and the primacy of <b>constitutional over social morality</b> — the <i>Navtej</i> formulation used to read down Section 377.</p>
+<p><span class="sh">How it is upheld</span></p>
+<p>By <b>courts</b>, striking down majoritarian practice and testing political conduct against it (<b>Manoj Narula, 2014</b>); by <b>institutions</b> observing constitutional forms — free elections, legislative deliberation, an independent CAG and Election Commission; by the <b>executive</b> exercising discretion within constitutional limits rather than political convenience; and by <b>citizens</b>, through <b>Article 51A</b> duties and constitutional literacy.</p>
+<p>Ambedkar's caution is the centre of the answer: constitutional morality "is not a natural sentiment; it has to be cultivated."</p>
+</div>
+<div class="va"><b>Value additions used:</b> Grote (1846) · Ambedkar 4 Nov 1948 · the dormancy→revival arc · Naz Foundation (2009) · Navtej Singh Johar / Sabarimala / Joseph Shine (2018) · Manoj Narula (2014) · Article 51A · the "cultivated" quotation.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 165 / 150 words.</b> <b>Cut:</b> the separate closing paragraph ("a Constitution can only be as good as those who work it") and the one-line description attached to each 2018 judgment. <b>Bought:</b> the dormancy→revival arc in the opening line, and <i>Manoj Narula</i> (2014) — which extends the doctrine from rights cases to political conduct.</div>
+<div class="cost"><b>What would cost you marks:</b> attributing the phrase to Ambedkar rather than Grote (the single most common error here); answering only "what it means" and neglecting the "how to uphold" half; listing cases without stating what each held.</div>
+</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M2</span><span class="yr">2021 · GS-II</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">'Constitutional Morality' is rooted in the Constitution itself and is founded on its essential facets. Explain the doctrine of 'Constitutional Morality' with the help of relevant judicial decisions.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Explain… with the help of relevant judicial decisions."</b> Explain = clarify with detail and illustration; it is <i>not</i> a debate. But the tail imposes a hard requirement: the answer must be <b>case-led</b>. An answer without named judgments cannot score, however well written.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: rooted in Preamble + Parts III/IV</li><li>Essential facets it draws on</li><li>Judicial evolution — four cases with holdings</li><li>The critique (adds balance)</li><li>Conclusion: cultivated, not assumed</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Constitutional morality</b> is the principle that governance must conform to the Constitution's underlying values, not merely its letter. It is rooted in the document itself — in the <b>Preamble</b>'s promise of justice, liberty, equality and fraternity, in the rights of <b>Part III</b> (notably Articles 14, 15 and 21), and in the goals of <b>Part IV</b>.</p>
+<p><span class="sh">Essential facets it rests on</span></p>
+<p>Constitutional supremacy; rule of law; due process; individual dignity; institutional trust; and the subordination of popular sentiment to constitutional guarantees.</p>
+<p><span class="sh">The doctrinal arc</span></p>
+<p>Coined by <b>Grote (1846)</b> and invoked by <b>Ambedkar (4 November 1948)</b>, the doctrine lay unused until <b>Naz Foundation (2009)</b> revived it. <b>Manoj Narula (2014)</b> applied it to the criminalisation of politics; <b>Government of NCT of Delhi (2018)</b> converted it into "constitutional trust" governing Centre–State conduct; <b>Navtej Singh Johar (2018)</b> held constitutional morality prevails over social morality while reading down Section 377; <b>Sabarimala (2018)</b> deployed it against religious exclusion; <b>Joseph Shine (2018)</b> grounded the striking down of Section 497.</p>
+<p><span class="sh">The competing view</span></p>
+<p>Critics call the doctrine vague and judge-defined: no text fixes its content, so each bench may pour in its own values — an objection pressed by governments in the Sabarimala review. Defenders reply that all open-textured constitutional concepts work this way, and that its record is one of protecting rights against majoritarian pressure, which is precisely the counter-majoritarian function courts exist to perform.</p>
+<p>Its legitimacy will therefore depend on principled, restrained use. As Ambedkar warned, constitutional morality "has to be cultivated" — by institutions as much as by citizens.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Preamble + Parts III/IV anchoring with Arts 14, 15, 21 · Grote (1846) · Ambedkar 4 Nov 1948 · Naz Foundation (2009) · Manoj Narula (2014) · Govt of NCT of Delhi (2018) "constitutional trust" · Navtej / Sabarimala / Joseph Shine (2018) · the vagueness critique · Ambedkar quotation.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 251 / 250 words.</b> <b>Cut:</b> the procedural detail of which court decided <i>Naz</i>, and loose connectives in the critique paragraph. <b>Bought:</b> the doctrine's origin (Grote, Ambedkar) so the arc is complete; <b>Govt of NCT of Delhi (2018)</b>, which extends constitutional morality into federal conduct; and clause-level Article anchoring (14, 15, 21).</div>
+<div class="cost"><b>What would cost you marks:</b> naming cases without their holdings; omitting the critique — a 15-mark "explain" answer with zero balance reads thin; forgetting to show the doctrine is <i>rooted in the Constitution</i>, which is the exact claim the question puts to you.</div>
+</div>
+
+</section>
+
+<!-- ===== RECALL SHEET ===== -->
+
+
+
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">◆ One-page recall sheet</span>
+<h2>Last-mile revision — Concept of the Constitution &amp; Constitutionalism</h2>
+<ul>
+<li>Constitution = document/rules; Constitutionalism = idea of <b>limited, accountable</b> government.</li>
+<li>Descriptive terms: fundamental law, supreme law, <b>grundnorm</b> (Kelsen), instrument of government.</li>
+<li>Sartori's term for a constitution without constitutionalism: <b>"façade"</b> constitution.</li>
+<li>Dicey's Rule of Law: supremacy of law, equality before law, judge-made constitutional rights.</li>
+<li><b>Constitutional government</b> = authority effectively restricted by the constitution for individual liberty — genuine Prelims repeater (<b>2014, 2020, 2021</b>).</li>
+<li>Friedrich: restraint of power through law; <b>Finer:</b> independent judiciary + free press + elections as the working machinery.</li>
+<li>Written vs Unwritten; Rigid vs Flexible (<b>Bryce, 1901</b>); Federal vs Unitary; Parliamentary vs Presidential.</li>
+<li>India: written, rigid+flexible blend, quasi-federal, parliamentary.</li>
+<li>"Constitutional morality" — <b>George Grote, 1846</b>, <i>History of Greece.</i></li>
+<li><b>Ambedkar</b> adopted it — Constituent Assembly speech, <b>4 Nov 1948.</b></li>
+<li><b>Naz Foundation (2009)</b> → <b>Navtej Singh Johar (2018)</b> → <b>Sabarimala (2018)</b> — revival sequence.</li>
+<li>Navtej Singh Johar: "constitutional morality prevails over <b>social morality.</b>"</li>
+<li>Genuine Mains repeater: asked in <b>2019</b> and <b>2021.</b></li>
+</ul>
+</div>
+
+<div class="series">
+<b>Next:</b> Note 01 — Historical Underpinnings &amp; Evolution, the start of Topic 1's syllabus-mapped sequence proper.
+</div>
+</section>
+
+<nav class="tabflow" id="tabflow">
+<button class="tabflow-btn tabflow-prev" id="tabflowPrev" type="button">
+<span class="tabflow-dir">&#8592; Previous</span>
+<span class="tabflow-label" id="tabflowPrevLabel"></span>
+</button>
+<button class="tabflow-btn tabflow-next" id="tabflowNext" type="button">
+<span class="tabflow-dir">Next &#8594;</span>
+<span class="tabflow-label" id="tabflowNextLabel"></span>
+</button>
+</nav>
+
+<footer>
+Concept of the Constitution &amp; Constitutionalism — foundational primer, Polity &amp; Constitution cluster, GS Paper II (Mains) · precedes Topic 1, Note 01 of 9<br>
+Facts cross-checked against publicly available sources; PYQs never fabricated — see integrity note in Section 07.
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.notetab'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.tabsection'));
+  var ids = sections.map(function(s){ return s.id; });
+
+  var flowPrev = document.getElementById('tabflowPrev');
+  var flowNext = document.getElementById('tabflowNext');
+  var flowPrevLabel = document.getElementById('tabflowPrevLabel');
+  var flowNextLabel = document.getElementById('tabflowNextLabel');
+
+  function tabLabel(id){
+    var match = tabs.filter(function(t){ return t.dataset.tab === id; })[0];
+    return match ? match.textContent.trim() : '';
+  }
+
+  function updateTabflow(id){
+    if (!flowPrev || !flowNext) return;
+    var idx = ids.indexOf(id);
+    if (idx > 0) {
+      flowPrev.disabled = false;
+      flowPrev.dataset.target = ids[idx - 1];
+      flowPrevLabel.textContent = tabLabel(ids[idx - 1]);
+    } else {
+      flowPrev.disabled = true;
+      flowPrev.removeAttribute('data-target');
+      flowPrevLabel.textContent = '';
+    }
+    if (idx > -1 && idx < ids.length - 1) {
+      flowNext.disabled = false;
+      flowNext.dataset.target = ids[idx + 1];
+      flowNextLabel.textContent = tabLabel(ids[idx + 1]);
+    } else {
+      flowNext.disabled = true;
+      flowNext.removeAttribute('data-target');
+      flowNextLabel.textContent = '';
+    }
+  }
+
+  function activate(id, doScroll){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+    sections.forEach(function(s){ s.classList.toggle('active', s.id === id); });
+    if (doScroll) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    updateTabflow(id);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      activate(t.dataset.tab, true);
+      history.replaceState(null, '', '#' + t.dataset.tab);
+    });
+  });
+  [flowPrev, flowNext].forEach(function(btn){
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      if (btn.disabled || !btn.dataset.target) return;
+      activate(btn.dataset.target, true);
+      history.replaceState(null, '', '#' + btn.dataset.target);
+    });
+  });
+  var initial = (location.hash || '').replace('#','');
+  if (ids.indexOf(initial) === -1) initial = ids[0];
+  if (initial) activate(initial, false);
+})();
+</script>
+
+</div>
+</div>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>President &amp; Vice-President | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Election &amp; qualifications</button>
+<button class="notetab" data-tab="s2">02 · Term, vacancy &amp; impeachment</button>
+<button class="notetab" data-tab="s3">03 · Powers of the President</button>
+<button class="notetab" data-tab="s4">04 · Discretion, veto &amp; case law</button>
+<button class="notetab" data-tab="s5">05 · Vice-President</button>
+<button class="notetab" data-tab="s6">06 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">07 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 6 of 9 · Note 00 — Week 3, Day 1</div>
+<h1>President &amp; Vice-President</h1>
+<p class="sub">Senior-mentor notes on India's nominal executive head — election by a specially-weighted Electoral College, the near-total shift from personal discretion to Cabinet-bound formality across the 42nd and 44th Amendments, and the Vice-President's much simpler, Parliament-only counterpart role.</p>
+<div class="chips">
+<span class="chip">Articles 52–62</span>
+<span class="chip">Electoral College</span>
+<span class="chip">Article 74 &amp; Article 78</span>
+<span class="chip">Suspensive &amp; Pocket Veto</span>
+<span class="chip">Article 61 Impeachment</span>
+</div>
+<div class="bignum"><b>Art 61</b><span>Sole ground: "violation of the Constitution"</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this note exists, and why it's built differently this time</div>
+<p>This is the first Topic 6 note, and the first note built after two weekly tests' worth of hard evidence about how this coaching test actually examines Polity: not by inventing exotic questions, but by testing the same handful of things — precise numbers (35 years, not 25 or 30), the exact difference between two similar-looking powers (President's pardon vs Governor's pardon), and named case law behind a doctrine everyone half-remembers. This note is written with that evidence already built in, rather than added after a bad result.</p>
+<p>This is Week 3, Day 1 of the study plan — the first day of the Union &amp; State Executive block, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and M. Laxmikanth Chapters 18–19.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>India has a President the way Britain has a King — a Head of State who signs everything, but almost never decides anything on their own. The actual decisions are made by the Prime Minister and Cabinet; the President's constitutional job, in the overwhelming majority of cases, is to act on their advice, not substitute their own judgment. This is the "nominal vs real executive" idea from the Parliamentary System note (Topic 5, Note 00) applied to a real office.</p>
+<p>Two things make the President's office worth a full note rather than one paragraph: first, the <b>election method</b> is unusual and heavily tested — the President is not directly elected by citizens, but by an "Electoral College" of elected lawmakers, weighted by a formula that took decades to fully appreciate. Second, even a mostly-ceremonial office has a handful of <b>genuinely discretionary moments</b> — picking a Prime Minister when no party has a clear majority is the big one — and knowing exactly where the ceremonial default ends and real judgment begins is what most President-related MCQs are actually testing.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 6 note series —</b>
+<span class="done">✓ 00 President &amp; Vice-President (this file)</span> · <span class="todo">○ 01 Governor</span> · <span class="todo">○ 02 Prime Minister &amp; Council of Ministers</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 : ELECTION & QUALIFICATIONS ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Election &amp; qualifications — Articles 54–58</h2></div>
+<hr class="divider">
+<p class="lead">The President is elected indirectly, by an Electoral College, using a proportional-representation system with a single transferable vote and secret ballot — three technical terms that are each independently testable.</p>
+
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>In the Electoral College (Art 54)</th><th>Excluded — the classic trap list</th></tr></thead>
+<tbody>
+<tr><th><b>Elected</b> members of both Houses of Parliament</th><td><b>Nominated</b> members of either House — up to 12 in the Rajya Sabha, and the erstwhile Anglo-Indian nominees in the Lok Sabha. They do not vote.</td></tr>
+<tr><th><b>Elected</b> members of the Legislative Assemblies of all States</th><td><b>Nominated</b> members of any State Legislative Assembly.</td></tr>
+<tr><th><b>Elected</b> members of the Assemblies of Delhi and Puducherry (added by the 70th Amendment, 1992)</th><td>Members of any Legislative <b>Council</b> (MLCs). Only Assembly — lower-house — members count, in both Parliament and the States.</td></tr>
+</tbody>
+</table>
+<div class="tip trap"><span class="ic">!</span><div>The pattern in every row is the same word: <b>elected</b>. Nominated members are out at the Union level, out at the State level, and the entire upper house of a State is out. If a question puts "nominated" or "Council" anywhere in a statement about the Presidential electoral college, that statement is wrong.</div></div>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> "Elected members of Union Territories" is not a blanket rule — only Delhi (NCT) and Puducherry are included, and only because each has its own Legislative Assembly; UTs without an Assembly (Chandigarh, Lakshadweep, etc.) have no vote in a Presidential election at all.</p>
+</div>
+
+<h3>The vote-value formula — the single most numbers-heavy fact in this note</h3>
+<p>Not every legislator's vote carries equal weight; the formula deliberately balances the value of MLA votes against MP votes so that no single large State can dominate, and Parliament as a whole roughly balances all the States put together.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Voter</th><th>Vote value formula</th></tr></thead>
+<tbody>
+<tr><th>Each MLA</th><td>(State's total population ÷ Total number of elected MLAs in that State) ÷ 1,000</td></tr>
+<tr><th>Each MP (Lok Sabha or Rajya Sabha)</th><td>(Total value of all MLA votes across all States) ÷ Total number of elected MPs</td></tr>
+</tbody>
+</table>
+</div>
+<p><b>Population used:</b> since the 84th Amendment (2001) and extended by the 2026-relevant freeze, the 1971 Census population figures continue to be used for this calculation (not the latest census) — a deliberate freeze meant to avoid penalising States that controlled population growth.</p>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Qualifications (Art 58):</b> citizen of India; at least <b>35 years</b> of age; qualified for election as a member of the Lok Sabha; must not hold any office of profit under the Union, a State, or any local/other authority. <b>Exception:</b> the offices of President, Vice-President, Governor, and Union/State Minister are specifically excluded from "office of profit" for this purpose — so a sitting Vice-President or Governor can validly contest for President.</p>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 Constituent Assembly ammunition — why indirect election, not direct?</div>
+<p>A Mains question on the President's election method is really asking whether you know the framers' own reasoning, debated at length in the Assembly. Three arguments carried the day: <b>(1)</b> in a parliamentary system where real power sits with the Cabinet, directly electing a largely ceremonial head would be an enormous expenditure of national effort for a symbolic office; <b>(2)</b> a directly-elected President with a nationwide personal mandate would inevitably become a <i>rival power centre</i> to the Prime Minister — destabilising the very parliamentary accountability the system is built on; <b>(3)</b> Ambedkar's framing — the President "represents the nation but does not rule the nation"; a symbol requires legitimacy, not a plebiscite. The weighted Electoral College was the middle path: democratic legitimacy through elected representatives of both Union and States, without a competing popular mandate. Quote any one of these three and an "evaluate the election method" answer immediately rises above the textbook floor.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 : TERM, VACANCY & IMPEACHMENT ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Term, vacancy &amp; impeachment — Articles 56, 61–62</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Term</th><td><b>5 years</b> from the date of entering office; eligible for re-election any number of times (no term limit, unlike the US President's two-term cap).</td></tr>
+<tr><th>Resignation</th><td>Submitted in writing to the <b>Vice-President</b> (not the Chief Justice, a common trap option).</td></tr>
+<tr><th>Continuation in office</th><td>Even after the 5-year term expires, the President continues in office until a successor enters office — India is never without a President.</td></tr>
+<tr><th>Emoluments</th><td>Fixed by Parliament; charged on the <b>Consolidated Fund of India</b> (hence discussed but not voted — see Topic 5, Note 03) and <b>cannot be diminished during the term of office</b>, except during a Financial Emergency under Article 360.</td></tr>
+<tr><th>Election disputes</th><td>All doubts and disputes arising out of a Presidential or Vice-Presidential election are decided by the <b>Supreme Court alone</b>, and its decision is final. Note the trap: an election <b>cannot be challenged on the ground that the Electoral College was incomplete</b> (e.g., some Assembly seats vacant), and acts done by the President before the election is set aside remain valid.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Vacancy — who officiates, and for how long</h3>
+<div class="table-scroll">
+<table class="t2">
+<colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Situation</th><th>Who acts</th></tr></thead>
+<tbody>
+<tr><th>President's office falls vacant (death, resignation, removal) before term ends</th><td>The <b>Vice-President</b> acts as President — for a maximum of 6 months, within which a fresh Presidential election must be held.</td></tr>
+<tr><th>Both President's and Vice-President's offices are vacant simultaneously</th><td>The <b>Chief Justice of India</b> (or, if unavailable, the senior-most judge of the Supreme Court) acts as President.</td></tr>
+<tr><th>President temporarily unable to discharge functions (illness, foreign travel)</th><td>Vice-President discharges functions until the President resumes — this is <i>not</i> a vacancy, just a temporary stand-in.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Impeachment (Article 61) — the only removal process, and it has never once been used.</b> The <i>sole</i> ground is "violation of the Constitution" — deliberately undefined, unlike the specific, listed grounds for judge removal. Procedure: the charge can be initiated in <i>either</i> House of Parliament; it must be signed by at least <b>1/4th</b> of that House's total membership and 14 days' advance notice given; the resolution to impeach needs a <b>2/3rd majority of the total membership</b> of that House to pass (not just those present and voting — a frequent trap). Once the first House passes it, the <i>other</i> House investigates the charge — the President has the right to appear and be represented — and must itself pass the charge by a 2/3rd majority of total membership for removal to take effect. This is a quasi-judicial process, unusual in that a legislative body, not a court, both investigates and decides.</p>
+</div>
+
+<h3>Ordinance-making power — Article 123, the President's most significant legislative power</h3>
+<div class="tip">
+<span class="ic">✚</span>
+<p>When <b>both Houses are not in session</b> (or either one isn't) and the President is satisfied that circumstances require immediate action, an ordinance may be promulgated. Key anchors: an ordinance has the <b>same force and effect as an Act of Parliament</b>, but is temporary — it must be laid before both Houses when they reassemble and <b>ceases to operate six weeks from reassembly</b> (or earlier if disapproved by resolutions of both Houses). Effectively it can survive a maximum of about <b>six months and six weeks</b> without becoming law. The power is <b>co-extensive with Parliament's legislative power</b> — so an ordinance cannot cover what Parliament itself cannot legislate on, and cannot amend the Constitution. It is exercised on the Council of Ministers' advice, not personal discretion. <b>The Governor has the identical power under Article 213</b>, with one addition: for certain subjects the Governor needs the President's prior instruction before promulgating.</p>
+<p><b>Case law that makes this a live topic:</b> <i>D.C. Wadhwa v. State of Bihar</i> (1987) — Bihar had re-promulgated ordinances for years without ever passing them as laws; the Court condemned this as a "fraud on the Constitution" and a subversion of the legislative process. <i>Krishna Kumar Singh v. State of Bihar</i> (2017, seven judges) went further: <b>re-promulgation of ordinances is unconstitutional</b>, and the mandatory laying of an ordinance before the legislature is not a formality but a constitutional obligation.</p>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> "the President can issue an ordinance at any time" is false — both Houses (or at least one) must not be in session. And "an ordinance is permanent until repealed" is false — the six-week clock from reassembly is the whole point.</p>
+</div>
+
+<h3>Emergency powers — the three emergencies compared (a listed Week 3 topic)</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>National Emergency (Art 352)</th><th>President's Rule (Art 356)</th><th>Financial Emergency (Art 360)</th></tr></thead>
+<tbody>
+<tr><th>Ground</th><td>War, external aggression, or <b>armed rebellion</b> (the 44th Amendment replaced "internal disturbance" with this stricter phrase).</td><td>Failure of constitutional machinery in a State.</td><td>Threat to India's financial stability or credit.</td></tr>
+<tr><th>Proclaimed on</th><td>Written recommendation of the <b>Cabinet</b> (44th Amendment safeguard — not the PM alone).</td><td>Governor's report or otherwise.</td><td>President's satisfaction.</td></tr>
+<tr><th>Parliamentary approval</th><td>Both Houses within <b>1 month</b>, by <b>special majority</b>; then valid 6 months at a time, renewable indefinitely.</td><td>Both Houses within <b>2 months</b>, by <b>simple majority</b>; valid 6 months at a time, <b>maximum 3 years</b> (with conditions after 1 year).</td><td>Both Houses within <b>2 months</b>, by simple majority; then continues <b>indefinitely</b> until revoked — no periodic renewal needed.</td></tr>
+<tr><th>Revocation</th><td>President anytime; also compulsory if the <b>Lok Sabha passes a disapproval resolution by simple majority</b> — a 44th Amendment innovation, and a resolution the Lok Sabha can force onto the agenda if 1/10th of members demand it.</td><td>President anytime; no Parliamentary approval needed to revoke.</td><td>President anytime.</td></tr>
+<tr><th>Effect on Fundamental Rights</th><td>Article 19 freedoms automatically suspended (only if the emergency is on grounds of war/external aggression, post-44th Amendment); other rights suspendable by Article 359 order — <b>but never Articles 20 and 21</b>.</td><td>No direct effect on Fundamental Rights.</td><td>No suspension of rights, but salaries of government servants — <b>including Supreme Court and High Court judges</b> — can be reduced, and all Money Bills of States reserved for the President.</td></tr>
+<tr><th>Used so far</th><td><b>Three times</b> — 1962 (China), 1971 (Pakistan), 1975 (the controversial "internal disturbance" one).</td><td>Over 125 times.</td><td><b>Never</b> — not once since 1950.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>The three highest-value traps here:</b> (1) National Emergency needs a <b>special</b> majority, President's Rule and Financial Emergency need only a <b>simple</b> majority — the most swapped attribute; (2) Financial Emergency, once approved, runs <b>indefinitely without renewal</b>, unlike the other two's 6-month cycles; (3) Article 352 approval window is <b>1 month</b>, the other two are <b>2 months</b>. And the standing fact: Financial Emergency has never been proclaimed.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Comparative layer — impeachment in India vs the USA (a Week 2 question tested exactly this).</b> In the <b>USA</b>, the President, Vice-President, and <b>all civil officers</b> of the federal government (including judges) are impeachable — the House impeaches by simple majority, the <b>Senate tries</b> and convicts by two-thirds of members present; grounds are "treason, bribery, or other high crimes and misdemeanors." Three US Presidents have been impeached by the House — Andrew Johnson (1868), Bill Clinton (1998), Donald Trump (2019 and again 2021) — and <b>none was convicted and removed</b>. In <b>India</b>, Article 61 impeachment covers the President alone (judges are removed by a different address procedure, the VP by a simpler resolution); the sole ground is "violation of the Constitution"; both Houses need two-thirds of <i>total membership</i>; and the process has never been initiated. The tested contrast: India's design is narrower in who it covers, vaguer in its ground, and stricter in its majority.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 03 : POWERS ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Powers of the President</h2></div>
+<hr class="divider">
+<p class="lead">Six power categories are worth holding as a fixed checklist — Executive, Legislative, Financial, Judicial, Diplomatic, Military, and Emergency. Prelims tests the specific content of each category; Mains tests how far real discretion survives inside a formally "on advice" system.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Category</th><th>Key content</th></tr></thead>
+<tbody>
+<tr><th>Executive</th><td>Appoints PM (and other Ministers on PM's advice), Governors, CJI and other SC/HC judges, Attorney General, CAG, Election Commissioners, UPSC Chairman/members, Finance Commission — all formally by the President, substantively on someone else's binding advice or recommendation. Can require the PM to furnish information on Union administration/legislation proposals (<b>Article 78</b> — the President's one direct information-channel to the Council of Ministers).</td></tr>
+<tr><th>Legislative</th><td>Summons and prorogues Parliament sessions; can dissolve the Lok Sabha; addresses both Houses (especially the first session after each general election, and the first session of each year); nominates <b>12 members to Rajya Sabha</b> with special knowledge/practical experience in literature, science, art, or social service. <i>Note: the President's power to nominate one Anglo-Indian member to the Lok Sabha was abolished by the 104th Amendment, 2019 — this representation itself lapsed and is a live trap in "which nomination powers does the President still have" MCQs.</i></td></tr>
+<tr><th>Financial</th><td>Money Bills can only be introduced in Lok Sabha with the President's prior recommendation; causes the Union Budget to be laid before Parliament; controls the Contingency Fund of India; constitutes the Finance Commission every 5 years.</td></tr>
+<tr><th>Judicial</th><td>Pardoning power under <b>Article 72</b> — see Section 04 for the full detail and how it differs from the Governor's Article 161 power.</td></tr>
+<tr><th>Diplomatic &amp; Military</th><td>All international treaties/agreements are negotiated and concluded in the President's name (subject to Parliamentary ratification where required); Supreme Commander of the Defence Forces. <i>Note the limit: the President cannot declare war or conclude peace independently — only with Parliament's authorisation.</i></td></tr>
+<tr><th>Emergency</th><td>Can proclaim National Emergency (Art 352), President's Rule in a State (Art 356), and Financial Emergency (Art 360) — the full comparison table sits immediately below, since "Emergency Powers" is a listed Week 3 topic for both the President and the Governor.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : DISCRETION, VETO & CASE LAW ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Discretion, veto power &amp; case law — where the real marks are</h2></div>
+<hr class="divider">
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 780 210" role="img" aria-label="How the 42nd and 44th Amendments changed the President's relationship to Cabinet advice">
+<g font-family="Inter" font-size="12">
+<rect x="10" y="20" width="230" height="80" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="125" y="45" text-anchor="middle" font-weight="700" fill="#7a1f66">1950–1976</text>
+<text x="125" y="65" text-anchor="middle" font-size="11" fill="#7a1f66">Art 74 says President "aided</text>
+<text x="125" y="80" text-anchor="middle" font-size="11" fill="#7a1f66">and advised" by Cabinet — but</text>
+<text x="125" y="95" text-anchor="middle" font-size="11" fill="#7a1f66">not explicitly bound by it.</text>
+
+<line x1="245" y1="60" x2="285" y2="60" stroke="#9598c9" stroke-width="2" marker-end="url(#arrE)"/>
+
+<rect x="290" y="20" width="230" height="80" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="405" y="45" text-anchor="middle" font-weight="700" fill="#8a5c00">42nd Amendment, 1976</text>
+<text x="405" y="65" text-anchor="middle" font-size="11" fill="#8a5c00">Makes Cabinet advice explicitly</text>
+<text x="405" y="80" text-anchor="middle" font-size="11" fill="#8a5c00">BINDING on the President.</text>
+
+<line x1="525" y1="60" x2="565" y2="60" stroke="#9598c9" stroke-width="2" marker-end="url(#arrE)"/>
+
+<rect x="570" y="20" width="200" height="80" rx="10" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.5"/>
+<text x="670" y="45" text-anchor="middle" font-weight="700" fill="#177a4d">44th Amendment, 1978</text>
+<text x="670" y="65" text-anchor="middle" font-size="11" fill="#177a4d">Adds one safety valve: President</text>
+<text x="670" y="80" text-anchor="middle" font-size="11" fill="#177a4d">may return advice ONCE for</text>
+<text x="670" y="95" text-anchor="middle" font-size="11" fill="#177a4d">reconsideration — then must obey.</text>
+</g>
+<defs><marker id="arrE" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9598c9"/></marker></defs>
+</svg>
+<figcaption><b>Fig 1.</b> The President's discretion didn't disappear at Independence — it was legislated away in two deliberate steps, decades apart.</figcaption>
+</div></figure>
+
+<h3>Where genuine discretion still survives — unwritten, but real</h3>
+<div class="prelims">
+<h3>🔴 Situational discretion — not in the Constitution's text, but consistently exercised</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span><b>Choosing a Prime Minister</b> when no single party/coalition has a clear Lok Sabha majority (a "hung Parliament").</span></div>
+<div class="item"><span class="dot">●</span><span><b>Dismissing</b> a Council of Ministers that has lost its majority but refuses to resign or advise dissolution.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Dissolving the Lok Sabha</b> if the Council of Ministers has lost confidence and no alternative government can be formed.</span></div>
+<div class="item"><span class="dot">●</span><span>Deciding <b>whether to return</b> Cabinet advice once under the 44th Amendment's safety valve (a genuine judgment call on timing and substance).</span></div>
+</div>
+</div>
+
+<h3>Veto power over ordinary Bills — three distinct options, one trap</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Veto type</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><th>Absolute veto</th><td>President withholds assent outright; the Bill dies. Rarely used post-1950 — the most-cited historical instance is a Bill from before real party-system maturity.</td></tr>
+<tr><th>Suspensive veto</th><td>President returns a Bill (other than a Money Bill) for reconsideration <i>once</i>; if Parliament passes it again, with or without amendments, the President <b>must</b> give assent — cannot return it a second time.</td></tr>
+<tr><th>Pocket veto</th><td>President simply does not act — neither assents, rejects, nor returns — and the Constitution sets <b>no time limit</b> for the President to decide. Classic example: President Zail Singh sat on the Indian Post Office (Amendment) Bill, 1986, and it lapsed only because his term ended before he acted.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap: Money Bills have no suspensive veto option.</b> The President can only assent to or withhold assent from a Money Bill — never return it for reconsideration, since it was introduced only on the President's own prior recommendation in the first place.</p>
+</div>
+
+<h3>Pardoning power — Article 72 — and exactly how it differs from the Governor's Article 161</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>President (Art 72)</th><th>Governor (Art 161)</th></tr></thead>
+<tbody>
+<tr><th>Death sentence</th><td><b>Can pardon</b> a death sentence — and equally suspend, remit or commute it.</td><td><b>Cannot pardon</b> it — that is exclusively the President's. But the Governor <b>can suspend, remit or commute</b> a death sentence. The two powers are concurrent <i>except</i> for pardon, and this half-distinction is the trap: a statement saying the Governor "has no power over a death sentence" is <b>wrong</b>.</td></tr>
+<tr><th>Court-martial (military) sentences</th><td><b>Can</b> pardon, suspend, remit, or commute sentences by a court martial.</td><td><b>Cannot</b> — Governor has no power over court-martial punishments at all.</td></tr>
+<tr><th>Offences against Union law</th><td>Covers offences against any law relating to a matter within the Union's executive power.</td><td>Covers offences against State laws only.</td></tr>
+</tbody>
+</table>
+</div>
+<p><b>Five distinct forms</b> the pardoning power can take, worth naming precisely rather than lumping together as "pardon": <b>pardon</b> (removes both sentence and conviction, wiping out the offence entirely), <b>commutation</b> (substitutes a lighter form of punishment), <b>remission</b> (reduces the period of sentence without changing its nature), <b>respite</b> (awards a lesser sentence on special grounds, e.g. pregnancy), <b>reprieve</b> (temporarily stays execution of a sentence, usually to allow time to seek a pardon or commutation).</p>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Case law worth naming:</b> in <i>Kehar Singh v. Union of India</i> (1989), the Supreme Court held the Article 72 pardoning power is an executive act, not subject to judicial review on the merits of how the President arrived at the decision — but in <i>Epuru Sudhakar v. Government of Andhra Pradesh</i> (2006), the Court clarified that the exercise of this power <i>can</i> still be judicially reviewed if it is shown to be arbitrary, mala fide, or based on wholly irrelevant considerations. The two cases together are the standard "is pardon really unreviewable" pairing examiners like to test.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Article 74(2) — the advice is beyond the courts.</b> A companion rule that completes the picture: the question of <i>what advice</i> the Council of Ministers tendered to the President <b>shall not be inquired into by any court</b>. So courts may review the President's <i>action</i> (a proclamation, an appointment) but cannot compel disclosure of the ministerial advice behind it. Trap: this does not immunise the action itself from judicial review — Bommai reviewed an Article 356 proclamation without ever opening the advice file.</p>
+<p><b>The concept behind "on advice" — Shamsher Singh v. State of Punjab (1974):</b> the seven-judge foundation for everything this note says about the President's (and Governor's) role. The Court held that the President and Governors are <b>constitutional or formal heads</b> who exercise their powers on the aid and advice of their Council of Ministers "save in a few well-known exceptional situations" — cementing that India's Republic has a parliamentary, not presidential, executive even though the text formally vests executive power in the President (Art 53). Name this case whenever an answer needs the <i>doctrinal</i> source of the nominal-executive principle, rather than just asserting it.</p>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Recent-judgment layer — Article 201 and the 2025 assent-timeline saga:</b> the same 2025 litigation covered in the Governor note (Topic 6, Note 01, Section 05) reached the President too. Once a Governor reserves a Bill, Article 201 sets no time limit for the President's decision — the April 2025 two-judge judgment read in an indicative ~3-month window, but the <b>November 2025 five-judge bench answering the President's Article 143 reference held that courts cannot impose fixed timelines or "deemed assent" on the President either</b>, while indefinite inaction remains judicially examinable in egregious cases. If a statement claims a court-mandated deadline currently binds the President under Article 201 — that statement is wrong as of the Constitution Bench opinion.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 : VICE-PRESIDENT ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Vice-President — Articles 63–71</h2></div>
+<hr class="divider">
+<p class="lead">The Vice-President's office is deliberately simpler than the President's — a much smaller electoral college, no impeachment-style removal, and one clean day-job: chairing the Rajya Sabha. But "simpler" is not "different in every respect", and that is precisely where questions are set: the <b>voting method, the term, and the disputes procedure are word-for-word identical</b> to the President's, while the electoral college, the oath, the removal route and the vacancy rule differ. The second table below sets the two side by side, stage by stage.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Primary role</th><td><b>Ex-officio Chairman of the Rajya Sabha</b> — this is the Vice-President's main constitutional function, distinct from the President's role entirely.</td></tr>
+<tr><th>Electoral college</th><td>Members of <b>both Houses of Parliament only</b> — <i>MLAs are not included</i>, the single biggest difference from the President's much larger electoral college. Nominated MPs of both Houses <b>do</b> vote here (unlike the Presidential election, where nominated members are excluded) — a frequently confused pairing.</td></tr>
+<tr><th>Qualifications</th><td>Citizen of India; at least <b>35 years</b>; qualified for election as a Rajya Sabha member (not Lok Sabha, unlike the President); must not hold any office of profit.</td></tr>
+<tr><th>Term</th><td>5 years; eligible for re-election any number of times.</td></tr>
+<tr><th>Removal <span style="font-weight:400;">(Art 67(b))</span></th><td>By a resolution of the <b>Rajya Sabha passed by an effective majority</b> (majority of all then-members, not total membership) <b>and agreed to by the Lok Sabha</b> by a simple majority. <b>14 days' notice of the intention to move the resolution is required</b> — the same notice period as the President's impeachment. What is <i>absent</i> is any specified <b>ground</b>: Article 61 confines the President's impeachment to "violation of the Constitution", while Article 67(b) names no ground at all. The resolution can also originate <b>only in the Rajya Sabha</b>.</td></tr>
+<tr><th>Acting as President <span style="font-weight:400;">(Art 65)</span></th><td>Officiates when the President's office is vacant, for up to 6 months. While so acting, the Vice-President does <i>not</i> perform Rajya Sabha Chairman duties — those pass to the Deputy Chairman — and draws the <b>President's</b> emoluments, not the Chairman's.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The procedure, article by article — set against the President</h3>
+<p>The question UPSC actually asks is never "what does the Vice-President do". It is <i>where the two offices differ by one word</i>. Read this table across the rows, not down the columns.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Stage</th><th>President</th><th>Vice-President</th></tr></thead>
+<tbody>
+<tr><th>Electoral college</th><td><b>Elected</b> MPs of both Houses + <b>elected</b> MLAs of States, Delhi and Puducherry. Nominated members excluded (Art 54).</td><td>Members of <b>both Houses only</b> — no MLAs. <b>Nominated members do vote</b> (Art 66(1)).</td></tr>
+<tr><th>Voting method</th><td colspan="2" style="text-align:center;background:#F3FAFB;"><b>Identical for both:</b> proportional representation by means of the <b>single transferable vote</b>, voting by <b>secret ballot</b>.</td></tr>
+<tr><th>Constitutional change</th><td>—</td><td>Originally the college met in a <b>joint sitting</b>. The <b>11th Amendment (1961)</b> removed the joint-sitting requirement and provided that the election <b>cannot be challenged on the ground of any vacancy</b> in the electoral college.</td></tr>
+<tr><th>Nomination</th><td><b>50</b> proposers + <b>50</b> seconders; ₹15,000 deposit.</td><td><b>20</b> proposers + <b>20</b> seconders; ₹15,000 deposit.</td></tr>
+<tr><th>Qualification</th><td>35+; qualified for election to the <b>Lok Sabha</b> (Art 58).</td><td>35+; qualified for election to the <b>Rajya Sabha</b> (Art 66(3)).</td></tr>
+<tr><th>Oath administered by</th><td>The <b>Chief Justice of India</b>, or in his absence the senior-most Supreme Court judge (Art 60). Swears to <b>"preserve, protect and defend the Constitution"</b>.</td><td>The <b>President</b>, or a person appointed by him (Art 69). Swears <b>"true faith and allegiance to the Constitution"</b> — a different formula.</td></tr>
+<tr><th>Term</th><td colspan="2" style="text-align:center;background:#F3FAFB;"><b>Identical:</b> 5 years, re-election unlimited, and both continue in office until the successor enters upon office.</td></tr>
+<tr><th>Resignation to</th><td>The <b>Vice-President</b> (Art 56).</td><td>The <b>President</b> (Art 67(a)).</td></tr>
+<tr><th>Removal</th><td><b>Impeachment</b> (Art 61). Either House may initiate; charge signed by <b>1/4th</b> of that House's total membership; <b>14 days' notice</b>; <b>2/3rd of total membership</b> in both Houses. Sole ground: <b>violation of the Constitution</b>. Never used.</td><td>Resolution (Art 67(b)). <b>Rajya Sabha only</b> may initiate; <b>effective majority</b> in RS + <b>simple majority</b> in LS; <b>14 days' notice</b>. <b>No ground specified.</b></td></tr>
+<tr><th>Filling a mid-term vacancy</th><td>Election must be held <b>within 6 months</b>; the new President serves a <b>full 5-year term</b> (Art 62).</td><td>Election held <b>"as soon as possible"</b> — <b>no 6-month outer limit</b>; the new Vice-President also serves a <b>full 5-year term</b>, not the unexpired remainder (Art 68).</td></tr>
+<tr><th>Emoluments</th><td>Salary fixed by Parliament; cannot be reduced during the term.</td><td><b>No salary as Vice-President.</b> Draws salary as <b>Chairman of the Rajya Sabha</b> — and the President's emoluments only while acting as President.</td></tr>
+<tr><th>Election disputes</th><td colspan="2" style="text-align:center;background:#F3FAFB;"><b>Identical (Art 71):</b> heard only by the <b>Supreme Court</b>, whose decision is final; and if an election is declared void, <b>acts done before that declaration are not invalidated</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The four highest-yield swaps in this table.</b> <b>(1)</b> Nominated members — excluded for the President, <i>included</i> for the Vice-President. <b>(2)</b> Oath — CJI for the President, the <i>President</i> for the Vice-President. <b>(3)</b> 14 days' notice — required for <i>both</i>; what the Vice-President's removal lacks is a stated <i>ground</i>, not the notice. <b>(4)</b> Mid-term vacancy — the six-month deadline binds the <i>President's</i> election only; Article 68 says merely "as soon as possible" for the Vice-President.</div></div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>India's VP vs America's VP — the comparison Laxmikanth draws, and a ready Prelims pairing.</b> The office was <b>modelled on the American Vice-President</b>, and the similarity is real: both preside over the Upper House (Rajya Sabha / Senate) and both step in when the top office falls vacant. But two differences matter: <b>(1)</b> the American VP, on the President's death/resignation/removal, <b>becomes President for the remainder of the full term</b> — India's Vice-President only <b>acts</b> as President for a maximum of <b>6 months</b>, within which a fresh election must be held; <b>(2)</b> the American VP is the <b>President of the Senate and a member of it</b> in a sense that allows a <b>casting vote</b> in case of a tie, whereas India's Vice-President chairs the Rajya Sabha <b>without being a member of it</b>. Statement questions swap exactly these two.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 06 : PRACTICE QUESTIONS ===== -->
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>PYQ analysis &amp; practice questions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> the President's office is a steady Prelims performer — UPSC rarely asks "what are the President's powers" in the abstract, and instead tests one precise mechanism at a time: who votes in the election, what the Speaker/Chairman's membership status is, session-summoning rules, and (in Mains) the emergency provisions. Below: genuine PYQs first, then practice questions in identical format.</p>
+
+<h3>(A) Genuine UPSC PYQs</h3>
+<p class="lead" style="font-size:13.5px;">Reproduced in exam layout so the pattern itself becomes familiar. <b>Attempt each before reading the verdict line.</b> Cross-check years against official UPSC papers as a habit.</p>
+
+<div class="pyq">
+<span class="yr">2013</span><span class="stg">Prelims</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The Chairman and the Deputy Chairman of the Rajya Sabha are not members of that House.</li><li>While the nominated members of the two Houses of the Parliament have no voting right in the presidential election, they have the right to vote in the election of the Vice-President.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>The <i>Chairman</i> (the Vice-President) is not a member — but the <b>Deputy Chairman is</b> an elected member of the House, which makes statement 1 false.</li><li>Statement 2 is the exact electoral-college asymmetry in Sections 01 and 05.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2020</span><span class="stg">Prelims</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The President of India can summon a session of the Parliament at such place as he/she thinks fit.</li><li>The Constitution of India provides for three sessions of the Parliament in a year, but it is not mandatory to conduct all three sessions.</li><li>There is no minimum number of days that the Parliament is required to meet in a year.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) 1 and 3 only</li><li>(d) 2 and 3 only</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li>The Constitution nowhere prescribes three sessions — that is pure convention, so statement 2 is false.</li><li>Only Article 85's 6-month gap rule binds (Topic 5, Note 03).</li></ul>
+</div>
+</div>
+
+
+
+<h3>(B) Practice questions — same format, not real PYQs</h3>
+<p class="lead" style="font-size:13.5px;">Self-generated, built in the shapes this weekly test repeatedly uses. Formats are labelled so you can drill your weak ones deliberately.</p>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">With reference to the election of the President of India, consider the following statements:</p>
+<ol class="subs"><li>Nominated members of the Rajya Sabha do not participate in the election.</li><li>Members of the Delhi and Puducherry Legislative Assemblies do participate.</li><li>Members of State Legislative Councils participate on par with Assembly members.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Statements 1 and 2. MLCs never participate in a Presidential election, only elected Assembly members do (Section 01).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Which of the following can be pardoned by the President of India but <i>not</i> by a State Governor?</p>
+<ol class="subs"><li>A death sentence</li><li>A sentence awarded by a court martial</li><li>An offence against a State law</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 1 and 2 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">The verb <b>"pardoned"</b> decides this question. Offences against State law are squarely within Article 161. A death sentence cannot be <i>pardoned</i> by the Governor — though it can be suspended, remitted or commuted by them — and court-martial sentences are outside Article 161 altogether (Section 04's table).</p>
+</div>
+</div>
+
+
+
+<h3>Format drill — your weak patterns, this note's content</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to the election of the President, which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) The election uses proportional representation by single transferable vote</li><li>(b) Voting is by secret ballot</li><li>(c) Elected MLAs of Delhi and Puducherry participate</li><li>(d) Nominated members of the Rajya Sabha participate in the election</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) is NOT correct</b>
+<ul class="vwhy"><li>Nominated members never vote in a Presidential election (Section 01).</li><li>Mark each option T/F first; the stem wants the false one.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to the President's veto powers, which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) An absolute veto lets the President kill a Bill outright</li><li>(b) The suspensive veto is exhausted once Parliament re-passes the Bill</li><li>(c) The Constitution gives the President six months to act on a Bill, after which assent is deemed</li><li>(d) No suspensive veto exists for Money Bills</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">Article 111 sets NO time limit at all, which is precisely what makes the pocket veto possible (Section 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following statements:</p><ol class="subs"><li>The 1971 Census population is used for computing vote values</li><li>An MP's vote value is derived from the total value of all MLA votes</li><li>Union Territories without Legislative Assemblies have no vote in the Presidential election</li><li>Members of Legislative Councils vote in the election</li></ol><p class="qtext">How many of the statements given above are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Only three (1, 2, 3)</b>
+<p class="vone">MLCs never participate (Section 01). Verify each statement independently; if two are unknown, skip.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> A sitting Governor can contest a Presidential election without first resigning. <b>Statement-II:</b> The offices of President, Vice-President, Governor and Minister are expressly excluded from the "office of profit" disqualification. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>The exemption in Statement-II is exactly why Statement-I holds (Section 01).</li><li>Drill: truth of I → truth of II → only then the link.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs:</p><ol class="subs"><li>Pardon — wipes out both conviction and sentence entirely</li><li>Commutation — removes the conviction while keeping the sentence</li><li>Reprieve — temporary stay of execution of a sentence</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 3)</b>
+<p class="vone">Commutation substitutes a lighter form of punishment; it never touches the conviction itself (Section 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Statements</span>
+<p class="qtext">With reference to Presidential impeachment, consider:</p><ol class="subs"><li>The charge can be initiated in either House</li><li>It requires 14 days' notice signed by one-fourth of the House's total membership</li><li>The same House that frames the charge also investigates it</li></ol><p class="qtext">Which is/are correct?</p><ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 1 and 3 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 and 2 only</b>
+<p class="vone">The OTHER House investigates the charge, with the President entitled to appear (Section 02).</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M21</span><span class="yr">2018 · GS-II</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">Under what circumstances can the Financial Emergency be proclaimed by the President of India? What consequences follow when such a declaration remains in force?</p>
+<div class="meta">
+<div class="box dir"><b>Directive: two factual halves — "under what circumstances" and "what consequences."</b> No debate is demanded, so this is an <i>elucidate</i>-type answer where precision and completeness score. Split physically into the two halves; a brief evaluative close adds value without being required.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Art 360 + never used</li><li>Circumstances + procedure</li><li>Consequences — Union, State, salaries</li><li>Safeguards + brief assessment</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 360</b> empowers the President to proclaim a Financial Emergency if satisfied that a situation has arisen threatening the financial stability or credit of India or of any part of its territory. It has <b>never been proclaimed</b> — not even during the 1991 balance-of-payments crisis.</p>
+<p><span class="sh">Circumstances and procedure</span></p>
+<p>The threshold is the President's satisfaction as to that threat. The proclamation needs approval by both Houses within <b>two months, by simple majority</b> — unlike a National Emergency, which needs a special majority within one month. Once approved it continues <b>indefinitely</b>, with no periodic renewal, until revoked by the President; revocation needs no parliamentary approval. The <b>38th Amendment (1975)</b> had made emergency proclamations non-justiciable; the <b>44th Amendment (1978)</b> removed that bar, so the satisfaction is now reviewable for mala fides.</p>
+<p><span class="sh">Consequences while in force</span></p>
+<p><i>Union control over State finances:</i> States may be directed to observe specified canons of financial propriety. <i>Salary reductions:</i> the President may direct reduction of salaries and allowances of all or any class of persons serving the Union or a State — expressly including <b>judges of the Supreme Court and High Courts</b>, one of the very few situations in which judicial salaries may be reduced. <i>Money Bills reserved:</i> all Money Bills and other financial Bills passed by State legislatures may be required to be reserved for the President's consideration. The federal financial structure thus becomes temporarily unitary — though, unlike <b>Article 352</b>, Fundamental Rights are not suspended.</p>
+<p><span class="sh">Assessment</span></p>
+<p>Its disuse is itself constitutionally significant: severe fiscal stress has been managed through ordinary instruments — FRBM discipline, borrowing limits under <b>Article 293</b>, Finance Commission transfers — so a provision this centralising has become a last resort by convention, even though its text remains fully available.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 360 ground · two-month / simple-majority contrast with Art 352 · indefinite continuance · the 38th (1975) → 44th (1978) arc on justiciability · judges' salaries · State Money Bills reserved · FRs not suspended · never used, including 1991 · Art 293 / FRBM.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 279 / 250 words.</b> <b>Cut:</b> the standalone sentence restating the threshold, and the phrase "following the 44th Amendment's general tightening of emergency provisions". <b>Bought:</b> the <b>38th Amendment (1975)</b>, which is what the 44th was reversing. Naming both ends of the arc turns "subject to judicial review" from an assertion into a datable constitutional fact.</div>
+<div class="cost"><b>What would cost you marks:</b> confusing Article 360's approval rules with Article 352's — the single most examinable contrast; omitting that judicial salaries can be cut; forgetting to state it has never been used.</div>
+</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M22</span><span class="prac">Practice</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"The 44th Amendment did not restore the President's discretion — it merely gave the office one procedural pause button." Critically examine with reference to Articles 74 and 78.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically examine" a sharp claim.</b> Deconstruct the claim, test it both ways, then judge. The claim is largely right but overstated — the strongest answers show where the President <i>does</i> retain real discretion, which the quotation ignores.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: the 42nd→44th arc</li><li>Why the claim is right</li><li>Where it understates — real discretion</li><li>Art 78 as a live instrument</li><li>Balanced verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Before 1976, <b>Article 74</b> said the Council of Ministers shall "aid and advise" the President without expressly binding him. The <b>42nd Amendment (1976)</b> made that advice binding. The <b>44th Amendment (1978)</b> added one proviso: the President may require reconsideration, but shall act in accordance with the advice tendered after it.</p>
+<p><span class="sh">Why the claim is largely correct</span></p>
+<p>The proviso confers delay, not choice. Reconsideration may be sought <b>once</b>; the reconsidered advice binds whatever it says. It creates no power to refuse, and <b>Article 74(2)</b> bars courts from inquiring into the advice tendered. <b>Shamsher Singh (1974)</b> had already settled that the President is a constitutional head acting on advice "save in a few well-known exceptional situations."</p>
+<p><span class="sh">Where the claim understates the office</span></p>
+<p>Real discretion survives <i>outside</i> Article 74: appointing a Prime Minister in a hung Parliament; dismissing a Council that has lost its majority but will not resign; deciding dissolution when no alternative government is available. <b>Article 111</b> sets no time limit for assent, making the pocket veto possible — as <b>President Zail Singh</b> showed with the Indian Post Office (Amendment) Bill, 1986. The <b>November 2025 Constitution Bench</b> held that courts cannot fix assent timelines or deem assent, while keeping indefinite inaction reviewable.</p>
+<p><span class="sh">Article 78 as a live instrument</span></p>
+<p><b>Article 78</b> obliges the Prime Minister to communicate all Cabinet decisions, furnish information sought, and place before the Council any matter a Minister has decided alone — making the President an informed interlocutor, not a signatory.</p>
+<p><span class="sh">Verdict</span></p>
+<p>Accurate as to Article 74, incomplete as to the office. The 44th restored no discretion over policy; the President's real authority lies in situational discretion and in the moral force of Article 78 — influence rather than power.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 74 / 74(2) / 78 / 111 · the 42nd → 44th arc · Shamsher Singh (1974) quotation · the situational-discretion list · Zail Singh's pocket veto, 1986 · November 2025 Constitution Bench.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 279 / 250 words.</b> <b>Cut:</b> "so the President cannot even publicly justify resistance", the gloss on Article 78's effect, and "in situations the text does not govern". <b>Bought:</b> <b>President Zail Singh</b> named against the 1986 Bill. This answer was the longest in the set at 329 words — nearly a third over — and two passes were needed to bring it down.</div>
+<div class="cost"><b>What would cost you marks:</b> simply agreeing with the quotation — "critically" requires you to find where it overstates; omitting situational discretion, which is the counter-case.</div>
+</div>
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">★ 90-second recall</span>
+<h2>Last-mile revision — President &amp; Vice-President</h2>
+<ul>
+<li>Electoral College for President: elected MPs + elected MLAs of States + Delhi &amp; Puducherry. <b>No MLCs, no nominated members.</b></li>
+<li>Vote value: MLA = (State pop ÷ elected MLAs) ÷ 1000; MP = (total MLA vote value) ÷ elected MPs. 1971 Census population still used.</li>
+<li>Age 35+ for both President and VP; President must be LS-qualified, VP must be RS-qualified.</li>
+<li>Term 5 years both; resignation letter goes to VP (President) / President (VP).</li>
+<li>Impeachment (President, Art 61): only ground "violation of Constitution"; 2/3rd of total membership in both Houses; never used.</li>
+<li>VP removal (Art 67(b)): RS effective majority + LS simple majority, <b>14 days' notice required</b> — what is missing is a stated <b>ground</b>, not the notice. RS alone may initiate.</li>
+<li>VP election: 20 proposers + 20 seconders (President 50 + 50). Oath by the <b>President</b> (Art 69); President's oath by the <b>CJI</b> (Art 60).</li>
+<li>11th Amendment (1961): VP electoral college no longer meets in joint sitting; election unchallengeable for any vacancy in the college.</li>
+<li>Mid-term vacancy: President within <b>6 months</b> (Art 62); VP <b>"as soon as possible"</b>, no outer limit (Art 68). Both successors get a full 5-year term.</li>
+<li>VP draws <b>no salary as VP</b> — paid as Rajya Sabha Chairman; President's emoluments only while acting as President.</li>
+<li>Art 71: election disputes go only to the <b>Supreme Court</b>; acts done before an election is voided stay valid. Same for both offices.</li>
+
+<li>Vacancy chain: VP officiates for President (≤6 months); CJI officiates if both vacant.</li>
+<li>42nd Amendment (1976): Cabinet advice binding. 44th Amendment (1978): President can return advice once, then must comply.</li>
+<li>President: absolute / suspensive / pocket veto. No suspensive veto for Money Bills.</li>
+<li>Death sentence: only the President can <b>pardon</b> one; the Governor <b>can still suspend, remit or commute</b> it. Court-martial sentences are President-only outright.</li>
+<li>Kehar Singh (1989): pardon is executive, not usually reviewable. Epuru Sudhakar (2006): reviewable if arbitrary/mala fide.</li>
+<li>VP's day job: ex-officio Chairman of Rajya Sabha — stops when acting as President.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> next in Topic 6 — <i>01 Governor</i> (Week 3, Day 2), the State-level parallel to this note, with a much longer discretionary-powers list and its own separate case law (S.R. Bommai, Nabam Rebia).
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" disabled><span class="tabflow-dir">← Previous</span><span class="tabflow-label">— none in Topic 6 yet —</span></button>
+<button class="tabflow-btn tabflow-next" onclick="location.href='01%20Governor.html'"><span class="tabflow-dir">Next →</span><span class="tabflow-label">01 · Governor</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 6 — Executive &amp; Judiciary · Note 00 of 3<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 18–19.
+</footer>
+
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

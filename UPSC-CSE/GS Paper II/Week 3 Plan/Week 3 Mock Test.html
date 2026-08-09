@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3 Mock Test — UGSSP Format | 50 Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A; --green:#177a4d; --red:#c22525;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15.5px;line-height:1.6;}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 90px;}
+.hero{margin:0 -20px 30px;padding:44px 34px 38px;background:linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);color:#fff;border-radius:0 0 24px 24px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--star);margin-bottom:12px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,5vw,40px);margin:0 0 12px;}
+.hero p{max-width:640px;font-size:14.5px;color:#D9D9F2;margin:0 0 8px;}
+.rules{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:18px 20px;margin:0 0 24px;font-size:14px;color:#33344f;}
+.rules b{color:var(--deep);}
+.timerbar{position:sticky;top:0;z-index:50;background:var(--deep);color:#fff;border-radius:0 0 14px 14px;padding:10px 18px;display:flex;align-items:center;gap:16px;margin:0 0 24px;box-shadow:0 8px 22px rgba(27,29,81,.3);}
+.timerbar .t{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--star);min-width:96px;}
+.timerbar button{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.06em;background:var(--gold);color:#3a2a00;border:0;border-radius:9px;padding:9px 16px;cursor:pointer;}
+.timerbar button.secondary{background:rgba(255,255,255,.14);color:#EDECFF;}
+.timerbar button.secondary:hover{background:rgba(255,255,255,.24);}
+.timerbar .note{font-size:12px;color:#C9C6EE;}
+.timerbar .shufflewrap{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#C9C6EE;display:flex;align-items:center;gap:5px;cursor:pointer;}
+@media(max-width:760px){.timerbar{flex-wrap:wrap;gap:8px;}.timerbar .note{width:100%;}}
+.histtable{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px;}
+.histtable th,.histtable td{padding:6px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.histtable th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.histtable .up{color:#7fe0a7;}
+.histtable .down{color:#ff9d9d;}
+.retakerow{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+.retakerow button{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;letter-spacing:.06em;border:0;border-radius:10px;padding:11px 20px;cursor:pointer;background:var(--star);color:#3a2a00;}
+.retakerow button.ghost{background:rgba(255,255,255,.14);color:#EDECFF;}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;}
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.qnum{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;color:#fff;background:var(--deep2);border-radius:18px;padding:3px 11px;}
+.fmt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:14px;padding:2px 9px;}
+.fmt.hot{color:var(--nebula);border-color:#EBC4DE;background:var(--nebula-soft);}
+.q p.stem{margin:6px 0 10px;color:#22233d;}
+.q ol.subs{margin:0 0 10px 20px;padding:0;color:#33344f;}
+.q ol.subs li{margin:3px 0;}
+.opt{display:block;padding:8px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-size:14.5px;color:#2d2e4a;transition:background .12s;}
+.opt:hover{background:var(--teal-soft);}
+.opt input{margin-right:9px;}
+.q.graded .opt{cursor:default;}
+.q.graded .opt.correct{border-color:var(--green);background:#E9F7EE;}
+.q.graded .opt.chosenwrong{border-color:var(--red);background:#fdecec;}
+.expl{display:none;margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid #EBD9A8;font-size:13.5px;color:#4a3d18;}
+.expl b{color:#7a5502;}
+.q.graded .expl{display:block;}
+.verdict-chip{display:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;border-radius:14px;padding:2px 10px;margin-left:auto;}
+.q.graded .verdict-chip{display:inline-block;}
+.q.graded.right .verdict-chip{background:#E9F7EE;color:var(--green);}
+.q.graded.wrong .verdict-chip{background:#fdecec;color:var(--red);}
+.q.graded.skip .verdict-chip{background:#eef;color:var(--deep2);}
+.submitrow{margin:30px 0;text-align:center;}
+.submitrow button{font-family:'Fraunces',serif;font-weight:600;font-size:18px;background:var(--deep);color:#fff;border:0;border-radius:14px;padding:16px 34px;cursor:pointer;box-shadow:0 10px 26px rgba(27,29,81,.3);}
+.results{display:none;background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:30px 0;}
+.results.show{display:block;}
+.results h2{font-family:'Fraunces',serif;color:#fff;margin:0 0 6px;}
+.score-big{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--star);}
+.results table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px;}
+.results th,.results td{padding:7px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.results th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.results .good{color:#7fe0a7;}
+.results .bad{color:#ff9d9d;}
+h2.sec{font-family:'Fraunces',serif;font-weight:600;color:var(--deep);margin:36px 0 12px;}
+.mains{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:0 0 16px;font-size:14.5px;}
+.mains b{color:var(--deep2);}
+.mains .skel{margin-top:10px;padding:12px 14px;background:#FAFBFE;border:1px dashed var(--line-strong);border-radius:10px;font-size:13.5px;color:#33344f;}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:center;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+<div class="eyebrow">Week 3 · UGSSP Format Simulation · Take before Sunday 8 AM</div>
+<h1>Week 3 Mock Test — 50 Questions</h1>
+<p>Exact test format: +2 per correct, −0.66 per wrong, 0 for skipped. 60 minutes. Covers President, Vice-President, Governor, PM &amp; Council of Ministers, and Parliament (structure, legislative process, budget, sessions, privileges).</p>
+<p>Your weak formats are deliberately over-weighted — 8 negative-phrased, 8 "how many", 4 assertion-reason — because that's where your marks are leaking. One question appears twice on purpose. Answer it identically both times.</p>
+</header>
+
+<div class="rules">
+<b>The five rules (from your own Week 1–2 data):</b> (1) On any "NOT correct" question, mark each statement T/F first, then re-read the stem. (2) First pass: max 60 seconds per question — mark and move. (3) See all 50 by minute 45. (4) If you can't eliminate at least two options, <b>skip</b> — a blank beats a wrong answer by 0.66 marks. (5) On "how many of the above": if two or more statements are genuinely unknown to you, skip.
+</div>
+
+<div class="timerbar">
+<span class="t" id="timer">60:00</span>
+<button id="startbtn" type="button">Start timer</button>
+<button id="resetbtn" type="button" class="secondary">Reset &amp; retake</button>
+<label class="shufflewrap"><input type="checkbox" id="shufflechk"> Shuffle on reset</label>
+<span class="note" id="attemptnote">Attempt 1 · simulate honestly, no notes open.</span>
+</div>
+
+<!-- ============ PRESIDENT ============ -->
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q1</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the election of the President of India, consider the following statements:</p>
+<ol class="subs"><li>Nominated members of the Rajya Sabha do not participate in the election.</li><li>Elected members of the Legislative Assemblies of Delhi and Puducherry participate in the election.</li><li>Members of State Legislative Councils participate on par with Assembly members.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q1" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q1" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q1" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q1" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> MLCs never vote in a Presidential election — only elected MPs and elected MLAs (including Delhi &amp; Puducherry, added by the 70th Amendment, 1992). Nominated members of both Parliament and Assemblies are excluded. <b>Note 00, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q2</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The value of votes in a Presidential election is currently computed using the population figures of which Census?</p>
+<label class="opt"><input type="radio" name="q2" value="1">(a) 1951</label>
+<label class="opt"><input type="radio" name="q2" value="2">(b) 1971</label>
+<label class="opt"><input type="radio" name="q2" value="3">(c) 2001</label>
+<label class="opt"><input type="radio" name="q2" value="4">(d) 2011</label>
+<div class="expl"><b>(b).</b> The 1971 Census figures remain frozen for this purpose — a deliberate choice to avoid penalising States that controlled population growth. <b>Note 00, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q3</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the impeachment of the President (Article 61), which of the following statements is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q3" value="1">(a) The charge may be initiated in either House of Parliament.</label>
+<label class="opt"><input type="radio" name="q3" value="2">(b) The resolution requires a two-thirds majority of the total membership of the House.</label>
+<label class="opt"><input type="radio" name="q3" value="3">(c) The only ground is "violation of the Constitution."</label>
+<label class="opt"><input type="radio" name="q3" value="4">(d) The procedure has been used once against a sitting President.</label>
+<div class="expl"><b>(d) is NOT correct</b> — impeachment has never been used against any President. The other three are all accurate. If you picked a correct statement, you fell for exactly your 0%-format trap: the stem asked for the false one. <b>Note 00, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q4</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about eligibility for the office of President:</p>
+<ol class="subs"><li>The candidate must have completed 35 years of age.</li><li>The candidate must be qualified for election as a member of the Lok Sabha.</li><li>A sitting Governor must resign before filing nomination for President.</li><li>A President's resignation is addressed to the Chief Justice of India.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q4" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q4" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q4" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q4" value="4">(d) All four</label>
+<div class="expl"><b>(b).</b> Statements 1 and 2 are correct. Statement 3 is wrong — President, VP, Governor and Minister posts are expressly exempted from "office of profit," so a sitting Governor can contest. Statement 4 is wrong — resignation goes to the Vice-President. <b>Note 00, Sections 01–02.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q5</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The classic instance of the Indian President's "pocket veto" involved which Bill?</p>
+<label class="opt"><input type="radio" name="q5" value="1">(a) Dowry Prohibition Bill, 1961</label>
+<label class="opt"><input type="radio" name="q5" value="2">(b) Indian Post Office (Amendment) Bill, 1986</label>
+<label class="opt"><input type="radio" name="q5" value="3">(c) Prevention of Terrorism Bill, 2002</label>
+<label class="opt"><input type="radio" name="q5" value="4">(d) Banking Service Commission (Repeal) Bill, 1978</label>
+<div class="expl"><b>(b).</b> President Zail Singh simply never acted on it — the Constitution sets no time limit for assent. The other three options are the three joint-sitting Bills (a separate anchor — don't mix the two lists). <b>Note 00, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q6</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to a Money Bill presented to the President, consider the following statements:</p>
+<ol class="subs"><li>The President can withhold assent to a Money Bill.</li><li>The President can return a Money Bill to the Lok Sabha for reconsideration.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q6" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q6" value="2">(b) 2 only</label>
+<label class="opt"><input type="radio" name="q6" value="3">(c) Both 1 and 2</label>
+<label class="opt"><input type="radio" name="q6" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a).</b> No suspensive veto exists for Money Bills — they were introduced only on the President's own prior recommendation, so returning one makes no sense. Withholding assent, though rare, is constitutionally open. <b>Note 00, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q7</span><span class="fmt hot">Assertion–Reason ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem"><b>Statement-I:</b> The President of India may send Cabinet advice back for reconsideration one time, after which the reconsidered advice is binding.<br><b>Statement-II:</b> The 44th Amendment, 1978 inserted this one-time reconsideration window into Article 74.</p>
+<label class="opt"><input type="radio" name="q7" value="1">(a) Both are correct and Statement-II is the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q7" value="2">(b) Both are correct but Statement-II is not the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q7" value="3">(c) Statement-I is correct but Statement-II is incorrect</label>
+<label class="opt"><input type="radio" name="q7" value="4">(d) Statement-I is incorrect but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> The 42nd Amendment (1976) made advice binding; the 44th (1978) added the one-time return valve. Statement-II is precisely the source of the rule in Statement-I — the explanation link holds. Run the drill: truth of I → truth of II → then the link. <b>Note 00, Fig 1.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q8</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs regarding the President's Article 72 power:</p>
+<ol class="subs"><li>Commutation — substitution of one form of punishment for a lighter form</li><li>Remission — reducing the period of a sentence without changing its character</li><li>Respite — temporarily staying the execution of a sentence</li></ol>
+<p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q8" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q8" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q8" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q8" value="4">(d) None</label>
+<div class="expl"><b>(b).</b> Pairs 1 and 2 are correct. Pair 3 describes <i>reprieve</i>; respite means awarding a lesser sentence on special grounds (e.g., pregnancy). The five forms — pardon, commutation, remission, respite, reprieve — are a classic pairs bank. <b>Note 00, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q9</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Which of the following is <b>beyond</b> a State Governor's power under Article 161?</p>
+<label class="opt"><input type="radio" name="q9" value="1">(a) Pardoning a person convicted under a State law</label>
+<label class="opt"><input type="radio" name="q9" value="2">(b) Remitting a sentence for an offence against a State law</label>
+<label class="opt"><input type="radio" name="q9" value="3">(c) Pardoning a death sentence</label>
+<label class="opt"><input type="radio" name="q9" value="4">(d) Granting respite for an offence against a State law</label>
+<div class="expl"><b>(c).</b> Pardoning a death sentence (and anything touching court-martial punishments) is exclusively the President's under Article 72. Everything within State-law offences short of that is within Article 161. <b>Note 00 &amp; Note 01, pardon comparison table.</b></div>
+</div>
+
+<!-- ============ VICE-PRESIDENT ============ -->
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q10</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The electoral college for the Vice-President's election consists of:</p>
+<label class="opt"><input type="radio" name="q10" value="1">(a) Elected members of both Houses of Parliament only</label>
+<label class="opt"><input type="radio" name="q10" value="2">(b) All members of both Houses of Parliament, including nominated members</label>
+<label class="opt"><input type="radio" name="q10" value="3">(c) Members of Parliament and elected members of State Assemblies</label>
+<label class="opt"><input type="radio" name="q10" value="4">(d) Elected members of Parliament and of State Assemblies</label>
+<div class="expl"><b>(b).</b> The inverse of the Presidential election on both counts: MLAs are excluded entirely, and nominated MPs DO vote. This paired asymmetry is the single most likely VP question. <b>Note 00, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q11</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the removal of the Vice-President, consider the following statements:</p>
+<ol class="subs"><li>The removal resolution can originate only in the Rajya Sabha.</li><li>The resolution must state a specific ground, such as violation of the Constitution.</li><li>The Lok Sabha must agree to the resolution for the removal to take effect.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q11" value="1">(a) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q11" value="2">(b) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q11" value="3">(c) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q11" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Unlike the President's Article 61 impeachment, no ground needs to be stated at all for VP removal — RS effective majority + LS simple agreement is the whole process. <b>Note 00, Section 05.</b> (Remember this one — you may see it again.)</div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q12</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">When the office of President falls vacant, a fresh Presidential election must be held within:</p>
+<label class="opt"><input type="radio" name="q12" value="1">(a) 3 months</label>
+<label class="opt"><input type="radio" name="q12" value="2">(b) 6 months</label>
+<label class="opt"><input type="radio" name="q12" value="3">(c) 1 year</label>
+<label class="opt"><input type="radio" name="q12" value="4">(d) The remainder of the outgoing President's term</label>
+<div class="expl"><b>(b).</b> The Vice-President officiates in the interim (and while doing so, does not chair the Rajya Sabha — the Deputy Chairman takes over). <b>Note 00, Section 02.</b></div>
+</div>
+
+<!-- ============ GOVERNOR ============ -->
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q13</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the office of Governor, consider the following statements:</p>
+<ol class="subs"><li>The Governor is appointed by the President by warrant under his hand and seal.</li><li>The same person can be appointed Governor of two or more States.</li><li>The Governor must be a permanent resident of the State to which they are appointed.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q13" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q13" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q13" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q13" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Statement 2 comes from the 7th Amendment, 1956. Statement 3 inverts the actual convention — Governors are conventionally <i>outsiders</i> to the State, and residency is nowhere a legal requirement. <b>Note 01, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q14</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Which of the following statements about the Governor is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q14" value="1">(a) The Governor must be a citizen of India who has completed 35 years of age.</label>
+<label class="opt"><input type="radio" name="q14" value="2">(b) The Governor must be qualified for election to the State Legislative Assembly.</label>
+<label class="opt"><input type="radio" name="q14" value="3">(c) The Governor holds office during the pleasure of the President.</label>
+<label class="opt"><input type="radio" name="q14" value="4">(d) No impeachment-like process exists for removing a Governor.</label>
+<div class="expl"><b>(b) is NOT correct.</b> Unlike the President (who must be Lok Sabha-qualified), Article 157 asks only citizenship + 35 years — no legislative qualification at all. Statements (a), (c), (d) are all true. <b>Note 01, Sections 01–02.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q15</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Compared with the President's options on a Bill, the Governor under Article 200 has one additional option, namely:</p>
+<label class="opt"><input type="radio" name="q15" value="1">(a) An absolute veto</label>
+<label class="opt"><input type="radio" name="q15" value="2">(b) A suspensive veto</label>
+<label class="opt"><input type="radio" name="q15" value="3">(c) Reserving the Bill for the President's consideration</label>
+<label class="opt"><input type="radio" name="q15" value="4">(d) A pocket veto</label>
+<div class="expl"><b>(c).</b> Assent, withhold, and return-for-reconsideration all mirror the President's own options — reservation is the Governor-only fourth path, and deciding to reserve is itself discretionary. <b>Note 01, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q16</span><span class="fmt hot">Assertion–Reason ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem"><b>Statement-I:</b> If a State Legislature re-passes a Bill that the President (on reservation) had returned, the President is not obliged to give assent.<br><b>Statement-II:</b> The forced-assent rule after reconsideration in Article 200 binds the Governor, not the President dealing with a reserved Bill.</p>
+<label class="opt"><input type="radio" name="q16" value="1">(a) Both are correct and Statement-II is the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q16" value="2">(b) Both are correct but Statement-II is not the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q16" value="3">(c) Statement-I is correct but Statement-II is incorrect</label>
+<label class="opt"><input type="radio" name="q16" value="4">(d) Statement-I is incorrect but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> This is the reserved-Bill asymmetry: the Governor's suspensive veto is exhausted by re-passage, but the President's discretion over a reserved Bill never is. Statement-II states exactly why Statement-I holds. <b>Note 01, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q17</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following functions of a Governor:</p>
+<ol class="subs"><li>Reserving a Bill for the consideration of the President</li><li>Recommending the imposition of President's Rule in the State</li><li>Appointing the Advocate General of the State</li><li>Determining royalty amounts payable to autonomous Sixth Schedule district councils</li></ol>
+<p class="stem">How many of the above are exercised as <b>discretionary</b> functions?</p>
+<label class="opt"><input type="radio" name="q17" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q17" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q17" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q17" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> Functions 1, 2 and 4 are discretionary. Appointing the Advocate General is an ordinary executive function done on ministerial advice — the standard "smuggle one routine function into the discretion list" trap. <b>Note 01, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q18</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of cases and their holdings:</p>
+<ol class="subs"><li>S.R. Bommai (1994) — a government's majority must be tested on the floor of the House</li><li>Rameshwar Prasad (2006) — the 2005 Bihar Assembly dissolution was mala fide</li><li>Nabam Rebia (2016) — the Governor may summon the Assembly entirely at his own discretion</li></ol>
+<p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q18" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q18" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q18" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q18" value="4">(d) None</label>
+<div class="expl"><b>(b).</b> Pairs 1 and 2 are right. Nabam Rebia held the <i>opposite</i> of pair 3 — summoning/proroguing is ordinarily on ministerial advice, and internal party dissidence is no ground for the Governor to act alone. <b>Note 01, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q19</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Which Commission recommended that the "during the pleasure of the President" doctrine for Governors be deleted, with removal only through a resolution-based process?</p>
+<label class="opt"><input type="radio" name="q19" value="1">(a) Sarkaria Commission</label>
+<label class="opt"><input type="radio" name="q19" value="2">(b) Punchhi Commission</label>
+<label class="opt"><input type="radio" name="q19" value="3">(c) Rajamannar Committee</label>
+<label class="opt"><input type="radio" name="q19" value="4">(d) Second Administrative Reforms Commission</label>
+<div class="expl"><b>(b).</b> Punchhi (2010) went further than Sarkaria's softer "don't remove before 5 years except rarely" — it proposed deleting the pleasure doctrine outright. Neither has been implemented; Article 156 stands unchanged. <b>Note 01, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q20</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Article 200, which of the following statements is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q20" value="1">(a) The Governor may withhold assent to a Bill.</label>
+<label class="opt"><input type="radio" name="q20" value="2">(b) The Governor may return a non-Money Bill once for reconsideration.</label>
+<label class="opt"><input type="radio" name="q20" value="3">(c) The Governor must reserve every Money Bill for the President's consideration.</label>
+<label class="opt"><input type="radio" name="q20" value="4">(d) The decision to reserve a Bill is exercised in the Governor's discretion.</label>
+<div class="expl"><b>(c) is NOT correct.</b> There is no rule requiring every Money Bill to be reserved — reservation is mandatory only in specific situations (e.g., a Bill endangering the High Court's position), otherwise discretionary. (a), (b), (d) are all true. <b>Note 01, Section 04.</b></div>
+</div>
+
+<!-- ============ PM & COUNCIL OF MINISTERS ============ -->
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q21</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">A person who is not a member of either House of Parliament can remain a Minister for a maximum period of:</p>
+<label class="opt"><input type="radio" name="q21" value="1">(a) 3 months</label>
+<label class="opt"><input type="radio" name="q21" value="2">(b) 6 months</label>
+<label class="opt"><input type="radio" name="q21" value="3">(c) 1 year</label>
+<label class="opt"><input type="radio" name="q21" value="4">(d) No limit, if the Prime Minister so advises</label>
+<div class="expl"><b>(b).</b> Six months to get elected to either House, or the office is lost. The same 6-month figure recurs at State level — one number, two contexts. <b>Note 02, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q22</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the 91st Amendment, 2003, consider the following statements:</p>
+<ol class="subs"><li>The total strength of the Council of Ministers, including the Prime Minister, cannot exceed 15% of the Lok Sabha's total membership.</li><li>For smaller States, the number of Ministers including the Chief Minister cannot be less than 12.</li><li>It barred members disqualified for defection from being appointed Ministers.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q22" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q22" value="2">(b) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q22" value="3">(c) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q22" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(d).</b> All three are correct — the 15% cap (PM counted inside it), the floor of 12 for small States, and the anti-defection linkage all come from the same Amendment. <b>Note 02, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q23</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the Council of Ministers:</p>
+<ol class="subs"><li>The Cabinet is a smaller subset of the full Council of Ministers.</li><li>Ministers of State attend Cabinet meetings as a matter of right.</li><li>Deputy Ministers may hold independent charge of a Ministry.</li><li>Collective responsibility binds Ministers of all three ranks equally.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q23" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q23" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q23" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q23" value="4">(d) All four</label>
+<div class="expl"><b>(b).</b> Statements 1 and 4 are correct. MoS attend Cabinet only when specially invited (2 is wrong); Deputy Ministers never hold independent charge (3 is wrong). <b>Note 02, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q24</span><span class="fmt hot">Assertion–Reason ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem"><b>Statement-I:</b> If a no-confidence motion passes in the Lok Sabha, a Minister of State who never attended a single Cabinet meeting must still resign.<br><b>Statement-II:</b> Article 75(3) makes the Council of Ministers as a whole — not the Cabinet alone — collectively responsible to the Lok Sabha.</p>
+<label class="opt"><input type="radio" name="q24" value="1">(a) Both are correct and Statement-II is the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q24" value="2">(b) Both are correct but Statement-II is not the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q24" value="3">(c) Statement-I is correct but Statement-II is incorrect</label>
+<label class="opt"><input type="radio" name="q24" value="4">(d) Statement-I is incorrect but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> The whole Council sinks or swims together precisely because 75(3) names the Council, not the Cabinet. The explanation link is direct. <b>Note 02, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q25</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Which of the following statements is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q25" value="1">(a) A no-confidence motion against the government can be moved only in the Lok Sabha.</label>
+<label class="opt"><input type="radio" name="q25" value="2">(b) The Rajya Sabha can also remove the government through a no-confidence motion.</label>
+<label class="opt"><input type="radio" name="q25" value="3">(c) Ministers may be drawn from either House of Parliament.</label>
+<label class="opt"><input type="radio" name="q25" value="4">(d) A Minister who is a Rajya Sabha member may speak in the Lok Sabha but cannot vote there.</label>
+<div class="expl"><b>(b) is NOT correct</b> — confidence flows from the directly-elected House only; the Rajya Sabha can embarrass the government but never remove it. (a), (c), (d) are all true. <b>Note 02, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q26</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Who is the ex-officio Chairman of NITI Aayog?</p>
+<label class="opt"><input type="radio" name="q26" value="1">(a) The President of India</label>
+<label class="opt"><input type="radio" name="q26" value="2">(b) The Prime Minister</label>
+<label class="opt"><input type="radio" name="q26" value="3">(c) The Union Finance Minister</label>
+<label class="opt"><input type="radio" name="q26" value="4">(d) The Vice-President</label>
+<div class="expl"><b>(b).</b> And connect the threads: NITI Aayog also nominates a non-voting advisor to each of the five Zonal Councils — the fact that cost you Q16 in Week 2. <b>Note 02, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q27</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">The phrase "during the pleasure of the President" applies to both the Prime Minister and the Governor. Consider the following statements:</p>
+<ol class="subs"><li>A Governor can, in practice, be removed by the Union government at any time without stated reasons.</li><li>A Prime Minister commanding a Lok Sabha majority cannot, in practice, be dismissed by the President.</li><li>The phrase therefore has an identical practical effect for both offices.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q27" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q27" value="2">(b) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q27" value="3">(c) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q27" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Same words, opposite reality: the Governor has no tenure shield at all, while the PM's "pleasure" tracks Lok Sabha confidence. Statement 3 is the giveaway wrong statement. <b>Note 02, Section 01 trap box.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q28</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following roles of the Prime Minister:</p>
+<ol class="subs"><li>Leader of the House in the chamber to which he or she belongs</li><li>Principal channel of communication between the President and the Council of Ministers under Article 78</li><li>Ex-officio Chairman of the Finance Commission</li><li>Recommending dissolution of the Lok Sabha to the President</li></ol>
+<p class="stem">How many of the above are correct?</p>
+<label class="opt"><input type="radio" name="q28" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q28" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q28" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q28" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> 1, 2 and 4 are correct. The Finance Commission is a separate constitutional body (Article 280) constituted by the President — the PM chairs NITI Aayog, not the Finance Commission. Classic body-swap trap. <b>Note 02, Section 02.</b></div>
+</div>
+
+<!-- ============ PARLIAMENT: STRUCTURE ============ -->
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q29</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Under Article 79, the Parliament of India consists of:</p>
+<label class="opt"><input type="radio" name="q29" value="1">(a) The Lok Sabha and the Rajya Sabha</label>
+<label class="opt"><input type="radio" name="q29" value="2">(b) The President, the Lok Sabha and the Rajya Sabha</label>
+<label class="opt"><input type="radio" name="q29" value="3">(c) The President and the Lok Sabha</label>
+<label class="opt"><input type="radio" name="q29" value="4">(d) The Lok Sabha, the Rajya Sabha and the Speaker</label>
+<div class="expl"><b>(b).</b> The President is an integral part of Parliament without being a member of either House — which is exactly why every Bill needs Presidential assent to become law. <b>Note 01 (Parliament), Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q30</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the Rajya Sabha, consider the following statements:</p>
+<ol class="subs"><li>It is a permanent body and is never dissolved.</li><li>One-third of its members retire every second year.</li><li>Its maximum strength provided by the Constitution is 245.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q30" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q30" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q30" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q30" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> The constitutional maximum is <b>250</b> (238 + 12 nominated); 245 is the current actual strength. The one-number difference between "maximum" and "current" is the whole question. <b>Note 01 (Parliament), Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q31</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Rajya Sabha elections, which of the following statements is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q31" value="1">(a) State representatives are elected by the elected MLAs of the State.</label>
+<label class="opt"><input type="radio" name="q31" value="2">(b) A candidate must be a registered elector in the specific State he or she seeks to represent.</label>
+<label class="opt"><input type="radio" name="q31" value="3">(c) The 12 nominated members are drawn from literature, science, art and social service.</label>
+<label class="opt"><input type="radio" name="q31" value="4">(d) Seats are allocated to States broadly on the basis of population.</label>
+<div class="expl"><b>(b) is NOT correct.</b> The State-specific domicile requirement was relaxed — an elector anywhere in India can contest from any State, upheld in <i>Kuldip Nayar v. Union of India</i> (2006). <b>Note 01 (Parliament), Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q32</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The 104th Constitutional Amendment, 2019:</p>
+<label class="opt"><input type="radio" name="q32" value="1">(a) Abolished the nomination of Anglo-Indian members to the Lok Sabha and State Assemblies</label>
+<label class="opt"><input type="radio" name="q32" value="2">(b) Introduced 10% EWS reservation</label>
+<label class="opt"><input type="radio" name="q32" value="3">(c) Froze Lok Sabha delimitation at 1971 Census levels</label>
+<label class="opt"><input type="radio" name="q32" value="4">(d) Reduced the Rajya Sabha's maximum strength</label>
+<div class="expl"><b>(a).</b> EWS was the 103rd (2019); the delimitation freeze came via the 42nd (1976, extended later). Amendment-number swaps between the 103rd and 104th are an easy trap because both are from 2019. <b>Note 01 (Parliament), Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q33</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following minimum-age requirements:</p>
+<ol class="subs"><li>Lok Sabha membership — 25 years</li><li>Rajya Sabha membership — 30 years</li><li>President — 35 years</li><li>Governor — 30 years</li></ol>
+<p class="stem">How many of the pairs given above are correct?</p>
+<label class="opt"><input type="radio" name="q33" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q33" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q33" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q33" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> The Governor's minimum age is 35, not 30. The full ladder: 25 (LS/Assembly) → 30 (RS/Council) → 35 (President, VP, Governor). <b>Notes 00–01 across both topics.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q34</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of body and presiding officer:</p>
+<ol class="subs"><li>Lok Sabha — Speaker</li><li>Rajya Sabha — Vice-President as ex-officio Chairman</li><li>Joint sitting of both Houses — Chairman of the Rajya Sabha</li></ol>
+<p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q34" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q34" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q34" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q34" value="4">(d) None</label>
+<div class="expl"><b>(b).</b> A joint sitting is presided over by the <b>Speaker of the Lok Sabha</b> (then Deputy Speaker, then RS Deputy Chairman) — the RS Chairman never presides over one. <b>Note 01 (Parliament), Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q35</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the Speaker of the Lok Sabha, consider the following statements:</p>
+<ol class="subs"><li>The Speaker votes only in the case of a tie.</li><li>The Speaker's certification of a Bill as a Money Bill is final.</li><li>The Speaker's resignation is addressed to the President.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q35" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q35" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q35" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q35" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Resignation goes to the <b>Deputy Speaker</b> — the "one step down" pattern (President→VP, VP→President, Speaker→Deputy Speaker). <b>Note 01 (Parliament), Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q36</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">How many joint sittings of the two Houses of Parliament have been held so far in India's history?</p>
+<label class="opt"><input type="radio" name="q36" value="1">(a) One</label>
+<label class="opt"><input type="radio" name="q36" value="2">(b) Two</label>
+<label class="opt"><input type="radio" name="q36" value="3">(c) Three</label>
+<label class="opt"><input type="radio" name="q36" value="4">(d) Five</label>
+<div class="expl"><b>(c).</b> Dowry Prohibition Bill (1961), Banking Service Commission (Repeal) Bill (1978), POTA (2002). Memorise the trio as a set. <b>Note 01 (Parliament), Section 04.</b></div>
+</div>
+
+<!-- ============ LEGISLATIVE PROCESS ============ -->
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q37</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to a joint sitting under Article 108, consider the following statements:</p>
+<ol class="subs"><li>It cannot be summoned to resolve a deadlock over a Money Bill.</li><li>It cannot be summoned for a Constitutional Amendment Bill.</li><li>It is presided over by the President.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q37" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q37" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q37" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q37" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Money Bills need no joint sitting (the Lok Sabha wins automatically after 14 days); Amendment Bills must pass each House separately by special majority. The President summons but the Speaker presides. <b>Notes 01–02 (Parliament).</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q38</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The Rajya Sabha must return a Money Bill to the Lok Sabha within:</p>
+<label class="opt"><input type="radio" name="q38" value="1">(a) 10 days</label>
+<label class="opt"><input type="radio" name="q38" value="2">(b) 14 days</label>
+<label class="opt"><input type="radio" name="q38" value="3">(c) 21 days</label>
+<label class="opt"><input type="radio" name="q38" value="4">(d) 30 days</label>
+<div class="expl"><b>(b).</b> With or without recommendations — and if it does nothing for 14 days, the Bill is deemed passed by both Houses anyway. <b>Note 02 (Parliament), Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q39</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to a Financial Bill Category I (Article 117(1)), which of the following statements is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q39" value="1">(a) It can be introduced only in the Lok Sabha.</label>
+<label class="opt"><input type="radio" name="q39" value="2">(b) It contains Article 110 matters along with other general provisions.</label>
+<label class="opt"><input type="radio" name="q39" value="3">(c) The Rajya Sabha's powers over it are limited to a 14-day advisory window.</label>
+<label class="opt"><input type="radio" name="q39" value="4">(d) It requires the President's recommendation for introduction.</label>
+<div class="expl"><b>(c) is NOT correct.</b> That 14-day limitation applies only to true Money Bills. A Financial Bill I follows the ordinary-Bill procedure after introduction — the Rajya Sabha can amend or reject it fully. <b>Note 02 (Parliament), Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q40</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following matters:</p>
+<ol class="subs"><li>Imposition or abolition of a tax</li><li>Regulation of the Union government's borrowing</li><li>Appropriation of money out of the Consolidated Fund of India</li><li>Imposition of fines or fees by a regulatory authority</li></ol>
+<p class="stem">A Bill dealing exclusively with how many of the above qualifies as a Money Bill under Article 110?</p>
+<label class="opt"><input type="radio" name="q40" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q40" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q40" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q40" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> Matters 1–3 are in the Article 110(1) list. Fines, fees and service payments are expressly outside it — a Bill about them is not a Money Bill merely because money changes hands. <b>Note 02 (Parliament), Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q41</span><span class="fmt hot">Assertion–Reason ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem"><b>Statement-I:</b> Passing a wide-ranging law as a Money Bill effectively removes the Rajya Sabha's ability to block or amend it.<br><b>Statement-II:</b> A Bill certified by the Speaker as a Money Bill requires, in effect, only the Lok Sabha's approval to reach the President.</p>
+<label class="opt"><input type="radio" name="q41" value="1">(a) Both are correct and Statement-II is the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q41" value="2">(b) Both are correct but Statement-II is not the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q41" value="3">(c) Statement-I is correct but Statement-II is incorrect</label>
+<label class="opt"><input type="radio" name="q41" value="4">(d) Statement-I is incorrect but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> This is the mechanism behind the Aadhaar Act (2016) Money Bill controversy: certification + the 14-day deemed-passage rule together sideline the Rajya Sabha, which explains exactly why the classification battle matters. <b>Note 02 (Parliament), Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q42</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The notice period required for introducing a Private Member's Bill in Parliament is:</p>
+<label class="opt"><input type="radio" name="q42" value="1">(a) 7 days</label>
+<label class="opt"><input type="radio" name="q42" value="2">(b) 14 days</label>
+<label class="opt"><input type="radio" name="q42" value="3">(c) 1 month</label>
+<label class="opt"><input type="radio" name="q42" value="4">(d) 3 months</label>
+<div class="expl"><b>(c).</b> One month, versus 7 days for a Government Bill — and they are taken up essentially only on Fridays, which is why so few have ever become law. <b>Note 02 (Parliament), Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q43</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to an ordinary Bill, consider the following statements:</p>
+<ol class="subs"><li>It can originate in either House of Parliament.</li><li>It goes through three readings in each House.</li><li>It is deemed passed if the second House takes no action on it for 14 days.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q43" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q43" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q43" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q43" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> The 14-day deemed-passage rule belongs to Money Bills only. For an ordinary Bill, a second House sitting on it for 6+ months is a ground for a joint sitting — not automatic passage. <b>Note 02 (Parliament), Sections 02–03.</b></div>
+</div>
+
+<!-- ============ BUDGET, SESSIONS, PRIVILEGES ============ -->
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q44</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Under Article 85, the maximum permissible gap between two sessions of Parliament is:</p>
+<label class="opt"><input type="radio" name="q44" value="1">(a) 2 months</label>
+<label class="opt"><input type="radio" name="q44" value="2">(b) 3 months</label>
+<label class="opt"><input type="radio" name="q44" value="3">(c) 6 months</label>
+<label class="opt"><input type="radio" name="q44" value="4">(d) 12 months</label>
+<div class="expl"><b>(c).</b> The only hard constitutional rule on session timing — meaning Parliament must meet at least twice a year. The three-sessions-a-year pattern is pure convention. <b>Note 03 (Parliament), Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q45</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements:</p>
+<ol class="subs"><li>Prorogation of a House is done by the President.</li><li>Bills pending in Parliament lapse on prorogation.</li><li>Adjournment sine die is done by the presiding officer of the House.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q45" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q45" value="2">(b) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q45" value="3">(c) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q45" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(b).</b> Pending Bills do NOT lapse on prorogation (pending notices do). Bills lapse only on dissolution, and even then with exceptions — see the next question. <b>Note 03 (Parliament), Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q46</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">On the dissolution of the Lok Sabha, consider the following Bills:</p>
+<ol class="subs"><li>A Bill pending in the Lok Sabha</li><li>A Bill passed by the Lok Sabha but pending in the Rajya Sabha</li><li>A Bill pending in the Rajya Sabha that has not yet been passed by the Lok Sabha</li><li>A Bill passed by both Houses and awaiting the President's assent</li></ol>
+<p class="stem">How many of the above lapse?</p>
+<label class="opt"><input type="radio" name="q46" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q46" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q46" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q46" value="4">(d) All four</label>
+<div class="expl"><b>(b).</b> Bills 1 and 2 lapse. Bill 3 (originating and still sitting in the never-dissolved Rajya Sabha) survives, and Bill 4 (past both Houses) survives. Verify each independently — the format punishes half-knowledge. <b>Note 03 (Parliament), Section 01 trap box.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q47</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the removal of the Vice-President, consider the following statements:</p>
+<ol class="subs"><li>The removal resolution can originate only in the Rajya Sabha.</li><li>The resolution must state a specific ground, such as violation of the Constitution.</li><li>The Lok Sabha must agree to the resolution for the removal to take effect.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q47" value="1">(a) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q47" value="2">(b) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q47" value="3">(c) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q47" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> <b>This question appears twice in this paper, word for word</b> — the deliberate re-run of the Week 2 Q39/Q50 trick. Scroll back and find its twin: if you answered the two differently, that is the exact reflex to fix. A repeated question gets the identical answer, with no re-litigating. <b>Note 00, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q48</span><span class="fmt hot">Negative ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to parliamentary privileges, which of the following statements is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q48" value="1">(a) They remain largely uncodified, resting on the Constitution, House rules, conventions and judicial interpretation.</label>
+<label class="opt"><input type="radio" name="q48" value="2">(b) Article 105 protects freedom of speech within Parliament.</label>
+<label class="opt"><input type="radio" name="q48" value="3">(c) A member's freedom from arrest extends to criminal proceedings during the session.</label>
+<label class="opt"><input type="radio" name="q48" value="4">(d) A House can punish members and outsiders for contempt or breach of privilege.</label>
+<div class="expl"><b>(c) is NOT correct.</b> Freedom from arrest covers <b>civil cases only</b> (session + 40 days either side) — criminal arrest is never protected. This civil/criminal line is the most-tested privileges fact. <b>Note 03 (Parliament), Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q49</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about cut motions:</p>
+<ol class="subs"><li>A Policy Cut motion seeks to reduce a Demand for Grant to Re. 1.</li><li>An Economy Cut motion seeks to reduce the Demand by a specific amount.</li><li>A Token Cut motion seeks to reduce the Demand by Rs. 100 to voice a specific grievance.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q49" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q49" value="2">(b) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q49" value="3">(c) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q49" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(d).</b> All three are the textbook definitions — Re. 1 (policy disapproval), specific amount (economy), Rs. 100 (grievance). Anchor the three numbers as a set. <b>Note 03 (Parliament), Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q50</span><span class="fmt hot">How many ⚠</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following items of expenditure:</p>
+<ol class="subs"><li>Salaries of Supreme Court judges</li><li>Salary of the Comptroller and Auditor General</li><li>Emoluments of the President</li><li>A Ministry's annual Demand for Grants</li></ol>
+<p class="stem">How many of the above are "charged" on the Consolidated Fund of India (discussed but not voted)?</p>
+<label class="opt"><input type="radio" name="q50" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q50" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q50" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q50" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> Items 1–3 are charged — kept outside day-to-day political voting by design. A Ministry's Demand for Grants is the ordinary voted expenditure the whole Budget process exists to scrutinise. <b>Note 03 (Parliament), Section 02.</b></div>
+</div>
+
+<div class="submitrow"><button id="gradebtn" type="button">Submit &amp; Score (+2 / −0.66)</button></div>
+
+<div class="results" id="results">
+<h2>Result</h2>
+<div class="score-big" id="scoreline">—</div>
+<div id="summaryline" style="margin-top:4px;font-size:14px;"></div>
+<table>
+<thead><tr><th>Format</th><th>Right</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Week 2 baseline</th></tr></thead>
+<tbody id="fmtrows"></tbody>
+</table>
+<p style="font-size:13px;color:#C9C6EE;margin-top:14px;">Baselines are your real Week 1+2 combined accuracy per format. Beat the baseline in your ⚠ formats and Sunday takes care of itself. Scroll up — every question now shows the correct answer and the note section to revise.</p>
+
+<div id="histwrap" style="display:none;">
+<h2 style="font-size:19px;margin:22px 0 0;">Attempt history</h2>
+<table class="histtable">
+<thead><tr><th>Attempt</th><th>Score</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Change</th></tr></thead>
+<tbody id="histrows"></tbody>
+</table>
+<p style="font-size:12px;color:#C9C6EE;margin-top:10px;">History is kept for this browser session — it clears if you close or reload the page. What matters is the trend within a sitting: your second attempt should show the ⚠ formats climbing, not the total score (which rises anyway once you've seen the answers).</p>
+</div>
+
+<div class="retakerow">
+<button id="retakebtn" type="button">↻ Retake this test</button>
+<button id="retakeshufflebtn" type="button" class="ghost">↻ Retake with questions shuffled</button>
+</div>
+</div>
+
+<h2 class="sec">Mains practice — write these out by hand, 10 minutes each</h2>
+
+<div class="mains">
+<b>M1.</b> "The President of India is a constitutional head, but not a rubber stamp." Discuss with reference to the situations in which the President exercises genuine discretion. (150 words)
+<div class="skel"><b>Skeleton:</b> Intro — 42nd/44th Amendment arc (advice binding, one return allowed). Body — hung-Parliament PM choice; dismissal of a ministry that lost majority; dissolution advice from a defeated ministry; the Article 74 return valve; pocket-veto timing (Zail Singh, 1986). Conclusion — discretion survives at the edges the text leaves open, which is precisely where constitutional crises occur.</div>
+</div>
+
+<div class="mains">
+<b>M2.</b> The Governor's discretionary space has been progressively narrowed by judicial review rather than constitutional amendment. Examine with reference to S.R. Bommai (1994), Rameshwar Prasad (2006) and Nabam Rebia (2016). (250 words)
+<div class="skel"><b>Skeleton:</b> Intro — Article 163's textual discretion vs. its practical shrinkage. Body — Bommai: floor test + Art 356 reviewability; Rameshwar Prasad: mala fide dissolution struck down (but not undone — note the remedy gap); Nabam Rebia: summoning on advice, not discretion; Punchhi's unimplemented fixed-tenure fix. Conclusion — courts, not Parliament, built the modern limits; the office's accountability question remains open.</div>
+</div>
+
+<div class="mains">
+<b>M3.</b> "The Money Bill route has quietly shifted the balance of bicameralism in India." Critically examine with reference to Article 110 and the Speaker's certification power. (250 words)
+<div class="skel"><b>Skeleton:</b> Intro — Article 110's "exclusively" test. Body — Speaker's final, non-justiciable certification; 14-day deemed passage; the Aadhaar Act 2016 controversy; Rajya Sabha's reduction to an advisory chamber for anything so certified; contrast with Financial Bills I/II where bicameralism survives. Conclusion — a procedural device with structural consequences; reform proposals (judicial reviewability of certification) worth one line.</div>
+</div>
+
+<footer>
+Week 3 Mock Test · UGSSP format simulation · 50 MCQs (+2/−0.66) + 3 Mains<br>
+All questions are self-generated practice built from the Week 3 notes — NOT real UPSC PYQs or leaked test questions.<br>
+Formats deliberately over-weighted to your measured weak patterns (8 Negative, 8 How-many, 4 Assertion–Reason). See AI_KNOWLEDGE_BASE/TEST_INTELLIGENCE.md.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var total = 50;
+  var baselines = { NEGATIVE:'0% (0/6)', HOWMANY:'50% (6/12)', ASSERTION:'40% (2/5)', PAIRS:'75% (3/4)', STATEMENTS:'54% (7/13)', DIRECT:'60% (26/43)' };
+  var timerEl = document.getElementById('timer');
+  var startBtn = document.getElementById('startbtn');
+  var resetBtn = document.getElementById('resetbtn');
+  var shuffleChk = document.getElementById('shufflechk');
+  var attemptNote = document.getElementById('attemptnote');
+  var remaining = 3600, ticking = null;
+  var attempt = 1, history = [];
+  function fmtTime(s){ var m = Math.floor(s/60), r = s%60; return (m<10?'0':'')+m+':'+(r<10?'0':'')+r; }
+  function startTimer(){
+    if (ticking) return;
+    ticking = setInterval(function(){
+      remaining--;
+      timerEl.textContent = fmtTime(Math.max(remaining,0));
+      if (remaining === 900) timerEl.style.color = '#FFB37E';
+      if (remaining <= 0){ clearInterval(ticking); ticking = null; grade(); }
+    }, 1000);
+    startBtn.textContent = 'Running…';
+  }
+  startBtn.addEventListener('click', startTimer);
+
+  function shuffleQuestions(){
+    var qs = Array.prototype.slice.call(document.querySelectorAll('.q'));
+    var anchor = document.querySelector('.submitrow');
+    for (var i = qs.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = qs[i]; qs[i] = qs[j]; qs[j] = t;
+    }
+    qs.forEach(function(q, idx){
+      q.querySelector('.qnum').textContent = 'Q' + (idx + 1);
+      anchor.parentNode.insertBefore(q, anchor);
+    });
+  }
+
+  function resetTest(doShuffle){
+    if (ticking){ clearInterval(ticking); ticking = null; }
+    remaining = 3600;
+    timerEl.textContent = '60:00';
+    timerEl.style.color = '';
+    startBtn.textContent = 'Start timer';
+    delete document.body.dataset.graded;
+    document.querySelectorAll('.q').forEach(function(q){
+      q.classList.remove('graded','right','wrong','skip');
+      q.querySelector('.verdict-chip').textContent = '';
+      q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('correct','chosenwrong'); });
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = false; i.checked = false; });
+    });
+    document.getElementById('results').classList.remove('show');
+    document.getElementById('fmtrows').innerHTML = '';
+    if (doShuffle) shuffleQuestions();
+    attempt++;
+    attemptNote.textContent = 'Attempt ' + attempt + ' · ' + (doShuffle ? 'questions shuffled · ' : '') + 'no notes open.';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  resetBtn.addEventListener('click', function(){ resetTest(shuffleChk.checked); });
+  document.getElementById('retakebtn').addEventListener('click', function(){ resetTest(false); });
+  document.getElementById('retakeshufflebtn').addEventListener('click', function(){ resetTest(true); });
+
+  function renderHistory(){
+    if (history.length < 1) return;
+    document.getElementById('histwrap').style.display = 'block';
+    var rows = document.getElementById('histrows');
+    rows.innerHTML = '';
+    history.forEach(function(h, i){
+      var delta = '—';
+      if (i > 0){
+        var d = h.score - history[i-1].score;
+        delta = '<span class="' + (d >= 0 ? 'up' : 'down') + '">' + (d >= 0 ? '+' : '') + d.toFixed(2) + '</span>';
+      }
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + h.n + '</td><td>' + h.score.toFixed(2) + '</td><td>' + h.right + '</td><td>' + h.wrong +
+                     '</td><td>' + h.skip + '</td><td>' + h.acc + '%</td><td>' + delta + '</td>';
+      rows.appendChild(tr);
+    });
+  }
+
+  function grade(){
+    if (document.body.dataset.graded) return;
+    document.body.dataset.graded = '1';
+    if (ticking) clearInterval(ticking);
+    var score = 0, right = 0, wrong = 0, skip = 0;
+    var fmtAgg = {};
+    var qs = document.querySelectorAll('.q');
+    qs.forEach(function(q, idx){
+      var ans = q.getAttribute('data-ans');
+      var fmt = q.getAttribute('data-fmt');
+      if (!fmtAgg[fmt]) fmtAgg[fmt] = {r:0,w:0,s:0};
+      var chosen = q.querySelector('input:checked');
+      var chip = q.querySelector('.verdict-chip');
+      q.classList.add('graded');
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var inp = opt.querySelector('input');
+        if (inp.value === ans) opt.classList.add('correct');
+      });
+      if (!chosen){
+        skip++; fmtAgg[fmt].s++;
+        q.classList.add('skip'); chip.textContent = 'SKIPPED · 0';
+      } else if (chosen.value === ans){
+        right++; score += 2; fmtAgg[fmt].r++;
+        q.classList.add('right'); chip.textContent = 'CORRECT · +2';
+      } else {
+        wrong++; score -= 0.66; fmtAgg[fmt].w++;
+        q.classList.add('wrong'); chip.textContent = 'WRONG · −0.66';
+        chosen.closest('.opt').classList.add('chosenwrong');
+      }
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = true; });
+    });
+    var res = document.getElementById('results');
+    res.classList.add('show');
+    var acc = (right+wrong ? Math.round(100*right/(right+wrong)) : 0);
+    document.getElementById('scoreline').textContent = score.toFixed(2) + ' / 100';
+    document.getElementById('summaryline').textContent =
+      'Attempt ' + attempt + ' — ' + right + ' correct · ' + wrong + ' wrong (−' + (wrong*0.66).toFixed(2) + ' marks) · ' + skip + ' skipped. Accuracy on attempts: ' + acc + '%.';
+    history.push({ n: attempt, score: score, right: right, wrong: wrong, skip: skip, acc: acc });
+    renderHistory();
+    var rows = document.getElementById('fmtrows');
+    var order = ['NEGATIVE','HOWMANY','ASSERTION','PAIRS','STATEMENTS','DIRECT'];
+    order.forEach(function(f){
+      var a = fmtAgg[f] || {r:0,w:0,s:0};
+      var att = a.r + a.w;
+      var acc = att ? Math.round(100*a.r/att) + '%' : '—';
+      var cls = att && (a.r/att) >= 0.7 ? 'good' : (att ? 'bad' : '');
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + f + '</td><td>' + a.r + '</td><td>' + a.w + '</td><td>' + a.s + '</td><td class="' + cls + '">' + acc + '</td><td>' + (baselines[f] || '—') + '</td>';
+      rows.appendChild(tr);
+    });
+    res.scrollIntoView({behavior:'smooth'});
+  }
+  document.getElementById('gradebtn').addEventListener('click', grade);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# --- Large scanned plan PDFs (already extracted into notes) ---
+# These are 34-42 MB image scans. Excluding them keeps the repo ~27 MB
+# instead of ~139 MB, which matters on mobile data.
+UPSC-CSE/GS Paper II/Week 2 Plan/Schedule - Polity Week 2-2 (2).pdf
+UPSC-CSE/GS Paper II/Week 3 Plan/week 3 polity plan.pdf
+UPSC-CSE/GS Paper II/Week 4 Plan/Week 4 plan.pdf
+
+# --- Working files, not content ---
+_archive/
+*_files/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- OneDrive artefacts ---
+*.tmp
+~$*

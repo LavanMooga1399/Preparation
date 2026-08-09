@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal System | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Syllabus placement</button>
+<button class="notetab" data-tab="s2">02 · Federal features</button>
+<button class="notetab" data-tab="s3">03 · Unitary features</button>
+<button class="notetab" data-tab="s4">04 · Critical evaluation</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 2 of 9 · Note 01 — opens the series</div>
+<h1>Federal System</h1>
+<p class="sub">Senior-mentor notes on why India is called quasi-federal — the federal features that make it a Union of States, the unitary features that give the Centre an unmistakable upper hand, and the four scholarly labels UPSC keeps testing as a matching exercise.</p>
+<div class="chips">
+<span class="chip">Union of States</span>
+<span class="chip">Quasi-Federal</span>
+<span class="chip">S.R. Bommai (1994)</span>
+<span class="chip">Wheare · Austin · Jennings</span>
+<span class="chip">Article 1</span>
+</div>
+<div class="bignum"><b>1950</b><span>Constitution silent on the word "federation"</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this note exists</div>
+<p>Topic 2's official syllabus line bundles three distinct examinable units into one sentence — this is the first of a three-note series (Week 2, Days 4–6 of the study plan) that unpacks it. This note covers the "issues and challenges pertaining to the federal structure" element: what makes India federal, what makes it unitary, and why every serious scholar has needed a hyphenated label to describe the mix.</p>
+<p>Notes 02 (Centre-State Relations) and 03 (Inter-State Relations) build directly on the vocabulary fixed here — read this one first.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Countries generally organise power in one of two shapes. In a <b>unitary</b> country (Britain, France), all real power sits with one central government, which can create, reshape, or abolish local/regional governments at will — the regions have no independent existence of their own. In a genuinely <b>federal</b> country (the USA, classically), power is constitutionally divided between a central government and separately-sovereign states, neither of which can simply overrule or abolish the other — the states pre-existed the union and agreed to join it, so the union cannot dissolve them.</p>
+<p>India doesn't fit cleanly into either box, and this note exists entirely because of that mismatch. India clearly looks federal on paper — there is a Union government and separate State governments, each with its own powers, and a written Constitution splitting subjects between them (Section 02 below). But look closer and the Centre keeps a genuinely unitary-style upper hand: it can redraw a State's boundaries by ordinary law, it controls the officers who run State administration, and in an emergency it can simply take over a State's government outright (Section 03). India is a hybrid — federal in form, but with the Centre holding stronger cards than a "pure" federation like the USA would allow.</p>
+<p>Because no single word captures that hybrid cleanly, four different scholars each coined their own label for it (Section 04) — and because India itself refuses to even use the word "federation" in its own text, calling itself a "Union of States" instead (Article 1), this entire note is really one long answer to a single question: exactly how federal is India, and exactly where does the Centre still win?</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 2 note series —</b>
+<span class="done">✓ 01 Federal System (this file)</span> · <span class="done">✓ 02 Centre-State Relations</span> · <span class="done">✓ 03 Inter-State Relations</span> · <span class="todo">○ 04 Devolution of Powers &amp; Finances to Local Bodies (73rd/74th Amendment — not yet built, the syllabus line's fourth element)</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 : SYLLABUS PLACEMENT ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Where this fits &amp; the logical chain</h2></div>
+<hr class="divider">
+<p class="lead">Topic 2's official syllabus line reads: <b>"Functions and responsibilities of the Union and the States, issues and challenges pertaining to the federal structure, devolution of powers and finances up to local levels and challenges therein."</b> Four comma-separated elements, mapped across this series:</p>
+
+<div class="pgrid">
+<div class="item"><span class="dot">1</span><div><b>Issues &amp; challenges pertaining to the federal structure</b> — this note (01): federal vs unitary features, quasi-federal debate.</div></div>
+<div class="item"><span class="dot">2</span><div><b>Functions &amp; responsibilities of the Union and the States</b> — Note 02: legislative, administrative and financial relations mechanics.</div></div>
+<div class="item"><span class="dot">3</span><div><b>Federal-structure issues, inter-state dimension</b> — Note 03: water disputes, Inter-State Council, Zonal Councils, trade &amp; commerce.</div></div>
+<div class="item"><span class="dot">4</span><div><b>Devolution of powers &amp; finances to local levels</b> — Panchayati Raj / 73rd &amp; 74th Amendments, not yet built; flagged honestly rather than skipped silently.</div></div>
+</div>
+
+<div class="tip">
+<span class="ic">🔗</span>
+<p><b>Logical chain:</b> Federal System (this file — the vocabulary: what "federal" and "unitary" mean, and India's blend) → Centre-State Relations (Note 02 — the vocabulary applied to actual legislative/admin/financial powers) → Inter-State Relations (Note 03 — the same federal structure, but state-to-state rather than Centre-to-state).</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 : FEDERAL FEATURES ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Federal features of the Indian Constitution</h2></div>
+<hr class="divider">
+<p class="lead">A federation, classically, is a system where power is constitutionally divided between a central authority and constituent units, each supreme within its own sphere. India's Constitution builds in six of the standard federal markers — though, as Section 03 shows, each one is quietly qualified.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Federal feature</th><th>How it shows up in India</th></tr></thead>
+<tbody>
+<tr><th>Dual polity</th><td>A Union government and State governments, each with its own executive, legislature and judiciary-facing powers.</td></tr>
+<tr><th>Division of powers</th><td>The Seventh Schedule splits subjects into Union, State and Concurrent Lists (Note 02 covers this mechanically).</td></tr>
+<tr><th>Written Constitution</th><td>The longest written constitution in the world — the basic document from which both Centre and States derive their powers.</td></tr>
+<tr><th>Supremacy of the Constitution</th><td>Laws inconsistent with the Constitution, whether Union or State, are void (Article 13).</td></tr>
+<tr><th>Rigidity</th><td>Federal provisions (Article 368's Route 3 — Note 05, Topic 1) need State ratification to amend, protecting the federal balance from unilateral Union change.</td></tr>
+<tr><th>Independent judiciary &amp; bicameralism</th><td>A single integrated judiciary adjudicates Centre-State disputes; the Rajya Sabha exists to represent the States at the Union level.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip">
+<span class="ic">◆</span>
+<p><b>Article 1 framing:</b> The Constitution never uses the word "federation." Article 1 instead declares India "a Union of States" — deliberately signalling, per the Constituent Assembly debates, that the units did not come together by agreement (unlike the USA) and cannot secede from it.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 03 : UNITARY FEATURES ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Unitary features of the Indian Constitution</h2></div>
+<hr class="divider">
+<p class="lead">Every federal feature above is matched by a centralising counterweight — this is the half of the note Prelims tests most aggressively, because "which of these is NOT a federal feature" questions are usually really asking "which of these is actually a unitary feature in disguise."</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Unitary feature</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><th>Strong Centre</th><td>The Union List has more, and more important, subjects than the State List; residuary powers also rest with the Union (unlike the USA, where they rest with the states).</td></tr>
+<tr><th>States not indestructible</th><td>Parliament can alter a State's boundaries, name or area by simple majority (Articles 2–4, Note 03 of Topic 1) — states have no guaranteed territorial integrity.</td></tr>
+<tr><th>Single Constitution</th><td>Except Jammu &amp; Kashmir's now-repealed special position, no State has its own separate constitution — unlike the USA, where each state has one.</td></tr>
+<tr><th>Single citizenship</th><td>One Indian citizenship for the whole country, not separate State citizenships (unlike the USA).</td></tr>
+<tr><th>Flexibility</th><td>Most of the Constitution can be amended by Parliament alone (Route 1 &amp; 2, Note 05 of Topic 1) — only federal provisions need State ratification.</td></tr>
+<tr><th>Integrated judiciary</th><td>One hierarchy of courts enforces both Union and State laws — the US has separate state and federal court systems.</td></tr>
+<tr><th>All-India Services</th><td>IAS, IPS and IFoS officers serve the States but are recruited, trained and ultimately controlled by the Union.</td></tr>
+<tr><th>Governor as Union agent</th><td>Appointed by the President, not elected — often read as the Centre's watching brief over State administration.</td></tr>
+<tr><th>Emergency provisions</th><td>Articles 352, 356 and 360 let the Union, in defined circumstances, override the federal division of power entirely and govern a State directly.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : CRITICAL EVALUATION ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Critical evaluation — the scholarly labels</h2></div>
+<hr class="divider">
+<p class="lead">Because the federal and unitary columns above are both genuinely long, no single word describes India's system cleanly — four scholars have each proposed their own label, and UPSC has tested the matching between scholar and label directly.</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 800 210" role="img" aria-label="Four scholarly characterisations of Indian federalism">
+<g font-family="Inter" font-size="12">
+<rect x="10" y="10" width="380" height="85" rx="10" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.5"/>
+<text x="200" y="35" text-anchor="middle" font-weight="700" fill="#134b59">K.C. Wheare — "Quasi-Federal"</text>
+<text x="200" y="56" text-anchor="middle" font-size="10.5" fill="#134b59">"A unitary state with subsidiary federal</text>
+<text x="200" y="72" text-anchor="middle" font-size="10.5" fill="#134b59">features, rather than the reverse."</text>
+
+<rect x="410" y="10" width="380" height="85" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="600" y="35" text-anchor="middle" font-weight="700" fill="#8a5c00">Granville Austin — "Cooperative Federalism"</text>
+<text x="600" y="56" text-anchor="middle" font-size="10.5" fill="#8a5c00">Strong Union alongside genuinely</text>
+<text x="600" y="72" text-anchor="middle" font-size="10.5" fill="#8a5c00">functioning, not merely agency, States.</text>
+
+<rect x="10" y="115" width="380" height="85" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="200" y="140" text-anchor="middle" font-weight="700" fill="#7a1f66">Ivor Jennings — "Centralising Tendency"</text>
+<text x="200" y="161" text-anchor="middle" font-size="10.5" fill="#7a1f66">Mainly federal, with unique safeguards</text>
+<text x="200" y="177" text-anchor="middle" font-size="10.5" fill="#7a1f66">built in for national unity &amp; growth.</text>
+
+<rect x="410" y="115" width="380" height="85" rx="10" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.5"/>
+<text x="600" y="140" text-anchor="middle" font-weight="700" fill="#177a4d">W.H. Morris-Jones — "Bargaining Federalism"</text>
+<text x="600" y="161" text-anchor="middle" font-size="10.5" fill="#177a4d">States negotiate with the Centre for</text>
+<text x="600" y="177" text-anchor="middle" font-size="10.5" fill="#177a4d">resources and powers, rather than obey it.</text>
+</g>
+</svg>
+<figcaption><b>Fig 1.</b> All four labels are trying to name the same tension — a written federal division of power operating inside a deliberately strong Centre.</figcaption>
+</div></figure>
+
+<div class="tip">
+<span class="ic">◆</span>
+<p><b>Value-addition — S.R. Bommai v. Union of India (1994):</b> the Supreme Court held that federalism is part of the Constitution's Basic Structure (Note 06, Topic 1) and cannot be amended away — the strongest judicial statement that, whatever label scholars prefer, India's federal character is constitutionally permanent, not merely a policy choice Parliament could reverse. The same judgment restricted the misuse of Article 356 (President's Rule) by holding it justiciable.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>What President's Rule actually does — the three-part effect of an Article 356 proclamation (a Week 2 question tested this precisely).</b> When constitutional machinery in a State fails, the President can: <b>(1)</b> assume to himself the functions of the <b>State government and the powers of the Governor</b> (in practice the Governor administers as the President's agent); <b>(2)</b> declare that the powers of the <b>State Legislature shall be exercised by Parliament</b> (Parliament may in turn delegate this to the President); and <b>(3)</b> make incidental provisions. The hard limit — the trap option: the President <b>cannot assume the powers of the High Court</b> or suspend any constitutional provision relating to it. The judiciary stays entirely outside President's Rule.</p>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Common trap:</b> "Quasi-federal" is Wheare's phrase specifically — do not attribute it to Austin, Jennings or Morris-Jones in a matching question. Several online compilations disagree on which scholar said what; the pairing used here (Wheare–quasi-federal, Austin–cooperative, Jennings–centralising tendency, Morris-Jones–bargaining) is the one that recurs most consistently across independent sources and matches the standard Laxmikanth framing — hold this version as the default.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Recent-judgment layer — federalism's three live battlegrounds.</b> <b>(1) In re: Article 370 (Dec 2023):</b> upheld the special-status abrogation, holding J&amp;K possessed no internal sovereignty distinct from other States — simultaneously a win for the "indestructible Union" reading and fresh evidence for the strong-Centre critique (full detail: Topic 1, Note 03). <b>(2) Government of NCT of Delhi v. Union of India (May 2023):</b> a Constitution Bench held Delhi's elected government controls "services" (bureaucracy) in NCT outside land/police/public order — grounding it in a "federal, representative democracy" principle; Parliament responded within months with the GNCTD (Amendment) Act, 2023 creating an LG-dominated services authority, whose challenge is pending — a textbook legislature-vs-court federalism cycle. <b>(3) State of Kerala v. Union of India (2024):</b> Kerala's original suit (Article 131) claiming Union-imposed net-borrowing ceilings violate its fiscal autonomy was referred to a Constitution Bench — putting <b>fiscal federalism</b> (borrowing limits, cess/surcharge exclusion from the divisible pool) squarely into justiciable territory. Any Mains answer on "federalism under strain" should draw one example from each: territorial (370), administrative (Delhi), fiscal (Kerala).</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 : PYQ ANALYSIS ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>PYQ analysis</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> Prelims tests this note as a "which of these is NOT a federal feature" or "identify the unitary feature" statement-MCQ — confirmed genuine in 2017. The scholar-label matching format (Section 04) is a recurring Prelims pattern across multiple recent cycles, though this note cites only the pairing that could be cross-verified, per the integrity note below.</p>
+
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">Prelims</span>
+<p class="qtext">"Which one of the following is not a feature of Indian federalism?"</p><ul class="opts single"><li>(a) independent judiciary</li><li>(b) powers clearly divided between Centre and States</li><li>(c) unequal representation of federating units in the Rajya Sabha</li><li>(d) it is the result of an agreement among the federating units</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit — Ans. (d)</b>
+<ul class="vwhy"><li>The Indian Union was <b>not formed by agreement among States</b>, unlike the USA — it was created by the Constitution, not by a compact between pre-existing sovereign units.</li><li>See Section 02’s Article 1 framing above: "Union of States", deliberately chosen by Ambedkar over "Federation".</li></ul>
+</div>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Integrity note:</b> Research for this note found a frequently-circulated "match the scholar to the label" MCQ (Wheare/Austin/Jennings/Morris-Jones) attributed to UPSC Prelims by several coaching-site compilations, but no source could pin the exact year or confirm it against an official paper — it is presented here only as a well-known <i>practice-style</i> question pattern (bucket D), not a confirmed genuine PYQ, and is deliberately not given a year tag.</p>
+</div>
+
+<h3>Predicted Questions — reverse-engineered for Week 2 (not real PYQs, exam-pattern practice)</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following is <b>NOT</b> a federal feature of the Indian Constitution?</p><ul class="opts single"><li>(a) Division of powers via the Seventh Schedule</li><li>(b) A written, supreme Constitution</li><li>(c) Single citizenship for the whole country</li><li>(d) An independent judiciary settling Centre-State disputes</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT federal</b>
+<p class="vone">Single citizenship is one of the classic unitary features; genuine federations like the USA pair national with state citizenship.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) S.R. Bommai held federalism to be part of the basic structure</li><li>(b) Article 356's use is judicially reviewable post-Bommai</li><li>(c) The word "federation" is used in Article 1 to describe India</li><li>(d) Wheare described India as "quasi-federal."</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">Article 1 deliberately says "Union of States"; the word "federation" appears nowhere in the Constitution.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following:</p><ol class="subs"><li>The Article 370 judgment (2023) held J&amp;K retained no internal sovereignty distinct from other States</li><li>The 2023 Delhi services judgment gave the elected NCT government control over land and police</li><li>Kerala's suit against Union borrowing ceilings was referred to a Constitution Bench</li></ol><p class="qtext">How many statements are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 3)</b>
+<p class="vone">Delhi's control over services expressly EXCLUDES land, police and public order (Section 04's recent-judgment box).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> India is often called an "indestructible Union of destructible States." <b>Statement-II:</b> Parliament can alter any State's area, boundaries or name by simple majority under Article 3, but no State can secede. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">Statement-II is exactly the mechanism that makes States "destructible" while the Union stays indestructible.</p>
+</div>
+</div>
+<p class="lead">Built from the same statement-counting, elimination and match-the-pairs archetypes the Week 1 test used repeatedly — see the Battle Plan note for the full pattern playbook.</p>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Consider the following features of the Indian Constitution:</p><ol class="subs"><li>single citizenship</li><li>an integrated judiciary</li><li>a written Constitution</li><li>a Governor appointed by the President, not elected</li></ol><p class="qtext">How many of the above are <i>unitary</i>, not federal, features?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (c) Only three</b>
+<p class="vone">(1), (2) and (4) are unitary features from Section 03's table; a written Constitution (3) is itself one of the six federal markers in Section 02, the trap being to assume everything "structural" must be unitary.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ — match the pairs</span>
+<p>Match the scholar to the label they used for India's federal character: (1) K.C. Wheare (2) Granville Austin (3) Ivor Jennings (4) W.H. Morris-Jones — with (i) Cooperative Federalism (ii) Bargaining Federalism (iii) Quasi-Federal (iv) Centralising Tendency.</p>
+<div class="verdict">
+<b class="vans">Predicted answer: 1-iii, 2-i, 3-iv, 4-ii</b>
+<p class="vone">Exactly Section 04's table. This exact match-pairs shape (four scholars, four labels) is the most-recycled coaching-test format for this topic; hold the pairing precisely, since several online compilations misattribute it.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to S.R. Bommai v. Union of India (1994), consider the following statements:</p><ol class="subs"><li>it held that federalism is part of the Constitution's Basic Structure</li><li>it made the use of Article 356 (President's Rule) justiciable</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: both correct</b>
+<ul class="vwhy"><li>Section 04's value-addition box. A natural assertion-reason variant: "Statement I: Article 356 is a purely political/executive power.</li><li>Statement II: courts cannot examine the grounds for its use." Both statements would be false post-Bommai — a classic trap-in-reverse.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Which of the following is a genuinely <i>federal</i> (not unitary) feature of the Indian Constitution?</p><ul class="opts single"><li>(a) residuary powers vest with the Union</li><li>(b) Parliament can alter a State's boundaries by simple majority</li><li>(c) federal provisions of the Constitution require State ratification to amend</li><li>(d) All-India Services are Union-controlled but State-serving</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (c)</b>
+<p class="vone">Article 368's Route 3 (Note 05, Topic 1) is the one mechanism in this note's federal column that genuinely limits unilateral Union action; (a), (b) and (d) are all unitary features from Section 03.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M16</span><span class="prac">Practice</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Is 'quasi-federal' still the most accurate description of Indian federalism, given the rise of cooperative and competitive federalism?</p>
+<div class="meta">
+<div class="box dir"><b>Directive: a direct question demanding a judgement.</b> Treat as "evaluate" — weigh the label against current reality and deliver a verdict. Do not merely list federal and unitary features; the question is about the <i>adequacy of a label</i>.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Wheare's label + why it stuck</li><li>Why it still holds</li><li>What has changed since</li><li>Verdict on the label</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>K.C. Wheare</b> called India "quasi-federal" — a unitary State with subsidiary federal features — because the Constitution combines a federal division of powers with an unmistakably strong Centre.</p>
+<p><span class="sh">Why the label still holds</span></p>
+<p><b>Article 1</b> calls India a "Union of States"; States cannot secede and their boundaries may be altered by simple majority under <b>Article 3</b>; the Union dominates legislatively through <b>Articles 249, 250, 252, 253</b> and the repugnancy rule in <b>254</b>; <b>Article 356</b> permits President's Rule; and single citizenship, an integrated judiciary and All-India Services (<b>Article 312</b>) all cut against classical federalism.</p>
+<p><span class="sh">What has changed</span></p>
+<p><b>S.R. Bommai (1994)</b> made federalism part of the basic structure and Article 356 justiciable. Coalition politics after 1989 gave States real bargaining power. The <b>GST Council (Art 279A)</b>, the <b>Inter-State Council (Art 263)</b> and NITI Aayog created negotiated decision-making.</p>
+<p><span class="sh">Verdict</span></p>
+<p>"Quasi-federal" remains accurate for the <i>text</i> but incomplete for the <i>practice</i>. Austin's "cooperative federalism" and Morris-Jones's "bargaining federalism" capture the working reality better: a strong-Centre federation with negotiated politics.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Wheare's label · Arts 1 / 3 / 249 / 250 / 252 / 253 / 254 / 356 / 312 / 279A / 263 · Bommai (1994) · Austin · Morris-Jones · the 1989 coalition turn.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 163 / 150 words.</b> <b>Cut:</b> the competitive-federalism clause (covered fully in M18) and the closing restatement of text-versus-practice. <b>Bought:</b> nothing new — length only, 226 → budget. Eleven Articles and three named authorities inside 150 words is already dense; anything added would have to displace an Article, which is a bad trade in a federalism question.</div>
+<div class="cost"><b>What would cost you marks:</b> listing federal vs unitary features without answering whether the <i>label</i> still fits; attributing "quasi-federal" to the wrong scholar — a standing pairs trap.</div>
+</div>
+
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">◆ One-page recall sheet</span>
+<h2>Last-mile revision — Federal System</h2>
+<ul>
+<li>Article 1: India is a "Union of States" — the word "federation" never appears in the Constitution.</li>
+<li>Federal features: dual polity, division of powers (7th Schedule), written &amp; supreme Constitution, rigidity for federal provisions, independent judiciary, bicameralism.</li>
+<li>Unitary features: strong Centre, states not indestructible, single Constitution &amp; citizenship, flexible amendment for most provisions, integrated judiciary, All-India Services, Governor as Union appointee, emergency provisions (Arts 352/356/360).</li>
+<li>Residuary powers rest with the <b>Union</b> in India — opposite of the USA, where they rest with the states.</li>
+<li>Wheare → <b>Quasi-federal.</b> Austin → <b>Cooperative federalism.</b> Jennings → <b>Centralising tendency.</b> Morris-Jones → <b>Bargaining federalism.</b></li>
+<li><b>S.R. Bommai (1994):</b> federalism is Basic Structure; Article 356 is justiciable.</li>
+<li>Genuine Prelims repeater: 2017, "which is NOT a federal feature" — answer, no agreement among federating units.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Next:</b> Note 02 — Centre-State Relations, applying this note's federal/unitary vocabulary to the actual legislative, administrative and financial powers split between the Union and the States.
+</div>
+</section>
+
+<nav class="tabflow" id="tabflow">
+<button class="tabflow-btn tabflow-prev" id="tabflowPrev" type="button">
+<span class="tabflow-dir">&#8592; Previous</span>
+<span class="tabflow-label" id="tabflowPrevLabel"></span>
+</button>
+<button class="tabflow-btn tabflow-next" id="tabflowNext" type="button">
+<span class="tabflow-dir">Next &#8594;</span>
+<span class="tabflow-label" id="tabflowNextLabel"></span>
+</button>
+</nav>
+
+<footer>
+Federal System — Topic 2 of 9, Polity &amp; Constitution cluster, GS Paper II (Mains) · Note 1 of 3 in this Topic<br>
+Facts cross-checked against publicly available sources; PYQs never fabricated — see integrity note in Section 05.
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.notetab'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.tabsection'));
+  var ids = sections.map(function(s){ return s.id; });
+
+  var flowPrev = document.getElementById('tabflowPrev');
+  var flowNext = document.getElementById('tabflowNext');
+  var flowPrevLabel = document.getElementById('tabflowPrevLabel');
+  var flowNextLabel = document.getElementById('tabflowNextLabel');
+
+  function tabLabel(id){
+    var match = tabs.filter(function(t){ return t.dataset.tab === id; })[0];
+    return match ? match.textContent.trim() : '';
+  }
+
+  function updateTabflow(id){
+    if (!flowPrev || !flowNext) return;
+    var idx = ids.indexOf(id);
+    if (idx > 0) {
+      flowPrev.disabled = false;
+      flowPrev.dataset.target = ids[idx - 1];
+      flowPrevLabel.textContent = tabLabel(ids[idx - 1]);
+    } else {
+      flowPrev.disabled = true;
+      flowPrev.removeAttribute('data-target');
+      flowPrevLabel.textContent = '';
+    }
+    if (idx > -1 && idx < ids.length - 1) {
+      flowNext.disabled = false;
+      flowNext.dataset.target = ids[idx + 1];
+      flowNextLabel.textContent = tabLabel(ids[idx + 1]);
+    } else {
+      flowNext.disabled = true;
+      flowNext.removeAttribute('data-target');
+      flowNextLabel.textContent = '';
+    }
+  }
+
+  function activate(id, doScroll){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+    sections.forEach(function(s){ s.classList.toggle('active', s.id === id); });
+    if (doScroll) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    updateTabflow(id);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      activate(t.dataset.tab, true);
+      history.replaceState(null, '', '#' + t.dataset.tab);
+    });
+  });
+  [flowPrev, flowNext].forEach(function(btn){
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      if (btn.disabled || !btn.dataset.target) return;
+      activate(btn.dataset.target, true);
+      history.replaceState(null, '', '#' + btn.dataset.target);
+    });
+  });
+  var initial = (location.hash || '').replace('#','');
+  if (ids.indexOf(initial) === -1) initial = ids[0];
+  if (initial) activate(initial, false);
+})();
+</script>
+
+</div>
+</div>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

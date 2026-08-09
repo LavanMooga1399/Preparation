@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 Mock Test — UGSSP Format | 50 Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A; --green:#177a4d; --red:#c22525;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15.5px;line-height:1.6;}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 90px;}
+.hero{margin:0 -20px 30px;padding:44px 34px 38px;background:linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);color:#fff;border-radius:0 0 24px 24px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--star);margin-bottom:12px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,5vw,40px);margin:0 0 12px;}
+.hero p{max-width:640px;font-size:14.5px;color:#D9D9F2;margin:0 0 8px;}
+.rules{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:18px 20px;margin:0 0 24px;font-size:14px;color:#33344f;}
+.rules b{color:var(--deep);}
+.timerbar{position:sticky;top:0;z-index:50;background:var(--deep);color:#fff;border-radius:0 0 14px 14px;padding:10px 18px;display:flex;align-items:center;gap:16px;margin:0 0 24px;box-shadow:0 8px 22px rgba(27,29,81,.3);}
+.timerbar .t{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--star);min-width:96px;}
+.timerbar button{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.06em;background:var(--gold);color:#3a2a00;border:0;border-radius:9px;padding:9px 16px;cursor:pointer;}
+.timerbar button.secondary{background:rgba(255,255,255,.14);color:#EDECFF;}
+.timerbar button.secondary:hover{background:rgba(255,255,255,.24);}
+.timerbar .note{font-size:12px;color:#C9C6EE;}
+.timerbar .shufflewrap{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#C9C6EE;display:flex;align-items:center;gap:5px;cursor:pointer;}
+@media(max-width:760px){.timerbar{flex-wrap:wrap;gap:8px;}.timerbar .note{width:100%;}}
+.histtable{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px;}
+.histtable th,.histtable td{padding:6px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.histtable th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.histtable .up{color:#7fe0a7;}
+.histtable .down{color:#ff9d9d;}
+.retakerow{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+.retakerow button{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;letter-spacing:.06em;border:0;border-radius:10px;padding:11px 20px;cursor:pointer;background:var(--star);color:#3a2a00;}
+.retakerow button.ghost{background:rgba(255,255,255,.14);color:#EDECFF;}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;}
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.qnum{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;color:#fff;background:var(--deep2);border-radius:18px;padding:3px 11px;}
+.fmt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:14px;padding:2px 9px;}
+.fmt.hot{color:var(--nebula);border-color:#EBC4DE;background:var(--nebula-soft);}
+.q p.stem{margin:6px 0 10px;color:#22233d;}
+.q ol.subs{margin:0 0 10px 20px;padding:0;color:#33344f;}
+.q ol.subs li{margin:3px 0;}
+.opt{display:block;padding:8px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-size:14.5px;color:#2d2e4a;transition:background .12s;}
+.opt:hover{background:var(--teal-soft);}
+.opt input{margin-right:9px;}
+.q.graded .opt{cursor:default;}
+.q.graded .opt.correct{border-color:var(--green);background:#E9F7EE;}
+.q.graded .opt.chosenwrong{border-color:var(--red);background:#fdecec;}
+.expl{display:none;margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid #EBD9A8;font-size:13.5px;color:#4a3d18;}
+.expl b{color:#7a5502;}
+.q.graded .expl{display:block;}
+.verdict-chip{display:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;border-radius:14px;padding:2px 10px;margin-left:auto;}
+.q.graded .verdict-chip{display:inline-block;}
+.q.graded.right .verdict-chip{background:#E9F7EE;color:var(--green);}
+.q.graded.wrong .verdict-chip{background:#fdecec;color:var(--red);}
+.q.graded.skip .verdict-chip{background:#eef;color:var(--deep2);}
+.submitrow{margin:30px 0;text-align:center;}
+.submitrow button{font-family:'Fraunces',serif;font-weight:600;font-size:18px;background:var(--deep);color:#fff;border:0;border-radius:14px;padding:16px 34px;cursor:pointer;box-shadow:0 10px 26px rgba(27,29,81,.3);}
+.results{display:none;background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:30px 0;}
+.results.show{display:block;}
+.results h2{font-family:'Fraunces',serif;color:#fff;margin:0 0 6px;}
+.score-big{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--star);}
+.results table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px;}
+.results th,.results td{padding:7px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.results th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.results .good{color:#7fe0a7;}
+.results .bad{color:#ff9d9d;}
+h2.sec{font-family:'Fraunces',serif;font-weight:600;color:var(--deep);margin:36px 0 12px;}
+.mains{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:0 0 16px;font-size:14.5px;}
+.mains b{color:var(--deep2);}
+.mains .skel{margin-top:10px;padding:12px 14px;background:#FAFBFE;border:1px dashed var(--line-strong);border-radius:10px;font-size:13.5px;color:#33344f;}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:center;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+<div class="eyebrow">Week 4 · UGSSP Format Simulation · Take before Sunday 8 AM</div>
+<h1>Week 4 Mock Test — 50 Questions</h1>
+<p>Exact test format: +2 per correct, −0.66 per wrong, 0 for skipped. 60 minutes. Covers the full Week 4 syllabus — parliamentary committees and devices, Chief Minister and State Council of Ministers, all three Emergencies, Cabinet Committees and Parliamentary Forums, and the State Legislature.</p>
+<p><b>Weighted from your Week 3 result, not Week 2's.</b> Negative-phrased questions are no longer the leak — you scored 8/8 on them in the mock and 2/2 in the real test. <b>Statements is now your weakest format at 64%</b>, so there are 16 of them here. The answer key is also deliberately balanced across (a)–(d), which the Week 3 mock was not.</p>
+</header>
+
+<div class="rules">
+<b>The five rules — revised after your Week 3 paper:</b> (1) Keep the "NOT" discipline: mark each statement T/F, then re-read the stem and flip. It took you from 0/6 to 2/2. (2) <b>You finished Week 3 in 31 of 60 minutes and still lost marks on questions answered in under 15 seconds.</b> Speed is no longer the problem — read the whole stem. (3) On any Statements question, evaluate <i>every</i> statement before looking at the options. (4) Hunt for absolutes — "any", "all", "only", "must", "should". Two of your Week 3 errors turned on a single qualifier. (5) Skip only if you cannot narrow to two options; at your current accuracy a considered guess is worth more than a blank.
+</div>
+
+<div class="timerbar">
+<span class="t" id="timer">60:00</span>
+<button id="startbtn" type="button">Start timer</button>
+<button id="resetbtn" type="button" class="secondary">Reset &amp; retake</button>
+<label class="shufflewrap"><input type="checkbox" id="shufflechk"> Shuffle on reset</label>
+<span class="note" id="attemptnote">Attempt 1 · simulate honestly, no notes open.</span>
+</div>
+
+<!-- ============ PRESIDENT ============ -->
+
+
+<!-- ============ EMERGENCY PROVISIONS ============ -->
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q1</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to a proclamation of National Emergency, consider the following statements:</p>
+<ol class="subs"><li>It can be proclaimed only on the written recommendation of the Cabinet.</li><li>It must be approved by both Houses within one month by a special majority.</li><li>Once approved it may continue for a maximum of three years.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q1" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q1" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q1" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q1" value="4">(d) None</label>
+<div class="expl"><b>(b).</b> Statements 1 and 2 are correct — both are 44th Amendment safeguards. Statement 3 is wrong: the three-year outer limit belongs to <b>Article 356</b>. A National Emergency renews every six months <b>indefinitely</b>. <b>Note 10, Section 01.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q2</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following statements about Article 358 is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q2" value="1">(a) It suspends the Fundamental Rights guaranteed by Article 19</label>
+<label class="opt"><input type="radio" name="q2" value="2">(b) It applies when the Emergency is declared on the ground of armed rebellion</label>
+<label class="opt"><input type="radio" name="q2" value="3">(c) It operates automatically on the proclamation of a National Emergency</label>
+<label class="opt"><input type="radio" name="q2" value="4">(d) Acts done while it operates cannot be challenged even after the Emergency ends</label>
+<div class="expl"><b>(b).</b> (c) is NOT correct. The 44th Amendment confined Article 358 to Emergencies declared on <b>war or external aggression</b> — armed rebellion is excluded. Article 359 covers all three grounds. <b>Note 10, Section 03.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q3</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Articles 358 and 359, consider the following statements:</p>
+<ol class="subs"><li>Article 358 suspends the rights themselves while Article 359 suspends only the right to move a court.</li><li>Article 359 requires a separate order of the President.</li><li>Articles 20 and 21 can be suspended under Article 359 during a National Emergency.</li></ol>
+<p class="stem">Which of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q3" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q3" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q3" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q3" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Statements 1 and 2 are correct. Statement 3 is wrong — the <b>44th Amendment</b> placed <b>Articles 20 and 21</b> permanently beyond suspension, the direct legislative answer to <i>ADM Jabalpur</i>. <b>Note 10, Section 03.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q4</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following consequences of a proclamation under Article 356:</p>
+<ol class="subs"><li>The State Legislative Assembly is suspended or dissolved.</li><li>Parliament acquires power to legislate for the State.</li><li>The President assumes the powers of the State High Court.</li><li>Fundamental Rights in the State stand suspended.</li></ol>
+<p class="stem">How many of the above are correct?</p>
+<label class="opt"><input type="radio" name="q4" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q4" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q4" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q4" value="4">(d) All four</label>
+<div class="expl"><b>(b).</b> Only 1 and 2 follow. The President may <b>never</b> assume the powers of the State High Court, and only a <b>National</b> Emergency touches Fundamental Rights. <b>Note 10, Section 04.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q5</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The power of the Lok Sabha to force revocation of a National Emergency may be triggered by written notice of at least:</p>
+<label class="opt"><input type="radio" name="q5" value="1">(a) One-half of its members</label>
+<label class="opt"><input type="radio" name="q5" value="2">(b) One-tenth of its members</label>
+<label class="opt"><input type="radio" name="q5" value="3">(c) One-fourth of its members</label>
+<label class="opt"><input type="radio" name="q5" value="4">(d) Fifty members</label>
+<div class="expl"><b>(b).</b> One-tenth, a 44th Amendment safeguard. Do not confuse it with one-fourth (signing a presidential impeachment charge) or fifty members (admitting a no-confidence or adjournment motion). <b>Note 10, Section 02.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q6</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs:</p>
+<ol class="subs"><li>38th Amendment — made an emergency proclamation immune from judicial review</li><li>42nd Amendment — permitted a National Emergency to be confined to a part of India</li><li>44th Amendment — replaced "internal disturbance" with "armed rebellion"</li></ol>
+<p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q6" value="1">(a) None</label>
+<label class="opt"><input type="radio" name="q6" value="2">(b) Only one</label>
+<label class="opt"><input type="radio" name="q6" value="3">(c) Only two</label>
+<label class="opt"><input type="radio" name="q6" value="4">(d) All three</label>
+<div class="expl"><b>(d).</b> All three. The 38th and 42nd loosened the provisions; the 44th rebuilt them. If a safeguard in Part XVIII is undated, the 44th is the safest guess. <b>Note 10, Section 01.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q7</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the continuation of President's Rule beyond one year, consider the following statements:</p>
+<ol class="subs"><li>A National Emergency must be in operation in the whole of India or in that State.</li><li>The Election Commission must certify that elections to the State Assembly cannot be held.</li><li>Both conditions were introduced by the 44th Amendment.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q7" value="1">(a) None</label>
+<label class="opt"><input type="radio" name="q7" value="2">(b) Only one</label>
+<label class="opt"><input type="radio" name="q7" value="3">(c) Only two</label>
+<label class="opt"><input type="radio" name="q7" value="4">(d) All three</label>
+<div class="expl"><b>(d).</b> All three. Both conditions must be satisfied <b>together</b>, and both came in with the 44th Amendment. The absolute maximum remains three years. <b>Note 10, Section 04.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q8</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following was <b>NOT</b> a holding in <i>S.R. Bommai v. Union of India</i> (1994)?</p>
+<label class="opt"><input type="radio" name="q8" value="1">(a) A proclamation under Article 356 is subject to judicial review</label>
+<label class="opt"><input type="radio" name="q8" value="2">(b) Article 356 can no longer be invoked without a report from the Governor</label>
+<label class="opt"><input type="radio" name="q8" value="3">(c) The majority of a State government must be tested on the floor of the House</label>
+<label class="opt"><input type="radio" name="q8" value="4">(d) The Assembly may not be dissolved until Parliament approves the proclamation</label>
+<div class="expl"><b>(b).</b> (d) is NOT a holding. Article 356 permits action on the Governor's report <b>"or otherwise"</b> — a report has never been legally necessary. The other three are core Bommai holdings. <b>Note 10, Section 04.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q9</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Which Article empowers the President to hold that the government of a State cannot be carried on in accordance with the Constitution where the State fails to comply with a Union direction?</p>
+<label class="opt"><input type="radio" name="q9" value="1">(a) Article 365</label>
+<label class="opt"><input type="radio" name="q9" value="2">(b) Article 356</label>
+<label class="opt"><input type="radio" name="q9" value="3">(c) Article 355</label>
+<label class="opt"><input type="radio" name="q9" value="4">(d) Article 360</label>
+<div class="expl"><b>(a).</b> Article 365 is the <b>trigger</b>; Article 356 is the <b>instrument</b>. Article 355 is the Union's duty to protect States against external aggression and internal disturbance. <b>Note 10, Section 04.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q10</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to a Financial Emergency under Article 360, consider the following statements:</p>
+<ol class="subs"><li>It requires approval by both Houses within two months by a simple majority.</li><li>Once approved it continues indefinitely without periodic renewal.</li><li>The salaries of Supreme Court and High Court judges may be reduced while it is in force.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q10" value="1">(a) None</label>
+<label class="opt"><input type="radio" name="q10" value="2">(b) Only one</label>
+<label class="opt"><input type="radio" name="q10" value="3">(c) Only two</label>
+<label class="opt"><input type="radio" name="q10" value="4">(d) All three</label>
+<div class="expl"><b>(d).</b> All three are accurate. Article 360 is the only emergency needing <b>no periodic renewal</b>, and the express power to reduce judicial salaries is its most-asked feature. It has never been proclaimed. <b>Note 10, Section 05.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q11</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about emergencies in India:</p>
+<ol class="subs"><li>A National Emergency has been proclaimed three times.</li><li>A Financial Emergency has never been proclaimed.</li><li>President's Rule has been imposed more than a hundred times.</li></ol>
+<p class="stem">How many of the above are correct?</p>
+<label class="opt"><input type="radio" name="q11" value="1">(a) None</label>
+<label class="opt"><input type="radio" name="q11" value="2">(b) Only one</label>
+<label class="opt"><input type="radio" name="q11" value="3">(c) Only two</label>
+<label class="opt"><input type="radio" name="q11" value="4">(d) All three</label>
+<div class="expl"><b>(d).</b> All three. 1962, 1971 and 1975 for Article 352; zero for Article 360, not even during the 1991 balance-of-payments crisis; well over 100 for Article 356. <b>Note 10, Section 01.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q12</span><span class="fmt">Assertion</span><span class="verdict-chip"></span></div>
+<p class="stem"><b>Statement-I:</b> The 44th Amendment is the single most important amendment to Part XVIII.<br><b>Statement-II:</b> It replaced "internal disturbance" with "armed rebellion", required a written Cabinet recommendation, and protected Articles 20 and 21 from suspension.</p>
+<p class="stem">Which one of the following is correct?</p>
+<label class="opt"><input type="radio" name="q12" value="1">(a) Both are correct and Statement-II is the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q12" value="2">(b) Both are correct but Statement-II is not the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q12" value="3">(c) Statement-I is correct but Statement-II is incorrect</label>
+<label class="opt"><input type="radio" name="q12" value="4">(d) Statement-I is incorrect but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> Both correct, and the second explains the first — those are three of the six safeguards the 44th introduced. <b>Note 10, Section 01.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q13</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements regarding the effects of a National Emergency:</p>
+<ol class="subs"><li>Parliament may legislate on any subject in the State List.</li><li>Such laws made by Parliament cease to operate six months after the Emergency ends.</li><li>The State Legislative Assembly stands dissolved.</li></ol>
+<p class="stem">Which of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q13" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q13" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q13" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q13" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Statements 1 and 2 are correct. Statement 3 is wrong — dissolution of the Assembly belongs to <b>Article 356</b>. Under Article 352 the State legislature continues to exist and may still legislate. <b>Note 10, Section 02.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q14</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">During a National Emergency, the term of the Lok Sabha may be extended by Parliament:</p>
+<label class="opt"><input type="radio" name="q14" value="1">(a) By two years in a single extension</label>
+<label class="opt"><input type="radio" name="q14" value="2">(b) Only once, for one year</label>
+<label class="opt"><input type="radio" name="q14" value="3">(c) By six months at a time, with no limit</label>
+<label class="opt"><input type="radio" name="q14" value="4">(d) By one year at a time, and never beyond six months after the Emergency ends</label>
+<div class="expl"><b>(d).</b> One year at a time, with no cumulative limit while the Emergency lasts, but never beyond six months after it ceases. The 1976 extension used exactly this power. <b>Note 10, Section 02.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q15</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following is <b>NOT</b> a consequence of a Financial Emergency?</p>
+<label class="opt"><input type="radio" name="q15" value="1">(a) State Money Bills may be reserved for the President</label>
+<label class="opt"><input type="radio" name="q15" value="2">(b) Article 19 freedoms stand automatically suspended</label>
+<label class="opt"><input type="radio" name="q15" value="3">(c) Salaries of persons serving the Union may be reduced</label>
+<label class="opt"><input type="radio" name="q15" value="4">(d) States may be directed to observe canons of financial propriety</label>
+<div class="expl"><b>(b).</b> (c) is NOT correct. Automatic suspension of Article 19 belongs to <b>Article 358</b>, operating only during a National Emergency on war or external aggression. A Financial Emergency leaves Fundamental Rights untouched. <b>Note 10, Section 05.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q16</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements:</p>
+<ol class="subs"><li>ADM Jabalpur (1976) held that the right to move a court for habeas corpus stood suspended during an Emergency.</li><li>That decision was formally overruled in Justice K.S. Puttaswamy (2017).</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q16" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q16" value="2">(b) 2 only</label>
+<label class="opt"><input type="radio" name="q16" value="3">(c) Both 1 and 2</label>
+<label class="opt"><input type="radio" name="q16" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(c).</b> Both correct. The decision was 4:1 with Justice H.R. Khanna dissenting, and the nine-judge Puttaswamy bench formally overruled it forty-one years later. <b>Note 10, Section 02.</b></div>
+</div>
+
+<!-- ============ CHIEF MINISTER & STATE COUNCIL OF MINISTERS ============ -->
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q17</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Article 164, consider the following statements:</p>
+<ol class="subs"><li>The Council of Ministers including the Chief Minister shall not exceed 15% of the total strength of the Legislative Assembly.</li><li>The number of Ministers in a State shall in no case be less than twelve.</li><li>A Minister who is not a member of the State legislature must become one within six months.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q17" value="1">(a) None</label>
+<label class="opt"><input type="radio" name="q17" value="2">(b) Only one</label>
+<label class="opt"><input type="radio" name="q17" value="3">(c) Only two</label>
+<label class="opt"><input type="radio" name="q17" value="4">(d) All three</label>
+<div class="expl"><b>(d).</b> All three. Article 164(1A) supplies both the ceiling and the floor of twelve — the floor has <b>no Union equivalent</b> — and 164(4) the six-month rule. <b>Note 03, Section 01.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q18</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following statements about the State Council of Ministers is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q18" value="1">(a) It is collectively responsible to both Houses in a bicameral State</label>
+<label class="opt"><input type="radio" name="q18" value="2">(b) Ministers hold office during the pleasure of the Governor</label>
+<label class="opt"><input type="radio" name="q18" value="3">(c) It is collectively responsible to the Legislative Assembly</label>
+<label class="opt"><input type="radio" name="q18" value="4">(d) A member disqualified for defection cannot be appointed a Minister</label>
+<div class="expl"><b>(a).</b> (c) is NOT correct. Article 164(2) runs to the <b>Legislative Assembly alone</b>, never to the Council — exactly as the Union Council answers only to the Lok Sabha. <b>Note 03, Section 03.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q19</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of provision and subject:</p>
+<ol class="subs"><li>Article 163 — Council of Ministers to aid and advise the Governor</li><li>Article 167 — duties of the Chief Minister towards the Governor</li><li>Article 164(1B) — disqualification of a defector from ministerial office</li></ol>
+<p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q19" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q19" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q19" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q19" value="4">(d) None</label>
+<div class="expl"><b>(c).</b> All three. Learn the Union–State pairs together: <b>163↔74, 167↔78, 164(1B)↔75(1B)</b>. <b>Note 03, Section 04.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q20</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements regarding the Chief Minister:</p>
+<ol class="subs"><li>The resignation or death of the Chief Minister dissolves the entire Council of Ministers.</li><li>The Governor is bound by the Chief Minister's advice in recommending President's Rule.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q20" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q20" value="2">(b) 2 only</label>
+<label class="opt"><input type="radio" name="q20" value="3">(c) Both 1 and 2</label>
+<label class="opt"><input type="radio" name="q20" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a).</b> Statement 1 is correct — any other Minister's death creates only a vacancy. Statement 2 is wrong: recommending President's Rule is a <b>discretionary</b> function under Article 163. <b>Note 03, Section 02.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q21</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">In how many of the following States is a Minister in charge of tribal welfare constitutionally required?</p>
+<ol class="subs"><li>Chhattisgarh</li><li>Jharkhand</li><li>Bihar</li><li>Odisha</li></ol>
+<p class="stem">Select the correct answer using the code given below:</p>
+<label class="opt"><input type="radio" name="q21" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q21" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q21" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q21" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> The four named in the proviso to Article 164(1) are <b>Chhattisgarh, Jharkhand, Madhya Pradesh and Odisha</b>. Bihar is the trap — removed by the <b>94th Amendment, 2006</b>. <b>Note 03, Section 01.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q22</span><span class="fmt">Assertion</span><span class="verdict-chip"></span></div>
+<p class="stem"><b>Statement-I:</b> The Governor's position differs from the President's despite near-identical wording on aid and advice.<br><b>Statement-II:</b> Article 163 contains an express discretionary exception and, unlike Article 74, has never been amended.</p>
+<p class="stem">Which one of the following is correct?</p>
+<label class="opt"><input type="radio" name="q22" value="1">(a) Both are correct and Statement-II is the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q22" value="2">(b) Both are correct but Statement-II is not the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q22" value="3">(c) Statement-I is correct but Statement-II is incorrect</label>
+<label class="opt"><input type="radio" name="q22" value="4">(d) Statement-I is incorrect but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> Both correct and causally linked. Article 74 was amended by the 42nd and 44th; Article 163 never was. <b>Note 03, Section 04.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q23</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The oath of office to a State Minister is administered by:</p>
+<label class="opt"><input type="radio" name="q23" value="1">(a) The Chief Minister</label>
+<label class="opt"><input type="radio" name="q23" value="2">(b) The Governor</label>
+<label class="opt"><input type="radio" name="q23" value="3">(c) The Chief Justice of the High Court</label>
+<label class="opt"><input type="radio" name="q23" value="4">(d) The Speaker of the Legislative Assembly</label>
+<div class="expl"><b>(b).</b> Article 164(3) — the Governor. Compare: the President administers the oath to Union Ministers, but the <b>Chief Justice of India</b> swears in the President. <b>Note 03, Section 01.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q24</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements:</p>
+<ol class="subs"><li>A State Minister may be a member of either House of the State legislature in a bicameral State.</li><li>A State Minister may speak in both Houses but vote only in the House of which he is a member.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q24" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q24" value="2">(b) 2 only</label>
+<label class="opt"><input type="radio" name="q24" value="3">(c) Both 1 and 2</label>
+<label class="opt"><input type="radio" name="q24" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(c).</b> Both correct — the State analogue of Article 88, which gives the same right at the Union level. <b>Note 03, Section 01.</b></div>
+</div>
+
+<!-- ============ STATE LEGISLATURE ============ -->
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q25</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Article 169, consider the following statements:</p>
+<ol class="subs"><li>Parliament may abolish a Legislative Council only if the State Assembly passes a resolution by a special majority.</li><li>Such a law of Parliament is deemed to be an amendment under Article 368.</li><li>Parliament is bound to act on a resolution passed by the State Assembly.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q25" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q25" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q25" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q25" value="4">(d) None</label>
+<div class="expl"><b>(a).</b> Only statement 1. Article 169 expressly says such a law is <b>not</b> an Article 368 amendment, and Parliament is <b>not obliged</b> to act — Andhra Pradesh's 2020 resolution is still pending. <b>Note 04, Section 02.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q26</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following statements about a State Legislative Council is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q26" value="1">(a) Its Chairman is elected by the Council from among its own members</label>
+<label class="opt"><input type="radio" name="q26" value="2">(b) Where the two Houses disagree on an ordinary Bill, the Governor may summon a joint sitting</label>
+<label class="opt"><input type="radio" name="q26" value="3">(c) Its strength cannot exceed one-third of the Legislative Assembly's strength</label>
+<label class="opt"><input type="radio" name="q26" value="4">(d) It is a permanent body with one-third of members retiring every two years</label>
+<div class="expl"><b>(b).</b> (d) is NOT correct. <b>There is no joint sitting at State level</b> — Article 108 applies only to Parliament. The Assembly simply outlasts the Council after four months. <b>Note 04, Section 04.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q27</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following States:</p>
+<ol class="subs"><li>Karnataka</li><li>Telangana</li><li>Odisha</li><li>Bihar</li></ol>
+<p class="stem">How many of the above currently have a Legislative Council?</p>
+<label class="opt"><input type="radio" name="q27" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q27" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q27" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q27" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> The six bicameral States are Andhra Pradesh, Bihar, Karnataka, Maharashtra, Telangana and Uttar Pradesh. <b>Odisha does not have one</b> — its Assembly passed a resolution, but Parliament has not enacted the law. <b>Note 04, Section 02.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q28</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of category and share in a Legislative Council:</p>
+<ol class="subs"><li>Elected by members of local bodies — one-third</li><li>Elected by graduates of three years' standing — one-twelfth</li><li>Nominated by the Governor — one-sixth</li></ol>
+<p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q28" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q28" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q28" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q28" value="4">(d) None</label>
+<div class="expl"><b>(c).</b> All three. The full Article 171 set: local bodies 1/3, MLAs 1/3, graduates 1/12, teachers 1/12, Governor's nominees 1/6 — they sum to 1. <b>Note 04, Section 03.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q29</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about an ordinary Bill in a bicameral State legislature:</p>
+<ol class="subs"><li>A Bill originating in the Legislative Council and rejected by the Assembly comes to an end.</li><li>The Council can delay a Bill passed by the Assembly for a maximum of four months.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q29" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q29" value="2">(b) 2 only</label>
+<label class="opt"><input type="radio" name="q29" value="3">(c) Both 1 and 2</label>
+<label class="opt"><input type="radio" name="q29" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(c).</b> Both correct — three months on first passage plus one month on second. The asymmetry is the point: the Council delays, the Assembly decides. <b>Note 04, Section 04.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q30</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The maximum and minimum strength of a State Legislative Assembly under Article 170 is:</p>
+<label class="opt"><input type="radio" name="q30" value="1">(a) 450 and 60</label>
+<label class="opt"><input type="radio" name="q30" value="2">(b) 500 and 40</label>
+<label class="opt"><input type="radio" name="q30" value="3">(c) 550 and 50</label>
+<label class="opt"><input type="radio" name="q30" value="4">(d) 500 and 60</label>
+<div class="expl"><b>(d).</b> Maximum 500, minimum 60 for the Assembly. The figure <b>40</b> is the minimum for a Legislative <b>Council</b> — swapping the two is the standard error. <b>Note 04, Section 01.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q31</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the nomination of members, consider the following statements:</p>
+<ol class="subs"><li>The Governor nominates members to a Legislative Council from persons with special knowledge of literature, science, art, co-operative movement and social service.</li><li>The President nominates members to the Rajya Sabha from the same five fields.</li></ol>
+<p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q31" value="1">(a) 1 only</label>
+<label class="opt"><input type="radio" name="q31" value="2">(b) 2 only</label>
+<label class="opt"><input type="radio" name="q31" value="3">(c) Both 1 and 2</label>
+<label class="opt"><input type="radio" name="q31" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a).</b> Statement 1 is correct — five fields under Article 171(5). Statement 2 is wrong: Article 80(3) lists only <b>four</b>, omitting <b>co-operative movement</b>. That one word is the whole question. <b>Note 04, Section 03.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q32</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The minimum age for membership of a State Legislative Council is:</p>
+<label class="opt"><input type="radio" name="q32" value="1">(a) 30 years</label>
+<label class="opt"><input type="radio" name="q32" value="2">(b) 21 years</label>
+<label class="opt"><input type="radio" name="q32" value="3">(c) 25 years</label>
+<label class="opt"><input type="radio" name="q32" value="4">(d) 35 years</label>
+<div class="expl"><b>(a).</b> Thirty, mirroring the Rajya Sabha. The Legislative Assembly requires 25, mirroring the Lok Sabha. <b>Note 04, Section 03.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q33</span><span class="fmt">Assertion</span><span class="verdict-chip"></span></div>
+<p class="stem"><b>Statement-I:</b> A State Legislative Council is a far weaker chamber than the Rajya Sabha.<br><b>Statement-II:</b> A Legislative Council can be abolished by ordinary law on a resolution of the very Assembly it is meant to review.</p>
+<p class="stem">Which one of the following is correct?</p>
+<label class="opt"><input type="radio" name="q33" value="1">(a) Both are correct and Statement-II is the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q33" value="2">(b) Both are correct but Statement-II is not the correct explanation of Statement-I</label>
+<label class="opt"><input type="radio" name="q33" value="3">(c) Statement-I is correct but Statement-II is incorrect</label>
+<label class="opt"><input type="radio" name="q33" value="4">(d) Statement-I is incorrect but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> Both correct and causally linked. A chamber the Assembly can vote out of existence was never going to be given a veto. <b>Note 04, Section 04.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q34</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following is <b>NOT</b> a function in which the State Legislative Council participates?</p>
+<label class="opt"><input type="radio" name="q34" value="1">(a) Election of its own Chairman</label>
+<label class="opt"><input type="radio" name="q34" value="2">(b) Ratification of a Constitutional Amendment under Article 368</label>
+<label class="opt"><input type="radio" name="q34" value="3">(c) Passage of an ordinary Bill</label>
+<label class="opt"><input type="radio" name="q34" value="4">(d) Discussion of the State Budget</label>
+<div class="expl"><b>(b).</b> (c) is NOT correct. Where State ratification is required under Article 368, the resolution is passed by the <b>Legislative Assembly alone</b>. The Council has no role. <b>Note 04, Section 04.</b></div>
+</div>
+
+<!-- ============ PARLIAMENTARY COMMITTEES & DEVICES ============ -->
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q35</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements regarding parliamentary committees:</p>
+<ol class="subs"><li>A Select Committee on a Bill consists of members drawn from one House only.</li><li>A Select Committee is a Standing Committee of that House.</li><li>A Joint Committee on a Bill ceases to exist once it presents its report.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q35" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q35" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q35" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q35" value="4">(d) None</label>
+<div class="expl"><b>(b).</b> Statements 1 and 3 are correct. Statement 2 is wrong — a Select Committee is <b>ad hoc</b>. The two axes are independent: permanent/temporary is one, one-House/both is the other. <b>Note 03, committee taxonomy.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q36</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to a censure motion, consider the following statements:</p>
+<ol class="subs"><li>It must state the reasons for its adoption.</li><li>It can be moved against an individual Minister.</li><li>If passed, the Council of Ministers must resign.</li></ol>
+<p class="stem">Which of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q36" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q36" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q36" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q36" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(a).</b> Statements 1 and 2 are correct. Statement 3 is wrong — a censure motion compels explanation, not resignation. Only a <b>no-confidence motion</b> brings the government down. <b>Note 03, motions.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q37</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following statements about a Point of Order is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q37" value="1">(a) It requires no prior notice and suspends the proceedings</label>
+<label class="opt"><input type="radio" name="q37" value="2">(b) It may be used to raise the merits of a policy under discussion</label>
+<label class="opt"><input type="radio" name="q37" value="3">(c) It relates to the interpretation or enforcement of the Rules of Procedure</label>
+<label class="opt"><input type="radio" name="q37" value="4">(d) No debate is allowed on a Point of Order</label>
+<div class="expl"><b>(b).</b> (b) is NOT correct. A Point of Order is strictly <b>procedural</b>. To raise substance, the devices are a Short Duration Discussion or a Calling Attention motion. <b>Note 03, motions.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q38</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of device and description:</p>
+<ol class="subs"><li>Kangaroo closure — only important clauses are debated and the rest are passed over</li><li>Guillotine — undiscussed demands are put to vote together when the allotted time expires</li><li>Half-an-Hour Discussion — raised on a matter that has already been the subject of a question</li></ol>
+<p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q38" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q38" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q38" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q38" value="4">(d) None</label>
+<div class="expl"><b>(c).</b> All three. The four closures are simple, by compartments, kangaroo and guillotine. A Short Duration Discussion, unlike a Half-an-Hour Discussion, does <b>not</b> follow an earlier question. <b>Note 03, motions.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q39</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following committees:</p>
+<ol class="subs"><li>Public Accounts Committee</li><li>Estimates Committee</li><li>Committee on Public Undertakings</li><li>Committee of Parliament on Official Language</li></ol>
+<p class="stem">How many of the above include members of the Rajya Sabha?</p>
+<label class="opt"><input type="radio" name="q39" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q39" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q39" value="3">(c) Only three</label>
+<label class="opt"><input type="radio" name="q39" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> PAC (15+7), Public Undertakings (15+7) and Official Language (20+10) include Rajya Sabha members. The <b>Estimates Committee is Lok Sabha only</b> — 30 members. <b>Note 03, committees.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q40</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The Committee of Parliament on Official Language is constituted under:</p>
+<label class="opt"><input type="radio" name="q40" value="1">(a) A resolution of the Lok Sabha</label>
+<label class="opt"><input type="radio" name="q40" value="2">(b) Rules made by the Speaker</label>
+<label class="opt"><input type="radio" name="q40" value="3">(c) The Official Languages Act, 1963 alone</label>
+<label class="opt"><input type="radio" name="q40" value="4">(d) Article 344(4) of the Constitution</label>
+<div class="expl"><b>(d).</b> Article 344(4) — it is the <b>only parliamentary committee created by the Constitution itself</b>. Thirty members: 20 Lok Sabha, 10 Rajya Sabha; the Union Home Minister chairs by convention. <b>Note 03, committees.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q41</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following statements about the Public Accounts Committee is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q41" value="1">(a) By convention since 1967 its Chairman is from the Opposition</label>
+<label class="opt"><input type="radio" name="q41" value="2">(b) Ministers are eligible to be elected as members</label>
+<label class="opt"><input type="radio" name="q41" value="3">(c) It has 22 members — 15 from the Lok Sabha and 7 from the Rajya Sabha</label>
+<label class="opt"><input type="radio" name="q41" value="4">(d) Its Chairman is appointed by the Speaker</label>
+<div class="expl"><b>(b).</b> (d) is NOT correct — <b>Ministers cannot be members</b> of the PAC, the Estimates Committee or the Committee on Public Undertakings. The Speaker does appoint the PAC chairman; the convention governs <i>whom</i> he appoints. <b>Note 03, committees.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q42</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements:</p>
+<ol class="subs"><li>An adjournment motion needs the support of 50 members for admission.</li><li>The Rajya Sabha cannot use an adjournment motion.</li><li>A no-confidence motion may be moved against an individual Minister.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q42" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q42" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q42" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q42" value="4">(d) None</label>
+<div class="expl"><b>(b).</b> Statements 1 and 2 are correct — the Rajya Sabha is barred because the motion carries an <b>element of censure</b>. Statement 3 is wrong: a no-confidence motion lies against the <b>government only</b>. <b>Note 03, motions.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q43</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">A Bill introduced by a member who is not a Minister requires advance notice of:</p>
+<label class="opt"><input type="radio" name="q43" value="1">(a) Seven days</label>
+<label class="opt"><input type="radio" name="q43" value="2">(b) Fourteen days</label>
+<label class="opt"><input type="radio" name="q43" value="3">(c) Three months</label>
+<label class="opt"><input type="radio" name="q43" value="4">(d) One month</label>
+<div class="expl"><b>(d).</b> One month for a Private Member's Bill, against seven days for a Government Bill. They are taken up only on allotted days, usually Friday afternoons. <b>Note 02, legislative process.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q44</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Zero Hour and Question Hour, consider the following statements:</p>
+<ol class="subs"><li>In the Lok Sabha, Question Hour is the first hour of a sitting and Zero Hour follows it.</li><li>In the Rajya Sabha, Zero Hour is taken up at 11 a.m. and Question Hour at 12 noon.</li><li>Zero Hour finds no mention in the Rules of Procedure.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q44" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q44" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q44" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q44" value="4">(d) None</label>
+<div class="expl"><b>(c).</b> All three. The Rajya Sabha shifted Question Hour to noon in <b>2014</b> to protect it from disruption, so the order differs by House — a statement about "Parliament" without naming the House is incomplete. <b>Note 03, Section 01.</b></div>
+</div>
+
+<!-- ============ CABINET COMMITTEES & FORUMS ============ -->
+<div class="q" data-ans="3" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q45</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Cabinet Committees, consider the following statements:</p>
+<ol class="subs"><li>They are established by the Rules of Business framed under Article 77(3).</li><li>Their membership is restricted to Cabinet Ministers alone.</li><li>They are set up by the Prime Minister according to the needs of the time.</li></ol>
+<p class="stem">Which of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q45" value="1">(a) 1 and 2 only</label>
+<label class="opt"><input type="radio" name="q45" value="2">(b) 2 and 3 only</label>
+<label class="opt"><input type="radio" name="q45" value="3">(c) 1 and 3 only</label>
+<label class="opt"><input type="radio" name="q45" value="4">(d) 1, 2 and 3</label>
+<div class="expl"><b>(c).</b> Statements 1 and 3 are correct. Statement 2 is wrong — <b>non-Cabinet Ministers may be members</b>. The word "alone" is what makes it false. <b>Note 04, Section 01.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q46</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following is <b>NOT</b> ordinarily chaired by the Prime Minister?</p>
+<label class="opt"><input type="radio" name="q46" value="1">(a) Appointments Committee of the Cabinet</label>
+<label class="opt"><input type="radio" name="q46" value="2">(b) Cabinet Committee on Security</label>
+<label class="opt"><input type="radio" name="q46" value="3">(c) Cabinet Committee on Economic Affairs</label>
+<label class="opt"><input type="radio" name="q46" value="4">(d) Cabinet Committee on Parliamentary Affairs</label>
+<div class="expl"><b>(d).</b> (c) is NOT. Parliamentary Affairs and Accommodation go to the <b>Home Minister</b>; Security, Economic Affairs, Appointments and Political Affairs to the Prime Minister. <b>Note 04, Section 02.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q47</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Parliamentary Forums, consider the following statements:</p>
+<ol class="subs"><li>They have a statutory basis under a law made by Parliament.</li><li>The Speaker of the Lok Sabha is ex-officio President of every Forum without exception.</li><li>A Forum may summon officials and report its findings to the House for action.</li></ol>
+<p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q47" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q47" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q47" value="3">(c) All three</label>
+<label class="opt"><input type="radio" name="q47" value="4">(d) None</label>
+<div class="expl"><b>(d).</b> None. Forums are neither constitutional nor statutory; the <b>Rajya Sabha Chairman</b> presides over the Forum on Population and Public Health; and a Forum has no power to summon or report for action — that is a parliamentary <b>committee</b>. <b>Note 04, Section 03.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q48</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">A Group of Ministers authorised to take a decision itself, rather than merely to recommend, is called:</p>
+<label class="opt"><input type="radio" name="q48" value="1">(a) A Standing Cabinet Committee</label>
+<label class="opt"><input type="radio" name="q48" value="2">(b) A Departmentally Related Standing Committee</label>
+<label class="opt"><input type="radio" name="q48" value="3">(c) A Parliamentary Forum</label>
+<label class="opt"><input type="radio" name="q48" value="4">(d) An Empowered Group of Ministers</label>
+<div class="expl"><b>(d).</b> An Empowered GoM. An ordinary GoM only recommends; an ad hoc Cabinet Committee is commonly called a Group of Ministers. <b>Note 04, Section 01.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q49</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following:</p>
+<ol class="subs"><li>Cabinet Committees</li><li>Parliamentary Forums</li><li>Departmentally Related Standing Committees</li><li>NITI Aayog</li></ol>
+<p class="stem">How many of the above are mentioned in the Constitution?</p>
+<label class="opt"><input type="radio" name="q49" value="1">(a) Only one</label>
+<label class="opt"><input type="radio" name="q49" value="2">(b) Only two</label>
+<label class="opt"><input type="radio" name="q49" value="3">(c) None</label>
+<label class="opt"><input type="radio" name="q49" value="4">(d) All four</label>
+<div class="expl"><b>(c).</b> None. Cabinet Committees rest on Rules of Business under Art 77(3); Forums on the presiding officers' initiative; DRSCs on Arts 105 and 118 read with the Rules, not by name; NITI Aayog on an executive resolution of 2015. <b>Note 04, Sections 01 and 03.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q50</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The first Parliamentary Forum, constituted in 2005, dealt with:</p>
+<label class="opt"><input type="radio" name="q50" value="1">(a) Global Warming and Climate Change</label>
+<label class="opt"><input type="radio" name="q50" value="2">(b) Disaster Management</label>
+<label class="opt"><input type="radio" name="q50" value="3">(c) Youth</label>
+<label class="opt"><input type="radio" name="q50" value="4">(d) Water Conservation and Management</label>
+<div class="expl"><b>(d).</b> Water Conservation and Management, constituted by the Speaker on 12 August 2005. Each Forum has not more than 31 members — up to 21 from the Lok Sabha and 10 from the Rajya Sabha. <b>Note 04, Section 03.</b></div>
+</div>
+<div class="submitrow"><button id="gradebtn" type="button">Submit &amp; Score (+2 / −0.66)</button></div>
+
+<div class="results" id="results">
+<h2>Result</h2>
+<div class="score-big" id="scoreline">—</div>
+<div id="summaryline" style="margin-top:4px;font-size:14px;"></div>
+<table>
+<thead><tr><th>Format</th><th>Right</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Week 3 actual</th></tr></thead>
+<tbody id="fmtrows"></tbody>
+</table>
+<p style="font-size:13px;color:#C9C6EE;margin-top:14px;">Baselines are your <b>Week 3 real test</b> accuracy per format. Statements is the one to beat — it is the only format below 70%. Scroll up — every question now shows the correct answer and the note section to revise.</p>
+
+<div id="histwrap" style="display:none;">
+<h2 style="font-size:19px;margin:22px 0 0;">Attempt history</h2>
+<table class="histtable">
+<thead><tr><th>Attempt</th><th>Score</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Change</th></tr></thead>
+<tbody id="histrows"></tbody>
+</table>
+<p style="font-size:12px;color:#C9C6EE;margin-top:10px;">History is kept for this browser session — it clears if you close or reload the page. What matters is the trend within a sitting: your second attempt should show the ⚠ formats climbing, not the total score (which rises anyway once you've seen the answers).</p>
+</div>
+
+<div class="retakerow">
+<button id="retakebtn" type="button">↻ Retake this test</button>
+<button id="retakeshufflebtn" type="button" class="ghost">↻ Retake with questions shuffled</button>
+</div>
+</div>
+
+<h2 class="sec">Mains practice — write these out by hand, 10 minutes each</h2>
+
+<div class="mains">
+<b>M1.</b> "The emergency provisions of the Indian Constitution have been criticised as an invitation to dictatorship, yet the record suggests the remedy has come from amendment and adjudication rather than repeal." Critically examine. <i>(15 marks · 250 words)</i>
+<div class="skel"><b>Skeleton:</b> Ambedkar's unitary-in-emergency design and the Assembly's objection → the criticism evidenced by 1975–77 and <i>ADM Jabalpur</i> → the repair by the 44th Amendment (six safeguards) and by <i>Bommai</i> → what remains unfixed (125+ uses, late remedies, Sarkaria and Punchhi unimplemented) → verdict.</div>
+</div>
+
+<div class="mains">
+<b>M2.</b> "A State Legislative Council is a chamber of revision without the power to revise." Critically examine, and assess whether Article 169 should be used more readily. <i>(15 marks · 250 words)</i>
+<div class="skel"><b>Skeleton:</b> Art 169's reversible design → why it cannot revise (3+1 months, no joint sitting, Art 368 ratification by the Assembly alone) → the case for retention (Art 171's expertise and local-body representation) → reform of the electoral colleges rather than abolition by convenience → verdict.</div>
+</div>
+
+<div class="mains">
+<b>M3.</b> "The Chief Minister's position mirrors the Prime Minister's in form but not in security." Discuss with reference to Articles 163 and 164. <i>(10 marks · 150 words)</i>
+<div class="skel"><b>Skeleton:</b> the identical form (164↔75, 167↔78) → where it breaks (Art 163's discretionary carve-out, never amended, against a twice-amended Art 74) → why (Art 156, pleasure of the President) → verdict.</div>
+</div>
+
+<footer>
+Week 3 Mock Test · UGSSP format simulation · 50 MCQs (+2/−0.66) + 3 Mains<br>
+All questions are self-generated practice built from the Week 3 notes — NOT real UPSC PYQs or leaked test questions.<br>
+Formats deliberately over-weighted to your measured weak patterns (8 Negative, 8 How-many, 4 Assertion–Reason). See AI_KNOWLEDGE_BASE/TEST_INTELLIGENCE.md.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var total = 50;
+  var baselines = { NEGATIVE:'100% (2/2)', HOWMANY:'83% (5/6)', ASSERTION:'100% (2/2)', PAIRS:'—', STATEMENTS:'64% (9/14)', DIRECT:'74% (17/23)' };
+  var timerEl = document.getElementById('timer');
+  var startBtn = document.getElementById('startbtn');
+  var resetBtn = document.getElementById('resetbtn');
+  var shuffleChk = document.getElementById('shufflechk');
+  var attemptNote = document.getElementById('attemptnote');
+  var remaining = 3600, ticking = null;
+  var attempt = 1, history = [];
+  function fmtTime(s){ var m = Math.floor(s/60), r = s%60; return (m<10?'0':'')+m+':'+(r<10?'0':'')+r; }
+  function startTimer(){
+    if (ticking) return;
+    ticking = setInterval(function(){
+      remaining--;
+      timerEl.textContent = fmtTime(Math.max(remaining,0));
+      if (remaining === 900) timerEl.style.color = '#FFB37E';
+      if (remaining <= 0){ clearInterval(ticking); ticking = null; grade(); }
+    }, 1000);
+    startBtn.textContent = 'Running…';
+  }
+  startBtn.addEventListener('click', startTimer);
+
+  function shuffleQuestions(){
+    var qs = Array.prototype.slice.call(document.querySelectorAll('.q'));
+    var anchor = document.querySelector('.submitrow');
+    for (var i = qs.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = qs[i]; qs[i] = qs[j]; qs[j] = t;
+    }
+    qs.forEach(function(q, idx){
+      q.querySelector('.qnum').textContent = 'Q' + (idx + 1);
+      anchor.parentNode.insertBefore(q, anchor);
+    });
+  }
+
+  function resetTest(doShuffle){
+    if (ticking){ clearInterval(ticking); ticking = null; }
+    remaining = 3600;
+    timerEl.textContent = '60:00';
+    timerEl.style.color = '';
+    startBtn.textContent = 'Start timer';
+    delete document.body.dataset.graded;
+    document.querySelectorAll('.q').forEach(function(q){
+      q.classList.remove('graded','right','wrong','skip');
+      q.querySelector('.verdict-chip').textContent = '';
+      q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('correct','chosenwrong'); });
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = false; i.checked = false; });
+    });
+    document.getElementById('results').classList.remove('show');
+    document.getElementById('fmtrows').innerHTML = '';
+    if (doShuffle) shuffleQuestions();
+    attempt++;
+    attemptNote.textContent = 'Attempt ' + attempt + ' · ' + (doShuffle ? 'questions shuffled · ' : '') + 'no notes open.';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  resetBtn.addEventListener('click', function(){ resetTest(shuffleChk.checked); });
+  document.getElementById('retakebtn').addEventListener('click', function(){ resetTest(false); });
+  document.getElementById('retakeshufflebtn').addEventListener('click', function(){ resetTest(true); });
+
+  function renderHistory(){
+    if (history.length < 1) return;
+    document.getElementById('histwrap').style.display = 'block';
+    var rows = document.getElementById('histrows');
+    rows.innerHTML = '';
+    history.forEach(function(h, i){
+      var delta = '—';
+      if (i > 0){
+        var d = h.score - history[i-1].score;
+        delta = '<span class="' + (d >= 0 ? 'up' : 'down') + '">' + (d >= 0 ? '+' : '') + d.toFixed(2) + '</span>';
+      }
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + h.n + '</td><td>' + h.score.toFixed(2) + '</td><td>' + h.right + '</td><td>' + h.wrong +
+                     '</td><td>' + h.skip + '</td><td>' + h.acc + '%</td><td>' + delta + '</td>';
+      rows.appendChild(tr);
+    });
+  }
+
+  function grade(){
+    if (document.body.dataset.graded) return;
+    document.body.dataset.graded = '1';
+    if (ticking) clearInterval(ticking);
+    var score = 0, right = 0, wrong = 0, skip = 0;
+    var fmtAgg = {};
+    var qs = document.querySelectorAll('.q');
+    qs.forEach(function(q, idx){
+      var ans = q.getAttribute('data-ans');
+      var fmt = q.getAttribute('data-fmt');
+      if (!fmtAgg[fmt]) fmtAgg[fmt] = {r:0,w:0,s:0};
+      var chosen = q.querySelector('input:checked');
+      var chip = q.querySelector('.verdict-chip');
+      q.classList.add('graded');
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var inp = opt.querySelector('input');
+        if (inp.value === ans) opt.classList.add('correct');
+      });
+      if (!chosen){
+        skip++; fmtAgg[fmt].s++;
+        q.classList.add('skip'); chip.textContent = 'SKIPPED · 0';
+      } else if (chosen.value === ans){
+        right++; score += 2; fmtAgg[fmt].r++;
+        q.classList.add('right'); chip.textContent = 'CORRECT · +2';
+      } else {
+        wrong++; score -= 0.66; fmtAgg[fmt].w++;
+        q.classList.add('wrong'); chip.textContent = 'WRONG · −0.66';
+        chosen.closest('.opt').classList.add('chosenwrong');
+      }
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = true; });
+    });
+    var res = document.getElementById('results');
+    res.classList.add('show');
+    var acc = (right+wrong ? Math.round(100*right/(right+wrong)) : 0);
+    document.getElementById('scoreline').textContent = score.toFixed(2) + ' / 100';
+    document.getElementById('summaryline').textContent =
+      'Attempt ' + attempt + ' — ' + right + ' correct · ' + wrong + ' wrong (−' + (wrong*0.66).toFixed(2) + ' marks) · ' + skip + ' skipped. Accuracy on attempts: ' + acc + '%.';
+    history.push({ n: attempt, score: score, right: right, wrong: wrong, skip: skip, acc: acc });
+    renderHistory();
+    var rows = document.getElementById('fmtrows');
+    var order = ['NEGATIVE','HOWMANY','ASSERTION','PAIRS','STATEMENTS','DIRECT'];
+    order.forEach(function(f){
+      var a = fmtAgg[f] || {r:0,w:0,s:0};
+      var att = a.r + a.w;
+      var acc = att ? Math.round(100*a.r/att) + '%' : '—';
+      var cls = att && (a.r/att) >= 0.7 ? 'good' : (att ? 'bad' : '');
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + f + '</td><td>' + a.r + '</td><td>' + a.w + '</td><td>' + a.s + '</td><td class="' + cls + '">' + acc + '</td><td>' + (baselines[f] || '—') + '</td>';
+      rows.appendChild(tr);
+    });
+    res.scrollIntoView({behavior:'smooth'});
+  }
+  document.getElementById('gradebtn').addEventListener('click', grade);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parliamentary System &amp; Presidential Government | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Syllabus placement</button>
+<button class="notetab" data-tab="s2">02 · Parliamentary System</button>
+<button class="notetab" data-tab="s3">03 · Presidential System</button>
+<button class="notetab" data-tab="s4">04 · Merits &amp; demerits</button>
+<button class="notetab" data-tab="s5">05 · Why India adopted it</button>
+<button class="notetab" data-tab="s6">06 · Indian vs British model</button>
+<button class="notetab" data-tab="s7">07 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">08 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 5 of 9 · Note 00 — foundational primer</div>
+<h1>Parliamentary System &amp; Presidential Government</h1>
+<p class="sub">Senior-mentor notes on the form of government India chose — how a Parliamentary system differs structurally from a Presidential one, why the Constituent Assembly picked the former, and where the Indian model quietly departs from the British original it borrowed from.</p>
+<div class="chips">
+<span class="chip">Fusion of Powers</span>
+<span class="chip">Collective Responsibility</span>
+<span class="chip">Article 74 &amp; 75</span>
+<span class="chip">Nominal vs Real Executive</span>
+<span class="chip">Indian vs British Model</span>
+</div>
+<div class="bignum"><b>Art 75(3)</b><span>Council of Ministers' collective responsibility</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this note exists</div>
+<p>Laxmikanth's <i>Indian Polity</i> devotes a full chapter (Chapter 7, "Parliamentary System") to the form of government question before it ever gets to Parliament's own structure and functioning — because you cannot study how Parliament works until you know <i>why</i> India built a Parliament-centred executive at all. This note plays the same role for Topic 5 that Note 00 played for Topic 1: it is added as <b>Note 00</b>, not because it is one of Topic 5's official syllabus elements (structure, functioning, conduct of business, powers &amp; privileges), but because it is the conceptual scaffolding those elements sit on.</p>
+<p>This is also Week 2, Day 3 of the study plan — sequenced right after Topic 1 closes out with Fundamental Duties, and right before the Federal System notes (Topic 2) that follow it.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Every democracy has to answer one basic design question: once you elect a legislature to make laws, who actually runs the government day to day, and how are they kept accountable? There are two classic answers. In a <b>Parliamentary system</b> (Britain, India), the government is not separately elected at all — it is simply drawn from whichever party or coalition controls the legislature, and it survives only for as long as it keeps that legislature's confidence. Lose a vote of confidence, and the government falls immediately, possibly triggering fresh elections. In a <b>Presidential system</b> (the USA), voters separately elect a President for a fixed term, and that President runs the government independently of the legislature — Congress cannot vote the President out just for losing political support, only impeach for a specific serious wrongdoing.</p>
+<p>India deliberately chose the first model, and the reason is worth holding before any of the technical detail below: the framers wanted a government that answers to elected representatives <i>continuously</i>, every week, in Parliament — not just once every four or five years at an election. That single choice is why India ended up with a President who is largely ceremonial (Section 02) even though the country is also, confusingly, a "Republic" — having an elected President is not the same thing as running a Presidential system, and that exact confusion is one of Prelims' favourite traps here (Section 03).</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 5 note series —</b>
+<span class="done">✓ 00 Parliamentary System &amp; Presidential Government (this file)</span> · <span class="done">✓ 01 Structure &amp; Composition of Parliament</span> · <span class="done">✓ 02 Powers, Functions &amp; Legislative Process</span> · <span class="done">✓ 03 Budget, Sessions &amp; Parliamentary Privileges</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 : SYLLABUS PLACEMENT ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Where this fits &amp; the logical chain</h2></div>
+<hr class="divider">
+<p class="lead">Topic 5's official syllabus line reads: <b>"Parliament and State legislatures — structure, functioning, conduct of business, powers &amp; privileges and issues arising out of these."</b> This note sits <i>before</i> that sequence, exactly as Note 00 did for Topic 1 — you need to know that India runs a Parliamentary system, and why, before "structure and functioning" of that Parliament means anything.</p>
+<div class="tip">
+<span class="ic">🔗</span>
+<p><b>Logical chain:</b> Form of government chosen (this file — Parliamentary, not Presidential, and why) → Structure &amp; composition of Parliament (Note 01 — Lok Sabha, Rajya Sabha, sessions) → Conduct of business (Note 02 — bills, motions, questions) → Powers &amp; privileges (Note 03 — what MPs can and cannot be held to account for). Each note assumes the one before it.</p>
+</div>
+<p class="lead">Two Constituent Assembly touchpoints worth anchoring early: Article 74 (President aided and advised by a Council of Ministers headed by the PM) and Article 75(3) (Council of Ministers collectively responsible to the Lok Sabha) are the two clauses that <i>constitutionally lock in</i> the parliamentary form — everything else in this note explains why the Assembly wrote those two clauses the way it did.</p>
+</section>
+
+<!-- ===== SECTION 02 : PARLIAMENTARY SYSTEM ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>The Parliamentary System — definition &amp; features</h2></div>
+<hr class="divider">
+<p class="lead">A Parliamentary system (also called the Westminster or Cabinet system) is one in which the executive is drawn from, and remains accountable to, the legislature — the government survives only as long as it commands the confidence of the House. India runs this system at both the Centre (Article 74–75) and in every State (Article 163–164), making it, along with the UK, one of the most consistently parliamentary large democracies in the world.</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 800 250" role="img" aria-label="Key features of the Parliamentary system of government">
+<g font-family="Inter" font-size="12">
+<circle cx="400" cy="125" r="58" fill="#1B1D51"/>
+<text x="400" y="119" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">PARLIAMENTARY</text>
+<text x="400" y="137" text-anchor="middle" fill="#FFD25A" font-weight="700" font-size="13">SYSTEM</text>
+
+<rect x="20" y="16" width="220" height="70" rx="10" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.3"/>
+<text x="130" y="38" text-anchor="middle" font-weight="700" fill="#134b59">Dual Executive</text>
+<text x="130" y="56" text-anchor="middle" font-size="10.5" fill="#134b59">President (nominal) +</text>
+<text x="130" y="70" text-anchor="middle" font-size="10.5" fill="#134b59">PM &amp; Council of Ministers (real)</text>
+
+<rect x="560" y="16" width="220" height="70" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.3"/>
+<text x="670" y="38" text-anchor="middle" font-weight="700" fill="#8a5c00">Fusion of Powers</text>
+<text x="670" y="56" text-anchor="middle" font-size="10.5" fill="#8a5c00">Executive is drawn from,</text>
+<text x="670" y="70" text-anchor="middle" font-size="10.5" fill="#8a5c00">and sits inside, the legislature</text>
+
+<rect x="20" y="164" width="220" height="70" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.3"/>
+<text x="130" y="186" text-anchor="middle" font-weight="700" fill="#7a1f66">Collective Responsibility</text>
+<text x="130" y="204" text-anchor="middle" font-size="10.5" fill="#7a1f66">Council of Ministers answers</text>
+<text x="130" y="218" text-anchor="middle" font-size="10.5" fill="#7a1f66">to the Lok Sabha as one body</text>
+
+<rect x="560" y="164" width="220" height="70" rx="10" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.3"/>
+<text x="670" y="186" text-anchor="middle" font-weight="700" fill="#177a4d">No Fixed Tenure</text>
+<text x="670" y="204" text-anchor="middle" font-size="10.5" fill="#177a4d">Government falls on losing</text>
+<text x="670" y="218" text-anchor="middle" font-size="10.5" fill="#177a4d">a no-confidence motion</text>
+
+<line x1="240" y1="51" x2="345" y2="100" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="560" y1="51" x2="455" y2="100" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="240" y1="199" x2="345" y2="150" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="560" y1="199" x2="455" y2="150" stroke="#9598c9" stroke-width="1.3"/>
+</g>
+</svg>
+<figcaption><b>Fig 1.</b> The four features that define any Parliamentary system — India built all four into Articles 74, 75, 163 and 164.</figcaption>
+</div></figure>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Feature</th><th>How it works in India</th></tr></thead>
+<tbody>
+<tr><th>Nominal vs real executive</th><td>President is the constitutional (de jure) head of state; the Prime Minister and Council of Ministers are the real (de facto) executive who actually govern — Article 74(1).</td></tr>
+<tr><th>Majority party rule</th><td>The party or coalition with a majority in the Lok Sabha forms the government; its leader is appointed Prime Minister by the President.</td></tr>
+<tr><th>Collective responsibility</th><td>Article 75(3) — the Council of Ministers is collectively responsible to the Lok Sabha; a no-confidence motion against one minister brings down the whole ministry.</td></tr>
+<tr><th>Membership overlap</th><td>Ministers must be members of Parliament (or become one within six months of appointment) — the executive sits inside the legislature, not apart from it.</td></tr>
+<tr><th>Leadership</th><td>The Prime Minister leads both the government and (usually) the majority party — the link that makes fusion of powers work in practice.</td></tr>
+<tr><th>Dissolution</th><td>The Lok Sabha can be dissolved before its full term on the PM's advice, and mid-term elections can follow a lost confidence vote.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 03 : PRESIDENTIAL SYSTEM ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>The Presidential System — the comparison case</h2></div>
+<hr class="divider">
+<p class="lead">India did not adopt this model, but Prelims tests it as the contrast case almost every year it asks about Parliamentary features — so knowing the Presidential system precisely is often the fastest way to eliminate a wrong option about India's own system. The USA is the textbook example.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Feature</th><th>Presidential (USA model)</th></tr></thead>
+<tbody>
+<tr><th>Head of state &amp; government</th><td>Combined in one office — the President is both, with no separate ceremonial head.</td></tr>
+<tr><th>Source of authority</th><td>President is directly (in the US, quasi-directly via an Electoral College) elected by the people, not by the legislature.</td></tr>
+<tr><th>Separation of powers</th><td>Strict — the President and Cabinet secretaries are not members of Congress and cannot vote in it.</td></tr>
+<tr><th>Responsibility</th><td>President is not responsible to the legislature for policy; cannot be removed by a no-confidence vote, only by impeachment for a defined constitutional wrong.</td></tr>
+<tr><th>Tenure</th><td>Fixed term (four years in the US) regardless of how unpopular the President's policies become.</td></tr>
+<tr><th>Cabinet</th><td>Appointed by the President as advisors, individually responsible to him — not a collective, Parliament-facing body.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Common trap:</b> "India has a President, so India is quasi-Presidential" — false. Having an office titled "President" says nothing about the system; it is <i>how that President is chosen, and whether the executive is accountable to the legislature,</i> that decides Parliamentary vs Presidential. India's President is indirectly elected and not the real executive — both are Parliamentary-system markers, not Presidential ones.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : MERITS & DEMERITS ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Merits &amp; demerits of the Parliamentary System</h2></div>
+<hr class="divider">
+<p class="lead">This is the classic Mains "critically evaluate" prompt — 2020's GS2 question (Section 07) is built almost entirely on this merit/demerit tension, so the two columns below are worth being able to reproduce as an answer skeleton, not just recognise.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Merits</th><th>Demerits</th></tr></thead>
+<tbody>
+<tr><td>Harmony between legislature and executive — no gridlock of the kind a separately-elected President and Congress can produce.</td><td>Government instability — a coalition can collapse mid-term on a lost confidence vote, unlike a Presidential system's fixed term.</td></tr>
+<tr><td>Responsible government — ministers answer daily to Parliament (Question Hour, motions, committees), not just once every few years to voters.</td><td>No separation of powers in the strict sense — the same people who make the law (majority MPs) also run the executive that enforces it.</td></tr>
+<tr><td>Alternative government is ready-made — the Leader of the Opposition and shadow scrutiny mean a fallen government can be replaced without a fresh election.</td><td>Rule by amateurs, historically argued — ministers are chosen from winning politicians, not necessarily domain experts, unlike a US Cabinet appointee.</td></tr>
+<tr><td>More representative — a Council of Ministers can accommodate multiple parties, regions and interests inside one Cabinet, useful for a diverse country.</td><td>Dictatorship of the Cabinet — a Prime Minister with a strong single-party majority can dominate both the executive and the legislature simultaneously.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 05 : WHY INDIA ADOPTED IT ===== -->
+<div class="tip trap"><span class="ic">!</span><div><b>Confidence is not only lost by a no-confidence motion.</b> The Council must also resign if the <b>Budget is rejected</b>, if any <b>cut motion</b> is carried against the government, if the <b>Motion of Thanks</b> is defeated, or if a <b>confidence motion</b> it moves is lost. A <b>censure motion</b> is the exception — the Council need not resign but must seek the confidence of the House as soon as possible. The working rule: <b>money defeat = confidence defeat; criticism is not.</b> Full treatment in Topic 5, Note 03.</div></div>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Why the Constituent Assembly chose the Parliamentary System</h2></div>
+<hr class="divider">
+<p class="lead">The Assembly debated this explicitly and picked Parliamentary over Presidential for four connected reasons — all four are individually testable as Prelims "which of the following is a reason" statements.</p>
+
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><div><b>Familiarity:</b> India had already run diarchy and provincial-autonomy structures under the 1919 and 1935 Acts that resembled Cabinet government — a known system was less risky to launch a new republic on.</div></div>
+<div class="item"><span class="dot">●</span><div><b>Preference for responsible government:</b> continuous accountability to Parliament was judged more democratic than accountability once every fixed term.</div></div>
+<div class="item"><span class="dot">●</span><div><b>Avoiding legislative–executive conflict:</b> a Presidential system's separately-elected branches can deadlock each other; a newly independent, diverse country could not risk that.</div></div>
+<div class="item"><span class="dot">●</span><div><b>Representing India's diversity:</b> a multi-member Council of Ministers offers many more seats at the executive table than a single President ever could — useful for a linguistically and religiously plural country.</div></div>
+</div>
+
+<div class="tip">
+<span class="ic">◆</span>
+<p><b>Value-addition:</b> Dr. Ambedkar defended the choice directly in the Constituent Assembly, arguing that a Presidential system trades daily accountability for occasional accountability, and that "the daily assessment of responsibility... is more effective than the periodic assessment" a Presidential term provides. This line is a ready-made Mains quote for any answer defending the Parliamentary choice.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>The doctrinal anchor — Shamsher Singh v. State of Punjab (1974):</b> when an answer needs a <i>judicial</i> source (not just the Assembly's intent) for the proposition that India's is a parliamentary executive, cite this seven-judge decision: the President and Governors are constitutional heads who act on the aid and advice of their Ministers save in exceptional situations — the case that converted this note's entire framework from convention into declared law. It pairs naturally with the 42nd/44th Amendment arc in Topic 6, Note 00.</p>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 The recurring counter-debate — should India switch to a Presidential system?</div>
+<p>This resurfaces in public argument every few years, so hold both sides. <b>The case for switching:</b> a directly-elected executive with a fixed term would end instability from coalition collapses and defections; separation from the legislature could mean ministers chosen for expertise rather than electoral arithmetic; clearer accountability of one visible executive. <b>The case against (and the Assembly's own position):</b> daily answerability to Parliament beats a once-in-five-years verdict; a single national executive concentrates dangerous power in a diverse federation; and the deadlock risk between separately elected branches is exactly what a plural, developing polity cannot afford. <b>The clinching structural point:</b> S.R. Bommai and later cases treat the parliamentary system as part of the basic structure — meaning the switch is very likely not available by amendment at all, only by a new constituent exercise. That last line converts a general-opinion answer into a constitutional-law answer.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 06 : INDIAN VS BRITISH MODEL ===== -->
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Distinction between the Indian and British models</h2></div>
+<hr class="divider">
+<p class="lead">India borrowed the Parliamentary system from Britain (Note 02 of Topic 1 already flagged this borrowing), but did not copy it wholesale — five differences are worth holding precisely, since Prelims likes to test "which of these is true only of Britain, not India."</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point of difference</th><th>Britain</th><th>India</th></tr></thead>
+<tbody>
+<tr><th>Form of state</th><td>Constitutional monarchy — the Crown is hereditary head of state.</td><td>Republic — the President is elected, not hereditary (Note 02, Topic 1).</td></tr>
+<tr><th>Parliamentary sovereignty</th><td>Parliament is legally supreme; no court can strike down an Act of Parliament.</td><td>Constitution is supreme, not Parliament — Parliament's laws are subject to judicial review and the Basic Structure limit (Note 06, Topic 1).</td></tr>
+<tr><th>Source of PM's membership</th><td>By convention, the PM sits in the House of Commons, not the Lords.</td><td>The PM can be a member of either House — Lok Sabha or Rajya Sabha — with no constitutional bar.</td></tr>
+<tr><th>Shadow cabinet</th><td>An institutionalised, salaried Shadow Cabinet formally shadows each government department.</td><td>No formal, salaried Shadow Cabinet system — opposition scrutiny is less institutionally structured.</td></tr>
+<tr><th>Legal status of the Cabinet</th><td>The Cabinet is a product of convention, not a written law.</td><td>The Council of Ministers has express constitutional recognition — Articles 74 and 75 name it directly.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 07 : PYQ ANALYSIS ===== -->
+<section id="s7" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>PYQ analysis</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> Prelims tests this note almost entirely as a "define the system correctly" statement-MCQ — confirmed genuine in 2013, 2015, 2017 and 2020, always anchored on Article 75(3)'s collective-responsibility clause or a direct definitional statement. Mains tests the merit/demerit tension directly, confirmed genuine in 2020.</p>
+
+
+
+<div class="pyq">
+<span class="yr">2020</span><span class="stg">Prelims</span>
+<p class="qtext">A Parliamentary System of Government is one in which</p>
+<ul class="opts single"><li>(a) all political parties in the Parliament are represented in the Government</li><li>(b) the Government is responsible to the Parliament and can be removed by it</li><li>(c) the Government is elected by the people and can be removed by them</li><li>(d) the Government is chosen by the Parliament but cannot be removed by it before completion of a fixed term</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>Verdict: direct hit — word-for-word the definition in Section 02.</li><li>Note how the distractors are built: (a) describes a national/coalition government, (c) describes direct democracy, and (d) describes a <i>fixed-tenure</i> executive, i.e. the Presidential system.</li><li>The removability test is what defines the parliamentary form.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">Prelims</span>
+<p class="qtext">The Parliamentary system of government is also known as the "Cabinet system" of government because</p>
+<ul class="opts single"><li>(a) the Cabinet is appointed directly by the Head of State</li><li>(b) real executive authority is vested in the Cabinet, which is collectively responsible to the legislature</li><li>(c) the Cabinet cannot be removed by the legislature during its term</li><li>(d) the Cabinet consists of members drawn from outside the legislature</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>Verdict: direct hit — tests the same collective-responsibility definition from a different angle.</li><li>Options (c) and (d) both describe features of the <i>Presidential</i> system, which is exactly the contrast Section 03 draws.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2013 &amp; 2015</span><span class="stg">Prelims</span>
+<p class="qtext">Under the Constitution of India, the Council of Ministers is collectively responsible to</p>
+<ul class="opts single"><li>(a) the President of India</li><li>(b) the Prime Minister</li><li>(c) the House of the People (Lok Sabha)</li><li>(d) both Houses of Parliament</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li>Article 75(3), verbatim. Verdict: direct hit, and the same clause is a genuine Prelims repeater across at least four years (2013, 2015, 2017, 2020).</li><li>Option (d) is the standing trap: responsibility runs to the <b>directly-elected House only</b>, never to the Rajya Sabha, which is why a no-confidence motion lies only in the Lok Sabha.</li></ul>
+</div>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Integrity note:</b> A widely-circulated claim that UPSC Mains 2019 GS2 asked a direct question on "asymmetric federalism" could not be confirmed against the actual 2019 GS2 paper during research for this note — that specific question does not appear in the verified 2019 paper and has therefore been left out rather than included on secondhand authority. Similarly, a "cooperative vs competitive federation" prompt attributed to 2017 GS2 by some compilations traces to the PSIR <i>optional</i> paper, not the General Studies paper, and is excluded here for the same reason.</p>
+</div>
+
+<h3>Predicted Questions — reverse-engineered for Week 2 (not real PYQs, exam-pattern practice)</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following is <b>NOT</b> a feature of the parliamentary system?</p><ul class="opts single"><li>(a) Fusion of the executive and legislature</li><li>(b) Collective responsibility to the Lower House</li><li>(c) A fixed executive term immune to legislative confidence</li><li>(d) A nominal head of state distinct from the real executive</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT parliamentary</b>
+<p class="vone">Fixed tenure independent of legislative confidence is the defining Presidential-system feature (Sections 02–03).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to the Indian and British models, which of the following is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) Britain's Parliament is legally sovereign; India's is limited by judicial review</li><li>(b) India's PM may sit in either House</li><li>(c) Britain has a formal, institutionalised Shadow Cabinet; India does not</li><li>(d) In both countries the Cabinet exists only by convention, without constitutional mention</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) is NOT correct</b>
+<p class="vone">India's Council of Ministers is expressly named in Articles 74–75; only Britain's Cabinet is purely conventional (Section 06's table).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">The Constituent Assembly preferred the parliamentary system for which reasons?</p><ol class="subs"><li>Familiarity from the 1919/1935 Acts</li><li>Preference for daily responsibility over periodic assessment</li><li>Avoiding executive-legislature deadlock</li><li>Giving India's diversity more seats at the executive table</li></ol><p class="qtext">How many are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — All four (Section 05's grid)</b>
+<p class="vone">A genuine all-correct set; the trap option would be "only three."</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> India cannot in all likelihood switch to a Presidential system by constitutional amendment. <b>Statement-II:</b> The parliamentary system has been treated as part of the basic structure. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">If the parliamentary form is basic structure, Article 368 cannot reach it; that is exactly Statement-I's basis (Section 05's debate box).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs:</p><ol class="subs"><li>Shamsher Singh (1974) — President/Governor are constitutional heads acting on advice</li><li>Article 74 — Council of Ministers to aid and advise the President</li><li>Article 75</li><li>— collective responsibility to the Rajya Sabha</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">Article 75(3)'s responsibility runs to the Lok Sabha alone, never the Rajya Sabha (Sections 02, 05).</p>
+</div>
+</div>
+<p class="lead">Four genuine PYQs above all hit the same collective-responsibility/definitional target from different angles — expect the coaching test to instead pivot toward the India-vs-Britain and Parliamentary-vs-Presidential contrast tables, which are comparably rich but not yet PYQ-verified here.</p>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Consider the following statements:</p><ol class="subs"><li>in India, the Prime Minister must be a member of the Lok Sabha</li><li>in Britain, the Prime Minister sits in the House of Commons by convention</li><li>India has an institutionalised, salaried Shadow Cabinet like Britain's</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (b) 2 only</b>
+<p class="vone">Section 06's table. Statement 1 is the trap: India's PM can sit in either House, Lok Sabha or Rajya Sabha, with no constitutional bar; statement 3 is false — India has no formal Shadow Cabinet system.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Which of the following is a feature of the Presidential, not the Parliamentary, system of government?</p><ul class="opts single"><li>(a) collective responsibility of the executive to the legislature</li><li>(b) fusion of legislative and executive powers</li><li>(c) the executive can be removed only by impeachment for a defined constitutional wrong, not a no-confidence vote</li><li>(d) no fixed tenure for the government</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (c)</b>
+<p class="vone">Section 03's comparison table. (a), (b) and (d) are all Parliamentary-system markers from Section 02's Fig 1; only (c) belongs to the Presidential column.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">The Constituent Assembly's choice of the Parliamentary over the Presidential system is explained by which of the following reasons?</p>
+<ol class="subs"><li>Familiarity with Cabinet-style structures from the 1919 and 1935 Acts</li><li>A preference for continuous, rather than periodic, executive accountability</li><li>A desire to avoid legislative–executive deadlock in a newly independent, diverse country</li></ol>
+<p class="qtext">How many of the above are genuine reasons?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (c) all three</b>
+<p class="vone">Section 05's four reasons (the fourth, representing India's diversity through a multi-member Cabinet, is the one left out of this particular three-statement version, itself a plausible follow-up distractor).</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">"The daily assessment of responsibility... is more effective than the periodic assessment" that a Presidential system provides — this line, defending India's choice of the Parliamentary system in the Constituent Assembly, is attributed to:</p><ul class="opts"><li>(a) Jawaharlal Nehru</li><li>(b) Dr. B.R. Ambedkar</li><li>(c) Sardar Vallabhbhai Patel</li><li>(d) Dr. Rajendra Prasad</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (b)</b>
+<p class="vone">Section 05's value-addition box, a ready-made attribution drill exactly like the Week 1 test's repeated "who said/chaired what" format.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">08</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M20</span><span class="prac">Practice</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">Critically evaluate the Parliamentary system of government as adopted by India. Discuss its merits and demerits.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically evaluate" + explicit merits/demerits.</b> Evaluate = reach a decision from weighed pros and cons. The structure is dictated: merits block, demerits block, verdict. The verdict must actually <i>decide</i>, not trail off.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: why chosen — Ambedkar</li><li>Merits</li><li>Demerits</li><li>Why the alternative is unavailable</li><li>Verdict + reform</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>India adopted a parliamentary executive — <b>Articles 74, 75 and 163</b> — with the Council of Ministers collectively responsible to the Lok Sabha. Ambedkar defended the choice in the Assembly as privileging <b>"daily assessment of responsibility"</b> over the periodic assessment a fixed-term presidency allows.</p>
+<p><span class="sh">Merits</span></p>
+<p>Continuous accountability — question hour, debates, motions, and ultimately a no-confidence motion under <b>Article 75(3)</b>. Harmony between legislature and executive, avoiding the deadlock separately-elected branches produce. Representative flexibility: a multi-member Council accommodates India's linguistic, regional and religious plurality far better than a single President. Responsive government, removable the moment it loses its majority. <b>Shamsher Singh (1974)</b> confirmed the President and Governors as constitutional heads acting on aid and advice.</p>
+<p><span class="sh">Demerits</span></p>
+<p>Instability in the coalition era — repeated mid-term collapses between 1989 and 1999. No real separation of powers: a disciplined majority makes Parliament an instrument of the executive, worsened by the <b>Tenth Schedule's</b> whip regime, whose disqualification decisions <b>Kihoto Hollohan (1992)</b> made judicially reviewable while leaving them with a partisan Speaker. Government by amateurs — ministers chosen for electoral arithmetic, not domain expertise. Executive dominance of legislation: declining sitting days, thin committee scrutiny, and contested use of the Money Bill route.</p>
+<p><span class="sh">Why the alternative is unavailable</span></p>
+<p>A switch to a presidential system is very likely foreclosed: the parliamentary system has been treated as part of the <b>basic structure</b>, placing it beyond Article 368's reach.</p>
+<p><span class="sh">Verdict</span></p>
+<p>The choice remains sound but under-performing; the defect lies in the practice, not the model. Repair means stronger committee scrutiny, guaranteed sitting days, an independent tribunal for anti-defection cases, and a Speaker insulated from party pressure.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 74 / 75 / 75(3) / 163 / 368 · Ambedkar's daily-assessment quotation · Shamsher Singh (1974) · Kihoto Hollohan (1992) · coalition-era instability · Tenth Schedule whip regime · basic-structure foreclosure · four concrete reforms.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 261 / 250 words.</b> <b>Cut:</b> the "doctrinal anchor" label before Shamsher Singh and the expanded phrasing on Bills passed without debate. <b>Bought:</b> <b>Kihoto Hollohan (1992)</b> — the anti-defection case, which converts the whip criticism from an assertion into a cited one and connects directly to the Speaker-reform proposal in the verdict.</div>
+<div class="cost"><b>What would cost you marks:</b> a merits-and-demerits list with no verdict — "evaluate" demands a decision; omitting the basic-structure point, which is the sharpest constitutional insight available here.</div>
+</div>
+
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">◆ One-page recall sheet</span>
+<h2>Last-mile revision — Parliamentary System &amp; Presidential Government</h2>
+<ul>
+<li>Parliamentary = executive drawn from and accountable to the legislature; Presidential = executive separately elected, fixed term.</li>
+<li><b>Article 74:</b> President aided/advised by Council of Ministers headed by PM. <b>Article 75(3):</b> collective responsibility to Lok Sabha.</li>
+<li>India: dual executive (President nominal, PM+CoM real) — same at States via Articles 163–164.</li>
+<li>USA is the textbook Presidential case: fixed term, strict separation of powers, impeachment not no-confidence.</li>
+<li>Merit: harmony of legislature+executive, responsible daily accountability. Demerit: instability, no strict separation of powers.</li>
+<li>India chose Parliamentary for: familiarity, responsible-government preference, avoiding legislative-executive conflict, representing diversity.</li>
+<li>Ambedkar: daily assessment of responsibility beats periodic assessment.</li>
+<li>Indian vs British: Republic not monarchy; Constitution supreme not Parliament; PM can sit in either House; no formal Shadow Cabinet; Council of Ministers has express constitutional status (Britain's is conventional).</li>
+<li>Genuine Prelims repeater on Art 75(3) collective responsibility: <b>2013, 2015, 2017, 2020.</b></li>
+</ul>
+</div>
+
+<div class="series">
+<b>Next:</b> <a href="01%20Structure%20and%20Composition%20of%20Parliament.html" style="color:var(--deep2);font-weight:600;">Note 01 — Structure &amp; Composition of Parliament</a>, the first of Topic 5's official syllabus-mapped notes — followed by Note 02 (Powers, Functions &amp; Legislative Process) and Note 03 (Budget, Sessions &amp; Parliamentary Privileges).
+</div>
+</section>
+
+<nav class="tabflow" id="tabflow">
+<button class="tabflow-btn tabflow-prev" id="tabflowPrev" type="button">
+<span class="tabflow-dir">&#8592; Previous</span>
+<span class="tabflow-label" id="tabflowPrevLabel"></span>
+</button>
+<button class="tabflow-btn tabflow-next" id="tabflowNext" type="button">
+<span class="tabflow-dir">Next &#8594;</span>
+<span class="tabflow-label" id="tabflowNextLabel"></span>
+</button>
+</nav>
+
+<footer>
+Parliamentary System &amp; Presidential Government — foundational primer, Polity &amp; Constitution cluster, GS Paper II (Mains) · precedes Topic 5, Note 01<br>
+Facts cross-checked against publicly available sources; PYQs never fabricated — see integrity note in Section 07.
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.notetab'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.tabsection'));
+  var ids = sections.map(function(s){ return s.id; });
+
+  var flowPrev = document.getElementById('tabflowPrev');
+  var flowNext = document.getElementById('tabflowNext');
+  var flowPrevLabel = document.getElementById('tabflowPrevLabel');
+  var flowNextLabel = document.getElementById('tabflowNextLabel');
+
+  function tabLabel(id){
+    var match = tabs.filter(function(t){ return t.dataset.tab === id; })[0];
+    return match ? match.textContent.trim() : '';
+  }
+
+  function updateTabflow(id){
+    if (!flowPrev || !flowNext) return;
+    var idx = ids.indexOf(id);
+    if (idx > 0) {
+      flowPrev.disabled = false;
+      flowPrev.dataset.target = ids[idx - 1];
+      flowPrevLabel.textContent = tabLabel(ids[idx - 1]);
+    } else {
+      flowPrev.disabled = true;
+      flowPrev.removeAttribute('data-target');
+      flowPrevLabel.textContent = '';
+    }
+    if (idx > -1 && idx < ids.length - 1) {
+      flowNext.disabled = false;
+      flowNext.dataset.target = ids[idx + 1];
+      flowNextLabel.textContent = tabLabel(ids[idx + 1]);
+    } else {
+      flowNext.disabled = true;
+      flowNext.removeAttribute('data-target');
+      flowNextLabel.textContent = '';
+    }
+  }
+
+  function activate(id, doScroll){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+    sections.forEach(function(s){ s.classList.toggle('active', s.id === id); });
+    if (doScroll) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    updateTabflow(id);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      activate(t.dataset.tab, true);
+      history.replaceState(null, '', '#' + t.dataset.tab);
+    });
+  });
+  [flowPrev, flowNext].forEach(function(btn){
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      if (btn.disabled || !btn.dataset.target) return;
+      activate(btn.dataset.target, true);
+      history.replaceState(null, '', '#' + btn.dataset.target);
+    });
+  });
+  var initial = (location.hash || '').replace('#','');
+  if (ids.indexOf(initial) === -1) initial = ids[0];
+  if (initial) activate(initial, false);
+})();
+</script>
+
+</div>
+</div>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

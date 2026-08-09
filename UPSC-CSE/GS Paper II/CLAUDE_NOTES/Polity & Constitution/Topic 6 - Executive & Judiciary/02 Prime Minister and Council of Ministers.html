@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Minister &amp; Council of Ministers | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Appointment &amp; tenure</button>
+<button class="notetab" data-tab="s2">02 · Powers &amp; functions</button>
+<button class="notetab" data-tab="s3">03 · Council of Ministers</button>
+<button class="notetab" data-tab="s4">04 · Collective &amp; individual responsibility</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 6 of 9 · Note 02 — Week 3, Day 3</div>
+<h1>Prime Minister &amp; Council of Ministers</h1>
+<p class="sub">Senior-mentor notes on the "real" executive — the office that actually governs while the President signs. Appointment mechanics, the tight Article 75(3) attendance/membership rules everyone forgets a number on, and the difference between collective and individual ministerial responsibility.</p>
+<div class="chips">
+<span class="chip">Articles 74–75</span>
+<span class="chip">Collective Responsibility</span>
+<span class="chip">91st Amendment</span>
+<span class="chip">Cabinet vs Council of Ministers</span>
+<span class="chip">Motion of No-Confidence</span>
+</div>
+<div class="bignum"><b>15%</b><span>Ministry size cap post-91st Amendment</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Closing the executive triangle</div>
+<p>This note completes the picture the first two Topic 6 notes set up: the President is the nominal Union head, the Governor the nominal State head — and the Prime Minister, backed by the Council of Ministers, is where actual governing power sits at the Union level (the Chief Minister and State Council of Ministers being the exact State-level mirror, covered separately). Where the earlier two notes were heavy on discretion and case law, this one is heavier on precise numbers and definitions — Article 75(3)'s collective-responsibility rule and the 91st Amendment's ministry-size cap are two of the most number-precise facts in the whole Polity syllabus.</p>
+<p>Week 3, Day 3 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapters 20–21.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>The Prime Minister is not directly elected by voters as "PM" — they become PM by being the leader who commands the confidence of the Lok Sabha, usually because they lead the party or coalition with a majority there. The President formally appoints the PM, but has almost no real choice when one party has a clear majority — the discretion only shows up in a hung Parliament (already covered in Note 00).</p>
+<p>The Council of Ministers is the PM's team, and it comes in three ranks — Cabinet Ministers (the senior, most-consulted tier), Ministers of State, and Deputy Ministers — but the Constitution's own accountability rule, Article 75(3), makes the <i>whole</i> Council collectively answerable to the Lok Sabha as one unit: if the Lok Sabha passes a no-confidence motion, every Minister falls together, Cabinet rank or not. That "sink or swim together" idea — collective responsibility — is the single concept this entire note orbits around.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 6 note series —</b>
+<span class="done">✓ 00 President &amp; Vice-President</span> · <span class="done">✓ 01 Governor</span> · <span class="done">✓ 02 Prime Minister &amp; Council of Ministers (this file)</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Appointment &amp; tenure — Article 75</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Appointment</th><td>The President appoints the Prime Minister — no election "for PM" as such exists; the President invites the person most likely to command Lok Sabha confidence, ordinarily the leader of the majority party/coalition. Other Ministers are appointed by the President <b>on the PM's advice.</b></td></tr>
+<tr><th>Membership qualification</th><td>Must be a member of either House of Parliament. A person who is <i>not yet</i> an MP can still be appointed PM/Minister, but must get elected to either House within <b>6 months</b> of appointment, or cease to hold office.</td></tr>
+<tr><th>Term</th><td>No fixed term — holds office "during the pleasure of the President," but in practice this is entirely notional: so long as the PM commands the Lok Sabha's confidence, the President cannot remove them. The real check is a Lok Sabha no-confidence motion, not Presidential pleasure.</td></tr>
+<tr><th>Oath</th><td>Administered by the President — oath of office and oath of secrecy.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> "During the pleasure of the President" appears for the PM (Art 75(2)) exactly as it does for the Governor (Art 156) — but the practical meaning is completely different. A Governor genuinely can be removed at the Union government's whim; a PM commanding a Lok Sabha majority cannot be removed by the President acting alone, because the President's own "pleasure" is itself constitutionally understood to track the House's confidence, not personal discretion.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Powers &amp; functions of the Prime Minister</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Role</th><th>Content</th></tr></thead>
+<tbody>
+<tr><th>In relation to the Council of Ministers</th><td>Recommends who becomes a Minister (and their portfolios) to the President; can ask a Minister to resign or advise the President to dismiss one; presides over Cabinet meetings, guiding and coordinating the work of different Ministries.</td></tr>
+<tr><th>In relation to the President</th><td>Principal channel of communication between the President and the Council of Ministers (Article 78) — communicates all Cabinet decisions relating to Union administration and legislative proposals; furnishes information the President may call for.</td></tr>
+<tr><th>In relation to Parliament</th><td>Announces major policies on the floor of the House; recommends dissolution of the Lok Sabha to the President; is the <b>Leader of the House</b> in the Lok Sabha (or, if a Rajya Sabha member, in that House).</td></tr>
+<tr><th>Other roles</th><td>Chairman of <b>NITI Aayog</b>; chairs the Cabinet Committees on Appointments, Security, Political Affairs and Economic Affairs; chairman of the <b>National Integration Council, Inter-State Council, National Water Resources Council</b> and the <b>National Disaster Management Authority</b>.</td></tr>
+<tr><th>The five descriptive roles (Mains vocabulary)</th><td>Laxmikanth's framing, useful for any "assess the PM's position" answer: the PM is the <b>chief spokesman</b> of the Union government; the <b>crisis manager-in-chief</b> at the political level; the <b>leader of the nation</b> (as distinct from the President as head of state); the <b>political head of the services</b>; and the <b>chief coordinator</b> of the entire administration. Add the standard scholarly quotations: Britain's counterpart was described by <b>Munro</b> as "the keystone of the Cabinet arch," by <b>Laski</b> as "the pivot of the whole system of government," by <b>Jennings</b> as "the sun around which planets revolve," and by <b>Morley</b> as <i>primus inter pares</i> — "first among equals." The Indian PM occupies the same structural position.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 03 ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Council of Ministers — composition, categories &amp; the 91st Amendment cap</h2></div>
+<hr class="divider">
+<h3>Three ranks — not interchangeable terms</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Rank</th><th>Role</th></tr></thead>
+<tbody>
+<tr><th>Cabinet Ministers</th><td>Head major Ministries, sit in Cabinet meetings, take the most significant policy decisions. The <b>Cabinet</b> is the smaller, most powerful inner ring of the full Council of Ministers — not a separate body, but a subset of it.</td></tr>
+<tr><th>Ministers of State</th><td>May hold independent charge of a smaller Ministry/Department, or be attached to assist a Cabinet Minister; do not normally attend Cabinet meetings unless specially invited for a relevant item.</td></tr>
+<tr><th>Deputy Ministers</th><td>Attached to assist Cabinet Ministers or Ministers of State; hold no independent charge of any Department.</td></tr>
+</tbody>
+</table>
+</div>
+<h3>The constitutional articles behind the office (the Bare Act layer)</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>Provision</th></tr></thead>
+<tbody>
+<tr><th>Article 74</th><td>Council of Ministers with the PM at the head to <b>aid and advise</b> the President, who <b>shall act in accordance with</b> that advice (42nd Amendment) but may require reconsideration once (44th Amendment). <b>74(2):</b> the question whether any, and if so what, advice was tendered <b>shall not be inquired into by any court</b>.</td></tr>
+<tr><th>Article 75</th><td>Appointment (75(1)); the <b>15% cap</b> and anti-defection bar (75(1A) and 75(1B), inserted by the 91st Amendment); ministers hold office during the President's pleasure (75(2)); <b>collective responsibility to the Lok Sabha</b> (75(3)); oath (75(4)); the <b>six-month</b> non-member rule (75(5)); salaries determined by Parliament (75(6)).</td></tr>
+<tr><th>Article 77</th><td>Conduct of business of the Government of India: all executive action is expressed to be taken <b>in the name of the President</b>; orders so authenticated cannot be questioned on the ground that they are not made by the President; the President makes rules for the <b>allocation of business</b> among Ministers (the Transaction of Business Rules).</td></tr>
+<tr><th>Article 78</th><td>Duties of the PM towards the President — communicate all Cabinet decisions on administration and legislative proposals; furnish information the President calls for; <b>submit for Cabinet consideration any matter on which a Minister has decided but the Council has not considered</b>, if the President so requires.</td></tr>
+<tr><th>Article 88</th><td>Every Minister (and the Attorney General) has the <b>right to speak in, and take part in the proceedings of, either House</b> and any joint sitting or committee of which they are named a member — but is <b>entitled to vote only in the House of which they are a member</b>. This is the article behind the "speaks in both, votes in one" trap.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Three kinds of responsibility — and the one that does not exist in India</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Type</th><th>Position in India</th></tr></thead>
+<tbody>
+<tr><th>Collective responsibility</th><td>Article 75(3) — the <b>fundamental principle</b> of the parliamentary system. The whole Council sinks or swims together, answerable to the Lok Sabha alone.</td></tr>
+<tr><th>Individual responsibility</th><td>Article 75(2) — ministers hold office during the President's <b>pleasure</b>, exercised on the PM's advice. This is how a single Minister can be dropped without the government falling.</td></tr>
+<tr><th>No legal responsibility</th><td>Unlike Britain, India has <b>no system of legal responsibility of ministers</b> — a Minister's countersignature is not required on the President's order, and a Minister is <b>not legally answerable in court</b> for advice tendered to the President (reinforced by Article 74(2)). A statement claiming Indian ministers bear legal responsibility for their advice is <b>false</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>"Council of Ministers" vs "Cabinet" — the distinction examiners love:</b> every Cabinet Minister is a member of the Council of Ministers, but not every member of the Council of Ministers sits in the Cabinet. Collective responsibility (Article 75(3)) legally binds the <i>entire Council</i>, not just the Cabinet tier — a Minister of State falls along with everyone else if a no-confidence motion succeeds, even if they never once attended a Cabinet meeting.</p>
+</div>
+
+<h3>The 91st Amendment, 2003 — the ministry-size cap</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Rule</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Size cap</th><td>Total strength of the Council of Ministers, including the PM/CM, cannot exceed <b>15% of the total membership</b> of the Lok Sabha (Union) or the State Legislative Assembly (State) — inserted specifically to curb bloated "jumbo" ministries formed to accommodate coalition partners.</td></tr>
+<tr><th>Minimum floor for small States</th><td>For smaller States/UTs with Legislative Assemblies, the number of Ministers, including the CM, shall not be less than <b>12.</b></td></tr>
+<tr><th>Anti-defection linkage</th><td>The same 91st Amendment also barred a defector from being appointed Minister for the remainder of their term (or until re-elected), closing the "defect and get a ministerial berth as reward" loophole under the Tenth Schedule.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Cabinet Committees — a listed Week 3 "Important Topic"</h3>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Nature:</b> Cabinet Committees are <b>extra-constitutional</b> — the Constitution nowhere mentions them; they are created under the <b>Rules of Business</b> framed under Article 77(3). They are of two kinds, <b>standing</b> (permanent) and <b>ad hoc</b> (temporary, for a specific problem). They are <b>set up by the Prime Minister</b> according to the needs of the time, so their number and composition change from government to government. Membership varies from three to eight; they usually include only Cabinet Ministers, though <b>non-Cabinet Ministers can also be members</b>. They not only sort out issues and formulate proposals for Cabinet decision — they also <b>take decisions themselves</b>, though the Cabinet may review them.</p>
+<p><b>The standing committees usually cited:</b> Cabinet Committee on <b>Political Affairs</b> ("super-Cabinet", deals with major policy and all problems relating to foreign/domestic affairs), <b>Economic Affairs</b>, <b>Appointments</b> (senior civil-service appointments — chaired by the PM), <b>Security</b> (defence and national security — chaired by the PM), <b>Parliamentary Affairs</b> (the one usually chaired by the <b>Home Minister</b>, not the PM), <b>Accommodation</b>, <b>Investment and Growth</b>, and <b>Employment and Skill Development</b>. <i>Trap:</i> the PM chairs most but <b>not all</b> — Parliamentary Affairs and Accommodation are conventionally chaired by other senior ministers.</p>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Kitchen Cabinet</b> — the informal body that questions like to contrast with the formal one. It is a small, unofficial circle of the PM's most trusted colleagues and sometimes <b>non-official persons</b> (friends, family members, advisers) that becomes the real centre of decision-making. Merits cited: it is a much smaller unit and so <b>more efficient</b> a decision-making body; it can meet more often and transact business faster; it helps the PM maintain <b>secrecy</b>. Demerits: it reduces the authority of the full Cabinet, allows outsiders to influence government functioning, and enlarges the PM's personal power. The phrase is borrowed from the USA; in Britain the equivalent is the "Inner Cabinet."</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Recent-judgment layer — the defection-to-ministership fight didn't end in 2003.</b> In <i>Keisham Meghachandra Singh v. Speaker, Manipur</i> (2020), a Manipur MLA who defected was made a Minister while the Speaker simply sat on the disqualification petition for years. The Supreme Court (Nariman, J.) directed the Speaker to decide within a set period, and when defiance continued, used <b>Article 142</b> to restrain the Minister from entering the Assembly — effectively removing him. The judgment also recommended that Parliament consider replacing the Speaker (a party-political figure) with an <b>independent tribunal</b> for Tenth Schedule disqualifications. This is the standard current-affairs pairing for any question on whether anti-defection machinery actually works: the 91st Amendment closed the reward loophole on paper; Speaker delay reopened it in practice; the Court's Article 142 intervention and tribunal proposal are the live reform debate.</p>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 Pros / cons / way forward — the anti-defection law itself</div>
+<p><b>For:</b> stability of governments; prevents wholesale horse-trading; an elected mandate belongs to the party platform, not the individual's resale value. <b>Against:</b> converts legislators into rubber stamps (a member can't vote conscience even on non-confidence matters); the Speaker's partisan position makes enforcement selective and slow; it weakens Parliament's deliberative character by making the whip supreme. <b>Way forward (liftable conclusion):</b> retain disqualification for genuine floor-crossing but transfer adjudication to an independent tribunal as Keisham Meghachandra recommends, and narrow the whip's reach to confidence motions and Money Bills — preserving both stability and legislative conscience.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 04 ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Collective &amp; individual responsibility — Article 75(3)</h2></div>
+<hr class="divider">
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 760 170" role="img" aria-label="Collective vs individual ministerial responsibility">
+<g font-family="Inter" font-size="12">
+<rect x="20" y="20" width="340" height="120" rx="10" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.5"/>
+<text x="190" y="46" text-anchor="middle" font-weight="700" fill="#134b59">Collective Responsibility</text>
+<text x="190" y="68" text-anchor="middle" font-size="11" fill="#134b59">Entire Council of Ministers is jointly</text>
+<text x="190" y="84" text-anchor="middle" font-size="11" fill="#134b59">answerable to the Lok Sabha.</text>
+<text x="190" y="104" text-anchor="middle" font-size="11" fill="#134b59">One no-confidence motion against the</text>
+<text x="190" y="120" text-anchor="middle" font-size="11" fill="#134b59">Ministry ⇒ ALL Ministers must resign.</text>
+
+<rect x="400" y="20" width="340" height="120" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="570" y="46" text-anchor="middle" font-weight="700" fill="#8a5c00">Individual Responsibility</text>
+<text x="570" y="68" text-anchor="middle" font-size="11" fill="#8a5c00">Each Minister holds office "during the</text>
+<text x="570" y="84" text-anchor="middle" font-size="11" fill="#8a5c00">pleasure of the President" individually.</text>
+<text x="570" y="104" text-anchor="middle" font-size="11" fill="#8a5c00">President can drop ONE Minister, on the</text>
+<text x="570" y="120" text-anchor="middle" font-size="11" fill="#8a5c00">PM's advice, without a full Cabinet fall.</text>
+</g>
+</svg>
+<figcaption><b>Fig 2.</b> Both rules sit inside Article 75 — collective at 75(3), individual through the "pleasure" clause at 75(2) — and MCQs often test which one a given scenario actually triggers.</figcaption>
+</div></figure>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Collective responsibility (Article 75(3))</b> is owed specifically and only to the <b>Lok Sabha</b> — the Rajya Sabha cannot remove the government via a no-confidence motion, even though Ministers may sit in either House. This is the same "confidence flows from the Lower House only" logic that runs through the whole Parliamentary-system design (Topic 5, Note 00). Every Cabinet decision binds every Minister publicly, even one who privately disagreed and was outvoted inside Cabinet — a Minister who cannot accept a collective decision is expected to resign, not dissent openly.</p>
+</div>
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap:</b> individual responsibility does not mean a Minister can be removed by a Lok Sabha vote against them personally — the House can only act against the government collectively. The President's power to drop a single Minister exists only through the pleasure doctrine, exercised on the Prime Minister's advice, not through any direct legislative vote against that one Minister.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 ===== -->
+<div class="tip trap"><span class="ic">!</span><div><b>Confidence is not only lost by a no-confidence motion.</b> The Council must also resign if the <b>Budget is rejected</b>, if any <b>cut motion</b> is carried against the government, if the <b>Motion of Thanks</b> is defeated, or if a <b>confidence motion</b> it moves is lost. A <b>censure motion</b> is the exception — the Council need not resign but must seek the confidence of the House as soon as possible. The working rule: <b>money defeat = confidence defeat; criticism is not.</b> Full treatment in Topic 5, Note 03.</div></div>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>PYQ analysis &amp; practice questions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> UPSC rarely asks the PM's powers directly — it tests the <i>machinery around</i> the office (Cabinet Secretariat, Cabinet Committees) and the <i>defining principle</i> of the system (responsibility to the Lok Sabha). Note in both genuine questions below how the correct answer turns on knowing what a body does <b>not</b> do.</p>
+
+<h3>(A) Genuine UPSC PYQs</h3>
+
+<div class="pyq">
+<span class="yr">2014</span><span class="stg">Prelims</span>
+<p class="qtext">Which of the following are the functions of the Cabinet Secretariat?</p>
+<ol class="subs"><li>Preparation of agenda for Cabinet Meetings</li><li>Secretarial assistance to Cabinet Committees</li><li>Allocation of financial resources to the Ministries</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 3 only</li><li>(c) 1, 2 and 3</li><li>(d) None of the above</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Allocating financial resources is the <b>Ministry of Finance's</b> job, not the Cabinet Secretariat's — the classic function-swap trap.</li><li>The Cabinet Secretariat provides secretarial assistance to the Cabinet and its Committees (Section 03's Cabinet Committees box) and is headed by the Cabinet Secretary, the senior-most civil servant.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">Prelims</span>
+<p class="qtext">There is a Parliamentary System of Government in India because the</p>
+<ul class="opts single"><li>(a) Lok Sabha is elected directly by the people</li><li>(b) Parliament can amend the Constitution</li><li>(c) Rajya Sabha cannot be dissolved</li><li>(d) Council of Ministers is responsible to the Lok Sabha</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<ul class="vwhy"><li>Verdict: direct hit on Article 75(3) and Section 04's collective-responsibility content.</li><li>The other three options are all true statements about India — but none of them is what <i>makes</i> the system parliamentary.</li><li>A model example of UPSC testing the definitional core rather than a fact.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions — same format, not real PYQs</h3>
+<p class="lead"><b>Integrity note:</b> self-generated, built in the shapes this weekly test repeatedly uses — a numeric-cap trap, a "who does the House vote against" scenario, and a rank-definition pairing.</p>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to the size of the Council of Ministers in India, consider the following statements:</p><ol class="subs"><li>The 91st Amendment, 2003 caps the total strength at 15% of the Lok Sabha's total membership</li><li>This cap does not apply to the Prime Minister, who is counted separately</li><li>For smaller States, the number of Ministers cannot be less than 12</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (c) — 1 and 3 only</b>
+<p class="vone">Statement 2 is the trap; the PM/CM is explicitly counted within the 15% cap, not excluded from it (Section 03's table).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">If the Lok Sabha passes a motion of no-confidence against the Council of Ministers, consider the following statements:</p>
+<ol class="subs"><li>Only the Cabinet Ministers must resign.</li><li>All Ministers, including Ministers of State and Deputy Ministers, must resign.</li><li>The Rajya Sabha can independently pass such a motion too.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) 2 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Collective responsibility under Article 75(3) binds the entire Council regardless of rank, and only the Lok Sabha can remove a government this way (Section 04).</p>
+</div>
+</div>
+
+
+
+<h3>Deep drill — Articles 74–88, Cabinet Committees &amp; responsibility</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">With reference to Article 88 of the Constitution, consider the following statements:</p>
+<ol class="subs"><li>Every Minister has the right to speak in and take part in the proceedings of either House.</li><li>The Attorney General of India enjoys the same right.</li><li>A Minister may vote in either House.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Article 88 grants the right to <b>speak and participate</b> in either House, but the right to <b>vote</b> exists only in the House of which one is a member.</li><li>"Speaks in both, votes in one" — for Ministers and the AG alike.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative ⚠</span>
+<p class="qtext">With reference to Cabinet Committees, which one of the following statements is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) They are established by the Rules of Business framed under Article 77(3).</li><li>(b) They are expressly provided for in the Constitution.</li><li>(c) They are set up by the Prime Minister according to the needs of the time.</li><li>(d) Non-Cabinet Ministers can also be members of them.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Cabinet Committees are <b>extra-constitutional</b> — the Constitution nowhere mentions them; they exist under the Transaction of Business Rules.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many ⚠</span>
+<p class="qtext">Consider the following statements about ministerial responsibility in India:</p>
+<ol class="subs"><li>The Council of Ministers is collectively responsible to the Lok Sabha.</li><li>An individual Minister holds office during the pleasure of the President.</li><li>A Minister's countersignature is required on orders of the President.</li><li>Ministers are legally answerable in a court for advice tendered to the President.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Statements 1 and 2. India has <b>no system of legal responsibility of ministers</b>: no countersignature is required, and Article 74(2) bars courts from inquiring into the advice tendered.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of Article and subject:</p>
+<ol class="subs"><li>Article 77 — conduct of business of the Government of India</li><li>Article 78 — duties of the Prime Minister towards the President</li><li>Article 75(5) — the fifteen per cent ceiling on the size of the Council of Ministers</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<p class="vone">Pairs 1 and 2. The 15% ceiling sits in <b>Article 75(1A)</b>; Article 75(5) is the <b>six-month</b> rule for a Minister who is not a member of either House.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative ⚠</span>
+<p class="qtext">Which one of the following is <b>NOT</b> cited as a merit of the Kitchen Cabinet?</p>
+<ul class="opts single"><li>(a) It is a smaller unit and therefore a more efficient decision-making body.</li><li>(b) It can meet more often and transact business faster.</li><li>(c) It helps the Prime Minister in maintaining secrecy.</li><li>(d) It strengthens the collective authority of the full Cabinet.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d)</b>
+<p class="vone">Reducing the authority of the full Cabinet is one of the standard <i>demerits</i> of the Kitchen Cabinet, alongside letting outsiders influence government functioning.</p>
+</div>
+</div>
+
+<h3>Format drill — your weak patterns, this note's content</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) A Minister may be drawn from either House of Parliament</li><li>(b) A Minister who is a Rajya Sabha member may vote in Lok Sabha proceedings</li><li>(c) A non-MP appointed Minister must enter either House within 6 months</li><li>(d) The President administers the oath of office to Ministers</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<p class="vone">A Minister may speak in either House but votes only in the House they belong to (Section 04's trap box).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to the 91st Amendment, 2003, which of the following is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) It caps the Council of Ministers at 15% of the Lower House's strength</li><li>(b) The Prime Minister is excluded from the 15% count</li><li>(c) It fixed a floor of 12 Ministers for smaller States</li><li>(d) It barred defectors from ministerial berths</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<p class="vone">The PM/CM is counted inside the cap, not outside it (Section 03).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following statements:</p><ol class="subs"><li>The President appoints the Prime Minister</li><li>Other Ministers are appointed by the President on the PM's advice</li><li>The Prime Minister must be a member of the Lok Sabha</li><li>The Chief Justice of India administers the PM's oath</li></ol><p class="qtext">How many are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">The PM may belong to either House, and the President, not the CJI, administers the oath (Section 01).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following roles:</p><ol class="subs"><li>Chairman of NITI Aayog</li><li>Leader of the House in the chamber the PM belongs to</li><li>Chairman of the Finance Commission</li><li>Principal channel between President and Council of Ministers under Article 78</li></ol><p class="qtext">How many are roles of the Prime Minister?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Only three (1, 2, 4)</b>
+<p class="vone">The Finance Commission is a separate Article 280 body constituted by the President (Section 02).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> The Lok Sabha cannot remove one individual Minister through a vote against that Minister alone. <b>Statement-II:</b> Individual ministerial responsibility operates through the President's pleasure exercised on the Prime Minister's advice, not through any House vote. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">The House acts only against the government collectively; single-Minister removal runs through the PM-President channel (Section 04).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs:</p><ol class="subs"><li>Cabinet Minister — attends Cabinet meetings as of right</li><li>Minister of State with independent charge — may head a small Ministry alone</li><li>Deputy Minister — holds independent charge of a Department</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">Deputy Ministers never hold independent charge (Section 03).</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M25</span><span class="prac">Practice</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Distinguish between collective and individual ministerial responsibility in the Indian parliamentary system, and explain why the distinction matters for Cabinet decision-making discipline.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Distinguish… and explain why it matters."</b> Two demands. The distinction is straightforward; the marks are in the second half — the <i>consequence</i> for how Cabinet actually functions. Most answers stop after the distinction.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: both in Art 75</li><li>Collective — to whom, effect</li><li>Individual — mechanism</li><li>Why it matters — the discipline</li><li>Close: no legal responsibility</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Both principles sit in <b>Article 75</b> but do different work.</p>
+<p><span class="sh">Collective</span></p>
+<p>Under <b>Article 75(3)</b> the Council of Ministers is collectively responsible to the <b>Lok Sabha alone</b> — not to the Rajya Sabha, and not to the President. A successful no-confidence motion brings down the entire Council, including Ministers of State and Deputy Ministers.</p>
+<p><span class="sh">Individual</span></p>
+<p>Under <b>Article 75(2)</b> Ministers hold office during the President's pleasure, exercised on the Prime Minister's advice, so one Minister may be dropped for personal or departmental failure without the government falling. The limit: the Lok Sabha cannot remove an individual Minister; it can act only against the Council as a whole.</p>
+<p><span class="sh">Why it matters</span></p>
+<p>Together they produce Cabinet discipline. Because all sink together, dissent must be voiced inside Cabinet and abandoned outside it — a Minister who cannot accept a collective decision is expected to resign. Because the Prime Minister can have any individual removed, that expectation is enforceable. <b>Collective responsibility supplies the norm; individual responsibility supplies the sanction.</b> Unlike Britain, India has no <i>legal</i> ministerial responsibility: no countersignature is required, and <b>Article 74(2)</b> bars courts from examining the advice tendered.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 75(2), 75(3), 74(2) · Lok-Sabha-only responsibility · all ranks fall together · resign-don't-dissent convention · the norm-versus-sanction formulation · absence of legal responsibility, contrasted with Britain.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 183 / 150 words.</b> <b>Cut:</b> "every Minister must publicly defend every Cabinet decision" (the resign-don't-dissent line says it better), the "never attended a Cabinet meeting" flourish, and two sub-heading words. <b>Bought:</b> nothing new — length only, 228 → budget over two passes. Even the sub-headings were shortened; in a 150-word answer, headings are part of the budget.</div>
+<div class="cost"><b>What would cost you marks:</b> defining both and stopping — the "why it matters" half carries the marks; saying responsibility runs to "Parliament" rather than the Lok Sabha specifically.</div>
+</div>
+
+</section>
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">★ 90-second recall</span>
+<h2>Last-mile revision — PM &amp; Council of Ministers</h2>
+<ul>
+<li>President appoints PM (no separate election "for PM"); other Ministers appointed on PM's advice.</li>
+<li>Non-MP appointee must get elected to either House within <b>6 months</b> or lose office.</li>
+<li>"During the pleasure of the President" for PM ≠ real removability — Lok Sabha confidence is the actual check.</li>
+<li>Three ranks: Cabinet Ministers &gt; Ministers of State &gt; Deputy Ministers. Cabinet is a subset of the full Council.</li>
+<li>91st Amendment, 2003: Council size capped at <b>15%</b> of Lok Sabha/Assembly membership; small-State floor of <b>12</b>; also barred defectors from ministerial posts.</li>
+<li>Article 75(3): collective responsibility owed to the <b>Lok Sabha only</b>, binds the entire Council regardless of rank.</li>
+<li>Individual responsibility: President can drop one Minister on PM's advice — not a House vote mechanism.</li>
+<li>PM is Chairman of NITI Aayog and Leader of the House in whichever House they belong to.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> this completes Topic 6's first pass on the Union executive. Topic 5's Parliament series (Notes 01–03) picks up next — structure &amp; composition, then powers &amp; legislative process, then budget/sessions/privileges.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='01%20Governor.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">01 · Governor</span></button>
+<button class="tabflow-btn tabflow-next" disabled><span class="tabflow-dir">Next →</span><span class="tabflow-label">— see Topic 5 Parliament series —</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 6 — Executive &amp; Judiciary · Note 02 of 3<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 20–21.
+</footer>
+
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

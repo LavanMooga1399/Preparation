@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamental Rights | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;}
+.sec-head{display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+
+
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Syllabus placement</button>
+<button class="notetab" data-tab="s2">02 · Right to Equality</button>
+<button class="notetab" data-tab="s3">03 · Right to Freedom</button>
+<button class="notetab" data-tab="s4">04 · Exploitation & Religion</button>
+<button class="notetab" data-tab="s5">05 · Remedies & Writs</button>
+<button class="notetab" data-tab="s6">06 · Mains craft</button>
+<button class="notetab" data-tab="s7">07 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">08 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 1 of 9 · Note 7 of 9</div>
+<h1>Fundamental Rights</h1>
+<p class="sub">Senior-mentor notes on Part III, Articles 12–35 — the Constitution's most litigated and most Mains-productive block, covering Equality, Freedom, Exploitation, Religion, Cultural/Educational Rights, and Constitutional Remedies.</p>
+<div class="chips">
+<span class="chip">Article 14</span>
+<span class="chip">Article 19</span>
+<span class="chip">Article 21</span>
+<span class="chip">Article 32</span>
+</div>
+<div class="bignum"><b>24</b><span>articles, Part III (Art. 12–35)</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ How this note fits the wider set</div>
+<p>This continues the "significant provisions" element alongside Union &amp; its Territory (Note 3), Citizenship (Note 4), Directive Principles (Note 8), and Fundamental Duties (Note 9, the actual final note in this Topic). It is deliberately a single merged file — even though the standard study sequence spreads it across two full days — because Part III is one continuous constitutional scheme (Articles 12–35 read as a whole), not several independent topics that happen to sit next to each other.</p>
+<p>Given the volume, this file is organised into four content sections by right-category (Equality; Freedom; Exploitation &amp; Religion; Cultural/Educational Rights, Remedies &amp; Writs) rather than the usual single content section — treat each as revisable on its own if time is short.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>A "Fundamental Right" is different from an ordinary law-given right in one crucial way: an ordinary right exists only because some law says so, and can vanish the moment Parliament repeals that law. A Fundamental Right is written directly into the Constitution itself — which means the government cannot simply legislate it away, and if the government ever does try to violate one, you can go straight to the Supreme Court and demand it be enforced (that direct-to-court guarantee is itself one of the rights, Article 32, covered in Section 05). That is the whole idea in one sentence: these are the promises even a government with a huge parliamentary majority cannot break.</p>
+<p>Part III of the Constitution (Articles 12-35) groups these promises into six labelled baskets — equality, freedom, protection from exploitation, freedom of religion, cultural/educational protection, and the right to enforce all the others in court. You do not need to memorise which Article number sits in which basket on day one; instead, hold the six-basket shape first (Fig 1 below draws it out), and let the Article numbers attach themselves to their basket as you read each section.</p>
+<p>One habit worth building early: every right below has a matching <i>limit</i> — a reasonable restriction the State is allowed to impose. Reading a right without also reading its restriction is reading only half the sentence, and UPSC questions test the restriction at least as often as the right itself.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 1 note series — COMPLETE</b><br>
+<span class="done">✓ 00 Concept of the Constitution &amp; Constitutionalism</span> · <span class="done">✓ 01 Historical Underpinnings &amp; Evolution</span> · <span class="done">✓ 02 Salient Features &amp; the Preamble</span> · <span class="done">✓ 03 Union &amp; its Territory</span> · <span class="done">✓ 04 Citizenship</span> · <span class="done">✓ 05 Amendment of the Constitution</span> · <span class="done">✓ 06 Basic Structure Doctrine</span> · <span class="done">✓ 07 Fundamental Rights (this file)</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 : SYLLABUS PLACEMENT ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Syllabus placement &amp; the logical chain</h2></div>
+<hr class="divider">
+<p class="lead"><b>Official GS-II syllabus wording (verbatim):</b> "Indian Constitution— historical underpinnings, evolution, features, amendments, <b>significant provisions</b> and basic structure."</p>
+<p class="lead">Fundamental Rights are the Constitution's most significant provision by almost any measure — the largest share of constitutional litigation, the deepest body of case law, and the direct textual battleground for the Basic Structure Doctrine covered in Note 6 (Kesavananda Bharati itself arose from a challenge to a law affecting property and religious institutions, testing exactly how far Parliament could go in amending this Part).</p>
+<div class="tip">
+<span class="ic">🔗</span>
+<p><b>Logical chain:</b> Amendment (Note 5) and Basic Structure (Note 6) established that Parliament can amend Fundamental Rights but not destroy their essence. This note supplies what that essence actually contains — Articles 12–35 — closing the loop on Topic 1 and feeding directly into GS-II's Judiciary and Governance topics (writs, judicial review, PILs) covered elsewhere in this cluster.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 : RIGHT TO EQUALITY ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Right to Equality — Articles 14 to 18</h2></div>
+<hr class="divider">
+<p class="lead">Article 12 (definition of "State" for Part III) and Article 13 (any law inconsistent with Fundamental Rights is void) are the gateway provisions — read them once, they rarely generate standalone questions, but every other article in this Part operates through them. Article 14 itself is the single most cited Article in Indian constitutional litigation — nearly every arbitrariness challenge to government action invokes it.</p>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Doctrine of Severability</b> (Article 13(1)/(2)): when a law is only <i>partly</i> inconsistent with Fundamental Rights, courts strike down only the offending provision, leaving the rest of the law intact — not the whole statute. The exception is where the valid and invalid portions are so inextricably mixed that they cannot be separated; then the entire law falls. Worth naming precisely if an answer or MCQ asks which doctrine lets a court invalidate just one clause of a law rather than the Act as a whole — don't confuse it with Judicial Review (the broader power to test any law against the Constitution) or Doctrine of Eclipse (below).</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Doctrine of Eclipse</b> — the sibling doctrine, and easy to mix up with Severability above, so hold both side by side. It applies only to a <b>pre-Constitution</b> law (enacted before 26 January 1950) that is inconsistent with a Fundamental Right: under Article 13(1), that law does not die, it merely goes dormant — "eclipsed" — to the extent of the inconsistency, and can revive if the inconsistent Fundamental Right is later amended away. A <b>post-Constitution</b> law that violates a Fundamental Right is treated completely differently: under Article 13(2) it is <b>void ab initio</b> (dead from birth) and cannot be revived by any later amendment — Eclipse simply does not apply to it. <b>The one-line trap examiners love:</b> "the law becomes void" (wrong for Eclipse — it becomes dormant, not void) and "Eclipse applies to laws made after the Constitution" (wrong — it is pre-Constitution laws only).</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Article 12 — the "is it State?" checklist.</b> Article 12's definition of "State" is deliberately wide (Government, Parliament, State Legislatures, local bodies, "other authorities") — but where exactly that wide definition stops is one of UPSC's favourite multi-statement traps. Four bodies the Supreme Court has actually ruled on, worth memorising as a set:</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Body</th><th>Is it "State" under Article 12?</th><th>Case</th></tr></thead>
+<tbody>
+<tr><th>ONGC, LIC, IFC (statutory corporations)</th><td><b>Yes</b> — government-created, government-controlled, government-funded, satisfies the "Electricity Board test."</td><td>Sukhdev Singh v. Bhagatram</td></tr>
+<tr><th>BCCI</th><td><b>No</b> — not created by statute, no government share capital, no substantial government funding.</td><td>(BCCI cases, various)</td></tr>
+<tr><th>NCERT</th><td><b>No</b> — a registered society advising government, but government control is limited to grant-utilisation only; not "wholly" governmental.</td><td>Chandra Mohan Khanna v. NCERT</td></tr>
+<tr><th>Unaided minority school (Article 30 institution)</th><td><b>No</b> — outside government administrative control by design.</td><td>Satimbla Sharma v. St. Paul's Sr. Sec. School</td></tr>
+</tbody>
+</table></div>
+<p>The pattern underneath all four: the test is <i>substantial government financial, functional, and administrative control</i> — not merely "does this body serve a public function" or "is it registered under a government-adjacent Act."</p>
+</div>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 780 260" role="img" aria-label="Nested map of Part III of the Indian Constitution, Articles 12 to 35">
+<g font-family="Inter" font-size="12">
+<rect x="10" y="15" width="760" height="40" rx="10" fill="#1B1D51"/>
+<text x="390" y="40" text-anchor="middle" fill="#fff" font-weight="700">PART III — FUNDAMENTAL RIGHTS (Articles 12–35)</text>
+
+<rect x="10" y="70" width="180" height="72" rx="10" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.5"/>
+<text x="100" y="92" text-anchor="middle" font-weight="700" fill="#134b59">Equality</text>
+<text x="100" y="110" text-anchor="middle" font-size="11" fill="#134b59">Art. 14–18</text>
+<text x="100" y="128" text-anchor="middle" font-size="10.5" fill="#134b59">(this section)</text>
+
+<rect x="200" y="70" width="180" height="72" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="290" y="92" text-anchor="middle" font-weight="700" fill="#8a5c00">Freedom</text>
+<text x="290" y="110" text-anchor="middle" font-size="11" fill="#8a5c00">Art. 19–22</text>
+<text x="290" y="128" text-anchor="middle" font-size="10.5" fill="#8a5c00">(Section 03)</text>
+
+<rect x="390" y="70" width="180" height="72" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="480" y="92" text-anchor="middle" font-weight="700" fill="#7a1f66">Exploitation &amp; Religion</text>
+<text x="480" y="110" text-anchor="middle" font-size="11" fill="#7a1f66">Art. 23–28</text>
+<text x="480" y="128" text-anchor="middle" font-size="10.5" fill="#7a1f66">(Section 04)</text>
+
+<rect x="580" y="70" width="190" height="72" rx="10" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.5"/>
+<text x="675" y="92" text-anchor="middle" font-weight="700" fill="#177a4d">Cultural, Remedies,</text>
+<text x="675" y="108" text-anchor="middle" font-weight="700" fill="#177a4d">Writs &amp; Armed Forces</text>
+<text x="675" y="128" text-anchor="middle" font-size="10.5" fill="#177a4d">Art. 29–35 (Section 05)</text>
+
+<rect x="240" y="160" width="300" height="80" rx="10" fill="#E9E9FA" stroke="#33357F" stroke-width="1.5"/>
+<text x="390" y="184" text-anchor="middle" font-weight="700" fill="#33357F">Gateway Articles 12 &amp; 13</text>
+<text x="390" y="204" text-anchor="middle" font-size="11" fill="#5457a0">Art 12: defines "State" for all of Part III</text>
+<text x="390" y="220" text-anchor="middle" font-size="11" fill="#5457a0">Art 13: any law inconsistent with these rights is void</text>
+</g>
+</svg>
+<figcaption><b>Fig 1.</b> Six right-categories sit on top of two gateway articles — know Articles 12–13 first, since every category below depends on them.</figcaption>
+</div></figure>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>What it guarantees</th></tr></thead>
+<tbody>
+<tr><th>Article 14</th><td>Equality before law (British origin — absence of special privilege) + equal protection of laws (American origin — like treatment in like circumstances). Permits reasonable classification, forbids class legislation.</td></tr>
+<tr><th>Art 14 — the concept layer</th><td>Three ideas beyond the text, each independently testable: <b>(1) Reasonable classification</b> — the State may treat groups differently if the classification rests on an intelligible differentia with a rational nexus to the law's object (this, not any special provision, is what makes reservation compatible with equality); <b>(2) Arbitrariness</b> — since E.P. Royappa (1974) and Maneka Gandhi, arbitrary State action violates Art 14 even without any classification at all ("manifest arbitrariness" is the ground on which the electoral bonds amendments fell in 2024); <b>(3) Substantive equality</b> — equality of outcomes, not just identical treatment: a race between a wheelchair user and a sprinter run under "identical rules" is formally equal and substantively absurd — the framing behind every affirmative-action answer.</td></tr>
+<tr><th>Article 15</th><td>Prohibits discrimination by the State on grounds of religion, race, caste, sex, or place of birth; permits special provisions for women, children, and socially/educationally backward classes (the constitutional basis for reservations here, alongside Article 16). Clause 15(2) additionally bars denial of access to shops, restaurants, wells, and public places on these grounds — and, uniquely, binds private individuals too, not just the State.</td></tr>
+<tr><th>Article 16</th><td>Equality of opportunity in public employment; permits reservation for backward classes not adequately represented in State services. The <b>103rd Amendment, 2019</b> added clauses 15(6) and 16(6), permitting up to <b>10% reservation for Economically Weaker Sections (EWS)</b> — a separate, non-caste basis layered on top of the older SEBC/SC/ST scheme.</td></tr>
+<tr><th>The reservation rulebook (Indra Sawhney and after)</th><td>The framework every reservation MCQ draws from: <b>Indra Sawhney (1992)</b> set the <b>50% ceiling</b> on total reservation (breachable only in extraordinary circumstances), upheld OBC reservation with the <b>creamy-layer</b> exclusion, and barred reservation in promotions — after which the <b>77th Amendment (Art 16(4A))</b> restored promotion reservation for SC/ST, and the <b>81st Amendment (Art 16(4B))</b> let unfilled ("backlog") vacancies carry forward <i>outside</i> the 50% cap of that year. The <b>EWS judgment (2022)</b> then held reservation on purely economic criteria valid AND that the 10% EWS quota sits <i>outside</i> the 50% ceiling — so a statement that "reservation cannot be based solely on economic criterion" or that "the 50% cap is absolute" is now wrong on both counts, exactly as a Week 2 question tested.</td></tr>
+<tr><th>Article 17</th><td>Abolishes "untouchability" and forbids its practice in any form; enforced via the Protection of Civil Rights Act, 1976 (originally the Untouchability (Offences) Act, 1955).</td></tr>
+<tr><th>Article 18</th><td>Abolishes titles other than military or academic distinctions; bars citizens from accepting titles from a foreign state.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 The story so far — how Articles 15 and 16 got edited, piece by piece</div>
+<p><b>1950:</b> Part III is born, and Article 16(4) alone allows the State to reserve public jobs for "backward classes." Article 15 says nothing yet about reservation at all — it is a pure non-discrimination clause.</p>
+<p><b>1951, Madras:</b> the State runs a caste-based quota system for college admissions. A student named Champakam Dorairajan challenges it — and wins. The Supreme Court holds that nothing in Article 15 as written permits caste-based reservation in education; Article 16(4) covers jobs, not college seats, and equality before the law leaves no room to improvise.</p>
+<p><b>Same year, Parliament's reply:</b> the very First Amendment to the Constitution inserts Article 15(4) — express power for the State to make special provision for the advancement of socially and educationally backward classes, SCs and STs. A court defeat becomes a constitutional edit within months, and this note's Article 15 table above still cites that exact clause.</p>
+<p><b>2005:</b> the 93rd Amendment adds Article 15(5), extending that same power to private, unaided educational institutions — closing a gap the original 15(4) had left open.</p>
+<p><b>2019:</b> the 103rd Amendment inserts an entirely new pair, 15(6) and 16(6) — for the first time, reservation on a <i>non-caste</i> ground: economic weakness (EWS), capped at 10%.</p>
+<p>Read end to end, Article 15 has been edited four separate times across 69 years — never as one grand redesign, always as Parliament's direct answer to a specific court ruling or a specific political demand. That is the pattern worth remembering: in Indian constitutional history, an Article rarely changes because someone thought it was elegant to change it — it changes because a citizen went to court, or a government needed a new tool, and Parliament responded.</p>
+</div>
+
+<div class="prelims">
+<h3>🔴 Prelims — verbatim-memorisable facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span>"Equality before law" — <b>British</b> origin; "equal protection of laws" — <b>American</b> origin.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Electoral bonds (Feb 2024):</b> scheme struck down — violated voters' right to information (Art 19(1)(a)); unlimited corporate funding held manifestly arbitrary (Art 14).</span></div>
+<div class="item"><span class="dot">●</span><span>Article 15 grounds: <b>religion, race, caste, sex, place of birth</b> — five, verbatim.</span></div>
+<div class="item"><span class="dot">●</span><span>Article 17 is enforced today via the <b>Protection of Civil Rights Act, 1976.</b></span></div>
+<div class="item"><span class="dot">●</span><span>Article 18 permits <b>military and academic</b> titles only.</span></div>
+<div class="item"><span class="dot">●</span><span>1996: SC upheld Bharat Ratna/Padma awards as <b>not "titles"</b> under Article 18 — but they still can't be used as a <b>suffix/prefix</b> to a name.</span></div>
+<div class="item"><span class="dot">●</span><span>Article 14 permits <b>reasonable classification</b>, forbids <b>class legislation.</b></span></div>
+</div>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Citizens-only vs. everyone:</b> most of Part III binds the State toward "any person," but a handful of Articles are reserved for citizens alone — Article 15 (non-discrimination), Article 16 (public employment), Article 19 (the six freedoms), Article 29 (protection against denial of admission), and Article 30 (minority institutions). Aliens can still invoke Article 14, 20, 21, 22, 23, 24, 25, 27, 28, and 32 — this citizens-only list is exactly what an MCQ tests when it asks which rights are "denied to aliens."</p>
+</div>
+</section>
+
+<!-- ===== SECTION 03 : RIGHT TO FREEDOM ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Right to Freedom — Articles 19 to 22</h2></div>
+<hr class="divider">
+<p class="lead">Article 19 and Article 21 together generate the largest share of Fundamental Rights case law and Mains value in this Part. Article 19 originally guaranteed seven freedoms; the right to property (19(1)(f)) was removed by the 44th Amendment, 1978 (Note 5) and downgraded to a legal right under Article 300-A. Six remain today, each paired with its own specific grounds for "reasonable restriction" — the pairing, not the freedom alone, is what gets tested.</p>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 800 260" role="img" aria-label="The six freedoms under Article 19 and their restriction grounds">
+<g font-family="Inter" font-size="11.5">
+<circle cx="400" cy="130" r="60" fill="#1B1D51"/>
+<text x="400" y="124" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">ARTICLE</text>
+<text x="400" y="142" text-anchor="middle" fill="#FFD25A" font-weight="700" font-size="13">19(1)</text>
+
+<g><rect x="20" y="16" width="200" height="50" rx="8" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.3"/><text x="120" y="36" text-anchor="middle" font-weight="700" fill="#134b59">Speech &amp; Expression</text><text x="120" y="53" text-anchor="middle" font-size="10" fill="#134b59">sovereignty, security, public order + more</text></g>
+<g><rect x="580" y="16" width="200" height="50" rx="8" fill="#DDF0F5" stroke="#1F8AA6" stroke-width="1.3"/><text x="680" y="36" text-anchor="middle" font-weight="700" fill="#134b59">Assembly (peaceable, unarmed)</text><text x="680" y="53" text-anchor="middle" font-size="10" fill="#134b59">restriction: sovereignty, public order</text></g>
+<g><rect x="20" y="204" width="200" height="50" rx="8" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.3"/><text x="120" y="224" text-anchor="middle" font-weight="700" fill="#8a5c00">Association / Union</text><text x="120" y="241" text-anchor="middle" font-size="10" fill="#8a5c00">sovereignty, public order, morality</text></g>
+<g><rect x="580" y="204" width="200" height="50" rx="8" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.3"/><text x="680" y="224" text-anchor="middle" font-weight="700" fill="#8a5c00">Movement (throughout India)</text><text x="680" y="241" text-anchor="middle" font-size="10" fill="#8a5c00">public interest, Sched. Tribe interests</text></g>
+<g><rect x="240" y="16" width="180" height="42" rx="8" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.3"/><text x="330" y="36" text-anchor="middle" font-weight="700" fill="#7a1f66">Residence &amp; Settlement</text><text x="330" y="50" text-anchor="middle" font-size="10" fill="#7a1f66">restriction: public interest, Sched. Tribe interests</text></g>
+<g><rect x="430" y="16" width="150" height="42" rx="8" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.3"/><text x="505" y="36" text-anchor="middle" font-weight="700" fill="#177a4d">Profession, Occupation,</text><text x="505" y="50" text-anchor="middle" font-size="10" fill="#177a4d">Trade or Business</text></g>
+
+<line x1="220" y1="41" x2="345" y2="115" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="580" y1="41" x2="455" y2="115" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="220" y1="229" x2="345" y2="150" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="580" y1="229" x2="455" y2="150" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="330" y1="58" x2="378" y2="95" stroke="#9598c9" stroke-width="1.3"/>
+<line x1="505" y1="58" x2="425" y2="95" stroke="#9598c9" stroke-width="1.3"/>
+</g>
+</svg>
+<figcaption><b>Fig 2.</b> The seventh freedom — property, 19(1)(f) — was deleted by the 44th Amendment, 1978, and is why this figure shows six, not seven, petals.</figcaption>
+</div></figure>
+
+<div class="mentor">
+<div class="tag">📖 The story so far — how property got written out of Part III</div>
+<p><b>1950:</b> the Constitution starts with <i>seven</i> freedoms in Article 19, and a separate Article 31 guarantees compensation whenever the State acquires private property. Within months, newly-elected State governments try to abolish the zamindari system and redistribute agricultural land — and every land-reform law they pass gets dragged straight into court by landlords citing exactly these two Articles.</p>
+<p><b>1951, Parliament fights back:</b> the very First Amendment inserts Articles 31A and 31B (plus the Ninth Schedule) specifically to shield land-reform laws from an Article 14/19/31 challenge — the same First Amendment that, in Section 02 above, was simultaneously rewriting Article 15 for reservation. One Amendment, two separate constitutional battles.</p>
+<p><b>The fight escalates for two decades:</b> Parliament keeps widening the shield (the 25th Amendment's Article 31C in 1971), the Court keeps drawing lines back (Kesavananda Bharati, 1973, concedes Parliament's amending power is vast but rules the Basic Structure untouchable — Note 06). Property becomes the single most amended, most litigated right in the Constitution's first three decades.</p>
+<p><b>1978, the ending:</b> property finally loses the fight outright. The 44th Amendment deletes Article 19(1)(f) and the whole of Article 31, relocating what remains to a brand-new Article 300-A — a mere <i>legal</i> right, enforceable in ordinary courts, no longer a Fundamental Right at all (Section 05 of this note covers exactly where it landed, in "Rights Outside Part III"). Six freedoms remain where there were once seven — which is the entire reason Fig 2 above draws six petals, not seven.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Article 19(2) — the full restriction toolkit:</b> any restriction on freedom of speech must be (a) prescribed by law and (b) reasonable, and can only be justified on one of eight grounds — sovereignty and integrity of India, security of the State, friendly relations with foreign States, public order, decency or morality, contempt of court, defamation, and incitement to an offence. Restrictions can be imposed by <i>either</i> Parliament or a State Legislature, since several of these grounds (public order, for instance) sit within State competence too — restriction power is not a Union-government monopoly.</p>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠</span>
+<p><b>Trap: "hate speech" has no single definition or single law</b> — a favourite two-statement MCQ. The 267th Report of the Law Commission of India defines it broadly as incitement to hatred against a group defined by race, ethnicity, gender, sexual orientation, or religious belief — not narrowly limited to race/ethnicity/gender, as a trap statement often claims. And it is <i>not</i> confined to the IPC either: IPC Sections 153A/153B (promoting enmity between groups) and 295A (outraging religious feelings) and 505 (statements causing public mischief) all touch it, but so does the Information Technology Act, 2000 and other special laws. <i>Note: Section 66A of the IT Act — once the most litigated hate-speech-adjacent provision — was struck down by the Supreme Court in Shreya Singhal v. Union of India (2015) for being unconstitutionally vague and overbroad; it no longer exists as law, though older coaching material sometimes still lists it as if in force.</i></p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>What it guarantees</th></tr></thead>
+<tbody>
+<tr><th>Article 20</th><td>Three protections against criminal conviction: no ex-post-facto conviction/enhanced penalty; no double jeopardy (prosecuted and punished twice for the same offence); no compulsion to be a witness against oneself (self-incrimination).</td></tr>
+<tr><th>Article 21</th><td>"No person shall be deprived of his life or personal liberty except according to procedure established by law." Narrowly read in A.K. Gopalan (1950); radically widened in Maneka Gandhi (1978) to require the procedure itself be fair, just, and reasonable; further expanded to include privacy (Puttaswamy, 2017) and a wide range of unenumerated rights (dignity, livelihood, health, clean environment, and more) through subsequent judgments.</td></tr>
+<tr><th>Article 21-A</th><td>Right to free and compulsory education for children aged 6–14 — added by the 86th Amendment, 2002; given statutory effect through the Right of Children to Free and Compulsory Education (RTE) Act, 2009.</td></tr>
+<tr><th>Article 22</th><td>Safeguards against arbitrary arrest and detention — right to be informed of grounds, right to consult a lawyer, right to be produced before a magistrate within 24 hours for ordinary arrests; a separate, weaker set of safeguards applies to preventive detention.</td></tr>
+</tbody>
+</table>
+</div>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 820 200" role="img" aria-label="Evolution of the interpretation of Article 21 through case law">
+<g font-family="Inter" font-size="12">
+<rect x="10" y="60" width="250" height="80" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="135" y="85" text-anchor="middle" font-weight="700" fill="#7a1f66">A.K. Gopalan (1950)</text>
+<text x="135" y="105" text-anchor="middle" font-size="11" fill="#7a1f66">Narrow view — "procedure</text>
+<text x="135" y="120" text-anchor="middle" font-size="11" fill="#7a1f66">established by law" need only</text>
+<text x="135" y="134" text-anchor="middle" font-size="11" fill="#7a1f66">exist, not be fair</text>
+
+<line x1="265" y1="100" x2="305" y2="100" stroke="#9598c9" stroke-width="2" marker-end="url(#arrowD)"/>
+
+<rect x="310" y="52" width="260" height="96" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="440" y="76" text-anchor="middle" font-weight="700" fill="#8a5c00">Maneka Gandhi (1978)</text>
+<text x="440" y="96" text-anchor="middle" font-size="11" fill="#8a5c00">Reverses this — procedure must</text>
+<text x="440" y="111" text-anchor="middle" font-size="11" fill="#8a5c00">be fair, just, reasonable; links</text>
+<text x="440" y="126" text-anchor="middle" font-size="11" fill="#8a5c00">Art 14-19-21 into one "golden triangle"</text>
+
+<line x1="575" y1="100" x2="615" y2="100" stroke="#9598c9" stroke-width="2" marker-end="url(#arrowD)"/>
+
+<rect x="620" y="60" width="195" height="80" rx="10" fill="#E9F7EE" stroke="#177a4d" stroke-width="1.5"/>
+<text x="717" y="85" text-anchor="middle" font-weight="700" fill="#177a4d">Puttaswamy (2017)</text>
+<text x="717" y="105" text-anchor="middle" font-size="11" fill="#177a4d">9-judge bench — Right to</text>
+<text x="717" y="120" text-anchor="middle" font-size="11" fill="#177a4d">Privacy is part of Article 21</text>
+</g>
+<defs><marker id="arrowD" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9598c9"/></marker></defs>
+</svg>
+<figcaption><b>Fig 3.</b> Article 21's entire modern reach — privacy, dignity, livelihood, clean environment — traces back to Maneka Gandhi's "fair, just, reasonable" reading, not to the Article's bare text.</figcaption>
+</div></figure>
+
+<div class="mentor">
+<div class="tag">📖 The story so far — Article 21's 67 years, read as one arc, not three dates</div>
+<p><b>1950:</b> A.K. Gopalan is detained under a preventive-detention law and challenges it, arguing his personal liberty has been taken away. The young Supreme Court disagrees with him — Article 21's phrase "procedure established by law" is read to mean only that Parliament must pass <i>some</i> procedure, however harsh; the Court will not ask whether that procedure was fair. For nearly three decades, that narrow reading holds, and Article 21 stays a fairly modest promise: don't take a life or liberty except through a law that technically exists.</p>
+<p><b>1977, the passport:</b> journalist Maneka Gandhi's passport is impounded by the government without explanation. She asks why. The government's answer, in effect, is that it does not have to say. She takes the case to the Supreme Court in 1978 — and this time the Court reverses itself completely. "Procedure established by law" is no longer enough to merely exist; it must now be fair, just and reasonable. In the same judgment, the Court fuses Articles 14 (equality), 19 (freedom) and 21 (life) into what this note keeps calling the "golden triangle" — three Articles that must now be read together, not in isolation.</p>
+<p><b>1978 onward, the door stays open:</b> once "fair, just, reasonable" became the test, nothing about Article 21's seven words needed to change again for the Court to keep finding more inside it — livelihood, dignity, a clean environment, legal aid, a speedy trial, shelter, and eventually, in 2017, privacy itself in Puttaswamy, decided by a full nine-judge bench precisely because the stakes of overturning older, narrower rulings were so high.</p>
+<p>The mentor's takeaway: Article 21's <i>text</i> has not gained a single word since 1950. Its <i>meaning</i> has been almost entirely rewritten — not by Parliament amending it, but by the judiciary reinterpreting it. That is exactly the model-intro line in Section 06 below, and exactly why this note's Mains craft treats Article 21 as the clearest example of "judicial expansion" in the whole Constitution.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Article 21's basket keeps growing — treat it as an open list, not a fixed one.</b> Beyond privacy, dignity, livelihood, and a clean environment (already named above), the Supreme Court has, over the decades, read all of the following into "life and personal liberty" too: right to sleep, right to reputation, right to emergency medical aid, right to travel abroad, right against solitary confinement, right against custodial harassment/handcuffing, right to speedy trial, right to free legal aid, right to shelter, and right against bonded labour. <b>Exam habit this builds:</b> if an MCQ lists 4-5 unfamiliar-sounding "rights" and asks which are covered under Article 21, the safest instinct is usually "all of them" — the Court has rarely drawn a hard outer boundary once a claim is framed as necessary for a life of dignity.</p>
+<p><b>Vishaka v. State of Rajasthan (1997):</b> in the absence of any domestic law on workplace sexual harassment at the time, the Supreme Court used Article 32 to lay down binding guidelines (the "Vishaka Guidelines") treating sexual harassment as a violation of the Article 21 right to live with dignity, and of Article 19(1)(g) (freedom to practise any profession). These guidelines held the field until Parliament finally legislated the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 — a clean, testable example of the judiciary filling a legislative gap under Article 21.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Recent-judgment layer — the Article 21 basket's newest additions, and the test that polices it.</b> <b>(1) M.K. Ranjitsinh v. Union of India (April 2024, the Great Indian Bustard case):</b> the Supreme Court recognised a <b>right against the adverse effects of climate change</b>, sourced in Articles 14 and 21 — the first time climate harm was framed as a rights violation rather than only an environmental-law issue. <b>(2)</b> A 2025 bench read a <b>right to safe, demarcated footpaths</b> into Article 21 (with Art 19's movement freedom), directing States to frame footpath policies — the newest illustration that the basket stays open. <b>(3) The doctrine of proportionality</b> (from Puttaswamy, 2017): any State restriction on a fundamental right must now pass a four-part test — legitimate aim, suitability of the means, necessity (no less-restrictive alternative), and balancing. This is the analytical machinery courts actually apply post-privacy-judgment; naming it converts a descriptive rights answer into an analytical one, and it is precisely the kind of concept-behind-the-article that separates real understanding from memorised article numbers.</p>
+</div>
+
+<div class="prelims">
+<h3>🔴 Prelims — verbatim-memorisable facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span>Article 19 originally had <b>7</b> freedoms; property (19(1)(f)) removed by the <b>44th Amendment, 1978.</b></span></div>
+<div class="item"><span class="dot">●</span><span>Article 21-A (Right to Education) added by the <b>86th Amendment, 2002.</b></span></div>
+<div class="item"><span class="dot">●</span><span>RTE Act giving effect to Art 21-A passed in <b>2009.</b></span></div>
+<div class="item"><span class="dot">●</span><span><b>Maneka Gandhi (1978)</b> read "fair, just, reasonable" into Article 21's "procedure established by law."</span></div>
+<div class="item"><span class="dot">●</span><span><b>Puttaswamy (2017):</b> Right to Privacy is intrinsic to Article 21 and Part III freedoms.</span></div>
+<div class="item"><span class="dot">●</span><span>Article 22's 24-hour production-before-magistrate rule does <b>not</b> apply to preventive detention.</span></div>
+</div>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Trap:</b> Article 20 and Article 22 are both about the accused/arrested, but Article 20 is about the trial/conviction stage (ex-post-facto, double jeopardy, self-incrimination) while Article 22 is about the arrest/detention stage (informed of grounds, lawyer, 24-hour production). Prelims regularly swaps the protections between the two.</p>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Trap:</b> During a National Emergency (Article 352), Article 19 freedoms are automatically suspended for its duration; the President may separately suspend enforcement of other Fundamental Rights via an Article 359 Order — <b>except Articles 20 and 21, which can never be suspended</b>, even during a National Emergency. This citizen-against-the-State floor was hard-wired in by the 44th Amendment, 1978, precisely to prevent a repeat of the Emergency-era ADM Jabalpur (1976) ruling, where the Supreme Court had controversially allowed even Article 21 to be suspended.</p>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Vertical vs. horizontal rights:</b> Fundamental Rights are mostly "vertical" — enforceable against the State only (Article 12's wide definition of "State"), not against private individuals. A handful are the deliberate exception, binding private parties directly too: Article 15(2) (shops/restaurants/wells), Article 17 (untouchability), and Articles 23–24 (forced labour, child labour) are "horizontal" — enforceable against anyone, State or not.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : EXPLOITATION AND RELIGION ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Right against Exploitation &amp; Right to Freedom of Religion — Articles 23 to 28</h2></div>
+<hr class="divider">
+<p class="lead">Two short, sharply-defined right-categories, each usually tested through precise textual recall rather than deep case analysis — know exactly what each article prohibits and permits.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>What it guarantees</th></tr></thead>
+<tbody>
+<tr><th>Article 23</th><td>Prohibits traffic in human beings and "begar" (forced labour without payment); permits the State to impose compulsory service for public purposes (e.g. conscription) without violating this.</td></tr>
+<tr><th>Article 24</th><td>Prohibits employing children below 14 years in any factory, mine, or other hazardous employment.</td></tr>
+<tr><th>Article 25</th><td>Freedom of conscience and the right to freely profess, practise, and propagate religion — subject to public order, morality, health, and other Part III provisions; also permits the State to regulate secular activity associated with religious practice and to open Hindu religious institutions to all classes.</td></tr>
+<tr><th>Article 26</th><td>Freedom for every religious denomination to establish institutions, manage its own religious affairs, and own/administer property — subject to public order, morality, and health.</td></tr>
+<tr><th>Article 27</th><td>No person can be compelled to pay any tax whose proceeds are specifically used to promote or maintain any particular religion or religious denomination.</td></tr>
+<tr><th>Article 28</th><td>No religious instruction in institutions wholly maintained by State funds; institutions merely recognised or aided by the State may offer it, but attendance cannot be compulsory.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="prelims">
+<h3>🔴 Prelims — verbatim-memorisable facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span>Article 24's employment-age bar: below <b>14 years</b>, in hazardous work.</span></div>
+<div class="item"><span class="dot">●</span><span>Article 25 covers profess, practise, <b>and propagate</b> — all three, verbatim.</span></div>
+<div class="item"><span class="dot">●</span><span>Article 26 rights belong to a <b>religious denomination</b>, not an individual (contrast with Article 25).</span></div>
+<div class="item"><span class="dot">●</span><span>Article 27 bars taxes for religion, <b>not fees</b> for services incidentally linked to it.</span></div>
+<div class="item"><span class="dot">●</span><span>Article 28: wholly State-funded institutions → <b>no</b> religious instruction at all.</span></div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 05 : CULTURAL/EDUCATIONAL, REMEDIES, WRITS, ARMED FORCES ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Cultural &amp; Educational Rights, Constitutional Remedies, Writs, and Armed Forces — Articles 29 to 35</h2></div>
+<hr class="divider">
+<p class="lead">This final block closes Part III with the provision Dr. B.R. Ambedkar called its most important — Article 32 — and the mechanism (writs) through which every other right in this Part is actually enforced.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>What it guarantees</th></tr></thead>
+<tbody>
+<tr><th>Article 29</th><td>Protects any section of citizens with a distinct language, script, or culture from being denied admission to State-maintained/aided educational institutions on grounds of religion, race, caste, or language.</td></tr>
+<tr><th>Article 30</th><td>Grants all minorities (religious or linguistic) the right to establish and administer educational institutions of their choice; bars the State from discriminating against minority institutions in granting aid.</td></tr>
+<tr><th>Article 32</th><td>Right to move the Supreme Court directly for enforcement of Fundamental Rights; the Supreme Court is empowered to issue the five writs. Dr. B.R. Ambedkar called this "the very heart and soul" of the Constitution — a right without a remedy, he argued, is meaningless.</td></tr>
+<tr><th>Article 33</th><td>Empowers Parliament to restrict or abrogate Fundamental Rights for the armed forces, para-military forces, police, and intelligence organisations, to maintain discipline.</td></tr>
+<tr><th>Article 34</th><td>Restricts Fundamental Rights while martial law is in force in any area, and grants indemnity for acts done to restore order during it.</td></tr>
+<tr><th>Article 35</th><td>Reserves the power to legislate on certain Fundamental Rights matters (e.g. Article 16(3), 32(3), 33, 34) exclusively to Parliament — State legislatures cannot touch these, even though the rights themselves may otherwise sit within State competence.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The five writs — also available from High Courts under Article 226</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Writ</th><th>Meaning &amp; purpose</th></tr></thead>
+<tbody>
+<tr><th>Habeas Corpus</th><td>"To have the body" — commands a detaining authority to produce the detained person and justify the detention; the primary remedy against unlawful arrest/detention.</td></tr>
+<tr><th>Mandamus</th><td>"We command" — directs a public authority (including a government company performing a public duty) to perform a public duty it has failed to perform; will not lie against a purely private body with no public duty, and cannot compel discretionary action.</td></tr>
+<tr><th>Prohibition</th><td>Issued by a higher court to a lower court/tribunal to stop proceedings that exceed its jurisdiction — preventive, issued before the lower body decides.</td></tr>
+<tr><th>Certiorari</th><td>Issued to quash an order already passed by a lower court/tribunal/authority that acted without or in excess of jurisdiction — corrective, issued after the decision.</td></tr>
+<tr><th>Quo Warranto</th><td>"By what authority" — challenges a person's right to hold a public office; uniquely, any public-minded person (not just one personally affected) may petition for it.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="prelims">
+<h3>🔴 Prelims — verbatim-memorisable facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span>Article 32 = <b>"heart and soul"</b> of the Constitution — Dr. B.R. Ambedkar.</span></div>
+<div class="item"><span class="dot">●</span><span>Supreme Court issues writs under <b>Art 32</b>; High Courts under <b>Art 226</b> (wider — any purpose, not just FR enforcement).</span></div>
+<div class="item"><span class="dot">●</span><span><b>Mandamus</b> CAN be issued against a government company performing a public duty.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Quo Warranto</b> — any public-minded person can petition, unlike other writs.</span></div>
+<div class="item"><span class="dot">●</span><span><b>Prohibition</b> = preventive (before decision); <b>Certiorari</b> = corrective (after decision).</span></div>
+<div class="item"><span class="dot">●</span><span>Article 33 power belongs to <b>Parliament</b> alone, not State legislatures.</span></div>
+</div>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Trap:</b> Do not assume mandamus never reaches companies — the common misconception is that mandamus cannot touch any company. In fact it cannot touch a purely private company with no public duty, but it can and does reach government companies and any body performing a public function, verified by a genuine 2022 Prelims question below.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 06 : MAINS CRAFT ===== -->
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains craft — model intro &amp; value-additions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Model intro line (liftable):</b> <i>"That Article 21 could travel from A.K. Gopalan's bare, procedure-only guarantee in 1950 to Puttaswamy's recognition of privacy as intrinsic to life and liberty in 2017, without a single word of the Article itself changing, shows that in India's constitutional scheme the judiciary — not the amending power — has been the primary engine of rights expansion."</i></p>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Value-additions to drop into any answer:</b> (1) Name-drop precisely — the "golden triangle" of Articles 14, 19, and 21 (from Maneka Gandhi), the standard shorthand examiners expect for any question on the interconnection between Fundamental Rights; (2) Analogy — Article 32 as the "warranty" attached to every other right in Part III, useless as mere text without it, echoing Ambedkar's own reasoning; (3) Current link — ongoing litigation extending Article 21 into new domains (digital privacy, the right to a clean environment, access to the internet) is a live, citable trend for any answer on the Fundamental Rights' continuing evolution.</p>
+</div>
+
+<h3>Exceptions to Fundamental Rights</h3>
+<p class="lead">Part III is not absolute — the Constitution itself carves out four families of exception, each immunising a category of laws from an FR challenge that would otherwise succeed.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Exception</th><th>What it immunises</th></tr></thead>
+<tbody>
+<tr><th>Article 31-A</th><td>Protects five categories of laws (estate acquisition, management takeovers, corporate amalgamation, mining-lease termination, and similar) from challenge under Articles 14 and 19 — the land-reform enabling clause.</td></tr>
+<tr><th>Article 31-B</th><td>Laws placed in the <b>Ninth Schedule</b> are immune from an FR challenge — originally absolute immunity, but since <b>I.R. Coelho (2007)</b> any Ninth Schedule law enacted after 24 April 1973 (the Kesavananda Bharati date) is now open to Basic Structure review (Note 06).</td></tr>
+<tr><th>Article 31-C</th><td>Laws genuinely implementing DPSP Articles 39(b)/(c) (equitable distribution of resources, prevention of wealth concentration) get limited immunity from Articles 14 and 19 — the one place DPSP is allowed to override FR, per Minerva Mills (1980), Note 06.</td></tr>
+<tr><th>Articles 33 &amp; 34</th><td>Parliament may restrict FR for armed/police forces (Art. 33) and during martial law (Art. 34) — already detailed in Section 05 above.</td></tr>
+<tr><th>Emergency (Arts. 358–359)</th><td>Article 19 is automatically suspended during a National Emergency declared on war/external-aggression grounds; the President may separately suspend enforcement of other rights via an Article 359 Order — except Articles 20 and 21 (Section 03's trap box).</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Criticism of Fundamental Rights</h3>
+<p class="lead">A ready-made list for any "critically examine" Mains question: (1) <b>too many restrictions</b> — nearly every right carries its own "reasonable restriction" clause, so critics call the exceptions wide enough to swallow the rule; (2) <b>no independent social/economic rights</b> — work, health, and a living wage sit in the non-justiciable DPSP (Note 08), not here, unlike some modern constitutions; (3) <b>legalistic and complex language</b>, poorly accessible to the ordinary citizen the rights are meant to protect; (4) <b>suspendable</b> — Article 19 automatically, others via Presidential Order, during a National Emergency; (5) <b>not immutable</b> — Parliament can amend Part III under Article 368, checked only by the judge-made Basic Structure Doctrine, not by the text itself.</p>
+
+<h3>Significance of Fundamental Rights</h3>
+<p class="lead">The counter-list, equally liftable: (1) the <b>hallmark of a liberal democracy</b> — a binding limit on State power, not a mere policy aspiration; (2) form the <b>"conscience of the Constitution"</b> alongside the Preamble; (3) guarantee <b>equality regardless of religion, race, caste</b>, actively building national unity rather than merely describing it; (4) made <b>real through Article 32</b> — a right without the Supreme Court's direct enforcement machinery, Ambedkar argued, is merely declaratory; (5) supplied the <b>textual anchor for the Basic Structure Doctrine</b> itself, the judiciary's ultimate check on an overreaching Parliament.</p>
+
+<h3>Rights Outside Part III</h3>
+<p class="lead">Not every constitutionally-guaranteed right sits inside Articles 12–35 — a frequently tested "which Part is this actually in" trap, exactly like the Article 17/Article 23 untouchability-versus-exploitation confusion in Section 04.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>Right, and why it sits outside Part III</th></tr></thead>
+<tbody>
+<tr><th>Article 265 (Part XII)</th><td>"No tax shall be levied or collected except by authority of law" — a rule-of-law safeguard on taxation, textually separate from Part III, though functionally close to Article 14's equality guarantee.</td></tr>
+<tr><th>Article 300-A (Part XII)</th><td>Right to Property — deliberately relocated <i>out</i> of Part III by the 44th Amendment, 1978 (Note 5), downgrading it from Fundamental to a mere <b>legal</b> right, enforceable through ordinary courts (Article 226), not Article 32 directly. Recent rulings (Vidya Devi, 2020; KT Plantation, 2011) still read a due-process requirement into it despite its non-Fundamental status.</td></tr>
+<tr><th>Article 301 (Part XIII)</th><td>Freedom of trade, commerce, and intercourse throughout India — an economic-federalism guarantee, not an individual Fundamental Right, and enforceable through ordinary litigation over State-imposed trade barriers, not a writ petition under Article 32.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 07 : PYQ ANALYSIS ===== -->
+<section id="s7" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>PYQ analysis (2013 onward, plus essential earlier PYQs)</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> Fundamental Rights are the single highest-yield sub-part in all of GS-II Polity, tested every year in both Prelims (precise article/case attribution) and Mains (using a recent judgment to argue the scope of a right). Two of the verified PYQs below pre-date 2013 but are included because they are among the most frequently recurring question types on this topic and remain directly relevant.</p>
+
+<h3>(A) Genuine direct PYQs</h3>
+<div class="pyq">
+<span class="yr">2002</span><span class="stg">Prelims</span>
+<p>"Which one of the following rights was described by Dr. B.R. Ambedkar as the heart and soul of the Constitution of India?" Correct answer: Right to Constitutional Remedies (Article 32).</p>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">This exact attribution recurs across coaching material precisely because it is a genuine, repeatedly-tested fact.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2018</span><span class="stg">Prelims</span>
+<p>"Right to Privacy is protected as an intrinsic part of Right to Life and Personal Liberty. Which of the following in the Constitution of India correctly and appropriately imply the above statement?" Correct answer: Article 21 and the freedoms guaranteed in Part III.</p>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Tests the Puttaswamy holding precisely as summarised in Fig 3.</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2022</span><span class="stg">Prelims</span>
+<p>"With reference to the writs issued by the Courts in India, consider the following statements: 1. Mandamus will not lie against a private organization unless it is entrusted with a public duty. 2. Mandamus will not lie against a Company even though it may be a Government Company. 3. Any public-minded person can be a petitioner to move the Court to obtain the writ of Quo Warranto." Correct answer: 1 and 3 only.</p>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Precisely the mandamus/quo warranto trap flagged in Section 05.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2025</span><span class="stg">Prelims</span>
+<p>Match-the-pairs: (I) Separation of judiciary from the executive — stated under the Directive Principles of State Policy; (II) Valuing and preserving the rich heritage of composite culture — the Fundamental Duties; (III) Prohibition of employment of children below 14 in factories — the Fundamental Rights. "How many of the above pairs are correctly matched?" Ans: (c) all three.</p>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Tests precise cross-attribution across all three rights-adjacent parts (FR/DPSP/FD) in one question, exactly the kind of "which part is it actually in" trap this note flags repeatedly.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2024</span><span class="stg">Prelims</span>
+<p class="qtext">"Under which of the following Articles of the Constitution of India has the Supreme Court of India placed the Right to Privacy?</p><ul class="opts"><li>(a) Article 15</li><li>(b) Article 16</li><li>(c) Article 19</li><li>(d) Article 21." Ans: (d) Article 21</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">A simpler, bare-article restatement of the 2018 PYQ above; confirms privacy-under-Art.-21 is a settled, repeatable UPSC fact, not a one-off.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2021</span><span class="stg">Prelims</span>
+<p class="qtext">"A legislation which confers on the executive or administrative authority an unguided and uncontrolled discretionary power in the matter of application of law violates which one of the following Articles of the Constitution of India?</p><ul class="opts"><li>(a) Article 14</li><li>(b) Article 28</li><li>(c) Article 32</li><li>(d) Article 44." Ans: (a) Article 14</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Arbitrariness as a distinct facet of Article 14 (beyond simple classification-reasonableness), tested as a stand-alone conceptual question.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2021</span><span class="stg">Prelims</span>
+<p class="qtext">"What is the position of the Right to Property in India?</p><ul class="opts single"><li>(a) Legal right available to citizens only</li><li>(b) Legal right available to any person</li><li>(c) Fundamental Right available to citizens only</li><li>(d) Neither Fundamental Right nor legal right." Ans: (b)</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Confirms post-44th-Amendment status precisely: Article 300-A makes it a <b>legal</b> right, and — the sharper trap — available to <i>any person</i>, not citizens alone.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2020</span><span class="stg">Prelims</span>
+<p class="qtext">"Which one of the following categories of 'Fundamental Rights' incorporates protection against untouchability as a form of discrimination?</p><ul class="opts single"><li>(a) Right against Exploitation</li><li>(b) Right to Freedom</li><li>(c) Right to Constitutional Remedies</li><li>(d) Right to Equality." Ans: (d) Right to Equality</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">A genuine trap: untouchability (Article 17) sits under the <b>Right to Equality</b> basket, not the Right against Exploitation, where forced labour and child labour (Articles 23–24) live instead.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2019</span><span class="stg">Prelims</span>
+<p class="qtext">"Which Article of the Constitution of India safeguards one's right to marry the person of one's choice?</p><ul class="opts"><li>(a) Article 19</li><li>(b) Article 21</li><li>(c) Article 25</li><li>(d) Article 29." Ans: (b) Article 21</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Flows from the same Article 21 personal-liberty expansion (post-Puttaswamy) this note's Fig 3 already tracks.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">Prelims</span>
+<p>"Which of the following are envisaged by the Right against Exploitation in the Constitution of India? 1. Prohibition of traffic in human beings and forced labour 2. Abolition of untouchability 3. Protection of the interests of minorities 4. Prohibition of employment of children in factories and mines." Ans: (c) 1 and 4 only.</p>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Reinforces the 2020 trap above from the other direction: only forced labour/trafficking (Art. 23) and child labour (Art. 24) belong here; untouchability and minority protection sit elsewhere.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">Prelims</span>
+<p class="qtext">"Right to vote and to be elected in India is a:</p><ul class="opts single"><li>(a) Fundamental Right</li><li>(b) Natural Right</li><li>(c) Constitutional Right</li><li>(d) Legal Right." Ans: (c) Constitutional Right</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">A classic trap distinguishing it from Article 19(1)(a) freedom of speech; the right to vote itself derives from Article 326/RPA, not Part III.</p>
+</div>
+</div>
+
+<div class="tip">
+<span class="ic">🔗</span>
+<p>Five further genuine PYQs on Fundamental Duties — enforceability (2017), the Rights-Duties relationship (2017), the Sovereignty/Unity/Integrity duty (2015), a composite-culture/scientific-temper match (2012), and a "which is not a Fundamental Duty" trap (2011) — are covered in full in <b>Note 09, Section 08</b>, alongside the complete Article 51A list.</p>
+</div>
+
+<h3>(C) Where the real marks go</h3>
+<p class="lead">In Prelims, marks concentrate on exact article numbers, the specific grounds attached to each right, and correctly attributing a doctrine (privacy, due process, "heart and soul") to its source case or framer. In Mains, marks concentrate almost entirely on using a recent Supreme Court judgment to argue how far a right's scope now extends — rarely on reciting the text of Articles 12–35 for its own sake.</p>
+
+<h3>(D) Expected/probable — NOT real PYQs, practice only</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">With reference to the electoral bonds judgment (2024), which of the following is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) The scheme was struck down unanimously by a five-judge bench</li><li>(b) It violated the voters' right to information under Article 19(1)(a)</li><li>(c) The Court upheld unlimited corporate donations as valid</li><li>(d) The amendment enabling unlimited corporate funding was held manifestly arbitrary under Article 14</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<p class="vone">Unlimited corporate funding was one of the specific things struck DOWN (Section 02's concept row + recall).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs of case and Article 21 addition:</p><ol class="subs"><li>M.K. Ranjitsinh (2024) — right against adverse effects of climate change</li><li>Puttaswamy (2017) — right to privacy</li><li>Vishaka (1997) — right to free legal aid</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">Vishaka concerned workplace sexual harassment; free legal aid entered Article 21 through the speedy-trial/legal-aid line of cases (Sections 03, 06).</p>
+</div>
+</div>
+<p class="lead">"Discuss how the 'golden triangle' of Articles 14, 19, and 21 has shaped the judicial expansion of Fundamental Rights since Maneka Gandhi v. Union of India (1978)." — a plausible framing built from the Article 21 case sequence above; not a confirmed past question, use only for practice.</p>
+
+<h3>(E) Practice Prelims — Week 1 Self-Study Test (UPSC Guide coaching test, not a genuine PYQ)</h3>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"A law passed by Parliament contains a provision that infringes upon the fundamental rights of citizens. Which doctrine allows the court to declare only the offending provision unconstitutional while keeping the rest of the law intact?</p><ul class="opts single"><li>(a) Doctrine of Separation of Powers</li><li>(b) Doctrine of Judicial Review</li><li>(c) Doctrine of Severability</li><li>(d) Doctrine of Stare Decisis." Coaching-test answer: (c)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">Tests the Doctrine of Severability added to Section 02 above — don't confuse it with the broader Judicial Review power.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"Who among the following can suspend the fundamental rights?</p><ul class="opts"><li>(a) Parliament</li><li>(b) President</li><li>(c) Prime Minister</li><li>(d) Supreme Court." Coaching-test answer: (b)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">During a National Emergency, Article 19 freedoms are automatically suspended, and the President can suspend other Fundamental Rights too (except Articles 20 and 21) — subject to parliamentary approval of the Emergency itself.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"Which statement accurately characterizes the relationship between Fundamental Rights and Directive Principles of State Policy?</p><ul class="opts single"><li>(a) FR subordinate to DPSP</li><li>(b) mutually exclusive</li><li>(c) equal in status</li><li>(d) FR take precedence over DPSP." Coaching-test answer: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<ul class="vwhy"><li>And worth a mentor's caveat: (d) is the safe textbook answer for a four-option MCQ, but the precise post-Minerva Mills (1980) position (Note 06) is <i>harmonious construction</i> between the two, not blanket FR supremacy — Article 31C still gives limited DPSP priority for Articles 39(b)/(c).</li><li>Use (d) for a bare MCQ; use the harmony framing for any Mains answer.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"Which among the following rights and privileges does the Constitution confer on the citizens of India (and deny to aliens):</p><ul class="opts single"><li>(a) Right against discrimination on grounds of religion, race, caste, sex or place of birth (Article 15)</li><li>(b) Right to equality of opportunity in the matter of public employment (Article 16)</li><li>(c) Right to freedom of speech and expression, assembly, association, movement, residence and profession (Article 19)</li><li>(d) All of the above." Coaching-test answer: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">Directly tests the "citizens-only" list now flagged in Section 02's tip box — Articles 15, 16 and 19 are exactly the three headline citizens-only rights (alongside 29 and 30), while Article 14, 20, 21 and 32 protect "any person," aliens included.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"A writ of Prohibition is issued by a superior court:</p><ul class="opts single"><li>(a) whereby it can call upon a person to show under what authority he is holding office</li><li>(b) to an inferior court or body exercising judicial or quasi-judicial functions to transfer the record of proceedings in a case for its review</li><li>(c) to an authority to produce an illegally detained person before the court for trial</li><li>(d) to prevent an inferior court or tribunal from exceeding its jurisdiction or acting contrary to the rules of natural justice." Coaching-test answer: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">A three-way writ-confusion trap in one question: (a) actually describes Quo Warranto, (b) describes Certiorari's "transfer the record for review" function, and (c) describes Habeas Corpus — only (d) correctly states Prohibition's preventive, jurisdiction-policing purpose from Section 05's writs table.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">Consider the following statements regarding Fundamental Rights:</p><ol class="subs"><li>Fundamental Rights protect citizens against the arbitrary and absolute exercise of power by the State</li><li>the Constitution guarantees the rights of the individual against the State but not against other individuals</li></ol><p class="qtext">Which of the above statements is/are correct?</p><ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2. Coaching-test answer: (a)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">Statement 2 is the trap, and is exactly what Section 03's new "vertical vs. horizontal" tip box exists to correct — Articles 15(2), 17, 23 and 24 bind private individuals directly, not just the State, so Fundamental Rights are not a purely State-versus-citizen shield.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"Which of the following writs is issued by the court to a public official asking him to perform the official duties that he has failed or refused to perform:</p><ul class="opts"><li>(a) Prohibition</li><li>(b) Certiorari</li><li>(c) Quo-Warranto</li><li>(d) Mandamus." Coaching-test answer: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">The baseline Mandamus definition from Section 05's writs table — the genuine 2022 PYQ above builds directly on this same writ.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">With reference to preventive detention in India, consider the following statements:</p><ol class="subs"><li>it is mandatory to inform the detainee of the grounds of arrest before he/she is taken into custody</li><li>it is compulsory to produce the detained person before a magistrate within 24 hours</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both</li><li>(d) None. Coaching-test answer: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">Both statements describe the <i>ordinary-arrest</i> safeguards under Article 22(1)-(2) (already in Section 03's table) — preventive detention runs on a separate, weaker track under Article 22(4)-(7): grounds are communicated only "as soon as may be" (not necessarily before custody, and can be withheld in the public interest), there is no 24-hour magistrate rule, and an Advisory Board review substitutes for it instead.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"Which of the following Articles cannot be suspended during a National Emergency:</p><ul class="opts single"><li>(a) Articles 14 and 15</li><li>(b) Articles 19 and 20</li><li>(c) Articles 21 and 22</li><li>(d) Articles 20 and 21." Coaching-test answer: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">Tests the Emergency-suspension trap box newly added to Section 03 — Articles 20 and 21 are the one hard floor the 44th Amendment, 1978 placed beyond the reach of any Article 359 Presidential Order.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"The concept of 'equality before law' in the Indian Constitution means:</p><ul class="opts single"><li>(a) All laws must treat individuals equitably</li><li>(b) Every individual is equal before the law and has the same legal rights</li><li>(c) The government can discriminate between individuals based on their characteristics</li><li>(d) The judiciary has the authority to create laws." Coaching-test answer: (a)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<ul class="vwhy"><li>The tempting wrong answer is (b) — "equality before law" (Section 02's British-origin limb of Article 14) does not mean everyone holds identical legal rights regardless of circumstance;</li><li>It means the law is applied without special privilege, treating people equitably given their differing circumstances.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">With reference to the Fundamental Right to Education, consider the following statements:</p><ol class="subs"><li>the Right to Education is a fundamental right for children aged 3 to 18 years</li><li>private schools are mandated to provide free and compulsory education to all under this right</li><li>the State has the authority to regulate the fees charged by private unaided schools</li></ol><p class="qtext">How many of the above statements are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) None. Coaching-test answer: (a)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<ul class="vwhy"><li>Statement 1 is wrong — Article 21-A's actual age band is <b>6 to 14</b> years (Section 03's table);</li><li>Statement 2 is wrong — private schools must only admit a disadvantaged-quota share of students free under the RTE Act, not make all admissions free;</li><li>Statement 3 alone is correct — fee regulation runs through State-level District Fee Regulatory Committees under the RTE framework.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"The government decided to curtail the Freedom of Religion in the event of a public health emergency like COVID-19, leading to restrictions on religious gatherings. Which article empowers the government to do so?</p><ul class="opts"><li>(a) Article 15</li><li>(b) Article 26</li><li>(c) Article 21</li><li>(d) Article 25." Coaching-test answer: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">A direct application of Section 04's Article 25 table row — the right to profess, practise and propagate religion is expressly "subject to public order, morality, and health," and health is exactly the ground COVID-era restrictions invoked.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p>Statement-I: Reservations in educational institutions are based on caste. Statement-II: Reservations can also be provided for socially and educationally backward classes. Which one of the following is correct in respect of the above statements? Coaching-test answer: (d) Statement-I is incorrect, but Statement-II is correct.</p>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">Ties to the EWS/103rd Amendment detail newly added to Section 02's Article 15/16 table — reservation in India rests on social-and-educational backwardness (Article 15(4)/16(4)) and, since 2019, economic criteria (Article 15(6)/16(6)), not on caste as a category in itself, even though caste is often used as a proxy indicator for SEBC status.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p>Statement-I: Minority communities have the right to establish and administer educational institutions of their choice. Statement-II: These rights can be restricted by the state for ensuring the quality of education. Which one of the following is correct in respect of the above statements? Coaching-test answer: (b) both correct, Statement-II not the correct explanation for Statement-I.</p>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<ul class="vwhy"><li>Restates Section 05's Article 30 row plus a genuine nuance it didn't previously spell out — the Article 30 right is real but not absolute;</li><li>The State can still impose reasonable, quality-related regulatory conditions on minority institutions without that being the <i>reason</i> the right exists in the first place.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"'Right to Privacy' is protected under which Article of the Constitution of India?</p><ul class="opts"><li>(a) Article 15</li><li>(b) Article 19</li><li>(c) Article 21</li><li>(d) Article 29." Coaching-test answer: (c)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">The simplest possible restatement of Fig 3 and the genuine 2018/2024 PYQs above — Puttaswamy (2017) located privacy inside Article 21.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">Regarding the imposition of reasonable restrictions on Fundamental Rights, which statement is accurate?</p><ul class="opts single"><li>(a) Restrictions must be reasonable and can be imposed only by Parliament</li><li>(b) The judiciary alone has authority to impose restrictions on Fundamental Rights</li><li>(c) Restrictions must be prescribed by law and must be reasonable</li><li>(d) Fundamental Rights can never be restricted under any circumstances. Coaching-test answer: (c)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">Tests the "prescribed by law + reasonable" two-part test now spelt out in Section 03's Article 19(2) tip box, alongside the correction that restriction power belongs to <i>either</i> Parliament or a State Legislature, not Parliament alone.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">Regarding freedom of speech and expression, consider the following statements:</p><ol class="subs"><li>it includes the freedom to criticize the government</li><li>it includes the freedom to express insensitive feelings through a book</li><li>restrictions on it can only be imposed by the Central Government</li></ol><p class="qtext">How many of the above statements are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) None. Coaching-test answer: (a)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<ul class="vwhy"><li>Only statement 1 survives — statement 2 confuses free speech with a licence for hate speech or insensitivity, which the Article 19(2) grounds (decency, morality, public order) exist precisely to exclude;</li><li>Statement 3 is wrong because public order — one of the eight Article 19(2) grounds — sits within State competence too, so State Legislatures can restrict speech as well.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Practice MCQ</span>
+<p class="qtext">"A person has been arrested for an alleged crime, and their family is concerned about their well-being. Which writ can the family file to ensure that the person is not subjected to any form of torture or inhuman treatment while in custody?</p><ul class="opts"><li>(a) Mandamus</li><li>(b) Habeas Corpus</li><li>(c) Certiorari</li><li>(d) Quo Warranto." Coaching-test answer: (b)</li></ul>
+<div class="verdict">
+<b class="vans">Not a UPSC PYQ</b>
+<p class="vone">A direct application of Section 05's Habeas Corpus row — "to have the body" — the classic bulwark against unlawful or abusive detention, available to family members on the detainee's behalf, not only to the detainee.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">08</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M12</span><span class="yr">2017 · GS-II</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">Examine the scope of Fundamental Rights in the light of the latest judgement of the Supreme Court on the Right to Privacy.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Examine."</b> Break the subject into parts and inspect each — here, break "scope" into its dimensions and show how Puttaswamy altered each. Not a debate; an analytical dissection ending in an assessment.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Puttaswamy's holding</li><li>How it widened scope — four dimensions</li><li>The limits it simultaneously imposed</li><li>Consequences since</li><li>Assessment</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>In <b>Justice K.S. Puttaswamy v. Union of India (2017)</b>, a <b>nine-judge bench unanimously</b> held the right to privacy to be a fundamental right intrinsic to <b>Article 21</b> and to the freedoms of Part III. It closed a long arc: <b>A.K. Gopalan (1950)</b> read Article 21 narrowly; <b>M.P. Sharma (1954)</b> and <b>Kharak Singh (1962)</b> denied a privacy right; <b>Maneka Gandhi (1978)</b> made Article 21 substantive. Both earlier rulings were overruled.</p>
+<p><span class="sh">How it widened the scope of Fundamental Rights</span></p>
+<p><i>Unenumerated rights:</i> rights not textually listed can be read into Part III. <i>Interconnection:</i> privacy was located across <b>Articles 14, 19 and 21</b> — the golden triangle read as an integrated whole. <i>Horizontal reach:</i> informational privacy implicates private data controllers, not only the State. <i>New domains:</i> bodily autonomy, sexual orientation and informational self-determination entered Part III, enabling <b>Navtej Singh Johar (2018)</b>, <b>Common Cause (2018)</b> on passive euthanasia, and the <b>DPDP Act, 2023</b>.</p>
+<p><span class="sh">The limits it imposed</span></p>
+<p>Privacy is not absolute. The Court laid down <b>proportionality</b>: a restriction needs (i) a legitimate aim, (ii) rational connection, (iii) necessity — no less-restrictive alternative — and (iv) a fair balance. Applied in <b>Aadhaar (2018)</b>, it is now the standard test for restricting any fundamental right. The judgment thus expanded scope and disciplined restriction at once.</p>
+<p><span class="sh">Assessment</span></p>
+<p>Fundamental Rights are therefore evolutionary, not fixed: Article 21 has gained no words since 1950, yet now includes privacy, dignity, livelihood, health and — after <b>M.K. Ranjitsinh (2024)</b> — protection from the adverse effects of climate change. Enforcement is the live test: data-protection implementation and surveillance reform.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Puttaswamy (2017, 9 judges) · the arc Gopalan (1950) → M.P. Sharma (1954) → Kharak Singh (1962) → Maneka (1978) → Puttaswamy · golden triangle · proportionality's four prongs · Aadhaar (2018) application · Navtej (2018) · Common Cause (2018) · DPDP Act 2023 · M.K. Ranjitsinh (2024).</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 251 / 250 words.</b> <b>Cut:</b> the "extending the Maneka tradition" aside, "decisional autonomy" from the domains list, and the explanatory clause on why the golden triangle matters. <b>Bought:</b> the <b>full Article 21 arc</b> in the opening — Gopalan and Maneka now bracket the overruled cases — and <b>Aadhaar (2018)</b> as the proof that proportionality is applied, not merely declared.</div>
+<div class="cost"><b>What would cost you marks:</b> describing only the privacy right and never addressing "scope of Fundamental Rights", which is the actual subject; omitting proportionality — the most examinable doctrinal output of the case.</div>
+</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M13</span><span class="prac">Practice · Week 1 test</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">Freedom of speech and expression is one of the most evolved constitutional provisions. It has been described as an 'inalienable right'. Discuss.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Discuss" two claims — that it is highly evolved, and that it is inalienable.</b> The second claim is the trap: in Indian law free speech is emphatically <b>not</b> absolute. A good answer affirms the evolution but qualifies the "inalienable" characterisation.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Art 19(1)(a) + who holds it</li><li>How it evolved — judicial expansion</li><li>Why it is not absolute — Art 19(2)</li><li>Live pressures</li><li>Verdict on "inalienable"</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 19(1)(a)</b> guarantees citizens freedom of speech and expression — treated by the Court as foundational to democratic self-government. Its evolution began at once: <b>Romesh Thappar (1950)</b> struck down a pre-censorship order, prompting the <b>First Amendment (1951)</b>, which added "public order", "friendly relations with foreign States" and "incitement to an offence" to Article 19(2) and made restrictions expressly "reasonable".</p>
+<p><span class="sh">How it widened</span></p>
+<p>Freedom of the press, though nowhere separately mentioned (<b>Bennett Coleman, 1973</b>); the right to know and receive information (<b>Cricket Association of Bengal, 1995</b>); the rights to fly the national flag and to silence; commercial speech; and internet speech in <b>Shreya Singhal (2015)</b>, where Section 66A of the IT Act fell as vague and overbroad. <b>ADR (2002)</b> derived the voter's right to know candidates' antecedents from it, and the <b>electoral bonds judgment (2024)</b> struck that scheme partly for violating the same right.</p>
+<p><span class="sh">Why it is not "inalienable"</span></p>
+<p><b>Article 19(2)</b> permits reasonable restrictions on eight grounds — sovereignty and integrity of India, security of the State, friendly relations with foreign States, public order, decency or morality, contempt of court, defamation, and incitement to an offence. Restrictions must also be proportionate after <i>Puttaswamy</i>. And under <b>Article 358</b>, Article 19 freedoms stand suspended during a National Emergency proclaimed on war or external aggression.</p>
+<p><span class="sh">Verdict</span></p>
+<p>It is among the most evolved provisions — but "inalienable" holds only in the sense that it cannot be abolished, free speech being integral to the basic structure of a democratic republic. It is emphatically not unlimited: the real constitutional work lies in policing the reasonableness of restrictions, as hate-speech law, sedition and internet shutdowns now test.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 19(1)(a) citizens-only · the arc Romesh Thappar (1950) → First Amendment (1951) → Bennett Coleman (1973) → Shreya Singhal (2015) · Cricket Association (1995) · ADR (2002) · electoral bonds (2024) · the eight Art 19(2) grounds · Art 358 · proportionality.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 266 / 250 words.</b> <b>Cut:</b> the standalone "live pressures" block with its IPC section list and the 267th Law Commission Report — folded into a single closing clause instead. <b>Bought:</b> <b>Romesh Thappar (1950)</b> and the <b>First Amendment</b>, which explain <i>why</i> Article 19(2) reads as it does, plus <b>Bennett Coleman (1973)</b> for press freedom. A question about an "evolved" provision must show the evolution, not just its endpoint.</div>
+<div class="cost"><b>What would cost you marks:</b> accepting "inalienable" uncritically; failing to list the Article 19(2) grounds precisely — the eight grounds are directly examinable; forgetting that the right is available to <i>citizens</i> only.</div>
+</div>
+
+
+<h3>(F) Practice Mains — Week 1 Self-Study Test (UPSC Guide coaching test, not a genuine PYQ)</h3>
+
+</section>
+
+<!-- ===== RECALL SHEET ===== -->
+
+
+
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">◆ One-page recall sheet</span>
+<h2>Last-mile revision — Fundamental Rights</h2>
+<ul>
+<li>Art 12 — defines "State"; Art 13 — inconsistent laws are void.</li>
+<li>Art 14 — equality before law (Britain) + equal protection of laws (USA).</li>
+<li>Art 15 — no discrimination on 5 grounds: religion, race, caste, sex, place of birth.</li>
+<li>Art 17 — untouchability abolished; enforced via the <b>1976 Act.</b></li>
+<li>Art 18 — only <b>military/academic</b> titles allowed.</li>
+<li>Art 19 — <b>6</b> freedoms today (property removed by <b>44th Amendment, 1978</b>).</li>
+<li>Art 20 — trial-stage protections: no ex-post-facto, no double jeopardy, no self-incrimination.</li>
+<li>Art 21 — <b>Gopalan (1950)</b> narrow → <b>Maneka Gandhi (1978)</b> fair/just/reasonable → <b>Puttaswamy (2017)</b> privacy.</li>
+<li>Art 21-A — Right to Education, <b>86th Amendment, 2002</b>; RTE Act <b>2009.</b></li>
+<li>Art 22 — arrest-stage protections; preventive detention is a separate, weaker regime.</li>
+<li>Art 23 — bans trafficking &amp; begar; Art 24 — bans child labour below <b>14</b> in hazardous work.</li>
+<li>Art 25–28 — freedom of religion; Art 26 rights belong to a <b>denomination</b>, not an individual.</li>
+<li>Art 29–30 — cultural &amp; educational rights of minorities.</li>
+<li>Art 32 — <b>"heart and soul"</b> (Ambedkar); SC writs. Art 226 — HC writs, wider scope.</li>
+<li>5 writs: <b>Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto.</b></li>
+<li>Art 33 — Parliament (only) can restrict FRs for armed/police forces.</li>
+<li><b>Untouchability (Art 17)</b> sits under <b>Right to Equality</b>, not Right against Exploitation — Art 23–24 there cover forced labour, trafficking, child labour only (a recurring flip-trap).</li>
+<li><b>Right to Property (Art 300-A)</b> — a <b>legal</b> right (not Fundamental), available to <b>any person</b>, not citizens alone.</li>
+<li><b>Right to vote</b> — a <b>Constitutional Right</b> (Art 326/RPA), not a Fundamental Right.</li>
+<li><b>Fundamental Duties (Art 51A)</b> — non-justiciable, full list + PYQs in <b>Note 09.</b></li>
+</ul>
+</div>
+
+<div class="series">
+<b>Previous:</b> Note 06 — Basic Structure Doctrine. <b>Next:</b> Note 08 — Directive Principles of State Policy.
+</div>
+</section>
+
+<nav class="tabflow" id="tabflow">
+<button class="tabflow-btn tabflow-prev" id="tabflowPrev" type="button">
+<span class="tabflow-dir">&#8592; Previous</span>
+<span class="tabflow-label" id="tabflowPrevLabel"></span>
+</button>
+<button class="tabflow-btn tabflow-next" id="tabflowNext" type="button">
+<span class="tabflow-dir">Next &#8594;</span>
+<span class="tabflow-label" id="tabflowNextLabel"></span>
+</button>
+</nav>
+
+<footer>
+Fundamental Rights — Topic 1 of 9, Polity &amp; Constitution cluster, GS Paper II (Mains) · Note 7 of 9 in this Topic<br>
+Facts cross-checked against publicly available UPSC PYQ compilations; PYQs never fabricated — see integrity note in Section 07.
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.notetab'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.tabsection'));
+  var ids = sections.map(function(s){ return s.id; });
+
+  var flowPrev = document.getElementById('tabflowPrev');
+  var flowNext = document.getElementById('tabflowNext');
+  var flowPrevLabel = document.getElementById('tabflowPrevLabel');
+  var flowNextLabel = document.getElementById('tabflowNextLabel');
+
+  function tabLabel(id){
+    var match = tabs.filter(function(t){ return t.dataset.tab === id; })[0];
+    return match ? match.textContent.trim() : '';
+  }
+
+  function updateTabflow(id){
+    if (!flowPrev || !flowNext) return;
+    var idx = ids.indexOf(id);
+    if (idx > 0) {
+      flowPrev.disabled = false;
+      flowPrev.dataset.target = ids[idx - 1];
+      flowPrevLabel.textContent = tabLabel(ids[idx - 1]);
+    } else {
+      flowPrev.disabled = true;
+      flowPrev.removeAttribute('data-target');
+      flowPrevLabel.textContent = '';
+    }
+    if (idx > -1 && idx < ids.length - 1) {
+      flowNext.disabled = false;
+      flowNext.dataset.target = ids[idx + 1];
+      flowNextLabel.textContent = tabLabel(ids[idx + 1]);
+    } else {
+      flowNext.disabled = true;
+      flowNext.removeAttribute('data-target');
+      flowNextLabel.textContent = '';
+    }
+  }
+
+  function activate(id, doScroll){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+    sections.forEach(function(s){ s.classList.toggle('active', s.id === id); });
+    if (doScroll) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    updateTabflow(id);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      activate(t.dataset.tab, true);
+      history.replaceState(null, '', '#' + t.dataset.tab);
+    });
+  });
+  [flowPrev, flowNext].forEach(function(btn){
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      if (btn.disabled || !btn.dataset.target) return;
+      activate(btn.dataset.target, true);
+      history.replaceState(null, '', '#' + btn.dataset.target);
+    });
+  });
+  var initial = (location.hash || '').replace('#','');
+  if (ids.indexOf(initial) === -1) initial = ids[0];
+  if (initial) activate(initial, false);
+})();
+</script>
+
+</div>
+</div>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

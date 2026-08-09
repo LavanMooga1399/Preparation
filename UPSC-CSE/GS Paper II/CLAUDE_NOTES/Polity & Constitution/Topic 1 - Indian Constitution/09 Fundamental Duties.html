@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamental Duties | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;}
+.sec-head{display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+table.crit{table-layout:fixed;}
+table.crit tbody th{white-space:normal;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+
+
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Syllabus placement</button>
+<button class="notetab" data-tab="s2">02 · Origin</button>
+<button class="notetab" data-tab="s3">03 · The 11 Duties</button>
+<button class="notetab" data-tab="s4">04 · Nature & Features</button>
+<button class="notetab" data-tab="s5">05 · Verma Committee</button>
+<button class="notetab" data-tab="s6">06 · Criticism & Significance</button>
+<button class="notetab" data-tab="s7">07 · Mains craft</button>
+<button class="notetab" data-tab="s8">08 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">09 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 1 of 9 · Note 09 of 9 — final note in this Topic</div>
+<h1>Fundamental Duties</h1>
+<p class="sub">Senior-mentor notes on Part IV-A, Article 51A — the youngest and smallest of the Constitution's three "conscience" Parts, added during the Emergency, and the one most often reduced to a single throwaway MCQ when it deserves sharper treatment.</p>
+<div class="chips">
+<span class="chip">Part IV-A, Art. 51A</span>
+<span class="chip">42nd Amendment, 1976</span>
+<span class="chip">Swaran Singh Committee</span>
+<span class="chip">11 Duties</span>
+</div>
+<div class="bignum"><b>11</b><span>Fundamental Duties today (10 in 1976 + 1 in 2002)</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this note exists as its own file</div>
+<p>Fundamental Duties are the third leg of the FR-DPSP-FD triad, and share the "significant provisions" umbrella with Notes 07 and 08 — but they have their own distinct origin story (Swaran Singh Committee, added during the Emergency), their own list to memorise verbatim, and their own recurring Prelims traps (which of these eleven is <i>not</i> listed), so they earn a dedicated file rather than a paragraph inside Note 07.</p>
+<p>Trend verdict up front: a modest but genuine Prelims performer — five verified questions since 2011, almost always "which of the following is/is not a Fundamental Duty" or the Rights-Duties relationship. No standalone genuine Mains PYQ on Fundamental Duties alone could be verified — it appears in Mains only as a supporting idea inside broader Rights-vs-Duties or citizen-responsibility answers.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Notes 07 and 08 covered what the <i>State</i> owes citizens (Fundamental Rights) and what the State should aspire to (Directive Principles). This note flips the direction entirely: what does a citizen owe the country in return? The original 1950 Constitution never actually asked that question in writing — it took 26 years, and the political upheaval of the Emergency period, before Parliament added a formal answer via the 42nd Amendment, 1976.</p>
+<p>Like Directive Principles, these eleven duties are not enforceable in court — you cannot be fined or jailed simply for failing to "develop the scientific temper" or to "cherish the noble ideals of the freedom struggle." They exist as a moral and civic compass rather than a penal code, which is exactly why Prelims tends to test them in one very specific way: not by asking what a duty <i>means</i>, but by asking you to correctly sort a list of statements into "this is a genuine Fundamental Duty" versus "this sounds like one but is actually a Directive Principle, or not in the Constitution at all." Hold that single exam pattern in mind, and the eleven-item list below becomes much easier to drill.</p>
+<p class="bridge">↓ Now the exam-precise version begins below.</p>
+</div>
+
+<div class="progress">
+<b>Topic 1 note series —</b>
+<span class="done">✓ 00 Concept of the Constitution &amp; Constitutionalism</span> · <span class="done">✓ 01 Historical Underpinnings &amp; Evolution</span> · <span class="done">✓ 02 Salient Features &amp; the Preamble</span> · <span class="done">✓ 03 Union &amp; its Territory</span> · <span class="done">✓ 04 Citizenship</span> · <span class="done">✓ 05 Amendment of the Constitution</span> · <span class="done">✓ 06 Basic Structure Doctrine</span> · <span class="done">✓ 07 Fundamental Rights</span> · <span class="done">✓ 08 Directive Principles of State Policy</span> · <span class="done">✓ 09 Fundamental Duties (this file)</span>
+</div>
+</section>
+
+<!-- ===== SECTION 01 : SYLLABUS PLACEMENT ===== -->
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Where this fits &amp; the logical chain</h2></div>
+<hr class="divider">
+<p class="lead">This is the last note in Topic 1's series. Fundamental Duties close the loop opened by Fundamental Rights (Note 07) and continued by the Directive Principles (Note 08) — rights the citizen holds against the State, principles the State must work towards, and now duties the citizen owes back. It is also chronologically the newest of the three: added in 1976, a full 26 years after the other two.</p>
+<div class="tip">
+<span class="ic">🔗</span>
+<p><b>Logical chain:</b> Fundamental Rights (Note 07) → Directive Principles (Note 08) → <b>Fundamental Duties</b> (this file) — together, Granville Austin's "conscience of the Constitution." This closes Topic 1; Topic 2 of this cluster begins a new syllabus line.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 : ORIGIN ===== -->
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Origin — Part IV-A, Article 51A</h2></div>
+<hr class="divider">
+<p class="lead">Fundamental Duties were added by the <b>42nd Amendment, 1976</b> — the same "Mini-Constitution" amendment already familiar from Note 06's Basic Structure timeline — on the recommendation of the <b>Swaran Singh Committee</b>, set up specifically to consider whether duties should be given constitutional standing. The Committee's stated inspiration was the constitutional tradition of the <b>erstwhile USSR</b>, where citizen duties sit alongside citizen rights.</p>
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>Trap:</b> The Swaran Singh Committee actually recommended <b>eight</b> duties, plus a provision for penalties for non-compliance and a duty to pay taxes. Parliament accepted neither the penalty clause nor the tax duty, and expanded the list to <b>ten</b> duties when enacting the 42nd Amendment. Do not assume the Committee's draft and the final Article 51A are identical.</p>
+</div>
+<p class="lead">A second amendment enlarged the list once more: the <b>86th Amendment, 2002</b> — the same amendment that inserted Article 21A (Right to Education) into Part III and rewrote Article 45 in the Directive Principles (Note 08) — added an <b>eleventh</b> duty, on a parent or guardian's obligation to educate their child.</p>
+</section>
+
+<!-- ===== SECTION 03 : THE LIST ===== -->
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>The eleven Fundamental Duties — Article 51A</h2></div>
+<hr class="divider">
+<p class="lead">It shall be the duty of every citizen of India —</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Clause</th><th>Duty</th></tr></thead>
+<tbody>
+<tr><th>(a)</th><td>To abide by the Constitution and respect its ideals and institutions, the National Flag and the National Anthem.</td></tr>
+<tr><th>(b)</th><td>To cherish and follow the noble ideals which inspired our national struggle for freedom.</td></tr>
+<tr><th>(c)</th><td>To uphold and protect the sovereignty, unity and integrity of India.</td></tr>
+<tr><th>(d)</th><td>To defend the country and render national service when called upon to do so.</td></tr>
+<tr><th>(e)</th><td>To promote harmony and the spirit of common brotherhood amongst all the people of India, transcending religious, linguistic, regional or sectional diversities; to renounce practices derogatory to the dignity of women.</td></tr>
+<tr><th>(f)</th><td>To value and preserve the rich heritage of our composite culture.</td></tr>
+<tr><th>(g)</th><td>To protect and improve the natural environment including forests, lakes, rivers and wildlife, and to have compassion for living creatures.</td></tr>
+<tr><th>(h)</th><td>To develop the scientific temper, humanism and the spirit of inquiry and reform.</td></tr>
+<tr><th>(i)</th><td>To safeguard public property and to abjure violence.</td></tr>
+<tr><th>(j)</th><td>To strive towards excellence in all spheres of individual and collective activity, so that the nation constantly rises to higher levels of endeavour and achievement.</td></tr>
+<tr><th>(k)</th><td>[Added by the 86th Amendment, 2002] Who is a parent or guardian, to provide opportunities for education to his child, or ward between the ages of six and fourteen years.</td></tr>
+</tbody>
+</table>
+</div>
+
+<figure><div class="fig-card">
+<svg viewBox="0 0 780 220" role="img" aria-label="Timeline of Fundamental Duties from Swaran Singh Committee to the 86th Amendment">
+<g font-family="Inter" font-size="12">
+<rect x="10" y="15" width="760" height="46" rx="10" fill="#E9E9FA" stroke="#33357F" stroke-width="1.5"/>
+<text x="390" y="35" text-anchor="middle" font-weight="700" fill="#33357F">1976 — Swaran Singh Committee recommends 8 duties (USSR-inspired)</text>
+<text x="390" y="53" text-anchor="middle" font-size="11" fill="#5457a0">Parliament enacts 10 via the 42nd Amendment — Article 51A, Part IV-A created</text>
+
+<line x1="390" y1="65" x2="390" y2="88" stroke="#9598c9" stroke-width="2" marker-end="url(#arrowE)"/>
+
+<rect x="10" y="90" width="360" height="52" rx="10" fill="#FBF1D8" stroke="#E0A11C" stroke-width="1.5"/>
+<text x="190" y="112" text-anchor="middle" font-weight="700" fill="#8a5c00">1999 — Justice J.S. Verma Committee</text>
+<text x="190" y="130" text-anchor="middle" font-size="11" fill="#5c3f00">set up to operationalise/teach the 10 duties</text>
+
+<rect x="410" y="90" width="360" height="52" rx="10" fill="#F7E4F1" stroke="#B5388B" stroke-width="1.5"/>
+<text x="590" y="112" text-anchor="middle" font-weight="700" fill="#7a1f66">2002 — 86th Amendment</text>
+<text x="590" y="130" text-anchor="middle" font-size="11" fill="#5a1650">Adds the 11th duty — Art. 51A(k), a parent's duty to educate</text>
+
+<line x1="390" y1="142" x2="390" y2="165" stroke="#9598c9" stroke-width="2" marker-end="url(#arrowE)"/>
+<text x="390" y="185" text-anchor="middle" font-size="11.5" fill="#33344f" font-weight="600">Today — 11 Fundamental Duties, still non-justiciable</text>
+</g>
+<defs><marker id="arrowE" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9598c9"/></marker></defs>
+</svg>
+<figcaption><b>Fig 1.</b> Two committees, two amendments — the Swaran Singh Committee created the list (1976), the Verma Committee tried to make it stick in practice (1999), and the 86th Amendment (2002) is the only addition since.</figcaption>
+</div></figure>
+
+<div class="prelims">
+<h3>🔴 Prelims — verbatim-memorisable facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">●</span><span>Fundamental Duties are in <b>Part IV-A</b>, a single Article: <b>51A.</b></span></div>
+<div class="item"><span class="dot">●</span><span>Added by the <b>42nd Amendment, 1976</b>, on <b>Swaran Singh Committee</b> recommendation, inspired by the <b>USSR.</b></span></div>
+<div class="item"><span class="dot">●</span><span>Originally <b>10</b> duties; the <b>11th</b> — parent/guardian's duty to educate a child aged 6–14 — added by the <b>86th Amendment, 2002.</b></span></div>
+<div class="item"><span class="dot">●</span><span>Common exam distractors that are <b>NOT</b> Fundamental Duties: to vote in elections, to pay taxes, to protect weaker sections from social injustice (that is DPSP, Art. 46).</span></div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : NATURE & FEATURES ===== -->
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Nature and features</h2></div>
+<hr class="divider">
+<p class="lead">Fundamental Duties sit in an odd middle ground: morally weightier than an ordinary civic suggestion, but — like the Directive Principles — carrying no direct judicial sanction of their own.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Feature</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Applies only to citizens</th><td>Unlike Fundamental Rights (mostly available to "any person") and DPSP (binding on "the State"), Article 51A binds only citizens — foreigners owe no Fundamental Duty.</td></tr>
+<tr><th>Non-justiciable</th><td>No court can compel a citizen to perform a Fundamental Duty, and there is no penalty in the Constitution itself for failing one — confirmed by the genuine 2017 PYQ in Section 08.</td></tr>
+<tr><th>Mix of moral and civic duties</th><td>Some (respecting the Flag, Anthem) are civic/legal in character; others (developing scientific temper, striving for excellence) are closer to moral exhortations than enforceable norms.</td></tr>
+<tr><th>Indirect legal backing, in places</th><td>Though Art. 51A itself has no penalty clause, some duties are echoed in ordinary legislation — e.g., the Prevention of Insults to National Honour Act, 1971 (duty (a)), the Environment (Protection) Act, 1986 (duty (g)), the RTE Act, 2009 (duty (k)), the <b>Unlawful Activities (Prevention) Act</b> (duty (c)/(d) — upholding sovereignty, unity and integrity), the Protection of Civil Rights Act, 1955 (duty (e) — harmony/dignity), and the Representation of the People Act, 1951 (electoral integrity). A Week 2 question asked exactly which Acts give duties legal force — the Competition Act was the distractor that does NOT.</td></tr>
+<tr><th>Amendable, within limits</th><td>Fundamental Duties can be amended by Parliament through the Article 368 <b>special-majority</b> route (the 86th Amendment's eleventh duty proves it in practice) — subject, like everything else, to the basic structure limit. Tested as an FR-vs-FD comparison statement in Week 2.</td></tr>
+<tr><th>Used by courts to interpret other provisions</th><td>Courts have invoked Art. 51A while interpreting Fundamental Rights or testing the validity of laws — e.g., upholding a two-child norm for panchayat election eligibility in <i>Javed v. State of Haryana</i> (2003), partly reasoning from duty (e).</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>The concept layer — how "non-justiciable" duties still bite in court.</b> Three cases give this note its analytical depth: <b>AIIMS Students' Union v. AIIMS (2001)</b> — the Supreme Court held Fundamental Duties, though unenforceable against citizens directly, are a valid consideration when testing the <i>reasonableness of State action</i>, striking down institutional reservation partly by invoking the duty to strive for excellence (51A(j)); <b>M.C. Mehta line of cases</b> — duty (g) (environment) repeatedly used to ground environmental directions alongside Article 21; and <b>Ranganath Mishra (2003)</b> — the Court directed the State to spread awareness of duties per the Verma Committee's operationalisation recommendations. The exam-precise formulation: Fundamental Duties are non-justiciable against the citizen, but justiciability is not the same as legal irrelevance — they function as interpretive aids and reasonableness benchmarks. A statement flatly claiming they "have no legal effect whatsoever" overshoots and is wrong.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 05 : VERMA COMMITTEE ===== -->
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>The Verma Committee, 1999</h2></div>
+<hr class="divider">
+<p class="lead">By the late 1990s it was clear the ten duties existed on paper but nowhere in public consciousness. Following a Supreme Court notice in 1998 on the state of enforcement, the Union government constituted the Justice J.S. Verma Committee in <b>1999</b> specifically to operationalise the teaching and practice of Fundamental Duties, rather than to add new ones or make them justiciable.</p>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Core recommendations to name-drop:</b> embed duty-centric content into school curricula and teacher training; strengthen enforcement of existing laws that already give some duties legal teeth (environment, national symbols); improve inter-ministerial coordination on awareness campaigns; sensitise legislators, civil servants and the judiciary through targeted programmes.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 06 : CRITICISM & SIGNIFICANCE ===== -->
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Criticism and significance</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table class="crit">
+<colgroup><col style="width:42%"><col style="width:58%"></colgroup>
+<thead><tr><th>Criticism</th><th>Counter / significance</th></tr></thead>
+<tbody>
+<tr><th>Non-exhaustive — no duty to vote, pay taxes, or practise family planning, despite the Swaran Singh Committee's original draft including some of these.</th><td>The list was deliberately kept to duties Parliament judged enforceable-in-spirit and non-controversial; the debate over adding more remains live (Verma Committee, various law commission discussions).</td></tr>
+<tr><th>Vague and moralistic wording ("scientific temper," "noble ideals") resists precise legal enforcement.</th><td>The vagueness is arguably intentional — these read as aspirational civic education, mirroring the Preamble's own register, not as a penal code.</td></tr>
+<tr><th>No constitutional penalty for non-compliance; awareness among citizens remains low.</th><td>Courts have still used Article 51A interpretively (Section 04) — giving it real, if indirect, legal weight despite the absence of a standalone enforcement mechanism.</td></tr>
+<tr><th>Applies only to citizens, creating an asymmetry with Fundamental Rights (available more broadly) and DPSP (binding the State).</th><td>Consistent with the idea that duties are the citizen's half of the "conscience of the Constitution" — the State's half is the Directive Principles (Note 08).</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION 07 : MAINS CRAFT ===== -->
+<section id="s7" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Mains craft — model intro &amp; value-additions</h2></div>
+<hr class="divider">
+<p class="lead"><b>Model intro line (liftable):</b> <i>"Added to the Constitution twenty-six years after it was adopted, and modelled explicitly on the Soviet constitutional tradition, the Fundamental Duties complete a triad Granville Austin called the Constitution's 'conscience' — rights the citizen holds against the State, principles the State owes the citizen, and now, in Article 51A, obligations the citizen owes back."</i></p>
+<div class="tip">
+<span class="ic">✚</span>
+<p><b>Value-additions to drop into any answer:</b> (1) Name-drop precisely — the Swaran Singh Committee (origin, 1976) and the Verma Committee (operationalisation, 1999) are two distinct bodies, frequently conflated; (2) Analogy — if Fundamental Rights are the citizen's "claims" and DPSP are the State's "promises," Fundamental Duties are the citizen's own "counter-promise," closing the circle; (3) Current link — the 86th Amendment's Art. 51A(k) parental duty to educate a child is the one Fundamental Duty with a direct statutory mirror, the Right to Education Act, 2009, making it the strongest example of a duty converted into real legal architecture.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 08 : PYQ ANALYSIS ===== -->
+<section id="s8" class="tabsection">
+<div class="sec-head"><span class="sec-num">08</span><h2>PYQ analysis</h2></div>
+<hr class="divider">
+<p class="lead"><b>Trend verdict:</b> A modest but genuine Prelims performer — five verified questions since 2011, concentrated on two question types: "which of the following is/is not a Fundamental Duty" and the conceptual Rights-Duties relationship. No standalone genuine Mains PYQ asking specifically about Fundamental Duties could be confirmed as genuine for this note — several coaching sites circulate a paraphrase of Laxmikanth's own descriptive line about Fundamental Duties as if it were a 2019 Mains question, but this could not be verified against an official source, so it is not listed here as genuine. Use Fundamental Duties as supporting material inside a broader Rights-vs-Duties or citizen-responsibility Mains answer instead.</p>
+
+<h3>(A) Genuine direct PYQs</h3>
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">Prelims</span>
+<p>"Which of the following statements is/are true of the Fundamental Duties of an Indian citizen? 1. A legislative process has been provided to enforce these duties. 2. They are correlative to legal duties." Ans: (d) neither.</p>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Confirms Fundamental Duties remain non-justiciable with no enforcement legislation, this note's central feature (Section 04).</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">Prelims</span>
+<p class="qtext">"In the context of India, which one of the following is the correct relationship between Rights and Duties?</p><ul class="opts single"><li>(a) Rights are correlative with Duties</li><li>(b) Rights are personal and hence independent of society and Duties</li><li>(c) Rights, not Duties, are important for the advancement of the personality of the citizen</li><li>(d) Duties, not Rights, are important for the stability of the State." Ans: (a)</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">The conceptual companion to the previous question, and a genuine repeater type across years.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">Prelims</span>
+<p class="qtext">"To uphold and protect the Sovereignty, Unity and Integrity of India is a provision made in the:</p><ul class="opts"><li>(a) Preamble</li><li>(b) Directive Principles of State Policy</li><li>(c) Fundamental Rights</li><li>(d) Fundamental Duties." Ans: (d)</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Duty (c), the first-listed Fundamental Duty, and a bare-recall question that recurs in different framings.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2012</span><span class="stg">Prelims</span>
+<p>"Which of the following is/are among the Fundamental Duties of citizens laid down in the Indian Constitution? 1. To preserve the rich heritage of our composite culture; 2. To protect the weaker sections from social injustice; 3. To develop the scientific temper and spirit of inquiry; 4. To strive towards excellence in all spheres of individual and collective activity." Ans: (c) 1, 3 and 4 only.</p>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">A precise trap: "protect the weaker sections from social injustice" is Article 46, a Directive Principle (Note 08), not a Fundamental Duty; duties (f), (h) and (j) are the genuine ones here.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="yr">2011</span><span class="stg">Prelims</span>
+<p class="qtext">"Which one of the following is not a Fundamental Duty?</p><ul class="opts single"><li>(a) To vote in public elections</li><li>(b) To develop the scientific temper</li><li>(c) To safeguard public property</li><li>(d) To abide by the Constitution and respect its ideals." Ans: (a)</li></ul>
+<div class="verdict">
+<b class="vans">Verdict: direct hit</b>
+<p class="vone">Voting is a statutory/constitutional entitlement (Representation of the People Act, 1951), never one of the eleven duties in Article 51A.</p>
+</div>
+</div>
+
+<h3>(C) Where the real marks go</h3>
+<p class="lead">In Prelims, marks concentrate almost entirely on correctly sorting a listed item into "genuine Fundamental Duty" versus a plausible DPSP or Fundamental Right distractor (the 2012 question is the clearest template) — memorising the eleven clauses verbatim is the highest-return single action for this note. In Mains, Fundamental Duties rarely carry a question on their own; they earn marks as the closing or comparative element of a broader Rights-Duties-DPSP answer.</p>
+
+<h3>(D) Expected/probable — NOT real PYQs, practice only</h3>
+<p class="lead">"Fundamental Duties remain the least invoked part of the Constitution. Should they be made legally enforceable? Discuss with reference to the Verma Committee's recommendations." — a plausible framing built from Section 05 above; not a confirmed past question, use only for practice.</p>
+
+<h3>Predicted Questions — reverse-engineered for Week 2 (not real PYQs, exam-pattern practice)</h3>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following statements is <b>NOT</b> correct?</p><ul class="opts single"><li>(a) Fundamental Duties bind citizens only, not foreigners</li><li>(b) The original Constitution of 1950 contained ten Fundamental Duties</li><li>(c) The 86th Amendment added the eleventh duty</li><li>(d) The duties were inserted on the Swaran Singh Committee's recommendation</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<p class="vone">The original Constitution had NO Fundamental Duties at all; Part IV-A arrived only with the 42nd Amendment, 1976 (Section 02).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Negative</span>
+<p class="qtext">Which of the following is <b>NOT</b> among the Fundamental Duties?</p><ul class="opts"><li>(a) To develop scientific temper</li><li>(b) To safeguard public property</li><li>(c) To vote in elections</li><li>(d) To protect the natural environment</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<p class="vone">Voting has never been a Fundamental Duty, despite appearing in the Swaran Singh Committee's original draft; a favourite distractor (Section 06).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · How many</span>
+<p class="qtext">Consider the following statements:</p><ol class="subs"><li>The AIIMS Students' Union case used duties to test the reasonableness of State action</li><li>The Verma Committee (1999) recommended making all duties justiciable</li><li>The RTE Act, 2009 echoes duty (k)</li></ol><p class="qtext">How many are correct?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 3)</b>
+<p class="vone">The Verma Committee's mandate was operationalising the teaching of duties, not making them justiciable (Sections 04–05).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Assertion-Reason</span>
+<p class="qtext"><b>Statement-I:</b> A statement that Fundamental Duties "have no legal effect whatsoever" is wrong. <b>Statement-II:</b> Courts use Article 51A as an interpretive aid and a benchmark of reasonableness even though no citizen can be directly compelled to perform a duty. Choose:</p><ul class="opts"><li>(a) Both correct, II explains I</li><li>(b) Both correct, II does not explain I</li><li>(c) I correct, II incorrect</li><li>(d) I incorrect, II correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<p class="vone">Non-justiciability is not legal irrelevance; Statement-II is the precise mechanism (Section 04's concept box).</p>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Predicted MCQ · Pairs</span>
+<p class="qtext">Consider the following pairs of duty and echoing statute:</p><ol class="subs"><li>Duty (a), respect for Flag/Anthem — Prevention of Insults to National Honour Act, 1971</li><li>Duty (g), environment — Environment (Protection) Act, 1986</li><li>Duty (k), education — Wildlife Protection Act, 1972</li></ol><p class="qtext">How many pairs are correctly matched?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Only two (1 and 2)</b>
+<p class="vone">Duty (k) pairs with the RTE Act, 2009; the Wildlife Act belongs with duty (g)'s cluster (Section 04's table).</p>
+</div>
+</div>
+<p class="lead">The 2012 PYQ above shows the exact template — a genuine Article 51A duty mixed with a DPSP or Fundamental Right distractor. Expect the coaching test to run several more variants of that same trap, plus the Swaran Singh Committee's origin-story details.</p>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">Consider the following:</p><ol class="subs"><li>to pay taxes honestly</li><li>to develop the scientific temper, humanism and the spirit of inquiry and reform</li><li>to provide opportunities for education to one's child or ward between six and fourteen years of age</li><li>to protect the weaker sections from social injustice</li></ol><p class="qtext">How many of the above are genuine Fundamental Duties under Article 51A?</p><ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (b) only two</b>
+<p class="vone">(2) is duty (h) and (3) is duty (k); (1) was recommended by the Swaran Singh Committee but never accepted into Article 51A (Section 02's trap box), and (4) is Article 46, a Directive Principle (Note 08) — the exact distractor pattern from the genuine 2012 PYQ above.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">With reference to the origin of Fundamental Duties, consider the following statements:</p><ol class="subs"><li>the Swaran Singh Committee recommended ten duties, all of which were accepted</li><li>the Committee's recommendations were inspired by the constitutional tradition of the erstwhile USSR</li><li>the Committee also recommended a penalty clause for non-compliance, which Parliament rejected</li></ol><p class="qtext">Which of the statements given above is/are correct?</p><ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (b) 2 and 3 only</b>
+<p class="vone">Statement 1 is the trap: the Committee recommended <b>eight</b> duties, and Parliament expanded the list to ten while enacting the 42nd Amendment; both facts sit in Section 02's trap box.</p>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Predicted MCQ</span>
+<p class="qtext">The eleventh Fundamental Duty — a parent or guardian's duty to provide education to their child aged six to fourteen — was added by:</p><ul class="opts"><li>(a) the 42nd Amendment, 1976</li><li>(b) the 44th Amendment, 1978</li><li>(c) the 86th Amendment, 2002</li><li>(d) the 97th Amendment, 2011</li></ul>
+<div class="verdict">
+<b class="vans">Predicted answer: (c)</b>
+<p class="vone">Section 02 and Fig 1. The same 86th Amendment that added Article 21A to Fundamental Rights and rewrote Article 45 in DPSP also added this duty — a three-Parts-at-once fact worth cross-referencing with Note 08's own predicted-question on this exact amendment.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== MAINS QUESTIONS ===== -->
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">09</span><h2>Mains Questions — model answers</h2></div>
+<hr class="divider">
+<div class="mainsintro"><b>Use these by attempting first.</b> Read only the question and the pink <i>directive</i> box; spend 60 seconds sketching your own sub-headings; then compare with the blue <i>skeleton</i> box before reading the model. The skeleton is the transferable skill — the facts change every question, the shape does not. Full method: <b>AI_KNOWLEDGE_BASE/MAINS_ANSWER_CRAFT.md</b>.</div>
+<div class="mainsans">
+<div class="qhead"><span class="qn">M15</span><span class="prac">Practice</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">"Fundamental Duties are the citizen's half of the Constitution's conscience, just as Directive Principles are the State's half." Discuss.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Discuss" an analogy.</b> Test how far the parallel holds. It works in some respects (both non-justiciable, both moral obligations) and breaks in others (FDs came later, are far fewer, and bind only citizens). Naming where an analogy breaks is a high-value move.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: origin — 42nd Amdt, Swaran Singh</li><li>Where the parallel holds</li><li>Where it breaks</li><li>How courts give them effect</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Fundamental Duties were absent from the original Constitution. Ten were inserted as <b>Part IV-A, Article 51A</b> by the <b>42nd Amendment (1976)</b> on the <b>Swaran Singh Committee's</b> recommendation, borrowing from the erstwhile USSR; an eleventh, on parental duty regarding education of children aged 6–14, came with the <b>86th Amendment (2002)</b>.</p>
+<p><span class="sh">Where the parallel holds</span></p>
+<p>Both are non-justiciable; both guide conduct — Part IV the State's, Part IV-A the citizen's; and both serve as interpretive aids, as in <b>AIIMS Students' Union (2001)</b>, where Article 51A was used to test the reasonableness of State action.</p>
+<p><span class="sh">Where it breaks</span></p>
+<p>DPSP were original and integral; FDs a later, Emergency-era insertion. DPSP are programmatic; FDs exhortatory. DPSP bind the State; FDs bind <b>citizens alone</b> — foreigners owe none.</p>
+<p><span class="sh">Their real effect</span></p>
+<p>Duties acquire indirect force through legislation — the Prevention of Insults to National Honour Act (1971), the Environment (Protection) Act (1986), the RTE Act (2009) — and the <b>Verma Committee (1999)</b> was set up to operationalise them.</p>
+<p>The analogy is apt in function but asymmetric in weight: the citizen's half exists, but was added late and remains the thinner half.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 51A / Part IV-A · 42nd Amdt + Swaran Singh Committee + USSR source · 86th Amdt eleventh duty · AIIMS Students' Union (2001) · three implementing statutes · Verma Committee 1999 · citizens-only limitation.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 181 / 150 words.</b> <b>Cut:</b> "both express moral obligation rather than enforceable command" (implied by non-justiciability) and the DPSP-litigation-volume point. <b>Bought:</b> nothing new — length only, 239 → budget over two passes. A 10-marker running near 240 words is really a 15-marker in disguise, and it steals the time a genuine 15-marker needs.</div>
+<div class="cost"><b>What would cost you marks:</b> listing all eleven duties (wastes a 150-word budget); accepting the analogy wholesale instead of testing it; claiming FDs have "no legal effect", which overshoots — they are non-justiciable, not legally irrelevant.</div>
+</div>
+
+
+</section>
+
+<!-- ===== RECALL SHEET ===== -->
+
+
+
+
+<!-- ===== TAB: LAST-MILE REVISION ===== -->
+<section id="revision" class="tabsection">
+<div class="recall">
+<span class="rk">◆ One-page recall sheet</span>
+<h2>Last-mile revision — Fundamental Duties</h2>
+<ul>
+<li>Part <b>IV-A</b>, a single Article: <b>51A</b> — added by the <b>42nd Amendment, 1976.</b></li>
+<li>Origin: <b>Swaran Singh Committee</b> (recommended 8, USSR-inspired); Parliament enacted <b>10.</b></li>
+<li><b>11th duty</b> — parent/guardian's duty to educate child aged 6–14 — added by the <b>86th Amendment, 2002.</b></li>
+<li>Apply only to <b>citizens</b>, not foreigners — unlike most Fundamental Rights.</li>
+<li><b>Non-justiciable</b> — no court-ordered enforcement, no constitutional penalty for breach.</li>
+<li><b>Verma Committee, 1999</b> — operationalisation/awareness, not new duties, not justiciability.</li>
+<li>NOT Fundamental Duties (common traps): to vote, to pay taxes, to protect weaker sections from social injustice (that's DPSP, Art. 46).</li>
+<li>Duty (a): respect Constitution, Flag, Anthem. Duty (c): sovereignty/unity/integrity. Duty (g): environment + compassion for living creatures. Duty (k): parent's duty to educate (86th Amdt.).</li>
+<li>Indirect legal backing: Prevention of Insults to National Honour Act 1971; Environment Protection Act 1986; RTE Act 2009.</li>
+<li>Genuine Rights-Duties PYQ answer: Rights are <b>correlative</b> with Duties (2017).</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Previous:</b> Note 08 — Directive Principles of State Policy. <b>This series is complete:</b> Topic 1 — Indian Constitution — is now fully covered across all nine notes (00–09, including the doubled Note 00 primer).
+</div>
+</section>
+
+<nav class="tabflow" id="tabflow">
+<button class="tabflow-btn tabflow-prev" id="tabflowPrev" type="button">
+<span class="tabflow-dir">&#8592; Previous</span>
+<span class="tabflow-label" id="tabflowPrevLabel"></span>
+</button>
+<button class="tabflow-btn tabflow-next" id="tabflowNext" type="button">
+<span class="tabflow-dir">Next &#8594;</span>
+<span class="tabflow-label" id="tabflowNextLabel"></span>
+</button>
+</nav>
+
+<footer>
+Fundamental Duties — Topic 1 of 9, Polity &amp; Constitution cluster, GS Paper II (Mains) · Note 9 of 9 — Topic 1 complete<br>
+Facts cross-checked against publicly available sources; PYQs never fabricated — see integrity note in Section 08.
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.notetab'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.tabsection'));
+  var ids = sections.map(function(s){ return s.id; });
+
+  var flowPrev = document.getElementById('tabflowPrev');
+  var flowNext = document.getElementById('tabflowNext');
+  var flowPrevLabel = document.getElementById('tabflowPrevLabel');
+  var flowNextLabel = document.getElementById('tabflowNextLabel');
+
+  function tabLabel(id){
+    var match = tabs.filter(function(t){ return t.dataset.tab === id; })[0];
+    return match ? match.textContent.trim() : '';
+  }
+
+  function updateTabflow(id){
+    if (!flowPrev || !flowNext) return;
+    var idx = ids.indexOf(id);
+    if (idx > 0) {
+      flowPrev.disabled = false;
+      flowPrev.dataset.target = ids[idx - 1];
+      flowPrevLabel.textContent = tabLabel(ids[idx - 1]);
+    } else {
+      flowPrev.disabled = true;
+      flowPrev.removeAttribute('data-target');
+      flowPrevLabel.textContent = '';
+    }
+    if (idx > -1 && idx < ids.length - 1) {
+      flowNext.disabled = false;
+      flowNext.dataset.target = ids[idx + 1];
+      flowNextLabel.textContent = tabLabel(ids[idx + 1]);
+    } else {
+      flowNext.disabled = true;
+      flowNext.removeAttribute('data-target');
+      flowNextLabel.textContent = '';
+    }
+  }
+
+  function activate(id, doScroll){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+    sections.forEach(function(s){ s.classList.toggle('active', s.id === id); });
+    if (doScroll) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    updateTabflow(id);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      activate(t.dataset.tab, true);
+      history.replaceState(null, '', '#' + t.dataset.tab);
+    });
+  });
+  [flowPrev, flowNext].forEach(function(btn){
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      if (btn.disabled || !btn.dataset.target) return;
+      activate(btn.dataset.target, true);
+      history.replaceState(null, '', '#' + btn.dataset.target);
+    });
+  });
+  var initial = (location.hash || '').replace('#','');
+  if (ids.indexOf(initial) === -1) initial = ids[0];
+  if (initial) activate(initial, false);
+})();
+</script>
+
+</div>
+</div>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

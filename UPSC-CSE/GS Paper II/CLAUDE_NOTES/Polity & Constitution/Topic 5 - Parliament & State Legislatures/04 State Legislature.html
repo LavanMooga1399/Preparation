@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State Legislature | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Structure — Arts 168–172</button>
+<button class="notetab" data-tab="s2">02 · Creating &amp; abolishing a Council</button>
+<button class="notetab" data-tab="s3">03 · Composition &amp; presiding officers</button>
+<button class="notetab" data-tab="s4">04 · Legislative procedure</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 5 · Note 04 — Week 4, Day 6</div>
+<h1>State Legislature</h1>
+<p class="sub">Articles 168–212 — Vidhan Sabha and Vidhan Parishad. Structurally the Parliament you already know, with one genuinely distinct feature: an upper house that can be created and abolished at will, and whose powers are weaker than the Rajya Sabha's in every respect.</p>
+<div class="chips">
+<span class="chip">Articles 168–212</span>
+<span class="chip">Art 169 — create/abolish a Council</span>
+<span class="chip">Art 171 — the 6 categories</span>
+<span class="chip">No joint sitting</span>
+<span class="chip">Art 200 assent</span>
+</div>
+<div class="bignum"><b>6</b><span>States with a Legislative Council — the rest are unicameral</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ What is genuinely new here</div>
+<p>You have already learnt Parliament in three notes. Do not re-learn it. Three things in this chapter have no Union equivalent and account for most of the questions: <b>Article 169</b>, which lets Parliament create or abolish a Legislative Council on a State's own resolution; <b>Article 171</b>, whose six-category composition of a Council looks nothing like the Rajya Sabha's; and the fact that a Legislative Council can delay a Bill but never block it, because <b>there is no joint sitting at State level</b>.</p>
+<p>Week 4, Day 6 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapter 33.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Every State has a <b>Legislative Assembly</b> — the Vidhan Sabha — directly elected, and the house that actually decides who governs. Only some States also have a <b>Legislative Council</b>, the Vidhan Parishad, an indirectly elected second chamber meant to add reflection without adding a veto.</p>
+<p>The framers could not agree on whether States needed a second chamber, so they did something unusual: rather than settle it, they made it <b>reversible</b>. Article 169 lets Parliament create a Council for a State, or abolish an existing one, if that State's own Assembly passes a resolution by a special majority. The result is that the number of bicameral States has moved up and down over the decades — Andhra Pradesh abolished its Council in 1985 and revived it in 2007, which is the standard illustration.</p>
+<p>Because a Council can be abolished by the very Assembly it is supposed to check, it was never given real power. It can hold up an ordinary Bill for a few months and that is all. Keep that asymmetry in mind and the rest of the chapter follows from it.</p>
+<div class="bridge">Next → the structure, and the one Article that makes it unusual</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Structure — Articles 168 to 172</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>What it provides</th></tr></thead>
+<tbody>
+<tr><th>Article 168</th><td>For every State there shall be a legislature consisting of <b>the Governor</b> and one or two Houses. Exactly as at the Union, the head of the executive is <b>part of the legislature</b> — a favourite one-line trap.</td></tr>
+<tr><th>Article 169</th><td>Parliament may by law <b>create or abolish</b> a Legislative Council, if the Legislative Assembly of that State first passes a resolution by a <b>special majority</b>. Such a law is <b>not</b> deemed an amendment under Article 368 and passes by simple majority in Parliament.</td></tr>
+<tr><th>Article 170</th><td>Composition of the <b>Assembly</b>: not more than <b>500</b> and not fewer than <b>60</b> members, directly elected from territorial constituencies. Goa, Sikkim, Mizoram and Arunachal Pradesh have lower minimums fixed by separate provision.</td></tr>
+<tr><th>Article 171</th><td>Composition of the <b>Council</b>: not more than <b>one-third</b> of the Assembly's strength, and never fewer than <b>40</b>. The six-category breakdown is in Section 03.</td></tr>
+<tr><th>Article 172</th><td>Duration: the <b>Assembly</b> runs <b>five years</b> unless dissolved sooner, extendable by <b>one year at a time</b> during a National Emergency and never beyond six months after it ends. The <b>Council is a permanent body</b> — never dissolved, with <b>one-third</b> retiring every <b>two years</b>.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap"><span class="ic">!</span><div><b>Numbers that get swapped.</b> Assembly: <b>max 500, min 60</b>. Council: <b>max one-third of the Assembly, min 40</b>. Candidates routinely apply the one-third rule to the wrong house or quote 40 as the Assembly minimum. And note the mirror to Parliament: the Assembly is the Lok Sabha analogue (dissolvable, five-year term), the Council the Rajya Sabha analogue (permanent, one-third retiring every two years).</div></div>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Creating and abolishing a Council — Article 169</h2></div>
+<hr class="divider">
+<div class="starthere">
+<div class="tag">🌱 The mechanism, step by step</div>
+<p><b>Step 1.</b> The State's <b>Legislative Assembly</b> passes a resolution — by a <b>special majority</b>, meaning a majority of the total membership of the Assembly <i>and</i> two-thirds of members present and voting.</p>
+<p><b>Step 2.</b> <b>Parliament</b> then passes a law creating or abolishing the Council. That law needs only a <b>simple majority</b>.</p>
+<p><b>Step 3.</b> Crucially, <b>Parliament is not bound to act</b> on the resolution — it may simply let it lie. Several State resolutions have never been taken up.</p>
+<p>The point candidates miss: <b>Article 169 expressly says such a law shall not be deemed an amendment of the Constitution for the purposes of Article 368</b>, even though it changes the composition of a State legislature. It is one of the standard examples of the Constitution being amendable by <i>simple</i> majority.</p>
+<div class="bridge">Next → the six States that currently have one, and the one that abolished and revived</div>
+</div>
+<div class="tip"><span class="ic">✚</span><div><b>The six bicameral States:</b> <b>Andhra Pradesh, Bihar, Karnataka, Maharashtra, Telangana</b> and <b>Uttar Pradesh</b>. The instructive history is <b>Andhra Pradesh</b> — Council abolished in <b>1985</b>, revived in <b>2007</b>, and a fresh abolition resolution passed by its Assembly in <b>2020</b> on which Parliament has not acted. That single State demonstrates every feature of Article 169: reversibility, the Assembly's initiative, and Parliament's discretion not to act. <b>Jammu &amp; Kashmir's</b> Council ceased to exist in 2019 on reorganisation, which is a different route entirely — reorganisation, not Article 169.</div></div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Composition &amp; presiding officers</h2></div>
+<hr class="divider">
+<h3>Article 171 — the six categories of a Legislative Council</h3>
+<p>This is the most mechanical set of fractions in the State chapter, and it is asked directly.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Share</th><th>Elected or nominated by</th></tr></thead>
+<tbody>
+<tr><th><b>1/3</b></th><td>Elected by <b>members of local bodies</b> — municipalities, district boards and other local authorities.</td></tr>
+<tr><th><b>1/3</b></th><td>Elected by <b>members of the Legislative Assembly</b>, from among persons who are <i>not</i> Assembly members.</td></tr>
+<tr><th><b>1/12</b></th><td>Elected by <b>graduates</b> of three years' standing residing in the State.</td></tr>
+<tr><th><b>1/12</b></th><td>Elected by <b>teachers</b> of at least three years' standing in institutions not lower than secondary school.</td></tr>
+<tr><th><b>1/6</b></th><td><b>Nominated by the Governor</b> from persons with special knowledge or practical experience in <b>literature, science, art, co-operative movement and social service</b>.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap"><span class="ic">!</span><div><b>Two facts that decide questions here.</b> <b>(1)</b> The Governor's nomination list has <b>five</b> fields — it includes <b>co-operative movement</b>, which the President's Rajya Sabha list under <b>Article 80(3)</b> does <i>not</i>. That single-word gap is a ready-made pairing question. <b>(2)</b> Only <b>five-sixths</b> of a Council is elected and the manner of election of that portion may be <b>altered by Parliament</b> — so the fractions are not entrenched. Add them up as a check: 1/3 + 1/3 + 1/12 + 1/12 + 1/6 = 1.</div></div>
+
+<h3>Presiding officers, and how they differ from Parliament's</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Legislative Assembly</th><th>Legislative Council</th></tr></thead>
+<tbody>
+<tr><th>Presiding officer</th><td><b>Speaker</b> and Deputy Speaker, both elected by the House from among its members.</td><td><b>Chairman</b> and Deputy Chairman, both elected by the Council <b>from among its own members</b>.</td></tr>
+<tr><th>Contrast with the Union</th><td>Same as the Lok Sabha.</td><td><b>This is the difference.</b> The Rajya Sabha's Chairman is the Vice-President — an outsider who is not a member. A Council's Chairman <i>is</i> a member, and therefore votes normally as well as holding a casting vote.</td></tr>
+<tr><th>Removal</th><td>By a resolution of the Assembly passed by an <b>effective majority</b>, after <b>14 days' notice</b>.</td><td>Same procedure, by the Council.</td></tr>
+<tr><th>Qualifications for membership</th><td>Citizen of India; at least <b>25 years</b>; other qualifications prescribed by Parliament.</td><td>Citizen of India; at least <b>30 years</b> — mirroring the Rajya Sabha's higher age.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Legislative procedure — and why the Council is weak</h2></div>
+<hr class="divider">
+<div class="table-scroll">
+<table>
+<thead><tr><th>Bill type</th><th>What the Legislative Council can do</th></tr></thead>
+<tbody>
+<tr><th>Ordinary Bill</th><td>Where a Bill originates in the Assembly and the Council rejects it, delays it beyond <b>three months</b>, or amends it unacceptably, the Assembly may pass it again. The Council then has only <b>one month</b>, after which the Bill is deemed passed. Maximum delay: <b>four months</b>. Where a Bill originates in the Council and the Assembly rejects it, the Bill simply <b>dies</b>.</td></tr>
+<tr><th>Money Bill</th><td>Can originate only in the <b>Assembly</b>. The Council must return it within <b>14 days</b> and may only recommend; the Assembly may reject every recommendation. Inaction means deemed passage. Identical to the Rajya Sabha's position.</td></tr>
+<tr><th>Constitutional Amendment Bill</th><td>Where State ratification is required under Article 368, the ratifying resolution is passed by the <b>Legislative Assembly</b>. The Council has <b>no role</b>.</td></tr>
+<tr><th>Confidence</th><td>The Council <b>cannot remove the government</b>. Collective responsibility under Article 164(2) runs to the Assembly alone.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip trap"><span class="ic">!</span><div><b>The single sharpest contrast in this note.</b> When the two Houses of <b>Parliament</b> disagree on an ordinary Bill, the President may summon a <b>joint sitting</b> under Article 108 and the matter is decided by combined vote. <b>There is no joint sitting at State level.</b> None. The Assembly simply outlasts the Council after four months. This is why the Rajya Sabha is a genuine second chamber and a Legislative Council is a revising chamber with a delaying power — and it is the reason a Council can be abolished under Article 169 without anyone claiming the federal structure has been damaged.</div></div>
+
+<div class="tip"><span class="ic">✚</span><div><b>Assent — Article 200, already familiar.</b> Once both Houses (or the Assembly alone in a unicameral State) pass a Bill, it goes to the <b>Governor</b>, who may assent, withhold assent, return a non-Money Bill for reconsideration, or <b>reserve it for the President</b>. If returned and passed again, the Governor <b>must</b> assent. Reserving a Bill is a <b>discretionary</b> function, and the timeline question was litigated through 2025 — the full treatment sits in Topic 6, Note 01.</div></div>
+
+<h3>Privileges, procedure and the Governor's address</h3>
+<div class="tip"><span class="ic">✚</span><div><b>Article 194</b> gives State legislatures the same privileges as Article 105 gives Parliament — freedom of speech in the House, freedom from arrest in civil cases during the session and 40 days either side, and immunity for publication under authority. <b>Article 212</b> mirrors Article 122: courts cannot question proceedings for procedural irregularity. And <b>Article 176</b> mirrors Article 87 — the Governor addresses the first session after each general election and the first session of each year. The privileges chapter, including <b>Sita Soren (2024)</b>, applies to State legislators through Article 194 in exactly the same terms.</div></div>
+</section>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+
+<div class="pyq">
+<span class="yr">2013</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">The Parliament of India exercises control over the functions of the Council of Ministers through</p>
+<ol class="subs"><li>Adjournment motion</li><li>Question hour</li><li>Supplementary questions</li></ol>
+<p class="qtext">Select the correct answer using the codes given below:</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — all three</b>
+<ul class="vwhy"><li>All three are instruments of legislative control, and the same devices operate in a State legislature through its own Rules of Procedure.</li><li>Another genuine "all correct" answer from a real paper — worth registering, given the instinct to reject option (d).</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">With reference to Article 169, consider the following statements:</p>
+<ol class="subs"><li>Parliament may create or abolish a Legislative Council only if the Legislative Assembly of that State passes a resolution by a special majority.</li><li>Such a law of Parliament is deemed to be an amendment of the Constitution under Article 368.</li><li>Parliament is bound to act on a resolution passed by the State Assembly.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — only one</b>
+<ul class="vwhy"><li><b>Statement 1 is correct</b> — the Assembly's special-majority resolution is a precondition.</li><li><b>Statement 2 is wrong.</b> Article 169 expressly says such a law is <b>not</b> deemed an amendment for Article 368 purposes; it passes by simple majority. This is a standard example of amendment by simple majority.</li><li><b>Statement 3 is wrong.</b> Parliament <b>may</b> act; it is not obliged to. Andhra Pradesh's 2020 abolition resolution is still pending.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements about a State Legislative Council is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) Its strength cannot exceed one-third of the Legislative Assembly's strength</li><li>(b) It is a permanent body with one-third of members retiring every two years</li><li>(c) Its Chairman is elected by the Council from among its own members</li><li>(d) Where the two Houses disagree on an ordinary Bill, the Governor may summon a joint sitting</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) is NOT correct</b>
+<ul class="vwhy"><li><b>There is no joint sitting at State level.</b> Article 108's joint-sitting device exists only for Parliament. A State Assembly simply outlasts the Council after a maximum delay of four months.</li><li>(a), (b) and (c) are all accurate — and (c) is the key contrast with the Rajya Sabha, whose Chairman is the Vice-President and not a member.</li><li>Circle the <b>NOT</b> first, then test each option normally and flip at the end.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following States:</p>
+<ol class="subs"><li>Karnataka</li><li>Telangana</li><li>Odisha</li><li>Bihar</li></ol>
+<p class="qtext">How many of the above currently have a Legislative Council?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>The six bicameral States are <b>Andhra Pradesh, Bihar, Karnataka, Maharashtra, Telangana and Uttar Pradesh</b>. Of those listed, Karnataka, Telangana and Bihar qualify.</li><li><b>Odisha does not have one</b> — its Assembly passed a resolution seeking a Council, but Parliament has not enacted the law. Passing a resolution is not the same as having a Council.</li><li>Learn the six as a closed list. How-many questions give no credit for knowing most of it.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of category and share in a Legislative Council:</p>
+<ol class="subs"><li>Elected by members of local bodies — one-third</li><li>Elected by graduates of three years' standing — one-twelfth</li><li>Nominated by the Governor — one-sixth</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — all three</b>
+<ul class="vwhy"><li>All correct. The full set under <b>Article 171</b>: local bodies <b>1/3</b>, MLAs <b>1/3</b>, graduates <b>1/12</b>, teachers <b>1/12</b>, Governor's nominees <b>1/6</b>.</li><li>Check by addition — the five shares must total 1. If a question offers fractions that do not sum to one, at least one pair is wrong.</li><li>The Governor's nominee list has <b>five</b> fields including <b>co-operative movement</b>; the President's Rajya Sabha list under Art 80(3) has only four.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements regarding an ordinary Bill in a bicameral State legislature:</p>
+<ol class="subs"><li>A Bill originating in the Legislative Council and rejected by the Assembly comes to an end.</li><li>The Legislative Council can delay a Bill passed by the Assembly for a maximum of four months.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — both</b>
+<ul class="vwhy"><li><b>Statement 1 is correct.</b> A Council-originated Bill rejected by the Assembly simply dies — there is no mechanism to revive it.</li><li><b>Statement 2 is correct.</b> Three months on first passage plus one month on second passage: a maximum delay of four months, after which the Bill is deemed passed.</li><li>The asymmetry is the whole point: the Council delays, the Assembly decides.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext"><b>Statement-I:</b> A State Legislative Council is a far weaker chamber than the Rajya Sabha.</p>
+<p class="qtext"><b>Statement-II:</b> A Legislative Council can be abolished by ordinary law on a resolution of the very Assembly it is meant to review.</p>
+<p class="qtext">Which one of the following is correct?</p>
+<ul class="opts single"><li>(a) Both are correct and Statement-II is the correct explanation of Statement-I</li><li>(b) Both are correct but Statement-II is not the correct explanation of Statement-I</li><li>(c) Statement-I is correct but Statement-II is incorrect</li><li>(d) Statement-I is incorrect but Statement-II is correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both correct, and the second explains the first. A chamber that the Assembly can vote out of existence under <b>Article 169</b> was never going to be given a real veto.</li><li>The Rajya Sabha, by contrast, cannot be abolished at all, holds an absolute veto on Constitutional Amendment Bills, and has exclusive powers under Articles <b>249</b> and <b>312</b>.</li><li>When an Assertion–Reason pair offers a structural cause for a structural fact, it is usually (a) — but confirm the causation rather than assuming it.</li></ul>
+</div>
+</div>
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M32</span><span class="prac">Practice · Week 4</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"A State Legislative Council is a chamber of revision without the power to revise." Critically examine, and assess whether Article 169 should be used more readily.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically examine" + a second tail.</b> Two tasks: test the claim, then answer the reform question. An answer that does only the first is capped.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Intro: Art 169's reversible design</li><li>The case that it cannot revise</li><li>The case for retention</li><li>Should abolition be readier?</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>The framers could not settle whether States needed a second chamber, so they made the question <b>reversible</b>: under <b>Article 169</b> Parliament may create or abolish a Legislative Council on a special-majority resolution of the State's own Assembly, by a law that is expressly <b>not</b> an amendment under Article 368. Six States have one today.</p>
+<p><span class="sh">Why it cannot truly revise</span></p>
+<p>Its power is delay, not decision. An ordinary Bill can be held for <b>three months</b> and, on second passage, a further <b>one month</b> — after which it is deemed passed. <b>There is no joint sitting</b> at State level, so disagreement never goes to a combined vote as under Article 108. A Money Bill may be held <b>14 days</b>. Ratification under Article 368 is done by the <b>Assembly alone</b>, and the government answers only to the Assembly under <b>Article 164(2)</b>. A chamber the Assembly can abolish was never going to be given a veto.</p>
+<p><span class="sh">The case for retention</span></p>
+<p>It admits expertise the Assembly lacks — <b>Article 171</b> reserves a sixth to gubernatorial nominees in literature, science, art, co-operative movement and social service, and a sixth to graduates and teachers. It gives representation to local bodies, offers a route back for able people who lose an election, and imposes a pause on hurried legislation.</p>
+<p><span class="sh">Should abolition be readier?</span></p>
+<p>The honest criticisms are cost and patronage — Councils have become accommodation for defeated candidates. But the answer is <b>reform of Article 171's electoral colleges</b>, not abolition by convenience: a chamber abolished whenever it inconveniences a majority is not a check at all. Andhra Pradesh's abolition in <b>1985</b>, revival in <b>2007</b> and fresh resolution in <b>2020</b> illustrate the instability.</p>
+<p>The claim therefore stands as description and fails as prescription: the Council cannot revise, but the cure is to make it worth revising with.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 169 with the "not an amendment" point · the 3+1 month and 14-day mechanics · absence of a joint sitting contrasted with Art 108 · Art 164(2) · Art 171's six categories · the Andhra Pradesh 1985/2007/2020 sequence · the reform-not-abolition position.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 268 / 250 words.</b> <b>Cut:</b> the list of all six bicameral States, and a separate sentence on Council membership age. <b>Bought:</b> the Andhra Pradesh three-date sequence, which does the work of a paragraph in eight words, and the explicit "reform not abolition" position the second tail demands.</div>
+<div class="cost"><b>What would cost you marks:</b> describing the Council without answering the Article 169 question in the tail; and asserting the Council is weak without the two mechanics — four months and no joint sitting — that prove it.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — State Legislature</h2>
+<ul>
+<li><b>Art 168</b> — legislature = <b>Governor</b> + one or two Houses. The Governor is part of it.</li>
+<li><b>Art 169</b> — Parliament creates/abolishes a Council on the Assembly's <b>special majority</b> resolution. <b>NOT</b> an Art 368 amendment; Parliament passes it by simple majority and is <b>not bound</b> to act.</li>
+<li><b>Art 170</b> — Assembly: max <b>500</b>, min <b>60</b>. <b>Art 171</b> — Council: max <b>1/3 of the Assembly</b>, min <b>40</b>.</li>
+<li><b>Art 172</b> — Assembly 5 years, extendable 1 year at a time in a National Emergency. Council <b>permanent</b>, 1/3 retire every 2 years.</li>
+<li><b>Art 171 shares:</b> local bodies <b>1/3</b> · MLAs <b>1/3</b> · graduates <b>1/12</b> · teachers <b>1/12</b> · Governor's nominees <b>1/6</b>. They sum to 1.</li>
+<li>Governor's nominee fields = <b>five</b>, including <b>co-operative movement</b>. President's Rajya Sabha list (Art 80(3)) = <b>four</b>, without it.</li>
+<li><b>Six bicameral States:</b> Andhra Pradesh, Bihar, Karnataka, Maharashtra, Telangana, Uttar Pradesh. AP abolished 1985, revived 2007, resolution again 2020.</li>
+<li><b>No joint sitting at State level.</b> Council delays an ordinary Bill <b>3 months + 1 month = 4 months max</b>; a Money Bill <b>14 days</b>. A Council-originated Bill rejected by the Assembly <b>dies</b>.</li>
+<li>Age: Assembly <b>25</b>, Council <b>30</b>. Council's <b>Chairman is a member</b> of the House — unlike the Rajya Sabha's.</li>
+<li>Speaker/Chairman removal: <b>effective majority</b>, <b>14 days' notice</b>.</li>
+<li><b>Art 194</b> privileges (=105) · <b>Art 212</b> no judicial questioning of procedure (=122) · <b>Art 176</b> Governor's address (=87) · <b>Art 200</b> assent.</li>
+<li>Art 368 ratification by States is done by the <b>Assembly alone</b>; the Council has no role.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> this closes Topic 5's Parliament and State-legislature series. Pair with <b>Topic 6 Note 01 Governor</b> for Article 200 assent and <b>Note 03 Chief Minister</b> for Article 164(2).
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='03%20Budget%20Sessions%20and%20Parliamentary%20Privileges.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">03 · Budget, Sessions &amp; Privileges</span></button>
+<button class="tabflow-btn tabflow-next" disabled><span class="tabflow-dir">Next →</span><span class="tabflow-label">— end of Topic 5 —</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 5 — Parliament &amp; State Legislatures · Note 04 of 4<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 33.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

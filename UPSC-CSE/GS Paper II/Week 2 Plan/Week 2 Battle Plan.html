@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2 Battle Plan — Postmortem &amp; Question DNA | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;}
+.hero{position:relative;margin:0 0 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,5vw,42px);line-height:1.08;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:680px;font-size:15.5px;color:#D9D9F2;margin:0;}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+section{margin:44px 0 0;scroll-margin-top:20px;}
+.sec-head{display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,29px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.15;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14px;min-width:520px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:nowrap;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.win{background:#E9F7EE;border-color:#BFE6CE;color:#155c38;}
+.win b{color:#0e4c2e;}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0;}
+@media(max-width:680px){.stat-row{grid-template-columns:repeat(2,1fr);}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center;}
+.stat b{display:block;font-family:'Fraunces',serif;font-size:26px;color:var(--deep);}
+.stat span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.pattern{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pattern .pn{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#fff;background:var(--nebula);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pattern .cnt{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pattern p{margin:8px 0 0;font-size:14.5px;color:#2d2e4a;}
+.pattern .qs{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--teal);margin-top:8px;display:block;}
+.schedule{border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:12px 0;background:var(--card);display:flex;gap:16px;align-items:flex-start;}
+.schedule .slot{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--deep2);flex:none;width:110px;}
+.schedule .what b{color:var(--deep);}
+.schedule .what{font-size:14px;color:#2d2e4a;}
+.linkgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:680px){.linkgrid{grid-template-columns:1fr;}}
+.linkcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit;transition:transform .12s ease,box-shadow .12s ease;}
+.linkcard:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);}
+.linkcard b{font-family:'Fraunces',serif;color:var(--deep);font-size:15px;display:block;margin-bottom:3px;}
+.linkcard span{font-size:12.5px;color:var(--muted);}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+<div class="eyebrow">GS Paper II · Polity &amp; Constitution · Test-Day Prep</div>
+<h1>Week 2 Battle Plan — Postmortem, Question DNA &amp; Today's Read Order</h1>
+<p class="sub">Built from a full question-by-question audit of your Week 1 result (Rank 6, 38.78/60) and the exact archetypes UPSC Guide's coaching test uses — so today's reading and tonight's Week 2 attempt both target the traps that actually cost you marks last time.</p>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ The one number that matters most</div>
+<p>You scored <b>25 correct, 17 incorrect, 8 unattempted</b> out of 50 — but the arithmetic hides the real story: <b>25 × 2 = 50</b> marks from correct answers, minus <b>17 × 0.66 = 11.22</b> marks lost to wrong guesses, nets to your actual <b>38.78</b>. If those same 17 had been left blank instead of guessed, you'd have scored a flat <b>50/60</b> — with zero new knowledge, purely from risk discipline. That single lever is worth more than any single topic you could re-read today.</p>
+<p>The 8 you left unattempted, on the other hand, were the right call — no penalty, and you used only 50:47 of the full 60 minutes, so this wasn't a time-pressure failure. Keep that instinct; sharpen only the "confident but wrong" 17.</p>
+</div>
+
+<div class="stat-row">
+<div class="stat"><b>38.78/60</b><span>Your score</span></div>
+<div class="stat"><b>Rank 6</b><span>of the batch</span></div>
+<div class="stat"><b>25 / 17 / 8</b><span>Correct / Wrong / Skipped</span></div>
+<div class="stat"><b>+11.22</b><span>Marks lost purely to guessing</span></div>
+</div>
+
+<!-- ===== SECTION 01 : POSTMORTEM ===== -->
+<section id="postmortem">
+<div class="sec-head"><span class="sec-num">01</span><h2>Week 1 postmortem — five mistake patterns, not seventeen random misses</h2></div>
+<hr class="divider">
+<p class="lead">Every one of your 17 wrong answers falls into one of five repeatable failure modes. Recognising the <i>pattern</i> is more useful than re-memorising the 17 individual facts — the same patterns will reappear tonight on different content.</p>
+
+<div class="pattern">
+<span class="pn">Pattern 1</span><span class="cnt">5 of 17 wrong answers</span>
+<p><b>Absolute-option overreach</b> — picking (or rejecting) "All of the above" / "Both" / "Neither" without checking every sub-statement individually. You defaulted to a gut feel about the option's shape rather than verifying each clause.</p>
+<span class="qs">Q3 (missed "All of the above" was correct) · Q8 (wrongly chose "Both") · Q10 (wrongly chose "Neither") · Q12 (wrongly chose "Neither") · Q44 (wrongly chose "All four")</span>
+</div>
+
+<div class="pattern">
+<span class="pn">Pattern 2</span><span class="cnt">3 of 17 wrong answers</span>
+<p><b>Confusable-neighbour mix-ups</b> — two Articles, writs, or doctrines that sit near each other conceptually, and you picked the "sounds right" neighbour instead of the exact one asked for.</p>
+<span class="qs">Q5 (picked Certiorari's definition for a Prohibition question) · Q29 (picked Article 21 instead of Article 25 for a religion-restriction scenario) · Q34 (picked Article 19 instead of Article 21 for Right to Privacy)</span>
+</div>
+
+<div class="pattern">
+<span class="pn">Pattern 3</span><span class="cnt">3 of 17 wrong answers</span>
+<p><b>Verbatim-recall gaps</b> — you knew the topic but not the exact wording or exact list, so a precisely-worded trap option looked plausible.</p>
+<span class="qs">Q9 (Preamble's exact "faith and worship" wording) · Q45 (exact list of Acts repealed by Article 395) · Q47 (exact reasoning for why India is a Republic)</span>
+</div>
+
+<div class="pattern">
+<span class="pn">Pattern 4</span><span class="cnt">5 of 17 wrong answers</span>
+<p><b>Half-knowledge on multi-statement questions</b> — you recognised the topic but miscounted how many of 2-3 statements were actually correct, usually because one clause carried a nuance you hadn't drilled.</p>
+<span class="qs">Q28 (RTE Article 21A's exact age band and private-school rules) · Q30 (reservation basis — caste vs SEBC/EWS) · Q31 (minority institution rights vs State's regulatory power) · Q33 (naturalisation's Eighth Schedule language rule) · Q20 (which Articles survive an Emergency)</span>
+</div>
+
+<div class="pattern">
+<span class="pn">Pattern 5</span><span class="cnt">8 unattempted — mostly one topic cluster</span>
+<p><b>Genuine content gaps, correctly not guessed</b> — 5 of your 8 skips (Q6, Q13, Q15, Q21, Q35) all come from one sub-topic: the colonial Acts timeline (1773-1919) in Historical Underpinnings. That single cluster is your weakest-retention zone in all of Topic 1.</p>
+<span class="qs">Q6 (1919 Act's High Commissioner) · Q13 (Indian Councils Act 1861) · Q15 (Amending Act 1781) · Q21 (Regulating Act 1773 details) · Q35 (Charter Act 1853) — plus Q16 (National Anthem), Q32 (NRC Assam), Q40 (freedom-of-speech scope)</span>
+</div>
+
+<div class="tip win">
+<span class="ic">✓</span>
+<p><b>Good news:</b> every one of these 25 gaps (17 wrong + 8 skipped) has already been fixed at the source — all 50 Week 1 questions are now built into Notes 00-05 and 07 as "Practice Prelims" drills, each with a verdict that names the exact trap. Re-reading those notes today will directly patch every pattern above, not just add new facts on top.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 02 : QUESTION DNA ===== -->
+<section id="dna">
+<div class="sec-head"><span class="sec-num">02</span><h2>UPSC question DNA — the archetypes, reverse-engineered</h2></div>
+<hr class="divider">
+<p class="lead">Both the genuine UPSC PYQs already verified across your notes and all 50 Week 1 coaching questions reduce to the same seven recurring shapes. Read Week 2's content today with these shapes in mind — for every fact, ask "which of these seven traps could be built from this?"</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Archetype</th><th>How it's built</th><th>Your defence</th></tr></thead>
+<tbody>
+<tr><th>Statement-counting</th><td>2-4 statements, asks "how many are correct" rather than "which is correct" — removes the shortcut of eliminating obviously-wrong options.</td><td>Evaluate every statement independently on paper/in your head before counting — never estimate.</td></tr>
+<tr><th>Absolute-option overreach</th><td>Offers "All of the above" / "Both" / "Neither" as one of four options, banking on you pattern-matching the option's shape instead of testing each clause.</td><td>Treat "Both"/"All"/"Neither" as requiring you to have verified 100% of the sub-parts — never a default guess.</td></tr>
+<tr><th>Confusable-neighbour swap</th><td>Two Articles/writs/doctrines that sit near each other in the syllabus (Article 20 vs 22, Prohibition vs Certiorari, Article 21 vs 25) — tests precision, not general awareness.</td><td>For every pair of "sibling" concepts in a note, explicitly write the one-line distinction — this note's tables already do this; read them as pairs, not singles.</td></tr>
+<tr><th>Match-the-pairs</th><td>Scholar-to-label, committee-to-chairman, Article-to-provision — four items, four labels, shuffled.</td><td>Memorise these as an ordered table, not loose facts — the predicted-question blocks added to today's notes rehearse this exact format.</td></tr>
+<tr><th>Assertion / Statement-I-II</th><td>Two statements, four options about correctness <i>and</i> whether one explains the other — tests whether you can separate "both true" from "true and causally linked."</td><td>Always ask two questions separately: (a) is each statement true? (b) does statement II actually <i>explain</i> statement I, or just sit next to it?</td></tr>
+<tr><th>NOT-type elimination</th><td>"Which of the following is NOT a feature of X" — three genuine features plus one plausible-sounding intruder from a neighbouring topic.</td><td>Read "NOT" twice before answering — the most common self-inflicted error is answering the un-negated question by habit.</td></tr>
+<tr><th>Verbatim-wording trap</th><td>Tests the exact text of a well-known passage (Preamble, an Article) by substituting one synonym-but-wrong word.</td><td>For the handful of passages UPSC quotes verbatim (Preamble, Article 21, Article 32, Article 51A), read the exact text aloud once today, not just the summary.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Mains: the same DNA, different execution</h3>
+<p class="lead">Every genuine Mains PYQ already verified in your notes rewards the same three things, regardless of topic: (1) a <b>liftable opening line</b> that states the thesis in one sentence; (2) a <b>structured middle</b> — a table, a merit/demerit split, or a timeline reproduced from memory, not free-flowing prose; (3) a <b>named source</b> — a case, a committee, or an Article number — closing each point, not a vague assertion. Today's enhanced notes give you a ready-made skeleton for exactly this in each topic's "Mains craft" section — practice reproducing the skeleton from memory, not re-reading it passively.</p>
+</section>
+
+<!-- ===== SECTION 03 : TODAY'S PLAN ===== -->
+<section id="plan">
+<div class="sec-head"><span class="sec-num">03</span><h2>Today's read order — Week 2, Days 1-6 compressed into one day</h2></div>
+<hr class="divider">
+<p class="lead">All six Week 2 topics already have complete, exam-ready notes — three of them (Fundamental Rights' new subsections, DPSP, Fundamental Duties) plus the four Day 3-6 topics now each carry a "Predicted Questions" block built from the DNA table above. Read in this order; each note's own Section 05/06 recall sheet is your fastest final pass.</p>
+
+<div class="schedule">
+<div class="slot">Morning</div>
+<div class="what"><b>Fundamental Rights — the new material only</b> (exceptions, criticism, significance, rights outside Part III) + <b>DPSP</b> + <b>Fundamental Duties</b> in full. These map to Week 2's Day 1 and Day 2. Read core content first, then each note's "Predicted Questions" block.</div>
+</div>
+<div class="schedule">
+<div class="slot">Midday</div>
+<div class="what"><b>Parliamentary System &amp; Presidential Government</b> (Day 3) then <b>Federal System</b> (Day 4). Pay special attention to the India-vs-Britain and Federal-vs-Unitary comparison tables — your weakest-tested angle in both notes, per Section 02 above.</div>
+</div>
+<div class="schedule">
+<div class="slot">Afternoon</div>
+<div class="what"><b>Centre-State Relations</b> (Day 5) then <b>Inter-State Relations</b> (Day 6). The exact Article numbers (249, 254, 262, 263, 301-304) and their attached numeric conditions (majorities, time limits, vote weights) are this pair's highest-yield content — treat every number as an exam target.</div>
+</div>
+<div class="schedule">
+<div class="slot">Evening</div>
+<div class="what">Rapid pass: read only the <b>recall sheets</b> and <b>Predicted Questions</b> blocks of all six notes, in order. Do not re-read core prose again — this is retrieval practice, not first-time learning.</div>
+</div>
+<div class="schedule">
+<div class="slot">Night — test</div>
+<div class="what">Apply the negative-marking rule from Section 01 directly: if you cannot eliminate at least two of the four options with genuine confidence, leave it blank rather than guess. Use the pace you already have — you finished Week 1 with 9 minutes to spare, so time is not your constraint.</div>
+</div>
+
+<div class="tip trap">
+<span class="ic">⚠️</span>
+<p><b>One heads-up on the Week 2 schedule PDF:</b> its Day 7 "Important Topics" column lists President-related items (Electoral College, impeachment, discretionary powers) that don't match Day 7's own stated topic (weekly revision of Days 1-6) or its own reference chapters (Laxmikanth 8-10, 13-16, none of which cover the President). This looks like a copy-paste artifact from a different week's template in the source PDF, not a real Day 7 assignment — no note has been built for it today. If tonight's test does include President questions, it would be a coaching-institute addition beyond the stated Week 2 scope, not a gap in your preparation for the stated syllabus.</p>
+</div>
+</section>
+
+<!-- ===== SECTION 04 : NOTE LINKS ===== -->
+<section id="links">
+<div class="sec-head"><span class="sec-num">04</span><h2>Today's six notes</h2></div>
+<hr class="divider">
+<div class="linkgrid">
+<a class="linkcard" href="../CLAUDE_NOTES/Polity &amp; Constitution/Topic 1 - Indian Constitution/07 Fundamental Rights.html"><b>07 · Fundamental Rights</b><span>New: Exceptions, Criticism, Significance, Rights Outside Part III</span></a>
+<a class="linkcard" href="../CLAUDE_NOTES/Polity &amp; Constitution/Topic 1 - Indian Constitution/08 Directive Principles of State Policy.html"><b>08 · Directive Principles</b><span>Classification, FR-DPSP conflict timeline, implementation</span></a>
+<a class="linkcard" href="../CLAUDE_NOTES/Polity &amp; Constitution/Topic 1 - Indian Constitution/09 Fundamental Duties.html"><b>09 · Fundamental Duties</b><span>Article 51A, Swaran Singh &amp; Verma Committees</span></a>
+<a class="linkcard" href="../CLAUDE_NOTES/Polity &amp; Constitution/Topic 5 - Parliament &amp; State Legislatures/00 Parliamentary System and Presidential Government.html"><b>Topic 5 · Parliamentary System</b><span>Features, merits/demerits, India-vs-Britain</span></a>
+<a class="linkcard" href="../CLAUDE_NOTES/Polity &amp; Constitution/Topic 2 - Functions of the Union &amp; States/01 Federal System.html"><b>Topic 2 · Federal System</b><span>Federal vs unitary features, scholar labels</span></a>
+<a class="linkcard" href="../CLAUDE_NOTES/Polity &amp; Constitution/Topic 2 - Functions of the Union &amp; States/02 Centre-State Relations.html"><b>Topic 2 · Centre-State Relations</b><span>Legislative, administrative, financial relations</span></a>
+<a class="linkcard" href="../CLAUDE_NOTES/Polity &amp; Constitution/Topic 2 - Functions of the Union &amp; States/03 Inter-State Relations.html"><b>Topic 2 · Inter-State Relations</b><span>Water disputes, Inter-State Council, Zonal Councils</span></a>
+<a class="linkcard" href="../../../00 Dashboard.html"><b>← Back to Dashboard</b><span>Full note library</span></a>
+</div>
+</section>
+
+<div class="recall">
+<span class="rk">◆ One-page recall sheet</span>
+<h2>Before tonight's test</h2>
+<ul>
+<li><b>Rule 1:</b> if you can't eliminate 2 of 4 options confidently, skip it — don't guess.</li>
+<li><b>Rule 2:</b> "All/Both/Neither" options require verifying every sub-part, not a gut call.</li>
+<li><b>Rule 3:</b> for paired concepts (writs, Articles, doctrines), recall the distinction as a pair, not two isolated facts.</li>
+<li><b>Rule 4:</b> re-read only recall sheets + predicted-questions tonight — no fresh first-time reading after the evening pass.</li>
+<li><b>Rule 5:</b> for Mains, write the skeleton (table/merits-demerits/timeline) first, prose second.</li>
+<li><b>Target:</b> 50+/60 needs roughly 25-26 correct with near-zero wrong guesses — very achievable purely by applying Rule 1 to last week's exact same accuracy rate.</li>
+</ul>
+</div>
+
+<footer>
+Built from a full 26-page extraction of your Week 1 Test Result.pdf and the six Week 2 notes' existing content · UPSC Guide coaching-test patterns, not confirmed genuine UPSC PYQs unless individually marked as such in each note
+</footer>
+
+</div>
+</body>
+</html>
