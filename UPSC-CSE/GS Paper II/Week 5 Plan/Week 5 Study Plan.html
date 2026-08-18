@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5 Study Plan — 19 hours to the test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ The principle</button>
+<button class="notetab" data-tab="b1">Block 1 · 7:00–9:30 AM</button>
+<button class="notetab" data-tab="b2">Block 2 · 9:45 PM–1:00 AM</button>
+<button class="notetab" data-tab="b3">Block 3 · full day 8 AM–1 AM</button>
+<button class="notetab" data-tab="sun">Sunday · test day</button>
+<button class="notetab railrevision" data-tab="rules">★ The three rules</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Week 5 · Judiciary · test Sunday 16 August</div>
+<h1>The 19-hour plan</h1>
+<p class="sub">State Legislature is done, including its new tab 05. Four notes remain, plus one Pass-2 section in each of Notes 05 and 07. The schedule below is built around one measured fact, not around how much material there is.</p>
+<div class="chips">
+<span class="chip">Reading: 5.4 hrs</span>
+<span class="chip">Available: ~19 hrs</span>
+<span class="chip">68 MCQs + 100 traps</span>
+<span class="chip">Mock: 50 Q</span>
+</div>
+<div class="bignum"><b>3.5×</b><span>more time than reading needs — the rest must be retrieval</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ The one number that should decide how you spend this weekend</div>
+<p>I measured the four remaining notes: <b>29,688 words of teaching text, 68 questions and 100 trap statements</b>. At honest revision pace that is <b>5.4 hours</b> to read every word once and attempt every question once. You have roughly <b>19</b>.</p>
+<p>So the question is not "can I finish the syllabus". You can finish it by Saturday lunchtime. The question is what you do with the other <b>fourteen hours</b> — and the answer is <b>not</b> reading it a second time.</p>
+<p>Week 4 is the evidence. You lost 20 questions. Your mean time on a wrong answer was <b>71.8 seconds</b> and on a right answer <b>70.5 seconds</b> — statistically identical. You were not rushing and you were not careless. You had <b>read</b> the material and could not <b>retrieve</b> it. Re-reading fixes the first feeling and none of the second.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 What "retrieval" actually means here</div>
+<p>Close the note. Say the answer out loud or write it, <b>then</b> open the note and check. That failed attempt — the two seconds where you can't quite recall whether the State PSC appears in Article 233 or 234 — is what builds the memory. Reading the same line again does not, however carefully you read it.</p>
+<p>Concretely, in this plan: every reading session is immediately followed by its own question set with the note <b>closed</b>. Every wrong answer goes on a single sheet of paper. That sheet, not the notes, is what you revise on Sunday morning.</p>
+<div class="bridge">Next → Block 1</div>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Before anything else — one section you have not seen.</b> You read <b>State Legislature</b> before I extended it. It now has a new tab, <b>"05 · Membership, sessions &amp; committees"</b>, covering twenty facts that were missing: Articles 173, 190, 191, 192 (qualifications, disqualifications, who decides), 178–188 (presiding officers, the 14-day notice, Article 181), 189 (quorum — ten <b>or</b> one-tenth, whichever is greater), 174–176 (sessions and the two kinds of Governor's address), the three readings and the committee stage, Article 201, Article 213 ordinances, and anti-defection at State level. <b>Twenty-five minutes, first thing in Block 1.</b> This is the same category of material that cost you eleven questions in Week 4.</div></div>
+</section>
+
+<section id="b1" class="tabsection">
+<div class="sec-head"><span class="sec-num">B1</span><h2>Block 1 — 7:00 to 9:30 AM · 2 hrs 30 min</h2></div>
+<hr class="divider">
+<p class="lead">Goal: close the State Legislature gap, then take the biggest note while you are freshest.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Time</th><th>What</th><th>How</th></tr></thead>
+<tbody>
+<tr><th>7:00 – 7:10</th><td><b>State Legislature tab 05 — self-check, not a re-read</b></td><td>You have read it. Reading it again buys almost nothing. Answer the eight questions in the box below <b>with the note closed</b>. Clear six or more and move on; miss three or more and spend ten minutes on those rows only.</td></tr>
+<tr><th>7:10 – 8:15</th><td><b>Note 05 Supreme Court</b> — tabs 01, 02, 03</td><td>Strength ladder · the four Judges Cases · NJAC · removal machinery. Draw the ladder from memory at the end: 7 → 10 → 13 → 17 → 25 → 30 → 33 → 37.</td></tr>
+<tr><th>8:15 – 8:25</th><td>Break — stand up, leave the desk</td><td>Not optional. This is where the last hour consolidates.</td></tr>
+<tr><th>8:25 – 9:05</th><td><b>Note 05</b> — tabs 04, 05</td><td>The five jurisdictions · Articles 141, 142, 143. Close the note and list the five with one limit each.</td></tr>
+<tr><th>9:05 – 9:30</th><td><b>Note 05 → tab 07 "Pass 2 — adjacent surface"</b> <span class="chip">MOVED UP</span></td><td>All India Judicial Service, master of the roster, contempt's 2006 truth-defence, I.R. Coelho and the 1973 line, Art 224A revival, 50 judges per million. <b>This was scheduled for 9:45 PM. It is the highest-yield content of the weekend and now gets a fresh brain instead of a tired one.</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="prelims">
+<h3>🔴 The 7:00 AM self-check — note closed, eight questions, ten minutes</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">1</span><div>What is the <b>quorum</b> of a House of a State legislature?</div></div>
+<div class="item"><span class="dot">2</span><div>How many days' <b>notice</b> before a resolution to remove the Speaker?</div></div>
+<div class="item"><span class="dot">3</span><div>While that resolution is under consideration, name the <b>two</b> things the Speaker may still do and the <b>two</b> he may not.</div></div>
+<div class="item"><span class="dot">4</span><div>Who decides a <b>disqualification</b> question, is he bound by anyone, and what is the one carve-out?</div></div>
+<div class="item"><span class="dot">5</span><div>Which article makes the Governor's address at the start of each year <b>obligatory</b> — and which one is merely permissive?</div></div>
+<div class="item"><span class="dot">6</span><div>Maximum life of a Governor's <b>ordinance</b>, and when does the clock start?</div></div>
+<div class="item"><span class="dot">7</span><div>Which committee of a State legislature has <b>no</b> Council members at all?</div></div>
+<div class="item"><span class="dot">8</span><div>Minimum <b>ages</b> for the Assembly and the Council, and which article?</div></div>
+</div>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Answers — check only after you have written all eight.</b> (1) <b>Ten members or one-tenth of the total membership, whichever is greater</b> — Art 189; the floor of ten has no Union equivalent. (2) <b>Fourteen days</b>, Art 179. (3) Art 181 — he <b>may speak and take part</b>, and <b>may vote in the first instance</b>; he may <b>not preside</b> and has <b>no casting vote</b>. (4) The <b>Governor</b>, Art 192, and he <b>must act according to the Election Commission's opinion</b>; the carve-out is <b>defection</b>, decided by the <b>Speaker or Chairman</b> under the Tenth Schedule. (5) <b>Art 176 "shall"</b> is obligatory; <b>Art 175 "may"</b> is permissive. (6) About <b>six months and six weeks</b> — it ceases <b>six weeks from the reassembly</b> of the legislature, Art 213. (7) The <b>Estimates Committee</b>. (8) <b>25</b> for the Assembly, <b>30</b> for the Council, Art 173.<br><br>If you missed three or more, that is not a reason to re-read the whole tab — go to those specific rows. Missing them is the normal result of having read something once; it is exactly why the rest of this weekend is built on retrieval.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Why Supreme Court first.</b> It is the largest note (7,206 words, 18 questions), it carries ten genuine PYQs — more than any other — and Note 06 High Court is built as a set of <i>contrasts</i> with it. An hour spent on 05 makes 06 roughly twice as fast. Do not reorder these two.</div></div>
+</section>
+
+<section id="b2" class="tabsection">
+<div class="sec-head"><span class="sec-num">B2</span><h2>Block 2 — 9:45 PM to 1:00 AM · 3 hrs 15 min</h2></div>
+<hr class="divider">
+<p class="lead">Goal: drill the whole of Supreme Court by retrieval, then take High Court in one pass. <b>Pass 2 has moved to Block 1</b> — this block is now questions and contrasts, which is the right work for late evening.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Time</th><th>What</th><th>How</th></tr></thead>
+<tbody>
+<tr><th>9:45 – 10:25</th><td><b>Note 05 — all 18 questions</b></td><td>Ten genuine PYQs first, then the eight practice ones. <b>Note closed, 60 seconds each</b>, then review. Every wrong answer onto the sheet with one sentence in your own words.</td></tr>
+<tr><th>10:25 – 10:35</th><td>Break</td><td>—</td></tr>
+<tr><th>10:35 – 11:45</th><td><b>Note 06 High Court</b> — all sections</td><td>Read it as four contrasts: <b>62 not 65</b> · strength fixed by the <b>President</b>, not Parliament · <b>Art 226 wider</b> than Art 32 · <b>Art 227</b> has no apex-court equivalent. Then the five writs, fixed by <i>timing</i>: prohibition before the order, certiorari after.</td></tr>
+<tr><th>11:45 – 12:15</th><td><b>Note 06</b> — all 14 questions</td><td>Note closed.</td></tr>
+<tr><th>12:15 – 12:45</th><td><b>Revision tabs</b> of Notes 05 and 06</td><td>The dark last-mile sheets. Read each twice.</td></tr>
+<tr><th>12:45 – 1:00</th><td>Write up the error sheet</td><td>One sentence per error, in your own words. This page becomes Sunday morning's only revision.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>If you are fading before 1:00 AM, stop early and sleep.</b> A tired hour of reading is worth almost nothing and costs you Saturday. The plan has slack; your alertness does not.</div></div>
+</section>
+
+<section id="b3" class="tabsection">
+<div class="sec-head"><span class="sec-num">B3</span><h2>Block 3 — full day, 8:00 AM to 1:00 AM</h2></div>
+<hr class="divider">
+<p class="lead">Two new notes before lunch, then the entire afternoon and evening on retrieval. The mock sits at 5:15 PM deliberately — early enough that what it exposes can still be fixed.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Time</th><th>What</th><th>Why here</th></tr></thead>
+<tbody>
+<tr><th>8:00 – 9:30</th><td><b>Note 07</b> tabs 01–04 — district judiciary, Arts 233–237, tribunals 323A/323B, the November 2025 judgment</td><td>The <b>Art 233 vs 234</b> split is the single most predictable question in the week. Fix it now: 233 = Governor + <b>High Court only</b>; 234 = Governor + <b>State PSC</b> + High Court.</td></tr>
+<tr><th>9:30 – 9:45</th><td>Break</td><td>—</td></tr>
+<tr><th>9:45 – 11:00</th><td><b>Note 07</b> tab 05 access to justice + <b>tab 06 "Pass 2"</b> <span class="chip">NEW</span></td><td>NALSA, Lok Adalats, Gram Nyayalayas — then specialised courts, the ADR statutes, Bar Council, and the <b>named-committee block</b>. Krishna Menon → COPU is the exact fact that took Q50 last week.</td></tr>
+<tr><th>11:00 – 11:30</th><td><b>Note 07</b> — all 16 questions</td><td>Note closed.</td></tr>
+<tr><th>11:30 – 12:30</th><td><b>Lunch and a real break</b></td><td>Eat away from the desk. You have a five-hour evening ahead.</td></tr>
+<tr><th>12:30 – 2:00</th><td><b>Note 08 Judicial Review, Activism &amp; PIL</b> — all sections</td><td>Mostly definitions, so it reads fast. The one thing to nail: <b>review ≠ activism ≠ overreach</b>, and the November 2025 line on Article 142.</td></tr>
+<tr><th>2:00 – 2:30</th><td><b>Note 08</b> — all 13 questions</td><td>Note closed. <b>Syllabus is now complete.</b></td></tr>
+<tr><th>2:30 – 2:45</th><td>Break</td><td>—</td></tr>
+<tr><th>2:45 – 3:30</th><td><b>Error sweep</b> — redo every question you got wrong across all four notes</td><td>Straight from your sheet. If you get one wrong twice, write the fact out longhand.</td></tr>
+<tr><th>3:30 – 4:15</th><td><b>The 100 trap statements</b> <span class="chip">NEW</span> — bucket (C) at the end of each note's Prelims tab</td><td>20 in State Legislature, 24 in Supreme Court, 20 each in High Court and Subordinate Courts, 16 in Judicial Review. <b>Decide true or false before you click.</b> This is the single closest drill to the format that was 42 per cent of the Week 4 paper.</td></tr>
+<tr><th>4:15 – 4:45</th><td><b>Five revision tabs back to back</b> — 05, 06, 07, 08 and State Legislature</td><td>These are compressed for exactly this moment.</td></tr>
+<tr><th>4:45 – 5:15</th><td><b>The red-pen grid at the end of each note's deep-reference tab</b>, then the <b>99 Exceptions Ledger</b></td><td>Every "only", every carve-out, every number with a twin.</td></tr>
+<tr><th>5:15 – 6:15</th><td><b>THE MOCK — 60 minutes, timed, no notes open</b></td><td>Start the timer. Treat it as the real thing.</td></tr>
+<tr><th>6:15 – 7:15</th><td><b>Mock review</b> — every wrong answer traced back to its note section</td><td>The explanation names the section. Go and read that section again, not the whole note.</td></tr>
+<tr><th>7:15 – 8:15</th><td>Dinner and rest</td><td>—</td></tr>
+<tr><th>8:15 – 9:30</th><td><b>Targeted repair</b> of whatever the mock exposed</td><td>Only the weak areas. Do not restart the syllabus.</td></tr>
+<tr><th>9:30 – 10:30</th><td><b>Retake the mock with "shuffle" on</b></td><td>The button is on the page. You are drilling recall, not chasing the score — it will rise anyway now you've seen the answers.</td></tr>
+<tr><th>10:30 – 11:30</th><td><b>Final skim of all five revision tabs</b></td><td>Fast. You are looking for anything that feels unfamiliar.</td></tr>
+<tr><th>11:30 – 12:00</th><td>Rewrite your error sheet clean — one page</td><td>This page is your Sunday morning revision. Nothing else.</td></tr>
+<tr><th>12:00</th><td><b>Stop. Sleep.</b></td><td>Do not push to 1:00 AM. Sleep is worth more than the last hour, and you have a test tomorrow.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>If you fall behind, drop in this exact order</b> — do <b>not</b> improvise the cut. First drop the <b>second mock attempt</b> (9:30 PM). Then the <b>final skim</b> (10:30 PM). Then <b>Note 08's Mains answers</b>. Then <b>Note 06's teaching body</b>, keeping its revision tab and questions, since it is largely contrasts with Note 05.<br><br><b>Never drop:</b> the two <b>Pass 2</b> sections, the <b>mock</b>, or the <b>error sweep</b>. Those three are where the marks are.</div></div>
+</section>
+
+<section id="sun" class="tabsection">
+<div class="sec-head"><span class="sec-num">SUN</span><h2>Sunday — test before 7:00 PM</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>When</th><th>What</th></tr></thead>
+<tbody>
+<tr><th>Morning</th><td><b>Your one-page error sheet only.</b> Then the five revision tabs, fast. <b>Do not open a full note.</b> Nothing new goes in today — new material this morning displaces what you consolidated last night.</td></tr>
+<tr><th>30 min before</th><td>Read the <b>red-pen grids</b> and the <b>99 Exceptions Ledger</b> once. Then stop and do something else entirely for fifteen minutes.</td></tr>
+<tr><th>During</th><td>See the three rules tab. One line: <b>on every "how many", mark each statement T or F in the margin before you look at the options.</b></td></tr>
+<tr><th>After</th><td>Save the result PDF into the <b>Week 5 Plan</b> folder and tell me. I will run the per-question fact probe the same evening — that is how we find out whether the Pass 2 sections worked.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="mentor">
+<div class="tag">◆ What a good result looks like</div>
+<p>Not 60. The Week 4 paper dragged the class average down to <b>42.16</b> and the topper to <b>63.96</b>; if Week 5 is set at the same difficulty, a raw 50 would be a strong paper.</p>
+<p>The number I will actually judge is <b>your score divided by the class average</b>. It has been <b>0.875 and 0.868</b> for two weeks running — remarkably stable, and the honest measure of where you stand. If that ratio crosses <b>1.0</b> this week, the coverage fix worked and there is no argument for coaching. That is the target: <b>beat the class average</b>, whatever the absolute number turns out to be.</p>
+</div>
+</section>
+
+<section id="rules" class="tabsection">
+<div class="recall">
+<h2>The three rules for Sunday</h2>
+<ul>
+<li><b>1 · Every "how many" gets margin marks.</b> Twenty-one of the 50 questions in the Week 4 paper were this format — <b>42%</b> — and you scored <b>52%</b> on them. Write T or F beside each statement <b>before</b> looking at the options. This format cannot be solved by elimination, so guessing at the option level is throwing marks away.</li>
+<li><b>2 · Hunt the absolute word.</b> <i>any, all, every, only, never, must, shall</i>. In Week 4 at least four questions turned on one qualifier. When you see one, test that word first and the rest of the sentence second.</li>
+<li><b>3 · Accuracy, not pace.</b> You finished Week 4 in 57 of 60 minutes with identical time on right and wrong answers — you were never rushing. Holding Week 3's accuracy would have been worth <b>+21 marks</b>; perfect skip discipline only <b>+7</b>. Slow down on the ones you can actually get right rather than reaching for more attempts.</li>
+<li><b>On a repeated question</b> — this paper has a deliberate duplicate pair, and the real Week 2 paper had one — answer it <b>identically</b> both times and move on. You lost both copies in Week 2 by second-guessing the repeat.</li>
+<li><b>Skip rule:</b> only if you cannot narrow to two options. At +2 / −0.67, break-even is about 25% accuracy, so a two-way guess is clearly worth taking.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>After the test:</b> put the result PDF in <b>Week 5 Plan</b>. The postmortem runs the same night — per-question fact probes, format accuracy against the Week 4 baselines, and your ratio to the class average.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='Week%205%20Mock%20Test.html'"><span class="tabflow-dir">Saturday 5:15 PM →</span><span class="tabflow-label">Week 5 Mock Test</span></button>
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Week 5 &middot; Judiciary &middot; study plan to the test on Sunday 16 August 2026<br>
+Built from the Week 4 postmortem: reading is 5.4 of your 19 hours &mdash; the rest is retrieval.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

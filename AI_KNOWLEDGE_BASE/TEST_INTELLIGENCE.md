@@ -148,11 +148,168 @@ The explanation is read at the moment of maximum attention: right after a wrong 
 - **Single-sentence explanations use `<p class="vone">`, not a one-item list.** A bullet list of one looks like an error.
 - **Where the verdict names the answer only in words** ("Answer: Only three (1, 2, 3)"), add the option letter as well. This is what makes click-to-grade work; 42 such verdicts were repaired in the July 2026 sweep, lifting auto-grading from 118 to 160 of 232 MCQs.
 
-## Part 5 — Weekly postmortem loop (the process that keeps this file alive)
+## Part 5 — The mandatory post-test loop (binding; runs after EVERY weekly result)
 
-After every weekly test, in order:
+This is not optional and does not wait to be asked. The moment a result PDF lands in the week's folder, all six steps run, in order, the same day.
 
-1. Parse the Test Result PDF: per-question outcome, format classification, time-on-screen. Recompute the Part-3 table with the new data — celebrate any format that moved, flag any that didn't.
-2. Mine the **full answer-key explanations** (right AND wrong answers — right-answer explanations carry adjacent testable facts too) for every case, section, scheme, number cited. Diff against the notes: anything missing goes into the relevant note's deep-reference layer within the same sitting.
-3. Update Part 1 frequencies and Part 2 depth examples if the test-maker's style shifted.
-4. Only then plan the next week's notes — with the gauntlet and depth rules above applied from the first draft, not retrofitted.
+1. **Parse the paper.** Every question: format, verdict, the student's option, the official key, time on screen. Compute accuracy by format against the previous three weeks, and the mean time on correct versus wrong answers — that pair is diagnostic of whether calibration is working.
+2. **Compute the position, not just the score.** Score ÷ class average, and the gap to the topper. A raw score is meaningless without the cohort: in Week 4 a 41% fall was almost entirely paper difficulty, and the ratio (0.868) was flat.
+3. **Strict per-question fact probes on every question lost.** Name the precise fact the key turns on, then search the corpus for that fact alone. Never aggregate keyword similarity — it produces false passes. **Report the split: covered in notes versus genuine gap.** The ceiling is 1–2 out-of-note per paper.
+4. **Patch every genuine gap into the topic note the same night**, not into the analysis note alone. A fact recorded only in a postmortem is not covered.
+5. **Write the analysis note** — `Week N Test Analysis.html` in that week's folder. Structure: the headline table across weeks · every wrong answer with what it tested, the correct position, whether the notes had it, and why it was missed · every unattempted question with the fact needed and where it lived · a **pattern layer** collapsing individual errors into causes · the gaps and what was added · four behavioural changes. Link each item back to the exact note section.
+6. **Update this file** with any shift in the test-maker's behaviour, and the student's per-format accuracy.
+
+**The classification that matters most** — every lost question is exactly one of:
+
+| Cause | Whose failure | Fix |
+|---|---|---|
+| Fact absent from the notes | **Ours** | Patch the note that night |
+| Fact present, not recalled | The student's | Retrieval drill, not re-reading |
+| Fact present, recalled, mis-applied | Shared | A named reading habit (polarity, absolutes, authority words) |
+| Blank despite the fact being known | **Behavioural** | Attempt-rate and time rules |
+
+Weeks 4 and 5 show why the split matters: Week 4 was 11 content gaps out of 25 losses — our failure. Week 5 was 3 out of 21, with **nine losses being questions left blank whose answers were in the notes** — a behavioural failure that no amount of new content would have fixed. Treating those two as one problem produces the wrong remedy.
+
+**Also mandatory where a Mains paper exists for the week:** a `Week N Mains Answers.html` carrying every question with a model answer to the `MAINS_ANSWER_CRAFT.md` standard — directive box, skeleton, budget check showing what was cut and what it bought, value additions, and a cost warning.
+
+---
+
+## Part 6 — The Week 4 postmortem (13 Aug 2026): three findings that change how we build
+
+### 6A. The paper's format mix is not stable. It moved, and it moved to our weakest format.
+
+| Format | Week 3 share | **Week 4 share** | Lavan's Week 4 accuracy |
+|---|---|---|---|
+| HOW MANY of the above | ~12% | **42% (21 of 50)** | **52%** |
+| DIRECT | ~35–40% | 20% | 60% |
+| NEGATIVE | ~10% | 12% | **80%** |
+| STATEMENTS | ~20% | 12% | 50% |
+| ASSERTION–REASON | ~5% | 4% | 50% |
+| PAIRS | ~6% | 2% | 0% |
+
+Two consequences. **Negative phrasing is fixed** — 0% in Weeks 1–2, 100% in Week 3, 80% in Week 4. Stop treating it as the leak. **"How many" is now the paper**, and it is the format that punishes partial knowledge hardest because it cannot be solved by elimination. Every future mock must carry **≥40% how-many**, and every note's bank must over-weight it.
+
+### 6B. Our mocks over-predict, and the gap is widening.
+
+| Week | Our mock | Real test | Gap |
+|---|---|---|---|
+| 3 | 92.68 | 62.08 | −30.6 |
+| 4 | 89.36 | **36.60** | **−52.8** |
+
+The cause is structural, not accidental: **we write mock questions from our own notes**, so the mock measures how well the notes were memorised, never whether the notes covered the syllabus. A 90 on our mock currently predicts nothing. Rule going forward: **a mock score is only meaningful alongside the coverage audit**, and mock questions must be written from the *Laxmikanth chapter contents list* rather than from the note we just wrote.
+
+### 6C. The coverage ceiling was breached badly — 11 out-of-note questions, not 1–2.
+
+Strict per-question fact probes on the 25 questions Lavan lost:
+
+- **14 were covered** in the notes → memory failures, his to own.
+- **11 were NOT covered** → our failure. The ceiling is 1–2. We were 5× over.
+
+The eleven: Question Hour suspension history · Governor's power to dismiss an individual minister · CM need not prove majority *before* appointment · Consultative Committees of ministries · Political Affairs Committee as "Super Cabinet" · State Finance Commission (Art 243-I) · enlargement of the jurisdiction of a State PSC · which committees the Speaker is *not* ex-officio chairman of · formation of new States and the majority required · Ministry of Parliamentary Affairs running Consultative Committees · Krishna Menon Committee behind the COPU.
+
+**The pattern is unmistakable and it is now a standing rule.** Not one of the eleven appeared in the schedule's "Important Topics" column. Every one sat *one step outside* it — an adjacent statutory body, a named committee, a who-chairs-what, or a State-level institution mirroring a Union one. This setter reads a schedule bullet as a **chapter reference**.
+
+**Standing Pass-2 checklist, extended after Week 4.** For every topic, before the test, probe: adjacent statutory and non-statutory bodies · the named committee or commission behind each institution · who chairs / who is *ex-officio* / who is expressly *not* · the State-level mirror of every Union body · appointment and removal authorities for every office mentioned · consultative and advisory machinery around the institution · the scheme or Act that operationalises it.
+
+### 6D. What actually costs marks — the arithmetic, so effort goes to the right place.
+
+Week 4 was 25 right / 20 wrong / 5 skipped = 36.60.
+
+- Skipping the 10 least-certain wrong answers → **43.30** (+6.7). Guess discipline is worth something, but not much.
+- Holding Week 3's 74% accuracy across the same 45 attempts → **57.96** (+21.4).
+
+**Accuracy is worth three times what guess discipline is worth.** Time was not a factor: mean time on correct answers was 70.5s and on wrong answers 71.8s — he was not rushing, he did not know. Stop optimising pace; optimise coverage.
+
+### 6E. Read the cohort before reading the score.
+
+| | Week 3 | Week 4 | change |
+|---|---|---|---|
+| Class average | 70.95 | 42.16 | **−40.6%** |
+| Topper | 84.04 | 63.96 | −23.9% |
+| Lavan | 62.08 | 36.60 | −41.0% |
+| Lavan ÷ average | 0.875 | **0.868** | unchanged |
+| Rank | 3rd | **2nd** | improved |
+
+The absolute halving was mostly **paper difficulty**, not collapse — the whole cohort fell by the same proportion, and Lavan's rank improved. Never diagnose from the raw score alone; always compute the score as a fraction of the class average first. The real, persistent finding is the flat one: **he sits ~13% below the class average every week**, and the topper sits ~50% above it. That gap is a coverage gap, not a talent gap.
+
+---
+
+## Part 7 — The Week 5 postmortem (16 Aug 2026): what worked, and the one thing that replaced it
+
+**Result: 51.30, rank 2, 29 right / 10 wrong / 11 unattempted, accuracy 74.36%, 49:30 of 60 minutes used. Class average 58.30, topper 65.29.**
+
+### 7A. The coverage fix worked. This is the first hard evidence in five weeks.
+
+| | Week 4 | **Week 5** |
+|---|---|---|
+| Questions lost | 25 | **21** |
+| Of which **not in the notes** | **11** | **3** |
+| Ceiling | 1–2 | 1–2 |
+
+From five times over the ceiling to just above it. The **Pass-2 sections** — deliberately written to cover the adjacent surface rather than the schedule's wording — are the reason. Eighteen of the twenty-one lost questions were in the notes, so they were **retrieval failures, not coverage failures**.
+
+The three genuine gaps, all narrow: **Article 332** (reservation of seats for SC/ST in a State Assembly, and its extension); the fact that **Article 131 excludes inter-state water disputes** — Art 262 is covered in Topic 2 Note 03, but the *exclusion from Art 131* is nowhere stated; and the **first woman Chief Justice of a High Court**, which is personality trivia and not worth chasing.
+
+**Standing rule added:** where a note lists what a jurisdiction *includes*, it must also list what that jurisdiction *excludes*. Art 131's exclusions were partially covered (Union Territories, election disputes, pre-Constitution treaties) and the water-disputes exclusion was the one omitted.
+
+### 7B. Accuracy is fixed. Attempt rate is now the binding constraint.
+
+| | W3 | W4 | **W5** |
+|---|---|---|---|
+| Accuracy | 74.5% | 55.6% | **74.4%** |
+| Wrong | 12 | 20 | **10** |
+| Unattempted | 3 | 5 | **11** |
+| Attempted | 47 | 45 | **39** |
+
+Accuracy recovered fully. But the guess discipline **over-corrected**: 11 blanks at 2 marks each is **22 marks removed from the paper before it started**.
+
+The arithmetic is unusually clean:
+
+- attempting all 11 at 50% accuracy → **59.95** (+8.65), above the class average
+- attempting all 11 at his own 74.4% accuracy → **65.29** — *exactly the topper's score*
+
+He also spent **8.8 minutes** looking at those 11 questions (mean 47.9s each) and scored zero for it, and **finished with 10 minutes still on the clock**. The time was available; the decision was not.
+
+### 7C. The time signature inverted, and it is now diagnostic.
+
+| | Week 4 | Week 5 |
+|---|---|---|
+| Mean time, correct | 70.5s | **51.5s** |
+| Mean time, wrong | 71.8s | **95.4s** |
+
+In Week 4 the two were identical — he could not tell what he knew. In Week 5 wrong answers took **nearly twice as long** as right ones. That is a **healthy** signal: his sense of difficulty is now calibrated. The failure mode has moved from *not knowing what he doesn't know* to *spending too long on it and then abandoning it anyway*.
+
+**Rule this generates:** if a question is still open at 90 seconds, it is a two-way guess at best. Take the guess and move — do not spend a further 60 seconds and then leave it blank, which is the worst of both outcomes.
+
+### 7D. Do not chase the format mix. It is not stable.
+
+| Format | W3 | W4 | **W5** |
+|---|---|---|---|
+| HOW MANY | ~12% | **42%** | **20%** |
+| STATEMENTS | ~20% | 12% | **36%** |
+| DIRECT | ~38% | 20% | **32%** |
+
+After Week 4 the Week 5 mock was re-weighted to 42% how-many. The real paper ran **20%**, and **36% statements**. The re-weighting was over-fitted to a single observation.
+
+**Corrected rule:** mocks are weighted to the *rolling three-week average* and never to the last paper alone, with no format below 10% and none above 30%. The measured weakness to target is the **student's** accuracy per format, not the paper's composition.
+
+### 7E. The mock is becoming predictive.
+
+| Week | Mock | Real | Gap |
+|---|---|---|---|
+| 3 | 92.68 | 62.08 | −30.6 |
+| 4 | 89.36 | 36.60 | **−52.8** |
+| 5 | **80.70** | 51.30 | **−29.4** |
+
+Still optimistic by roughly 30 marks, but the mock is now harder than the notes it came from rather than easier. Treat a mock score as **real score + 30** until three more data points say otherwise.
+
+### 7F. The ratio, which is the measure that matters.
+
+| | W3 | W4 | W5 |
+|---|---|---|---|
+| Score ÷ class average | 0.875 | 0.868 | **0.880** |
+| Gap to topper | 21.96 | 27.36 | **13.99** |
+
+The ratio is still flat at ~0.88 — three weeks running. **The gap to the topper halved**, which is real, but the ratio says the coverage fix bought back the ground lost in Week 4 rather than breaking new ground.
+
+**The single change that would move the ratio above 1.0 is not more content. It is attempting 47 questions instead of 39 at the accuracy he already has.**

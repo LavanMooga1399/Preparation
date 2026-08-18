@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The High Court | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Composition &amp; appointment — Arts 214–224A</button>
+<button class="notetab" data-tab="s2">02 · Jurisdiction &amp; powers</button>
+<button class="notetab" data-tab="s3">03 · Article 226 versus Article 32</button>
+<button class="notetab" data-tab="s4">04 · The five writs</button>
+<button class="notetab" data-tab="s5">05 · Deep reference &amp; exceptions</button>
+<button class="notetab" data-tab="s6">06 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">07 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 6 · Note 06 — Week 5, Day 4</div>
+<h1>The High Court</h1>
+<p class="sub">Articles 214–231. Almost every fact here is examined as a <b>contrast</b> with the Supreme Court — a different retirement age, a wider writ power, a supervisory jurisdiction the apex court does not have, and an appointment process with one extra participant.</p>
+<div class="chips">
+<span class="chip">Articles 214–231</span>
+<span class="chip">25 High Courts</span>
+<span class="chip">Art 226 — wider than Art 32</span>
+<span class="chip">Art 227 — superintendence</span>
+<span class="chip">Retire at 62</span>
+</div>
+<div class="bignum"><b>25</b><span>High Courts for 28 States and 8 Union Territories — the mismatch is the point</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Study this as a difference table, not as a fresh chapter</div>
+<p>Roughly seventy per cent of this chapter repeats Note 05 with different numbers. That is exactly why setters mine it: the question is rarely "what does a High Court do", it is "which of these is true of the High Court but not the Supreme Court". Build the contrasts deliberately — <b>62 against 65</b>, <b>ten years' advocacy but no distinguished-jurist route</b>, <b>Art 226 wider than Art 32</b>, <b>Art 227 with no Supreme Court equivalent</b>.</p>
+<p>One structural fact carries disproportionate weight: a High Court is <b>not</b> a State organ in the ordinary sense. Its judges are appointed by the President, its jurisdiction is set by Parliament, and one High Court may serve several States and Union Territories. It sits inside the <b>integrated</b> judiciary, which is why it can strike down a central law — a proposition tested directly in Prelims 2019.</p>
+<p>Week 5, Day 4 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapter 34.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Every State has a High Court at the top of its own court system. But the mapping is not one-to-one. <b>Article 231</b> lets Parliament establish a <b>common High Court</b> for two or more States, and for Union Territories. That is why there are <b>25</b> High Courts rather than 28 — the Punjab and Haryana High Court serves two States and Chandigarh, the Bombay High Court serves Maharashtra, Goa and two Union Territories, and the Guwahati High Court serves four north-eastern States.</p>
+<p>The High Court's most powerful tool is <b>Article 226</b>. Like the Supreme Court, it can issue writs. Unlike the Supreme Court, it can issue them not only to enforce Fundamental Rights but also <b>"for any other purpose"</b> — meaning for the enforcement of an ordinary legal right too. So on writs, the High Court's door is <b>wider</b> than the apex court's. Students routinely get this backwards.</p>
+<p>It also has something the Supreme Court simply does not: <b>Article 227</b>, a power of <b>superintendence</b> over every court and tribunal within its territory. That is administrative as well as judicial — calling for returns, prescribing forms, settling practice. It is the reason the High Court, not the Supreme Court, is the real supervisor of the justice system on the ground.</p>
+<div class="bridge">Next → composition, and the one participant the Supreme Court process does not have</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Composition &amp; appointment — Articles 214–224A</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Establishment</th><td><b>Article 214</b> — there shall be a High Court for each State. <b>Article 231</b> — Parliament may establish a <b>common</b> High Court for two or more States and/or Union Territories.</td></tr>
+<tr><th>Strength</th><td>The Constitution fixes <b>no number</b>. Each High Court has a Chief Justice and <b>such other judges as the President may from time to time deem necessary</b> — so strength is fixed by the <b>President</b>, not by Parliament. This is a clean contrast with the Supreme Court, where <b>Parliament by law</b> sets the number.</td></tr>
+<tr><th>Appointment — Art 217(1)</th><td>By the <b>President</b>, after consultation with the <b>CJI</b>, the <b>Governor</b> of the State, and — for a judge other than the Chief Justice — the <b>Chief Justice of that High Court</b>. In practice the collegium (CJI + two senior-most judges) drives it.</td></tr>
+<tr><th>Qualifications — Art 217(2)</th><td>Citizen of India, <b>and</b> either (i) held a <b>judicial office</b> in India for <b>ten</b> years, or (ii) been an <b>advocate of a High Court</b> for <b>ten</b> years. <b>There is no distinguished-jurist route</b> — that exists only for the Supreme Court.</td></tr>
+<tr><th>Retirement</th><td><b>62 years</b>. Raised from 60 by the <b>15th Amendment, 1963</b>.</td></tr>
+<tr><th>Resignation</th><td>In writing to the <b>President</b> — <b>Art 217(1)(a)</b>. Note: to the President, not the Governor.</td></tr>
+<tr><th>Removal</th><td><b>Art 217(1)(b)</b> read with <b>Art 218</b>, which applies the Supreme Court's Art 124(4)–(5) machinery to High Court judges. Same grounds, same double majority, same Judges (Inquiry) Act, 1968.</td></tr>
+<tr><th>Transfer — Art 222</th><td>The President may transfer a judge from one High Court to another, after consultation with the CJI. Since the Third Judges Case the CJI must consult four senior-most judges plus the Chief Justices of both High Courts concerned. A transferred judge receives a <b>compensatory allowance</b>.</td></tr>
+<tr><th>Acting Chief Justice — Art 223</th><td>Appointed by the <b>President</b> when the office is vacant or the Chief Justice is absent.</td></tr>
+<tr><th>Additional &amp; acting judges — Art 224</th><td>The President may appoint <b>additional</b> judges for a period <b>not exceeding two years</b> to clear arrears, and <b>acting</b> judges to fill a temporary vacancy. Neither may hold office beyond age 62.</td></tr>
+<tr><th>Retired judges — Art 224A</th><td>The <b>Chief Justice of a High Court</b> may, with the <b>President's previous consent</b>, request a retired judge of that or any other High Court to sit and act. Contrast Art 128, where the request is made by the <b>CJI</b> for the Supreme Court.</td></tr>
+<tr><th>Salaries</th><td>Charged on the <b>Consolidated Fund of the State</b> — but <b>pensions</b> are charged on the <b>Consolidated Fund of India</b>. This split is a favourite one-word trap.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Four contrasts that decide most High Court questions.</b> <b>(1)</b> Supreme Court judge strength is fixed by <b>Parliament by law</b>; High Court strength by the <b>President</b>, with no number in the Constitution. <b>(2)</b> Retirement <b>65</b> versus <b>62</b>. <b>(3)</b> The <b>distinguished jurist</b> route exists only for the Supreme Court; a High Court needs ten years of judicial office or advocacy. <b>(4)</b> A retired judge is recalled to the Supreme Court by the <b>CJI</b> under Art 128, and to a High Court by that <b>High Court's Chief Justice</b> under Art 224A — in both cases with the President's previous consent.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The judicial-office route has an asymmetry worth noticing.</b> For the Supreme Court, Art 124(3)(a) requires five years as a <b>High Court judge</b> — service in a subordinate court does not count. For a High Court, Art 217(2)(a) requires ten years in <b>judicial office</b>, which does include the district judiciary. So a district judge can rise to a High Court, but cannot go directly to the Supreme Court.</div></div>
+
+<h3>How many High Courts, and the ones worth naming</h3>
+
+<div class="prelims">
+<h3>🔴 Prelims — the institutional facts</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>25 High Courts</b> in total. The most recent is the <b>Andhra Pradesh High Court (2019)</b>, created on the bifurcation of the common Hyderabad High Court into separate Telangana and Andhra Pradesh High Courts.</div></div>
+<div class="item"><span class="dot">◆</span><div>The <b>three oldest</b> were established under the <b>Indian High Courts Act, 1861</b> — <b>Calcutta, Bombay and Madras</b>, all in <b>1862</b>. Calcutta is the oldest.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Delhi</b> is the only <b>Union Territory with its own High Court</b> (since 1966). Every other UT falls under some State's High Court.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Common High Courts:</b> Punjab &amp; Haryana (Punjab, Haryana, Chandigarh); Bombay (Maharashtra, Goa, Dadra &amp; Nagar Haveli and Daman &amp; Diu); Guwahati (Assam, Nagaland, Mizoram, Arunachal Pradesh); Madras (Tamil Nadu, Puducherry); Kerala (Kerala, Lakshadweep).</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Seats and benches:</b> the seat is fixed by the President; <b>benches</b> elsewhere are established by the President too. Several High Courts sit away from their State capital — Allahabad, Jabalpur, Nainital, Kolkata.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Pendency</b> stands at roughly <b>6.4 crore cases</b> across the High Courts, with the <b>Allahabad High Court</b> alone above <b>11.9 lakh</b>. Against a sanctioned strength of about <b>1,122</b> judges, roughly <b>371</b> posts were vacant in early 2026 — about a third.</div></div>
+</div>
+</div>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Jurisdiction &amp; powers</h2></div>
+<hr class="divider">
+
+<p class="lead">The Constitution does not list the High Court's jurisdiction the way it lists the Supreme Court's. Article 225 simply continues whatever jurisdiction existed immediately before the Constitution, which is why the standard taxonomy is textbook-derived rather than article-by-article.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Jurisdiction</th><th>What it covers</th></tr></thead>
+<tbody>
+<tr><th>Original</th><td>Limited. Covers <b>admiralty, probate, matrimonial and contempt</b> matters; disputes relating to <b>elections to Parliament and State legislatures</b>; revenue matters; and, in <b>Calcutta, Bombay, Madras and Delhi</b>, ordinary original civil jurisdiction above a pecuniary limit. Note that election petitions come <b>here</b>, not to the Supreme Court's Art 131.</td></tr>
+<tr><th>Writ — Art 226</th><td>To any person or authority, including government, <b>for the enforcement of Fundamental Rights and for any other purpose</b>. See Section 03 — this is the most examinable provision in the chapter.</td></tr>
+<tr><th>Appellate</th><td><b>Civil</b> — appeals from district courts and subordinate courts. <b>Criminal</b> — appeals from sessions courts, with confirmation of <b>death sentences</b> being mandatory: a death sentence passed by a sessions court has <b>no effect until confirmed by the High Court</b>, whether or not the convict appeals.</td></tr>
+<tr><th>Supervisory — Art 227</th><td>Superintendence over <b>all courts and tribunals</b> in its territorial jurisdiction — <b>except</b> any court or tribunal constituted under a law relating to the <b>Armed Forces</b>. Both <b>judicial and administrative</b>: it may call for returns, make and issue general rules, prescribe forms, and settle the fees of officers.</td></tr>
+<tr><th>Control over subordinate courts — Art 235</th><td>Control over district courts and courts subordinate to them, including posting, promotion and leave of persons in the State judicial service below district judge. Developed in Note 07.</td></tr>
+<tr><th>Court of record — Art 215</th><td>Records are of evidentiary value and cannot be questioned; power to <b>punish for contempt of itself</b>. The High Court also has power to punish for contempt of <b>subordinate courts</b>, which the Supreme Court does not exercise in the same way.</td></tr>
+<tr><th>Transfer of cases — Art 228</th><td>If satisfied that a case pending in a subordinate court involves a <b>substantial question of law as to the interpretation of the Constitution</b>, the High Court shall <b>withdraw</b> the case and either dispose of it itself or determine the question and return the case.</td></tr>
+<tr><th>Judicial review</th><td>Not expressly conferred, but implicit in Arts 13 and 226. A High Court <b>can</b> declare a <b>central</b> law unconstitutional — see the 2019 PYQ in Section 06.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The armed-forces exclusion appears twice, in two different articles, and means two different things.</b> <b>Art 136</b> — the Supreme Court cannot grant <b>special leave to appeal</b> from an armed-forces court or tribunal. <b>Art 227</b> — a High Court has no <b>power of superintendence</b> over one. Same carve-out, different power. A statement swapping the two articles is false, and this is exactly the kind of pairing a matching question is built from.</div></div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The integrated judiciary as a pyramid with jurisdictions marked">
+<polygon points="350,20 660,250 40,250" fill="#F1F2FA" stroke="#C3C7E3" stroke-width="1.5"></polygon>
+<line x1="152" y1="167" x2="548" y2="167" stroke="#C3C7E3" stroke-width="1.5"></line>
+<line x1="243" y1="100" x2="457" y2="100" stroke="#C3C7E3" stroke-width="1.5"></line>
+<text x="350" y="72" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">Supreme Court</text>
+<text x="350" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565884">Arts 124–147 · one for all of India</text>
+<text x="350" y="128" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#0d3d49">High Courts — 25</text>
+<text x="350" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565884">Arts 214–231 · Art 226 writs · Art 227 superintendence</text>
+<text x="350" y="196" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#8a2168">District &amp; Subordinate Courts</text>
+<text x="350" y="214" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565884">Arts 233–237 · controlled by the High Court under Art 235</text>
+<text x="350" y="236" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565884">Tribunals sit alongside, but remain subject to Art 226/227 review</text>
+<text x="350" y="272" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">One pyramid, not two. India has no separate federal and State court hierarchies.</text>
+</svg>
+<figcaption><b>Fig 1.</b> The integrated judiciary is why a High Court may rule on a <b>central</b> law and why an appeal runs upward through a single chain.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Article 226 versus Article 32 — the comparison that gets tested most</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Article 32 — Supreme Court</th><th>Article 226 — High Court</th></tr></thead>
+<tbody>
+<tr><td>Available <b>only for enforcement of Fundamental Rights</b>.</td><td>Available for Fundamental Rights <b>and for any other purpose</b> — including an ordinary legal right. <b>Wider.</b></td></tr>
+<tr><td>Is <b>itself a Fundamental Right</b> (Part III). Ambedkar: the "heart and soul" of the Constitution.</td><td>Is a <b>constitutional right</b>, not a Fundamental Right.</td></tr>
+<tr><td>The Supreme Court <b>cannot refuse</b> relief where a Fundamental Right is violated — the remedy is guaranteed.</td><td>The High Court's writ power is <b>discretionary</b>; it may decline, for instance where an alternative remedy exists.</td></tr>
+<tr><td>Territorial reach is <b>all India</b>.</td><td>Reach is the High Court's own territorial jurisdiction — <b>extended</b> by the <b>15th Amendment, 1963</b>, which added Art 226(2): a High Court may act where the <b>cause of action arises wholly or in part</b> within its territory, even if the authority sits outside it.</td></tr>
+<tr><td><b>Can be suspended</b> during a <b>National Emergency</b> — Art 359 allows the President to suspend the right to move any court for enforcement of specified Fundamental Rights. Under the 44th Amendment, <b>Arts 20 and 21 can never be suspended</b>.</td><td>Cannot be suspended as such, because Art 226 is not a Fundamental Right — though the <b>rights</b> it enforces may themselves be suspended.</td></tr>
+<tr><td>Part of the <b>basic structure</b> — <i>Kesavananda</i> line; confirmed in <b>L. Chandra Kumar (1997)</b>.</td><td>Also held part of the <b>basic structure</b> in <b>L. Chandra Kumar (1997)</b> — which is why tribunals can never be made immune from High Court review.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The one that catches nearly everyone.</b> On <b>scope</b>, Art 226 is <b>wider</b> than Art 32 — because of the words "and for any other purpose". On <b>strength of the guarantee</b>, Art 32 is stronger, because it is itself a Fundamental Right and the Court cannot refuse relief. A statement saying "Article 32 is wider in scope than Article 226" is <b>false</b>; a statement saying "the remedy under Article 32 is a Fundamental Right whereas that under Article 226 is not" is <b>true</b>. Both propositions live in the same question.</div></div>
+
+<div class="mentor">
+<div class="tag">📖 The story — why the 15th Amendment had to fix Article 226</div>
+<p>The original Article 226 let a High Court issue writs only to an authority located <b>within its own territory</b>. That produced a peculiar result: because the Union Government sits in Delhi, a challenge to almost any central decision had to be brought in the Punjab High Court, which then had Delhi within its jurisdiction — no matter where in India the person affected actually lived.</p>
+<p>In <b>Election Commission v. Saka Venkata Rao (1953)</b> the Supreme Court confirmed this narrow territorial reading. The consequence was plain injustice: a fisherman in Kerala aggrieved by a central order had to litigate at the other end of the country.</p>
+<p>The <b>15th Amendment, 1963</b> added <b>Article 226(2)</b>, allowing a High Court to act if the <b>cause of action</b> arose wholly or in part within its territory, even where the authority sits elsewhere. The same amendment raised the High Court retirement age from 60 to 62 — so if a question links the 15th Amendment to High Courts, <b>both</b> facts are candidates.</p>
+</div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>The five writs</h2></div>
+<hr class="divider">
+
+<p class="lead">Borrowed from English law and available under both Art 32 and Art 226. Learn each by its literal meaning, then by the one situation it does <b>not</b> cover.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Writ</th><th>Literally</th><th>Issued to do what — and where it does not lie</th></tr></thead>
+<tbody>
+<tr><th>Habeas corpus</th><td>"to have the body"</td><td>Orders a person detaining another to produce them before the court. Lies against <b>both public authorities and private persons</b> — the only writ that does. <b>Not</b> available where detention is lawful, by a competent court, or for contempt of a legislature or court.</td></tr>
+<tr><th>Mandamus</th><td>"we command"</td><td>Commands a public official, corporation, inferior court, tribunal or government to perform a <b>public duty</b> it has failed to perform. <b>Does not lie</b> against a <b>private individual or body</b> unless entrusted with a public duty; against a duty that is <b>discretionary</b> rather than mandatory; against the <b>President or a State Governor</b>; or against a Chief Justice acting in an administrative capacity. Tested in <b>Prelims 2022</b>.</td></tr>
+<tr><th>Prohibition</th><td>"to forbid"</td><td>Issued by a <b>higher court to a lower court or tribunal</b> to stop it exceeding its jurisdiction — <b>preventive</b>, and issued while proceedings are still pending. Lies only against <b>judicial and quasi-judicial</b> bodies, never against administrative bodies, legislatures or private individuals. Tested in <b>Prelims 2024</b>.</td></tr>
+<tr><th>Certiorari</th><td>"to be certified"</td><td>Issued by a higher court to <b>transfer a pending case</b> to itself or to <b>quash an order already passed</b> — so it is both preventive and <b>curative</b>, which is the standard contrast with prohibition. Since <b>1991</b> it also lies against <b>administrative</b> authorities affecting rights, not only judicial ones.</td></tr>
+<tr><th>Quo warranto</th><td>"by what authority"</td><td>Enquires into the legality of a person's claim to a <b>public office</b>. Lies only where the office is <b>substantive, public and permanent</b> and created by statute or the Constitution — never for a private or ministerial office. Uniquely, <b>any interested person</b> may apply; the applicant need not be personally aggrieved. Tested in <b>Prelims 2022</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Three "only" facts about writs, which is where statement questions come from.</b> <b>Habeas corpus</b> is the only writ available against a <b>private</b> person. <b>Quo warranto</b> is the only writ any interested person may seek without being personally aggrieved. <b>Prohibition and certiorari</b> lie only against judicial or quasi-judicial bodies — with the post-1991 extension of certiorari to administrative authorities being the exception that proves the rule. Prohibition is preventive; certiorari is preventive <b>and</b> curative.</div></div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prohibition compared with certiorari on a timeline of proceedings">
+<line x1="60" y1="120" x2="640" y2="120" stroke="#C3C7E3" stroke-width="2"></line>
+<circle cx="180" cy="120" r="6" fill="#1F8AA6"></circle>
+<circle cx="470" cy="120" r="6" fill="#B5388B"></circle>
+<text x="180" y="100" text-anchor="middle" font-family="Fraunces, serif" font-size="15" font-weight="600" fill="#0d3d49">PROHIBITION</text>
+<text x="180" y="150" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#134b59">while proceedings are pending</text>
+<text x="180" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#134b59">"stop, you lack jurisdiction"</text>
+<text x="470" y="100" text-anchor="middle" font-family="Fraunces, serif" font-size="15" font-weight="600" fill="#8a2168">CERTIORARI</text>
+<text x="470" y="150" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#6d1f52">after the order is passed</text>
+<text x="470" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#6d1f52">"transfer it up, or quash it"</text>
+<text x="70" y="145" font-family="IBM Plex Mono, monospace" font-size="11" fill="#565884">case filed</text>
+<text x="600" y="145" font-family="IBM Plex Mono, monospace" font-size="11" fill="#565884">order made</text>
+<text x="350" y="40" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">Same target, different moment</text>
+<text x="350" y="64" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">Both lie against judicial and quasi-judicial bodies. Only certiorari also cures what has already happened.</text>
+<text x="350" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">If the stem says "prevent", think prohibition. If it says "quash", think certiorari.</text>
+</svg>
+<figcaption><b>Fig 2.</b> The prohibition–certiorari pair is the most frequently confused item in the writs table; fix it by <b>timing</b>, not by definition.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Deep reference &amp; exceptions</h2></div>
+<hr class="divider">
+
+<h3>Articles at a glance — Part VI, Chapter V</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>Subject</th><th>Article</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td><b>214</b></td><td>High Courts for States</td><td><b>224</b></td><td>Additional and acting judges</td></tr>
+<tr><td><b>215</b></td><td>Court of record; contempt</td><td><b>224A</b></td><td>Retired judges at sittings — by the HC Chief Justice</td></tr>
+<tr><td><b>216</b></td><td>Constitution of High Courts</td><td><b>225</b></td><td>Jurisdiction of existing High Courts continued</td></tr>
+<tr><td><b>217</b></td><td>Appointment, conditions, qualifications, resignation</td><td><b>226</b></td><td>Writ jurisdiction — FRs <b>and any other purpose</b></td></tr>
+<tr><td><b>218</b></td><td>Applies Art 124(4)–(5) removal machinery</td><td><b>227</b></td><td>Superintendence over all courts and tribunals</td></tr>
+<tr><td><b>219</b></td><td>Oath, before the Governor</td><td><b>228</b></td><td>Transfer of constitutional cases from subordinate courts</td></tr>
+<tr><td><b>220</b></td><td>Restriction on practice after being a permanent judge</td><td><b>229</b></td><td>Officers and servants; expenses</td></tr>
+<tr><td><b>221</b></td><td>Salaries — State CFI; <b>pensions on the Union CFI</b></td><td><b>230</b></td><td>Extension of jurisdiction to Union Territories</td></tr>
+<tr><td><b>222</b></td><td>Transfer of a judge between High Courts</td><td><b>231</b></td><td>Common High Court for two or more States</td></tr>
+<tr><td><b>223</b></td><td>Acting Chief Justice</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Case lineage for this note</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Case</th><th>Year</th><th>Holding to carry</th></tr></thead>
+<tbody>
+<tr><th>Election Commission v. Saka Venkata Rao</th><td>1953</td><td>Art 226 originally confined to authorities <b>within</b> the High Court's territory — the defect the 15th Amendment cured.</td></tr>
+<tr><th>L. Chandra Kumar v. Union of India</th><td>1997</td><td>Judicial review under <b>Arts 32 and 226/227</b> is part of the <b>basic structure</b>. Tribunal decisions remain subject to High Court review; Art 323A(2)(d) to the extent it excluded that was <b>unconstitutional</b>.</td></tr>
+<tr><th>Third Judges Case</th><td>1998</td><td>For High Court appointments and transfers, the collegium is the <b>CJI plus two</b> senior-most judges.</td></tr>
+<tr><th>Rojer Mathew v. South Indian Bank</th><td>2019</td><td>Struck down Finance Act rules on tribunal appointments; also referred the question whether <b>Money Bill certification</b> is beyond review to a larger bench.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Constituent Assembly ammunition</h3>
+
+<div class="mentor">
+<div class="tag">◆ For any "should the High Courts be strengthened?" question</div>
+<p>The Assembly deliberately made the High Court a <b>constitutional</b> court rather than a State court. Judges are appointed by the President, removed by Parliament, paid from the State fund but pensioned from the Union fund, and may be transferred between States. Each of those choices pulls the institution away from the State government it must most often rule against.</p>
+<p>The argument this gives you in Mains: complaints that the High Courts are "State" courts subject to local pressure misread the design. Their weakness is not constitutional but administrative — <b>a third of sanctioned posts lie vacant</b> and pendency stands above six crore. The remedy is filling the bench, not redesigning the institution.</p>
+</div>
+
+<h3>Exceptions ledger — this note's entries</h3>
+
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>There is a High Court "for each State" — <b>except</b> that Parliament may create a <b>common</b> High Court under Art 231. Hence 25, not 28.</div></div>
+<div class="item"><span class="dot">◆</span><div>Art 227 superintendence covers all courts and tribunals — <b>except armed-forces</b> tribunals.</div></div>
+<div class="item"><span class="dot">◆</span><div>Salaries from the <b>State</b> Consolidated Fund; <b>pensions from the Union's</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>A retired HC judge may practise in the Supreme Court and other High Courts — <b>but not</b> in the High Court where they served, or its subordinate courts.</div></div>
+<div class="item"><span class="dot">◆</span><div>Mandamus lies against public authorities — <b>except</b> the <b>President and Governors</b>, and except purely discretionary duties.</div></div>
+<div class="item"><span class="dot">◆</span><div>Writs generally run against the State — <b>except habeas corpus</b>, which runs against private persons too.</div></div>
+<div class="item"><span class="dot">◆</span><div>The applicant must normally be aggrieved — <b>except</b> in <b>quo warranto</b>, where any interested person may apply.</div></div>
+<div class="item"><span class="dot">◆</span><div>Only <b>Delhi</b> among the Union Territories has its own High Court.</div></div>
+<div class="item"><span class="dot">◆</span><div>Additional judges under Art 224 are appointed for <b>not more than two years</b> — and never beyond age 62.</div></div>
+<div class="item"><span class="dot">◆</span><div>A death sentence from a sessions court has <b>no effect</b> until the High Court confirms it — appeal or no appeal.</div></div>
+</div>
+</div>
+
+<h3>★ The examiner's red pen — eight questions on this institution</h3>
+<div class="mentor"><div class="tag">◆ Cover the right column, answer aloud, then uncover</div><p>Eleven of the twenty-five questions lost in Week 4 turned on an <b>authority</b>, a <b>majority</b>, a <b>fraction</b> or a <b>qualifier</b> — not on a concept. This grid is that finding applied to this chapter. Twenty minutes with the answers covered is worth more than an hour re-reading the sections above.</p></div>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody><tr><th>Who appoints</th><td><b>President</b>, consulting <b>CJI + Governor</b> (+ that High Court's Chief Justice for a puisne judge). Collegium = CJI + <b>2</b>. Art 217(1).</td></tr><tr><th>Who removes</th><td>Same as a Supreme Court judge — <b>Art 218</b> applies Art 124(4)–(5).</td></tr><tr><th>Who fixes the number of judges</th><td><b>The President</b> — the Constitution fixes no number. Contrast: Supreme Court strength is set by <b>Parliament by law</b>.</td></tr><tr><th>What article</th><td>214–231. Contempt <b>215</b> · appointment <b>217</b> · removal <b>218</b> · oath <b>219</b> · transfer <b>222</b> · acting CJ <b>223</b> · additional/acting <b>224</b> · <b>retired 224A</b> · writs <b>226</b> · superintendence <b>227</b> · withdrawal <b>228</b> · common HC <b>231</b>.</td></tr><tr><th>What exception</th><td>Art 227 covers all courts and tribunals — <b>except armed forces</b>. Salaries from the <b>State</b> fund, <b>pensions from the Union's</b>. A retired HC judge may practise anywhere <b>except</b> his own High Court and its subordinate courts. One HC per State — <b>except</b> a common one under Art 231.</td></tr><tr><th>What timeline</th><td>Retire at <b>62</b> (raised from 60 by the <b>15th Amendment, 1963</b>) · additional judges <b>not more than 2 years</b> · <b>10</b> years in judicial office or at the Bar to qualify.</td></tr><tr><th>Constitutional or convention</th><td>Constitutional throughout; the collegium for High Court appointments is again judicial interpretation, not text.</td></tr><tr><th>Shall or may</th><td>Art 226 — a High Court <b>may</b> issue writs, so relief is <b>discretionary</b>. Art 228 — it <b>shall</b> withdraw a case involving a substantial constitutional question.</td></tr></tbody>
+</table>
+</div>
+<h4>Authority — and the distractor</h4>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Function</th><th>The authority</th><th>The distractor to reject</th></tr></thead>
+<tbody><tr><td>Appoints High Court judges</td><td><b>President</b></td><td>Governor — he is only <b>consulted</b></td></tr><tr><td>Administers the oath</td><td><b>Governor</b> (Art 219)</td><td>President</td></tr><tr><td>Receives a resignation</td><td><b>President</b> (Art 217(1)(a))</td><td>Governor</td></tr><tr><td>Recalls a retired judge (Art 224A)</td><td><b>That High Court's Chief Justice</b>, with the President's previous consent</td><td>CJI</td></tr><tr><td>Creates a common High Court</td><td><b>Parliament, by law</b> (Art 231)</td><td>President, by order</td></tr><tr><td>Appoints the Advocate General</td><td><b>Governor</b> (Art 165)</td><td>President</td></tr></tbody>
+</table>
+</div>
+<h4>Qualifier flips</h4>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Wrong version</th><th>Correct version</th></tr></thead>
+<tbody><tr><td>Article 226 is <b>narrower</b> than Article 32</td><td><b>Wider</b> in scope — 'and for any other purpose' — but <b>discretionary</b>; Art 32 is the stronger guarantee</td></tr><tr><td>Article 226 is a <b>Fundamental Right</b></td><td>It is a <b>constitutional</b> right; only <b>Art 32</b> sits in Part III</td></tr><tr><td>Prohibition is issued <b>after</b> the order</td><td><b>Before</b> — it is preventive. <b>Certiorari</b> comes after and is also curative</td></tr><tr><td>Mandamus lies against <b>any</b> body</td><td>Only where there is a <b>public duty</b>; never against the President or a Governor</td></tr><tr><td>Quo warranto needs a <b>personally aggrieved</b> petitioner</td><td><b>Any interested person</b> may apply — standing is relaxed</td></tr><tr><td>A High Court <b>cannot</b> strike down a central law</td><td>It <b>can</b> — India has an <b>integrated</b> judiciary</td></tr></tbody>
+</table>
+</div>
+<div class="tip trap"><span class="ic">!</span><div><b>Article 224 and 224A are two different provisions and are routinely merged.</b> <b>Art 224</b> covers <b>additional</b> judges (appointed for up to two years to clear arrears) and <b>acting</b> judges (a qualified person acting while a permanent judge is temporarily absent, or is himself acting as Chief Justice). <b>Art 224A</b> is the <b>retired</b> judge, requested to sit by the High Court's Chief Justice with the President's previous consent. Calling 224A "acting judge" merges the two. Hold them apart as: <b>224 = extra serving judges · 224A = a judge brought back</b>.</div></div>
+</section>
+
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+<p class="lead">Bucket (A) genuine, verified PYQs with year and stage, then bucket (B) practice questions in identical format.</p>
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="pyq">
+<span class="yr">2019</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">With reference to the Constitution of India, consider the following statements:</p>
+<ol class="subs"><li>No High Court shall have the jurisdiction to declare any central law to be constitutionally invalid.</li><li>An amendment to the Constitution of India cannot be called into question by the Supreme Court of India.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Neither 1 nor 2</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong.</b> India has an <b>integrated</b> judiciary, and a High Court exercising judicial review under Arts 13 and 226 <b>can</b> strike down a central law. There is no rule confining High Courts to State legislation.</li><li><b>Statement 2 is wrong.</b> Since <b>Kesavananda Bharati (1973)</b> a constitutional amendment can be struck down for violating the <b>basic structure</b> — as the <b>99th Amendment</b> was in 2015.</li><li>This is a "both wrong" answer set, which candidates under-select. Judge each statement on its own; do not assume a question must contain at least one true statement.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2021</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">With reference to the Indian judiciary, consider the following statements:</p>
+<ol class="subs"><li>Any retired judge of the Supreme Court of India can be called back to sit and act as a Supreme Court judge by the Chief Justice of India with prior permission of the President of India.</li><li>A High Court in India has the power to review its own judgment as the Supreme Court does.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 2 only</b>
+<ul class="vwhy"><li><b>Statement 2 is the High Court fact worth holding:</b> as a <b>court of record</b> under Art 215, a High Court has an inherent power of review. The Supreme Court's is express, under Art 137.</li><li>Statement 1 fails on the word <b>"any"</b> — Art 128 also requires the <b>retired judge's own consent</b>.</li><li>Repeated here from Note 05 deliberately: the same PYQ tests one Supreme Court fact and one High Court fact.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2024</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">A Writ of Prohibition is an order issued by the Supreme Court or High Courts to</p>
+<ul class="opts single"><li>(a) A government officer prohibiting him from taking a particular action.</li><li>(b) The Parliament/Legislative Assembly to pass a law on Prohibition.</li><li>(c) The lower court prohibiting continuation of proceedings in a case.</li><li>(d) The Government prohibiting it from following an unconstitutional policy.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li>Prohibition runs <b>from a higher court to a lower court or tribunal</b>, and only while proceedings are <b>pending</b>. That directional fact is the whole question.</li><li>(a) and (d) are wrong because prohibition does <b>not</b> lie against administrative or executive authorities — only judicial and quasi-judicial bodies.</li><li>If the situation involves an order that has <b>already been passed</b>, the writ is <b>certiorari</b>, not prohibition. See Fig 2 in Section 04.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2022</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">With reference to the writs issued by the Courts in India, consider the following statements:</p>
+<ol class="subs"><li>Mandamus will not lie against a private organisation unless it is entrusted with a public duty.</li><li>Mandamus will not lie against a Company even though it may be a Government Company.</li><li>Any public minded person can be a petitioner to move the Court to obtain the writ of Quo Warranto.</li></ol>
+<p class="qtext">Which of the statements given above are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — 1 and 3 only</b>
+<ul class="vwhy"><li>Statement 1 states the rule correctly: the test for mandamus is a <b>public duty</b>, not the public or private character of the body.</li><li><b>Statement 2 is wrong</b> for the same reason — a <b>Government Company</b> discharging a public duty <b>can</b> be subject to mandamus. The word "even though" gives away the trap.</li><li>Statement 3 is the <b>quo warranto</b> exception to <i>locus standi</i>: the petitioner need not be personally aggrieved. It is the only writ with that feature.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2013</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">Which one of the following statements is correct?</p>
+<ul class="opts single"><li>(a) In India, the same person cannot be appointed as Governor for two or more States at the same time</li><li>(b) The Judges of the High Court of the States in India are appointed by the Governor of the State just as the Judges of the Supreme Court are appointed by the President</li><li>(c) No procedure has been laid down in the Constitution of India for the removal of a Governor from his/her post</li><li>(d) In the case of a Union Territory having a legislative setup, the Chief Minister is appointed by the Lt. Governor on the basis of majority support</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li>Included in this note for <b>option (b)</b>, which is the High Court fact being tested and is <b>wrong</b>: High Court judges are appointed by the <b>President</b>, not the Governor. The Governor is only <b>consulted</b> under Art 217(1).</li><li>(a) is wrong — the <b>7th Amendment, 1956</b> expressly permits one person to be Governor of two or more States.</li><li>(c) is correct: the Governor holds office during the President's pleasure, and no removal procedure is laid down.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2009</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The Advocate General of a State in India is appointed by the President of India upon the recommendation of the Governor of the concerned State.</li><li>As provided in the Civil Procedure Code, High Courts have original, appellate and advisory jurisdiction at the State level.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 2 only</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong.</b> The Advocate General is appointed by the <b>Governor</b> under <b>Article 165</b>, not by the President.</li><li>Statement 2 is treated as correct in the official key. Note the point of caution for your own revision: a High Court's advisory jurisdiction is <b>not</b> a constitutional advisory jurisdiction like the Supreme Court's Article 143 — there is no High Court equivalent of Art 143. If a stem asks specifically about <b>constitutional</b> advisory jurisdiction, the answer is that only the Supreme Court has one.</li><li>This is a rare instance where an official key is worth reading narrowly. Carry the Art 143 point, since that is what a Constitution-based stem will test.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions — same formats, built on this note</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements regarding the High Courts is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) A judge of a High Court holds office until attaining the age of sixty-two years</li><li>(b) The Constitution provides that a distinguished jurist may be appointed a judge of a High Court</li><li>(c) The salaries of High Court judges are charged on the Consolidated Fund of the State</li><li>(d) A judge of a High Court may resign by writing addressed to the President</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>The <b>distinguished-jurist</b> route exists <b>only for the Supreme Court</b>, under Art 124(3)(c). Article 217(2) offers only ten years of judicial office or ten years as a High Court advocate.</li><li>(a), (c) and (d) are all accurate — note in (d) that the resignation goes to the <b>President</b>, not the Governor, even though the Governor administers the oath under Art 219.</li><li>Drill: mark each option T/F in the margin before re-reading the stem. Negative-phrased questions are your weakest measured format and the fix is procedural.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following is <b>NOT</b> a correct statement about Article 226?</p>
+<ul class="opts single"><li>(a) It empowers a High Court to issue writs for the enforcement of Fundamental Rights and for any other purpose</li><li>(b) The power conferred by it is discretionary and a High Court may decline relief where an alternative remedy exists</li><li>(c) It is a Fundamental Right and cannot be suspended during a National Emergency</li><li>(d) Its territorial reach was widened by the Fifteenth Amendment, 1963</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<ul class="vwhy"><li>Article 226 is a <b>constitutional</b> right, not a Fundamental Right. Only <b>Article 32</b>, sitting in Part III, is itself a Fundamental Right.</li><li>The second half of (c) is a further error compounding the first: Art 359 permits suspension of the right to move <b>any</b> court for enforcement of specified Fundamental Rights during a National Emergency — with Arts 20 and 21 protected since the 44th Amendment.</li><li>An option can be false because of <b>one clause</b> in it. Test each half separately.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements comparing the Supreme Court and the High Courts:</p>
+<ol class="subs"><li>The number of judges of the Supreme Court is fixed by Parliament by law, whereas the number of judges of a High Court is determined by the President.</li><li>A judge of the Supreme Court retires at sixty-five years and a judge of a High Court at sixty-two years.</li><li>A retired judge of a High Court may plead before the Supreme Court and other High Courts.</li><li>The power of superintendence over all courts and tribunals within its jurisdiction is available to a High Court but has no Supreme Court equivalent.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — all four</b>
+<ul class="vwhy"><li>All four are accurate, and together they are the four contrasts this chapter is built on.</li><li>Statement 4 is <b>Article 227</b>, which genuinely has no counterpart in Part V — the Supreme Court's control over the system runs through appeal and Art 141, not superintendence.</li><li>Another deliberate "all correct" set. Your recorded instinct is to reject option (d); the correction is to verify each statement rather than to reason about how many <i>ought</i> to be true.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about writs:</p>
+<ol class="subs"><li>Habeas corpus can be issued against a private individual.</li><li>Prohibition can be issued against an administrative authority.</li><li>Certiorari can be issued after a lower court has already passed its order.</li><li>Quo warranto can be sought only by a person personally aggrieved by the appointment.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li>Statements 1 and 3 are correct — habeas corpus is the one writ that runs against private persons, and certiorari is the <b>curative</b> member of the pair.</li><li><b>Statement 2 is wrong:</b> prohibition lies only against <b>judicial and quasi-judicial</b> bodies. It is <b>certiorari</b> that was extended to administrative authorities, in 1991.</li><li><b>Statement 4 inverts the rule.</b> Quo warranto is the writ where <i>locus standi</i> is <b>relaxed</b> — any interested person may apply, as Prelims 2022 confirmed.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> The writ jurisdiction of the High Courts is wider in scope than that of the Supreme Court.</li><li><b>Statement-II:</b> Article 226 permits a High Court to issue writs for the enforcement of Fundamental Rights and for any other purpose.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</li><li>(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not correct</li><li>(d) Statement-I is not correct but Statement-II is correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both are correct, and Statement-II is the <b>exact reason</b> Statement-I is true. The words "and for any other purpose" are what make Art 226 wider; Art 32 is confined to Fundamental Rights.</li><li>The reflex to resist: "wider" feels wrong for a High Court against the Supreme Court. It is right — but only on <b>scope</b>. On the strength of the guarantee, Art 32 is the stronger remedy.</li><li>Three-step method: truth of I, truth of II, then the link. Do not judge the link first.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of Article and subject:</p>
+<ol class="subs"><li>Article 215 — High Court as a court of record</li><li>Article 222 — transfer of a judge from one High Court to another</li><li>Article 224A — appointment of additional judges</li><li>Article 231 — common High Court for two or more States</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li><b>Pair 3 is the mismatch.</b> <b>Article 224</b> covers additional and acting judges; <b>Article 224A</b> is the <b>retired judge</b> sitting at the request of the High Court's Chief Justice.</li><li>Pairs 1, 2 and 4 are correct as stated.</li><li>The 224 / 224A pair is exactly the kind of near-identical numbering the setter looks for. Learn them as opposites: <b>224 = extra serving judges, 224A = a judge brought back</b>.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>A common High Court for two or more States can be established by the President by order.</li><li>Delhi is the only Union Territory with its own High Court.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 2 only</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong on the instrument.</b> Under <b>Article 231</b> it is <b>Parliament by law</b> that establishes a common High Court — not a Presidential order. The President's powers here are to fix judge strength and to appoint benches.</li><li>Statement 2 is correct. Every other Union Territory falls under a State's High Court.</li><li>Same construction as the 2026 strength question in Note 05: the substance is right and the <b>instrument</b> is wrong. Always check who acts, and by what device.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Direct</span>
+<p class="qtext">Under which one of the following Articles does a High Court exercise superintendence over all courts and tribunals within its territorial jurisdiction?</p>
+<ul class="opts"><li>(a) Article 226</li><li>(b) Article 227</li><li>(c) Article 228</li><li>(d) Article 235</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Article 227</b>
+<ul class="vwhy"><li>Article 227 is the <b>supervisory</b> jurisdiction, judicial and administrative, subject to the armed-forces exclusion.</li><li>The neighbours are all real powers and all different: <b>226</b> writs, <b>228</b> withdrawal of a case involving a constitutional question from a subordinate court, <b>235</b> control over the district judiciary.</li><li>226–228 and 235 sit close together and do four distinct jobs. Learn them as a block of four, not individually.</li></ul>
+</div>
+</div>
+
+<h3>(C) Trap statements — True or False</h3>
+<div class="mentor">
+<div class="tag">◆ Why this bucket exists, and how to work it</div>
+<p><b>Twenty-one of the fifty questions in the Week 4 paper were &ldquo;how many of the above&rdquo;</b> &mdash; 42 per cent &mdash; and that format scored <b>52 per cent</b>. It cannot be solved by elimination: every statement has to be judged on its own. So the skill the paper actually rewards is not answering questions, it is <b>marking a single statement true or false</b>.</p>
+<p>That is all this bucket is. 20 statements from this note, one at a time. Decide before you click. If you find yourself reasoning about how many <i>ought</i> to be true, stop &mdash; that instinct is what the format punishes.</p>
+<p>Roughly half are false, and most of the false ones are wrong by <b>one word</b>: an authority, a number, a fraction, or a qualifier. That is how this setter builds them.</p>
+</div>
+<div class="pyq">
+<span class="stg">Trap 1 &middot; True or False</span>
+<p class="qtext">There shall be a High Court for each State, and Parliament may establish a common High Court for two or more States.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>Articles 214 and 231.</b> This is why there are 25 High Courts for 28 States and 8 Union Territories.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 2 &middot; True or False</span>
+<p class="qtext">A common High Court for two or more States is established by the President by order.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>By <b>Parliament, by law</b> — Article 231. The President's powers here are to fix judge strength and establish benches.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 3 &middot; True or False</span>
+<p class="qtext">The number of judges of a High Court is fixed by Parliament by law.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>By the <b>President</b>. The Constitution fixes no number. It is <b>Supreme Court</b> strength that Parliament sets by law.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 4 &middot; True or False</span>
+<p class="qtext">A judge of a High Court holds office until the age of sixty-two years.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Raised from 60 by the <b>15th Amendment, 1963</b> — the same amendment that widened Article 226.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 5 &middot; True or False</span>
+<p class="qtext">A distinguished jurist may be appointed a judge of a High Court.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>That route exists only for the <b>Supreme Court</b>. Article 217(2) requires ten years in judicial office or ten years as a High Court advocate.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 6 &middot; True or False</span>
+<p class="qtext">A judge of a High Court resigns by writing addressed to the Governor.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>To the <b>President</b>, under Art 217(1)(a) — even though the <b>oath</b> under Art 219 is administered by the Governor.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 7 &middot; True or False</span>
+<p class="qtext">Additional judges of a High Court may be appointed for a period not exceeding two years.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>Article 224</b>, to clear arrears, and never beyond age 62.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 8 &middot; True or False</span>
+<p class="qtext">Article 224A empowers the Chief Justice of a High Court to request a retired judge to sit and act, with the previous consent of the President.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Contrast <b>Article 128</b>, where the request for the Supreme Court is made by the <b>CJI</b>.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 9 &middot; True or False</span>
+<p class="qtext">Article 224A deals with the appointment of acting judges of a High Court.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>224A is the <b>retired</b> judge. <b>Article 224(2)</b> is the acting judge — a qualified person acting while a permanent judge is temporarily absent. Two provisions, routinely merged.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 10 &middot; True or False</span>
+<p class="qtext">Salaries of High Court judges are charged on the Consolidated Fund of India.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li><b>Salaries</b> are charged on the Consolidated Fund of the <b>State</b>; <b>pensions</b> on the Consolidated Fund of <b>India</b>. The split is the trap.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 11 &middot; True or False</span>
+<p class="qtext">Article 226 is wider in scope than Article 32.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Because of the words <b>'and for any other purpose'</b> — it reaches ordinary legal rights, not only Fundamental Rights.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 12 &middot; True or False</span>
+<p class="qtext">The remedy under Article 226 is itself a Fundamental Right.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It is a <b>constitutional</b> right. Only <b>Article 32</b>, sitting in Part III, is itself a Fundamental Right.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 13 &middot; True or False</span>
+<p class="qtext">A High Court may decline relief under Article 226 where an alternative remedy exists.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Art 226 relief is <b>discretionary</b>; Art 32 relief cannot be refused once a Fundamental Right is breached.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 14 &middot; True or False</span>
+<p class="qtext">A High Court may issue a writ to an authority outside its territorial jurisdiction if the cause of action arises wholly or in part within its territory.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>Article 226(2)</b>, added by the <b>15th Amendment, 1963</b> to cure the narrow reading in <i>Election Commission v. Saka Venkata Rao</i> (1953).</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 15 &middot; True or False</span>
+<p class="qtext">A High Court's power of superintendence under Article 227 extends to all courts and tribunals within its jurisdiction without exception.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It excludes any court or tribunal constituted under a law relating to the <b>Armed Forces</b> — the same carve-out that limits Art 136.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 16 &middot; True or False</span>
+<p class="qtext">The Supreme Court has a power of superintendence over all courts in India corresponding to Article 227.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>There is <b>no Part V equivalent</b> of Article 227. The Supreme Court's control runs through appeal and Article 141.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 17 &middot; True or False</span>
+<p class="qtext">A High Court is a court of record and may punish for contempt of itself.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>Article 215</b>. It may also punish for contempt of <b>subordinate courts</b>.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 18 &middot; True or False</span>
+<p class="qtext">A High Court has no jurisdiction to declare a law made by Parliament unconstitutional.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It can. India has an <b>integrated</b> judiciary, and a High Court exercising review under Arts 13 and 226 may strike down a central law.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 19 &middot; True or False</span>
+<p class="qtext">Habeas corpus is the only writ that can be issued against a private individual.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Every other writ runs against the State or a body discharging a public duty.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 20 &middot; True or False</span>
+<p class="qtext">The writ of prohibition is issued to a lower court after it has passed its order.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>Prohibition is <b>preventive</b> and issues while proceedings are pending. The post-order writ is <b>certiorari</b>, which is both preventive and curative.</li></ul>
+</div>
+</div>
+
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard — budget-checked, lineage first, trade shown.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M36</span><span class="prac">Practice · Week 5</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"The High Court, not the Supreme Court, is the workhorse of constitutional remedy in India." Examine with reference to Articles 226 and 227.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Examine."</b> Test the claim against evidence. You are expected to agree substantially but to identify what limits the claim.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The textual case — Art 226's wider door</li><li>The supervisory case — Art 227</li><li>The structural case — basic structure and tribunals</li><li>What limits the claim</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>The claim rests first on text. <b>Article 32</b> opens the Supreme Court only for the enforcement of <b>Fundamental Rights</b>. <b>Article 226</b> opens a High Court for Fundamental Rights <b>"and for any other purpose"</b> — that is, for the enforcement of ordinary legal rights as well. On scope, the subordinate forum has the wider door, and the <b>15th Amendment, 1963</b> widened it further by allowing a High Court to act wherever the <b>cause of action</b> arises in part within its territory.</p>
+<p><span class="sh">The supervisory case</span></p>
+<p><b>Article 227</b> has no counterpart in Part V. A High Court superintends every court and tribunal in its territory — judicially and administratively, calling for returns and prescribing forms — subject only to the armed-forces exclusion. Combined with <b>Article 235</b>'s control over the district judiciary, this makes the High Court the institution that actually supervises the justice system day to day.</p>
+<p><span class="sh">The structural case</span></p>
+<p><b>L. Chandra Kumar (1997)</b> settled that judicial review under <b>Arts 226 and 227</b> is itself part of the <b>basic structure</b>, so no tribunal can be insulated from it. That holding governed the striking down of the <b>Tribunals Reforms Act, 2021</b> in <b>November 2025</b>.</p>
+<p><span class="sh">What limits the claim</span></p>
+<p>Two things. Relief under Art 226 is <b>discretionary</b> and may be refused where an alternative remedy exists, whereas Art 32 relief cannot be denied once a Fundamental Right is breached. And capacity is failing: with roughly <b>371 of 1,122</b> sanctioned posts vacant and pendency above <b>6.3 crore</b>, the workhorse is lame.</p>
+<p>The proposition holds in law and is undermined in practice. The constitutional architecture makes the High Court the primary forum; the vacancy record prevents it from behaving like one.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 32, 226, 226(2), 227, 235 · 15th Amendment, 1963 · L. Chandra Kumar (1997) and basic structure · Tribunals Reforms Act struck down, November 2025 · 371 of 1,122 vacancies, 6.3 crore pendency.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 268 / 250 words.</b> <b>Cut:</b> the list of the five writs and the Saka Venkata Rao background to the 15th Amendment — both are Prelims material that would have consumed forty words without advancing the argument. <b>Bought:</b> the vacancy and pendency figures, which are the only quantitative evidence available and convert the last section from assertion into finding.</div>
+<div class="cost"><b>What would cost you marks:</b> asserting that Art 226 is "wider" without the words "and for any other purpose" — the phrase <b>is</b> the argument; and omitting the counter-limit that Art 226 relief is discretionary, which is what turns an "examine" into a one-sided essay.</div>
+</div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M37</span><span class="prac">Practice · Week 5</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Judicial vacancies, not judicial design, are the principal cause of delay in India's High Courts. Comment.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Comment."</b> Take a position on a contested causal claim and support it, while conceding what the claim leaves out.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The scale of the problem</li><li>The vacancy evidence</li><li>Why design is not the culprit</li><li>What the claim misses</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Pendency in the High Courts stands at roughly <b>6.3 crore</b> cases, with the <b>Allahabad High Court</b> alone carrying about <b>11.9 lakh</b>.</p>
+<p><span class="sh">The vacancy evidence</span></p>
+<p>Against a sanctioned strength of about <b>1,122</b>, roughly <b>371</b> posts — close to one in three — lay vacant in early 2026. No institution can clear its docket at two-thirds capacity, and the bottleneck is the appointment process itself: the <b>Memorandum of Procedure</b> the Supreme Court directed be revised in <b>2015</b> remains unfinalised, leaving collegium and government recommendations to stall without recorded reasons or timelines.</p>
+<p><span class="sh">Why design is not the culprit</span></p>
+<p>The constitutional design is sound. <b>Article 224</b> permits additional judges for up to two years specifically to clear arrears, and <b>Article 224A</b> permits recalling retired judges. Both are under-used; the tools exist and are left idle.</p>
+<p><span class="sh">What the claim misses</span></p>
+<p>Vacancies are necessary but not sufficient as an explanation. Adjournment culture, government litigation — the State is the largest litigant — and the transfer of abolished tribunals' caseloads to already-burdened High Courts after the <b>Tribunals Reforms Act, 2021</b> all add load independently.</p>
+<p>Filling the bench is therefore the first-order fix, and a time-bound Memorandum of Procedure the reform that makes it possible.</p>
+</div>
+<div class="va"><b>Value additions used:</b> 6.3 crore pendency; 11.9 lakh at Allahabad; 371 of 1,122 vacancies · Arts 224 and 224A as unused capacity · the unfinalised Memorandum of Procedure · tribunal abolition shifting caseload.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 176 / 150 words.</b> <b>Cut:</b> a sentence on the National Judicial Data Grid as the source and a second on the 2019 creation of the Andhra Pradesh High Court, neither of which bears on causation. <b>Bought:</b> the Arts 224 / 224A point, which is what converts "there are vacancies" into the sharper claim that <b>the remedies already exist and are unused</b>.</div>
+<div class="cost"><b>What would cost you marks:</b> quoting pendency without quoting <b>capacity</b> — a backlog figure alone proves nothing without the judge-strength denominator beside it.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — the High Court</h2>
+<ul>
+<li><b>25</b> High Courts. Oldest three — <b>Calcutta, Bombay, Madras (1862)</b>, under the <b>Indian High Courts Act, 1861</b>. Newest — <b>Andhra Pradesh, 2019</b>. <b>Delhi</b> is the only UT with its own High Court.</li>
+<li><b>Art 214</b> one per State · <b>Art 231</b> <b>Parliament by law</b> may create a <b>common</b> High Court · <b>Art 230</b> extension to UTs.</li>
+<li>Strength fixed by the <b>President</b> — no number in the Constitution. Contrast: Supreme Court strength fixed by <b>Parliament by law</b>.</li>
+<li><b>Art 217</b> — appointed by the <b>President</b>, consulting <b>CJI + Governor</b> (+ that HC's Chief Justice for a puisne judge). Qualification: <b>10 yrs judicial office</b> or <b>10 yrs HC advocate</b>. <b>No distinguished-jurist route.</b> Retire at <b>62</b> (15th Amdt, 1963). Resignation to the <b>President</b>.</li>
+<li><b>Art 218</b> applies Art 124(4)–(5) removal · <b>Art 219</b> oath before the <b>Governor</b> · <b>Art 220</b> practice restriction · <b>Art 222</b> transfer + compensatory allowance · <b>Art 223</b> Acting Chief Justice.</li>
+<li><b>Art 224</b> additional/acting judges, <b>max 2 years</b>, never past 62 · <b>Art 224A</b> <b>retired</b> judge recalled by the <b>HC Chief Justice</b> with the President's prior consent. (Supreme Court equivalent: <b>Art 128</b>, by the <b>CJI</b>.)</li>
+<li><b>Art 221</b> — salaries on the <b>State</b> Consolidated Fund; <b>pensions on the Union's</b>.</li>
+<li><b>Art 226 vs Art 32:</b> 226 is <b>wider in scope</b> ("and for any other purpose") but <b>discretionary</b>; 32 is <b>itself a Fundamental Right</b> and cannot be refused. 226(2) cause-of-action reach added by the <b>15th Amendment, 1963</b>, curing <b>Saka Venkata Rao (1953)</b>.</li>
+<li><b>Art 227</b> superintendence over all courts and tribunals — <b>except armed forces</b>; judicial <b>and</b> administrative. No Supreme Court equivalent. Compare the identical carve-out in <b>Art 136</b>.</li>
+<li><b>Art 215</b> court of record + contempt (of itself <b>and of subordinate courts</b>) · <b>Art 228</b> withdrawal of a constitutional question from a subordinate court · <b>Art 235</b> control over the district judiciary.</li>
+<li>Writs: <b>habeas corpus</b> — the only one against private persons · <b>mandamus</b> — public duty; not against President/Governor, not for discretionary duties · <b>prohibition</b> — preventive, judicial bodies only · <b>certiorari</b> — preventive <b>and</b> curative, extended to administrative bodies in <b>1991</b> · <b>quo warranto</b> — substantive public office; <b><i>locus standi</i> relaxed</b>.</li>
+<li>A <b>death sentence</b> from a sessions court has no effect until <b>confirmed</b> by the High Court — appeal or not.</li>
+<li><b>L. Chandra Kumar (1997)</b> — review under Arts 32 and 226/227 is <b>basic structure</b>; tribunals cannot be insulated from High Court review.</li>
+<li>Capacity: about <b>1,122</b> sanctioned, roughly <b>371 vacant</b> in early 2026; pendency about <b>6.3–6.4 crore</b>, Allahabad above <b>11.9 lakh</b>.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> read immediately after <b>05 Supreme Court</b> — this note is built as a set of contrasts with it. It leads directly into <b>07 Subordinate Courts &amp; Tribunals</b>, where Articles 233–237 and the Art 227/235 control powers are developed.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='05%20Supreme%20Court.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">05 · Supreme Court</span></button>
+<button class="tabflow-btn tabflow-next" onclick="location.href='07%20Subordinate%20Courts%20and%20Tribunals.html'"><span class="tabflow-dir">Next →</span><span class="tabflow-label">07 · Subordinate Courts &amp; Tribunals</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 6 — Executive &amp; Judiciary · Note 06 of 9<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 34.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

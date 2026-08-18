@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5 Mains — the five questions with model answers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ The paper &amp; the method</button>
+<button class="notetab" data-tab="q1">Q1 · Art 200 judgment</button>
+<button class="notetab" data-tab="q2">Q2 · Review vs judicial review</button>
+<button class="notetab" data-tab="q3">Q3 · Judicial independence</button>
+<button class="notetab" data-tab="q4">Q4 · Removal of judges</button>
+<button class="notetab" data-tab="q5">Q5 · Courts of record &amp; contempt</button>
+<button class="notetab railrevision" data-tab="rev">★ The reusable blocks</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · UGSSP Mains · Week 5</div>
+<h1>Week 5 Mains — the five questions</h1>
+<p class="sub">The actual paper: five compulsory questions, 60 marks, one hour. Three at 150 words and two at 250. Every one sits inside the Week 5 notes — which is itself the finding worth noticing.</p>
+<div class="chips">
+<span class="chip">5 questions · 60 marks</span>
+<span class="chip">3 × 10 marks · 2 × 15</span>
+<span class="chip">One hour</span>
+<span class="chip">All budget-checked</span>
+</div>
+<div class="bignum"><b>12</b><span>minutes per question — the real constraint</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Read the paper before you read the answers</div>
+<p>Five questions, sixty marks, sixty minutes. That is <b>twelve minutes each</b>, including thinking. A 250-word answer at ordinary handwriting speed takes eight to nine minutes to write, which leaves three to four minutes to plan. If you have not decided your structure by minute four, the answer will sprawl and the last question will be rushed.</p>
+<p>The examiner's remark on your script was <i>"Keep it up, you have great potential. Keep practicing."</i> That is a generous but non-specific comment, so it tells you nothing about where marks were lost. The model answers below are therefore written against <b>MAINS_ANSWER_CRAFT.md</b> rather than against the script: each carries a directive box, a skeleton, a word budget with what was cut and what it bought, and a cost warning.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 The one habit that separates a 5 from an 8 on a 10-mark question</div>
+<p>Answer the <b>directive word</b>, not the topic. "Examine" is not "describe". "Distinguish" is not "explain both". "Comment" is not "list".</p>
+<p>Q1 asks whether the 2025 judgment <b>effectively addresses</b> the friction — so an answer that narrates the judgment scores badly however accurate it is. The examiner is looking for a <b>verdict on effectiveness</b>, supported by what the judgment does and does not resolve.</p>
+<p>Every model answer below states its directive first, in the pink box, before anything else. Copy that habit: write the directive at the top of your rough space before you start.</p>
+<div class="bridge">Next → Q1</div>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Q</th><th>Question</th><th>Marks</th><th>Directive</th><th>Where the content lives</th></tr></thead>
+<tbody>
+<tr><th>1</th><td>Can the Supreme Court's 2025 judgment on the Governor's powers under Article 200 effectively address the recurring friction between State Governments and Governors over assent?</td><td>10 · 150w</td><td><b>Examine</b></td><td>Note 05 §05 · Topic 6 Note 01</td></tr>
+<tr><th>2</th><td>Distinguish between a review petition and judicial review, enumerating the constitutional provisions relating to them.</td><td>10 · 150w</td><td><b>Distinguish</b></td><td>Note 05 §04 · Note 08 §01</td></tr>
+<tr><th>3</th><td>What is judicial independence? Enumerate the constitutional provisions safeguarding the independence and impartial functioning of the Supreme Court.</td><td>10 · 150w</td><td><b>Enumerate</b></td><td>Note 05 §03</td></tr>
+<tr><th>4</th><td>Constitutional provisions and procedures for removing High Court and Supreme Court judges; why they have remained largely ineffective; pragmatic reforms.</td><td>15 · 250w</td><td><b>Three-part</b></td><td>Note 05 §03 · §07</td></tr>
+<tr><th>5</th><td>What does it mean that the Supreme Court and High Courts are courts of record able to punish for contempt? Does the law of contempt need a fresh look?</td><td>15 · 250w</td><td><b>Explain + comment</b></td><td>Note 05 §04 · Note 06 §02</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Worth noticing: the Mains paper and the Prelims paper tested the same week from opposite ends.</b> Contempt appeared as Mains Q5 and as Prelims Q3 and Q40. Judicial independence and removal appeared as Mains Q3 and Q4 and as Prelims Q4, Q7 and Q24. Article 200 was Mains Q1 and sat behind the November 2025 material throughout. <b>Preparing one prepares the other</b> — which is an argument for depth over breadth when time is short.</div></div>
+</section>
+
+<section id="q1" class="tabsection">
+<div class="sec-head"><span class="sec-num">Q1</span><h2>The 2025 Article 200 judgment and Governor–State friction</h2></div>
+<hr class="divider">
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M42</span><span class="yr">UGSSP Week 5</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Can the Supreme Court's 2025 judgment concerning the Governor's powers under Article 200 effectively address the recurring friction between State Governments and Governors over granting assent to Bills? Examine.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Examine."</b> The question asks about <b>effectiveness</b>, not content. A narration of the judgment, however accurate, does not answer it. You must reach a verdict: what the ruling settles, what it leaves open, and therefore whether the friction is resolved.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>What the friction is</li><li>What 2025 settled</li><li>What it left open</li><li>Verdict on effectiveness</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>The friction is structural: a Governor is a Union appointee holding office during the President's pleasure under <b>Article 156</b>, exercising a power under <b>Article 200</b> that the Constitution left without any time limit.</p>
+<p><span class="sh">What 2025 settled</span></p>
+<p>Two judgments, pulling in opposite directions. In <b>State of Tamil Nadu v. Governor of Tamil Nadu (April 2025)</b> the Court held indefinite inaction illegal, confined the Governor to three options, imposed timelines and used <b>Article 142</b> to deem ten Bills assented. On the <b>16th Presidential Reference</b>, decided <b>20 November 2025</b>, a Constitution Bench retained the <b>three options</b> and the rule that a Bill cannot be withheld without being returned — but held that <b>no timelines</b> can be read into Articles 200 and 201, that there can be <b>no deemed assent</b>, and that these actions are <b>not justiciable</b>.</p>
+<p><span class="sh">What it left open</span></p>
+<p>The remedy is now narrow: only <b>prolonged, unexplained and indefinite inaction</b> invites limited scrutiny, and a court may direct the Governor to act without touching the merits. Delay short of that is beyond reach, and the Governor may still <b>reserve a reconsidered Bill</b> for the President — reopening the very channel through which Bills were stalled.</p>
+<p>The judgment therefore settles the <b>law</b> and not the <b>friction</b>. Its cause is the Governor's appointment and tenure, which <b>Sarkaria</b> and <b>Punchhi</b> addressed and no court can. Effective adjudication; incomplete remedy.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 156, 200, 201, 142 · <i>TN Governor</i> (April 2025) contrasted with Special Reference No. 1 of 2025 (20 Nov 2025) · the "prolonged, unexplained, indefinite" test · the reserve-on-second-round survival · Sarkaria and Punchhi.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 166 / 150 words.</b> <b>Cut:</b> the count of fourteen referred questions and the Vice-President's "nuclear missile" remark — colour that does not bear on effectiveness. <b>Bought:</b> the closing distinction between settling the law and settling the friction, which is the sentence that actually answers "examine".</div>
+<div class="cost"><b>What would cost you marks:</b> describing only the April 2025 judgment — it is <b>no longer the governing statement of the law</b>, and an answer that stops there is eight months out of date; and omitting Article 156, which is the reason the friction is structural rather than legal.</div>
+</div>
+</section>
+
+<section id="q2" class="tabsection">
+<div class="sec-head"><span class="sec-num">Q2</span><h2>Review petition versus judicial review</h2></div>
+<hr class="divider">
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M43</span><span class="yr">UGSSP Week 5</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Distinguish between a review petition and judicial review, while enumerating the Constitutional provisions relating to them.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Distinguish" + "enumerate."</b> Two demands. The distinction must be drawn on <b>named axes</b> — who, against what, on what grounds — not by describing each in turn. And the provisions must actually be listed, because "enumerate" is a scoring instruction.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>One line defining each</li><li>Distinction on four axes</li><li>Provisions, listed</li><li>The link between them</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Judicial review</b> is the power of a court to test the constitutionality of legislative and executive action and declare it void. A <b>review petition</b> is a request to the <b>same court</b> to reconsider <b>its own</b> judgment.</p>
+<p><span class="sh">The distinction</span></p>
+<p><b>Object:</b> judicial review examines <b>a law or an executive act</b>; a review petition examines <b>a judgment of the court itself</b>. <b>Forum:</b> review lies to the very court that decided; judicial review is exercised by the Supreme Court and the High Courts over other organs. <b>Ground:</b> review is confined to an <b>error apparent on the face of the record</b> or newly discovered evidence, not a fresh argument; judicial review turns on <b>unconstitutionality</b>. <b>Nature:</b> review is a corrective of the judicial process; judicial review is a check on the <b>other two branches</b>.</p>
+<p><span class="sh">Provisions</span></p>
+<p><b>Review — Article 137</b>, subject to laws made by Parliament and rules under <b>Article 145</b>; normally within thirty days. <b>Judicial review — Article 13</b> (laws inconsistent with Fundamental Rights are void), <b>Articles 32 and 226</b> (the remedies), <b>Articles 131–136</b>, <b>Articles 245–246</b> with the Seventh Schedule, and <b>Article 372</b>.</p>
+<p>Both are limited: review does not permit rehearing, and judicial review does not permit examining a law's <b>wisdom</b>. Where review fails, a <b>curative petition</b> lies — a purely judge-made remedy from <b>Rupa Ashok Hurra (2002)</b>.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 137, 145, 13, 32, 226, 131–136, 245–246, 372 · the "error apparent on the face of the record" standard · the thirty-day limit · the curative petition and its 2002 origin · the wisdom limitation.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 176 / 150 words.</b> <b>Cut:</b> examples of famous review petitions and a sentence on open-court hearing of reviews — neither advances a distinction. <b>Bought:</b> the four named axes, which is what converts this from two descriptions into a genuine "distinguish", and the curative petition, which shows the sequence review → curative.</div>
+<div class="cost"><b>What would cost you marks:</b> writing a paragraph on each concept without ever placing them side by side — the directive is <b>distinguish</b>; and forgetting that judicial review has <b>no single article</b>, which is the enumeration the examiner is testing.</div>
+</div>
+</section>
+
+<section id="q3" class="tabsection">
+<div class="sec-head"><span class="sec-num">Q3</span><h2>Judicial independence and its constitutional safeguards</h2></div>
+<hr class="divider">
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M44</span><span class="yr">UGSSP Week 5</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">What do you understand by the concept of Judicial Independence? Enumerate the constitutional provisions to safeguard the independence and impartial functioning of the Supreme Court of India.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: define + "enumerate."</b> A short conceptual opening, then a <b>list</b>. This is one of the few questions where a dense itemised body scores better than flowing prose, because the examiner is counting provisions.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>What independence means — and from whom</li><li>Appointment and tenure safeguards</li><li>Financial safeguards</li><li>Functional safeguards</li><li>One line on what is missing</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Judicial independence means the ability to decide without fear or favour — insulated from the executive and legislature in <b>appointment, tenure, salary and conduct</b>, so that a judge may rule against the government that appointed him. It is part of the <b>basic structure</b>, which is why the <b>99th Amendment</b> and the NJAC fell in <b>2015</b>.</p>
+<p><span class="sh">Appointment and tenure</span></p>
+<p>Appointment by the <b>President</b> on the collegium's recommendation (<b>Art 124(2)</b>, as read in the Second and Third Judges Cases); security of tenure, removal only for <b>proved misbehaviour or incapacity</b> by the demanding process of <b>Art 124(4)</b>; a fixed retirement age of <b>65</b>.</p>
+<p><span class="sh">Financial</span></p>
+<p>Salaries and allowances <b>charged on the Consolidated Fund of India</b> (<b>Art 125</b>) and therefore <b>non-votable</b>; emoluments cannot be varied to a judge's disadvantage after appointment, save during a <b>Financial Emergency</b> under <b>Art 360</b>.</p>
+<p><span class="sh">Functional</span></p>
+<p>Conduct not discussable in the legislature except on a removal motion (<b>Arts 121, 211</b>); <b>Art 129</b> contempt power as a court of record; <b>Art 146</b> — the CJI appoints the Court's staff and its expenses are charged; jurisdiction may be <b>extended but not curtailed</b> by Parliament; and a bar on practice after retirement (<b>Art 124(7)</b>).</p>
+<p>The gap is <b>accountability</b>: no judge has ever been removed, and the Memorandum of Procedure remains unfinalised.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 124(2), 124(4), 124(7), 125, 129, 146, 121, 211, 360 · basic structure and the 2015 NJAC judgment · the extend-not-curtail rule · the unfinalised Memorandum of Procedure.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 181 / 150 words.</b> <b>Cut:</b> the ad hoc and retired-judge provisions (Arts 127, 128) and the seat of the Court — real provisions, but not independence safeguards. <b>Bought:</b> the three-way grouping into appointment, financial and functional, which lets the examiner count the provisions at a glance, and the closing accountability line.</div>
+<div class="cost"><b>What would cost you marks:</b> an undifferentiated list of articles with no grouping — the same content scores lower when the examiner has to sort it; and omitting the <b>Art 360 exception</b> to the salary protection, which is the qualifier that shows precision.</div>
+</div>
+</section>
+
+<section id="q4" class="tabsection">
+<div class="sec-head"><span class="sec-num">Q4</span><h2>Removal of judges — provisions, ineffectiveness, reform</h2></div>
+<hr class="divider">
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M45</span><span class="yr">UGSSP Week 5</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">What are the constitutional provisions and procedures governing the removal of High Court and Supreme Court judges? Why have these remained largely ineffective in enforcing judicial accountability? Suggest pragmatic reforms.</p>
+<div class="meta">
+<div class="box dir"><b>Three explicit parts, so three explicit sections.</b> Marks are allocated across all three — an answer that spends 200 words on the procedure and 50 on the rest cannot score well however accurate the procedure is. Aim roughly 80 / 90 / 80.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The provisions and the process</li><li>Why it fails — four reasons, evidenced</li><li>Reforms, pragmatic and specific</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 124(4)</b> governs the Supreme Court and <b>Article 218</b> applies it to the High Courts. A judge may be removed only for <b>proved misbehaviour or incapacity</b>, by an order of the President following an address by <b>both Houses in the same session</b>, each supported by a majority of its <b>total membership</b> <b>and</b> by <b>two-thirds of those present and voting</b>. The <b>Judges (Inquiry) Act, 1968</b> supplies the machinery: a motion signed by <b>100</b> members of the Lok Sabha or <b>50</b> of the Rajya Sabha, which the Speaker or Chairman <b>may admit or refuse</b>; if admitted, a <b>three-member committee</b> — a Supreme Court judge, a High Court Chief Justice and a distinguished jurist — investigates.</p>
+<p><span class="sh">Why it fails</span></p>
+<p>Four reasons. <b>The threshold is political</b>: a double majority in both Houses makes removal impossible without cross-party consensus. <b>The grounds are undefined</b> — the Constitution nowhere defines "misbehaviour" or "incapacity". <b>Admission is discretionary</b>, so a motion can die before any inquiry. And <b>resignation abates everything</b>: an inquiry runs only against a sitting judge. The record proves it — <b>no judge has ever been removed</b>. In <b>V. Ramaswami (1993)</b> the committee found misbehaviour and the motion still failed on abstentions. In <b>2025–26</b>, after cash was found at Justice <b>Yashwant Varma's</b> residence and a motion signed by <b>146</b> members was admitted, he <b>resigned in April 2026</b> and the inquiry lapsed.</p>
+<p><span class="sh">Reforms</span></p>
+<p>Define misbehaviour statutorily; create a <b>standing judicial accountability commission</b> with judicial majority to receive and screen complaints, replacing the informal <b>in-house procedure</b> that has no statutory basis; provide <b>graded sanctions</b> — censure, withdrawal of work, transfer — so that removal is not the only remedy; and allow an inquiry to <b>conclude and publish</b> despite resignation.</p>
+<p>The provision is not weak; it is <b>binary</b>. Accountability fails for want of a middle rung.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 124(4), 218 · Judges (Inquiry) Act, 1968 with the 100/50 thresholds and the three-member committee · V. Ramaswami (1993) · the Justice Varma sequence with 146 signatures and the April 2026 resignation · the in-house procedure's lack of statutory basis · graded sanctions.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 297 / 250 words.</b> <b>Cut:</b> the National Judicial Accountability Bill's history and a sentence on comparative practice in the UK — both interesting, neither load-bearing. <b>Bought:</b> the two named case histories, because "largely ineffective" is a claim that needs evidence and not assertion, and the closing "binary, not weak" formulation which converts a list of criticisms into a diagnosis.</div>
+<div class="cost"><b>What would cost you marks:</b> using the word <b>impeachment</b> throughout — the Constitution says <b>removal</b>, and reserves impeachment for the President under Art 61; and offering reforms that are not pragmatic, such as lowering the parliamentary majority, which would trade accountability against independence and the examiner will read as unconsidered.</div>
+</div>
+</section>
+
+<section id="q5" class="tabsection">
+<div class="sec-head"><span class="sec-num">Q5</span><h2>Courts of record, contempt, and whether the law needs a fresh look</h2></div>
+<hr class="divider">
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M46</span><span class="yr">UGSSP Week 5</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">What is meant by the statement that the Supreme Court of India and the High Courts are courts of record, and can punish for contempt of themselves? Also comment on whether the law of contempt as it stands today needs a fresh look.</p>
+<div class="meta">
+<div class="box dir"><b>Explain, then comment.</b> The first half is definitional and must be precise; the second half demands a <b>position</b>. "Both sides have merit" is not a comment. Roughly 110 words explaining, 140 commenting.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>Court of record — the two limbs</li><li>Contempt: civil and criminal</li><li>The case for a fresh look</li><li>The case against</li><li>Verdict, with a specific reform</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>A <b>court of record</b> has two attributes. Its judgments and proceedings are <b>preserved as perpetual evidence</b>, admitted without further proof and <b>not open to question</b> by any subordinate court. And it has an inherent <b>power to punish for contempt of itself</b>. <b>Article 129</b> makes the Supreme Court a court of record and <b>Article 215</b> the High Courts; a High Court may also punish contempt of <b>subordinate</b> courts under <b>Section 10 of the Contempt of Courts Act, 1971</b>.</p>
+<p>Contempt is of two kinds. <b>Civil</b> contempt is wilful disobedience of an order or breach of an undertaking. <b>Criminal</b> contempt is publication or an act that <b>scandalises</b> the court, <b>prejudices</b> a judicial proceeding, or <b>obstructs</b> the administration of justice. Notably the <b>Constitution defines neither</b> — the 1971 Act does, following the <b>H.N. Sanyal Committee</b>.</p>
+<p><span class="sh">The case for a fresh look</span></p>
+<p>"Scandalising the court" is a colonial offence <b>abolished in England in 2013</b>, and it is vague enough to chill legitimate criticism. The court is <b>accuser, prosecutor and judge</b> in its own cause. And the power sits uneasily with <b>Article 19(1)(a)</b>, since truth became a defence only by the <b>2006 amendment</b>, and then conditionally.</p>
+<p><span class="sh">Against</span></p>
+<p>Judges cannot answer criticism publicly; the power protects <b>public confidence</b>, which is the judiciary's only enforcement currency. Civil contempt is indispensable, since an unenforceable order is no order.</p>
+<p>The distinction is the answer. <b>Civil contempt should stay untouched; criminal contempt should be narrowed</b> to acts that genuinely obstruct the administration of justice, with "scandalising" dropped — as the <b>Law Commission's 274th Report (2018)</b> considered. Confidence earned by reasoning survives; confidence compelled by punishment is brittle.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 129, 215, 19(1)(a) · Contempt of Courts Act 1971 with s.10 and the 2006 truth-as-defence amendment · H.N. Sanyal Committee · England's 2013 abolition of scandalising · Law Commission 274th Report · the civil/criminal split as the reform lever.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 291 / 250 words.</b> <b>Cut:</b> named contempt proceedings against individual lawyers and a sentence on suo motu contempt procedure — vivid but they invite a digression into facts rather than principle. <b>Bought:</b> the England 2013 comparison and the Law Commission report, which turn "needs a fresh look" from an opinion into a documented debate, and the closing line, which gives the comment a position rather than a balance.</div>
+<div class="cost"><b>What would cost you marks:</b> treating contempt as one thing — the entire quality of the comment rests on <b>separating civil from criminal</b>; and concluding that "a balance must be struck" without saying which limb you would change and how.</div>
+</div>
+</section>
+
+<section id="rev" class="tabsection">
+<div class="recall">
+<h2>The reusable blocks — carry these into Week 6</h2>
+<ul>
+<li><b>Every answer opened with a definition or a structural fact, never with history.</b> "The friction is structural: a Governor is a Union appointee…" beats "The office of Governor has been controversial since 1950."</li>
+<li><b>Articles are cited inline, not in a bracket at the end.</b> <b>Art 124(4)</b>, <b>Art 218</b>, <b>Art 129</b>, <b>Art 215</b>, <b>Art 137</b>, <b>Art 145</b>, <b>Art 125</b>, <b>Art 146</b>, <b>Arts 121/211</b>, <b>Art 360</b>.</li>
+<li><b>Two named cases per answer is the working target</b> — enough to evidence, few enough to leave room for argument.</li>
+<li><b>Currency wins marks.</b> The <b>20 November 2025</b> advisory opinion, the <b>Justice Varma resignation of April 2026</b>, the <b>2026 strength increase to 38</b>. Most candidates will be writing from a textbook that predates all three.</li>
+<li><b>Every answer ends on a verdict, not a summary.</b> "Effective adjudication; incomplete remedy." "The provision is not weak; it is binary." "Confidence earned by reasoning survives; confidence compelled by punishment is brittle."</li>
+<li><b>The word budget is a substitution rule, never an accumulation rule.</b> Each answer above shows what was cut to buy what was added. If you cannot say what you cut, you have not edited.</li>
+<li><b>Timing:</b> 12 minutes per question. Decide the structure by minute 4 or the last answer will be rushed — and the last answer here is worth <b>15</b> marks.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> the content for all five answers sits in <b>Note 05 Supreme Court</b> (§03, §04, §05, §07), <b>Note 06 High Court</b> (§02) and <b>Note 08 Judicial Review &amp; PIL</b> (§01, §05). The Prelims paper tested the same material from the opposite end — see <b>Week 5 Test Analysis</b>.
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution &middot; GS Paper II &middot; UGSSP Mains Week 5 &middot; five questions, 60 marks, one hour<br>
+Model answers M42&ndash;M46, written to the MAINS_ANSWER_CRAFT standard: directive, skeleton, budget check, value additions, cost warning.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

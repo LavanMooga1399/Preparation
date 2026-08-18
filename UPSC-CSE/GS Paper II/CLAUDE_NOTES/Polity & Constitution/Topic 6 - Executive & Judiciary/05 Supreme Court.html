@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Supreme Court | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Composition &amp; strength — Art 124</button>
+<button class="notetab" data-tab="s2">02 · Appointment &amp; the collegium</button>
+<button class="notetab" data-tab="s3">03 · Tenure, removal &amp; independence</button>
+<button class="notetab" data-tab="s4">04 · The five jurisdictions</button>
+<button class="notetab" data-tab="s5">05 · Arts 141, 142 &amp; 144 — the force multipliers</button>
+<button class="notetab" data-tab="s6">06 · Deep reference &amp; exceptions</button>
+<button class="notetab" data-tab="s6b">07 · Pass 2 — adjacent surface</button>
+<button class="notetab" data-tab="s7">08 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">09 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 6 · Note 05 — Week 5, Day 3</div>
+<h1>The Supreme Court</h1>
+<p class="sub">Articles 124–147. The single highest-yield institution in Polity: it supplies the numbers, the jurisdictions, the collegium story and the two articles — 141 and 142 — that every judicial-activism question is ultimately built on.</p>
+<div class="chips">
+<span class="chip">Articles 124–147</span>
+<span class="chip">Strength 34 → 38 (2026)</span>
+<span class="chip">Three Judges Cases</span>
+<span class="chip">NJAC struck down, 2015</span>
+<span class="chip">Art 142 — complete justice</span>
+</div>
+<div class="bignum"><b>38</b><span>sanctioned strength from 2026 — 37 judges plus the Chief Justice</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Where the marks actually are</div>
+<p>This chapter is examined on <b>numbers, jurisdictions and who-decides-what</b> far more than on doctrine. Across 2009–2025 the Judiciary microtheme produced questions on the power to increase judge strength (Parliament, not the President), on which disputes fall in original jurisdiction, on advisory jurisdiction being available <b>only</b> on the President's request, and on Article 142's limits. Every one of those is a fact, not an argument.</p>
+<p>The doctrine still matters, but it earns its marks in Mains. Learn the table first, the story second.</p>
+<p>Week 5, Day 3 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapter 26.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Think of the Indian courts as a pyramid. At the bottom sit the district and subordinate courts, where almost every case begins. Above them, one <b>High Court</b> per State or group of States. At the apex, a single <b>Supreme Court</b> for the whole country. Unlike the United States, India does not run separate federal and State court systems side by side — we have <b>one integrated judiciary</b>, and the Supreme Court sits on top of all of it.</p>
+<p>That court does four different jobs, and the exam tests whether you can tell them apart. Sometimes it is the <b>first</b> court to hear a matter — a fight between the Union and a State has nowhere else to go. Sometimes it hears an <b>appeal</b> from a High Court. Sometimes it protects your Fundamental Rights directly, by issuing a <b>writ</b>. And occasionally the President asks it for an <b>opinion</b> on a legal question, which the Court gives without deciding anybody's case.</p>
+<p>Two extra powers make it unusually strong. Under <b>Article 141</b> whatever the Supreme Court declares is law binding on every other court in India. Under <b>Article 142</b> it may pass any order needed to do "complete justice" — a phrase with no fixed boundary, which is precisely why it is controversial.</p>
+<div class="bridge">Next → composition and the strength figure that changed in 2026</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Composition &amp; strength — Article 124</h2></div>
+<hr class="divider">
+
+<p class="lead">Article 124(1) is one of the few places where the Constitution sets a number and then immediately hands Parliament the power to change it. That structure is itself examinable.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>The original text</th><td>Article 124(1): there shall be a Supreme Court consisting of a <b>Chief Justice of India</b> and, <b>until Parliament by law prescribes a larger number</b>, of not more than <b>seven other Judges</b>. The Constitution therefore fixed the original bench at <b>8</b>.</td></tr>
+<tr><th>Who can change it</th><td><b>Parliament, by ordinary law</b> — not the President, not the Chief Justice, not a constitutional amendment. This exact point was asked in <b>Prelims 2014</b>. The governing statute is the <b>Supreme Court (Number of Judges) Act, 1956</b>.</td></tr>
+<tr><th>Qualifications — Art 124(3)</th><td>Citizen of India, <b>and</b> one of: (i) a High Court judge for <b>five</b> years; (ii) a High Court advocate for <b>ten</b> years; (iii) a <b>distinguished jurist</b> in the President's opinion. There is <b>no minimum age</b> prescribed for a Supreme Court judge.</td></tr>
+<tr><th>The distinguished-jurist route</th><td>Available since 1950 and <b>never once used</b>. A favourite "which of these has never happened" statement.</td></tr>
+<tr><th>Retirement age</th><td><b>65 years</b> for the Supreme Court; <b>62</b> for a High Court. Learn them as a pair — this is a classic numbers-with-a-twin trap.</td></tr>
+<tr><th>Acting CJI — Art 126</th><td>The President appoints a judge of the Supreme Court as Acting Chief Justice when the office is vacant or the CJI is absent or unable to act.</td></tr>
+<tr><th>Ad hoc judges — Art 127</th><td>With the President's <b>prior consent</b>, the CJI may request a High Court judge (qualified for the Supreme Court) to attend sittings as an <b>ad hoc</b> judge when quorum is short.</td></tr>
+<tr><th>Retired judges — Art 128</th><td>The CJI may request a <b>retired</b> judge of the Supreme Court, or a retired High Court judge qualified for the Supreme Court, to sit and act — but only <b>with the President's previous consent</b> and <b>with the consent of the person concerned</b>. Both consents are essential; a statement omitting either is false. Asked in <b>Prelims 2021</b>.</td></tr>
+<tr><th>Seat — Art 130</th><td>Delhi, <b>or such other place</b> as the CJI may, <b>with the President's approval</b>, appoint. So the seat is not constitutionally frozen in Delhi.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The strength number changed in 2026 — carry the new figure and the old one.</b> On <b>5 May 2026</b> the Union Cabinet approved the <b>Supreme Court (Number of Judges) Amendment Bill, 2026</b>, raising puisne judges from <b>33 to 37</b>, i.e. total sanctioned strength from <b>34 to 38</b> including the CJI. An <b>Ordinance</b> was promulgated on <b>16 May 2026</b> and Parliament has since passed the Bill replacing it. The request came from <b>CJI Surya Kant</b>, citing rising filings and the difficulty of constituting Constitution Benches alongside regular work. Before this, the last increase was <b>2019 (30 → 33 puisne, 31 → 34 total)</b>. A statement saying "the sanctioned strength of the Supreme Court is 34" was correct until May 2026 and is now <b>wrong</b>.</div></div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of Supreme Court judge strength from 1950 to 2026">
+<line x1="50" y1="150" x2="660" y2="150" stroke="#C3C7E3" stroke-width="2"></line>
+<g font-family="IBM Plex Mono, monospace" font-size="11" fill="#565884" text-anchor="middle">
+<text x="60" y="180">1950</text><text x="145" y="180">1956</text><text x="230" y="180">1960</text><text x="315" y="180">1977</text><text x="400" y="180">1986</text><text x="485" y="180">2008</text><text x="570" y="180">2019</text><text x="650" y="180">2026</text>
+</g>
+<g fill="#1B1D51">
+<circle cx="60" cy="150" r="5"></circle><circle cx="145" cy="150" r="5"></circle><circle cx="230" cy="150" r="5"></circle><circle cx="315" cy="150" r="5"></circle><circle cx="400" cy="150" r="5"></circle><circle cx="485" cy="150" r="5"></circle><circle cx="570" cy="150" r="5"></circle>
+</g>
+<circle cx="650" cy="150" r="7" fill="#E0A11C"></circle>
+<g font-family="Fraunces, serif" font-size="15" font-weight="600" fill="#1B1D51" text-anchor="middle">
+<text x="60" y="130">7</text><text x="145" y="130">10</text><text x="230" y="130">13</text><text x="315" y="130">17</text><text x="400" y="130">25</text><text x="485" y="130">30</text><text x="570" y="130">33</text>
+</g>
+<text x="650" y="128" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="700" fill="#9a6b04">37</text>
+<text x="350" y="40" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">Judges other than the Chief Justice</text>
+<text x="350" y="66" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">Add one for the CJI to get total sanctioned strength: 8 · 11 · 14 · 18 · 26 · 31 · 34 · 38</text>
+<text x="350" y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">Every change was made by an ordinary Act of Parliament, never by amendment.</text>
+<text x="350" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#8a2168">A restriction to a working strength of 15 was imposed by the Cabinet, not by law, and withdrawn at the end of 1979.</text>
+</svg>
+<figcaption><b>Fig 1.</b> The number the exam wants is usually the one <b>excluding</b> the CJI. Read the stem carefully: "including the Chief Justice" changes every figure by one.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Appointment &amp; the collegium — the constitutional text versus what actually happens</h2></div>
+<hr class="divider">
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Read Article 124(2) and you would conclude that <b>the President appoints judges after consulting whichever judges he thinks fit</b>. That is the text. It is not the practice, and the gap between the two is entirely the work of three judgments the profession calls the <b>Three Judges Cases</b>.</p>
+<p>The fight was over one word: <b>consultation</b>. Does consulting the Chief Justice mean merely asking his view, which the government may then ignore? Or does it mean the Chief Justice's view prevails? In 1981 the Court said the first. In 1993 it reversed itself and said the second. In 1998 it kept the second answer but made the Chief Justice share the decision with a group of senior colleagues — the <b>collegium</b>.</p>
+<p>So today judges are chosen by judges. No statute says so; no amendment created it. It is a system built entirely out of the interpretation of one word.</p>
+<div class="bridge">Next → the three cases, in order, with what each actually held</div>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Case</th><th>Year &amp; popular name</th><th>What it held</th></tr></thead>
+<tbody>
+<tr><th>S.P. Gupta v. Union of India</th><td><b>1981</b> — First Judges Case</td><td>"Consultation" does <b>not</b> mean concurrence. The <b>executive</b> has primacy; the CJI's opinion can be departed from for cogent reasons. Also famous for a second reason — it is the case that <b>relaxed <i>locus standi</i></b> and formally opened the door to PIL (see Note 08).</td></tr>
+<tr><th>SC Advocates-on-Record Association v. Union of India</th><td><b>1993</b> — Second Judges Case</td><td>Overruled S.P. Gupta. "Consultation" <b>means concurrence</b>; the CJI's view has <b>primacy</b>. Created the <b>collegium</b> — at this stage the CJI plus the <b>two</b> senior-most judges.</td></tr>
+<tr><th>In re Presidential Reference</th><td><b>1998</b> — Third Judges Case</td><td>Arose from an <b>Article 143 reference</b> by President K.R. Narayanan. Held that the CJI must consult a plurality of judges: the collegium is expanded to the CJI plus the <b>four</b> senior-most judges for Supreme Court appointments. A recommendation made by the CJI alone is <b>not binding</b> on the government.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The collegium sizes are a numbers-with-a-twin trap.</b> For <b>Supreme Court</b> appointments: CJI + <b>4</b> senior-most judges (total five). For <b>High Court</b> appointments and transfers: CJI + <b>2</b> senior-most judges (total three), consulting the concerned High Court collegium. Confusing the two is one of the cheapest marks a setter can take from you.</div></div>
+
+<h3>The NJAC episode, in order</h3>
+
+<div class="mentor">
+<div class="tag">📖 The story — how Parliament tried to take the pen back, and lost</div>
+<p>By 2014 the collegium had few public defenders. It was opaque, kept no records worth the name, and had produced its own controversies. Parliament acted with unusual unanimity: the <b>99th Constitutional Amendment Act, 2014</b> and the <b>National Judicial Appointments Commission Act, 2014</b> were passed by both Houses and ratified by more than half the State legislatures.</p>
+<p>The NJAC was to have <b>six</b> members: the <b>CJI</b> as chairperson, the <b>two</b> next senior-most Supreme Court judges, the <b>Union Law Minister</b>, and <b>two eminent persons</b> chosen by a committee of the Prime Minister, the CJI and the Leader of the Opposition in the Lok Sabha. One of the two eminent persons had to be from the SC/ST, OBC, minorities or be a woman. The detail that decided the case was a veto rule: <b>any two members could block a recommendation</b>.</p>
+<p>In <b>October 2015</b>, in the <b>Fourth Judges Case</b> (<i>SC Advocates-on-Record Association v. Union of India</i>), a five-judge bench struck down both the amendment and the Act by <b>4:1</b>, Justice Chelameswar dissenting. The reasoning: judicial primacy in appointments is part of the <b>independence of the judiciary</b>, which is part of the <b>basic structure</b>. Because two non-judge members could veto the three judges, judicial primacy was gone. The collegium revived.</p>
+<p>What has not happened since is as examinable as what did: the <b>Memorandum of Procedure</b>, which the Court directed be revised to improve transparency, has still not been finalised more than a decade later.</p>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Prelims 2022 asked this and the answer surprises people.</b> The statement "The Supreme Court struck down the 99th Amendment as being violative of the independence of judiciary" was marked <b>correct</b> — while the companion statement in the same question was wrong. Note the precision required: it was struck down <b>as violating the independence of the judiciary as a basic feature</b>, not for any procedural defect in its passage. The 99th Amendment was ratified properly; that was never the problem.</div></div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow of the judicial appointments dispute from 1981 to 2015">
+<rect x="20" y="30" width="150" height="66" rx="10" fill="#F1F2FA" stroke="#C3C7E3"></rect>
+<rect x="195" y="30" width="150" height="66" rx="10" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<rect x="370" y="30" width="150" height="66" rx="10" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<rect x="545" y="30" width="135" height="66" rx="10" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+<rect x="195" y="160" width="325" height="66" rx="10" fill="#FBF1D8" stroke="#EBD9A8"></rect>
+<g text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#1B1D51">
+<text x="95" y="55">1981 · First</text><text x="270" y="55">1993 · Second</text><text x="445" y="55">1998 · Third</text><text x="612" y="55">2015 · Fourth</text>
+</g>
+<g text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">
+<text x="95" y="75">Executive primacy</text><text x="95" y="90">S.P. Gupta</text>
+<text x="270" y="75">Judicial primacy</text><text x="270" y="90">Collegium of 3</text>
+<text x="445" y="75">Collegium of 5</text><text x="445" y="90">Art 143 reference</text>
+<text x="612" y="75">NJAC struck down</text><text x="612" y="90">4:1</text>
+</g>
+<text x="357" y="183" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#7a5502">99th Amendment + NJAC Act, 2014</text>
+<text x="357" y="205" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#4a3d18">Six members · any two could veto · that veto is what killed it</text>
+<g stroke="#565884" stroke-width="1.6" fill="none" marker-end="url(#ar5)">
+<path d="M170 63 L192 63"></path><path d="M345 63 L367 63"></path><path d="M520 63 L542 63"></path>
+<path d="M357 158 L357 100"></path>
+</g>
+<defs><marker id="ar5" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#565884"></path></marker></defs>
+<text x="350" y="248" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">One word — "consultation" — reinterpreted four times in thirty-four years.</text>
+</svg>
+<figcaption><b>Fig 2.</b> If you remember only one thing: <b>1993 flipped 1981</b>, and <b>2015 defended 1993</b>.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Tenure, removal &amp; the machinery of independence</h2></div>
+<hr class="divider">
+
+<h3>Removal — Article 124(4) and (5)</h3>
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Stage</th><th>Requirement</th></tr></thead>
+<tbody>
+<tr><th>Grounds</th><td>Only <b>proved misbehaviour</b> or <b>incapacity</b>. The Constitution <b>does not define</b> either term — a point tested directly in <b>Prelims 2019</b>.</td></tr>
+<tr><th>The word "impeachment"</th><td>Strictly, judges are <b>removed</b>, not impeached. Impeachment in the Constitution refers only to the <b>President</b> under Article 61. Newspapers use "impeachment" loosely; a careful stem may not.</td></tr>
+<tr><th>Notice</th><td>Signed by <b>100 members of the Lok Sabha</b> or <b>50 members of the Rajya Sabha</b> — under the <b>Judges (Inquiry) Act, 1968</b>, not the Constitution.</td></tr>
+<tr><th>Admission</th><td>The Speaker or Chairman <b>may admit or refuse</b> the motion. There is no obligation to admit — again <b>Prelims 2019</b> turned on this.</td></tr>
+<tr><th>Inquiry</th><td>A <b>three-member committee</b>: a Supreme Court judge, a High Court Chief Justice, and a distinguished jurist.</td></tr>
+<tr><th>Voting</th><td>In <b>each House separately</b>: a majority of the <b>total membership</b> of that House <b>and</b> a majority of <b>not less than two-thirds of members present and voting</b>. Both conditions, both Houses, and — under Art 124(4) — <b>in the same session</b>.</td></tr>
+<tr><th>Outcome</th><td>The President then passes the removal order. <b>No judge of the Supreme Court has ever been removed</b> by this process.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 The story — the case that showed how the process really ends</div>
+<p>On <b>14 March 2025</b>, during a firefighting operation at the Delhi residence of Justice <b>Yashwant Varma</b>, then a judge of the Delhi High Court, personnel reported finding sacks of burnt currency notes in an outhouse. The then Chief Justice, <b>Sanjiv Khanna</b>, invoked the judiciary's <b>in-house procedure</b> — an internal mechanism with no statutory basis at all — and constituted a committee, which reported on <b>4 May 2025</b> that the judge had "tacit" control of the storeroom. The collegium repatriated him to his parent High Court, Allahabad.</p>
+<p>Parliament then moved. On <b>12 August 2025</b> Speaker Om Birla announced a removal notice signed by <b>146 members</b> across the treasury and opposition benches, including the Leader of the Opposition — comfortably above the 100 required. He admitted it and constituted the three-member committee under the Judges (Inquiry) Act.</p>
+<p>And then it simply stopped. On <b>10 April 2026</b>, before the committee reported, Justice Varma <b>resigned</b> under <b>Article 217(1)(a)</b>. Because an inquiry under the Judges (Inquiry) Act can only run against a <b>sitting</b> judge, the proceedings <b>abated</b> the moment he left office.</p>
+<p>The lesson to carry into an answer: the removal process is so demanding that in practice it is never completed. Resignation is the real exit. That is the strongest available argument for <b>judicial accountability reform</b> — and the reason the National Judicial Accountability framework keeps returning to the agenda.</p>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The exception to hold.</b> A removal <b>inquiry abates on resignation</b>, because it can only be conducted against a sitting judge. Contrast this with the general rule you have learnt elsewhere — that constitutional processes, once begun, run their course. Here they do not. Only <b>one</b> removal motion has ever been carried in one House (Justice V. Ramaswami, 1993, where the Lok Sabha motion failed for want of the required majority after abstentions), and none has ever completed both Houses.</div></div>
+
+<h3>The independence toolkit — what actually protects a judge</h3>
+
+<div class="prelims">
+<h3>🔴 Prelims — the safeguards, itemised</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>Security of tenure.</b> Removal only by the Art 124(4) process; not at the executive's pleasure.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Salaries charged on the Consolidated Fund of India</b> — <b>non-votable</b>. Parliament cannot vote them down. Asked in <b>Prelims 2012</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Emoluments cannot be varied to a judge's disadvantage</b> after appointment — <b>except during a Financial Emergency</b> under Article 360.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Conduct cannot be discussed</b> in Parliament or a State legislature except on a removal motion — <b>Article 121</b> (Parliament) and <b>Article 211</b> (State legislature).</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Contempt power</b> — Article 129 makes the Supreme Court a <b>court of record</b> with power to punish for its own contempt.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Ban on post-retirement practice</b> — a retired Supreme Court judge may not plead before <b>any court or authority in India</b>. A retired High Court judge may not plead in that High Court or courts subordinate to it, but <b>may</b> appear in the Supreme Court and other High Courts.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Staff appointments</b> — the CJI appoints the Court's officers and servants (Art 146), and expenses are charged on the Consolidated Fund.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Jurisdiction cannot be curtailed</b> — Parliament may <b>extend</b> but not reduce the Supreme Court's jurisdiction. Asked in <b>Prelims 2019</b>.</div></div>
+</div>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The trap inside the salary rule.</b> Judges' salaries are <b>charged</b> on the Consolidated Fund — meaning not submitted to Parliament's vote — but they are still <b>discussable</b>. And the protection against reduction has exactly one carve-out: <b>Article 360, Financial Emergency</b>, under which the President may direct a reduction in the salaries of judges of the Supreme Court and the High Courts. A statement claiming the protection is absolute is <b>false</b>.</div></div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>The five jurisdictions</h2></div>
+<hr class="divider">
+
+<p class="lead">Nearly every Supreme Court PYQ is really a jurisdiction question in disguise. Learn which box each situation falls into and most of them answer themselves.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Jurisdiction</th><th>Article</th><th>What it covers — and the limits that get tested</th></tr></thead>
+<tbody>
+<tr><th>Original<br>(exclusive)</th><td><b>131</b></td><td>Disputes <b>between the Union and one or more States</b>; between the Union and States on one side and States on the other; <b>between two or more States</b>. Strictly <b>federal</b> disputes only, and only where a question of <b>legal right</b> is involved. <b>Excluded:</b> a dispute involving a <b>Union Territory</b> (a UT is not a State), election disputes, and — expressly — disputes arising out of a <b>pre-Constitution treaty or agreement</b> still in operation. Tested in <b>Prelims 2012</b> and <b>2014</b>.</td></tr>
+<tr><th>Writ<br>(also original, but concurrent)</th><td><b>32</b></td><td>Enforcement of <b>Fundamental Rights</b> only. Five writs: <i>habeas corpus, mandamus, prohibition, certiorari, quo warranto</i>. Article 32 is itself a Fundamental Right — Ambedkar's "heart and soul of the Constitution". Shared with the High Courts under Art 226, so it is <b>not exclusive</b>.</td></tr>
+<tr><th>Appellate</th><td><b>132–134A</b></td><td>Four channels: <b>constitutional</b> (132 — substantial question of law as to interpretation of the Constitution); <b>civil</b> (133); <b>criminal</b> (134, including the death-sentence-on-reversal route); and <b>by special leave</b> (136).</td></tr>
+<tr><th>Special leave</th><td><b>136</b></td><td>Discretionary leave to appeal from <b>any judgment, decree, determination or order</b> of <b>any court or tribunal</b> in India — <b>except a court or tribunal constituted under any law relating to the Armed Forces</b>. That armed-forces exclusion is the single most examinable limit on Art 136.</td></tr>
+<tr><th>Advisory</th><td><b>143</b></td><td>The President <b>may</b> refer a question of law or fact of public importance, or a dispute arising out of a <b>pre-Constitution treaty</b>. Two crucial asymmetries: for ordinary references under <b>143(1)</b> the Court <b>may refuse</b> to answer; for treaty references under <b>143(2)</b> it <b>must</b> report. And the opinion is <b>advisory only — not binding</b> on the President, and not binding as a precedent under Art 141 in the strict sense. The Court <b>cannot</b> take up an advisory reference on its own initiative — <b>Prelims 2010</b>.</td></tr>
+<tr><th>Review</th><td><b>137</b></td><td>The Court may <b>review its own judgment or order</b>, subject to any law made by Parliament and to rules under <b>Article 145</b>. A review petition is normally filed within <b>30 days</b>. Where review fails, a <b>curative petition</b> may lie — a purely judge-made remedy created in <b>Rupa Ashok Hurra v. Ashok Hurra (2002)</b>, not found anywhere in the Constitution.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>What Article 131 does NOT cover — added after the Week 5 paper, where this cost a question.</b> A note that lists what a jurisdiction <i>includes</i> must also list what it <b>excludes</b>. Article 131 does <b>not</b> extend to: a dispute involving a <b>Union Territory</b> (not a State); an <b>election dispute</b> to Parliament or a State legislature (those go to the High Court under the RPA); a dispute arising out of a <b>pre-Constitution treaty</b> still in operation (expressly excluded by the proviso); <b>inter-State water disputes</b>, which <b>Article 262</b> assigns to a tribunal and from which Parliament may bar the jurisdiction of <b>all courts including the Supreme Court</b>; and matters referred to the <b>Finance Commission</b>, and the adjustment of certain expenses between the Union and the States, which are constitutionally assigned elsewhere. The <b>Art 262 exclusion is the sharpest</b>, because it is the one place the Constitution lets Parliament shut the Supreme Court out entirely.</div></div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Three "only" statements worth memorising as a block.</b> (1) Advisory jurisdiction can be triggered <b>only by the President</b> — never <i>suo motu</i>, never by a State, never by Parliament. (2) Article 131 covers <b>only</b> disputes where a State is a party in its federal capacity — a private citizen cannot invoke it. (3) Article 136 reaches <b>every</b> court and tribunal <b>except</b> armed-forces tribunals. Each of these is a rule with a hard edge, and hard edges are where statement questions are built.</div></div>
+
+<h3>Two further jurisdictions worth a line each</h3>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Two contempt facts the Week 5 paper took marks for.</b> <b>(1) The three limbs of CRIMINAL contempt</b> — publication or an act that <i>scandalises or tends to scandalise, or lowers the authority of, any court</i>; that <i>prejudices or interferes with the due course of any judicial proceeding</i>; or that <i>obstructs the administration of justice in any other manner</i>. Against that: <b>wilful disobedience</b> of an order or breach of an undertaking is <b>CIVIL</b> contempt, and <b>fair and reasonable criticism of a judicial act is not contempt at all</b>, nor is comment on the judiciary's <b>administrative</b> side. <b>(2)</b> Under <b>Section 10 of the Contempt of Courts Act, 1971</b> it is the <b>High Court</b> that punishes contempt of <b>subordinate</b> courts, and the power to order arrest is a <b>punitive</b> measure.</div></div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The protection under Articles 121 and 211 is narrower than it looks.</b> Parliament and State legislatures may not discuss the conduct of a judge except on a removal motion — but that immunity covers a judge's <b>official conduct only</b>. It does <b>not</b> extend to his <b>private</b> conduct. A statement claiming the protection covers both is <b>false</b>, and that single word decided a question in the Week 5 paper.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Court of record — Art 129.</b> Its judgments are recorded as evidence and cannot be questioned in any court, and it has the <b>power to punish for contempt of itself</b>. Note the division of labour tested in <b>Prelims 2022</b>: the <b>Constitution</b> empowers the Supreme Court (Art 129) and the High Courts (Art 215) to punish for contempt, but the Constitution does <b>not define</b> civil and criminal contempt — the <b>Contempt of Courts Act, 1971</b> does, following the <b>H.N. Sanyal Committee</b> report, and <b>Parliament</b> has the power to legislate on it under Entry 77 of the Union List.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Transfer of cases — Art 139A.</b> Inserted by the <b>42nd Amendment</b>. The Court may withdraw cases involving the same substantial questions of law pending before it and one or more High Courts, or transfer a case from one High Court to another.</div></div>
+</section>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Articles 141, 142 and 144 — the force multipliers</h2></div>
+<hr class="divider">
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Three short articles turn the Supreme Court from a court that decides cases into an institution that governs. <b>Article 141</b>: whatever the Court declares is law binding on all courts in India. <b>Article 142</b>: it may pass whatever decree or order is necessary for doing <b>complete justice</b> in a matter before it. <b>Article 144</b>: every authority, civil and judicial, in India shall act in aid of the Supreme Court.</p>
+<p>Article 142 is the interesting one because "complete justice" is undefined. It has been used generously — to dissolve irretrievably broken marriages without waiting out statutory periods, to transfer the Bhopal gas settlement, to order the cleaning of the Taj Mahal. And it has been used in ways that provoked a constitutional confrontation.</p>
+<div class="bridge">Next → the 2025–26 confrontation, which is now the standard illustration of Article 142's limits</div>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 The story — Article 142 and the assent case, in four beats</div>
+<p><b>Beat 1 — April 2025.</b> In <i>State of Tamil Nadu v. Governor of Tamil Nadu</i> the Supreme Court found the Governor's years-long inaction on ten Bills "illegal" and "erroneous". It held the Governor has only three options under Article 200, imposed timelines measured in one and three months, made breach judicially reviewable — and then used <b>Article 142</b> to <b>deem the ten Bills to have received assent</b>. That last step meant the Bills became law by judicial order, without a Governor's signature.</p>
+<p><b>Beat 2 — the backlash.</b> The Vice-President publicly described Article 142 as a "nuclear missile" available to the judiciary against democratic forces. The objection was not to the finding of delay; it was to a court supplying an assent the Constitution assigns to someone else.</p>
+<p><b>Beat 3 — May 2025.</b> President Droupadi Murmu invoked <b>Article 143</b> and referred <b>fourteen questions</b> on the powers of the Governor and the President under Articles 200 and 201. This was the <b>16th Presidential Reference</b> since 1950.</p>
+<p><b>Beat 4 — 20 November 2025.</b> A five-judge Constitution Bench headed by CJI B.R. Gavai delivered a <b>unanimous 111-page opinion</b> (Special Reference No. 1 of 2025, 2025 INSC 1333). It kept the three-options holding — the Governor cannot simply sit on a Bill without returning it. It <b>reversed almost everything else</b>: no timelines can be read into Articles 200 and 201; there can be <b>no "deemed assent"</b>; the Governor's and President's actions under those articles are <b>not justiciable</b>; and <b>Article 142 cannot supplant a constitutional provision</b>. It left one door open — <b>prolonged, unexplained, indefinite inaction invites limited judicial scrutiny</b>, and a court may issue a limited direction to act, without commenting on the merits.</p>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The examinable sentence.</b> <i>Article 142 is a power to do complete justice within the constitutional scheme, not a power to displace it.</i> That is the holding of the November 2025 advisory opinion, and it is the single most current line available on the limits of judicial power. Pair it with the <b>Prelims 2019</b> question, which had already established the converse — that <b>ordinary laws cannot limit the constitutional power under Article 142</b>, i.e. the Court is not constrained by parliamentary legislation in exercising it. Both propositions are true and they are not in conflict: statutes cannot cut Article 142 down, but the Constitution itself can.</div></div>
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Provision</th><th>What to carry into the exam</th></tr></thead>
+<tbody>
+<tr><th>Article 141</th><td>Law declared by the Supreme Court is <b>binding on all courts within the territory of India</b>. Note the wording: "all courts" — which on the settled reading does <b>not</b> bind the Supreme Court itself, leaving it free to overrule its own precedent.</td></tr>
+<tr><th>Article 142(1)</th><td>Decrees and orders necessary for doing <b>complete justice</b>. Enforceable throughout India as Parliament may prescribe.</td></tr>
+<tr><th>Article 142(2)</th><td>Powers as to <b>discovery, production of documents and investigation or punishment of contempt</b>, subject to law made by Parliament.</td></tr>
+<tr><th>Article 143</th><td>Advisory. President only. 143(1) — may decline; 143(2) — must report.</td></tr>
+<tr><th>Article 144</th><td>All authorities, <b>civil and judicial</b>, in the territory of India shall <b>act in aid of</b> the Supreme Court.</td></tr>
+<tr><th>Article 145</th><td>Rules of court, made with the President's approval. Minimum bench of <b>five judges</b> for a substantial question of law as to the interpretation of the Constitution, or for an Art 143 reference.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The five-judge rule is narrower than students assume.</b> Article 145(3) requires a minimum of five judges only for cases involving a <b>substantial question of law as to the interpretation of this Constitution</b>, or for an advisory reference under Art 143. It is <b>not</b> a general rule for "important" cases, and a Constitution Bench is not required merely because a case is high-profile.</div></div>
+</section>
+
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Deep reference &amp; the exceptions ledger for this note</h2></div>
+<hr class="divider">
+
+<h3>Articles at a glance — Part V, Chapter IV</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>Subject</th><th>Article</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td><b>124</b></td><td>Establishment, composition, appointment, removal</td><td><b>137</b></td><td>Review of its own judgments</td></tr>
+<tr><td><b>124A–124C</b></td><td>NJAC provisions — inserted by the 99th Amendment, <b>struck down 2015</b></td><td><b>138–139</b></td><td>Enlargement of jurisdiction; conferment of writ powers</td></tr>
+<tr><td><b>125</b></td><td>Salaries — charged on the Consolidated Fund of India</td><td><b>139A</b></td><td>Transfer of cases (42nd Amendment)</td></tr>
+<tr><td><b>126</b></td><td>Acting Chief Justice</td><td><b>140</b></td><td>Ancillary powers conferred by Parliament</td></tr>
+<tr><td><b>127</b></td><td>Ad hoc judges</td><td><b>141</b></td><td>Law declared binding on all courts</td></tr>
+<tr><td><b>128</b></td><td>Attendance of retired judges</td><td><b>142</b></td><td>Complete justice; contempt; discovery</td></tr>
+<tr><td><b>129</b></td><td>Court of record; contempt</td><td><b>143</b></td><td>Advisory jurisdiction</td></tr>
+<tr><td><b>130</b></td><td>Seat of the Supreme Court</td><td><b>144</b></td><td>Authorities to act in aid</td></tr>
+<tr><td><b>131</b></td><td>Original jurisdiction</td><td><b>145</b></td><td>Rules of court; five-judge minimum</td></tr>
+<tr><td><b>132–134A</b></td><td>Appellate jurisdiction; certificate for appeal</td><td><b>146</b></td><td>Officers and servants; expenses charged</td></tr>
+<tr><td><b>135</b></td><td>Federal Court jurisdiction carried over</td><td><b>147</b></td><td>Interpretation clause</td></tr>
+<tr><td><b>136</b></td><td>Special leave to appeal</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Case lineage — the arcs a Mains answer can be hung on</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Arc</th><th>Sequence</th><th>The one-line payoff</th></tr></thead>
+<tbody>
+<tr><th>Appointments</th><td>S.P. Gupta (1981) → Second Judges (1993) → Third Judges (1998) → Fourth Judges / NJAC (2015)</td><td>Primacy moved from executive to judiciary and has stayed there, defended by the basic structure.</td></tr>
+<tr><th>Article 142's reach</th><td>Union Carbide (1991) → Rupa Ashok Hurra (2002, curative) → TN Governor (April 2025) → Presidential Reference (Nov 2025)</td><td>Expansive for three decades, then bounded — Article 142 cannot supplant a constitutional provision.</td></tr>
+<tr><th>Tribunals and the Court's supervisory role</th><td>L. Chandra Kumar (1997) → Rojer Mathew (2019) → Madras Bar Association IV &amp; V → Tribunals Reforms Act struck down (Nov 2025)</td><td>Judicial review by High Courts over tribunals is itself basic structure. Developed fully in Note 07.</td></tr>
+<tr><th>Judicial accountability</th><td>V. Ramaswami (1993) → in-house procedure → Justice Varma (2025–26)</td><td>Removal has never been completed; resignation abates the inquiry.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Constituent Assembly ammunition</h3>
+
+<div class="mentor">
+<div class="tag">◆ For any "should judges appoint judges?" question</div>
+<p>Ambedkar addressed the appointment question directly in the Assembly and rejected <b>both</b> extremes. He refused to leave appointments to the executive alone, saying it would be "dangerous" to allow the President an unfettered choice. He equally refused to give the Chief Justice a veto, in a line worth quoting in substance: to make the CJI's concurrence necessary would be to transfer to him a power that "we are not prepared to vest in the President" — no one, he said, is a person with no failings.</p>
+<p>The value of this for Mains is that it cuts against the current arrangement as much as against the NJAC. It lets you write a balanced answer: <b>the collegium is not what the framers designed, and neither was the NJAC.</b> The framers wanted consultation without primacy on either side, and we have never built that.</p>
+</div>
+
+<h3>Exceptions ledger — this note's entries</h3>
+
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>Salaries cannot be varied to a judge's disadvantage — <b>except during a Financial Emergency (Art 360)</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Art 136 reaches any court or tribunal — <b>except armed-forces tribunals</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Art 143(1) — the Court <b>may decline</b>; Art 143(2) treaty references — it <b>must</b> report.</div></div>
+<div class="item"><span class="dot">◆</span><div>Art 141 binds <b>all courts</b> — but not the Supreme Court itself.</div></div>
+<div class="item"><span class="dot">◆</span><div>A removal inquiry <b>abates on resignation</b>; it runs only against a sitting judge.</div></div>
+<div class="item"><span class="dot">◆</span><div>Parliament may <b>extend</b> the Court's jurisdiction but <b>not curtail</b> it.</div></div>
+<div class="item"><span class="dot">◆</span><div>The distinguished-jurist route under Art 124(3)(c) exists but has <b>never been used</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Retired judges may sit under Art 128 — but only with <b>both</b> the President's prior consent <b>and</b> the judge's own consent.</div></div>
+<div class="item"><span class="dot">◆</span><div>The seat is Delhi — <b>or elsewhere</b>, if the CJI so appoints with the President's approval (Art 130).</div></div>
+<div class="item"><span class="dot">◆</span><div>Judges' conduct cannot be discussed in the legislature — <b>except on a removal motion</b> (Arts 121, 211).</div></div>
+</div>
+</div>
+
+<h3>★ The examiner's red pen — eight questions on this institution</h3>
+<div class="mentor"><div class="tag">◆ Cover the right column, answer aloud, then uncover</div><p>Eleven of the twenty-five questions lost in Week 4 turned on an <b>authority</b>, a <b>majority</b>, a <b>fraction</b> or a <b>qualifier</b> — not on a concept. This grid is that finding applied to this chapter. Twenty minutes with the answers covered is worth more than an hour re-reading the sections above.</p></div>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody><tr><th>Who appoints</th><td><b>President</b>. CJI + <b>4</b> senior-most judges recommend. Art 124(2).</td></tr><tr><th>Who removes</th><td><b>President</b>, after an address by <b>both Houses in the same session</b>. Art 124(4).</td></tr><tr><th>What majority</th><td>Majority of <b>total membership</b> of each House <b>and</b> <b>two-thirds present and voting</b>. Both conditions, each House.</td></tr><tr><th>What article</th><td>124–147. Strength <b>124(1)</b> · removal <b>124(4)–(5)</b> · court of record <b>129</b> · review <b>137</b> · precedent <b>141</b> · complete justice <b>142</b> · advisory <b>143</b> · five-judge rule <b>145(3)</b> · staff <b>146</b>.</td></tr><tr><th>What exception</th><td>Salary cannot be reduced — <b>except under Art 360</b>. Art 136 reaches every tribunal — <b>except armed forces</b>. Art 141 binds all courts — <b>except the Supreme Court itself</b>. Art 143(1) may be declined — <b>but 143(2) must be answered</b>.</td></tr><tr><th>What timeline</th><td>Retire at <b>65</b> · review petition normally <b>30 days</b> · minimum <b>5</b> judges for constitutional interpretation · <b>5</b> years as a High Court judge or <b>10</b> at the Bar to qualify.</td></tr><tr><th>Constitutional or convention</th><td>Court: constitutional. <b>Collegium: neither — judicial interpretation of one word.</b> <b>Curative petition: judicial innovation</b> (Rupa Ashok Hurra, 2002). <b>Master of the roster: practice.</b></td></tr><tr><th>Shall or may</th><td><b>143(1)</b> — President <b>may</b> refer, Court <b>may</b> decline. <b>143(2)</b> — Court <b>shall</b> report.</td></tr></tbody>
+</table>
+</div>
+<h4>Authority — and the distractor</h4>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Function</th><th>The authority</th><th>The distractor to reject</th></tr></thead>
+<tbody><tr><td>Fixes the number of Supreme Court judges</td><td><b>Parliament, by ordinary law</b></td><td>President</td></tr><tr><td>Appoints judges</td><td><b>President</b></td><td>The collegium — it only recommends</td></tr><tr><td>Recalls a retired judge (Art 128)</td><td><b>CJI</b>, with the President's previous consent <b>and the judge's own consent</b></td><td>CJI acting alone</td></tr><tr><td>Appoints ad hoc judges (Art 127)</td><td><b>CJI</b>, with the President's <b>previous consent</b> and after consulting the CJ of the High Court concerned</td><td>CJI acting alone</td></tr><tr><td>Appoints an Acting Chief Justice (Art 126)</td><td><b>President</b></td><td>Senior-most judge succeeding automatically</td></tr><tr><td>Constitutes benches, allocates cases</td><td><b>CJI — master of the roster</b></td><td>The collegium; the full court</td></tr><tr><td>Appoints the Court's officers and servants (Art 146)</td><td><b>CJI</b></td><td>Government, after consulting the CJI</td></tr></tbody>
+</table>
+</div>
+<h4>Qualifier flips</h4>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Wrong version</th><th>Correct version</th></tr></thead>
+<tbody><tr><td>The Supreme Court <b>must</b> answer every Presidential reference</td><td><b>May decline</b> under 143(1); <b>shall report</b> under 143(2)</td></tr><tr><td><b>Any</b> retired judge can be recalled</td><td>Only with <b>his own consent</b> and the President's previous consent</td></tr><tr><td>The <b>CJI alone</b> may appoint an ad hoc judge</td><td>Art 127 also needs the President's <b>previous consent</b></td></tr><tr><td>Judges' salaries <b>can never</b> be reduced</td><td>They can, during a <b>Financial Emergency</b> under Art 360</td></tr><tr><td>The <b>Constitution defines</b> 'proved misbehaviour' / contempt</td><td>It defines <b>neither</b></td></tr><tr><td>Article 142 is unlimited</td><td>Ordinary law cannot confine it — but since <b>Nov 2025</b>, it <b>cannot supplant a constitutional provision</b></td></tr></tbody>
+</table>
+</div>
+</section>
+
+<section id="s6b" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Pass 2 — the adjacent surface</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">◆ Why this section exists — read this first</div>
+<p>The Week 4 paper is the reason. Eleven of the twenty-five questions you lost turned on facts that were <b>not in the notes at all</b> — consultative committees, the State Finance Commission, who is <i>not</i> the ex-officio chairman of a committee, the Krishna Menon Committee behind the COPU. None of them was in the schedule's "Important Topics" column. Every one of them sat <b>one step outside</b> it.</p>
+<p>That is this setter's signature. He treats a schedule bullet as a <b>chapter reference</b>, then asks about the bodies, statutes and office-holders orbiting the listed institution. So this section deliberately collects the orbit of the judiciary: the statutes, the specialised courts, the named committees and the reform vocabulary. It is not padding — it is the specific surface that cost you twenty-two marks last week.</p>
+</div>
+
+<h3>Judicial appointments &amp; service — beyond the collegium</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Item</th><th>What to carry</th></tr></thead>
+<tbody>
+<tr><th>All India Judicial Service</th><td><b>Article 312</b>. The <b>Rajya Sabha</b> may, by a resolution supported by <b>not less than two-thirds of members present and voting</b>, declare it necessary in the national interest, after which <b>Parliament</b> may create an All-India Service. Two facts the setter would use: Article 312(3) says an AIJS <b>shall not include any post inferior to that of a district judge</b>; and the same two-thirds Rajya Sabha route created the <b>All India Services</b> generally. Proposed repeatedly since the <b>1st Law Commission report (1958)</b> and endorsed by the <b>Constitution Review Commission</b>; still not created, because States and several High Courts oppose it as an intrusion into <b>Article 235</b> control.</td></tr>
+<tr><th>Ad hoc judges revived</th><td><b>Article 224A</b> lay unused for decades. In <b>Lok Prahari v. Union of India (2021)</b> the Supreme Court laid down guidelines reviving it — permitting a High Court Chief Justice to appoint retired judges to clear arrears where vacancies exceed a threshold. Pair it with <b>Article 127</b>, the Supreme Court's own ad hoc route.</td></tr>
+<tr><th>Judge–population ratio</th><td>The <b>120th Law Commission Report (1987)</b> recommended <b>50 judges per million</b> population. India remains near <b>21 per million</b>. This figure is the standard citation in any pendency answer.</td></tr>
+<tr><th>Master of the roster</th><td>The <b>Chief Justice of India</b> is <b>master of the roster</b> — the exclusive prerogative to constitute benches and allocate cases. Affirmed after the January 2018 press conference by four senior judges. A statement giving the collegium or the full court this power is <b>false</b>.</td></tr>
+<tr><th>Law Commission of India</th><td><b>Non-statutory, non-constitutional</b> — an executive body constituted by government resolution, reconstituted every three years. It is <b>not</b> a constitutional body; that distinction has been asked directly.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The "who chairs / who is not" family — the exact shape that cost you Q27 and Q46 last week.</b> Carry these as a block: the <b>CJI</b> is master of the roster and Patron-in-Chief of NALSA; the <b>second senior-most judge</b> is NALSA's Executive Chairman; the <b>Chief Justice of a High Court</b> is Patron-in-Chief of the State Legal Services Authority and the authority who recalls a retired judge under <b>Art 224A</b>; the <b>CJI</b> recalls one under <b>Art 128</b>. If a stem asks who is <i>not</i> something, work the list rather than the option.</div></div>
+
+<h3>Judicial review — three more anchors</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Case / provision</th><th>Holding to carry</th></tr></thead>
+<tbody>
+<tr><th>I.R. Coelho v. State of Tamil Nadu (2007)</th><td>Laws placed in the <b>Ninth Schedule</b> <b>after 24 April 1973</b> — the date of <i>Kesavananda</i> — are <b>open to judicial review</b> on basic-structure grounds. Article 31B is therefore not an absolute shield. The date is the whole question.</td></tr>
+<tr><th>Contempt of Courts Act, 1971 — the 2006 amendment</th><td>Inserted <b>truth as a valid defence</b> in contempt proceedings, provided it is in the public interest and the request is bona fide. Before 2006 truth was no defence. Pair with the Prelims 2022 fact that the <b>Constitution does not define</b> civil or criminal contempt.</td></tr>
+<tr><th>Judicial impact assessment</th><td>Recommended by the <b>Justice M. Jagannadha Rao Committee (2008)</b>: every new legislation should carry an estimate of the extra caseload it will generate and provide the budget for it. Standard way-forward line in any pendency answer.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s7" class="tabsection">
+<div class="sec-head"><span class="sec-num">08</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+<p class="lead">Bucket (A) genuine, verified PYQs with year and stage, then bucket (B) practice questions in identical format. Click an option to grade yourself.</p>
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="pyq">
+<span class="yr">2014</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">The power to increase the number of judges in the Supreme Court of India is vested in</p>
+<ul class="opts single"><li>(a) The President of India</li><li>(b) The Parliament</li><li>(c) The Chief Justice of India</li><li>(d) The Law Commission</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — The Parliament</b>
+<ul class="vwhy"><li>Article 124(1) fixes seven judges besides the CJI <b>"until Parliament by law prescribes a larger number"</b>. Every subsequent change has come by ordinary Act — 1956, 1960, 1977, 1986, 2008, 2019 and 2026.</li><li>(a) is the standard distractor because the President <i>appoints</i> judges. Appointing and fixing the number are different powers held by different organs.</li><li>Pattern: whenever the Constitution says "until Parliament by law provides", the answer to "who can change this" is Parliament, by ordinary majority. Covered in Section 01.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2014</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">The power of the Supreme Court of India to decide disputes between the Centre and the States falls under its</p>
+<ul class="opts"><li>(a) advisory jurisdiction</li><li>(b) appellate jurisdiction</li><li>(c) original jurisdiction</li><li>(d) writ jurisdiction</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — original jurisdiction</b>
+<ul class="vwhy"><li><b>Article 131</b>. Federal disputes start and end at the Supreme Court; no other forum has jurisdiction, which is why this original jurisdiction is described as <b>exclusive</b>.</li><li>(d) is the tempting wrong answer because writ jurisdiction under Art 32 is also original — but Art 32 is confined to <b>enforcement of Fundamental Rights</b>, and is shared with the High Courts.</li><li>Section 04 has the full box-by-box table.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2012</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Which of the following are included in the original jurisdiction of the Supreme Court?</p>
+<ol class="subs"><li>A dispute between the Government of India and one or more States</li><li>A dispute regarding elections to either House of the Parliament or that of Legislature of a State</li><li>A dispute between the Government of India and a Union Territory</li><li>A dispute between two or more States</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 4 only</li><li>(d) 3 and 4 only</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — 1 and 4 only</b>
+<ul class="vwhy"><li>Article 131 speaks of the Union and <b>States</b>. Statement 3 fails because a <b>Union Territory is not a State</b> — this is the whole question.</li><li>Statement 2 fails because <b>election disputes</b> to Parliament or a State legislature go to the <b>High Court</b> under the Representation of the People Act, not to the Supreme Court's original jurisdiction. Presidential and Vice-Presidential election disputes are the exception and do go to the Supreme Court, under Art 71.</li><li>The transferable rule: Art 131 is about <b>federal units in their federal capacity</b>. Anything else is somewhere else.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2010</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">The Supreme Court of India tenders advice to the President of India on matters of law or fact</p>
+<ol class="subs"><li>on its own initiative (on any matter of larger public interest).</li><li>if he seeks such an advice.</li><li>only if the matters relate to the Fundamental Rights of the citizens.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) 3 only</li><li>(d) 1 and 2 only</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 2 only</b>
+<ul class="vwhy"><li><b>Article 143</b> is triggered <b>only by the President</b>. The Court has no power to open an advisory reference by itself, which disposes of statement 1.</li><li>Statement 3 invents a limitation that does not exist: the reference may be on <b>any question of law or fact of public importance</b>, and separately on pre-Constitution treaties. Fundamental Rights are not a precondition.</li><li>Live illustration: the <b>16th Presidential Reference</b>, made in May 2025 on Articles 200 and 201, answered on 20 November 2025 — see Section 05.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2019</span><span class="stg">UPSC Prelims · How many / Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The motion to impeach a Judge of the Supreme Court of India cannot be rejected by the Speaker of the Lok Sabha as per the Judges (Inquiry) Act, 1968.</li><li>The Constitution of India defines and gives details of what constitutes 'incapacity and proved misbehaviour' of the Judges of the Supreme Court of India.</li><li>The details of the process of impeachment of the Judges of the Supreme Court of India are given in the Judges (Inquiry) Act, 1968.</li><li>If the motion for the impeachment of a Judge is taken up for voting, the law requires the motion to be backed by each House of the Parliament and supported by a majority of total membership of that House and by not less than two-thirds of total members of that House present and voting.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 2</li><li>(b) 3 only</li><li>(c) 3 and 4 only</li><li>(d) 1, 3 and 4</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — 3 and 4 only</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong.</b> The Speaker or Chairman <b>may refuse to admit</b> the motion; there is no obligation to admit it. This discretion is precisely why so few motions ever reach a committee.</li><li><b>Statement 2 is wrong.</b> The Constitution uses "proved misbehaviour or incapacity" and <b>defines neither</b> — the omission is deliberate and is a standard criticism of the removal process.</li><li>Statements 3 and 4 are accurate: the machinery is statutory, and the double majority in each House is the Art 124(4) requirement.</li><li>Section 03 has the full stage-by-stage table and the Justice Varma illustration.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2019</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">With reference to the Constitution of India, prohibitions or limitations or provisions contained in ordinary laws cannot act as prohibitions or limitations on the constitutional powers under Article 142. It could mean which one of the following?</p>
+<ul class="opts single"><li>(a) The decisions taken by the Election Commission of India while discharging its duties cannot be challenged in any court of law.</li><li>(b) The Supreme Court of India is not constrained in the exercise of its powers by laws made by the Parliament.</li><li>(c) In the event of grave financial crisis in the country, the President of India can declare Financial Emergency without the counsel from the Cabinet.</li><li>(d) State Legislatures cannot make laws on certain matters without the concurrence of Union Legislature.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>The stem is a paraphrase of the settled position on <b>Article 142</b>: a constitutional power cannot be cut down by ordinary statute. Option (b) restates exactly that.</li><li>The other three options are unrelated propositions about the ECI, Article 360 and the legislative lists — included to reward candidates who read the stem rather than pattern-match on "Article 142".</li><li><b>Update this with the November 2025 opinion:</b> statutes cannot limit Article 142, but the <b>Constitution</b> can — Article 142 "cannot supplant constitutional provisions". Both statements are true at once. Section 05.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2021</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">With reference to the Indian judiciary, consider the following statements:</p>
+<ol class="subs"><li>Any retired judge of the Supreme Court of India can be called back to sit and act as a Supreme Court judge by the Chief Justice of India with prior permission of the President of India.</li><li>A High Court in India has the power to review its own judgment as the Supreme Court does.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 2 only</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong because of one word: "any".</b> Article 128 requires the <b>consent of the retired judge</b> as well as the President's prior consent. A judge cannot be compelled back to the bench.</li><li><b>Statement 2 is correct.</b> High Courts, as courts of record under Art 215, have an inherent power of review; the Supreme Court's equivalent is express, in Art 137.</li><li>This is the absolute-word trap in its purest form. When you see <b>any, all, every, only, never</b>, test that word before testing anything else.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2022</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>Pursuant to the report of H.N. Sanyal Committee, the Contempt of Courts Act, 1971 was passed.</li><li>The Constitution of India empowers the Supreme Court and the High Courts to punish for contempt of themselves.</li><li>The Constitution of India defines Civil Contempt and Criminal Contempt.</li><li>In India, the Parliament is vested with the powers to make laws on Contempt of Court.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 1, 2 and 4</li><li>(c) 3 and 4 only</li><li>(d) 3 only</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 1, 2 and 4</b>
+<ul class="vwhy"><li>Statement 2 is the constitutional half: <b>Art 129</b> for the Supreme Court, <b>Art 215</b> for the High Courts.</li><li><b>Statement 3 is the false one.</b> The <b>Act</b> defines civil and criminal contempt, not the Constitution. This is the recurring "the Constitution defines X" trap — compare the 2019 question above, where the Constitution likewise does not define "misbehaviour".</li><li>Statement 4 is correct — contempt of court is <b>Entry 77 of the Union List</b>, so Parliament legislates.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">Who/Which of the following is the custodian of the Constitution of India?</p>
+<ul class="opts"><li>(a) The President of India</li><li>(b) The Prime Minister of India</li><li>(c) The Lok Sabha Secretariat</li><li>(d) The Supreme Court of India</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — The Supreme Court of India</b>
+<ul class="vwhy"><li>The Court is the final interpreter and guardian of the Constitution — the role that flows from Arts 32, 131, 141 and judicial review.</li><li>(a) tempts because the President takes an oath to "preserve, protect and defend the Constitution". Taking that oath does not make the office the <b>custodian</b>; the enforcing organ does.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2012</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">What is the provision to safeguard the autonomy of the Supreme Court of India?</p>
+<ol class="subs"><li>While appointing the Supreme Court Judges, the President of India has to consult the Chief Justice of India.</li><li>The Supreme Court Judges can be removed by the Chief Justice of India only.</li><li>The salaries of the Judges are charged on the Consolidated Fund of India to which the legislature does not have to vote.</li><li>All appointments of officers and staff of the Supreme Court of India are made by the Government only after consulting the Chief Justice of India.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 3 only</li><li>(b) 3 and 4 only</li><li>(c) 4 only</li><li>(d) 1, 2, 3 and 4</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 and 3 only</b>
+<ul class="vwhy"><li><b>Statement 2 is absurd on inspection</b> and is there to be rejected quickly: removal requires <b>both Houses of Parliament</b> and an order of the <b>President</b>. No individual removes a judge.</li><li><b>Statement 4 inverts the actual rule.</b> Under <b>Article 146</b> the <b>CJI</b> makes the appointments of the Court's officers and servants — not the Government after consulting him.</li><li>Statement 3 is the highest-value fact in this question: <b>charged</b> expenditure is non-votable, and that is what makes it a safeguard.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions — same formats, built on this note</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements about the Supreme Court of India is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) A person who has been an advocate of a High Court for ten years is qualified for appointment as a judge</li><li>(b) The Constitution prescribes a minimum age for appointment as a judge of the Supreme Court</li><li>(c) A distinguished jurist may be appointed a judge in the opinion of the President</li><li>(d) A judge holds office until attaining the age of sixty-five years</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>Article 124(3) prescribes <b>no minimum age</b> for a Supreme Court judge — only the qualifying routes and, separately, the retirement age of 65.</li><li>(a), (c) and (d) are all accurate restatements of Art 124(3) and 124(2)(a).</li><li>Drill: on a NOT question, mark each option true or false in the margin <b>before</b> re-reading the stem. Your measured accuracy on this format is the weakest of any, and it is a procedural fix, not a knowledge one.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">With reference to the jurisdiction of the Supreme Court, which one of the following is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) Under Article 136 it may grant special leave to appeal from any court or tribunal in India</li><li>(b) Under Article 131 a dispute between two or more States falls within its exclusive original jurisdiction</li><li>(c) Under Article 143 it is bound to give its opinion on every reference made by the President</li><li>(d) Under Article 137 it may review any judgment pronounced by it</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<ul class="vwhy"><li>On a reference under <b>Article 143(1)</b> the Court <b>may decline to answer</b>. In the November 2025 advisory opinion it did exactly that, returning Questions 12 and 14 unanswered as irrelevant.</li><li>The obligation exists only for <b>143(2)</b> — disputes arising out of pre-Constitution treaties, where the Court <b>shall</b> report.</li><li>(a) is correct as written; the armed-forces exclusion would have had to appear in the option to make it false. Read what is written, not what you expect.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements regarding the collegium system:</p>
+<ol class="subs"><li>The collegium for appointments to the Supreme Court consists of the Chief Justice of India and the four senior-most judges of the Supreme Court.</li><li>The collegium for appointments to a High Court consists of the Chief Justice of India and the two senior-most judges of the Supreme Court.</li><li>The collegium system was created by a constitutional amendment.</li><li>A recommendation made by the Chief Justice of India alone, without consulting the collegium, is not binding on the Government.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements 1, 2 and 4 are correct — 1 and 2 from the Third Judges Case (1998), and 4 is that case's express holding.</li><li><b>Statement 3 is the false one.</b> The collegium rests on <b>judicial interpretation</b> of the word "consultation" in Art 124(2). No amendment created it; indeed the only amendment that tried to replace it, the <b>99th</b>, was struck down.</li><li>This format punishes partial knowledge — you cannot eliminate your way to the answer. Verify all four independently, and if two are genuinely unknown, skip.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the strength of the Supreme Court of India:</p>
+<ol class="subs"><li>The Constitution originally provided for a Chief Justice and not more than seven other judges.</li><li>The sanctioned strength was raised from 31 to 34 by an amendment to the Constitution in 2019.</li><li>The Supreme Court (Number of Judges) Amendment Bill, 2026 raised the number of judges other than the Chief Justice from 33 to 37.</li><li>An Ordinance preceded the 2026 Act.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements 1, 3 and 4 are correct. The 2026 change took puisne judges from 33 to 37, i.e. total strength 34 → 38, and an <b>Ordinance was promulgated on 16 May 2026</b> before Parliament passed the Bill.</li><li><b>Statement 2 is wrong on one word.</b> The 2019 change was made by an <b>ordinary Act</b> — the Supreme Court (Number of Judges) Amendment Act, 2019 — <b>not</b> by a constitutional amendment. The figures 31 → 34 are right; the instrument is wrong.</li><li>This is the classic construction: a statement where every number is correct and the <b>legal instrument</b> is not. Check the instrument as carefully as the digits.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> The Supreme Court held in November 2025 that there can be no "deemed assent" to a State Bill.</li><li><b>Statement-II:</b> Articles 200 and 201 prescribe no timeline within which the Governor or the President must act on a Bill.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</li><li>(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not correct</li><li>(d) Statement-I is not correct but Statement-II is correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both are correct, and the second is <b>precisely</b> the Court's reasoning: with no timeline, there is no expiry of a timeline, and without an expiry there is nothing from which an assent could be deemed to arise.</li><li>The explanation link is the whole question here. Work in three steps — is I true? is II true? <i>only then</i>, does II cause I? Your measured record on this format is 2 out of 5, and it is almost always the third step that goes wrong.</li><li>Section 05 sets out the four beats of the case.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of Article and subject:</p>
+<ol class="subs"><li>Article 129 — Supreme Court as a court of record</li><li>Article 137 — review of its own judgments</li><li>Article 139A — transfer of cases</li><li>Article 144 — authorities to act in aid of the Supreme Court</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — all four</b>
+<ul class="vwhy"><li>Every pair is correct. Article 139A was inserted by the <b>42nd Amendment</b>, which is the extra fact worth carrying.</li><li>Deliberately an "all correct" set. Your measured instinct is to assume at least one pair must be wrong and to avoid option (d) — that instinct costs marks and is being trained out on purpose.</li><li>Section 06 carries the complete Articles 124–147 table.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements regarding the National Judicial Appointments Commission:</p>
+<ol class="subs"><li>It was to be chaired by the Chief Justice of India.</li><li>It included the Union Law Minister and two eminent persons.</li><li>It was struck down by the Supreme Court on the ground that the 99th Amendment had not been ratified by the required number of State legislatures.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 and 2 only</b>
+<ul class="vwhy"><li>The NJAC's six members were the CJI as chair, the two next senior-most judges, the Law Minister, and two eminent persons selected by the PM, CJI and Leader of the Opposition.</li><li><b>Statement 3 is wrong, and the reason matters.</b> The 99th Amendment <b>was</b> duly ratified. It was struck down in 2015 for violating <b>judicial independence as part of the basic structure</b> — because any two members could veto a recommendation, defeating judicial primacy.</li><li>A statement that gets the outcome right and the <b>ground</b> wrong is still false. Setters use this constantly.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Direct</span>
+<p class="qtext">Under which one of the following Articles may the Chief Justice of India, with the previous consent of the President, request a retired judge of the Supreme Court to sit and act as a judge of that Court?</p>
+<ul class="opts"><li>(a) Article 126</li><li>(b) Article 127</li><li>(c) Article 128</li><li>(d) Article 130</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Article 128</b>
+<ul class="vwhy"><li>Article 128 covers <b>retired</b> judges; the judge's own consent is also required.</li><li>The near neighbours are the trap: <b>126</b> is the Acting Chief Justice, <b>127</b> is <b>ad hoc</b> judges drawn from sitting High Court judges, and <b>130</b> is the seat of the Court.</li><li>Learn 126–130 as a run of five. They are adjacent, similar in flavour, and therefore ideal matching material.</li></ul>
+</div>
+</div>
+
+<h3>(C) Trap statements — True or False</h3>
+<div class="mentor">
+<div class="tag">◆ Why this bucket exists, and how to work it</div>
+<p><b>Twenty-one of the fifty questions in the Week 4 paper were &ldquo;how many of the above&rdquo;</b> &mdash; 42 per cent &mdash; and that format scored <b>52 per cent</b>. It cannot be solved by elimination: every statement has to be judged on its own. So the skill the paper actually rewards is not answering questions, it is <b>marking a single statement true or false</b>.</p>
+<p>That is all this bucket is. 24 statements from this note, one at a time. Decide before you click. If you find yourself reasoning about how many <i>ought</i> to be true, stop &mdash; that instinct is what the format punishes.</p>
+<p>Roughly half are false, and most of the false ones are wrong by <b>one word</b>: an authority, a number, a fraction, or a qualifier. That is how this setter builds them.</p>
+</div>
+<div class="pyq">
+<span class="stg">Trap 1 &middot; True or False</span>
+<p class="qtext">The Constitution originally provided for a Chief Justice and not more than seven other judges.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>Article 124(1)</b>, 'until Parliament by law prescribes a larger number'.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 2 &middot; True or False</span>
+<p class="qtext">The number of judges of the Supreme Court can be increased by the President.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>By <b>Parliament, by ordinary law</b>. Every change since 1950 — 1956, 1960, 1977, 1986, 2008, 2019, 2026 — has been by Act.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 3 &middot; True or False</span>
+<p class="qtext">The sanctioned strength of the Supreme Court was raised from 34 to 38 in 2026.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Puisne judges from 33 to 37. An Ordinance was promulgated on <b>16 May 2026</b> and Parliament then passed the Bill replacing it.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 4 &middot; True or False</span>
+<p class="qtext">The 2019 increase in Supreme Court strength was effected by a constitutional amendment.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>By the <b>Supreme Court (Number of Judges) Amendment Act, 2019</b> — an ordinary Act. The figures 31 → 34 are right; the instrument is wrong.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 5 &middot; True or False</span>
+<p class="qtext">The Constitution prescribes a minimum age of forty-five years for appointment as a judge of the Supreme Court.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>There is <b>no minimum age</b> in Article 124(3). The only age in the area is the retirement age of 65.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 6 &middot; True or False</span>
+<p class="qtext">A distinguished jurist may be appointed a judge of the Supreme Court, but no such appointment has ever been made.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Article 124(3)(c) has existed since 1950 and has never once been used.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 7 &middot; True or False</span>
+<p class="qtext">The collegium system was created by a constitutional amendment.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It rests entirely on <b>judicial interpretation</b> of the word 'consultation' in Art 124(2). The only amendment that tried to replace it — the <b>99th</b> — was struck down.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 8 &middot; True or False</span>
+<p class="qtext">The collegium for appointments to the Supreme Court consists of the Chief Justice of India and the four senior-most judges.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>From the <b>Third Judges Case (1998)</b>. For High Court appointments it is the CJI plus <b>two</b>.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 9 &middot; True or False</span>
+<p class="qtext">The First Judges Case held that the Chief Justice of India's opinion has primacy in judicial appointments.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>The reverse. <b>S.P. Gupta (1981)</b> gave primacy to the <b>executive</b>; the <b>Second Judges Case (1993)</b> reversed it.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 10 &middot; True or False</span>
+<p class="qtext">The 99th Amendment was struck down because it had not been ratified by the required number of State legislatures.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It <b>was</b> properly ratified. It fell in <b>October 2015 by 4:1</b> for violating <b>judicial independence as part of the basic structure</b>, because any two members could veto a recommendation.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 11 &middot; True or False</span>
+<p class="qtext">The Constitution defines 'proved misbehaviour' and 'incapacity' for the removal of a judge.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It uses both terms and <b>defines neither</b> — a standing criticism of the removal process.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 12 &middot; True or False</span>
+<p class="qtext">A motion for the removal of a Supreme Court judge must be signed by 100 members of the Lok Sabha or 50 of the Rajya Sabha.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Under the <b>Judges (Inquiry) Act, 1968</b> — a statute, not the Constitution.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 13 &middot; True or False</span>
+<p class="qtext">Once a removal motion is submitted with the required signatures, the Speaker is bound to admit it.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>The Speaker or Chairman <b>may refuse</b> to admit it. This discretion is why so few motions reach a committee.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 14 &middot; True or False</span>
+<p class="qtext">An inquiry under the Judges (Inquiry) Act abates if the judge resigns.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Such an inquiry runs only against a <b>sitting</b> judge — demonstrated when Justice Yashwant Varma resigned on <b>10 April 2026</b> while the committee was still sitting.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 15 &middot; True or False</span>
+<p class="qtext">A dispute between the Government of India and a Union Territory falls within the original jurisdiction of the Supreme Court.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li><b>Article 131</b> covers the Union and <b>States</b>. A Union Territory is not a State.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 16 &middot; True or False</span>
+<p class="qtext">Disputes arising out of a pre-Constitution treaty still in operation are excluded from Article 131.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Expressly, by the proviso. Such disputes instead attract the Court's <b>compulsory</b> advisory jurisdiction under Art 143(2).</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 17 &middot; True or False</span>
+<p class="qtext">Special leave to appeal under Article 136 may be granted from any court or tribunal in India.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>With one exception: a court or tribunal constituted under a law relating to the <b>Armed Forces</b>.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 18 &middot; True or False</span>
+<p class="qtext">The Supreme Court is bound to give its opinion on every reference made by the President under Article 143.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>Under <b>143(1)</b> it <b>may decline</b> — and did, returning two questions unanswered in November 2025. Only under <b>143(2)</b> must it report.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 19 &middot; True or False</span>
+<p class="qtext">An opinion rendered under Article 143 is binding on the President.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It is <b>advisory only</b>.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 20 &middot; True or False</span>
+<p class="qtext">Law declared by the Supreme Court is binding on all courts in India, including the Supreme Court itself.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li><b>Article 141</b> says 'all courts within the territory of India', which on the settled reading leaves the Supreme Court free to overrule its own precedent.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 21 &middot; True or False</span>
+<p class="qtext">The curative petition has no basis in the text of the Constitution.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>It is a judge-made remedy created in <b>Rupa Ashok Hurra v. Ashok Hurra (2002)</b>, sitting beyond the Art 137 review.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 22 &middot; True or False</span>
+<p class="qtext">Article 142 cannot be limited by ordinary law but can be limited by the Constitution itself.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Both halves are settled: the first from the position tested in Prelims 2019, the second from the <b>November 2025</b> advisory opinion — Article 142 'cannot supplant constitutional provisions'.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 23 &middot; True or False</span>
+<p class="qtext">A minimum of five judges is required for any case of national importance.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li><b>Article 145(3)</b> requires five only for a <b>substantial question of law as to the interpretation of the Constitution</b>, or for an Art 143 reference. Prominence is not the test.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 24 &middot; True or False</span>
+<p class="qtext">The Chief Justice of India appoints the officers and servants of the Supreme Court.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>Article 146.</b> A statement giving this to the Government after consulting the CJI inverts the rule.</li></ul>
+</div>
+</div>
+
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">09</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard — budget-checked, lineage first, trade shown.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M34</span><span class="prac">Practice · Week 5</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"The collegium system was a remedy for executive dominance that has become a problem of its own." Critically examine in the light of the Fourth Judges Case and subsequent developments.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically examine."</b> Take the proposition seriously on both sides and arrive at a position. A list of merits followed by a list of demerits, with no verdict, is a mid-range answer at best.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The lineage — why the collegium exists</li><li>What it fixed</li><li>What it created</li><li>Why the NJAC was not the answer either</li><li>Verdict and way forward</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Judicial appointments in India have been governed not by the text of <b>Article 124(2)</b> but by four readings of a single word in it. <b>S.P. Gupta (1981)</b> read "consultation" as leaving primacy with the executive; the <b>Second Judges Case (1993)</b> reversed that and created the collegium; the <b>Third Judges Case (1998)</b>, on an Article 143 reference, fixed it at the CJI and four senior-most judges.</p>
+<p><span class="sh">What it fixed</span></p>
+<p>The 1993 shift responded to a real pathology — the supersessions of 1973 and 1977 and the mass transfers of the Emergency had shown that executive primacy over appointments translated directly into a pliant bench. Insulating selection from the government of the day was, and remains, a defensible constitutional objective.</p>
+<p><span class="sh">What it created</span></p>
+<p>The remedy carries no procedural discipline: no published criteria, no recorded reasons, no fixed timelines, and an outcome the Constitution never contemplated — judges selecting judges with no external participation. The <b>Memorandum of Procedure</b> that the 2015 bench itself directed be revised remains unfinalised more than a decade later, which is the sharpest available evidence that self-correction has failed.</p>
+<p><span class="sh">Why the NJAC was not the answer</span></p>
+<p>The <b>99th Amendment</b> and the NJAC Act were struck down in <b>2015</b> by 4:1 because two non-judicial members could veto three judges, extinguishing judicial primacy and, with it, a basic feature. The verdict was correct on the veto and evasive on the diagnosis: it defended primacy without addressing opacity.</p>
+<p>Ambedkar refused both extremes in the Assembly, declining to give the President an unfettered hand or the Chief Justice a veto. Neither the collegium nor the NJAC is what he described. The reform worth pursuing is therefore procedural rather than structural — a statutory secretariat, published criteria and reasons, and enforceable timelines — leaving primacy where the basic structure now requires it.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 124(2), 124A–124C, 143 · the four Judges Cases with years and the 4:1 split · supersessions of 1973 and 1977 · the unfinalised Memorandum of Procedure · Ambedkar's rejection of both extremes.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 272 / 250 words.</b> <b>Cut:</b> the six-member composition of the NJAC and the name of the dissenting judge — both are Prelims facts that add nothing to a "critically examine" argument. <b>Bought:</b> the Constituent Assembly line, which converts the conclusion from an opinion into a constitutional argument, and the Memorandum of Procedure point, which is the only piece of hard evidence in the answer.</div>
+<div class="cost"><b>What would cost you marks:</b> narrating all four cases at equal length — the lineage is a paragraph, not the answer; and concluding that the collegium "needs reform" without saying <b>which</b> reform and why it does not offend the basic structure.</div>
+</div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M35</span><span class="prac">Practice · Week 5</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Discuss the scope and limits of Article 142 with reference to recent constitutional developments.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Discuss."</b> Both sides, then a position. The examiner is looking for whether you know the November 2025 opinion; without it this is a 2015-vintage answer.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>What the power is</li><li>How far it has reached</li><li>The boundary now drawn</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 142</b> empowers the Supreme Court to pass any decree or order necessary for doing <b>complete justice</b> in a cause before it — a phrase the Constitution leaves undefined, and therefore a power whose limits are set by the Court itself.</p>
+<p><span class="sh">Its reach</span></p>
+<p>It has underwritten the <b>Union Carbide</b> settlement, the creation of the <b>curative petition</b> in <b>Rupa Ashok Hurra (2002)</b> — a remedy with no textual basis at all — and the dissolution of irretrievably broken marriages without statutory waiting periods.</p>
+<p><span class="sh">The boundary</span></p>
+<p>In <b>State of Tamil Nadu v. Governor of Tamil Nadu (April 2025)</b> the Court used Article 142 to <b>deem assent</b> to ten Bills. A Presidential Reference followed, and on <b>20 November 2025</b> a Constitution Bench held that there is no deemed assent, that no timelines can be read into Articles 200 and 201, and — decisively — that <b>Article 142 cannot supplant constitutional provisions</b>.</p>
+<p>The settled position is therefore narrow and clear. Article 142 fills gaps; it does not substitute the Court for another constitutional functionary. Ordinary law cannot confine it, as the Court has long held, but the Constitution can — and now expressly does.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Union Carbide · Rupa Ashok Hurra (2002) and the curative petition · TN Governor (April 2025) · Special Reference No. 1 of 2025, decided 20 November 2025 · the statute-versus-Constitution distinction.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 168 / 150 words.</b> <b>Cut:</b> the Vice-President's "nuclear missile" remark and the count of fourteen referred questions — colour, not argument. <b>Bought:</b> the closing statute-versus-Constitution distinction, which is the one line that shows the two propositions about Article 142 are consistent rather than contradictory.</div>
+<div class="cost"><b>What would cost you marks:</b> writing this answer without the November 2025 opinion — it is now the governing statement of the law, and its absence dates the answer by a year.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — the Supreme Court</h2>
+<ul>
+<li><b>Art 124(1)</b> — CJI + 7 originally, "until Parliament by law prescribes a larger number". <b>Parliament</b> changes it, by ordinary Act.</li>
+<li>Strength ladder (excluding CJI): <b>7 → 10 (1956) → 13 (1960) → 17 (1977) → 25 (1986) → 30 (2008) → 33 (2019) → 37 (2026)</b>. Total now <b>38</b>.</li>
+<li><b>Art 124(3)</b> — HC judge 5 yrs / HC advocate 10 yrs / distinguished jurist. <b>No minimum age.</b> Jurist route <b>never used</b>. Retire at <b>65</b> (HC: 62).</li>
+<li><b>126</b> Acting CJI · <b>127</b> ad hoc · <b>128</b> retired judges (both consents) · <b>130</b> seat.</li>
+<li>Three Judges Cases: <b>1981 executive primacy → 1993 judicial primacy, collegium of 3 → 1998 collegium of 5</b> (Art 143 reference). HC collegium = CJI + <b>2</b>.</li>
+<li><b>NJAC</b> — 99th Amendment + NJAC Act, 2014; six members; <b>any two could veto</b>; struck down <b>Oct 2015, 4:1</b>, for violating judicial independence as basic structure.</li>
+<li><b>Art 124(4)</b> removal — proved misbehaviour or incapacity, <b>neither defined</b>; 100 LS / 50 RS notice under the <b>Judges (Inquiry) Act, 1968</b>; Speaker <b>may refuse</b>; 3-member committee; double majority in <b>each House, same session</b>. <b>Never completed.</b></li>
+<li><b>Justice Varma</b> — cash found 14 Mar 2025 · in-house committee reported 4 May 2025 · motion with <b>146</b> signatures admitted 12 Aug 2025 · <b>resigned 10 Apr 2026</b> under Art 217(1)(a) · inquiry <b>abated</b>.</li>
+<li>Jurisdictions: <b>131</b> original/exclusive (no UTs, no election disputes) · <b>32</b> writs · <b>132–134A</b> appellate · <b>136</b> SLP (not armed-forces tribunals) · <b>143</b> advisory (President only; 143(1) may decline, 143(2) must report) · <b>137</b> review (30 days) → <b>curative</b>, from Rupa Ashok Hurra (2002).</li>
+<li><b>141</b> binding on all courts (not itself) · <b>142</b> complete justice · <b>144</b> act in aid · <b>145(3)</b> minimum <b>five</b> judges for constitutional interpretation or an Art 143 reference · <b>146</b> CJI appoints staff.</li>
+<li><b>Art 129</b> court of record + contempt; <b>Constitution does not define</b> civil/criminal contempt — the <b>Contempt of Courts Act, 1971</b> does, after the <b>H.N. Sanyal Committee</b>. Entry 77, Union List.</li>
+<li>Salaries <b>charged</b> on the CFI, non-votable; cannot be reduced <b>except under Art 360</b>. Conduct not discussable except on a removal motion — <b>Arts 121 and 211</b>. Parliament may <b>extend</b> but not curtail jurisdiction.</li>
+<li><b>Nov 2025 advisory opinion</b> (2025 INSC 1333, 16th Presidential Reference): three options stand; <b>no timelines</b>; <b>no deemed assent</b>; actions <b>not justiciable</b>; <b>Art 142 cannot supplant the Constitution</b>; but prolonged unexplained inaction invites <b>limited</b> scrutiny.</li>
+<li>Post-retirement bar: a retired <b>SC</b> judge may not plead before <b>any</b> court in India; a retired <b>HC</b> judge may plead in the SC and other High Courts.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> Note 05 opens the judiciary half of Topic 6. Read it before <b>06 High Court</b>, which is largely a set of contrasts with this note, and before <b>08 Judicial Review, Judicial Activism &amp; PIL</b>, which builds directly on Articles 141 and 142 above.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='04%20Cabinet%20Committees%20and%20Parliamentary%20Forums.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">04 · Cabinet Committees &amp; Forums</span></button>
+<button class="tabflow-btn tabflow-next" onclick="location.href='06%20High%20Court.html'"><span class="tabflow-dir">Next →</span><span class="tabflow-label">06 · High Court</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 6 — Executive &amp; Judiciary · Note 05 of 9<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 26.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

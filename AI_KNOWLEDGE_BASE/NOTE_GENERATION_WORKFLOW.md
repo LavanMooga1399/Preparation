@@ -33,6 +33,19 @@ This file is the step-by-step process for turning one syllabus concept into a fi
 
 Run the pre-test drill defined in `TEST_INTELLIGENCE.md` Parts 4–5: a full-length 50-question mock in the exact test format (+2/−0.66, 60 minutes, self-scoring, one deliberate duplicate pair, resettable for retakes with optional shuffle), taken under timed conditions at least one day before the real test. Also run the **two-pass coverage check** (Part 5): literal schedule items, then the adjacent surface around them. After the test, run the postmortem loop before planning any new notes.
 
+## After every weekly test — the post-test loop (mandatory, unprompted)
+
+A result PDF arriving in a week's folder is itself the instruction. Run `TEST_INTELLIGENCE.md` **Part 5** in full before planning any new notes:
+
+1. Parse the paper per question — format, verdict, key, time on screen.
+2. Compute score ÷ class average and the gap to the topper, not the raw score alone.
+3. Strict per-question fact probes on every question lost; report **covered versus genuine gap**.
+4. Patch every genuine gap into the **topic note** the same day.
+5. Write `Week N Test Analysis.html` — every lost question, the pattern layer, and four behavioural changes.
+6. Where a Mains paper exists, write `Week N Mains Answers.html` with model answers to the `MAINS_ANSWER_CRAFT.md` standard.
+
+Only after all six does the next week's note-building begin. A week's notes written before its predecessor's postmortem repeats the predecessor's mistakes.
+
 ## The verification ritual (run after every batch of edits — no exceptions)
 
 Scripted, not eyeballed. Every one of these has caught a real defect in this project:

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Commission &amp; GST Council | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Finance Commission — Art 280</button>
+<button class="notetab" data-tab="s2">02 · The 15th and 16th Commissions</button>
+<button class="notetab" data-tab="s3">03 · GST Council — Art 279A</button>
+<button class="notetab" data-tab="s4">04 · Deep reference · exceptions · red pen</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 8 · Note 02 — Week 6, Day 6</div>
+<h1>Finance Commission &amp; GST Council</h1>
+<p class="sub">Articles 280 and 279A — the two bodies that divide India's money. One is <b>temporary and advisory</b>, the other <b>permanent with a weighted vote</b>, and almost every question turns on that contrast.</p>
+<div class="chips">
+<span class="chip">Art 280 · Art 279A</span>
+<span class="chip">16th FC — award 2026–31</span>
+<span class="chip">Devolution 41%</span>
+<span class="chip">GST 2.0 — 5% and 18%</span>
+<span class="chip">Three-fourths, one-third, two-thirds</span>
+</div>
+<div class="bignum"><b>41%</b><span>the 16th Finance Commission's devolution share — unchanged from the 15th</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Why this is the most current-affairs-exposed note of the week</div>
+<p>Both bodies moved in the last twelve months. The <b>16th Finance Commission</b> submitted its report on <b>17 November 2025</b> and it was tabled in Parliament on <b>1 February 2026</b>, with an award period running <b>2026–27 to 2030–31</b> — which begins in the current financial year. And the <b>GST Council</b> abolished two slabs in <b>September 2025</b>, leaving a two-rate structure.</p>
+<p>Any textbook printed before 2026 has the wrong Finance Commission and the wrong GST rates. That is an advantage if you carry the new figures and a liability if you do not, so the numbers in Section 02 and Section 03 are worth learning exactly.</p>
+<p>Week 6, Day 6 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapters 46–47.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>India's Constitution gives the Union the most lucrative taxes and the States most of the expensive responsibilities — health, police, agriculture, law and order. That mismatch is deliberate, and it means money must flow downward. The question is: <b>how much, and on what basis</b>?</p>
+<p>Answering that is the job of the <b>Finance Commission</b>. It is <b>not</b> a permanent body. The President constitutes one <b>every fifth year</b>, it studies the problem, it recommends how the divisible pool of central taxes should be split between the Union and the States (<b>vertical devolution</b>) and among the States themselves (<b>horizontal devolution</b>), and then it <b>ceases to exist</b>. Its recommendations are <b>advisory</b> — but by convention they are accepted, because rejecting them would be politically explosive.</p>
+<p>The <b>GST Council</b> is the opposite kind of body: <b>permanent</b>, created in 2016 when GST subsumed most indirect taxes. Because both the Union and every State surrendered taxing powers to GST, neither can set rates alone. So the Council is a standing negotiating chamber with a carefully engineered voting rule — one where the Union cannot win alone and the States cannot win without it.</p>
+<div class="bridge">Next → the Finance Commission's composition and the qualification rule</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Finance Commission — Article 280</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Constitution of the body</th><td>The <b>President</b> constitutes a Finance Commission <b>every fifth year or earlier if he considers necessary</b> — <b>Art 280(1)</b>. It is therefore a <b>quasi-judicial, temporary</b> body, not a permanent one.</td></tr>
+<tr><th>Composition</th><td>A <b>Chairman and four other members</b>, appointed by the President. They are eligible for <b>reappointment</b>.</td></tr>
+<tr><th>Qualifications</th><td>Prescribed by <b>Parliament</b> under <b>Art 280(2)</b>, not by the Constitution. Under the Finance Commission (Miscellaneous Provisions) Act, 1951: the <b>Chairman</b> must have experience in <b>public affairs</b>; the four members must be — a High Court judge or one qualified to be one · a person with <b>special knowledge of the finances and accounts of Government</b> · a person with <b>wide experience in financial matters and administration</b> · a person with <b>special knowledge of economics</b>.</td></tr>
+<tr><th>Functions — Art 280(3)</th><td><b>(a)</b> the <b>distribution</b> of the net proceeds of taxes between the Union and the States, and the allocation among States of their share — <b>vertical</b> and <b>horizontal</b> devolution; <b>(b)</b> the principles governing <b>grants-in-aid</b> to the States out of the Consolidated Fund of India (<b>Art 275</b>); <b>(c)</b> measures needed to <b>augment the Consolidated Fund of a State</b> to supplement the resources of <b>panchayats and municipalities</b> — added by the <b>73rd and 74th Amendments</b>; <b>(d)</b> any other matter <b>referred by the President</b> in the interests of sound finance.</td></tr>
+<tr><th>Report</th><td>Submitted to the <b>President</b>, who <b>causes it to be laid before each House of Parliament</b> together with an <b>explanatory memorandum on the action taken</b> — <b>Art 281</b>.</td></tr>
+<tr><th>Binding?</th><td><b>Advisory only.</b> The recommendations do not bind the Union Government. By long convention they are accepted, particularly on tax devolution.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The Article 280(3)(c) limb is the one candidates forget, and it is the one that changed.</b> The original Article 280 had only three clauses. The <b>73rd and 74th Amendments</b> added the duty to recommend measures to augment a State's Consolidated Fund to supplement the resources of <b>panchayats and municipalities</b> — which is how the Finance Commission acquired a local-government mandate. Note the wording carefully: the Union Finance Commission does <b>not</b> give money directly to local bodies; it recommends measures to augment the <b>State's</b> fund. Direct local-body devolution within a State is the job of the <b>State Finance Commission</b> under <b>Article 243-I</b>, constituted by the <b>Governor</b> every fifth year.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The State Finance Commission — the Week 5 gap, now covered.</b> <b>Art 243-I</b> (panchayats) and <b>Art 243Y</b> (municipalities): the <b>Governor</b> constitutes a State Finance Commission every <b>fifth</b> year to review the financial position of local bodies and recommend the distribution of the State's taxes between the State and its panchayats and municipalities. Its <b>composition and qualifications</b> are prescribed by the <b>State legislature</b>. Its report is laid before the <b>State legislature</b> with an action-taken memorandum. The Week 5 paper asked exactly this and it was not in the notes at the time.</div></div>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>The 15th and 16th Commissions — the numbers that get tested</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>15th Finance Commission</th><th>16th Finance Commission</th></tr></thead>
+<tbody>
+<tr><td>Chairman <b>N.K. Singh</b>.</td><td>Chairman <b>Dr Arvind Panagariya</b>.</td></tr>
+<tr><td>Award period <b>2021–22 to 2025–26</b> (after a one-year report for 2020–21).</td><td>Award period <b>2026–27 to 2030–31</b>. Report submitted to the President on <b>17 November 2025</b>; <b>tabled in Parliament on 1 February 2026</b>.</td></tr>
+<tr><td>Vertical devolution <b>41%</b> of the divisible pool — reduced from the 14th Commission's <b>42%</b> to account for the conversion of Jammu &amp; Kashmir into Union Territories.</td><td>Vertical devolution <b>41%</b> — <b>unchanged</b>.</td></tr>
+<tr><td>Used the <b>2011</b> census, replacing the 1971 population basis, and added a <b>demographic performance</b> criterion to offset the disadvantage to States that controlled population.</td><td>Retains the 2011 basis. <b>Introduces a new 10% weight for contribution to GDP</b> and <b>removes the tax and fiscal effort criterion</b>.</td></tr>
+<tr><td>Recommended grants for local bodies, health, disaster management, and sector-specific and State-specific grants; ₹45,000 crore performance-based incentive for agricultural reforms.</td><td>Total grants of about <b>₹9.47 lakh crore</b> over five years — chiefly for <b>urban and rural local bodies</b> and <b>disaster management</b>.</td></tr>
+<tr><td>Recommended a fiscal consolidation path for the Union and the States.</td><td>Caps State deficits at <b>3% of GSDP</b>, calls for an end to <b>off-budget borrowing</b>, rationalisation of subsidies, and warns against unchecked unconditional <b>cash transfers</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The devolution ladder, because these three numbers are constantly swapped.</b> <b>13th FC — 32%. 14th FC — 42%. 15th FC — 41%. 16th FC — 41%.</b> The <b>14th</b> Commission's jump from 32 to 42 was the largest single increase in the history of the institution and is the one most often asked. The <b>15th</b>'s reduction to 41 was <b>not</b> a squeeze on the States — it reflected the reorganisation of Jammu &amp; Kashmir, whose share moved out of the States' pool into central funding.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Horizontal devolution criteria — what is in and what is out.</b> The 15th Commission used: <b>income distance</b> (45%) · <b>population, 2011</b> (15%) · <b>area</b> (15%) · <b>forest and ecology</b> (10%) · <b>demographic performance</b> (12.5%) · <b>tax and fiscal effort</b> (2.5%). The <b>16th</b> keeps the structure but <b>drops tax and fiscal effort</b> and <b>adds contribution to GDP at 10%</b>. Two items that sound plausible but have <b>never</b> been criteria: <b>governance reforms</b> and <b>literacy</b> — the 2023 PYQ was built on exactly that distinction.</div></div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>GST Council — Article 279A</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">📖 The story — why the voting rule looks the way it does</div>
+<p>The <b>101st Constitutional Amendment Act, 2016</b> created GST, and with it a genuine constitutional problem. Both Parliament and every State legislature gave up taxing powers into a common pool. If the Union could then set rates alone, the States had surrendered sovereignty for nothing. If any State could veto, nothing would ever be decided.</p>
+<p>So <b>Article 279A</b> engineers a deadlock-proof but Union-proof rule. A decision needs <b>three-fourths of the weighted votes of members present and voting</b>. The <b>Union's vote is weighted at one-third</b> of the total votes cast, and <b>all the States together at two-thirds</b>. Do the arithmetic: the Union alone has 33.3% — not enough to pass anything, but <b>more than the 25% needed to block</b>. And the States together have 66.7% — also short of three-fourths. <b>Neither side can act without the other.</b> That is the design, and it is the single most examinable fact about the Council.</p>
+<p>Quorum is <b>one-half</b> of the total members.</p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Creation</th><td><b>Article 279A</b>, inserted by the <b>101st Amendment, 2016</b>. Constituted by the <b>President</b> within sixty days of the Article's commencement. A <b>permanent constitutional body</b>.</td></tr>
+<tr><th>Composition</th><td><b>Chairperson — the Union Finance Minister.</b> <b>Members</b> — the Union Minister of State for Finance or Revenue, and <b>the Minister in charge of Finance or Taxation, or any other Minister, nominated by each State</b>. The States choose one among themselves as <b>Vice-Chairperson</b>.</td></tr>
+<tr><th>Voting</th><td>Decisions by <b>three-fourths of the weighted votes of members present and voting</b>. <b>Union = one-third</b>, <b>all States together = two-thirds</b>. Quorum <b>one-half</b>.</td></tr>
+<tr><th>Function</th><td><b>Recommends</b> on: the taxes to be subsumed · goods and services to be subject to or exempt from GST · model GST laws and principles of levy · the <b>threshold turnover</b> for exemption · <b>rates including floor rates with bands</b> · special rates for a specified period · special provisions for the north-eastern and hill States · and the date on which GST is levied on petroleum products.</td></tr>
+<tr><th>Binding?</th><td><b>Recommendatory only.</b> In <b>Union of India v. Mohit Minerals (2022)</b> the Supreme Court held that the Council's recommendations are <b>not binding</b> on the Union or the States, that both have <b>simultaneous</b> power to legislate on GST, and that the Council's recommendations have <b>persuasive value</b> — a significant reading for fiscal federalism.</td></tr>
+<tr><th>Dispute resolution</th><td><b>Art 279A(11)</b> — the Council <b>shall establish a mechanism</b> to adjudicate disputes between the Union and States, between States, or between the Union and any State on the one side and one or more States on the other. As yet <b>not established</b>, which is a standing criticism.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>GST 2.0 — the rates changed in September 2025.</b> On <b>3 September 2025</b> the Council approved rate rationalisation, effective <b>22 September 2025</b>. The <b>12% and 28% slabs were abolished</b>, leaving a <b>two-rate structure — 5% (merit) and 18% (standard)</b> — plus a <b>40% special rate</b> for luxury and sin goods such as pan masala, tobacco, aerated drinks and luxury cars. Everyday items including hair oil, soap, toothpaste, bicycles and packaged foods moved to <b>5%</b>; small cars and motorcycles up to 350cc moved from 28% to <b>18%</b>. A statement describing four slabs of 5, 12, 18 and 28 is now <b>wrong</b>, and it is what most printed material still says.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>What GST did not subsume — a reliable question.</b> Outside GST: <b>petroleum crude, high-speed diesel, petrol, natural gas and aviation turbine fuel</b> (constitutionally within GST but taxed at a date the Council decides) · <b>alcohol for human consumption</b> (excluded altogether) · <b>electricity</b> · <b>stamp duty</b> · and <b>basic customs duty</b>. Also remember the two funds: the <b>GST Compensation Cess</b>, which compensated States for revenue loss for the first five years, and the fact that the compensation guarantee ended in <b>June 2022</b>.</div></div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Deep reference · exceptions · the red-pen grid</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td><b>268</b></td><td>Duties levied by the Union but collected and appropriated by the States</td></tr>
+<tr><td><b>269</b></td><td>Taxes levied and collected by the Union but assigned to the States</td></tr>
+<tr><td><b>269A</b></td><td><b>IGST</b> — levy and collection on inter-State supply, apportioned between the Union and States (101st Amendment)</td></tr>
+<tr><td><b>270</b></td><td>Taxes levied and <b>distributed</b> between the Union and the States — the <b>divisible pool</b></td></tr>
+<tr><td><b>275</b></td><td><b>Grants-in-aid</b> from the Union to States, charged on the Consolidated Fund of India</td></tr>
+<tr><td><b>279A</b></td><td><b>GST Council</b> — 101st Amendment, 2016</td></tr>
+<tr><td><b>280</b></td><td><b>Finance Commission</b> — constitution, qualifications, duties</td></tr>
+<tr><td><b>281</b></td><td>Recommendations laid before <b>each House of Parliament</b> with an explanatory memorandum</td></tr>
+<tr><td><b>243-I / 243Y</b></td><td><b>State Finance Commission</b> — panchayats / municipalities, constituted by the <b>Governor</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>★ The examiner's red pen</h3>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody>
+<tr><th>Who constitutes</th><td><b>Finance Commission — President</b>, every fifth year or earlier. <b>GST Council — President</b>, within 60 days of Art 279A's commencement. <b>State Finance Commission — Governor</b>, every fifth year.</td></tr>
+<tr><th>Who chairs</th><td><b>FC</b> — a Chairman with experience in <b>public affairs</b>. <b>GST Council</b> — the <b>Union Finance Minister</b>; the States elect a <b>Vice-Chairperson</b> from among themselves.</td></tr>
+<tr><th>What majority</th><td><b>GST Council: three-fourths of weighted votes of members present and voting</b>; <b>Union one-third</b>, <b>States two-thirds</b>; quorum <b>one-half</b>. The Finance Commission takes no vote — it reports.</td></tr>
+<tr><th>What article</th><td><b>280</b> FC · <b>281</b> laying of the report · <b>279A</b> GST Council · <b>270</b> divisible pool · <b>275</b> grants-in-aid · <b>243-I / 243Y</b> State FC.</td></tr>
+<tr><th>What exception</th><td>Both bodies are <b>advisory</b> — neither binds. GST covers everything indirect — <b>except</b> alcohol for human consumption, electricity, stamp duty and basic customs, with the five petroleum products deferred. The FC is temporary — <b>except</b> that the GST Council, its sibling, is permanent.</td></tr>
+<tr><th>What number</th><td>FC: <b>Chairman + 4 members</b>, every <b>5</b> years, <b>reappointment allowed</b>. Devolution: <b>32 → 42 → 41 → 41</b>. 16th FC: <b>2026–31</b>, grants <b>₹9.47 lakh crore</b>, GDP-contribution weight <b>10%</b>, deficit cap <b>3% of GSDP</b>. GST: <b>5 / 18 / 40</b> since <b>22 Sept 2025</b>.</td></tr>
+<tr><th>Constitutional or convention</th><td>Both are <b>constitutional</b>. Acceptance of FC recommendations is <b>convention</b>, not law. The <b>qualifications</b> of FC members are <b>statutory</b> (1951 Act), not constitutional.</td></tr>
+<tr><th>Shall or may</th><td>Art 280 — the President <b>shall</b> constitute a Commission every fifth year. Art 279A(11) — the Council <b>shall establish</b> a dispute-resolution mechanism (and has not).</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Exceptions ledger</h3>
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>The Finance Commission is constituted every fifth year — <b>or earlier</b> if the President considers it necessary.</div></div>
+<div class="item"><span class="dot">◆</span><div>Its recommendations are <b>advisory</b> — accepted by convention, not by law.</div></div>
+<div class="item"><span class="dot">◆</span><div>The Union FC recommends measures to augment a <b>State's</b> fund for local bodies — it does <b>not</b> fund local bodies directly. That is the <b>State</b> FC's job.</div></div>
+<div class="item"><span class="dot">◆</span><div>FC members <b>may be reappointed</b> — unlike Public Service Commission members, who may not.</div></div>
+<div class="item"><span class="dot">◆</span><div>Qualifications are prescribed by <b>Parliament</b>, not by the Constitution.</div></div>
+<div class="item"><span class="dot">◆</span><div>The Union alone <b>cannot pass</b> a GST decision (one-third) — <b>but can block one</b> (needs only one-fourth).</div></div>
+<div class="item"><span class="dot">◆</span><div>GST Council recommendations are <b>not binding</b> — <i>Mohit Minerals</i> (2022).</div></div>
+<div class="item"><span class="dot">◆</span><div>The Council <b>shall</b> establish a dispute-resolution mechanism — and has <b>not</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Governance reforms and literacy have <b>never</b> been horizontal devolution criteria.</div></div>
+</div>
+</div>
+</section>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="pyq">
+<span class="yr">2023</span><span class="stg">UPSC Prelims · How many</span>
+<p class="qtext">Consider the following:</p>
+<ol class="subs"><li>Demographic performance</li><li>Forest and ecology</li><li>Governance reforms</li><li>Stable government</li><li>Tax and fiscal efforts</li></ol>
+<p class="qtext">For the horizontal tax devolution, the Fifteenth Finance Commission used how many of the above as criteria other than population, area and income distance?</p>
+<ul class="opts"><li>(a) Only two</li><li>(b) Only three</li><li>(c) Only four</li><li>(d) All five</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only three</b>
+<ul class="vwhy"><li>The three used were <b>demographic performance</b>, <b>forest and ecology</b>, and <b>tax and fiscal efforts</b>.</li><li><b>Governance reforms</b> and <b>stable government</b> have <b>never</b> been criteria — they are plausible-sounding inventions, which is exactly how this format is built.</li><li>Update for 2026: the <b>16th Commission has dropped tax and fiscal effort</b> and <b>added contribution to GDP at 10%</b>. A question set on the 16th would therefore have a different answer.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">With reference to the Fourteenth Finance Commission, which of the following statements is/are correct?</p>
+<ol class="subs"><li>It has increased the share of States in the central divisible pool from 32 percent to 42 percent.</li><li>It has made recommendations concerning sector-specific grants.</li></ol>
+<p class="qtext">Select the correct answer using the code given below:</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 only</b>
+<ul class="vwhy"><li>The <b>32 → 42</b> jump is the 14th Commission's defining recommendation and the largest increase ever made.</li><li>Statement 2 is wrong: the 14th Commission <b>did not</b> make sector-specific grant recommendations — it deliberately moved away from them in favour of untied devolution. It was the <b>15th</b> that reintroduced sector-specific and State-specific grants.</li><li>Carry the ladder: <b>13th 32% · 14th 42% · 15th 41% · 16th 41%</b>.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2011</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">With reference to the Finance Commission of India, which of the following statements is correct?</p>
+<ul class="opts single"><li>(a) It encourages the inflow of foreign capital for infrastructure development</li><li>(b) It facilitates the proper distribution of finances among the Public Sector Undertakings</li><li>(c) It ensures transparency in financial administration</li><li>(d) None of the statements (a), (b) and (c) given above is correct in this context</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — none is correct</b>
+<ul class="vwhy"><li>The Finance Commission's mandate is the distribution of resources <b>between the Union and the States</b>, not foreign capital, not public sector undertakings, and not financial transparency generally.</li><li>When every option describes a plausible-sounding economic function that is not in <b>Art 280(3)</b>, option (d) becomes a live candidate rather than a last resort.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2010</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">Who of the following shall cause every recommendation made by the Finance Commission to be laid before each House of Parliament?</p>
+<ul class="opts"><li>(a) The President of India</li><li>(b) The Speaker of Lok Sabha</li><li>(c) The Prime Minister of India</li><li>(d) The Union Finance Minister</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — the President of India</b>
+<ul class="vwhy"><li><b>Article 281.</b> The report goes to the President, who lays it before each House <b>with an explanatory memorandum on the action taken</b> on the recommendations.</li><li>Contrast the <b>State</b> Finance Commission: its report goes to the <b>Governor</b>, who lays it before the <b>State legislature</b>. Same architecture, one level down.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">The Government of India has established NITI Aayog to replace the</p>
+<ul class="opts"><li>(a) Human Rights Commission</li><li>(b) Finance Commission</li><li>(c) Law Commission</li><li>(d) Planning Commission</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — the Planning Commission</b>
+<ul class="vwhy"><li>Included here because the <b>Finance Commission was never replaced</b> and remains a constitutional body. NITI Aayog, like the Planning Commission before it, is an <b>executive</b> body created by a Cabinet resolution — neither constitutional nor statutory.</li><li>The pairing to hold: <b>Finance Commission = constitutional and temporary</b>; <b>NITI Aayog = executive and permanent</b>.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions</h3>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the GST Council:</p>
+<ol class="subs"><li>It was created by the 101st Constitutional Amendment Act, 2016.</li><li>The Union Finance Minister is its Chairperson.</li><li>A decision requires three-fourths of the weighted votes of the members present and voting.</li><li>The vote of the Union Government has a weightage of one-half of the total votes cast.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li><b>Statement 4 is wrong on the fraction:</b> the Union's weight is <b>one-third</b>, and all the States together carry <b>two-thirds</b>.</li><li>The arithmetic is the point: one-third cannot pass a three-fourths threshold, but it comfortably exceeds the one-fourth needed to block. <b>The Union can veto but cannot dictate.</b></li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements about the Finance Commission is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) It is constituted by the President every fifth year or earlier</li><li>(b) It consists of a Chairman and four other members</li><li>(c) Its members are not eligible for reappointment</li><li>(d) Its recommendations are advisory and do not bind the Government</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<ul class="vwhy"><li>Finance Commission members <b>are</b> eligible for reappointment. The no-reappointment rule belongs to the <b>Public Service Commissions</b> under Art 316(2).</li><li>This is a cross-body swap — a true rule from one constitutional body attached to another. Expect it wherever two bodies sit in the same week's syllabus.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the 16th Finance Commission:</p>
+<ol class="subs"><li>Its award period covers 2026-27 to 2030-31.</li><li>It has recommended a vertical devolution share of 41 per cent.</li><li>It has introduced a criterion of contribution to GDP.</li><li>It has retained the tax and fiscal effort criterion.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements 1, 2 and 3 are correct. <b>Statement 4 is wrong</b> — the 16th Commission <b>removed</b> tax and fiscal effort, which the 15th had used at 2.5% weight.</li><li>The Commission is chaired by <b>Dr Arvind Panagariya</b>; the report was submitted on <b>17 November 2025</b> and tabled on <b>1 February 2026</b>.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following is <b>NOT</b> outside the ambit of the Goods and Services Tax?</p>
+<ul class="opts single"><li>(a) Alcohol for human consumption</li><li>(b) Electricity</li><li>(c) Services provided by a restaurant</li><li>(d) Stamp duty</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — restaurant services are within GST</b>
+<ul class="vwhy"><li>Read the double negative carefully: the question asks what is <b>inside</b> GST. Alcohol for human consumption, electricity and stamp duty are all <b>outside</b>.</li><li>Also outside for now: the <b>five petroleum products</b> — crude, high-speed diesel, petrol, natural gas and ATF — which are constitutionally within GST but taxed from a date the <b>Council</b> decides.</li><li>A stem with a negative inside a negative is a deliberate slowdown. Rewrite it in plain terms before answering.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> The Union Government cannot by itself carry a decision in the GST Council.</li><li><b>Statement-II:</b> A decision of the GST Council requires three-fourths of the weighted votes of members present and voting, and the Union's vote carries one-third.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both correct and Statement-II explains Statement-I</li><li>(b) Both correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not</li><li>(d) Statement-I is not correct but Statement-II is</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both correct, and the arithmetic in II is exactly why I is true: <b>one-third is short of three-fourths</b>.</li><li>The other half of the same arithmetic is worth carrying: one-third <b>exceeds one-fourth</b>, so the Union can <b>block</b> anything. Passing and blocking are different thresholds.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of body and the authority that constitutes it:</p>
+<ol class="subs"><li>Finance Commission — the President</li><li>State Finance Commission — the Governor</li><li>GST Council — the President</li><li>NITI Aayog — a Cabinet resolution</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — all four</b>
+<ul class="vwhy"><li>All correct. Note the status difference that rides on the instrument: 1, 2 and 3 are <b>constitutional</b> bodies; <b>NITI Aayog is executive</b>, created by resolution and therefore neither constitutional nor statutory.</li><li>That four-way taxonomy — constitutional, statutory, executive, quasi-judicial — is the organising idea of the whole of Week 6.</li></ul>
+</div>
+</div>
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M49</span><span class="prac">Practice · Week 6</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"The Finance Commission and the GST Council are the two pillars of Indian fiscal federalism, but both rest on recommendations that bind no one." Critically examine.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically examine."</b> Concede the shared weakness, then show why the two bodies survive it for different reasons — and where that reasoning fails.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The two designs</li><li>The shared weakness</li><li>Why the FC works anyway</li><li>Why the Council is more fragile</li><li>Reform and verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>The two bodies solve different problems. The <b>Finance Commission</b> under <b>Art 280</b> is <b>temporary and quasi-judicial</b> — constituted every fifth year to divide the divisible pool vertically and horizontally. The <b>GST Council</b> under <b>Art 279A</b> is <b>permanent and political</b> — a standing chamber where the Union and the States jointly set indirect tax rates neither can set alone.</p>
+<p><span class="sh">The shared weakness</span></p>
+<p>Neither binds. Finance Commission recommendations are advisory; the Union need only lay an <b>action-taken memorandum</b> under <b>Art 281</b>. And in <b>Mohit Minerals (2022)</b> the Supreme Court held GST Council recommendations to be <b>persuasive, not binding</b>, since Union and States hold <b>simultaneous</b> legislative power over GST.</p>
+<p><span class="sh">Why the Finance Commission survives it</span></p>
+<p>Convention has hardened into near-obligation on tax devolution — no Union government has rejected a devolution recommendation. Its quasi-judicial character, statutory qualifications and public report make departure costly. The <b>16th Commission</b> (Panagariya), tabled <b>1 February 2026</b> for <b>2026–31</b>, retained devolution at <b>41%</b> — continuity that itself signals the convention's strength.</p>
+<p><span class="sh">Why the Council is more fragile</span></p>
+<p>Its authority is arithmetical, not conventional: <b>three-fourths</b> of weighted votes, Union <b>one-third</b>, States <b>two-thirds</b>. That guarantees neither side can act alone but guarantees nothing about trust — and the compensation guarantee's expiry in <b>June 2022</b>, together with the <b>failure to establish the dispute-resolution mechanism Art 279A(11) requires</b>, has left States without recourse.</p>
+<p>The proposition is right about the law and wrong about the consequence. The Finance Commission works because <b>convention substitutes for compulsion</b>; the Council is strained because it has arithmetic but no adjudicator. The reform is not to make recommendations binding — it is to build the <b>dispute-resolution mechanism the Constitution already mandates</b>.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 280, 281, 279A and 279A(11) · <i>Union of India v. Mohit Minerals</i> (2022) · 16th FC, Panagariya, tabled 1 Feb 2026, 41% retained · compensation cess ending June 2022 · the three-fourths / one-third / two-thirds arithmetic.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 284 / 250 words.</b> <b>Cut:</b> the horizontal devolution criteria and the GST rate structure — both Prelims material, neither bearing on bindingness. <b>Bought:</b> the contrast between <b>convention</b> and <b>arithmetic</b> as sources of authority, which is what makes this a critical examination rather than two descriptions, and the Art 279A(11) failure, which supplies a reform the Constitution itself already demands.</div>
+<div class="cost"><b>What would cost you marks:</b> treating the two bodies as parallel — they are not, and the answer's whole value lies in distinguishing why one survives non-bindingness and the other does not; and proposing that recommendations be made binding without addressing that this would strip elected legislatures of taxing power.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — Finance Commission &amp; GST Council</h2>
+<ul>
+<li><b>Art 280</b> — <b>President</b> constitutes a Finance Commission <b>every 5th year or earlier</b>. <b>Chairman + 4 members</b>. <b>Reappointment allowed.</b> <b>Quasi-judicial, temporary.</b></li>
+<li>Qualifications prescribed by <b>Parliament</b> (1951 Act): Chairman — <b>public affairs</b>; members — HC judge or qualified to be · <b>finance and accounts of Government</b> · <b>financial matters and administration</b> · <b>economics</b>.</li>
+<li><b>Art 280(3):</b> (a) distribution of net proceeds — vertical and horizontal · (b) principles of <b>grants-in-aid</b> (Art 275) · (c) measures to augment a <b>State's</b> fund for <b>panchayats and municipalities</b> — added by the <b>73rd/74th Amendments</b> · (d) any matter referred by the President.</li>
+<li><b>Art 281</b> — report to the <b>President</b>, laid before <b>each House</b> with an <b>action-taken memorandum</b>. <b>Advisory only</b>; accepted by convention.</li>
+<li><b>Devolution ladder: 13th 32% · 14th 42% · 15th 41% · 16th 41%.</b> The 15th's cut reflected <b>J&amp;K reorganisation</b>, not a squeeze.</li>
+<li><b>15th FC</b> — N.K. Singh, 2021–26, <b>2011 census</b>, criteria: income distance 45 · population 15 · area 15 · forest &amp; ecology 10 · demographic performance 12.5 · <b>tax and fiscal effort 2.5</b>.</li>
+<li><b>16th FC</b> — <b>Arvind Panagariya</b>, submitted <b>17 Nov 2025</b>, tabled <b>1 Feb 2026</b>, award <b>2026–27 to 2030–31</b>, devolution <b>41%</b>, grants <b>₹9.47 lakh crore</b>, <b>new 10% weight for GDP contribution</b>, <b>tax and fiscal effort removed</b>, deficit cap <b>3% of GSDP</b>, end to off-budget borrowing.</li>
+<li><b>Never criteria:</b> governance reforms · stable government · literacy.</li>
+<li><b>State Finance Commission — Arts 243-I and 243Y</b>, constituted by the <b>Governor</b> every <b>5th</b> year; composition and qualifications by the <b>State legislature</b>; report to the <b>Governor</b>, laid before the <b>State legislature</b>.</li>
+<li><b>Art 279A · GST Council</b> — <b>101st Amendment, 2016</b>, <b>permanent</b>. Chair: <b>Union Finance Minister</b>. States elect a <b>Vice-Chairperson</b>. <b>Quorum one-half.</b> <b>Three-fourths</b> of weighted votes; <b>Union one-third</b>, <b>States two-thirds</b> → Union can <b>block</b> (needs ¼) but cannot <b>pass</b> alone.</li>
+<li><b>Mohit Minerals (2022)</b> — recommendations <b>not binding</b>; Union and States have <b>simultaneous</b> power. <b>Art 279A(11)</b> dispute mechanism <b>still not established</b>.</li>
+<li><b>GST 2.0 — from 22 Sept 2025:</b> slabs <b>5% and 18%</b>, plus <b>40%</b> for luxury and sin goods. <b>12% and 28% abolished.</b> Compensation cess guarantee ended <b>June 2022</b>.</li>
+<li><b>Outside GST:</b> alcohol for human consumption · electricity · stamp duty · basic customs. <b>Deferred:</b> crude, diesel, petrol, natural gas, ATF.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> read with <b>01 UPSC &amp; State Public Service Commissions</b> for the constitutional/statutory/executive taxonomy, which the 2023 PYQ on NCBC, NHRC, Law Commission and NCDRC turns on. The <b>State Finance Commission</b> material here fills a gap the Week 5 paper exposed.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='01%20UPSC%20and%20State%20Public%20Service%20Commissions.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">01 · UPSC &amp; State PSCs</span></button>
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 8 — Constitutional Bodies · Note 02 of 5<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 46–47.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

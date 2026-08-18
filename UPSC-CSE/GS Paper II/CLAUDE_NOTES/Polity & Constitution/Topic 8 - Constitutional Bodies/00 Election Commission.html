@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Election Commission of India | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Composition &amp; appointment — Art 324</button>
+<button class="notetab" data-tab="s2">02 · Removal &amp; independence</button>
+<button class="notetab" data-tab="s3">03 · Powers &amp; functions</button>
+<button class="notetab" data-tab="s4">04 · Deep reference · exceptions · red pen</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 8 · Note 00 — Week 6, Day 3</div>
+<h1>Election Commission of India</h1>
+<p class="sub">Article 324 — one article for the whole institution, and almost every examinable fact is an <b>asymmetry</b>: between the Chief Election Commissioner and the other two, between what the Constitution says and what the 2023 Act does, and between what the Commission controls and what it does not.</p>
+<div class="chips">
+<span class="chip">Article 324</span>
+<span class="chip">Multi-member since 1993</span>
+<span class="chip">Anoop Baranwal, 2023</span>
+<span class="chip">CEC Act, 2023</span>
+<span class="chip">Six years or 65</span>
+</div>
+<div class="bignum"><b>1</b><span>article — and the security of only <b>one</b> of the three Commissioners</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Where the marks are, and where they are not</div>
+<p>Do not spend time on election <i>procedure</i>. The examiner asks about the <b>institution</b>: who appoints, who can remove whom, what the Commission decides and what it does not. Prelims 2017 tested exactly three things — whether the ECI is a five-member body, who fixes the election schedule, and who resolves disputes over party splits and mergers. All three are institutional.</p>
+<p>The single highest-value idea in this note is the <b>asymmetry of removal</b>: the CEC has the security of a Supreme Court judge; the two Election Commissioners have none of their own. That one sentence has produced questions repeatedly, and it is also the hinge of every Mains answer on the Commission's independence.</p>
+<p>Week 6, Day 3 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> Ch. 5–6 and Laxmikanth Chapter 43.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>Somebody has to run elections, and that somebody cannot be the government of the day, because the government is a contestant. So the Constitution creates an <b>independent</b> body — the Election Commission — and gives it <b>superintendence, direction and control</b> of the whole electoral process for Parliament, the State legislatures, and the offices of President and Vice-President.</p>
+<p>Notice what is <b>not</b> on that list: <b>local body elections</b>. Panchayat and municipal elections are run by <b>State Election Commissions</b>, which are entirely separate bodies created by Articles 243K and 243ZA. Confusing the two is the most common single error in this chapter.</p>
+<p>For its first forty years the Commission was one man. It became a three-member body in <b>1993</b> and has stayed that way. All three have equal say — decisions are by majority — but only the Chief Election Commissioner is hard to remove. That mismatch between <b>equal power</b> and <b>unequal protection</b> is the institution's central design flaw and the thing to carry into any answer.</p>
+<div class="bridge">Next → composition, and the 2023 statute that changed how appointments are made</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Composition &amp; appointment — Article 324</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Composition</th><td><b>Art 324(2)</b> — a <b>Chief Election Commissioner</b> and <b>such number of other Election Commissioners as the President may from time to time fix</b>. The Constitution fixes <b>no number</b>; the strength is at the President's discretion.</td></tr>
+<tr><th>Current strength</th><td><b>Three</b> — the CEC and two Election Commissioners. It has been three continuously since <b>1 October 1993</b>.</td></tr>
+<tr><th>The history</th><td>Single-member from <b>1950</b>. Made three-member briefly in <b>October 1989</b> (before the 1989 general election), reverted to single-member in <b>January 1990</b>, and made three-member again in <b>October 1993</b>. A statement saying it "has always been" multi-member, or that it became so in 1950, is false.</td></tr>
+<tr><th>Decision-making</th><td>Business is transacted <b>unanimously wherever possible</b>; in case of difference, by <b>majority</b>. The <b>CEC has no casting vote and no veto</b> — he is <i>primus inter pares</i>, first among equals, not a superior.</td></tr>
+<tr><th>Regional Commissioners</th><td><b>Art 324(4)</b> — the President may, after consulting the Election Commission, appoint <b>Regional Commissioners</b> to assist the Commission before a general election. Their conditions of service are determined by the President <b>after consulting the Election Commission</b>.</td></tr>
+<tr><th>Tenure</th><td><b>Six years or until the age of 65, whichever is earlier.</b> This is prescribed by <b>statute</b>, not by the Constitution.</td></tr>
+<tr><th>Qualifications</th><td>The Constitution prescribes <b>none</b>. Under the 2023 Act, a person must be or have been of the rank of <b>Secretary to the Government of India</b>, and be a person of integrity with knowledge of and experience in the management and conduct of elections.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="mentor">
+<div class="tag">📖 The story — how appointments changed in three years</div>
+<p>For seventy-three years, Article 324(2) said appointments would be made by the President <b>"subject to the provisions of any law made in that behalf by Parliament"</b> — and Parliament simply never made that law. In practice the President appointed on the <b>advice of the Council of Ministers</b>, which meant the government of the day picked the umpire.</p>
+<p><b>2 March 2023 — <i>Anoop Baranwal v. Union of India</i>.</b> A five-judge Constitution Bench, led by Justice K.M. Joseph, held that the constitutional silence could not continue indefinitely. Until Parliament legislated, appointments would be made by the President on the advice of a committee of the <b>Prime Minister, the Leader of the Opposition in the Lok Sabha, and the Chief Justice of India</b>. Where there is no recognised Leader of the Opposition, the leader of the single largest opposition party takes that place.</p>
+<p><b>December 2023 — Parliament answered.</b> The <b>Chief Election Commissioner and Other Election Commissioners (Appointment, Conditions of Service and Term of Office) Act, 2023</b> exercised the very power Art 324(2) had reserved. It kept a three-member selection committee but <b>replaced the Chief Justice of India with a Union Cabinet Minister nominated by the Prime Minister</b> — giving the executive a <b>two-to-one majority</b> on the committee that chooses its own umpire. A Search Committee headed by the Cabinet Secretary shortlists five names for it.</p>
+<p><b>Where it stands.</b> The Act is <b>under challenge</b> before the Supreme Court on the ground that it defeats the very safeguard <i>Anoop Baranwal</i> created; the Court declined to stay it before the 2024 general election. <b>Gyanesh Kumar</b>, who took office on <b>19 February 2025</b> as the <b>26th</b> CEC, is the first appointed under the Act.</p>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The distinction the examiner will build on.</b> <i>Anoop Baranwal</i> (2023) prescribed <b>PM + LoP + CJI</b>. The <b>2023 Act</b> prescribes <b>PM + LoP + a Union Cabinet Minister</b>. A statement saying the Chief Justice of India sits on the selection committee describes the <b>judgment</b>, not the <b>law in force</b> — and is therefore <b>false</b> today. The Court's formula applied only <b>"until Parliament makes a law"</b>, and Parliament made one.</div></div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How the Election Commission selection committee changed between 2023 and the 2023 Act">
+<rect x="30" y="60" width="190" height="110" rx="12" fill="#F1F2FA" stroke="#C3C7E3"></rect>
+<rect x="255" y="60" width="190" height="110" rx="12" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<rect x="480" y="60" width="190" height="110" rx="12" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+<g text-anchor="middle" font-family="Fraunces, serif" font-size="14.5" font-weight="600" fill="#1B1D51">
+<text x="125" y="84">Before 2023</text><text x="350" y="84">Anoop Baranwal</text><text x="575" y="84">CEC Act, 2023</text>
+</g>
+<g text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#33344f">
+<text x="125" y="108">President, on the</text><text x="125" y="126">advice of the</text><text x="125" y="144">Council of Ministers</text>
+<text x="350" y="108">Prime Minister</text><text x="350" y="126">Leader of Opposition</text>
+<text x="575" y="108">Prime Minister</text><text x="575" y="126">Leader of Opposition</text>
+</g>
+<text x="350" y="146" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0d3d49">Chief Justice of India</text>
+<text x="575" y="146" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#8a2168">Union Cabinet Minister</text>
+<text x="350" y="40" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">One seat on the committee — and the whole argument</text>
+<g stroke="#565884" stroke-width="1.6" fill="none" marker-end="url(#ar6)">
+<path d="M222 115 L252 115"></path><path d="M447 115 L477 115"></path></g>
+<defs><marker id="ar6" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#565884"></path></marker></defs>
+<text x="350" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">The judgment applied only "until Parliament makes a law". Parliament made one, and changed one seat.</text>
+<text x="350" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#8a2168">Effect: the executive holds 2 of 3 votes on the body that appoints its own umpire.</text>
+</svg>
+<figcaption><b>Fig 1.</b> If the stem mentions the <b>CJI</b>, it is describing <i>Anoop Baranwal</i>. If it mentions a <b>Cabinet Minister</b>, it is describing the law actually in force.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Removal &amp; independence — the asymmetry</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Chief Election Commissioner</th><th>The two Election Commissioners</th></tr></thead>
+<tbody>
+<tr><td>Removable <b>only in the same manner and on the same grounds as a judge of the Supreme Court</b> — a parliamentary address by <b>special majority</b> in both Houses, for proved misbehaviour or incapacity.</td><td>Removable by the <b>President</b> — but <b>only on the recommendation of the CEC</b>.</td></tr>
+<tr><td>Service conditions <b>cannot be varied to his disadvantage</b> after appointment.</td><td>The same protection applies to their conditions of service.</td></tr>
+<tr><td>Cannot be removed at the pleasure of the executive.</td><td><b>Can</b> be removed on one man's recommendation — which is the whole criticism.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Read the safeguard carefully — it protects the Commissioners <i>from the executive</i> and exposes them <i>to the CEC</i>.</b> The requirement that the CEC recommend removal was designed to stop the government sacking an inconvenient Commissioner. But it leaves the two Commissioners dependent on the CEC, while giving them an <b>equal vote</b> against him. Equal power, unequal protection. The <b>2nd Administrative Reforms Commission</b> and the <b>Law Commission's 255th Report (2015)</b> have both recommended extending the CEC's protection to all three.<br><br>Note also what is <b>absent</b>: the Constitution <b>does not bar</b> a retired Election Commissioner from further government appointment, and it does not prescribe a fixed term — the six-year/65-year rule is <b>statutory</b>. Both are standing criticisms and both are examinable as "the Constitution does not provide…" statements.</div></div>
+
+<div class="prelims">
+<h3>🔴 Prelims — the independence toolkit, itemised</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>Security of tenure for the CEC</b> — Supreme Court judge standard.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Service conditions cannot be varied to disadvantage</b> after appointment — for all three.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Expenses charged on the Consolidated Fund of India</b> — non-votable.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Equal decision-making power</b> — majority rule, no casting vote for the CEC.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Not provided:</b> a bar on post-retirement appointment · qualifications in the Constitution · a constitutionally fixed term · protection for the two Commissioners equal to the CEC's.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Independent staff is also not provided</b> — the Commission depends on staff deputed by the Union and State governments, which the 2nd ARC flagged.</div></div>
+</div>
+</div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Powers &amp; functions — and the boundary</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Category</th><th>What the Commission does</th></tr></thead>
+<tbody>
+<tr><th>Administrative</th><td>Delimits constituencies <b>as per the Delimitation Commission Act</b>; prepares and periodically revises <b>electoral rolls</b>; <b>notifies the dates and schedule</b> of elections and scrutinises nomination papers; grants <b>recognition</b> to political parties and allots <b>election symbols</b>; enforces the <b>Model Code of Conduct</b>; and registers political parties under <b>section 29A of the RPA, 1951</b>.</td></tr>
+<tr><th>Advisory</th><td>Advises the <b>President</b> on the disqualification of a sitting member of Parliament, and the <b>Governor</b> on a sitting member of a State legislature. In both cases the opinion is <b>binding</b> on the recipient. It also advises the President on whether elections can be held in a State under President's Rule.</td></tr>
+<tr><th>Quasi-judicial</th><td>Decides disputes over the <b>recognition of parties</b> and <b>allotment of symbols</b>, including disputes arising from <b>splits and mergers</b> — settled by the Supreme Court in <b>Sadiq Ali v. ECI (1972)</b>.</td></tr>
+<tr><th>What it does <b>not</b> do</th><td><b>Local body elections</b> (State Election Commissions, Arts 243K and 243ZA). <b>Election petitions</b> — these are decided by the <b>High Court</b> under the RPA, not by the Commission. And it does not <b>register voters itself</b> at the counter; that is done by electoral registration officers under its superintendence.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Three boundary facts that decide questions.</b> <b>(1)</b> The ECI conducts elections to <b>Parliament, State legislatures, and the offices of President and Vice-President</b> — <b>not</b> to panchayats and municipalities, which belong to the <b>State Election Commission</b> under Arts 243K/243ZA. <b>(2)</b> The Commission <b>fixes the election schedule</b> — the Ministry of Home Affairs does not, and a 2017 question offered exactly that distractor. <b>(3)</b> An <b>election petition</b> challenging a completed election is heard by the <b>High Court</b>, with appeal to the Supreme Court; the Commission has no role once results are declared.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The State Election Commission is a genuinely separate institution.</b> Created by the <b>73rd and 74th Amendments</b>, it consists of a <b>State Election Commissioner appointed by the Governor</b>, and he may be <b>removed only in the manner and on the grounds prescribed for a High Court judge</b>. His conditions of service cannot be varied to his disadvantage after appointment. It handles panchayat and municipal elections only. Every one of these facts is a near-mirror of the ECI's — which is precisely why they get swapped in a question.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Delimitation, since it sits next door.</b> Delimitation Commissions have been constituted <b>four</b> times — <b>1952, 1963, 1973 and 2002</b> (asked in Prelims 2024). Their orders have the force of law and <b>cannot be questioned in any court</b>. The <b>84th Amendment (2001)</b> froze the allocation of Lok Sabha seats among States on the <b>1971</b> census, and the <b>87th Amendment (2003)</b> allowed readjustment of constituencies within States on the <b>2001</b> census. The freeze runs until the first census after <b>2026</b>.</div></div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Deep reference · exceptions · the red-pen grid</h2></div>
+<hr class="divider">
+
+<h3>Articles and statutes</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Provision</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td><b>Art 324</b></td><td>Superintendence, direction and control of elections vested in the Election Commission</td></tr>
+<tr><td><b>Art 325</b></td><td>No person to be ineligible for, or claim inclusion in, a special electoral roll on grounds of religion, race, caste or sex — <b>one general electoral roll</b> for every constituency</td></tr>
+<tr><td><b>Art 326</b></td><td>Elections to the Lok Sabha and State Assemblies on the basis of <b>adult suffrage</b> — age lowered from 21 to <b>18</b> by the <b>61st Amendment, 1988</b></td></tr>
+<tr><td><b>Art 327 / 328</b></td><td>Power of <b>Parliament</b> / of a <b>State legislature</b> to make provision with respect to elections</td></tr>
+<tr><td><b>Art 329</b></td><td><b>Bar to interference by courts</b> in electoral matters; an election may be questioned only by an election petition</td></tr>
+<tr><td><b>Arts 243K / 243ZA</b></td><td><b>State Election Commissions</b> — panchayats and municipalities</td></tr>
+<tr><td>RPA <b>1950</b></td><td>Allocation of seats, delimitation, qualification of voters, preparation of electoral rolls</td></tr>
+<tr><td>RPA <b>1951</b></td><td>Actual conduct of elections, qualifications and disqualifications of members, corrupt practices, election disputes. <b>Section 29A</b> — registration of parties</td></tr>
+<tr><td>CEC Act, <b>2023</b></td><td>Appointment, conditions of service and term of office of the CEC and ECs</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>★ The examiner's red pen — eight questions on this institution</h3>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody>
+<tr><th>Who appoints</th><td><b>President</b>, on the recommendation of a committee of the <b>PM + Leader of the Opposition + a Union Cabinet Minister</b> (CEC Act, 2023). Under <i>Anoop Baranwal</i> the third member was the <b>CJI</b>.</td></tr>
+<tr><th>Who removes</th><td><b>CEC</b> — like a Supreme Court judge, by parliamentary address. <b>Other ECs</b> — by the President, <b>on the CEC's recommendation</b>. <b>State Election Commissioner</b> — like a <b>High Court</b> judge.</td></tr>
+<tr><th>What majority</th><td>For the CEC's removal: majority of the <b>total membership</b> of each House <b>and</b> two-thirds present and voting.</td></tr>
+<tr><th>What article</th><td><b>324</b> the Commission · <b>325</b> one general roll · <b>326</b> adult suffrage · <b>327/328</b> legislative power · <b>329</b> bar to court interference · <b>243K/243ZA</b> State Election Commissions.</td></tr>
+<tr><th>What exception</th><td>The Commission runs <b>all</b> elections — <b>except local bodies</b>. Its advice on disqualification is <b>binding</b> — but only on a <b>sitting</b> member's disqualification. Courts cannot interfere in elections (Art 329) — <b>except</b> through an <b>election petition</b> to the High Court.</td></tr>
+<tr><th>What timeline</th><td><b>Six years or 65</b>, whichever is earlier — <b>statutory, not constitutional</b>. Multi-member since <b>1993</b>. Seat freeze on the <b>1971</b> census until the first census after <b>2026</b>.</td></tr>
+<tr><th>Constitutional or convention</th><td>The Commission is <b>constitutional</b>. Its <b>strength</b>, <b>tenure</b> and <b>qualifications</b> are not — all are fixed by the President or by statute. There is <b>no constitutional bar</b> on post-retirement office.</td></tr>
+<tr><th>Shall or may</th><td>Art 324(2) — the President <b>may</b> from time to time fix the number of other Commissioners. Art 324(4) — he <b>may</b> appoint Regional Commissioners, <b>after consultation with</b> the Commission.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Authority — and the distractor</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Function</th><th>The authority</th><th>The distractor to reject</th></tr></thead>
+<tbody>
+<tr><td>Fixes the number of Election Commissioners</td><td><b>President</b></td><td>Parliament</td></tr>
+<tr><td>Notifies the election schedule</td><td><b>Election Commission</b></td><td><b>Ministry of Home Affairs</b> — the 2017 distractor</td></tr>
+<tr><td>Resolves disputes on party splits and mergers</td><td><b>Election Commission</b></td><td>The High Court</td></tr>
+<tr><td>Decides an election petition</td><td><b>High Court</b></td><td>The Election Commission</td></tr>
+<tr><td>Conducts panchayat and municipal elections</td><td><b>State Election Commission</b></td><td>The Election Commission of India</td></tr>
+<tr><td>Appoints the State Election Commissioner</td><td><b>Governor</b></td><td>The Chief Election Commissioner</td></tr>
+<tr><td>Removes an Election Commissioner</td><td><b>President, on the CEC's recommendation</b></td><td>The President acting alone</td></tr>
+<tr><td>Advises on the disqualification of a sitting MP</td><td><b>Election Commission</b>, and the advice binds the <b>President</b></td><td>The Speaker (that is defection, Tenth Schedule)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Exceptions ledger — this note's entries</h3>
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>The ECI runs every election — <b>except local bodies</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Courts may not interfere in elections (Art 329) — <b>except</b> by election petition after the result.</div></div>
+<div class="item"><span class="dot">◆</span><div>All three Commissioners have <b>equal</b> decision-making power — but <b>only the CEC</b> has security of tenure.</div></div>
+<div class="item"><span class="dot">◆</span><div>Service conditions cannot be varied to disadvantage — this protection <b>does</b> extend to all three.</div></div>
+<div class="item"><span class="dot">◆</span><div>The Constitution prescribes <b>no</b> qualifications, <b>no</b> fixed term and <b>no</b> post-retirement bar.</div></div>
+<div class="item"><span class="dot">◆</span><div>The Commission has been multi-member since 1993 — but was briefly so in <b>1989–90</b> as well.</div></div>
+<div class="item"><span class="dot">◆</span><div>Delimitation orders have the force of law and <b>cannot be questioned in any court</b>.</div></div>
+</div>
+</div>
+</section>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+<p class="lead">(A) genuine verified PYQs · (B) practice in identical format · (C) trap statements.</p>
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The Election Commission of India is a five-member body.</li><li>Union Ministry of Home Affairs decides the election schedule for the conduct of both general elections and bye-elections.</li><li>Election Commission resolves the disputes relating to splits/mergers of recognised political parties.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 only</li><li>(c) 2 and 3 only</li><li>(d) 3 only</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — 3 only</b>
+<ul class="vwhy"><li>Statement 1 is wrong on the number: the Commission is a <b>three-member</b> body — the CEC and two Election Commissioners. Note also that the Constitution fixes no number at all.</li><li>Statement 2 is wrong on the <b>authority</b>: the <b>Election Commission</b> notifies the schedule, not the Ministry of Home Affairs. This is the single most reusable distractor in the chapter.</li><li>Statement 3 is correct and is the Commission's <b>quasi-judicial</b> function, from <i>Sadiq Ali</i> (1972).</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2024</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">How many Delimitation Commissions have been constituted by the Government of India till December 2023?</p>
+<ul class="opts"><li>(a) One</li><li>(b) Two</li><li>(c) Three</li><li>(d) Four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Four</b>
+<ul class="vwhy"><li><b>1952, 1963, 1973 and 2002.</b> Learn them as a run of four dates.</li><li>Attach the two amendments: the <b>84th (2001)</b> froze inter-State seat allocation on the <b>1971</b> census; the <b>87th (2003)</b> permitted readjustment within States on the <b>2001</b> census.</li><li>The freeze runs until the first census taken after <b>2026</b> — which makes this a live current-affairs hook, not a dead fact.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2020</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>According to the Constitution of India, a person who is eligible to vote can be made a minister in a State for six months even if he/she is not a member of the Legislature of that State.</li><li>According to the Representation of People Act, 1951, a person convicted of a criminal offence and sentenced to imprisonment for five years is permanently disqualified from contesting an election even after his release from prison.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Neither 1 nor 2</b>
+<ul class="vwhy"><li>Statement 1 is wrong on a qualification: a non-member minister must be <b>qualified to be a member of the legislature</b>, which is more than being <b>eligible to vote</b> — the age thresholds alone differ (18 to vote, 25 for the Assembly).</li><li>Statement 2 is wrong on <b>"permanently"</b>: under <b>section 8 of the RPA, 1951</b> disqualification runs for the period of imprisonment <b>plus six years</b> from release — not for life.</li><li>Both failures are single-word failures. This is the qualifier family in its purest form.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">For election to the Lok Sabha, a nomination paper can be filed by</p>
+<ul class="opts single"><li>(a) anyone residing in India</li><li>(b) a resident of the constituency from which the election is to be contested</li><li>(c) any citizen of India whose name appears in the electoral roll of a constituency</li><li>(d) any citizen of India</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li>The requirement is <b>enrolment as an elector in some constituency</b> — not residence in the constituency being contested, and not mere citizenship.</li><li>Note the contrast that follows from it: a candidate for the <b>Lok Sabha</b> need not be a resident of the constituency, whereas a candidate for the <b>Rajya Sabha</b> need not be a resident of the State either, since the domicile requirement was removed in 2003 and upheld in <b>Kuldip Nayar (2006)</b>.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements about the Election Commission of India is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) The Constitution does not fix the number of Election Commissioners</li><li>(b) The Chief Election Commissioner has a casting vote in case of a difference of opinion</li><li>(c) Expenses of the Commission are charged on the Consolidated Fund of India</li><li>(d) The Commission conducts elections to the offices of President and Vice-President</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>Decisions are taken <b>by majority</b> and the CEC has <b>no casting vote and no veto</b>. He is first among equals.</li><li>That is exactly why the removal asymmetry matters: the two Commissioners can outvote the CEC, yet depend on his recommendation for their own security.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the appointment of the Chief Election Commissioner:</p>
+<ol class="subs"><li>In <i>Anoop Baranwal</i> (2023) the Supreme Court prescribed a committee of the Prime Minister, the Leader of the Opposition and the Chief Justice of India.</li><li>The Chief Election Commissioner and Other Election Commissioners Act, 2023 replaced the Chief Justice of India with a Union Cabinet Minister.</li><li>The Supreme Court's formula was to operate only until Parliament made a law.</li><li>The Constitution originally left the manner of appointment subject to a law made by Parliament.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — all four</b>
+<ul class="vwhy"><li>All accurate. Statement 4 is the one most often missed: <b>Art 324(2)</b> always said "subject to the provisions of any law made in that behalf by Parliament" — the gap was that Parliament never legislated for seventy-three years.</li><li>Another deliberate "all correct" set. Verify each rather than assuming one must be wrong.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following is <b>NOT</b> a function of the Election Commission of India?</p>
+<ul class="opts single"><li>(a) Granting recognition to political parties and allotting election symbols</li><li>(b) Conducting elections to panchayats and municipalities</li><li>(c) Advising the President on the disqualification of a sitting member of Parliament</li><li>(d) Preparing and revising electoral rolls</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT a function</b>
+<ul class="vwhy"><li>Local body elections belong to the <b>State Election Commission</b> under <b>Arts 243K and 243ZA</b> — a separate constitutional body, with its Commissioner appointed by the <b>Governor</b>.</li><li>The two bodies mirror each other closely, which is why they are swapped: the SEC's Commissioner enjoys <b>High Court judge</b> removal protection, the CEC <b>Supreme Court judge</b> protection.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> The two Election Commissioners do not enjoy the same security of tenure as the Chief Election Commissioner.</li><li><b>Statement-II:</b> An Election Commissioner can be removed by the President only on the recommendation of the Chief Election Commissioner.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both correct and Statement-II explains Statement-I</li><li>(b) Both correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not</li><li>(d) Statement-I is not correct but Statement-II is</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both correct, and the second is the reason for the first. The CEC's protection is the <b>parliamentary address</b> route; the Commissioners' depends on <b>one man's recommendation</b>.</li><li>This is the note's central idea and the anchor of any Mains answer on the Commission's independence.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of Article and subject:</p>
+<ol class="subs"><li>Article 324 — superintendence, direction and control of elections</li><li>Article 325 — one general electoral roll for every constituency</li><li>Article 326 — elections on the basis of adult suffrage</li><li>Article 329 — bar to interference by courts in electoral matters</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — all four</b>
+<ul class="vwhy"><li>Articles 324 to 329 form Part XV and are worth learning as a block of six, adding <b>327</b> (Parliament's power) and <b>328</b> (a State legislature's).</li><li>Attach to 326 the <b>61st Amendment, 1988</b>, which lowered the voting age from 21 to 18.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The tenure of the Chief Election Commissioner is prescribed by the Constitution.</li><li>The Constitution bars a retired Election Commissioner from any further appointment under the Government.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Neither 1 nor 2</b>
+<ul class="vwhy"><li>The <b>six years or 65</b> rule is <b>statutory</b>, not constitutional. And there is <b>no bar</b> on post-retirement appointment — a standing criticism, and the reason reform proposals keep recurring.</li><li>Both are "the Constitution provides…" traps. When a stem attributes a detail to the Constitution, ask whether that detail is actually in the text.</li></ul>
+</div>
+</div>
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard — budget-checked, lineage first, trade shown.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M47</span><span class="prac">Practice · Week 6</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"The independence of the Election Commission rests on one man's security of tenure and the goodwill of the executive." Critically examine in the light of recent legislative and judicial developments.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically examine."</b> Test the claim. It is largely true, and the marks lie in showing <i>why</i> — and in what the 2023 Act changed.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>What the Constitution guarantees</li><li>The asymmetry</li><li>The appointment question, 2023 to now</li><li>Reforms</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 324</b> vests superintendence, direction and control of elections in the Commission, and surrounds it with three protections: removal of the <b>CEC</b> only by the process applicable to a <b>Supreme Court judge</b>; service conditions that cannot be varied to disadvantage; and expenses <b>charged</b> on the Consolidated Fund.</p>
+<p><span class="sh">The asymmetry</span></p>
+<p>The guarantee stops at one office. The two Election Commissioners — who hold an <b>equal vote</b>, since the CEC has no casting vote — may be removed by the President <b>on the CEC's recommendation</b>. Equal power, unequal protection. The <b>2nd ARC</b> and the <b>Law Commission's 255th Report (2015)</b> both recommended extending the CEC's protection to all three.</p>
+<p><span class="sh">Appointment</span></p>
+<p>Article 324(2) always made appointment "subject to any law made by Parliament", and for seventy-three years no such law existed, so the executive chose the umpire. In <b>Anoop Baranwal (2023)</b> a Constitution Bench filled the vacuum with a committee of the <b>PM, the Leader of the Opposition and the CJI</b> — expressly <b>until Parliament legislated</b>. The <b>CEC Act, 2023</b> then legislated, replacing the CJI with a <b>Union Cabinet Minister</b> and restoring an executive majority of two to one. The Act is under challenge; the Court declined to stay it before the 2024 general election.</p>
+<p><span class="sh">Reform</span></p>
+<p>Three measures follow: extend the CEC's removal protection to all Commissioners; restore a <b>neutral third member</b> to the selection committee; and bar post-retirement office, which the Constitution presently does not.</p>
+<p>The proposition holds. The Commission's independence is real but <b>narrow and personal</b> — attached to one officer and, since 2023, to a committee the executive controls. That is a fragile foundation for a referee.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 324 with all three safeguards · the no-casting-vote point · <i>Anoop Baranwal</i> (2 March 2023) · CEC Act, 2023 and the 2:1 committee · 2nd ARC and Law Commission 255th Report · the absence of a post-retirement bar.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 271 / 250 words.</b> <b>Cut:</b> the 1989–1993 history of multi-member status and the Search Committee's composition — both are Prelims facts and neither bears on independence. <b>Bought:</b> the "equal power, unequal protection" formulation and the fact that the Court's remedy was expressly interim, which is what explains how a judgment was superseded so quickly without being overruled.</div>
+<div class="cost"><b>What would cost you marks:</b> writing that the Supreme Court's committee is the law today — it is not, and that single error dates the whole answer; and listing the Commission's functions, which the question does not ask about.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — Election Commission</h2>
+<ul>
+<li><b>Art 324</b> — superintendence, direction and control of elections to <b>Parliament, State legislatures, President and Vice-President</b>. <b>Not</b> local bodies.</li>
+<li>Composition: <b>CEC + such number as the President may fix</b>. Currently <b>three</b>. Multi-member since <b>1 Oct 1993</b>; briefly in <b>1989–90</b>. Decisions by <b>majority</b>; CEC has <b>no casting vote</b>.</li>
+<li><b>Tenure: 6 years or 65, whichever earlier — statutory, not constitutional.</b> No constitutional qualifications, no post-retirement bar.</li>
+<li><b>Removal:</b> CEC like a <b>Supreme Court judge</b>. Other ECs by the President <b>on the CEC's recommendation</b>. State Election Commissioner like a <b>High Court judge</b>.</li>
+<li><b>Anoop Baranwal (2 Mar 2023)</b> — PM + LoP + <b>CJI</b>, until Parliament legislates. <b>CEC Act 2023</b> — PM + LoP + <b>Union Cabinet Minister</b>; Search Committee under the <b>Cabinet Secretary</b> shortlists five. Act under challenge; <b>Gyanesh Kumar</b>, 26th CEC, from <b>19 Feb 2025</b>, is the first appointed under it.</li>
+<li>Functions: <b>administrative</b> (rolls, schedule, symbols, recognition, Model Code) · <b>advisory</b> (disqualification of a <b>sitting</b> member — binding on President/Governor) · <b>quasi-judicial</b> (splits and mergers — <i>Sadiq Ali</i>, 1972).</li>
+<li><b>Election petitions go to the High Court</b>, not the Commission — <b>Art 329</b> bars other court interference.</li>
+<li><b>Art 325</b> one general roll, no exclusion on religion/race/caste/sex · <b>Art 326</b> adult suffrage, <b>18</b> since the <b>61st Amendment, 1988</b> · <b>327</b> Parliament · <b>328</b> State legislature.</li>
+<li><b>RPA 1950</b> — rolls, seats, delimitation. <b>RPA 1951</b> — conduct, disqualifications, corrupt practices, election disputes; <b>s.29A</b> registration of parties; <b>s.8</b> disqualification = imprisonment <b>+ 6 years</b>, not permanent.</li>
+<li><b>Delimitation Commissions: four — 1952, 1963, 1973, 2002.</b> Orders have force of law, <b>not questionable in any court</b>. <b>84th Amdt (2001)</b> froze seats on the <b>1971</b> census; <b>87th Amdt (2003)</b> allowed intra-State readjustment on <b>2001</b>. Freeze until the first census after <b>2026</b>.</li>
+<li><b>State Election Commission</b> — <b>Arts 243K / 243ZA</b>, from the <b>73rd and 74th Amendments</b>; Commissioner appointed by the <b>Governor</b>, removed like a <b>High Court judge</b>.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> this opens <b>Topic 8 — Constitutional Bodies</b>. Read alongside <b>01 UPSC &amp; State Public Service Commissions</b>, which shares the appointment-and-removal architecture, and <b>04 Attorney General &amp; Advocate General</b>, the other Day 3 topic.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn tabflow-next" onclick="location.href='01%20UPSC%20and%20State%20Public%20Service%20Commissions.html'"><span class="tabflow-dir">Next →</span><span class="tabflow-label">01 · UPSC &amp; State PSCs</span></button>
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 8 — Constitutional Bodies · Note 00 of 5<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> Ch. 5–6 and Laxmikanth Ch. 43.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

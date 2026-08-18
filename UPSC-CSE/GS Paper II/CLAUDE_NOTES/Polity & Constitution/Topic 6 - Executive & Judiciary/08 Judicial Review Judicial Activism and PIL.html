@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Judicial Review, Judicial Activism &amp; PIL | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · Judicial review — basis &amp; scope</button>
+<button class="notetab" data-tab="s2">02 · The four-word ladder</button>
+<button class="notetab" data-tab="s3">03 · Judicial activism &amp; its instances</button>
+<button class="notetab" data-tab="s4">04 · Public Interest Litigation</button>
+<button class="notetab" data-tab="s5">05 · The overreach debate, 2025–26</button>
+<button class="notetab" data-tab="s6">06 · Deep reference &amp; exceptions</button>
+<button class="notetab" data-tab="s7">07 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">08 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 6 · Note 08 — Week 5, Day 6</div>
+<h1>Judicial Review, Judicial Activism &amp; PIL</h1>
+<p class="sub">The concepts that close the judiciary week — and the highest-yield Mains material in Topic 6. Prelims wants the definitions kept apart; Mains wants a position on where the line falls.</p>
+<div class="chips">
+<span class="chip">Arts 13, 32, 226, 137</span>
+<span class="chip">Restraint → Review → Activism → Overreach</span>
+<span class="chip">S.P. Gupta, 1981</span>
+<span class="chip">Hussainara Khatoon, 1979</span>
+<span class="chip">Presidential Reference, Nov 2025</span>
+</div>
+<div class="bignum"><b>4</b><span>words on one spectrum — and the exam is built on telling them apart</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ How this note earns its marks</div>
+<p>Prelims treats this as a <b>definition</b> chapter. The 2017 question asked what judicial review "implies" and gave four plausible-sounding options, only one of which was the textbook definition. The 2020 question paired judicial review with basic structure and both statements were false. In each case the mark went to whoever held the precise definition, not to whoever had opinions about the judiciary.</p>
+<p>Mains is the opposite. Here you need a <b>position</b>, evidenced by cases, on where legitimate review ends and overreach begins. The good news is that 2025–26 handed you the best possible case study: the Supreme Court used Article 142 to deem assent to ten Bills, a Presidential Reference followed, and in November 2025 the Court itself drew the line. An answer built on that arc is current, concrete and self-contained.</p>
+<p>Week 5, Day 6 of the study plan, sourced from NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Chapters 27–29.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p><b>Judicial review</b> is the power of a court to examine whether a law or an executive action is consistent with the Constitution, and to declare it void if it is not. It is not a power to ask whether a law is <b>wise</b> — only whether it is <b>constitutional</b>. That distinction is the single most tested idea in this note.</p>
+<p><b>Judicial activism</b> is something else. It describes a court that goes beyond deciding the dispute in front of it and takes a positive role in enforcing rights — relaxing who may bring a case, treating a postcard as a petition, issuing guidelines where Parliament has not legislated, monitoring implementation for years. <b>Vishaka</b> is the standard example: with no law on workplace sexual harassment, the Court wrote the guidelines itself and made them binding until Parliament acted, which it did sixteen years later.</p>
+<p><b>Public Interest Litigation</b> is the procedural device that made activism possible. Ordinarily only the person injured may sue — the rule of <i>locus standi</i>. PIL relaxes it, so that a public-spirited citizen may move the court on behalf of people who cannot come themselves: undertrials, bonded labourers, the destitute.</p>
+<p>And <b>judicial overreach</b> is activism gone past the line — a court doing what the Constitution assigns to somebody else. Where that line sits is the entire debate, and in November 2025 the Supreme Court drew it more clearly than it had in decades.</p>
+<div class="bridge">Next → the constitutional basis of review, which the exam expects you to cite by article</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>Judicial review — basis, scope and limits</h2></div>
+<hr class="divider">
+
+<div class="tip"><span class="ic">◆</span><div><b>The definition to memorise verbatim.</b> Judicial review is <b>the power of the judiciary to pronounce upon the constitutionality of legislative enactments and executive orders</b> of both the Union and the State governments. Prelims 2017 offered exactly this wording as option (a) against three distractors. Note what it excludes: it is <b>not</b> a power to question the <b>wisdom</b> of a law, <b>not</b> a power to vet Bills <b>before</b> assent, and <b>not</b> the same as the power of review under Article 137.</div></div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Source</th><th>What it supplies</th></tr></thead>
+<tbody>
+<tr><th>Article 13</th><td>The textual foundation. Laws inconsistent with or in derogation of Fundamental Rights are <b>void</b>, and "law" is defined widely enough to include ordinances, orders, bye-laws, rules, regulations, notifications, customs and usages.</td></tr>
+<tr><th>Articles 32 and 226</th><td>The remedies through which review is exercised — the Supreme Court and High Courts respectively. Both held part of the <b>basic structure</b> in <b>L. Chandra Kumar (1997)</b>.</td></tr>
+<tr><th>Articles 131–136</th><td>The jurisdictions through which constitutional questions reach the Supreme Court.</td></tr>
+<tr><th>Articles 245 and 246 with the Seventh Schedule</th><td>Federal review — whether a legislature had the <b>competence</b> to enact the law at all.</td></tr>
+<tr><th>Articles 251 and 254</th><td>Repugnancy between Union and State laws.</td></tr>
+<tr><th>Article 372</th><td>Continuance of pre-Constitution laws, subject to their consistency with the Constitution.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>India's judicial review is not America's, and the difference has a name.</b> The US Constitution guarantees "<b>due process of law</b>", which lets courts test whether a law is <b>fair and reasonable</b> in substance. Article 21 originally said "<b>procedure established by law</b>", a narrower formula borrowed from Japan, under which a court asked only whether the correct procedure had been followed. <b>A.K. Gopalan (1950)</b> took the narrow view; <b>Maneka Gandhi (1978)</b> read fairness into it, holding that the procedure must be "right, just and fair", which brought Indian review close to due process without adopting the phrase. Indian judicial review therefore has a <b>narrower textual base</b> but a comparably wide practical reach.</div></div>
+
+<h3>Three grounds on which a law can fall</h3>
+
+<div class="prelims">
+<h3>🔴 Prelims — when is a law unconstitutional?</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>It infringes Fundamental Rights</b> (Part III) — Art 13.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>It is outside the competence</b> of the legislature that made it — the Seventh Schedule test, with the doctrines of <b>pith and substance</b> and <b>colourable legislation</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>It offends a constitutional provision</b> other than Part III — for a constitutional amendment, this includes the <b>basic structure</b>, from <b>Kesavananda Bharati (1973)</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Not a ground:</b> that the law is unwise, inexpedient or economically unsound. Courts repeatedly say policy is for the legislature.</div></div>
+</div>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The 42nd Amendment tried to abolish judicial review, and failed.</b> It inserted clauses 4 and 5 into <b>Article 368</b> to place constitutional amendments beyond judicial scrutiny and to declare Parliament's amending power unlimited. In <b>Minerva Mills (1980)</b> both clauses were struck down — a Parliament of limited powers cannot make itself unlimited, and judicial review is itself part of the basic structure. This is why Prelims 2019's statement that "an amendment to the Constitution cannot be called into question by the Supreme Court" is <b>false</b>.</div></div>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>The four-word ladder — restraint, review, activism, overreach</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Term</th><th>What it means</th><th>Illustration</th></tr></thead>
+<tbody>
+<tr><th>Judicial restraint</th><td>The court defers to the other branches, confines itself to the dispute, and declines to enter policy. Associated with the "self-imposed discipline" school.</td><td><b>A.K. Gopalan (1950)</b> — the Court read Art 21 narrowly and declined to test the fairness of the law.</td></tr>
+<tr><th>Judicial review</th><td>The <b>power</b> to test laws and executive action against the Constitution and strike them down. Neither activist nor restrained in itself — it is the baseline function.</td><td><b>Kesavananda Bharati (1973)</b>; <b>Minerva Mills (1980)</b>; the <b>2015 NJAC</b> judgment.</td></tr>
+<tr><th>Judicial activism</th><td>The court plays an <b>active, positive role</b> in enforcing rights — relaxing procedure, issuing guidelines, monitoring implementation. Sometimes called <b>judicial dynamism</b>.</td><td><b>Vishaka (1997)</b> guidelines; continuing mandamus in environmental cases; Art 21 expanded to livelihood, health, clean air, education.</td></tr>
+<tr><th>Judicial overreach</th><td>Activism carried into the territory the Constitution assigns to the legislature or executive — the court substituting itself for another functionary.</td><td>The <b>deemed assent</b> to ten Bills under Art 142 in <b>TN Governor (April 2025)</b>, held impermissible by the <b>November 2025</b> advisory opinion.</td></tr>
+</tbody>
+</table>
+</div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spectrum from judicial restraint through review and activism to overreach">
+<defs><linearGradient id="g8" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#DDF0F5"></stop><stop offset="45%" stop-color="#F1F2FA"></stop><stop offset="75%" stop-color="#FBF1D8"></stop><stop offset="100%" stop-color="#F7E4F1"></stop></linearGradient></defs>
+<rect x="40" y="70" width="620" height="56" rx="14" fill="url(#g8)" stroke="#C3C7E3"></rect>
+<line x1="505" y1="58" x2="505" y2="138" stroke="#8a2168" stroke-width="2.5" stroke-dasharray="6 4"></line>
+<text x="505" y="50" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#8a2168">THE LINE</text>
+<g text-anchor="middle" font-family="Fraunces, serif" font-size="14.5" font-weight="600" fill="#1B1D51">
+<text x="120" y="96">RESTRAINT</text><text x="300" y="96">REVIEW</text><text x="440" y="96">ACTIVISM</text><text x="590" y="96">OVERREACH</text>
+</g>
+<g text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#565884">
+<text x="120" y="116">defer</text><text x="300" y="116">test against the Constitution</text><text x="440" y="116">enforce positively</text><text x="590" y="116">replace another organ</text>
+</g>
+<text x="350" y="30" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">One spectrum, not four separate ideas</text>
+<text x="350" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#33344f">Everything to the left of the line is legitimate. The dispute is only ever about where the line sits.</text>
+<text x="350" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#8a2168">November 2025: Article 142 "cannot supplant constitutional provisions" — the clearest marker in decades.</text>
+</svg>
+<figcaption><b>Fig 1.</b> In Mains, never use "activism" and "overreach" as synonyms. Activism is defensible and often celebrated; overreach is the charge.</figcaption>
+</div>
+</figure>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The distractor Prelims 2017 used, and why it is wrong.</b> One option offered "the power of the Judiciary to <b>question the wisdom</b> of the laws enacted by the Legislatures". That is precisely what judicial review is <b>not</b>. Another offered the power to review <b>all legislative enactments before they are assented to by the President</b> — that is a <b>pre-enactment</b> or advisory power the Indian Supreme Court does not possess, except through an Art 143 reference. A third confused judicial review with the power under <b>Article 137</b> to review its <b>own judgments</b>. Three distractors, three genuinely different concepts.</div></div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Judicial activism — origins, methods and instances</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">📖 The story — how a court became an actor</div>
+<p>The activism of the Indian Supreme Court has a specific origin, and it is not idealism. It is <b>reputational repair after the Emergency</b>. In <b>ADM Jabalpur (1976)</b> the Court held, four to one, that during a National Emergency a person had no <b>locus</b> to move any court even against unlawful detention — that the right to life itself could be suspended. Justice H.R. Khanna's lone dissent cost him the Chief Justiceship. When the Emergency ended, the institution had to rebuild its standing.</p>
+<p>It did so by opening its doors. In <b>Hussainara Khatoon (1979)</b> — the first case widely recognised as a PIL — the Court acted on a newspaper report about undertrial prisoners in Bihar who had already spent longer in custody awaiting trial than the maximum sentence for their offences. It ordered the release of some forty thousand undertrials and read a <b>right to speedy trial</b> into Article 21, though no such words appear there.</p>
+<p>Two judges built the method: <b>Justice P.N. Bhagwati</b> and <b>Justice V.R. Krishna Iyer</b>. Bhagwati's formulation in <b>S.P. Gupta (1981)</b> is the doctrinal hinge — where a legal wrong is caused to a person or class who by reason of poverty, disability or socially or economically disadvantaged position cannot approach the court, <b>any member of the public</b> may move it on their behalf.</p>
+<p>The techniques followed: the <b>epistolary jurisdiction</b>, under which a letter or postcard is treated as a writ petition; <b>continuing mandamus</b>, where the court keeps a case alive and supervises compliance for years; and court-appointed <b>commissions</b> and <b>amicus curiae</b> to gather facts the adversarial process would not produce.</p>
+</div>
+
+<h3>Where activism has actually operated</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Domain</th><th>Instances worth naming in an answer</th></tr></thead>
+<tbody>
+<tr><th>Expanding Article 21</th><td><b>Maneka Gandhi (1978)</b> — procedure must be right, just and fair. Then a chain of readings-in: <b>livelihood</b> (Olga Tellis, 1985), <b>speedy trial</b> (Hussainara Khatoon), <b>clean environment</b>, <b>health</b>, <b>education</b> (Unni Krishnan, 1993, later Art 21-A by the <b>86th Amendment</b>), and <b>privacy</b> (Puttaswamy, 2017).</td></tr>
+<tr><th>Legislating in a vacuum</th><td><b>Vishaka (1997)</b> — guidelines on workplace sexual harassment, binding under Art 141 until Parliament legislated, which it did only in <b>2013</b>. <b>D.K. Basu (1997)</b> — arrest and detention safeguards.</td></tr>
+<tr><th>Environment</th><td>Continuing mandamus in the <b>Taj Trapezium</b>, <b>Ganga pollution</b> and <b>vehicular emission</b> matters; import of the <b>polluter pays</b>, <b>precautionary</b> and <b>public trust</b> doctrines; <b>absolute liability</b> in <b>M.C. Mehta (1987)</b>.</td></tr>
+<tr><th>Institutional integrity</th><td><b>Vineet Narain (1998)</b> — CBI and CVC autonomy directions. <b>2G</b> and <b>coal block</b> allocations cancelled. <b>Electoral bonds</b> struck down in <b>2024</b> under Art 19(1)(a) and manifest arbitrariness.</td></tr>
+<tr><th>Social reform</th><td><b>Shayara Bano (2017)</b> — instant triple talaq. <b>Navtej Singh Johar (2018)</b> — Section 377, on constitutional morality. <b>Joseph Shine (2018)</b> — adultery. <b>Common Cause (2018)</b> — passive euthanasia and living wills.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The Mains-ready formulation of the case <i>for</i> activism.</b> Activism has been the response to <b>institutional failure elsewhere</b>: legislative inaction on sexual harassment for sixteen years after Vishaka; executive inaction on custodial safeguards; regulatory failure on air quality. The Court did not seek these fields — it entered vacuums. Any answer defending activism should make that causal claim rather than simply listing outcomes.</div></div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Public Interest Litigation</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Feature</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>The core departure</th><td>Relaxation of <b><i>locus standi</i></b>. Traditionally only an aggrieved person may sue; in PIL <b>any public-spirited person</b> may move the court on behalf of those unable to do so.</td></tr>
+<tr><th>Doctrinal source</th><td><b>S.P. Gupta v. Union of India (1981)</b> — the same First Judges Case that decided the appointments question. It is examined for <b>both</b> holdings, and students routinely remember only one.</td></tr>
+<tr><th>First PIL</th><td><b>Hussainara Khatoon v. State of Bihar (1979)</b> — undertrial prisoners; right to <b>speedy trial</b> read into Art 21.</td></tr>
+<tr><th>Constitutional hooks</th><td>Filed under <b>Art 32</b> before the Supreme Court or <b>Art 226</b> before a High Court. Note there is <b>no separate PIL article</b> — it is a procedural innovation, not a distinct jurisdiction.</td></tr>
+<tr><th>Not adversarial</th><td>Proceedings are <b>collaborative and inquisitorial</b> rather than adversarial: the court appoints commissions, calls for reports, and may act on its own motion.</td></tr>
+<tr><th>Epistolary jurisdiction</th><td>A letter, postcard or newspaper report may be treated as a writ petition.</td></tr>
+<tr><th>Who cannot file</th><td>PIL is <b>not</b> available for a purely <b>private grievance</b>, for a <b>political</b> or publicity motive, or where the petitioner has a personal or oblique interest. Courts impose <b>exemplary costs</b> for frivolous PILs.</td></tr>
+<tr><th>Against whom</th><td>The State, its instrumentalities under <b>Art 12</b>, and any authority discharging a public function.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The two sentences that usually go wrong.</b> <b>(1)</b> "PIL was introduced by a constitutional amendment" — <b>false</b>. There is no such amendment and no PIL article; it is <b>judge-made procedure</b> under Arts 32 and 226. <b>(2)</b> "In a PIL the petitioner must show personal injury" — <b>false</b>; that is the very requirement PIL relaxes. Notice the structural parallel with <b>quo warranto</b> in Note 06, the one writ where <i>locus standi</i> is also relaxed. If a stem mentions relaxed standing, those are the two places it can be pointing.</div></div>
+
+<h3>The case against PIL, stated fairly</h3>
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>The gain</th><th>The cost</th></tr></thead>
+<tbody>
+<tr><td><b>Access.</b> Justice reaches people who could never have reached a court — undertrials, bonded labourers, the destitute.</td><td><b>Docket burden.</b> PIL consumes the time of the highest courts while ordinary appeals wait years behind it.</td></tr>
+<tr><td><b>Rights enforcement.</b> Article 21 has been given content — livelihood, health, environment, speedy trial — that legislation never supplied.</td><td><b>Capacity.</b> Courts lack the technical and fiscal machinery to design policy, and cannot be held accountable for the results.</td></tr>
+<tr><td><b>Accountability.</b> Institutional failures that no political actor had an incentive to raise have been exposed and corrected.</td><td><b>Abuse.</b> Publicity, private vendetta and political litigation dressed as public interest — hence exemplary costs.</td></tr>
+<tr><td><b>Democratic deepening.</b> A forum exists between elections for holding the executive to constitutional standards.</td><td><b>Separation of powers.</b> Guidelines with the force of law under Art 141 are, functionally, legislation by an unelected body.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>The overreach debate, 2025–26 — where the line was drawn</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">📖 The story — the clearest boundary marker in decades</div>
+<p><b>April 2025.</b> In <i>State of Tamil Nadu v. Governor of Tamil Nadu</i> the Supreme Court confronted a Governor who had sat on ten Bills for years. It held the inaction illegal, ruled that <b>Article 200</b> offers only three options, imposed <b>timelines</b> of one and three months, and made breach judicially reviewable. It then used <b>Article 142</b> to <b>deem the ten Bills assented to</b> — declaring the President's subsequent action on the reserved Bills void.</p>
+<p><b>The objection.</b> Whatever one thought of the Governor's conduct, a court had supplied an assent that the Constitution assigns to a different functionary. The Vice-President called Article 142 a "nuclear missile" available against democratic forces. The charge was <b>overreach</b>, not error.</p>
+<p><b>May 2025.</b> President Murmu invoked <b>Article 143</b> and referred <b>fourteen questions</b> — the <b>16th Presidential Reference</b> since 1950. The core question was whether courts may regulate the exercise of constitutional powers where the Constitution itself prescribes no timeline or procedure.</p>
+<p><b>20 November 2025.</b> A five-judge Constitution Bench answered, unanimously, in a 111-page opinion (2025 INSC 1333). It <b>kept</b> the three-options holding, agreeing that a Governor cannot withhold a Bill without returning it, and reasoning from <b>federalism as a basic feature</b> that "dialogue, reconciliation and balance, and not obstructionism" is the essence of Indian constitutionalism. It then reversed the rest: <b>no timelines</b> can be read into Articles 200 and 201; there can be <b>no deemed assent</b>; the actions of the Governor and President under those articles are <b>not justiciable</b>, since the process is dialogic rather than adjudicatory; and <b>Article 142 cannot supplant constitutional provisions</b>.</p>
+<p><b>The door left open.</b> The Court did not surrender the field. It held that <b>prolonged, unexplained, indefinite inaction</b> will invite <b>limited judicial scrutiny</b>, and that a court may issue a limited direction to act within a time frame — without commenting on the merits of the discretion. It added that <b>Article 361</b> immunity does not bar examining the <b>validity of the action</b>.</p>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The formulation to carry into every overreach answer.</b> <i>Judicial review is part of the basic structure, but it is "not an unbridled scope that can negate or destroy the separation of powers doctrine."</i> That sentence is the Court policing itself, which is exactly what a Mains examiner wants evidence of. Pair it with the second holding — that <b>Article 142 cannot supplant a constitutional provision</b> — and you have a self-imposed limit stated by the institution being criticised, which is far stronger than quoting a politician's complaint.</div></div>
+
+<h3>The standing criticisms, and the answers to them</h3>
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Criticism</th><th>The response</th></tr></thead>
+<tbody>
+<tr><td><b>Counter-majoritarian.</b> Unelected judges override the decisions of elected representatives.</td><td>The Constitution is itself counter-majoritarian by design — Part III exists precisely to place some questions beyond majority decision. Review enforces that choice rather than defying it.</td></tr>
+<tr><td><b>Institutional incapacity.</b> Courts lack the expertise and budget to make policy and answer for it.</td><td>Correct, and it argues for <b>restraint in remedy</b> rather than abdication of jurisdiction — declare the right, leave the means to the executive.</td></tr>
+<tr><td><b>Selectivity.</b> Activism is deployed unevenly, vigorously in some fields and absent in others.</td><td>A real criticism of practice, not of the power. <b>ADM Jabalpur</b> is the standing reminder of what abdication looks like.</td></tr>
+<tr><td><b>Accountability deficit.</b> Judges are unaccountable to anyone, and removal has never once succeeded.</td><td>Also correct — see the Justice Varma sequence in Note 05. The remedy is <b>accountability reform</b>, not curtailment of review.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Way forward — the four points a "reform" question needs.</b> <b>(1)</b> Self-restraint in <b>remedy</b>: declare rights, leave implementation to the competent organ. <b>(2)</b> Guidelines issued under Art 141 should be expressly <b>interim</b>, lapsing when the legislature acts, as Vishaka's were. <b>(3)</b> <b>Legislative responsiveness</b> — the sixteen-year gap between Vishaka and the 2013 Act is what created the vacuum in the first place. <b>(4)</b> <b>Judicial accountability</b> — a workable mechanism between "do nothing" and a removal process that has never been completed.</div></div>
+</section>
+
+<section id="s6" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Deep reference &amp; exceptions</h2></div>
+<hr class="divider">
+
+<h3>Case lineage — the four arcs to hang answers on</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Arc</th><th>Sequence</th><th>Payoff line</th></tr></thead>
+<tbody>
+<tr><th>Review versus amending power</th><td>Shankari Prasad (1951) → Sajjan Singh (1965) → Golaknath (1967) → <b>Kesavananda (1973)</b> → Indira Nehru Gandhi (1975) → <b>Minerva Mills (1980)</b> → Waman Rao (1981)</td><td>Judicial review of amendments is settled and is itself basic structure; Art 368(4)–(5) fell in 1980.</td></tr>
+<tr><th>Article 21 expansion</th><td>A.K. Gopalan (1950) → ADM Jabalpur (1976) → <b>Maneka Gandhi (1978)</b> → Hussainara Khatoon (1979) → Olga Tellis (1985) → Unni Krishnan (1993) → <b>Puttaswamy (2017)</b></td><td>"Procedure established by law" was read to require fairness, and Art 21 became the engine of activism.</td></tr>
+<tr><th>PIL</th><td>Hussainara Khatoon (1979) → <b>S.P. Gupta (1981)</b> → Bandhua Mukti Morcha (1984) → Vishaka (1997) → the exemplary-costs corrective</td><td>Standing was relaxed to reach those who could not come; abuse was then curbed by costs, not by closing the door.</td></tr>
+<tr><th>The limits of remedy</th><td>Union Carbide (1991) → Rupa Ashok Hurra (2002) → TN Governor (April 2025) → <b>Presidential Reference (Nov 2025)</b></td><td>Article 142 fills gaps; it does not displace a constitutional functionary.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Named doctrines the answer keys use</h3>
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Doctrine</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td><b>Doctrine of eclipse</b></td><td>A pre-Constitution law inconsistent with a Fundamental Right is not dead but <b>dormant</b>; it revives if the inconsistency is removed.</td></tr>
+<tr><td><b>Doctrine of severability</b></td><td>Only the <b>offending part</b> of a law is struck down where it can be separated from the rest.</td></tr>
+<tr><td><b>Doctrine of waiver</b></td><td>Fundamental Rights <b>cannot be waived</b> by the person entitled to them — they exist in the public interest, not merely the individual's.</td></tr>
+<tr><td><b>Pith and substance</b></td><td>The <b>true nature</b> of a law determines competence; incidental encroachment on another List does not invalidate it.</td></tr>
+<tr><td><b>Colourable legislation</b></td><td>What cannot be done directly cannot be done indirectly — a law that dresses up an incompetent purpose is void.</td></tr>
+<tr><td><b>Manifest arbitrariness</b></td><td>A modern Art 14 ground, used to strike down the <b>electoral bonds</b> scheme in 2024 and instant triple talaq in 2017.</td></tr>
+<tr><td><b>Proportionality</b></td><td>From <b>Puttaswamy (2017)</b> — a rights restriction must be legitimate in aim, suitable, necessary and proportionate in effect.</td></tr>
+<tr><td><b>Constitutional morality</b></td><td>Grote → Ambedkar → <b>Navtej Singh Johar (2018)</b>. Public morality cannot justify a restriction that constitutional morality forbids.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Constituent Assembly ammunition</h3>
+
+<div class="mentor">
+<div class="tag">◆ For any question on the legitimacy of judicial review</div>
+<p>Ambedkar called <b>Article 32</b> the article "without which this Constitution would be a nullity" — the "<b>heart and soul</b>" of the Constitution. That is the strongest available answer to the counter-majoritarian objection: the framers did not add review as an afterthought or allow it to emerge by interpretation as in the United States. They wrote the remedy <b>into Part III itself</b> and made it a Fundamental Right.</p>
+<p>The corollary is equally usable against overreach. The framers gave the Court a remedy, not a mandate to govern. That is precisely the distinction the November 2025 opinion drew.</p>
+</div>
+
+<h3>Exceptions ledger — this note's entries</h3>
+
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>Judicial review covers laws and executive action — <b>but not the wisdom</b> of a law, and <b>not Bills before enactment</b> except via an Art 143 reference.</div></div>
+<div class="item"><span class="dot">◆</span><div>Constitutional amendments are reviewable — <b>only</b> on the <b>basic structure</b> ground, not for ordinary inconsistency with Part III.</div></div>
+<div class="item"><span class="dot">◆</span><div>Standing requires personal injury — <b>except</b> in <b>PIL</b> and in <b>quo warranto</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Fundamental Rights cannot be <b>waived</b>, even by the person entitled to them.</div></div>
+<div class="item"><span class="dot">◆</span><div>An unconstitutional law is void — <b>except</b> that a pre-Constitution law is merely <b>eclipsed</b>, and may revive.</div></div>
+<div class="item"><span class="dot">◆</span><div>A whole statute falls — <b>except</b> where <b>severability</b> allows the valid part to survive.</div></div>
+<div class="item"><span class="dot">◆</span><div>Judicial review is basic structure — <b>but</b> it is "not an unbridled scope that can negate the separation of powers" (November 2025).</div></div>
+<div class="item"><span class="dot">◆</span><div>The Governor's action on a Bill is <b>not justiciable</b> — <b>except</b> where inaction is <b>prolonged, unexplained and indefinite</b>, which invites <b>limited</b> scrutiny.</div></div>
+<div class="item"><span class="dot">◆</span><div>Article 361 gives the Governor immunity — <b>but</b> does not bar examining the <b>validity of the action</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>PIL is open to any public-spirited person — <b>except</b> where the motive is private, political or publicity-driven, which attracts <b>exemplary costs</b>.</div></div>
+</div>
+</div>
+
+<h3>★ The examiner's red pen — eight questions on this institution</h3>
+<div class="mentor"><div class="tag">◆ Cover the right column, answer aloud, then uncover</div><p>Eleven of the twenty-five questions lost in Week 4 turned on an <b>authority</b>, a <b>majority</b>, a <b>fraction</b> or a <b>qualifier</b> — not on a concept. This grid is that finding applied to this chapter. Twenty minutes with the answers covered is worth more than an hour re-reading the sections above.</p></div>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody><tr><th>Where it comes from</th><td>No article is headed 'judicial review'. It flows from <b>Art 13</b> · <b>Arts 32 and 226</b> · <b>Arts 131–136</b> · <b>Arts 245–246</b> + Seventh Schedule · <b>Arts 251 and 254</b> · <b>Art 372</b>.</td></tr><tr><th>What it tests</th><td><b>Constitutionality</b> — never the <b>wisdom</b> of a law, never a Bill before enactment (except through an Art 143 reference).</td></tr><tr><th>What grounds</th><td>Violates Part III · outside legislative competence · offends another constitutional provision — and for an amendment, the <b>basic structure</b>.</td></tr><tr><th>What exception</th><td>An unconstitutional law is void — <b>except</b> a pre-Constitution law, which is merely <b>eclipsed</b> and may revive. A whole statute falls — <b>except</b> where <b>severability</b> saves the valid part. Ninth Schedule entries are protected — <b>except</b> those added after <b>24 April 1973</b> (<i>I.R. Coelho</i>).</td></tr><tr><th>Standing</th><td>Normally the aggrieved person — <b>except</b> in <b>PIL</b> and in <b>quo warranto</b>.</td></tr><tr><th>Constitutional or convention</th><td><b>Basic structure: judge-made</b>, nowhere in the text. <b>PIL: judge-made procedure</b>, no article and no amendment. <b>Epistolary jurisdiction: judicial innovation.</b></td></tr><tr><th>Shall or may</th><td>Art 32 relief <b>cannot be refused</b> once a Fundamental Right is breached; Art 226 relief <b>may</b> be declined where an alternative remedy exists.</td></tr></tbody>
+</table>
+</div>
+<h4>Qualifier flips</h4>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Wrong version</th><th>Correct version</th></tr></thead>
+<tbody><tr><td>Judicial activism and judicial <b>overreach</b> mean the same thing</td><td>Activism is positive enforcement; <b>overreach</b> is entering another organ's territory. One is a description, the other a charge</td></tr><tr><td>Judicial review in India rests on <b>due process of law</b></td><td>Art 21 says <b>'procedure established by law'</b>; <i>Maneka Gandhi</i> read fairness into it without adopting the doctrine</td></tr><tr><td>The <b>Constitution defines</b> its basic structure</td><td>It does <b>not</b> — the doctrine is judge-made and deliberately never listed exhaustively</td></tr><tr><td>PIL was introduced by a <b>constitutional amendment</b></td><td><b>No amendment, no article</b> — judge-made procedure under Arts 32 and 226</td></tr><tr><td>A PIL petitioner must show <b>personal injury</b></td><td>That is the requirement PIL <b>relaxes</b></td></tr><tr><td>The Court may examine whether a law is <b>economically sound</b></td><td>It tests <b>lawfulness, not merit</b></td></tr><tr><td>Judicial review is <b>unlimited</b> because it is basic structure</td><td>It is basic structure, but <b>'not an unbridled scope that can negate the separation of powers'</b> — Nov 2025</td></tr></tbody>
+</table>
+</div>
+</section>
+
+<section id="s7" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+<p class="lead">Bucket (A) genuine, verified PYQs with year and stage, then bucket (B) practice questions in identical format.</p>
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="pyq">
+<span class="yr">2017</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">In India, Judicial Review implies</p>
+<ul class="opts single"><li>(a) the power of the Judiciary to pronounce upon the constitutionality of laws and executive orders.</li><li>(b) the power of the Judiciary to question the wisdom of the laws enacted by the Legislatures.</li><li>(c) the power of the Judiciary to review all the legislative enactments before they are assented to by the President.</li><li>(d) the power of the Judiciary to review its own judgements given earlier in similar or different cases.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>This is the textbook definition, and the question rewards holding it word for word rather than reasoning from general impressions about the judiciary.</li><li>(b) is the <b>wisdom</b> trap — courts test constitutionality, never policy merit. (c) describes a <b>pre-enactment</b> power India does not have. (d) is <b>Article 137</b>, review of the Court's own judgments — a different power entirely.</li><li>Three distractors, three distinct concepts. Section 02 sets them side by side.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2020</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>The Constitution of India defines its 'basic structure' in terms of federalism, secularism, fundamental rights and democracy.</li><li>The Constitution of India provides for 'judicial review' to safeguard the citizens' liberties and to preserve the ideals on which the Constitution is based.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Neither 1 nor 2</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong.</b> The Constitution <b>nowhere defines</b> basic structure. The doctrine is judge-made, from <b>Kesavananda Bharati (1973)</b>, and its contents have been built case by case — deliberately never exhaustively listed.</li><li><b>Statement 2 is wrong on one word: "provides".</b> There is no article headed "judicial review". The power flows from <b>Arts 13, 32, 226, 131–136, 245–246 and 372</b> read together. Its <b>purpose</b> as stated is accurate, which is what makes the statement tempting.</li><li>The recurring pattern across this note's PYQs: <b>"the Constitution defines / provides for X"</b> is false far more often than it is true. Compare the 2019 misbehaviour question and the 2022 contempt question in Note 05.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2019</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">With reference to the Constitution of India, consider the following statements:</p>
+<ol class="subs"><li>No High Court shall have the jurisdiction to declare any central law to be constitutionally invalid.</li><li>An amendment to the Constitution of India cannot be called into question by the Supreme Court of India.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Neither 1 nor 2</b>
+<ul class="vwhy"><li>Statement 1 fails because of the <b>integrated judiciary</b>: a High Court exercising review under Arts 13 and 226 can strike down a <b>central</b> law.</li><li>Statement 2 fails because of <b>Kesavananda (1973)</b> and <b>Minerva Mills (1980)</b>, which struck down <b>Art 368(4) and (5)</b> — the 42nd Amendment's own attempt to make amendments unreviewable. The 99th Amendment was struck down on the same footing in 2015.</li><li>Two "neither" answers in a row in this bucket. Judge statements individually; there is no rule that a question must contain a true one.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2019</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">With reference to the Constitution of India, prohibitions or limitations or provisions contained in ordinary laws cannot act as prohibitions or limitations on the constitutional powers under Article 142. It could mean which one of the following?</p>
+<ul class="opts single"><li>(a) The decisions taken by the Election Commission of India while discharging its duties cannot be challenged in any court of law.</li><li>(b) The Supreme Court of India is not constrained in the exercise of its powers by laws made by the Parliament.</li><li>(c) In the event of grave financial crisis in the country, the President of India can declare Financial Emergency without the counsel from the Cabinet.</li><li>(d) State Legislatures cannot make laws on certain matters without the concurrence of Union Legislature.</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b)</b>
+<ul class="vwhy"><li>The stem restates the settled position that a <b>constitutional</b> power cannot be limited by <b>ordinary statute</b>. Option (b) is that proposition in different words.</li><li>Carried into this note because it is the pre-2025 half of the Article 142 picture. The post-2025 half: <b>the Constitution itself can limit Art 142</b>, and does — Section 05.</li><li>Together the two propositions give you a complete and current answer on Art 142's limits, which few candidates will have.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2022</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>A Bill amending the Constitution of India requires a prior recommendation of the President of India.</li><li>When a Constitution Amendment Bill is presented to the President of India, it is obligatory for the President of India to give his/her assent.</li><li>A Constitution Amendment Bill must be passed by both the Lok Sabha and the Rajya Sabha by a special majority and there is no provision for joint sitting.</li></ol>
+<p class="qtext">Which of the statements given above are correct?</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — 2 and 3 only</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong.</b> No prior Presidential recommendation is needed for a Constitution Amendment Bill — that requirement attaches to Money Bills and to certain financial and State-reorganisation Bills, not to Art 368.</li><li>Statement 2 is correct because of the <b>24th Amendment, 1971</b>, which made assent to a Constitution Amendment Bill <b>obligatory</b> — the President has no veto over it.</li><li>Statement 3 is correct, and the absence of a joint sitting is the structural point: <b>Art 108 does not apply</b> to Constitution Amendment Bills. Included here because the reviewability of amendments is this note's subject.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions — same formats, built on this note</h3>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following is <b>NOT</b> a correct statement about Public Interest Litigation in India?</p>
+<ul class="opts single"><li>(a) It was made possible by a relaxation of the rule of <i>locus standi</i></li><li>(b) It was introduced into the Constitution by an amendment</li><li>(c) A letter addressed to the court may be treated as a writ petition</li><li>(d) Courts may impose exemplary costs where a PIL is found to be frivolous</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>PIL rests on <b>no amendment and no article of its own</b>. It is a judge-made procedural innovation under <b>Arts 32 and 226</b>, developed in <b>Hussainara Khatoon (1979)</b> and <b>S.P. Gupta (1981)</b>.</li><li>(c) is the <b>epistolary jurisdiction</b> and (d) the corrective against abuse — both accurate.</li><li>Note the family resemblance to the collegium: another major institutional feature with <b>no textual basis</b>, built entirely by the Court. If a statement attributes either to an amendment, it is false.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">With reference to judicial review in India, which one of the following statements is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) Article 13 declares laws inconsistent with Fundamental Rights to be void</li><li>(b) The Supreme Court may examine whether a law is economically sound before upholding it</li><li>(c) A constitutional amendment may be struck down for violating the basic structure</li><li>(d) Judicial review under Articles 32 and 226 is part of the basic structure</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>Courts test <b>constitutionality, not wisdom</b>. Economic soundness, expediency and desirability are for the legislature — this is the same trap Prelims 2017 set with a different surface.</li><li>(c) is <b>Kesavananda</b>; (d) is <b>L. Chandra Kumar (1997)</b>. Both accurate.</li><li>When an option describes a court assessing whether a policy is <b>good</b> rather than whether it is <b>lawful</b>, it is almost always the false one.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>Hussainara Khatoon v. State of Bihar is regarded as the first Public Interest Litigation in India.</li><li>S.P. Gupta v. Union of India relaxed the rule of <i>locus standi</i>.</li><li>The Vishaka guidelines were binding on all courts under Article 141 until Parliament legislated.</li><li>Parliament enacted a law on workplace sexual harassment within five years of the Vishaka judgment.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements 1, 2 and 3 are correct — 1979, 1981 and Art 141 respectively.</li><li><b>Statement 4 is wrong on the interval.</b> Vishaka was decided in <b>1997</b>; the legislation came in <b>2013</b> — <b>sixteen</b> years, not five. That gap is itself the strongest argument that the Court was filling a vacuum rather than creating one.</li><li>A statement can be false purely on an <b>interval</b>. Check durations as carefully as dates.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the Supreme Court's advisory opinion of November 2025 on the powers of the Governor and the President:</p>
+<ol class="subs"><li>It held that the Governor has three options when a Bill is presented for assent.</li><li>It upheld the timelines prescribed in the Tamil Nadu Governor judgment.</li><li>It held that a court cannot deem assent to a Bill.</li><li>It held that Article 142 cannot supplant constitutional provisions.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements 1, 3 and 4 are correct. The three-options holding <b>survived</b>; deemed assent and the limits on Art 142 are the opinion's two most quotable findings.</li><li><b>Statement 2 is wrong — it is precisely what was reversed.</b> The Court held that "as soon as possible" cannot be converted into fixed timelines, and that the Tamil Nadu judgment had misread <b>Keisham Meghachandra Singh (2020)</b>, where a timeline was imposed on a Speaker exercising a <b>quasi-judicial</b> function.</li><li>When a later judgment revisits an earlier one, know exactly <b>which parts survived</b>. "It was overruled" is almost never the whole truth.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> The Supreme Court issued binding guidelines on sexual harassment at the workplace in 1997.</li><li><b>Statement-II:</b> Law declared by the Supreme Court is binding on all courts within the territory of India.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</li><li>(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not correct</li><li>(d) Statement-I is not correct but Statement-II is correct</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both are correct, and <b>Article 141</b> is exactly what gave the <b>Vishaka</b> guidelines binding force in the absence of any statute. Without Art 141 they would have been a recommendation.</li><li>The three-step method applies: truth of I, truth of II, then the causal link. Here the link is genuine and direct.</li><li>Contrast a case where the link would fail — "the Court struck down the NJAC" explained by "the Supreme Court is a court of record". Both true; unrelated.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of case and contribution:</p>
+<ol class="subs"><li>Hussainara Khatoon (1979) — right to speedy trial</li><li>S.P. Gupta (1981) — relaxation of <i>locus standi</i></li><li>Vishaka (1997) — guidelines on workplace sexual harassment</li><li>Minerva Mills (1980) — struck down clauses excluding judicial review of amendments</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — all four</b>
+<ul class="vwhy"><li>All correct. Minerva Mills struck down <b>Article 368(4) and (5)</b>, inserted by the 42nd Amendment to place amendments beyond review.</li><li>The fact worth attaching to pair 2: <b>S.P. Gupta is the First Judges Case</b> as well. One case, two separate examinable holdings — appointments and standing.</li><li>Fourth "all correct" set across the week. If the instinct to reject (d) is still firing, that is the signal to keep drilling it.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>Judicial activism and judicial overreach mean the same thing.</li><li>Judicial review in India is based on the doctrine of due process of law.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Neither 1 nor 2</b>
+<ul class="vwhy"><li><b>Statement 1 is wrong.</b> Activism is a court playing a positive role in enforcing rights; <b>overreach</b> is a court entering territory the Constitution assigns to another organ. One is a description, the other is a charge.</li><li><b>Statement 2 is wrong.</b> The Constitution uses "<b>procedure established by law</b>" in Article 21, not "due process". <b>Maneka Gandhi (1978)</b> read a fairness requirement into it, which brought the practice close to due process — but the doctrine was never adopted textually.</li><li>Both statements are the kind that feel right at speed. Slow down on definitional stems; they are decided by single words.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Direct</span>
+<p class="qtext">Which one of the following pairs of doctrine and effect is correctly matched?</p>
+<ul class="opts single"><li>(a) Doctrine of eclipse — the offending part of a statute alone is struck down</li><li>(b) Doctrine of severability — a pre-Constitution law becomes dormant and may revive</li><li>(c) Doctrine of colourable legislation — what cannot be done directly cannot be done indirectly</li><li>(d) Doctrine of waiver — a citizen may give up a Fundamental Right voluntarily</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c)</b>
+<ul class="vwhy"><li>(a) and (b) have been <b>swapped</b> — <b>severability</b> strikes down only the offending part; <b>eclipse</b> makes a pre-Constitution law dormant with the possibility of revival.</li><li>(d) states the opposite of the law: Fundamental Rights <b>cannot be waived</b>, because they exist in the public interest and not merely for the individual's benefit.</li><li>Section 06 lists all eight doctrines. Learn eclipse and severability as a deliberate pair, since swapping them is the obvious question.</li></ul>
+</div>
+</div>
+
+<h3>(C) Trap statements — True or False</h3>
+<div class="mentor">
+<div class="tag">◆ Why this bucket exists, and how to work it</div>
+<p><b>Twenty-one of the fifty questions in the Week 4 paper were &ldquo;how many of the above&rdquo;</b> &mdash; 42 per cent &mdash; and that format scored <b>52 per cent</b>. It cannot be solved by elimination: every statement has to be judged on its own. So the skill the paper actually rewards is not answering questions, it is <b>marking a single statement true or false</b>.</p>
+<p>That is all this bucket is. 16 statements from this note, one at a time. Decide before you click. If you find yourself reasoning about how many <i>ought</i> to be true, stop &mdash; that instinct is what the format punishes.</p>
+<p>Roughly half are false, and most of the false ones are wrong by <b>one word</b>: an authority, a number, a fraction, or a qualifier. That is how this setter builds them.</p>
+</div>
+<div class="pyq">
+<span class="stg">Trap 1 &middot; True or False</span>
+<p class="qtext">The Constitution of India contains an express article headed 'judicial review'.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>There is none. The power flows from <b>Arts 13, 32, 226, 131–136, 245–246, 251, 254 and 372</b> read together.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 2 &middot; True or False</span>
+<p class="qtext">Judicial review includes the power to examine whether a law is wise or economically sound.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It tests <b>constitutionality, not merit</b>. Policy is for the legislature — the distractor Prelims 2017 used.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 3 &middot; True or False</span>
+<p class="qtext">The Constitution of India defines its basic structure.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It does not. The doctrine is judge-made, from <b>Kesavananda Bharati (1973)</b>, and its contents have deliberately never been listed exhaustively.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 4 &middot; True or False</span>
+<p class="qtext">Minerva Mills struck down clauses of Article 368 that sought to place constitutional amendments beyond judicial review.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>1980</b> — Article 368(4) and (5), inserted by the 42nd Amendment. A Parliament of limited powers cannot make itself unlimited.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 5 &middot; True or False</span>
+<p class="qtext">Laws placed in the Ninth Schedule after 24 April 1973 are open to judicial review on basic-structure grounds.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>I.R. Coelho (2007)</b>. The date is that of <i>Kesavananda</i>, and the date is the whole question.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 6 &middot; True or False</span>
+<p class="qtext">Article 21 of the Constitution uses the expression 'due process of law'.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>It uses <b>'procedure established by law'</b>, borrowed from Japan. <i>Maneka Gandhi</i> (1978) read fairness into it without adopting the American doctrine.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 7 &middot; True or False</span>
+<p class="qtext">A pre-Constitution law inconsistent with a Fundamental Right is void and cannot revive.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>The <b>doctrine of eclipse</b> — it is <b>dormant</b>, and revives if the inconsistency is removed.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 8 &middot; True or False</span>
+<p class="qtext">Under the doctrine of severability, only the offending part of a statute is struck down where it can be separated.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>Contrast eclipse, which concerns pre-Constitution laws. These two are routinely swapped in a pairs question.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 9 &middot; True or False</span>
+<p class="qtext">A citizen may voluntarily waive a Fundamental Right.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>Fundamental Rights <b>cannot be waived</b> — they exist in the public interest, not merely for the individual's benefit.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 10 &middot; True or False</span>
+<p class="qtext">Public Interest Litigation was introduced into the Constitution by an amendment.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li><b>No amendment and no article.</b> It is judge-made procedure under Arts 32 and 226 — like the collegium, a major institution with no textual basis.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 11 &middot; True or False</span>
+<p class="qtext">Hussainara Khatoon is regarded as the first Public Interest Litigation in India.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>1979</b>, on undertrial prisoners in Bihar; it read a <b>right to speedy trial</b> into Article 21.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 12 &middot; True or False</span>
+<p class="qtext">S.P. Gupta relaxed the rule of locus standi.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li><b>1981</b> — and the same case is the <b>First Judges Case</b>. One case, two separate examinable holdings.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 13 &middot; True or False</span>
+<p class="qtext">In a PIL the petitioner must show that he has personally suffered a legal injury.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>That is precisely the requirement PIL <b>relaxes</b>. Compare <b>quo warranto</b>, the other place standing is relaxed.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 14 &middot; True or False</span>
+<p class="qtext">The Vishaka guidelines were binding on all courts until Parliament legislated.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) &mdash; True</b>
+<ul class="vwhy"><li>By force of <b>Article 141</b>. Parliament legislated only in <b>2013</b> — sixteen years later.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 15 &middot; True or False</span>
+<p class="qtext">Judicial activism and judicial overreach mean the same thing.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>Activism is a court playing a positive role in enforcing rights; <b>overreach</b> is entering territory the Constitution assigns to another organ. One is a description, the other a charge.</li></ul>
+</div>
+</div>
+<div class="pyq">
+<span class="stg">Trap 16 &middot; True or False</span>
+<p class="qtext">In November 2025 the Supreme Court held that a court may deem assent to a State Bill where the Governor delays.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) &mdash; False</b>
+<ul class="vwhy"><li>The opposite. It held there can be <b>no deemed assent</b>, that no timelines can be read into Arts 200 and 201, and that <b>Article 142 cannot supplant constitutional provisions</b>.</li></ul>
+</div>
+</div>
+
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">08</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard — budget-checked, lineage first, trade shown. This is the highest-probability Mains area in the whole judiciary week.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M40</span><span class="prac">Practice · Week 5</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">"Judicial activism is the response to institutional failure elsewhere; judicial overreach is its failure to stop." Critically examine with reference to recent constitutional developments.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically examine."</b> The quotation contains two claims. Test each. A strong answer accepts the first substantially and shows the second being corrected by the Court itself.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The distinction, stated precisely</li><li>Activism as a response to vacuum</li><li>Where it crossed</li><li>The self-correction</li><li>Verdict and way forward</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Judicial review</b> is the power to test law and executive action against the Constitution. <b>Activism</b> is its energetic exercise — relaxed standing, guidelines, continuing supervision. <b>Overreach</b> is different in kind: a court exercising a power the Constitution assigns to another organ.</p>
+<p><span class="sh">Activism as a response to vacuum</span></p>
+<p>The record supports the first claim. <b>Hussainara Khatoon (1979)</b> arose because undertrials had served longer than their maximum sentence. <b>Vishaka (1997)</b> filled a legislative void that Parliament left open for a further <b>sixteen years</b>. <b>Vineet Narain (1998)</b> addressed investigative agencies that could not act against the executive controlling them. In each, the Court entered a field the competent organ had vacated.</p>
+<p><span class="sh">Where it crossed</span></p>
+<p>In <b>State of Tamil Nadu v. Governor of Tamil Nadu (April 2025)</b> the Court, having rightly found years of gubernatorial inaction unlawful, went on to use <b>Article 142</b> to <b>deem assent</b> to ten Bills. Diagnosis was within its power; supplying the assent was not. That is the second claim's evidence.</p>
+<p><span class="sh">The self-correction</span></p>
+<p>On the <b>16th Presidential Reference</b>, decided <b>20 November 2025</b>, a Constitution Bench held that no timelines can be read into Articles 200 and 201, that there can be <b>no deemed assent</b>, and that <b>Article 142 cannot supplant constitutional provisions</b> — adding that judicial review, though basic structure, is "not an unbridled scope that can negate the separation of powers". It preserved a narrow channel: prolonged, unexplained inaction invites <b>limited</b> scrutiny.</p>
+<p>The quotation is therefore half right. Activism has been reactive, but overreach was not a failure to stop — it was corrected within seven months, by the institution itself. The durable remedy is legislative responsiveness, since every vacuum the Court has entered was made elsewhere.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Hussainara Khatoon (1979) · Vishaka (1997) and the sixteen-year gap · Vineet Narain (1998) · TN Governor (April 2025) and Art 142 · Special Reference No. 1 of 2025, 20 November 2025 · the "not an unbridled scope" formulation.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 276 / 250 words.</b> <b>Cut:</b> the ADM Jabalpur origin story and the list of Article 21 expansions — vivid, but the question is about the <b>boundary</b>, not the history of activism. <b>Bought:</b> the direct quotation from the November 2025 opinion, which is the single strongest sentence available here because it is the Court limiting itself rather than a critic limiting it.</div>
+<div class="cost"><b>What would cost you marks:</b> treating activism and overreach as interchangeable — the question turns on the distinction; and ending with "a balance must be struck", which asserts a conclusion the body has not earned. Name the balance: declare rights, leave remedy.</div>
+</div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M41</span><span class="prac">Practice · Week 5</span><span class="mk">10 marks · 150 words</span></div>
+<p class="qtext">Public Interest Litigation has democratised access to justice at a cost. Comment.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Comment."</b> Accept the premise, quantify both halves, and end with a corrective rather than a verdict on whether PIL was worthwhile.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The device</li><li>What it delivered</li><li>The cost</li><li>The corrective</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>PIL rests on a single procedural move: the relaxation of <b><i>locus standi</i></b>, formulated in <b>S.P. Gupta (1981)</b>, so that any public-spirited person may move the court for those who cannot approach it themselves. It has no article of its own and no amendment behind it — it is judge-made procedure under <b>Articles 32 and 226</b>.</p>
+<p><span class="sh">What it delivered</span></p>
+<p><b>Hussainara Khatoon (1979)</b> secured the release of around forty thousand undertrials and read a <b>right to speedy trial</b> into Article 21. <b>Bandhua Mukti Morcha (1984)</b> reached bonded labourers. The <b>epistolary jurisdiction</b>, under which a letter is treated as a petition, removed the cost barrier altogether.</p>
+<p><span class="sh">The cost</span></p>
+<p>Three. PIL consumes the time of the highest courts while ordinary appeals wait. Courts lack the fiscal and technical machinery to design the policy their orders imply, and cannot be held accountable for outcomes. And the device is abused for publicity, private vendetta and political litigation.</p>
+<p><span class="sh">The corrective</span></p>
+<p>The courts' own answer has been <b>exemplary costs</b> and stricter scrutiny of the petitioner's motive — narrowing abuse without closing the door. That is the right instinct: the remedy for misuse of access is filtering, not restriction.</p>
+</div>
+<div class="va"><b>Value additions used:</b> S.P. Gupta (1981) and the standing formulation · Hussainara Khatoon (1979) with the undertrial figure · Bandhua Mukti Morcha (1984) · epistolary jurisdiction · exemplary costs as the judicial corrective.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 174 / 150 words.</b> <b>Cut:</b> the Vishaka example and the continuing-mandamus technique — both belong to <b>activism</b> rather than to access, which is what this question asks about. <b>Bought:</b> the closing line distinguishing filtering from restriction, which converts a list of costs into a position.</div>
+<div class="cost"><b>What would cost you marks:</b> listing PIL's achievements without naming a single case or figure — this is an area where examiners expect names; and omitting the abuse problem, which is the "cost" the question explicitly asks you to address.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — Judicial Review, Activism &amp; PIL</h2>
+<ul>
+<li><b>Judicial review</b> = power to pronounce on the <b>constitutionality</b> of legislative enactments and executive orders. <b>Not</b> the wisdom of a law; <b>not</b> pre-enactment scrutiny; <b>not</b> Art 137 review of its own judgments.</li>
+<li>Basis: <b>Art 13</b> · <b>Arts 32 and 226</b> · <b>Arts 131–136</b> · <b>Arts 245–246</b> + Seventh Schedule · <b>Arts 251 and 254</b> · <b>Art 372</b>. There is <b>no article headed "judicial review"</b>.</li>
+<li>Grounds a law can fall on: violates Part III · outside legislative competence · offends another constitutional provision (for an amendment, <b>basic structure</b>). Not: unwise or inexpedient.</li>
+<li><b>Minerva Mills (1980)</b> struck down <b>Art 368(4) and (5)</b>, inserted by the <b>42nd Amendment</b> to exclude review of amendments.</li>
+<li>US <b>due process</b> vs Indian <b>procedure established by law</b> (Art 21, borrowed from Japan). <b>Gopalan (1950)</b> narrow → <b>Maneka Gandhi (1978)</b> "right, just and fair".</li>
+<li>Ladder: <b>restraint → review → activism → overreach</b>. Activism = positive enforcement; overreach = doing another organ's job.</li>
+<li><b>PIL</b> — <i>locus standi</i> relaxed. First: <b>Hussainara Khatoon (1979)</b>, ~40,000 undertrials, <b>speedy trial</b> into Art 21. Doctrine: <b>S.P. Gupta (1981)</b>, also the <b>First Judges Case</b>. Under <b>Arts 32/226</b>; <b>no PIL article, no amendment</b>. <b>Epistolary jurisdiction</b>; <b>continuing mandamus</b>; commissions and <i>amicus curiae</i>. Frivolous PIL → <b>exemplary costs</b>.</li>
+<li>Activism instances: <b>Vishaka (1997)</b> (Act only in <b>2013</b> — a <b>16-year</b> gap) · <b>D.K. Basu (1997)</b> · <b>M.C. Mehta (1987)</b> absolute liability · <b>Vineet Narain (1998)</b> · 2G and coal cancellations · <b>electoral bonds struck down 2024</b> · Shayara Bano (2017), Navtej (2018), Joseph Shine (2018), Common Cause (2018).</li>
+<li><b>April 2025</b> TN Governor — three options, timelines, Art 142 <b>deemed assent</b> to 10 Bills. <b>May 2025</b> — <b>16th Presidential Reference</b>, 14 questions, Art 143.</li>
+<li><b>20 Nov 2025</b> (2025 INSC 1333, 5 judges, unanimous, 111 pages): three options <b>retained</b>; <b>no timelines</b>; <b>no deemed assent</b>; actions <b>not justiciable</b>; <b>Art 142 cannot supplant the Constitution</b>; review is basic structure but <b>"not an unbridled scope that can negate the separation of powers"</b>; <b>prolonged unexplained inaction</b> → <b>limited</b> scrutiny; <b>Art 361</b> does not bar examining validity.</li>
+<li>Doctrines: <b>eclipse</b> (dormant, may revive) · <b>severability</b> (only the bad part falls) · <b>waiver</b> (FRs <b>cannot</b> be waived) · <b>pith and substance</b> · <b>colourable legislation</b> · <b>manifest arbitrariness</b> (electoral bonds, 2024) · <b>proportionality</b> (Puttaswamy, 2017) · <b>constitutional morality</b> (Navtej, 2018).</li>
+<li>Ambedkar on <b>Art 32</b> — the article "without which this Constitution would be a nullity"; the <b>heart and soul</b>.</li>
+<li>Way forward: restraint in <b>remedy</b>, not in jurisdiction · guidelines expressly <b>interim</b> · <b>legislative responsiveness</b> · judicial <b>accountability</b> reform.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> the closing note of Week 5 and of the judiciary sequence. It draws on <b>05 Supreme Court</b> (Arts 141 and 142), <b>06 High Court</b> (Art 226 and <i>locus standi</i> in quo warranto) and <b>07 Subordinate Courts &amp; Tribunals</b> (L. Chandra Kumar). Revise it last, the evening before the test, alongside <b>★ The Exceptions Ledger</b>.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='07%20Subordinate%20Courts%20and%20Tribunals.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">07 · Subordinate Courts &amp; Tribunals</span></button>
+<button class="tabflow-btn tabflow-next" onclick="location.href='05%20Supreme%20Court.html'"><span class="tabflow-dir">Back to start →</span><span class="tabflow-label">05 · Supreme Court</span></button>
+</div>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 6 — Executive &amp; Judiciary · Note 08 of 9<br>
+Built for focused revision, not first-time learning — pair with NCERT Class 11 <i>Indian Constitution at Work</i> and Laxmikanth Ch. 27–29.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

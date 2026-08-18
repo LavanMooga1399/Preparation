@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5 Mock Test — Judiciary | UGSSP Format</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A; --green:#177a4d; --red:#c22525;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15.5px;line-height:1.6;}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 90px;}
+.hero{margin:0 -20px 30px;padding:44px 34px 38px;background:linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);color:#fff;border-radius:0 0 24px 24px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--star);margin-bottom:12px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,5vw,40px);margin:0 0 12px;}
+.hero p{max-width:640px;font-size:14.5px;color:#D9D9F2;margin:0 0 8px;}
+.rules{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:18px 20px;margin:0 0 24px;font-size:14px;color:#33344f;}
+.rules b{color:var(--deep);}
+.timerbar{position:sticky;top:0;z-index:50;background:var(--deep);color:#fff;border-radius:0 0 14px 14px;padding:10px 18px;display:flex;align-items:center;gap:16px;margin:0 0 24px;box-shadow:0 8px 22px rgba(27,29,81,.3);}
+.timerbar .t{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--star);min-width:96px;}
+.timerbar button{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.06em;background:var(--gold);color:#3a2a00;border:0;border-radius:9px;padding:9px 16px;cursor:pointer;}
+.timerbar button.secondary{background:rgba(255,255,255,.14);color:#EDECFF;}
+.timerbar button.secondary:hover{background:rgba(255,255,255,.24);}
+.timerbar .note{font-size:12px;color:#C9C6EE;}
+.timerbar .shufflewrap{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#C9C6EE;display:flex;align-items:center;gap:5px;cursor:pointer;}
+@media(max-width:760px){.timerbar{flex-wrap:wrap;gap:8px;}.timerbar .note{width:100%;}}
+.histtable{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px;}
+.histtable th,.histtable td{padding:6px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.histtable th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.histtable .up{color:#7fe0a7;}
+.histtable .down{color:#ff9d9d;}
+.retakerow{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+.retakerow button{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;letter-spacing:.06em;border:0;border-radius:10px;padding:11px 20px;cursor:pointer;background:var(--star);color:#3a2a00;}
+.retakerow button.ghost{background:rgba(255,255,255,.14);color:#EDECFF;}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;}
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.qnum{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;color:#fff;background:var(--deep2);border-radius:18px;padding:3px 11px;}
+.fmt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:14px;padding:2px 9px;}
+.fmt.hot{color:var(--nebula);border-color:#EBC4DE;background:var(--nebula-soft);}
+.q p.stem{margin:6px 0 10px;color:#22233d;}
+.q ol.subs{margin:0 0 10px 20px;padding:0;color:#33344f;}
+.q ol.subs li{margin:3px 0;}
+.opt{display:block;padding:8px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-size:14.5px;color:#2d2e4a;transition:background .12s;}
+.opt:hover{background:var(--teal-soft);}
+.opt input{margin-right:9px;}
+.q.graded .opt{cursor:default;}
+.q.graded .opt.correct{border-color:var(--green);background:#E9F7EE;}
+.q.graded .opt.chosenwrong{border-color:var(--red);background:#fdecec;}
+.expl{display:none;margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid #EBD9A8;font-size:13.5px;color:#4a3d18;}
+.expl b{color:#7a5502;}
+.q.graded .expl{display:block;}
+.verdict-chip{display:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;border-radius:14px;padding:2px 10px;margin-left:auto;}
+.q.graded .verdict-chip{display:inline-block;}
+.q.graded.right .verdict-chip{background:#E9F7EE;color:var(--green);}
+.q.graded.wrong .verdict-chip{background:#fdecec;color:var(--red);}
+.q.graded.skip .verdict-chip{background:#eef;color:var(--deep2);}
+.submitrow{margin:30px 0;text-align:center;}
+.submitrow button{font-family:'Fraunces',serif;font-weight:600;font-size:18px;background:var(--deep);color:#fff;border:0;border-radius:14px;padding:16px 34px;cursor:pointer;box-shadow:0 10px 26px rgba(27,29,81,.3);}
+.results{display:none;background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:30px 0;}
+.results.show{display:block;}
+.results h2{font-family:'Fraunces',serif;color:#fff;margin:0 0 6px;}
+.score-big{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--star);}
+.results table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px;}
+.results th,.results td{padding:7px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.results th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.results .good{color:#7fe0a7;}
+.results .bad{color:#ff9d9d;}
+h2.sec{font-family:'Fraunces',serif;font-weight:600;color:var(--deep);margin:36px 0 12px;}
+.mains{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:0 0 16px;font-size:14.5px;}
+.mains b{color:var(--deep2);}
+.mains .skel{margin-top:10px;padding:12px 14px;background:#FAFBFE;border:1px dashed var(--line-strong);border-radius:10px;font-size:13.5px;color:#33344f;}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:center;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+<div class="eyebrow">Week 5 · UGSSP Format Simulation · Take before Sunday 8 AM</div>
+<h1>Week 5 Mock Test — 50 Questions</h1>
+<p>Exact test format: +2 per correct, &minus;0.66 per wrong, 0 for skipped. 60 minutes. Covers the full Week 5 syllabus — State Legislature (Days 1&ndash;2), the Supreme Court, the High Courts, subordinate courts and tribunals, and judicial review, activism and PIL.</p>
+<p><b>Weighted to the format that is still leaking.</b> Statements remains your weakest measured format at <b>64%</b> from the Week 3 paper, so there are <b>13</b> of them here, plus <b>10</b> negative-phrased and <b>8</b> how-many. The answer key is balanced across (a)&ndash;(d) at <b>12 / 13 / 13 / 12</b>, and there is one <b>deliberate duplicate pair</b> — answer it identically both times.</p>
+</header>
+
+<div class="rules">
+<b>The five rules:</b> (1) Keep the NOT discipline — mark each statement T/F, then re-read the stem and flip. It took you from 0/6 to 2/2. (2) Speed is not your problem: you finished Week 3 in 31 of 60 minutes and still lost marks on questions answered in under fifteen seconds. Read the whole stem. (3) On a Statements question, evaluate <i>every</i> statement before looking at the options. (4) Hunt absolutes — <b>any, all, only, never, must</b>. Several questions in this paper turn on a single qualifier. (5) On a how-many question, if two statements are genuinely unknown, skip — it has the worst guess-odds of any format.
+</div>
+
+<div class="rules" style="border-left-color:#B5388B;">
+<b>Two facts in this paper changed in the last twelve months. Both are deliberate.</b> The Supreme Court's sanctioned strength moved from <b>34 to 38</b> in 2026, and the rule that a Governor <b>must</b> assent to a re-passed Bill was narrowed by the <b>November 2025</b> advisory opinion — he cannot withhold, but he may still reserve it for the President. If you answer either from an older textbook you will get it wrong, which is exactly the point of including them.
+</div>
+
+<div class="timerbar">
+<span class="t" id="timer">60:00</span>
+<button id="startbtn" type="button">Start timer</button>
+<button id="resetbtn" type="button" class="secondary">Reset &amp; retake</button>
+<label class="shufflewrap"><input type="checkbox" id="shufflechk"> Shuffle on reset</label>
+<span class="note" id="attemptnote">Attempt 1 &middot; simulate honestly, no notes open.</span>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q1</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the Legislative Council of a State, consider the following statements:</p><ol class="subs"><li>One-sixth of its members are nominated by the Governor.</li><li>The fields from which the Governor nominates are identical to those from which the President nominates to the Rajya Sabha.</li><li>Its Chairman is elected by the Council from among its own members.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q1" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q1" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q1" value="3">(c) All three</label><label class="opt"><input type="radio" name="q1" value="4">(d) None</label>
+<div class="expl"><b>(b) Only two.</b> Statements 1 and 3 are correct. <b>Statement 2 is wrong</b>, and by a single item: <b>Article 171(5)</b> lists <b>five</b> fields — literature, science, art, <b>co-operative movement</b> and social service — whereas <b>Article 80(3)</b> lists <b>four</b>, without the co-operative movement. Statement 3 is the contrast with the Rajya Sabha, whose Chairman is the Vice-President and not a member of the House. <b>Note 04, Section 03.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q2</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the State Legislature:</p><ol class="subs"><li>The quorum of a House is ten members or one-tenth of the total membership, whichever is greater.</li><li>The Speaker of the Legislative Assembly may be removed by a resolution passed after fourteen days' notice.</li><li>The Governor must address the Assembly at the commencement of the first session of each year.</li><li>Not more than six months shall intervene between two sessions.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q2" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q2" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q2" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q2" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> Art 189 quorum (note the floor of ten, which the Union Art 100 lacks); Art 179 removal with fourteen days' notice; Art 176 special address, obligatory unlike the discretionary Art 175; Art 174 six-month rule. <b>Note 04, Section 05.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q3</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to disqualification of a member of a State legislature, consider the following statements:</p><ol class="subs"><li>The question is decided by the Governor, who must act according to the opinion of the Election Commission.</li><li>A question of disqualification on the ground of defection is also decided by the Governor.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q3" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q3" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q3" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q3" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> Article 192 makes the Governor the deciding authority and <b>binds</b> him to the Election Commission's opinion. But <b>defection</b> is carved out — under the <b>Tenth Schedule</b> it is decided by the <b>Speaker or Chairman</b>, and that decision is subject to judicial review after <i>Kihoto Hollohan</i> (1992). <b>Note 04, Section 05.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q4</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of Article and subject relating to the State Legislature:</p><ol class="subs"><li>Article 174 — sessions, prorogation and dissolution</li><li>Article 187 — secretariat of the State legislature</li><li>Article 189 — voting, vacancies and quorum</li><li>Article 213 — Governor's power to promulgate ordinances</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q4" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q4" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q4" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q4" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> An 'all correct' pairs set placed deliberately — your recorded instinct is to reject option (d). Verify each pair rather than reasoning about how many ought to be wrong. <b>Note 04, Section 05.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q5</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Article 200 of the Constitution, consider the following statements:</p><ol class="subs"><li>Where a Bill is returned by the Governor and passed again by the House, the Governor is bound to give his assent.</li><li>The Governor may reserve a Bill for the consideration of the President.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q5" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q5" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q5" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q5" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(b) 2 only.</b> This is the fact that <b>changed in November 2025</b>. The first proviso says the Governor <b>shall not withhold assent</b> on the second round — but the Constitution Bench in <i>Special Reference No. 1 of 2025</i> departed from the April 2025 Tamil Nadu judgment and held he may still <b>reserve the Bill for the President</b>. So he is not bound to assent. <b>Note 04, Section 04 and Topic 6 Note 01.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q6</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements regarding an ordinance promulgated by the Governor under Article 213:</p><ol class="subs"><li>It can be promulgated only when the State legislature is not in session.</li><li>It ceases to operate six weeks from the reassembly of the legislature.</li><li>It can be used to amend the Constitution.</li><li>In certain cases the Governor requires the prior instructions of the President.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q6" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q6" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q6" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q6" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1, 2 and 4 are correct. <b>Statement 3 is wrong</b> — an ordinance cannot amend the Constitution, exactly as under Art 123. Maximum life is about six months and six weeks. <b>Note 04, Section 05.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q7</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following committees of a State legislature is drawn entirely from the Legislative Assembly?</p>
+<label class="opt"><input type="radio" name="q7" value="1">(a) Public Accounts Committee</label><label class="opt"><input type="radio" name="q7" value="2">(b) Estimates Committee</label><label class="opt"><input type="radio" name="q7" value="3">(c) Committee on Subordinate Legislation</label><label class="opt"><input type="radio" name="q7" value="4">(d) Business Advisory Committee</label>
+<div class="expl"><b>(b) Estimates Committee.</b> As at the Union level, the Estimates Committee has <b>no members from the upper House</b>. Members of a Legislative Council may be associated with the Public Accounts Committee, but as associates who <b>cannot vote</b>. <b>Note 04, Section 05.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q8</span><span class="fmt">Assertion–Reason</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> A Legislative Council cannot force the resignation of a State government.</li><li><b>Statement-II:</b> The State Council of Ministers is collectively responsible to the Legislative Assembly.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q8" value="1">(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q8" value="2">(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q8" value="3">(c) Statement-I is correct but Statement-II is not correct</label><label class="opt"><input type="radio" name="q8" value="4">(d) Statement-I is not correct but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> Both correct, and Statement-II is precisely why Statement-I is true: <b>Article 164(2)</b> makes the Council of Ministers responsible to the <b>Assembly alone</b>. Confidence flows from the lower house at both levels. <b>Note 04, Section 04.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q9</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The power to increase the number of judges of the Supreme Court is vested in</p>
+<label class="opt"><input type="radio" name="q9" value="1">(a) The President of India</label><label class="opt"><input type="radio" name="q9" value="2">(b) The Parliament</label><label class="opt"><input type="radio" name="q9" value="3">(c) The Chief Justice of India</label><label class="opt"><input type="radio" name="q9" value="4">(d) The Union Council of Ministers</label>
+<div class="expl"><b>(b) The Parliament.</b> Article 124(1) fixes seven judges besides the CJI <b>'until Parliament by law prescribes a larger number'</b>. Every change since — 1956, 1960, 1977, 1986, 2008, 2019, 2026 — has been by ordinary Act. <b>Note 05, Section 01.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q10</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the strength of the Supreme Court:</p><ol class="subs"><li>The Constitution originally provided for a Chief Justice and not more than seven other judges.</li><li>The strength was raised from 31 to 34 in 2019 by a constitutional amendment.</li><li>The Supreme Court (Number of Judges) Amendment Bill, 2026 raised the number of judges other than the Chief Justice to 37.</li><li>An Ordinance preceded the 2026 Act.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q10" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q10" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q10" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q10" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1, 3 and 4 are correct — total sanctioned strength is now <b>38</b>, and an Ordinance was promulgated on <b>16 May 2026</b>. <b>Statement 2 is wrong on the instrument</b>: 2019 was an <b>ordinary Act</b>, not a constitutional amendment. Numbers right, instrument wrong — a standard construction. <b>Note 05, Section 01.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q11</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the collegium system, consider the following statements:</p><ol class="subs"><li>The collegium for appointments to a High Court consists of the Chief Justice of India and the two senior-most judges of the Supreme Court.</li><li>The collegium system was established by the Ninety-ninth Constitutional Amendment.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q11" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q11" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q11" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q11" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> The collegium rests entirely on <b>judicial interpretation</b> of the word 'consultation' in Art 124(2) — no amendment created it. The <b>99th Amendment</b> was the attempt to <b>replace</b> it with the NJAC, and it was struck down in 2015. Remember the two sizes: <b>five</b> for the Supreme Court, <b>three</b> for a High Court. <b>Note 05, Section 02.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q12</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the National Judicial Appointments Commission, consider the following statements:</p><ol class="subs"><li>It was to consist of six members chaired by the Chief Justice of India.</li><li>It was struck down because the Ninety-ninth Amendment had not been ratified by the required number of States.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q12" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q12" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q12" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q12" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> The 99th Amendment <b>was</b> properly ratified; that was never the defect. It fell in <b>October 2015 by 4:1</b> for violating <b>judicial independence as part of the basic structure</b> — because any two of the six members could veto a recommendation, extinguishing judicial primacy. A statement with the right outcome and the wrong ground is still false. <b>Note 05, Section 02.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q13</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements regarding the removal of a judge of the Supreme Court:</p><ol class="subs"><li>The Constitution defines 'proved misbehaviour' and 'incapacity'.</li><li>A removal motion requires the signatures of one hundred members of the Lok Sabha or fifty of the Rajya Sabha.</li><li>The Speaker or Chairman may refuse to admit the motion.</li><li>The motion must be passed by a majority of the total membership of each House and by two-thirds of members present and voting.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q13" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q13" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q13" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q13" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 2, 3 and 4 are correct. <b>Statement 1 is wrong</b> — the Constitution uses both terms and <b>defines neither</b>, which is a standing criticism of the process. The signature thresholds come from the <b>Judges (Inquiry) Act, 1968</b>, not the Constitution. <b>Note 05, Section 03.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q14</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the original jurisdiction of the Supreme Court under Article 131:</p><ol class="subs"><li>It extends to a dispute between the Government of India and a Union Territory.</li><li>It extends to a dispute between two or more States.</li><li>It extends to disputes arising out of a treaty entered into before the commencement of the Constitution and still in operation.</li><li>It requires that a question of legal right be involved.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q14" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q14" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q14" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q14" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Statements 2 and 4 are correct. <b>Statement 1 fails because a Union Territory is not a State.</b> <b>Statement 3 is expressly excluded</b> by Art 131's proviso — pre-Constitution treaty disputes are outside it, and are instead the subject of the Court's <b>compulsory</b> advisory jurisdiction under Art 143(2). <b>Note 05, Section 04.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q15</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the advisory jurisdiction of the Supreme Court, which one of the following is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q15" value="1">(a) It may be invoked only by the President of India</label><label class="opt"><input type="radio" name="q15" value="2">(b) The Court is bound to answer every reference made to it</label><label class="opt"><input type="radio" name="q15" value="3">(c) The opinion rendered is not binding on the President</label><label class="opt"><input type="radio" name="q15" value="4">(d) It may relate to a question of law or of fact of public importance</label>
+<div class="expl"><b>(b) is NOT correct.</b> Under <b>Art 143(1)</b> the Court <b>may decline</b> to answer — and did exactly that in November 2025, returning Questions 12 and 14 of the Presidential Reference unanswered. Only under <b>Art 143(2)</b>, for pre-Constitution treaty disputes, must it report. <b>Note 05, Section 04.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q16</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of Article and subject:</p><ol class="subs"><li>Article 129 — Supreme Court as a court of record</li><li>Article 137 — review of its own judgments</li><li>Article 139A — transfer of cases</li><li>Article 143 — special leave to appeal</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q16" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q16" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q16" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q16" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Pair 4 is the mismatch: <b>Article 136</b> is special leave to appeal; <b>Article 143</b> is advisory jurisdiction. Pairs 1–3 are correct, and Art 139A was inserted by the <b>42nd Amendment</b>. <b>Note 05, Sections 04 and 06.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q17</span><span class="fmt">Assertion–Reason</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> The Supreme Court held in November 2025 that there can be no 'deemed assent' to a State Bill.</li><li><b>Statement-II:</b> Articles 200 and 201 prescribe no timeline within which the Governor or the President must act on a Bill.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q17" value="1">(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q17" value="2">(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q17" value="3">(c) Statement-I is correct but Statement-II is not correct</label><label class="opt"><input type="radio" name="q17" value="4">(d) Statement-I is not correct but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> Both correct and Statement-II is exactly the Court's reasoning — with no timeline there is no expiry, and without an expiry nothing from which assent could be deemed. Work the three steps in order: truth of I, truth of II, then the link. <b>Note 05, Section 05.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q18</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to the High Courts, consider the following statements:</p><ol class="subs"><li>The Constitution provides that there shall be a High Court for each State, and Parliament may establish a common High Court for two or more States.</li><li>The number of judges of a High Court is fixed by Parliament by law.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q18" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q18" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q18" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q18" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> Statement 2 reverses the rule: High Court strength is determined by the <b>President</b>, and the Constitution fixes no number. It is <b>Supreme Court</b> strength that Parliament sets by law. Statement 1 combines Arts 214 and 231. <b>Note 06, Section 01.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q19</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following statements about a judge of a High Court is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q19" value="1">(a) He holds office until the age of sixty-two years</label><label class="opt"><input type="radio" name="q19" value="2">(b) He may resign by writing addressed to the Governor of the State</label><label class="opt"><input type="radio" name="q19" value="3">(c) He may be removed in the manner provided for a judge of the Supreme Court</label><label class="opt"><input type="radio" name="q19" value="4">(d) He takes the oath of office before the Governor</label>
+<div class="expl"><b>(b) is NOT correct.</b> Resignation goes to the <b>President</b> under <b>Art 217(1)(a)</b> — as Justice Varma's did in April 2026 — even though the <b>oath</b> under Art 219 is administered by the <b>Governor</b>. Two different functionaries in adjacent articles: a ready-made trap. <b>Note 06, Section 01.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q20</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements comparing Article 32 and Article 226:</p><ol class="subs"><li>Article 226 may be invoked for the enforcement of Fundamental Rights and for any other purpose.</li><li>The remedy under Article 32 is itself a Fundamental Right.</li><li>A High Court may decline relief under Article 226 where an alternative remedy exists.</li><li>Article 226 is narrower in scope than Article 32.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q20" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q20" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q20" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q20" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1–3 are correct. <b>Statement 4 is the reversal</b> — Art 226 is <b>wider in scope</b> because of the words 'and for any other purpose'. Art 32 is the <b>stronger guarantee</b> but the <b>narrower door</b>. Both propositions are true at once. <b>Note 06, Section 03.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q21</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">Under which one of the following Articles does a High Court exercise superintendence over all courts and tribunals within its territorial jurisdiction?</p>
+<label class="opt"><input type="radio" name="q21" value="1">(a) Article 226</label><label class="opt"><input type="radio" name="q21" value="2">(b) Article 227</label><label class="opt"><input type="radio" name="q21" value="3">(c) Article 228</label><label class="opt"><input type="radio" name="q21" value="4">(d) Article 235</label>
+<div class="expl"><b>(b) Article 227.</b> The supervisory jurisdiction, both judicial and administrative, subject to the <b>armed-forces</b> exclusion. The neighbours do different jobs: 226 writs, 228 withdrawal of a constitutional question from a subordinate court, 235 control over the district judiciary. <b>Note 06, Section 02.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q22</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements:</p><ol class="subs"><li>A High Court has no jurisdiction to declare a law made by Parliament unconstitutional.</li><li>The Supreme Court's power of superintendence extends over all courts in India.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q22" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q22" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q22" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q22" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(d) Neither 1 nor 2.</b> Statement 1 fails because India has an <b>integrated judiciary</b> — a High Court exercising review under Arts 13 and 226 <b>can</b> strike down a central law. Statement 2 fails because <b>superintendence under Art 227 belongs to the High Courts</b>; there is no Supreme Court equivalent. Do not assume a question must contain a true statement. <b>Note 06, Sections 02 and 06.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q23</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of writ and characteristic:</p><ol class="subs"><li>Habeas corpus — available against a private individual</li><li>Mandamus — lies to compel performance of a public duty</li><li>Prohibition — issued after the lower court has passed its order</li><li>Quo warranto — may be sought by any interested person</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q23" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q23" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q23" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q23" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Pair 3 is wrong: <b>prohibition is preventive</b> and is issued while proceedings are <b>pending</b>. The writ issued <b>after</b> an order is <b>certiorari</b>, which is preventive and curative both. Fix the pair by timing, not by definition. <b>Note 06, Section 04.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q24</span><span class="fmt">Assertion–Reason</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> A death sentence passed by a sessions court does not take effect until confirmed by the High Court.</li><li><b>Statement-II:</b> Every convict sentenced to death necessarily appeals to the High Court.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q24" value="1">(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q24" value="2">(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q24" value="3">(c) Statement-I is correct but Statement-II is not correct</label><label class="opt"><input type="radio" name="q24" value="4">(d) Statement-I is not correct but Statement-II is correct</label>
+<div class="expl"><b>(c).</b> Statement-I is correct; Statement-II is not. Confirmation by the High Court is <b>automatic and mandatory</b> and happens <b>whether or not</b> the convict appeals. This is the classic Assertion–Reason failure mode — a true first statement paired with a plausible but false second. <b>Note 06, Section 02.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q25</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the High Courts in India:</p><ol class="subs"><li>There are twenty-five High Courts.</li><li>The Calcutta, Bombay and Madras High Courts were established in 1862.</li><li>Delhi is the only Union Territory with its own High Court.</li><li>Salaries of High Court judges are charged on the Consolidated Fund of India.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q25" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q25" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q25" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q25" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1–3 are correct. <b>Statement 4 is the split trap</b>: <b>salaries</b> are charged on the <b>Consolidated Fund of the State</b>, while <b>pensions</b> are charged on the <b>Consolidated Fund of India</b>. <b>Note 06, Sections 01 and 05.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q26</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of Article and subject:</p><ol class="subs"><li>Article 224 — additional and acting judges</li><li>Article 224A — retired judges sitting at the request of the High Court's Chief Justice</li><li>Article 222 — transfer of a judge from one High Court to another</li><li>Article 231 — common High Court for two or more States</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q26" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q26" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q26" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q26" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> Another 'all correct' set. The 224 / 224A pair is the one to fix deliberately: <b>224 = extra serving judges</b> for up to two years, <b>224A = a retired judge brought back</b>. <b>Note 06, Section 05.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q27</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following statements about the appointment of district judges is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q27" value="1">(a) They are appointed by the Governor in consultation with the High Court</label><label class="opt"><input type="radio" name="q27" value="2">(b) The State Public Service Commission is consulted in their appointment</label><label class="opt"><input type="radio" name="q27" value="3">(c) A person with seven years' practice as an advocate may be directly recruited if recommended by the High Court</label><label class="opt"><input type="radio" name="q27" value="4">(d) Control over subordinate courts is vested in the High Court</label>
+<div class="expl"><b>(b) is NOT correct.</b> Under <b>Article 233</b> only the <b>High Court</b> is consulted. The <b>State Public Service Commission</b> appears in <b>Article 234</b>, for posts <b>below</b> district judge. This is the most predictable question in the chapter. <b>Note 07, Section 02.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q28</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Articles 323A and 323B, consider the following statements:</p><ol class="subs"><li>Tribunals under Article 323A can be established only by Parliament.</li><li>Article 323A permits a hierarchy of tribunals whereas Article 323B does not.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q28" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q28" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q28" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q28" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> Statement 2 is <b>exactly reversed</b>: <b>323B</b> permits a hierarchy; <b>323A</b> contemplates one tribunal for the Union and one per State, so it does not. Setters reverse a genuine contrast far more often than they invent a false fact. <b>Note 07, Section 03.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q29</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the Central Administrative Tribunal:</p><ol class="subs"><li>It was established under an Act of Parliament of 1985.</li><li>Its jurisdiction extends to members of the defence forces.</li><li>It is not bound by the procedure laid down in the Code of Civil Procedure.</li><li>Appeals against its orders lie to a division bench of the High Court.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q29" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q29" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q29" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q29" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1, 3 and 4 are correct. <b>Statement 2 is wrong</b> — the <b>defence forces</b> are expressly excluded, along with Supreme Court officers and parliamentary secretarial staff. Statement 4 became true only after <b>L. Chandra Kumar (1997)</b>; before that, appeals went straight to the Supreme Court. <b>Note 07, Section 03.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q30</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">In which one of the following cases did the Supreme Court hold that judicial review by the High Courts under Articles 226 and 227 is part of the basic structure?</p>
+<label class="opt"><input type="radio" name="q30" value="1">(a) S.P. Sampath Kumar (1987)</label><label class="opt"><input type="radio" name="q30" value="2">(b) L. Chandra Kumar (1997)</label><label class="opt"><input type="radio" name="q30" value="3">(c) Rojer Mathew (2019)</label><label class="opt"><input type="radio" name="q30" value="4">(d) Kihoto Hollohan (1992)</label>
+<div class="expl"><b>(b) L. Chandra Kumar (1997).</b> A seven-judge bench which reversed the premise of <b>Sampath Kumar (1987)</b> that tribunals were an effective <b>substitute</b> for High Courts. After 1997 they are <b>supplementary</b>, and no statute can exclude High Court review. <b>Note 07, Sections 03 and 06.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q31</span><span class="fmt">Assertion–Reason</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> Provisions of the Tribunals Reforms Act, 2021 relating to tenure and minimum age were struck down in November 2025.</li><li><b>Statement-II:</b> A legislature cannot re-enact a provision already invalidated by a court without curing the defect identified.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q31" value="1">(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q31" value="2">(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q31" value="3">(c) Statement-I is correct but Statement-II is not correct</label><label class="opt"><input type="radio" name="q31" value="4">(d) Statement-I is not correct but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> Both correct and Statement-II is the Court's stated ground — an impermissible <b>legislative override</b>. The Act had restored a <b>four-year</b> tenure and a <b>minimum age of 50</b> after the Madras Bar Association judgments required <b>five years</b> and rejected the age bar. A legislature may remove the <b>basis</b> of a judgment; it may not re-enact the rule in new words. <b>Note 07, Section 04.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q32</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about Lok Adalats:</p><ol class="subs"><li>They have jurisdiction over matters pending before a court as well as at the pre-litigation stage.</li><li>An award of a Lok Adalat is deemed to be a decree of a civil court and no appeal lies against it.</li><li>They cannot take up matrimonial or family disputes.</li><li>A Permanent Lok Adalat may decide a dispute on merits where the parties fail to settle.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q32" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q32" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q32" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q32" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1, 2 and 4 are correct. <b>Statement 3 is wrong</b> — matrimonial and family disputes <b>are</b> taken up; only the <b>divorce decree</b> itself and <b>non-compoundable</b> offences fall outside. Permanent Lok Adalats came in <b>2002</b> for public utility services up to <b>₹1 crore</b>. <b>Note 07, Section 05.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q33</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">With reference to Gram Nyayalayas, consider the following statements:</p><ol class="subs"><li>They can hear only civil cases and not criminal cases.</li><li>The presiding officer has the rank and status of a First Class Judicial Magistrate.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q33" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q33" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q33" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q33" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(b) 2 only.</b> A Gram Nyayalaya hears <b>both civil and criminal</b> matters — indeed the Nyayadhikari's rank in statement 2 is itself a <b>criminal</b> designation, which contradicts statement 1 from within the same question. It is a mobile court and is <b>not bound by the Indian Evidence Act</b>. <b>Note 07, Section 05.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q34</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div>
+<p class="stem">Which one of the following is <b>NOT</b> entitled to free legal services irrespective of income under the Legal Services Authorities Act, 1987?</p>
+<label class="opt"><input type="radio" name="q34" value="1">(a) A member of a Scheduled Tribe</label><label class="opt"><input type="radio" name="q34" value="2">(b) A woman</label><label class="opt"><input type="radio" name="q34" value="3">(c) A person in custody</label><label class="opt"><input type="radio" name="q34" value="4">(d) A senior citizen</label>
+<div class="expl"><b>(d) A senior citizen.</b> Age alone is not one of the income-blind categories. SC/ST members, women, children, persons with disabilities, persons in custody, industrial workmen and mass-disaster victims qualify <b>regardless of income</b>; everyone else is subject to a prescribed ceiling. <b>Note 07, Section 05.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q35</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">In India, judicial review implies</p>
+<label class="opt"><input type="radio" name="q35" value="1">(a) the power of the judiciary to pronounce upon the constitutionality of laws and executive orders</label><label class="opt"><input type="radio" name="q35" value="2">(b) the power of the judiciary to question the wisdom of the laws enacted by the legislature</label><label class="opt"><input type="radio" name="q35" value="3">(c) the power of the judiciary to examine all Bills before they are assented to by the President</label><label class="opt"><input type="radio" name="q35" value="4">(d) the power of the judiciary to review its own judgments</label>
+<div class="expl"><b>(a).</b> The textbook definition, and the question rewards holding it word for word. (b) is the <b>wisdom</b> trap — courts test constitutionality, never policy merit. (c) describes a <b>pre-enactment</b> power India lacks. (d) is <b>Article 137</b>, a different power. <b>Note 08, Sections 01 and 02.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q36</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements:</p><ol class="subs"><li>The Constitution of India defines its basic structure.</li><li>The Constitution contains an express provision headed 'judicial review'.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q36" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q36" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q36" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q36" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(d) Neither 1 nor 2.</b> Basic structure is <b>judge-made</b>, from <i>Kesavananda Bharati</i> (1973), and deliberately never exhaustively listed. Judicial review has <b>no article of its own</b> — it flows from Arts 13, 32, 226, 131–136, 245–246 and 372 read together. The pattern to distrust: <b>'the Constitution defines / provides for X'</b>. <b>Note 08, Section 01.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q37</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about Public Interest Litigation in India:</p><ol class="subs"><li>It was made possible by the relaxation of the rule of locus standi.</li><li>It was introduced into the Constitution by an amendment.</li><li>A letter addressed to the court may be treated as a writ petition.</li><li>Courts may impose exemplary costs where a PIL is found to be frivolous.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q37" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q37" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q37" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q37" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1, 3 and 4 are correct. <b>Statement 2 is wrong</b> — PIL rests on <b>no amendment and no article</b>. It is judge-made procedure under Arts 32 and 226, from <i>Hussainara Khatoon</i> (1979) and <i>S.P. Gupta</i> (1981). Note the family resemblance to the collegium: another major institution with no textual basis. <b>Note 08, Section 04.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q38</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of case and contribution:</p><ol class="subs"><li>Hussainara Khatoon (1979) — right to speedy trial</li><li>S.P. Gupta (1981) — relaxation of locus standi</li><li>Vishaka (1997) — guidelines on workplace sexual harassment</li><li>Minerva Mills (1980) — struck down clauses excluding judicial review of amendments</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q38" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q38" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q38" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q38" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> Minerva Mills struck down <b>Article 368(4) and (5)</b>, inserted by the 42nd Amendment. The fact to attach to pair 2: <b>S.P. Gupta is also the First Judges Case</b> — one case, two separate examinable holdings. <b>Note 08, Section 06.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q39</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the Supreme Court's advisory opinion of November 2025:</p><ol class="subs"><li>It held that the Governor has three options when a Bill is presented for assent.</li><li>It upheld the timelines prescribed in the Tamil Nadu Governor judgment.</li><li>It held that a court cannot deem assent to a Bill.</li><li>It held that Article 142 cannot supplant constitutional provisions.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q39" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q39" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q39" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q39" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1, 3 and 4 are correct. <b>Statement 2 is precisely what was reversed</b> — 'as soon as possible' cannot be converted into fixed timelines. When a later judgment revisits an earlier one, know exactly <b>which parts survived</b>. <b>Note 08, Section 05.</b></div>
+</div>
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q40</span><span class="fmt">Assertion–Reason</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> The Vishaka guidelines were binding on all courts in India from 1997.</li><li><b>Statement-II:</b> Law declared by the Supreme Court is binding on all courts within the territory of India.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q40" value="1">(a) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q40" value="2">(b) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q40" value="3">(c) Statement-I is correct but Statement-II is not correct</label><label class="opt"><input type="radio" name="q40" value="4">(d) Statement-I is not correct but Statement-II is correct</label>
+<div class="expl"><b>(a).</b> Both correct, and <b>Article 141</b> is exactly what gave the guidelines binding force in the absence of any statute. Parliament legislated only in <b>2013</b> — a sixteen-year gap that is itself the strongest argument that the Court was filling a vacuum. <b>Note 08, Sections 03 and 04.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q41</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div>
+<p class="stem">The power to increase the number of judges of the Supreme Court is vested in</p>
+<label class="opt"><input type="radio" name="q41" value="1">(a) The President of India</label><label class="opt"><input type="radio" name="q41" value="2">(b) The Parliament</label><label class="opt"><input type="radio" name="q41" value="3">(c) The Chief Justice of India</label><label class="opt"><input type="radio" name="q41" value="4">(d) The Union Council of Ministers</label>
+<div class="expl"><b>(b) The Parliament.</b> <b>This is a deliberate duplicate of an earlier question in this paper.</b> In your Week 2 paper an identical pair appeared (Q39 and Q50) and you answered both wrongly, having second-guessed yourself on the repeat. If a question recurs, answer it <b>identically</b> and move on — do not re-litigate. <b>Note 05, Section 01.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q42</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the district judiciary:</p><ol class="subs"><li>A sessions judge may pass any sentence authorised by law.</li><li>A chief judicial magistrate may try offences punishable with imprisonment up to seven years.</li><li>Separation of the judiciary from the executive is enjoined by a Directive Principle.</li><li>The High Court exercises control over posting, promotion and leave of persons in the State judicial service below the rank of district judge.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q42" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q42" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q42" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q42" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> Statement 3 is <b>Article 50</b> — non-justiciable, which is why executive magistrates still coexist with judicial ones. Statement 4 is <b>Article 235</b>. <b>Note 07, Sections 01 and 02.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q43</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the Supreme Court:</p><ol class="subs"><li>The Constitution prescribes no minimum age for appointment as a judge.</li><li>The distinguished-jurist route under Article 124(3)(c) has never been used.</li><li>A retired judge may be requested to sit under Article 128 only with his own consent as well as the President's previous consent.</li><li>The seat of the Supreme Court may be a place other than Delhi.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q43" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q43" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q43" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q43" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> Every one is accurate. Art 128 needs <b>both</b> consents; Art 130 makes the seat Delhi 'or such other place' as the CJI appoints with the President's approval; there is <b>no minimum age</b>; and the distinguished-jurist route has <b>never</b> been used. Another all-correct set — the option you instinctively avoid. <b>Note 05, Sections 01 and 06.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q44</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements regarding writs:</p><ol class="subs"><li>Habeas corpus is the only writ that can be issued against a private individual.</li><li>Quo warranto may be sought by a person who is not personally aggrieved.</li><li>Certiorari cannot be issued against administrative authorities.</li><li>Prohibition can be issued after the lower court has delivered its order.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q44" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q44" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q44" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q44" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Statements 1 and 2 are correct. <b>Statement 3 is wrong</b> — certiorari <b>was</b> extended to administrative authorities in <b>1991</b>. <b>Statement 4 is wrong</b> — prohibition is <b>preventive</b> and lies only while proceedings are pending; the post-order writ is certiorari. Two errors in one set is what makes this format punishing. <b>Note 06, Section 04.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q45</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the appointment of judges of the subordinate judiciary:</p><ol class="subs"><li>District judges are appointed by the Governor in consultation with the High Court.</li><li>The State Public Service Commission is consulted for appointments below the rank of district judge.</li><li>A person with seven years' practice at the Bar may be directly recruited as a district judge.</li><li>Control over posting and promotion of the district judiciary vests in the High Court.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q45" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q45" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q45" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q45" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> All accurate. The one to hold is statement 4 — <b>Article 235</b> puts control in the <b>High Court</b>, never the State government. Appointment is shared; control is exclusive. <b>Note 07, Section 02.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q46</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about tribunals:</p><ol class="subs"><li>Articles 323A and 323B were inserted by the 42nd Amendment.</li><li>Tribunals under Article 323B may be established by a State legislature.</li><li>The Central Administrative Tribunal has jurisdiction over members of the defence forces.</li><li>Appeals from the Central Administrative Tribunal lie to a division bench of the High Court.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q46" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q46" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q46" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q46" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> 1, 2 and 4 are correct. <b>Statement 3 is wrong</b> — the <b>defence forces</b> are expressly outside CAT, along with Supreme Court officers and parliamentary secretarial staff. <b>Note 07, Section 03.</b></div>
+</div>
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q47</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about alternative dispute resolution in India:</p><ol class="subs"><li>An arbitral award is binding on the parties.</li><li>A mediator decides the dispute and imposes terms on the parties.</li><li>The Mediation Act was enacted in 2021.</li><li>The Commercial Courts Act, 2015 provides for mandatory pre-institution mediation.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q47" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q47" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q47" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q47" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Statements 1 and 4 are correct. <b>Statement 2 is wrong</b> — a <b>mediator facilitates</b>; the parties craft their own terms, whereas an <b>arbitrator decides</b>. <b>Statement 3 is wrong on the year</b> — the Mediation Act is <b>2023</b>. A set can carry both a concept error and a date error. <b>Note 07, Section 06.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q48</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about the All India Judicial Service:</p><ol class="subs"><li>Article 312 requires a Rajya Sabha resolution supported by two-thirds of members present and voting.</li><li>An All India Judicial Service shall not include any post inferior to that of a district judge.</li><li>It was recommended by the First Law Commission in 1958.</li><li>It has been constituted and is currently in operation.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q48" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q48" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q48" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q48" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> 1, 2 and 3 are correct. <b>Statement 4 is wrong</b> — the AIJS has <b>never been created</b>, chiefly because States and several High Courts see it as an intrusion into their Article 235 control. <b>Note 05, Section 07.</b></div>
+</div>
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q49</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following pairs of committee and the body it recommended:</p><ol class="subs"><li>Krishna Menon Committee — Committee on Public Undertakings</li><li>H.N. Sanyal Committee — Contempt of Courts Act, 1971</li><li>120th Law Commission Report — fifty judges per million population</li><li>Eleventh Finance Commission — Fast Track Courts</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q49" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q49" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q49" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q49" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> This is the named-committee family that cost you Q50 in Week 4. When a stem pairs a committee with an institution, it is drawing from a list about this long — learn it as a block. <b>Note 07, Section 06.</b></div>
+</div>
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q50</span><span class="fmt">How many</span><span class="verdict-chip"></span></div>
+<p class="stem">Consider the following statements about judicial review:</p><ol class="subs"><li>Laws placed in the Ninth Schedule after 24 April 1973 are open to judicial review.</li><li>The 42nd Amendment inserted clauses in Article 368 to bar review of amendments, and those clauses were struck down.</li><li>Truth became a valid defence in contempt proceedings by an amendment in 2006.</li><li>The Constitution contains an express article headed 'judicial review'.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q50" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q50" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q50" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q50" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> 1, 2 and 3 are correct — 1 is <b>I.R. Coelho (2007)</b>, 2 is <b>Minerva Mills (1980)</b> striking down Art 368(4) and (5). <b>Statement 4 is wrong</b>: there is <b>no such article</b>; review flows from Arts 13, 32, 226, 131–136, 245–246 and 372. <b>Notes 05 and 08.</b></div>
+</div>
+
+<div class="submitrow"><button id="gradebtn" type="button">Submit &amp; Score (+2 / −0.66)</button></div>
+
+<div class="results" id="results">
+<h2>Result</h2>
+<div class="score-big" id="scoreline">—</div>
+<div id="summaryline" style="margin-top:4px;font-size:14px;"></div>
+<table>
+<thead><tr><th>Format</th><th>Right</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Week 3 actual</th></tr></thead>
+<tbody id="fmtrows"></tbody>
+</table>
+<p style="font-size:13px;color:#C9C6EE;margin-top:14px;">Baselines are your <b>Week 3 real test</b> accuracy per format. Statements is the one to beat — it is the only format below 70%. Scroll up — every question now shows the correct answer and the note section to revise.</p>
+
+<div id="histwrap" style="display:none;">
+<h2 style="font-size:19px;margin:22px 0 0;">Attempt history</h2>
+<table class="histtable">
+<thead><tr><th>Attempt</th><th>Score</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Change</th></tr></thead>
+<tbody id="histrows"></tbody>
+</table>
+<p style="font-size:12px;color:#C9C6EE;margin-top:10px;">History is kept for this browser session — it clears if you close or reload the page. What matters is the trend within a sitting: your second attempt should show the ⚠ formats climbing, not the total score (which rises anyway once you've seen the answers).</p>
+</div>
+
+<div class="retakerow">
+<button id="retakebtn" type="button">↻ Retake this test</button>
+<button id="retakeshufflebtn" type="button" class="ghost">↻ Retake with questions shuffled</button>
+</div>
+</div>
+
+
+<h2 class="sec">Mains practice — write these out by hand, 10 minutes each</h2>
+
+<div class="mains">
+<b>M1.</b> "The collegium system was a remedy for executive dominance that has become a problem of its own." Critically examine in the light of the Fourth Judges Case and subsequent developments. <i>(15 marks &middot; 250 words)</i>
+<div class="skel"><b>Skeleton:</b> the four Judges Cases as a lineage, not a list &rarr; what 1993 fixed (the supersessions of 1973 and 1977) &rarr; what it created (no criteria, no reasons, no timelines) &rarr; why the NJAC failed too (the two-member veto against judicial primacy, 4:1 in 2015) &rarr; Ambedkar rejected both extremes; the unfinalised Memorandum of Procedure is the evidence &rarr; procedural reform, not structural.</div>
+</div>
+
+<div class="mains">
+<b>M2.</b> "Tribunalisation promised speed and expertise but has repeatedly been used to expand executive control over adjudication." Critically examine in the light of recent judicial pronouncements. <i>(15 marks &middot; 250 words)</i>
+<div class="skel"><b>Skeleton:</b> Part XIV-A and the genuine case for tribunals &rarr; the structural defect: the Union is the largest litigant before them &rarr; Sampath Kumar (1987) &rarr; L. Chandra Kumar (1997), Arts 226/227 review as basic structure &rarr; Rojer Mathew (2019) &rarr; November 2025, the 2021 Act struck down as a legislative override &rarr; National Tribunal Commission and a five-year tenure.</div>
+</div>
+
+<div class="mains">
+<b>M3.</b> "Judicial activism is the response to institutional failure elsewhere; judicial overreach is its failure to stop." Critically examine with reference to recent constitutional developments. <i>(15 marks &middot; 250 words)</i>
+<div class="skel"><b>Skeleton:</b> define review, activism and overreach separately &rarr; activism as reaction to vacuum (Hussainara Khatoon, Vishaka's sixteen-year gap, Vineet Narain) &rarr; where it crossed: Art 142 deeming assent to ten Bills, April 2025 &rarr; the self-correction of 20 November 2025, "not an unbridled scope that can negate the separation of powers" &rarr; the quotation is half right: the correction came from within, in seven months.</div>
+</div>
+
+<div class="mains">
+<b>M4.</b> "The High Court, not the Supreme Court, is the workhorse of constitutional remedy in India." Examine with reference to Articles 226 and 227. <i>(10 marks &middot; 150 words)</i>
+<div class="skel"><b>Skeleton:</b> Art 226 is wider &mdash; "and for any other purpose" &rarr; Art 227 superintendence has no Part V equivalent &rarr; L. Chandra Kumar makes both basic structure &rarr; the limits: Art 226 relief is discretionary, and 371 of 1,122 posts lay vacant with pendency above 6.3 crore &rarr; sound in law, undermined in practice.</div>
+</div>
+
+<footer>
+Week 5 Mock Test &middot; UGSSP format simulation &middot; 50 MCQs (+2/&minus;0.66) + 4 Mains<br>
+All 50 questions are self-generated practice built from the Week 5 notes &mdash; NOT real UPSC PYQs or leaked test questions.<br>
+Formats weighted to measured weak patterns: 13 Statements, 10 Negative, 8 How-many, 5 Assertion&ndash;Reason, 5 Pairs, 9 Direct. Answer key balanced 12/13/13/12. See AI_KNOWLEDGE_BASE/TEST_INTELLIGENCE.md.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var total = 50;
+  var baselines = { NEGATIVE:'100% (2/2)', HOWMANY:'83% (5/6)', ASSERTION:'100% (2/2)', PAIRS:'—', STATEMENTS:'64% (9/14)', DIRECT:'74% (17/23)' };
+  var timerEl = document.getElementById('timer');
+  var startBtn = document.getElementById('startbtn');
+  var resetBtn = document.getElementById('resetbtn');
+  var shuffleChk = document.getElementById('shufflechk');
+  var attemptNote = document.getElementById('attemptnote');
+  var remaining = 3600, ticking = null;
+  var attempt = 1, history = [];
+  function fmtTime(s){ var m = Math.floor(s/60), r = s%60; return (m<10?'0':'')+m+':'+(r<10?'0':'')+r; }
+  function startTimer(){
+    if (ticking) return;
+    ticking = setInterval(function(){
+      remaining--;
+      timerEl.textContent = fmtTime(Math.max(remaining,0));
+      if (remaining === 900) timerEl.style.color = '#FFB37E';
+      if (remaining <= 0){ clearInterval(ticking); ticking = null; grade(); }
+    }, 1000);
+    startBtn.textContent = 'Running…';
+  }
+  startBtn.addEventListener('click', startTimer);
+
+  function shuffleQuestions(){
+    var qs = Array.prototype.slice.call(document.querySelectorAll('.q'));
+    var anchor = document.querySelector('.submitrow');
+    for (var i = qs.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = qs[i]; qs[i] = qs[j]; qs[j] = t;
+    }
+    qs.forEach(function(q, idx){
+      q.querySelector('.qnum').textContent = 'Q' + (idx + 1);
+      anchor.parentNode.insertBefore(q, anchor);
+    });
+  }
+
+  function resetTest(doShuffle){
+    if (ticking){ clearInterval(ticking); ticking = null; }
+    remaining = 3600;
+    timerEl.textContent = '60:00';
+    timerEl.style.color = '';
+    startBtn.textContent = 'Start timer';
+    delete document.body.dataset.graded;
+    document.querySelectorAll('.q').forEach(function(q){
+      q.classList.remove('graded','right','wrong','skip');
+      q.querySelector('.verdict-chip').textContent = '';
+      q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('correct','chosenwrong'); });
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = false; i.checked = false; });
+    });
+    document.getElementById('results').classList.remove('show');
+    document.getElementById('fmtrows').innerHTML = '';
+    if (doShuffle) shuffleQuestions();
+    attempt++;
+    attemptNote.textContent = 'Attempt ' + attempt + ' · ' + (doShuffle ? 'questions shuffled · ' : '') + 'no notes open.';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  resetBtn.addEventListener('click', function(){ resetTest(shuffleChk.checked); });
+  document.getElementById('retakebtn').addEventListener('click', function(){ resetTest(false); });
+  document.getElementById('retakeshufflebtn').addEventListener('click', function(){ resetTest(true); });
+
+  function renderHistory(){
+    if (history.length < 1) return;
+    document.getElementById('histwrap').style.display = 'block';
+    var rows = document.getElementById('histrows');
+    rows.innerHTML = '';
+    history.forEach(function(h, i){
+      var delta = '—';
+      if (i > 0){
+        var d = h.score - history[i-1].score;
+        delta = '<span class="' + (d >= 0 ? 'up' : 'down') + '">' + (d >= 0 ? '+' : '') + d.toFixed(2) + '</span>';
+      }
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + h.n + '</td><td>' + h.score.toFixed(2) + '</td><td>' + h.right + '</td><td>' + h.wrong +
+                     '</td><td>' + h.skip + '</td><td>' + h.acc + '%</td><td>' + delta + '</td>';
+      rows.appendChild(tr);
+    });
+  }
+
+  function grade(){
+    if (document.body.dataset.graded) return;
+    document.body.dataset.graded = '1';
+    if (ticking) clearInterval(ticking);
+    var score = 0, right = 0, wrong = 0, skip = 0;
+    var fmtAgg = {};
+    var qs = document.querySelectorAll('.q');
+    qs.forEach(function(q, idx){
+      var ans = q.getAttribute('data-ans');
+      var fmt = q.getAttribute('data-fmt');
+      if (!fmtAgg[fmt]) fmtAgg[fmt] = {r:0,w:0,s:0};
+      var chosen = q.querySelector('input:checked');
+      var chip = q.querySelector('.verdict-chip');
+      q.classList.add('graded');
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var inp = opt.querySelector('input');
+        if (inp.value === ans) opt.classList.add('correct');
+      });
+      if (!chosen){
+        skip++; fmtAgg[fmt].s++;
+        q.classList.add('skip'); chip.textContent = 'SKIPPED · 0';
+      } else if (chosen.value === ans){
+        right++; score += 2; fmtAgg[fmt].r++;
+        q.classList.add('right'); chip.textContent = 'CORRECT · +2';
+      } else {
+        wrong++; score -= 0.66; fmtAgg[fmt].w++;
+        q.classList.add('wrong'); chip.textContent = 'WRONG · −0.66';
+        chosen.closest('.opt').classList.add('chosenwrong');
+      }
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = true; });
+    });
+    var res = document.getElementById('results');
+    res.classList.add('show');
+    var acc = (right+wrong ? Math.round(100*right/(right+wrong)) : 0);
+    document.getElementById('scoreline').textContent = score.toFixed(2) + ' / 100';
+    document.getElementById('summaryline').textContent =
+      'Attempt ' + attempt + ' — ' + right + ' correct · ' + wrong + ' wrong (−' + (wrong*0.66).toFixed(2) + ' marks) · ' + skip + ' skipped. Accuracy on attempts: ' + acc + '%.';
+    history.push({ n: attempt, score: score, right: right, wrong: wrong, skip: skip, acc: acc });
+    renderHistory();
+    var rows = document.getElementById('fmtrows');
+    var order = ['NEGATIVE','HOWMANY','ASSERTION','PAIRS','STATEMENTS','DIRECT'];
+    order.forEach(function(f){
+      var a = fmtAgg[f] || {r:0,w:0,s:0};
+      var att = a.r + a.w;
+      var acc = att ? Math.round(100*a.r/att) + '%' : '—';
+      var cls = att && (a.r/att) >= 0.7 ? 'good' : (att ? 'bad' : '');
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + f + '</td><td>' + a.r + '</td><td>' + a.w + '</td><td>' + a.s + '</td><td class="' + cls + '">' + acc + '</td><td>' + (baselines[f] || '—') + '</td>';
+      rows.appendChild(tr);
+    });
+    res.scrollIntoView({behavior:'smooth'});
+  }
+  document.getElementById('gradebtn').addEventListener('click', grade);
+})();
+</script>
+</body>
+</html>

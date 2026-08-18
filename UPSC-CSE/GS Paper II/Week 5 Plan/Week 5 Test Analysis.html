@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5 Test Analysis — every question lost</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ The headline</button>
+<button class="notetab" data-tab="s1">01 · The 10 wrong, one by one</button>
+<button class="notetab" data-tab="s2">02 · The 11 blanks, one by one</button>
+<button class="notetab" data-tab="s3">03 · Why each was missed</button>
+<button class="notetab" data-tab="s4">04 · The three gaps, filled</button>
+<button class="notetab railrevision" data-tab="rev">★ What to change</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Week 5 · Polity · test taken 16 August 2026 · analysis written the same night</div>
+<h1>Week 5 Test Analysis</h1>
+<p class="sub">All 21 questions you did not get right, one at a time: what was tested, whether the notes covered it, why it was missed, and the correct position. This runs after every test from now on.</p>
+<div class="chips">
+<span class="chip">51.30 / 100</span>
+<span class="chip">Rank 2</span>
+<span class="chip">29 R · 10 W · 11 skipped</span>
+<span class="chip">Accuracy 74.36%</span>
+<span class="chip">Average 58.30 · Topper 65.29</span>
+</div>
+<div class="bignum"><b>18/21</b><span>of the questions you lost were already in the notes</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ The one number that matters most</div>
+<p>Of the 21 questions you lost, <b>18 were covered in the notes and 3 were not</b>. In Week 4 that split was 14 and 11. The coverage ceiling is one or two out-of-note questions per paper; Week 4 was five times over it, Week 5 is just above it.</p>
+<p>That means the diagnosis has changed. Week 4 was <b>my failure</b> — the notes did not contain the material. Week 5 is almost entirely <b>retrieval</b> — the material was there and did not come back under pressure. Those two problems have completely different fixes, and it matters that we stop treating them as one.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 How to use this note</div>
+<p>Do not read it end to end. Work it in three passes.</p>
+<p><b>Pass 1, tonight:</b> the <b>★ What to change</b> tab only. Four behaviours, ten minutes.</p>
+<p><b>Pass 2, this week:</b> sections 01 and 02, one question at a time. For each, cover the answer, decide, then uncover. Where a link points into a note, open that section and re-read the two paragraphs around it — not the whole note.</p>
+<p><b>Pass 3, before the Week 6 test:</b> section 03 only. It is the pattern layer, and it is what generalises.</p>
+<div class="bridge">Next → the ten wrong answers</div>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Measure</th><th>Week 3</th><th>Week 4</th><th>Week 5</th><th>Reading</th></tr></thead>
+<tbody>
+<tr><th>Score</th><td>62.08</td><td>36.60</td><td><b>51.30</b></td><td>Recovered most of the Week 4 fall</td></tr>
+<tr><th>Class average</th><td>70.95</td><td>42.16</td><td>58.30</td><td>Paper was easier than Week 4, harder than Week 3</td></tr>
+<tr><th>Score ÷ average</th><td>0.875</td><td>0.868</td><td><b>0.880</b></td><td>Flat for three weeks — the real measure</td></tr>
+<tr><th>Gap to topper</th><td>21.96</td><td>27.36</td><td><b>13.99</b></td><td><b>Halved.</b> Genuine progress</td></tr>
+<tr><th>Accuracy</th><td>74.5%</td><td>55.6%</td><td><b>74.4%</b></td><td>Fully recovered</td></tr>
+<tr><th>Wrong</th><td>12</td><td>20</td><td><b>10</b></td><td>Halved</td></tr>
+<tr><th>Unattempted</th><td>3</td><td>5</td><td><b>11</b></td><td><b>The new problem</b></td></tr>
+<tr><th>Out-of-note losses</th><td>—</td><td>11</td><td><b>3</b></td><td>The coverage fix worked</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The 11 blanks were worth 22 marks, and you had the time.</b> You spent a mean of <b>47.9 seconds</b> on each question you then left blank — <b>8.8 minutes in total, scoring zero</b> — and finished with <b>10 minutes still on the clock</b>. Attempting all eleven at your own 74.4% accuracy gives <b>65.29</b>, which is exactly the topper's score. Attempting them at a mere 50% still gives <b>59.95</b>, above the class average.</div></div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>The ten wrong answers</h2></div>
+<hr class="divider">
+<p class="lead">Each one: what it tested, the correct position, whether the notes had it, and why it went wrong.</p>
+
+<div class="pyq">
+<span class="stg">Q4 · Negative · you (d), key (c)</span>
+<p class="qtext">Two statements — (1) a removal motion cannot be rejected by the Speaker under the Judges (Inquiry) Act; (2) the Constitution defines "incapacity and proved misbehaviour". <b>Which is/are INCORRECT?</b></p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — both statements are incorrect</b>
+<ul class="vwhy"><li>The Speaker or Chairman <b>may admit or refuse</b> the motion. And the Constitution <b>defines neither</b> term.</li><li><b>Both facts are in Note 05, Section 03</b>, and both appear in the trap bank. You knew them.</li><li><b>This is a polarity error, not a knowledge error.</b> The stem asked which are <b>incorrect</b>; you answered as though it asked which are correct. Answering (d) means "both statements are true" — which contradicts material you had drilled two days earlier.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q7 · Statements · you (d), key (a)</span>
+<p class="qtext">(1) The original Constitution envisaged a Supreme Court with a Chief Justice and <b>five</b> puisne judges. (2) Rules of practice and procedure are made by the Supreme Court with the President's approval. (3) The Supreme Court's jurisdiction may be enlarged by the <b>President</b> in consultation with the CJI.</p>
+<ul class="opts"><li>(a) 2 only</li><li>(b) 1 and 2</li><li>(c) 2 and 3</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 2 only</b>
+<ul class="vwhy"><li>Statement 1 is wrong on the number: <b>seven</b> puisne judges, not five — Article 124(1). Statement 3 is wrong on the authority: <b>Parliament</b> enlarges jurisdiction under <b>Article 138</b>, not the President.</li><li>Statement 2 is correct — <b>Article 145(1)</b>, rules made with the President's approval.</li><li><b>All three are in Note 05.</b> The strength ladder opens Section 01 and the "seven" is in the revision tab. Article 138 is in the Section 06 articles table.</li><li>Two of the three failures were an <b>authority word</b> and a <b>number</b> — precisely the families the red-pen grid exists for.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q24 · Statements · you (d), key (a)</span>
+<p class="qtext">(1) There is no provision in the Constitution for the <b>impeachment</b> of a judge of a High Court or the Supreme Court. (2) Parliament is not empowered to discuss the conduct of a judge, and that protection applies to his judicial duties <b>as well as his private conduct</b>.</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both</li><li>(d) Neither</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 only</b>
+<ul class="vwhy"><li>Statement 1 is <b>correct</b> and turns on vocabulary: the Constitution provides for <b>removal</b>, and reserves the word <b>impeachment</b> for the President under Article 61. Note 05 states this expressly.</li><li>Statement 2 is <b>wrong on its last clause</b>: the protection under <b>Arts 121 and 211</b> extends to a judge's <b>official conduct only</b>, not his private conduct.</li><li><b>Partial gap.</b> Arts 121/211 are in the note, but the <b>official-versus-private</b> limit was not. That distinction has now been added.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q28 · Statements · you (d), key (a)</span>
+<p class="qtext">Statement 3 read: "By the writ of <b>quo warranto</b>, the court may strike off an order passed by any official of the government, local body or statutory body."</p>
+<ul class="opts"><li>(a) 1 and 2 only</li><li>(b) 2 and 3 only</li><li>(c) 1 and 3 only</li><li>(d) 1, 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 and 2 only</b>
+<ul class="vwhy"><li>Striking down an order already passed is <b>certiorari</b>. <b>Quo warranto</b> asks a person holding a public office by what authority he holds it.</li><li><b>Squarely in Note 06, Section 04</b> — the five-writ table gives each writ its literal meaning and its one distinguishing feature, and the trap bank has the same swap.</li><li>You spent <b>1:58</b> here. This was not a time problem; the swapped definition simply was not recognised as a swap.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q29 · Statements · you (a), key (c)</span>
+<p class="qtext">(1) Courts below the High Court are referred to in the Constitution as subordinate courts. (2) The principal function of the District Court is to hear appeals from the subordinate courts.</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — both</b>
+<ul class="vwhy"><li>Note 07, Section 01 states that the District Judge is the <b>highest civil court in the district and hears appeals from subordinate judges</b>.</li><li>You rejected statement 2, most likely because "principal function" felt like an overstatement. It is the standard textbook formulation.</li><li><b>2:00 spent.</b> With both statements individually familiar, this was a confidence failure rather than a knowledge failure.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q35 · Statements · you (a), key (c)</span>
+<p class="qtext">The Rajya Sabha has no procedure for moving: (1) adjournment motion (2) censure motion (3) no-confidence motion.</p>
+<ul class="opts"><li>(a) 1 and 3</li><li>(b) 2 only</li><li>(c) All of the above</li><li>(d) 2 and 3</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — all three</b>
+<ul class="vwhy"><li>All three censure the government, and the Council of Ministers is responsible to the <b>Lok Sabha alone</b>. So none is available in the Rajya Sabha.</li><li>You had adjournment and no-confidence right and dropped <b>censure</b>. The unifying principle — <b>anything that expresses want of confidence belongs to the House that can withdraw confidence</b> — is the thing to hold, rather than three separate facts.</li><li>Covered in Topic 5 Note 03's motions family; the <b>principle</b> has now been stated explicitly there.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q39 · Direct · you (a), key (d)</span>
+<p class="qtext">A theory under which judges hesitate to strike down laws unless obviously unconstitutional, limit their own power, and emphasise procedure established by law over due process. Which theory?</p>
+<ul class="opts"><li>(a) Judicial Review</li><li>(b) Judicial Overreach</li><li>(c) Judicial Activism</li><li>(d) Judicial Restraint</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Judicial Restraint</b>
+<ul class="vwhy"><li><b>Note 08, Section 02</b> is a four-row table of exactly these four terms, and <b>restraint</b> is defined there as deference plus confinement to the dispute.</li><li>You answered "judicial review" — the baseline power, not the posture. Review is <b>what the court may do</b>; restraint, activism and overreach describe <b>how energetically it does it</b>.</li><li>Fix: whenever the stem describes an <b>attitude</b> ("hesitate", "limit", "should not"), it is asking about a posture on the ladder, never about the power itself.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q41 · Direct · you (c), key (d)</span>
+<p class="qtext">Which power of the Supreme Court allows it to declare legislative and executive actions contrary to Fundamental Rights void?</p>
+<ul class="opts"><li>(a) Original Jurisdiction</li><li>(b) Appellate Jurisdiction</li><li>(c) Writ Jurisdiction</li><li>(d) The power granted by Article 13</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Article 13, judicial review</b>
+<ul class="vwhy"><li><b>Note 08, Section 01</b> opens with Article 13 as the <b>textual foundation</b> of judicial review — the article that makes inconsistent laws void.</li><li>Writ jurisdiction is the <b>remedy through which</b> review is exercised; Article 13 is the <b>power that voids the law</b>. The question asks what makes the action void, not how a litigant reaches the court.</li><li><b>2:03 spent</b> — you were choosing between (c) and (d), which is the right shortlist. The tiebreak is that <b>a writ runs against a person or authority; Article 13 operates on the law itself.</b></li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q42 · How many · you (b), key (a)</span>
+<p class="qtext">(1) The President is bound to accept the Supreme Court's advice. (2) The Court may refuse to advise. (3) The jurisdiction is limited to matters arising after the Constitution came into effect.</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — only one (statement 2)</b>
+<ul class="vwhy"><li>Statement 1 is wrong — the opinion is <b>advisory, not binding</b>. Statement 3 is wrong — <b>Art 143(2)</b> covers disputes arising from <b>pre-Constitution</b> treaties, so the jurisdiction expressly reaches backwards.</li><li>All three facts sit in <b>Note 05, Section 04</b>, and statement 3 is the exact point of the 143(1)-versus-143(2) contrast.</li><li>You counted two correct instead of one — the classic how-many failure, where one statement is judged on impression rather than tested. <b>2:13 spent.</b></li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Q47 · How many · you (b), key (a)</span>
+<p class="qtext">(1) SC/ST reservation in a State Assembly is based on population ratios. (2) Originally for ten years, extended until <b>2020</b>. (3) An SC or ST member can <b>only</b> contest a reserved seat.</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — only one (statement 1)</b>
+<ul class="vwhy"><li>Statement 2 is wrong on the <b>year</b>: extended to <b>2030</b> by the <b>104th Amendment, 2020</b> — the amendment is of 2020, the deadline is 2030, and the question swaps them.</li><li>Statement 3 is wrong on the <b>absolute</b>: a member of an SC or ST may contest a <b>general seat as well</b>.</li><li><b>Genuine gap — Article 332 was not in the notes.</b> It has now been added to State Legislature §05, with the 104th Amendment and the discontinuation of Anglo-Indian nomination.</li></ul>
+</div>
+</div>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>The eleven you left blank</h2></div>
+<hr class="divider">
+<p class="lead">These cost 22 marks. For each, the fact you needed and where it already lived — because on nine of the eleven, it lived in your own notes.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Q</th><th>What it tested</th><th>The answer, and where it was</th><th>Time spent</th></tr></thead>
+<tbody>
+<tr><th>Q2</th><td>Essential aspects of <b>natural justice</b></td><td><b>Only three</b> — fair hearing (<i>audi alteram partem</i>), recusal for conflict of interest, and reasoned orders. <b>Judicial review</b> and <b>cheap justice</b> are not aspects of natural justice. Note 07 mentions natural justice for CAT but did not list its components — <b>now added</b>.</td><td>37s</td></tr>
+<tr><th>Q3</th><td><b>Criminal</b> contempt versus civil</td><td>Criminal contempt = scandalising the court · prejudicing a judicial proceeding · obstructing the administration of justice. <b>Fair and reasonable criticism is not contempt</b>; wilful disobedience of an order is <b>civil</b> contempt. The civil/criminal split is in Note 05; the <b>three limbs of criminal contempt now added</b>.</td><td>18s</td></tr>
+<tr><th>Q5</th><td>Who a <b>PIL</b> can be filed against, and where</td><td>A PIL against a polluting private factory <b>is</b> maintainable against the <b>municipal authority</b>; a PIL <b>cannot</b> be filed in a magistrate's court (only the Supreme Court under Art 32 or a High Court under Art 226); a PIL without public interest <b>is rejected</b>. <b>All three in Note 08, Section 04.</b></td><td>56s</td></tr>
+<tr><th>Q8</th><td><b>Article 136</b> special leave</td><td>SLP lies against any court or tribunal, <b>including</b> where the High Court has <b>refused</b> a certificate of fitness under Art 134A, and covers both final and interlocutory orders. <b>Note 05, Section 04.</b></td><td>43s</td></tr>
+<tr><th>Q23</th><td>What <b>Article 131</b> excludes</td><td>Excludes pre-Constitution treaties, <b>inter-state water disputes</b>, matters referred to the <b>Finance Commission</b>, adjustment of certain expenses, ordinary commercial disputes, and recovery of damages by a State. <b>Genuine gap — now added to Note 05.</b></td><td>1:01</td></tr>
+<tr><th>Q27</th><td><b>Article 19(2)</b> grounds, via <i>Anuradha Bhasin</i></td><td>All eight grounds: sovereignty and integrity, security of the State, friendly relations with foreign States, public order, decency or morality, contempt of court, defamation, incitement to an offence. In <b>Topic 1 Note 07</b> — a Week 1 topic reaching into a Week 5 paper.</td><td>30s</td></tr>
+<tr><th>Q30</th><td><b>Judicial activism</b> — defined? effects?</td><td>Not defined in the Constitution; it has <b>enforced executive responsibility</b> but has <b>not</b> strengthened separation of powers — if anything it strains it. <b>Note 08, Sections 02 and 03.</b></td><td>2:08</td></tr>
+<tr><th>Q40</th><td>Contempt and the power to <b>order arrest</b></td><td>Arrest is a <b>punitive</b> measure; <b>Section 10 of the Contempt of Courts Act, 1971</b> empowers <b>High Courts</b> to punish contempt of subordinate courts — subordinate courts cannot themselves order arrest for contempt. Note 06 says the High Court punishes contempt of subordinate courts; <b>the section number and the arrest point are now added</b>.</td><td>33s</td></tr>
+<tr><th>Q46</th><td>First woman Chief Justice of a High Court</td><td><b>Justice Leila Seth</b>, <b>Himachal Pradesh High Court</b>, 1991 — also the first woman judge of the Delhi High Court. <b>Not in the notes and deliberately not being added as a category</b>; see the note in Section 04.</td><td>22s</td></tr>
+<tr><th>Q48</th><td><b>Vacation of seats</b>, State Legislature</td><td>Resignation goes to the <b>Speaker or Chairman</b>, <b>not the Governor</b>; expulsion for promoting enmity is possible; a seat is vacated if the election is declared void. <b>Note 04, Section 05</b> — the Article 190 row, added the week before this test.</td><td>1:39</td></tr>
+<tr><th>Q50</th><td><b>Article 239AA</b> — Delhi</td><td>The Assembly may legislate on State and Concurrent List matters <b>except police, public order and land</b> (not "except security of state"); on a difference of opinion the L-G refers the matter to the <b>President</b>, not to the Council's collective advice. Only in Topic 6 Note 01; <b>a fuller treatment is due in Week 6</b>, where UT administration belongs.</td><td>0s</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Nine of these eleven were in your notes.</b> Q23 and Q46 were not. That is the whole gap. On the other nine you had read the material — in several cases <b>within the previous forty-eight hours</b> — looked at the question for between 18 seconds and two minutes, and walked away from two marks each.<br><br>The two you spent longest on are the most telling: <b>Q30 at 2:08</b> and <b>Q48 at 1:39</b>. Both were fully covered. Spending two minutes and then not answering is the single most expensive thing you did in this paper.</div></div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Why each was missed — the pattern layer</h2></div>
+<hr class="divider">
+<p class="lead">Twenty-one individual mistakes collapse into five causes. This is the part that generalises to Week 6.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Cause</th><th>Questions</th><th>What it actually is</th><th>The fix</th></tr></thead>
+<tbody>
+<tr><th>Blank despite knowing</th><td><b>Q2, Q3, Q5, Q8, Q27, Q30, Q40, Q48, Q50</b> — nine</td><td>The material was in the notes and mostly read in the last week. The decision to skip was made on a feeling of uncertainty, not on an assessment of the options.</td><td><b>The 90-second rule.</b> If still open at 90 seconds, eliminate what you can and answer. At +2/−0.67 a two-way guess is worth <b>+0.67</b> on average; a blank is worth <b>0</b>.</td></tr>
+<tr><th>Polarity flip</th><td><b>Q4</b></td><td>The stem asked which statements are <b>incorrect</b>; you answered as though it asked which are correct. Both underlying facts were known.</td><td>Circle the word <b>INCORRECT</b> in the stem. Mark each statement T/F, then <b>invert deliberately</b> before choosing.</td></tr>
+<tr><th>Authority or number swapped</th><td><b>Q7, Q47</b></td><td>Five instead of seven puisne judges; President instead of Parliament under Art 138; 2020 instead of 2030.</td><td>This is exactly what the <b>red-pen grid</b> at the end of each note's deep-reference tab is for. Work it covered.</td></tr>
+<tr><th>Concept confused with its neighbour</th><td><b>Q28, Q39, Q41</b></td><td>Quo warranto for certiorari · judicial review for judicial restraint · writ jurisdiction for Article 13.</td><td>Each pair is <b>adjacent and deliberately confusable</b>. When two options are both plausible, ask which one the question's <b>verb</b> points at — "strike off an order", "hesitate to strike down", "declare void".</td></tr>
+<tr><th>Genuine content gap</th><td><b>Q23, Q46, Q47</b> — three</td><td>Article 131's exclusions; Article 332; a personality fact.</td><td>Two patched. The third is a category we are not chasing — see Section 04.</td></tr>
+</tbody>
+</table>
+</div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where the 21 lost marks went, by cause">
+<text x="350" y="26" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="600" fill="#1B1D51">Where the 21 lost questions went</text>
+<rect x="60" y="52" width="378" height="30" rx="6" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+<rect x="60" y="94" width="42" height="30" rx="6" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<rect x="60" y="136" width="84" height="30" rx="6" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<rect x="60" y="178" width="126" height="30" rx="6" fill="#FBF1D8" stroke="#EBD9A8"></rect>
+<g font-family="Inter, sans-serif" font-size="12.5" fill="#33344f">
+<text x="448" y="72">Blank despite knowing — 9</text>
+<text x="112" y="114">Polarity flip — 1</text>
+<text x="154" y="156">Authority / number swapped — 2</text>
+<text x="196" y="198">Concept confused with neighbour — 3</text>
+</g>
+<rect x="60" y="220" width="126" height="20" rx="5" fill="#fdecec" stroke="#f3c9c9"></rect>
+<text x="196" y="235" font-family="Inter, sans-serif" font-size="12.5" fill="#8f1c1c">Genuine content gap — 3</text>
+<text x="350" y="248" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#565884"></text>
+</svg>
+<figcaption><b>Fig 1.</b> Nine of twenty-one — <b>43 per cent of everything you lost</b> — was material you had, on questions you looked at and abandoned. No amount of new content fixes that.</figcaption>
+</div>
+</figure>
+
+<div class="mentor">
+<div class="tag">📖 The time signature, and why it is good news</div>
+<p>In Week 4 your mean time on a <b>correct</b> answer was 70.5 seconds and on a <b>wrong</b> answer 71.8 — statistically identical. You could not tell the difference between a question you knew and one you did not.</p>
+<p>In Week 5: <b>51.5 seconds on correct answers, 95.4 on wrong ones</b>. Your sense of difficulty is now calibrated — you can feel which questions are hard, and you are right about it.</p>
+<p>That is a real gain, and it converts directly into marks the moment you act on it differently. At present the calibration triggers <b>withdrawal</b>. It should trigger <b>elimination and a committed guess</b>. The information is already in your hands; only the response has to change.</p>
+</div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>The gaps, and what has been added to the notes</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Gap</th><th>Where it now lives</th><th>What was added</th></tr></thead>
+<tbody>
+<tr><th>Article 131's <b>exclusions</b></th><td>Note 05, Section 04</td><td>A dedicated trap box: pre-Constitution treaties · <b>inter-state water disputes (Art 262)</b> · matters referred to the <b>Finance Commission</b> · adjustment of expenses · ordinary commercial disputes · recovery of damages by a State. With the point that Art 262 is the one place Parliament may bar <b>all</b> courts including the Supreme Court.</td></tr>
+<tr><th><b>Article 332</b> — reserved seats</th><td>Note 04, Section 05</td><td>Population-proportional reservation for SC/ST in State Assemblies; extended to <b>2030</b> by the <b>104th Amendment, 2020</b>, which also <b>discontinued Anglo-Indian nomination</b>; and that a reserved-category member may contest a <b>general</b> seat.</td></tr>
+<tr><th>Judge's protection — <b>official versus private</b> conduct</th><td>Note 05, Section 03</td><td>Arts 121 and 211 bar discussion of a judge's <b>official</b> conduct only. Private conduct is not protected.</td></tr>
+<tr><th>The three limbs of <b>criminal contempt</b></th><td>Note 05, Section 04</td><td>Scandalising the court · prejudicing a judicial proceeding · obstructing the administration of justice. Plus: <b>fair and reasonable criticism is not contempt</b>, and <b>wilful disobedience is civil</b>, not criminal.</td></tr>
+<tr><th><b>Section 10</b>, Contempt of Courts Act</th><td>Note 06, Section 02</td><td>High Courts are empowered by Section 10 to punish contempt of <b>subordinate</b> courts; arrest is a punitive measure.</td></tr>
+<tr><th>Components of <b>natural justice</b></th><td>Note 07, Section 03</td><td><i>Audi alteram partem</i> · <i>nemo judex in causa sua</i> and recusal · reasoned orders. And what is <b>not</b> part of it: judicial review, and access to cheap justice.</td></tr>
+<tr><th>The <b>confidence principle</b> behind motions</th><td>Topic 5, Note 03</td><td>Any motion expressing want of confidence belongs to the House that can withdraw confidence — hence the Rajya Sabha has <b>no</b> adjournment, censure or no-confidence motion.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>One gap I am deliberately not filling, and why you should agree.</b> Q46 asked which High Court had the first woman Chief Justice (Justice Leila Seth, Himachal Pradesh, 1991). Chasing "first person to hold office X" is an unbounded category — there are hundreds of such facts and no way to predict which one appears. Adding them would inflate every note without raising the probability of a hit in any measurable way.<br><br>The honest position: <b>this is a question to lose.</b> One or two per paper will always be unguessable, and the coverage contract allows for exactly that. What is <b>not</b> acceptable is losing nine questions whose answers were already in your notes.</div></div>
+</section>
+
+<section id="rev" class="tabsection">
+<div class="recall">
+<h2>What to change before Week 6 — four things</h2>
+<ul>
+<li><b>1 · The 90-second rule.</b> If a question is still open at 90 seconds, eliminate what you can and <b>answer it</b>. Never spend 95 seconds and then leave it blank — that is what you did on nine questions this week. At +2/−0.67 a two-way guess is worth <b>+0.67</b> on average and a blank is worth <b>0</b>. There is no scenario where the blank wins.</li>
+<li><b>2 · Target 46–48 attempts, not 39.</b> Your accuracy is already 74%. You do not need to know more to score more this week — you need to <b>answer more of what you already know</b>. Attempting 47 at your current accuracy puts you at roughly <b>63–65</b>.</li>
+<li><b>3 · Circle the word NOT.</b> One polarity flip cost you Q4, on two facts you had drilled. Mark each statement T or F, then invert <b>deliberately</b> and out loud before you choose an option.</li>
+<li><b>4 · Work the red-pen grid covered, not read.</b> Two losses were an authority and a number — <b>five</b> puisne judges instead of seven, <b>President</b> instead of Parliament, <b>2020</b> instead of 2030. That grid exists for exactly this and only works with the right-hand column hidden.</li>
+<li><b>The arithmetic, one more time:</b> 29 right, 10 wrong, 11 blank = <b>51.30</b>. The same 29 right, plus those 11 attempted at your own accuracy, = <b>65.29</b> — the topper's score, with no new knowledge whatsoever.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>This note is now a standing deliverable.</b> After every weekly result: parse the paper, probe every lost question against the notes with strict fact probes, split the causes into content gaps and retrieval failures, patch the gaps into the topic notes the same night, and write up the pattern layer. It is recorded in <b>TEST_INTELLIGENCE.md Part 5</b> and <b>NOTE_GENERATION_WORKFLOW.md</b> so it runs without being asked.
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Week 5 &middot; Polity &middot; post-test analysis &middot; 51.30/100, rank 2, class average 58.30<br>
+18 of the 21 questions lost were already in the notes. Mandatory deliverable after every weekly result.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
