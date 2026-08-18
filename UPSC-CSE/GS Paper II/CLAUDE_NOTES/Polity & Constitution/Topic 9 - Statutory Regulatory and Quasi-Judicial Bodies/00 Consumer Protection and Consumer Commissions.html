@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consumer Protection &amp; Consumer Commissions | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · The three tiers &amp; the money</button>
+<button class="notetab" data-tab="s2">02 · What the 2019 Act added</button>
+<button class="notetab" data-tab="s3">03 · Deep reference · exceptions · red pen</button>
+<button class="notetab" data-tab="spass">04 · Pass 2 — the adjacent surface</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 9 · Note 00 — Week 6, Days 1–2</div>
+<h1>Consumer Protection &amp; Consumer Commissions</h1>
+<p class="sub">The <b>Consumer Protection Act, 2019</b> — a three-tier adjudicating pyramid, a new regulator with <b>suo motu</b> powers, and the first statutory scheme of <b>product liability</b> in Indian law. None of it is constitutional, and the exam's first question is always exactly that.</p>
+<div class="chips">
+<span class="chip">Act of 2019</span>
+<span class="chip">CCPA · 2020</span>
+<span class="chip">₹50 lakh / ₹2 crore</span>
+<span class="chip">Product liability</span>
+<span class="chip">Statutory, not constitutional</span>
+</div>
+<div class="bignum"><b>3</b><span>tiers · and <b>0</b> constitutional status</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Where the marks are, and where they are not</div>
+<p>This note opens <b>Topic 9 — Statutory, regulatory and various quasi-judicial bodies</b>. Read the syllabus line carefully: the topic is defined by what these bodies are <b>not</b>. Everything here sits outside the Constitution, and this setter's single most repeated question in the whole area is <b>&ldquo;how many of the following are constitutional bodies?&rdquo;</b> — asked in <b>2023</b> with the NCDRC among the options, and in <b>2025</b> with the Inter-State Council. Both are reproduced below.</p>
+<p>Do not learn consumer law. Learn the <b>institutional architecture</b>: who adjudicates at what value, who regulates, who appeals where, and what the 2019 Act added that the 1986 Act lacked.</p>
+<p>Week 6, Days 1–2. The <b>tribunals, Lok Adalats, Gram Nyayalayas and Article 39A</b> also listed for those days are already covered in <b>Topic 6, Note 07</b> — read that alongside this rather than expecting it repeated here.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>A consumer who has been sold a defective product has a real problem: the loss is small, and an ordinary civil suit costs more than the loss. So Parliament built a <b>parallel, cheap, quick forum</b> — no court fee worth the name, no requirement of a lawyer, and a decision in months rather than years.</p>
+<p>The <b>1986 Act</b> created three tiers of that forum. The <b>2019 Act</b> replaced it and added three genuinely new things. First, a <b>regulator</b> — the Central Consumer Protection Authority — which can act <b>on its own motion</b>, without waiting for anyone to complain. Second, <b>product liability</b>, letting a consumer sue the manufacturer, the seller <b>or</b> the service provider for harm caused by a defective product. Third, express coverage of <b>e-commerce</b> and of <b>unfair contracts</b>.</p>
+<p>The vocabulary changed too, and the exam uses the new words: the 1986 Act had <b>Forums</b>; the 2019 Act has <b>Commissions</b>. A question calling the district body a &ldquo;District Forum&rdquo; is describing the <b>repealed</b> Act.</p>
+<div class="bridge">Next → the three tiers and the money limits that decide where you file</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>The three tiers — and the money</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Tier</th><th>Pecuniary jurisdiction</th><th>Composition &amp; appointment</th></tr></thead>
+<tbody>
+<tr><th>District Commission</th><td>Consideration paid <b>up to ₹50 lakh</b></td><td>A President and at least two members, appointed by the <b>State Government</b>.</td></tr>
+<tr><th>State Commission</th><td><b>Above ₹50 lakh and up to ₹2 crore</b></td><td>A President and at least four members, appointed by the <b>State Government</b>.</td></tr>
+<tr><th>National Commission (NCDRC)</th><td><b>Above ₹2 crore</b></td><td>A President and at least four members, appointed by the <b>Central Government</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The limits you may have memorised are the old ones.</b> The 2019 Act as enacted set <b>₹1 crore / ₹10 crore</b> as the thresholds. Those were <b>revised downward</b> by rules notified on <b>31 December 2021</b> to <b>₹50 lakh / ₹2 crore</b>, because the original figures had pushed a flood of cases down into the District Commissions and created pendency. Any source written between 2019 and 2021 carries the superseded numbers — and this is precisely the kind of quietly-changed figure this setter likes.</div></div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Jurisdiction is decided by the CONSIDERATION PAID, not by the compensation claimed.</b> This is the sharpest change from the 1986 Act, under which the value of the goods <b>plus</b> the compensation claimed set the tier. Under the 2019 Act only the <b>consideration paid</b> counts — so a ₹40 lakh purchase with a ₹5 crore damages claim is still a <b>District</b> Commission matter. The Supreme Court has upheld the consideration-based test. If a stem gives you two figures, the one to use is what the consumer <b>paid</b>.</div></div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three tiers of consumer commissions with pecuniary limits and the appeal route">
+<text x="350" y="24" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">Where you file, and where you appeal</text>
+
+<rect x="70" y="212" width="380" height="52" rx="10" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<text x="92" y="234" font-family="Fraunces, serif" font-size="13.5" font-weight="600" fill="#1B1D51">District Commission</text>
+<text x="92" y="252" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">consideration up to ₹50 lakh · State Government appoints</text>
+
+<rect x="70" y="140" width="380" height="52" rx="10" fill="#FBF1D8" stroke="#EBD9A8"></rect>
+<text x="92" y="162" font-family="Fraunces, serif" font-size="13.5" font-weight="600" fill="#1B1D51">State Commission</text>
+<text x="92" y="180" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">above ₹50 lakh to ₹2 crore · State Government appoints</text>
+
+<rect x="70" y="68" width="380" height="52" rx="10" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+<text x="92" y="90" font-family="Fraunces, serif" font-size="13.5" font-weight="600" fill="#1B1D51">National Commission — NCDRC</text>
+<text x="92" y="108" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">above ₹2 crore · Central Government appoints</text>
+
+<rect x="140" y="16" width="240" height="34" rx="9" fill="#1B1D51" stroke="#1B1D51"></rect>
+<text x="260" y="38" text-anchor="middle" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#ffffff">Supreme Court</text>
+
+<g stroke="#8a2168" stroke-width="1.8" fill="none" marker-end="url(#art9)">
+<path d="M460 238 L500 238 L500 166 L458 166"></path>
+<path d="M460 166 L520 166 L520 94 L458 94"></path>
+<path d="M300 66 L300 52"></path>
+</g>
+<defs><marker id="art9" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#8a2168"></path></marker></defs>
+
+<text x="560" y="200" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#8a2168">Appeal:</text>
+<text x="560" y="216" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#8a2168">30 days at</text>
+<text x="560" y="232" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#8a2168">each step</text>
+<text x="560" y="256" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#565884">Complaint:</text>
+<text x="560" y="272" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#565884">within 2 yrs</text>
+<text x="350" y="288" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#565884">The tier is set by the CONSIDERATION PAID — never by the compensation claimed.</text>
+</svg>
+<figcaption><b>Fig 1.</b> Three tiers, two thresholds, one appeal ladder. The two numbers to hold are <b>₹50 lakh</b> and <b>₹2 crore</b> — revised down from ₹1 crore and ₹10 crore in <b>December 2021</b>.</figcaption>
+</div>
+</figure>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Procedural point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Limitation</th><td>A complaint must be filed within <b>two years</b> of the cause of action; delay may be condoned for sufficient cause recorded in writing.</td></tr>
+<tr><th>Appeal</th><td>District → State → National → <b>Supreme Court</b>, <b>30 days</b> at each stage. An appeal from the NCDRC lies to the Supreme Court only where the NCDRC exercised <b>original</b> jurisdiction.</td></tr>
+<tr><th>Pre-deposit</th><td>A person ordered to pay must deposit <b>50%</b> of the amount before appealing — the 1986 Act's varying caps were replaced by this flat rule.</td></tr>
+<tr><th>Where a complaint may be filed</th><td>A significant 2019 change: the consumer may file where he <b>ordinarily resides or works</b>, not only where the opposite party carries on business.</td></tr>
+<tr><th>Nature of the body</th><td><b>Quasi-judicial.</b> The Commissions have the powers of a civil court on specified matters and their orders are enforceable as decrees.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>What the 2019 Act added — regulator, liability, e-commerce</h2></div>
+<hr class="divider">
+
+<h3>The Central Consumer Protection Authority</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Established</th><td><b>24 July 2020</b>, under the 2019 Act. A <b>regulator</b>, not an adjudicator — this is the cleanest way to hold it apart from the Commissions.</td></tr>
+<tr><th>Composition</th><td>A Chief Commissioner and Commissioners, appointed by the <b>Central Government</b>. Under the Ministry of Consumer Affairs.</td></tr>
+<tr><th>Investigation wing</th><td>Headed by a <b>Director-General</b>, who may inquire or investigate into violations.</td></tr>
+<tr><th>Powers</th><td>Act <b>suo motu</b>; order <b>recall</b> of goods; order <b>reimbursement</b> of the price paid; <b>cancel licences</b>; file <b>class action</b> where more than one consumer is affected; and issue directions against <b>false or misleading advertisements</b>, with penalties on manufacturers and on <b>endorsers</b>.</td></tr>
+<tr><th>Why it matters</th><td>The Commissions can act only when someone complains. The CCPA can move <b>before</b> anyone does — which is the entire point of adding a regulator to an adjudicating system.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Endorser liability is a favourite.</b> Under the 2019 Act a celebrity who endorses a false or misleading advertisement can be penalised and <b>prohibited from making any endorsement</b> for up to <b>one year</b>, extending to <b>three years</b> for a repeat offence. It is a defence that the endorser exercised due diligence to verify the claim. This is new law with no equivalent in the 1986 Act, and it is exactly the sort of provision a current-affairs-minded setter reaches for.</div></div>
+
+<h3>Product liability — the second addition</h3>
+<div class="tip"><span class="ic">◆</span><div>A <b>product liability action</b> may be brought against the <b>product manufacturer</b>, the <b>product service provider</b> <i>or</i> the <b>product seller</b> — all three are exposed, which is the change. The claim lies for harm caused by a <b>manufacturing defect</b>, a <b>design defect</b>, a <b>deviation from manufacturing specifications</b>, a <b>failure to conform to an express warranty</b>, or <b>inadequate instructions or warnings</b>. Note the defences: a seller is not liable if he merely sold the product without altering it and exercised reasonable care; and no liability attaches where the product was <b>misused, altered or modified</b> by the consumer.</div></div>
+
+<h3>E-commerce and unfair contracts — the third</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Item</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td><b>E-Commerce Rules, 2020</b></td><td>Made under the Act. Require disclosure of the seller's identity, country of origin, return and refund policy and grievance-officer details; prohibit <b>cancelling an order unilaterally</b> in a way that causes loss, and manipulation of price.</td></tr>
+<tr><td><b>Unfair contract</b></td><td>A wholly new statutory concept — a contract causing significant change in consumer rights, including excessive security deposits, disproportionate penalties, unilateral termination, and refusal to accept early repayment.</td></tr>
+<tr><td><b>Mediation</b></td><td>A <b>consumer mediation cell</b> is attached to each Commission at every tier. A Commission may refer a dispute to mediation where an element of settlement exists and both parties agree. A settlement so reached is <b>not appealable</b>.</td></tr>
+<tr><td><b>Six consumer rights</b></td><td>Safety · information · choice · to be heard · redressal · <b>consumer education</b>. Carried over from the 1986 Act and still asked as a list.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Deep reference · exceptions · the red-pen grid</h2></div>
+<hr class="divider">
+
+<h3>1986 versus 2019 — the comparison the exam actually wants</h3>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Consumer Protection Act, 1986</th><th>Consumer Protection Act, 2019</th></tr></thead>
+<tbody>
+<tr><td><b>Forums</b> — District Forum, State Commission, National Commission.</td><td><b>Commissions</b> at all three tiers. The word changed.</td></tr>
+<tr><td>Jurisdiction on <b>value of goods plus compensation claimed</b>.</td><td>Jurisdiction on the <b>consideration paid</b> alone.</td></tr>
+<tr><td>File only where the opposite party carries on business.</td><td>File where the <b>consumer resides or works</b>.</td></tr>
+<tr><td><b>No regulator.</b></td><td><b>CCPA</b> with suo motu and class-action powers.</td></tr>
+<tr><td>No product liability.</td><td><b>Product liability</b> against manufacturer, service provider and seller.</td></tr>
+<tr><td>No express coverage of e-commerce; &ldquo;consumer&rdquo; defined for offline transactions.</td><td><b>E-commerce</b> and direct selling expressly covered; the definition of consumer includes online transactions.</td></tr>
+<tr><td>No mediation.</td><td><b>Mediation cells</b> at each tier; a mediated settlement is <b>not appealable</b>.</td></tr>
+<tr><td>No liability for misleading endorsements.</td><td><b>Endorser</b> penalties and endorsement bans.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>★ The examiner's red pen — eight questions on this body</h3>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody>
+<tr><th>Constitutional or statutory</th><td><b>Statutory.</b> The NCDRC and both lower Commissions, and the CCPA, are creatures of an Act. Asked directly in <b>2023</b>.</td></tr>
+<tr><th>Who appoints</th><td><b>State Government</b> for the District and State Commissions; <b>Central Government</b> for the NCDRC and the CCPA.</td></tr>
+<tr><th>What numbers</th><td><b>₹50 lakh</b> · <b>₹2 crore</b> (from Dec 2021) · limitation <b>2 years</b> · appeal <b>30 days</b> · pre-deposit <b>50%</b> · endorsement ban <b>1 year</b>, repeat <b>3 years</b>.</td></tr>
+<tr><th>What decides the tier</th><td>The <b>consideration paid</b> — never the compensation claimed.</td></tr>
+<tr><th>Adjudicator or regulator</th><td><b>Commissions adjudicate</b> a complaint. The <b>CCPA regulates</b> and may act <b>suo motu</b>. Do not merge them.</td></tr>
+<tr><th>What exception</th><td>Every order is appealable — <b>except</b> a settlement reached in <b>mediation</b>. A seller faces product liability — <b>except</b> where he only sold without alteration and took reasonable care, or where the consumer <b>misused or modified</b> the product.</td></tr>
+<tr><th>Which Act</th><td>The <b>2019</b> Act repealed and replaced the <b>1986</b> Act. &ldquo;District <b>Forum</b>&rdquo; belongs to the repealed statute.</td></tr>
+<tr><th>Where the appeal ends</th><td><b>Supreme Court</b> — but from the NCDRC's <b>original</b> jurisdiction.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Exceptions ledger — this note's entries</h3>
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>Every Commission order is appealable — <b>except</b> a <b>mediated settlement</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Jurisdiction follows the <b>consideration paid</b> — <b>not</b> the compensation claimed, however large.</div></div>
+<div class="item"><span class="dot">◆</span><div>The limits are <b>₹50 lakh / ₹2 crore</b> — <b>not</b> the ₹1 crore / ₹10 crore of the Act as enacted.</div></div>
+<div class="item"><span class="dot">◆</span><div>A seller is liable in product liability — <b>except</b> where he neither altered the product nor failed in reasonable care.</div></div>
+<div class="item"><span class="dot">◆</span><div>The Commissions act on complaint — <b>only the CCPA</b> may act <b>suo motu</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Consumer bodies are <b>statutory</b> — <b>none</b> of them is constitutional, unlike the NCBC.</div></div>
+</div>
+</div>
+</section>
+
+<section id="spass" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Pass 2 — the adjacent surface</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">◆ Why this section exists — and why it is unusually large here</div>
+<p>For this topic the Pass-2 surface <b>is</b> the topic. The syllabus line reads &ldquo;<b>Statutory, regulatory and various quasi-judicial bodies</b>&rdquo;, so a question can come from any body in the Indian state that is not constitutional. The consumer commissions are one worked example; the classification skill is the actual deliverable.</p>
+<p>The three words in the syllabus line are not synonyms, and telling them apart is the whole game.</p>
+</div>
+
+<h3>The three categories the syllabus names</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Category</th><th>Meaning</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><th>Statutory</th><td>Created by an <b>Act</b> of Parliament or a State legislature.</td><td>NHRC (1993) · NCW (1990) · CVC (2003) · CIC (RTI Act, 2005) · Lokpal (2013) · NCM (1992) · <b>Consumer Commissions</b> · NCDRC</td></tr>
+<tr><th>Regulatory</th><td>A statutory body whose function is to <b>license, set standards and police a sector</b> — usually with rule-making power of its own.</td><td>RBI (1934) · SEBI (1992) · TRAI (1997) · IRDAI (1999) · PFRDA (2013) · CCI (2002) · FSSAI (2006) · <b>CCPA</b> (2019)</td></tr>
+<tr><th>Quasi-judicial</th><td>A body that <b>adjudicates</b> — hears parties, takes evidence, issues enforceable orders — without being a court.</td><td>NGT (2010) · NCLT / NCLAT · SAT · TDSAT · CAT (Art 323A) · <b>Consumer Commissions</b> · and the regulators when exercising adjudicatory powers</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The categories overlap, and that overlap is examinable.</b> A body can be all three at once: <b>SEBI</b> is statutory (Act of 1992), regulatory (it licenses and sets standards) and quasi-judicial (it adjudicates and penalises). So a question asking whether SEBI is &ldquo;a regulatory body&rdquo; and whether it is &ldquo;a quasi-judicial body&rdquo; can have <b>both</b> answers correct. Do not treat the three labels as mutually exclusive — the mistake is to assume one excludes the others.</div></div>
+
+<h3>Constitutional versus everything else — the master table</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Body</th><th>Status</th><th>Basis</th></tr></thead>
+<tbody>
+<tr><td>Election Commission · UPSC · State PSC · Finance Commission · GST Council · CAG · <b>NCSC · NCST · NCBC</b> · Attorney General · Advocate General · Inter-State Council</td><td><b>Constitutional</b></td><td>Arts 324 · 315 · 280 · 279A · 148 · 338 / 338A / 338B · 76 · 165 · <b>263</b></td></tr>
+<tr><td><b>NCDRC and consumer commissions · CCPA</b></td><td><b>Statutory</b></td><td>Consumer Protection Act, 2019</td></tr>
+<tr><td>NHRC · NCW · NCPCR · NCM · CVC · CIC · Lokpal · NGT · NCLT · SEBI · TRAI · CCI · FSSAI</td><td><b>Statutory</b></td><td>Their own Acts</td></tr>
+<tr><td><b>NITI Aayog</b> · Planning Commission · National Development Council · <b>Law Commission</b> · <b>National Security Council</b> · Staff Selection Commission</td><td><b>Executive</b></td><td>Cabinet or government <b>resolution</b> — neither constitutional nor statutory</td></tr>
+<tr><td><b>Zonal Councils</b></td><td><b>Statutory</b></td><td><b>States Reorganisation Act, 1956</b> — not the Constitution. Contrast the <b>Inter-State Council</b>, which <b>is</b> constitutional under <b>Art 263</b>. UPSC set exactly this contrast in <b>2025</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Three pairs that are built to be confused, and are worth learning as pairs.</b> <b>(1)</b> <b>Inter-State Council</b> (Art 263, constitutional) versus <b>Zonal Councils</b> (States Reorganisation Act 1956, statutory) — and note the <b>North Eastern Council</b> is statutory too, under its own 1971 Act. <b>(2)</b> <b>NCBC</b> (constitutional since 2018) versus <b>NCM, NHRC, NCW</b> (all statutory). <b>(3)</b> <b>CVC</b> (statutory since 2003, executive before) versus <b>CAG</b> (constitutional, Art 148) — one audits, one investigates vigilance, and their statuses differ.</div></div>
+
+<h3>The quasi-judicial bodies most likely to appear beside this one</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Body</th><th>Year / Act</th><th>The tested fact</th></tr></thead>
+<tbody>
+<tr><td><b>National Green Tribunal</b></td><td>NGT Act, <b>2010</b></td><td>Established by an <b>Act</b>, unlike the <b>Central Pollution Control Board</b>, which was created under the Water Act but is often contrasted with it — UPSC set this comparison in <b>2018</b>. Appeal lies to the <b>Supreme Court</b>.</td></tr>
+<tr><td><b>NCLT / NCLAT</b></td><td>Companies Act</td><td>Company-law adjudication and insolvency under the IBC; appeal from NCLAT to the <b>Supreme Court</b>.</td></tr>
+<tr><td><b>Central Administrative Tribunal</b></td><td><b>Art 323A</b> + Administrative Tribunals Act, 1985</td><td>The one tribunal family with an <b>express constitutional</b> basis. After <b><i>L. Chandra Kumar</i> (1997)</b>, its decisions are subject to <b>High Court</b> review under Arts 226/227 — covered in <b>Topic 6, Note 07</b>.</td></tr>
+<tr><td><b>Competition Commission of India</b></td><td>Competition Act, <b>2002</b></td><td>Regulator and adjudicator; appeals go to the <b>NCLAT</b>. The <b>2023</b> amendment introduced a <b>deal-value threshold</b> for merger notification and a settlement-and-commitment mechanism.</td></tr>
+<tr><td><b>Lokpal</b></td><td>Lokpal and Lokayuktas Act, <b>2013</b></td><td>Statutory anti-corruption ombudsman. Asked in <b>2025</b> — worth knowing that States are required to establish <b>Lokayuktas</b>, and that the Lokpal's jurisdiction reaches the <b>Prime Minister</b> with safeguards.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="prelims">
+<h3>🔴 Pass-2 checklist for this topic</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>Fix status first</b> for any body named: constitutional · statutory · executive. It is this setter's most repeated question shape.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>The categories overlap</b> — SEBI is statutory <b>and</b> regulatory <b>and</b> quasi-judicial.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Inter-State Council is constitutional (Art 263); Zonal Councils are not.</b> Set in 2025.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Which appeal goes where:</b> consumer → SC · NGT → SC · CCI → NCLAT · CAT → High Court after <i>L. Chandra Kumar</i>.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Executive bodies:</b> NITI Aayog, Law Commission, National Security Council, SSC, NDC.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Cross-link:</b> tribunals, Lok Adalats, Gram Nyayalayas and Art 39A live in <b>Topic 6, Note 07</b>.</div></div>
+</div>
+</div>
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three tiers of status: constitutional, statutory and executive bodies with examples">
+<text x="350" y="24" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">Fix the status first — it is this setter's favourite question</text>
+
+<rect x="50" y="44" width="600" height="72" rx="11" fill="#1B1D51" stroke="#1B1D51"></rect>
+<text x="70" y="66" font-family="Fraunces, serif" font-size="13.5" font-weight="600" fill="#ffffff">CONSTITUTIONAL — named in the Constitution itself</text>
+<text x="70" y="86" font-family="Inter, sans-serif" font-size="11.5" fill="#D8D6F5">ECI 324 · UPSC 315 · Finance Commission 280 · GST Council 279A · CAG 148</text>
+<text x="70" y="104" font-family="Inter, sans-serif" font-size="11.5" fill="#D8D6F5">NCSC 338 · NCST 338A · NCBC 338B · AG 76 · AdvG 165 · Inter-State Council 263</text>
+
+<rect x="50" y="128" width="600" height="72" rx="11" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<text x="70" y="150" font-family="Fraunces, serif" font-size="13.5" font-weight="600" fill="#0d3d49">STATUTORY — created by an Act</text>
+<text x="70" y="170" font-family="Inter, sans-serif" font-size="11.5" fill="#134b59">Consumer Commissions &amp; CCPA 2019 · NHRC 1993 · NCW 1990 · NCM 1992 · CVC 2003</text>
+<text x="70" y="188" font-family="Inter, sans-serif" font-size="11.5" fill="#134b59">CIC 2005 · Lokpal 2013 · NGT 2010 · SEBI 1992 · CCI 2002 · Zonal Councils 1956</text>
+
+<rect x="50" y="212" width="600" height="60" rx="11" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+<text x="70" y="234" font-family="Fraunces, serif" font-size="13.5" font-weight="600" fill="#8a2168">EXECUTIVE — a resolution, nothing more</text>
+<text x="70" y="254" font-family="Inter, sans-serif" font-size="11.5" fill="#6d1f52">NITI Aayog 2015 · Planning Commission · NDC · Law Commission · National Security Council · SSC</text>
+
+<text x="350" y="292" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#565884">Regulatory and quasi-judicial are FUNCTIONS, not statuses — SEBI is statutory, regulatory and quasi-judicial at once.</text>
+</svg>
+<figcaption><b>Fig 2.</b> Two questions — <b>2023</b> and <b>2025</b> — were answered entirely from this figure, and both had the same answer: <b>only one</b>. Learn the middle band cold; it is where the distractors live.</figcaption>
+</div>
+</figure>
+</section>
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+<p class="lead">(A) genuine verified PYQs · (B) practice in identical format · (C) trap statements.</p>
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="pyq">
+<span class="yr">2023</span><span class="stg">UPSC Prelims · How many</span>
+<p class="qtext">Consider the following organizations/bodies in India:</p>
+<ol class="subs"><li>The National Commission for Backward Classes</li><li>The National Human Rights Commission</li><li>The National Law Commission</li><li>The National Consumer Disputes Redressal Commission</li></ol>
+<p class="qtext">How many of the above are constitutional bodies?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — Only one</b>
+<ul class="vwhy"><li>Only the <b>NCBC</b>, under <b>Art 338B</b> since the 102nd Amendment, <b>2018</b>.</li><li>The <b>NCDRC</b> — this note's subject — is <b>statutory</b>, under the Consumer Protection Act. So is the <b>NHRC</b> (1993). The <b>Law Commission</b> is merely <b>executive</b>, constituted by resolution.</li><li>This is the single most repeated question shape in Topic 9. Before learning what a body <b>does</b>, fix what it <b>is</b>.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2025</span><span class="stg">UPSC Prelims · How many</span>
+<p class="qtext">With reference to India, consider the following:</p>
+<ol class="subs"><li>The Inter-State Council</li><li>The National Security Council</li><li>Zonal Councils</li></ol>
+<p class="qtext">How many of the above were established as per the provisions of the Constitution of India?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) All the three</li><li>(d) None</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — Only one</b>
+<ul class="vwhy"><li>Only the <b>Inter-State Council</b>, under <b>Article 263</b>.</li><li><b>Zonal Councils</b> are <b>statutory</b> — created by the <b>States Reorganisation Act, 1956</b>, not by the Constitution. They feel constitutional because they sit in the federal chapter of every textbook, which is exactly why they work as a distractor.</li><li>The <b>National Security Council</b> is <b>executive</b>, created by government decision in 1998.</li><li>Three bodies, three different statuses, one question. This is the classification drill in its purest form.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">The Government of India has established NITI Aayog to replace the</p>
+<ul class="opts single"><li>(a) Human Rights Commission</li><li>(b) Finance Commission</li><li>(c) Law Commission</li><li>(d) Planning Commission</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Planning Commission</b>
+<ul class="vwhy"><li>Both are <b>executive</b> bodies created by resolution — neither has ever been constitutional or statutory.</li><li>The trap in option (b): the <b>Finance Commission</b> <i>is</i> constitutional (Art 280) and was never replaced by anything. NITI Aayog took over the Planning Commission's role, not the Finance Commission's.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions</h3>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the Consumer Protection Act, 2019:</p>
+<ol class="subs"><li>The District Commission has jurisdiction where the consideration paid does not exceed fifty lakh rupees.</li><li>The pecuniary jurisdiction is determined by the compensation claimed by the complainant.</li><li>A complaint must ordinarily be filed within two years of the cause of action.</li><li>A consumer may file a complaint where he ordinarily resides or works.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements <b>1, 3 and 4</b> are correct.</li><li>Statement 2 is the central error of this chapter: jurisdiction follows the <b>consideration paid</b>, never the compensation claimed. A ₹40 lakh purchase with a ₹5 crore claim stays in the <b>District</b> Commission.</li><li>Statement 4 marks a real change from the 1986 Act, under which the consumer had to travel to where the opposite party did business.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following bodies:</p>
+<ol class="subs"><li>Central Consumer Protection Authority</li><li>National Green Tribunal</li><li>NITI Aayog</li><li>Competition Commission of India</li></ol>
+<p class="qtext">How many of the bodies given above are statutory bodies?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>The <b>CCPA</b> (Consumer Protection Act, 2019), the <b>NGT</b> (NGT Act, 2010) and the <b>CCI</b> (Competition Act, 2002) are all statutory.</li><li><b>NITI Aayog</b> is <b>executive</b> — a Cabinet resolution of 1 January 2015. It is the standard intruder in any list of this kind.</li><li>Note that none of the four is <b>constitutional</b>, which is the follow-up question a setter would ask next.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following was <b>NOT</b> introduced by the Consumer Protection Act, 2019?</p>
+<ul class="opts single"><li>(a) A statutory scheme of product liability</li><li>(b) A central regulator able to act suo motu</li><li>(c) The three-tier structure of consumer redressal</li><li>(d) Mediation as a mode of settling consumer disputes</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT new</b>
+<ul class="vwhy"><li>The <b>three-tier structure</b> came from the <b>1986</b> Act — what the 2019 Act changed was the <b>names</b> (Forum became Commission) and the <b>money limits</b>.</li><li>The genuinely new items are product liability, the <b>CCPA</b>, mediation, express e-commerce coverage, unfair contracts and endorser liability.</li><li>A question asking what an amending Act &ldquo;introduced&rdquo; is really asking what existed <b>before</b> it.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements about the Central Consumer Protection Authority:</p>
+<ol class="subs"><li>It can initiate action on its own motion without a complaint.</li><li>It has an investigation wing headed by a Director-General.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — Both 1 and 2</b>
+<ul class="vwhy"><li>Both accurate. The <b>suo motu</b> power is the whole reason a regulator was added to a system that already had adjudicators.</li><li>Another deliberate &ldquo;both correct&rdquo; set — your measured instinct is to reject option (c) or (d) assuming something must be wrong, and that instinct is what these are here to train out.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs of body and its founding basis:</p>
+<ol class="subs"><li>Inter-State Council — Article 263</li><li>Zonal Councils — States Reorganisation Act, 1956</li><li>National Security Council — Article 352</li><li>Central Vigilance Commission — CVC Act, 2003</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Pairs <b>1, 2 and 4</b> are correct.</li><li>Pair 3 is false twice over: the <b>National Security Council</b> is an <b>executive</b> creation of 1998 with no constitutional basis at all, and <b>Article 352</b> is the <b>National Emergency</b> provision — an article dragged in from an unrelated chapter.</li><li>The CVC is worth its own line: <b>executive</b> from 1964 on the Santhanam Committee's recommendation, <b>statutory</b> only from 2003.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> The Consumer Protection Act, 2019 created the Central Consumer Protection Authority in addition to the consumer commissions.</li><li><b>Statement-II:</b> A consumer commission can act only when a complaint is brought before it.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both correct and Statement-II explains Statement-I</li><li>(b) Both correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not</li><li>(d) Statement-I is not correct but Statement-II is</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both correct, and the second is precisely why the first was necessary: an adjudicator is <b>reactive by nature</b>, so systemic harms — a misleading advertisement, an unsafe product line — needed a body that could move first.</li><li>That sentence is the cleanest one-line justification for the CCPA in a Mains answer.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) An appeal from an order of the District Commission lies to the State Commission within thirty days</li><li>(b) A settlement arrived at through mediation under the Act is appealable</li><li>(c) A person directed to pay an amount must deposit fifty per cent of it before appealing</li><li>(d) The consumer commissions are quasi-judicial bodies</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) is NOT correct</b>
+<ul class="vwhy"><li>A <b>mediated settlement is not appealable</b> — mediation only proceeds where both parties agree, so there is nothing left to contest.</li><li>This is the note's cleanest &ldquo;rule with a carve-out&rdquo;: every order is appealable <b>except</b> this one. An absolute in a stem — <i>every, all, any</i> — is the signal to check the Ledger.</li></ul>
+</div>
+</div>
+
+<h3>(C) Trap statements — True or False</h3>
+<div class="mentor">
+<div class="tag">◆ Why this bucket exists, and how to work it</div>
+<p><b>Twenty-one of the fifty questions in the Week 4 paper were &ldquo;how many of the above&rdquo;</b> &mdash; 42 per cent &mdash; scoring <b>52 per cent</b>. It cannot be solved by elimination; each statement stands alone.</p>
+<p>Twenty statements. In a topic defined by <b>status</b>, most false ones promote a body one level up — statutory to constitutional, executive to statutory.</p>
+</div>
+
+<div class="pyq"><span class="stg">Trap 1 &middot; True or False</span>
+<p class="qtext">The National Consumer Disputes Redressal Commission is a constitutional body.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Statutory</b>, under the Consumer Protection Act. Asked directly in <b>2023</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 2 &middot; True or False</span>
+<p class="qtext">The Consumer Protection Act, 2019 replaced the Act of 1986.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Repealed and replaced. &ldquo;District <b>Forum</b>&rdquo; belongs to the repealed Act; the current word is <b>Commission</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 3 &middot; True or False</span>
+<p class="qtext">The District Commission hears complaints where the consideration paid does not exceed one crore rupees.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>₹50 lakh</b> since the rules of <b>31 December 2021</b>. One crore was the figure in the Act <b>as enacted</b> — a superseded number that still circulates widely.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 4 &middot; True or False</span>
+<p class="qtext">The National Commission hears complaints where the consideration paid exceeds two crore rupees.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Above <b>₹2 crore</b> — revised down from ₹10 crore in December 2021.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 5 &middot; True or False</span>
+<p class="qtext">Pecuniary jurisdiction under the 2019 Act is decided by the compensation claimed.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>By the <b>consideration paid</b>. Under the <b>1986</b> Act the claim did count — so the statement is true of the repealed law and false of the present one.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 6 &middot; True or False</span>
+<p class="qtext">Members of the District Commission are appointed by the Central Government.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>By the <b>State Government</b> — as with the State Commission. The <b>Centre</b> appoints only to the <b>NCDRC</b> and the <b>CCPA</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 7 &middot; True or False</span>
+<p class="qtext">A consumer complaint must ordinarily be filed within two years of the cause of action.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Two years, with delay condonable for reasons recorded in writing.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 8 &middot; True or False</span>
+<p class="qtext">An appeal must be filed within sixty days at each stage.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Thirty</b> days. Hold the trio together: <b>2 years</b> to complain, <b>30 days</b> to appeal, <b>50%</b> to deposit.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 9 &middot; True or False</span>
+<p class="qtext">A settlement reached through mediation under the Act may be appealed against.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Not appealable</b> — the single carve-out from an otherwise complete appeal ladder.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 10 &middot; True or False</span>
+<p class="qtext">The Central Consumer Protection Authority can initiate proceedings on its own motion.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li><b>Suo motu</b> — the power the Commissions lack, and the reason the CCPA exists.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 11 &middot; True or False</span>
+<p class="qtext">The CCPA is an adjudicating body that decides individual consumer complaints.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>It <b>regulates</b>; the <b>Commissions</b> adjudicate. Merging the two is the commonest conceptual error in this chapter.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 12 &middot; True or False</span>
+<p class="qtext">Under the 2019 Act a celebrity endorser of a misleading advertisement may be barred from endorsements.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Up to <b>one year</b>, and <b>three years</b> for a repeat offence — with due diligence as a defence. Entirely new law with no 1986 equivalent.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 13 &middot; True or False</span>
+<p class="qtext">A product liability action may be brought only against the manufacturer.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>Against the <b>manufacturer, the service provider or the seller</b>. Note the absolute <b>&ldquo;only&rdquo;</b> — the signal to look for the wider set.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 14 &middot; True or False</span>
+<p class="qtext">A seller who merely sold a product without altering it and took reasonable care can still be held liable in product liability.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>That is an express <b>defence</b>. So is <b>misuse or modification</b> by the consumer. A liability rule with named exceptions is worth more marks than the rule.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 15 &middot; True or False</span>
+<p class="qtext">Zonal Councils were established by the Constitution.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>States Reorganisation Act, 1956</b> — statutory. The <b>Inter-State Council</b> (Art 263) is the constitutional one. Set in <b>2025</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 16 &middot; True or False</span>
+<p class="qtext">The National Security Council is a statutory body.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Executive</b>, created by government decision in <b>1998</b> — neither constitutional nor statutory.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 17 &middot; True or False</span>
+<p class="qtext">SEBI is a statutory body and also exercises quasi-judicial functions.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Statutory (Act of <b>1992</b>), regulatory <b>and</b> quasi-judicial at once. The three labels are <b>not</b> mutually exclusive — assuming they are is the trap.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 18 &middot; True or False</span>
+<p class="qtext">The Central Vigilance Commission has been a statutory body since 1964.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Executive</b> from 1964, on the <b>Santhanam Committee's</b> recommendation; <b>statutory</b> only from the CVC Act, <b>2003</b>. Real date, wrong status — the same construction as the NCBC's 1993.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 19 &middot; True or False</span>
+<p class="qtext">Appeals from the Competition Commission of India lie to the National Company Law Appellate Tribunal.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>To the <b>NCLAT</b>, and thereafter to the Supreme Court. Contrast the <b>NGT</b>, from which appeal lies <b>directly</b> to the Supreme Court.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 20 &middot; True or False</span>
+<p class="qtext">The consumer commissions have the powers of a civil court in respect of specified matters.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Which is what makes them <b>quasi-judicial</b>, and what makes their orders enforceable as decrees.</li></ul></div></div>
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard — budget-checked, lineage first, trade shown.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M52</span><span class="prac">Practice · Week 6</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">The Consumer Protection Act, 2019 shifted consumer justice from adjudication alone to regulation. Examine the significance of that shift, and the limits it has run into.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Examine."</b> The shift is real and the marks lie in naming <i>why</i> adjudication alone was insufficient — then conceding, specifically, where the new design underdelivers.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>What the 1986 design could and could not do</li><li>The three additions of 2019</li><li>Why regulation was the necessary addition</li><li>The limits</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>The <b>1986</b> Act built a three-tier adjudicating pyramid — cheap, lawyer-optional and quick by design. Its structural limit was that it was <b>reactive</b>: a Commission moves only when a consumer complains, and the consumers least able to complain are those the market harms most.</p>
+<p><span class="sh">What 2019 added</span></p>
+<p>Three things. A regulator — the <b>CCPA</b> (2020) — able to act <b>suo motu</b>, recall goods, cancel licences, bring <b>class actions</b> and penalise misleading advertisements and their <b>endorsers</b>. A statutory scheme of <b>product liability</b> reaching the manufacturer, the seller and the service provider alike. And express coverage of <b>e-commerce</b>, together with the new category of the <b>unfair contract</b>.</p>
+<p><span class="sh">Why regulation was the missing piece</span></p>
+<p>Individual adjudication cannot address a <b>systemic</b> harm. One misleading advertisement injures millions in amounts too small for any of them to litigate — a collective-action problem no forum can solve by deciding cases one at a time. Only a body that can move <b>before</b> a complaint, and act for a class, reaches it.</p>
+<p><span class="sh">The limits</span></p>
+<p>Access was quietly narrowed and then partly restored: the 2019 thresholds of <b>₹1 crore and ₹10 crore</b> pushed cases downward and worsened District pendency, forcing revision to <b>₹50 lakh and ₹2 crore</b> in <b>December 2021</b>. Vacancies and infrastructure remain the binding constraint on speed, and a scheme whose promise is <b>speed</b> is discredited by delay more than by any doctrinal flaw.</p>
+<p>The shift was correct in principle. Its delivery still turns on ordinary administrative capacity, which no amount of statutory design supplies.</p>
+</div>
+<div class="va"><b>Value additions used:</b> the reactive-adjudication diagnosis · CCPA 2020 with suo motu and class action · product liability's three defendants · endorser liability · the 2021 threshold revision with its stated reason.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 274 / 250 words.</b> <b>Cut:</b> the six consumer rights and the mediation cells — the rights are pre-2019 and mediation, while new, does not bear on the adjudication-to-regulation argument. <b>Bought:</b> the collective-action explanation, which is the analytical core, and the threshold-revision episode, which supplies a concrete limit instead of a generic complaint about pendency.</div>
+<div class="cost"><b>What would cost you marks:</b> listing the Act's features without naming why adjudication alone failed — that turns an &ldquo;examine&rdquo; into a summary; and quoting the ₹1 crore / ₹10 crore limits as current, which dates the answer by four years.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — Consumer Protection &amp; Consumer Commissions</h2>
+<ul>
+<li><b>Consumer Protection Act, 2019</b> repealed the <b>1986</b> Act. 1986 had <b>Forums</b>; 2019 has <b>Commissions</b>.</li>
+<li><b>Tiers &amp; money (since 31 Dec 2021):</b> District <b>up to ₹50 lakh</b> · State <b>₹50 lakh–₹2 crore</b> · National <b>above ₹2 crore</b>. <b>As enacted the limits were ₹1 crore / ₹10 crore</b> — superseded.</li>
+<li><b>Jurisdiction follows the CONSIDERATION PAID</b>, never the compensation claimed. (Under the 1986 Act the claim did count.)</li>
+<li><b>Appoints:</b> <b>State Government</b> for District &amp; State Commissions · <b>Central Government</b> for the <b>NCDRC</b> and the <b>CCPA</b>.</li>
+<li><b>Numbers trio:</b> complaint within <b>2 years</b> · appeal within <b>30 days</b> at each stage · pre-deposit <b>50%</b>. File where the <b>consumer resides or works</b>.</li>
+<li><b>CCPA — 24 July 2020.</b> A <b>regulator</b>, not an adjudicator. <b>Suo motu</b> · recall · reimbursement · licence cancellation · <b>class action</b> · misleading-advertisement and <b>endorser</b> penalties (ban <b>1 yr</b>, repeat <b>3 yrs</b>). Investigation wing under a <b>Director-General</b>.</li>
+<li><b>Product liability</b> — against <b>manufacturer · service provider · seller</b>. Defences: seller who neither altered nor failed in care; <b>misuse or modification</b> by the consumer.</li>
+<li><b>New in 2019:</b> product liability · CCPA · mediation · e-commerce · unfair contracts · endorser liability. <b>Not new:</b> the three-tier structure and the <b>six consumer rights</b>.</li>
+<li><b>A mediated settlement is NOT appealable</b> — the one carve-out in the appeal ladder.</li>
+<li><b>STATUS — the topic's real question.</b> Consumer Commissions, CCPA, NHRC, NCW, NCM, CVC (2003), CIC, Lokpal, NGT, SEBI, CCI, TRAI, <b>Zonal Councils</b> = <b>statutory</b>. NITI Aayog, Law Commission, <b>National Security Council</b>, SSC, NDC = <b>executive</b>. <b>Inter-State Council (Art 263) = constitutional.</b></li>
+<li><b>PYQ pattern:</b> 2023 — of NCBC/NHRC/Law Commission/NCDRC, <b>only one</b> constitutional. 2025 — of Inter-State Council/NSC/Zonal Councils, <b>only one</b>. Fix status before anything else.</li>
+<li><b>Appeal routes:</b> consumer → <b>Supreme Court</b> · NGT → <b>Supreme Court</b> · CCI → <b>NCLAT</b> · CAT → <b>High Court</b> after <i>L. Chandra Kumar</i>.</li>
+<li><b>Cross-link:</b> tribunals, CAT, Lok Adalats, Gram Nyayalayas, Art 39A → <b>Topic 6, Note 07</b>.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> this opens <b>Topic 9 — Statutory, regulatory and various quasi-judicial bodies</b>, and covers <b>Week 6, Days 1–2</b>. Read it with <b>Topic 6, Note 07</b>, which holds the tribunals and legal-services machinery also listed for those days, and with <b>Topic 8, Note 03</b>, whose status table it shares.
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 9 — Statutory, Regulatory &amp; Quasi-Judicial Bodies · Note 00<br>
+Built for focused revision, not first-time learning — pair with Laxmikanth Ch. 36–38 and the Consumer Protection Act, 2019.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

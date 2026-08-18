@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCSC, NCST, NCBC &amp; Linguistic Minorities | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · The shared template</button>
+<button class="notetab" data-tab="s2">02 · The amendment lineage</button>
+<button class="notetab" data-tab="s3">03 · Article 350B</button>
+<button class="notetab" data-tab="s4">04 · Deep reference · exceptions · red pen</button>
+<button class="notetab" data-tab="spass">05 · Pass 2 — the adjacent surface</button>
+<button class="notetab" data-tab="s5">06 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">07 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 8 · Note 03 — Week 6, Day 5</div>
+<h1>NCSC, NCST, NCBC &amp; the Special Officer for Linguistic Minorities</h1>
+<p class="sub">Four safeguard offices built on <b>one template</b> — Articles 338, 338A, 338B and 350B. Three are near-identical by design, the fourth is deliberately not, and every question in this chapter lives in that difference.</p>
+<div class="chips">
+<span class="chip">Art 338 · SC</span>
+<span class="chip">Art 338A · ST</span>
+<span class="chip">Art 338B · OBC</span>
+<span class="chip">Art 350B · Linguistic</span>
+<span class="chip">65th · 89th · 102nd · 105th</span>
+</div>
+<div class="bignum"><b>4</b><span>offices · but only <b>three</b> are commissions</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Where the marks are, and where they are not</div>
+<p>Do not memorise these three commissions separately. They share a <b>single blueprint</b>: Chairperson, Vice-Chairperson and <b>three</b> other members, all appointed by the <b>President by warrant under his hand and seal</b>, reporting to the <b>President</b>, with the powers of a <b>civil court</b>. Learn the template once, then learn the <b>four places it varies</b>.</p>
+<p>The genuinely high-value fact is the <b>amendment lineage</b>. Each commission got its constitutional status in a different year by a different amendment, and this setter builds &ldquo;how many are constitutional bodies&rdquo; questions out of exactly that. Prelims 2023 asked it directly and the answer was <b>only one of four</b>.</p>
+<p>Week 6, Day 5 of the study plan, sourced from Laxmikanth Chapters 48–51 and the bare Constitution.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>The Constitution promises equality, but a promise with nobody watching it is just a sentence. So it creates <b>standing watchdogs</b> for the groups most likely to be left out — Scheduled Castes, Scheduled Tribes, and socially and educationally backward classes — plus a single officer for <b>linguistic minorities</b>.</p>
+<p>These bodies do not make policy and they do not punish. They <b>investigate, monitor, inquire and advise</b>, and they <b>report</b>. Their real power is two-fold: they hold the powers of a <b>civil court</b> when inquiring, and the government <b>must be consulted</b> on major policy matters affecting the group. The report goes to the <b>President</b>, who lays it before Parliament with a memorandum explaining any recommendation not accepted — the same accountability-by-publicity model you met with the Public Service Commissions.</p>
+<p>The one that breaks the pattern is <b>Article 350B</b>. It is not a commission at all — it is a <b>single Special Officer</b> for Linguistic Minorities. That difference alone has carried questions.</p>
+<div class="bridge">Next → the shared template, and the four places it varies</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>The shared template — and where it breaks</h2></div>
+<hr class="divider">
+
+<p class="lead">Learn this once. It is true of <b>all three</b> commissions.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Feature</th><th>The common template — NCSC, NCST, NCBC</th></tr></thead>
+<tbody>
+<tr><th>Composition</th><td>A <b>Chairperson</b>, a <b>Vice-Chairperson</b>, and <b>three</b> other members — <b>five</b> in all.</td></tr>
+<tr><th>Appointment</th><td>By the <b>President</b>, by <b>warrant under his hand and seal</b>.</td></tr>
+<tr><th>Conditions of service and tenure</th><td>Determined by the <b>President</b> by rule. The Constitution fixes <b>no term</b> — in practice three years by rule.</td></tr>
+<tr><th>Powers while inquiring</th><td>All the powers of a <b>civil court</b> trying a suit — summoning witnesses, requiring documents, receiving evidence on affidavit.</td></tr>
+<tr><th>Consultation duty</th><td>The Union and every State Government <b>shall consult</b> the Commission on all major policy matters affecting the group concerned.</td></tr>
+<tr><th>Reporting</th><td>Reports to the <b>President</b> — annually and at such other times as it thinks fit. The President lays every report before <b>Parliament</b> with a memorandum on action taken and reasons for non-acceptance. Where a report concerns a <b>State</b>, a copy goes to the <b>Governor</b>, who lays it before the <b>State legislature</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Two things the template does <i>not</i> include, and both are tested.</b> <b>(1)</b> There is <b>no constitutional qualification</b> prescribed for any member of any of the three. <b>(2)</b> There is <b>no constitutionally fixed tenure</b> — it is left to presidential rule, exactly as with the Election Commissioners' six-year term. A statement asserting that the Constitution lays down a term or a qualification is <b>false</b> for all three.</div></div>
+
+<h3>The four places the template breaks</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Difference</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>1 · The article and the amendment</th><td><b>338</b> NCSC · <b>338A</b> NCST · <b>338B</b> NCBC — each arriving in a different year by a different amendment. See the lineage below.</td></tr>
+<tr><th>2 · Anglo-Indians</th><td>The <b>NCSC</b> also discharges functions in relation to the <b>Anglo-Indian community</b>. The NCST does not, and the NCBC does not. This is the single cleanest discriminator between NCSC and NCST.</td></tr>
+<tr><th>3 · Who else it advises</th><td>The <b>NCST</b> carries additional duties in respect of the administration of <b>Scheduled Areas</b> and <b>Tribal Areas</b> — the Fifth and Sixth Schedule surface, which the other two never touch.</td></tr>
+<tr><th>4 · Article 350B is not a commission</th><td>A <b>single Special Officer</b> for Linguistic Minorities — no Vice-Chairperson, no members, no civil-court powers conferred by the article.</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One shared template across three commissions with the four points of difference">
+<text x="350" y="24" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">One template, three commissions, four differences</text>
+
+<rect x="40" y="42" width="620" height="62" rx="12" fill="#1B1D51" stroke="#1B1D51"></rect>
+<text x="350" y="64" text-anchor="middle" font-family="Fraunces, serif" font-size="13.5" font-weight="600" fill="#ffffff">Shared: Chairperson + Vice-Chairperson + 3 members = 5</text>
+<text x="350" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#D8D6F5">President appoints by warrant · civil-court powers · consultation duty · reports to the President</text>
+<text x="350" y="97" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#FFD25A">No constitutional qualification · no constitutional tenure</text>
+
+<rect x="40" y="126" width="196" height="86" rx="10" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<rect x="252" y="126" width="196" height="86" rx="10" fill="#FBF1D8" stroke="#EBD9A8"></rect>
+<rect x="464" y="126" width="196" height="86" rx="10" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+
+<text x="138" y="148" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#1B1D51">NCSC · Art 338</text>
+<text x="350" y="148" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#1B1D51">NCST · Art 338A</text>
+<text x="562" y="148" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#1B1D51">NCBC · Art 338B</text>
+
+<text x="138" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">65th, 1990 → 89th, 2003</text>
+<text x="350" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">89th, 2003 · works 2004</text>
+<text x="562" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">102nd, 2018</text>
+
+<text x="138" y="192" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#12707f">+ Anglo-Indians</text>
+<text x="350" y="192" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#9a6b04">+ Scheduled/Tribal Areas</text>
+<text x="562" y="192" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#8a2168">105th, 2021 restored</text>
+
+<rect x="180" y="234" width="340" height="42" rx="10" fill="#ffffff" stroke="#C3C7E3" stroke-dasharray="4 3"></rect>
+<text x="350" y="252" text-anchor="middle" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#8a2168">Art 350B — NOT a commission</text>
+<text x="350" y="268" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6d1f52">a single Special Officer · 7th Amendment, 1956</text>
+</svg>
+<figcaption><b>Fig 1.</b> Learn the dark bar once. Then learn only the <b>coloured line</b> in each box — the article, the amendment, and the one extra remit. That is the whole chapter.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>The amendment lineage — this is the exam's favourite ground</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">📖 The story — one commission becomes three</div>
+<p>The Constitution as enacted had only a <b>Special Officer</b> for Scheduled Castes and Scheduled Tribes under the original Article 338 — one officer, investigating and reporting. Over four decades that was judged too thin.</p>
+<p><b>65th Amendment, 1990.</b> The Special Officer was replaced by a multi-member <b>National Commission for Scheduled Castes and Scheduled Tribes</b> — one commission for both groups.</p>
+<p><b>89th Amendment, 2003.</b> That joint commission was <b>split in two</b>: the <b>NCSC</b> stayed in Article 338, and a new <b>Article 338A</b> created the <b>NCST</b>, which began functioning in <b>2004</b>. The reasoning was that the two groups' problems had little in common — one is defined by caste disability, the other by geography, forest rights and the Fifth and Sixth Schedules.</p>
+<p><b>102nd Amendment, 2018.</b> The <b>NCBC</b>, a statutory body since <b>1993</b> (created after <i>Indra Sawhney</i>), was given <b>constitutional</b> status through a new <b>Article 338B</b>. The same amendment inserted <b>Article 342A</b>, which made the <b>President</b>, in consultation with the Governor, the authority to specify socially and educationally backward classes — read by the Supreme Court in the <b>Maratha reservation</b> case (2021) as stripping States of the power to identify their own SEBCs.</p>
+<p><b>105th Amendment, 2021.</b> Parliament reversed that reading and <b>restored to the States</b> the power to identify and specify their own socially and educationally backward classes, by clarifying Art 342A and adding Art 366(26C). A judgment, then a corrective amendment — the same shape as the Governor-assent and CEC-appointment sagas.</p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Amendment</th><th>Year</th><th>What it did</th></tr></thead>
+<tbody>
+<tr><td><b>65th</b></td><td>1990</td><td>Replaced the <b>Special Officer</b> for SC/ST with a <b>multi-member joint Commission</b>.</td></tr>
+<tr><td><b>89th</b></td><td>2003</td><td><b>Split</b> the joint commission — NCSC under <b>Art 338</b>, NCST under the new <b>Art 338A</b>. NCST began work in <b>2004</b>.</td></tr>
+<tr><td><b>102nd</b></td><td>2018</td><td>Gave the <b>NCBC constitutional status</b> under new <b>Art 338B</b>; inserted <b>Art 342A</b>.</td></tr>
+<tr><td><b>105th</b></td><td>2021</td><td><b>Restored to the States</b> the power to identify their own SEBCs, undoing the Supreme Court's reading of the 102nd.</td></tr>
+</tbody>
+</table>
+</div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline showing how one Special Officer became three constitutional commissions">
+<text x="350" y="24" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">One officer becomes three commissions</text>
+<line x1="60" y1="150" x2="650" y2="150" stroke="#C3C7E3" stroke-width="2"></line>
+
+<circle cx="90" cy="150" r="6" fill="#1B1D51"></circle>
+<circle cx="235" cy="150" r="6" fill="#1B1D51"></circle>
+<circle cx="380" cy="150" r="6" fill="#1B1D51"></circle>
+<circle cx="525" cy="150" r="6" fill="#1B1D51"></circle>
+<circle cx="640" cy="150" r="7" fill="#E0A11C"></circle>
+
+<g text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" font-weight="600" fill="#565884">
+<text x="90" y="176">1950</text><text x="235" y="176">1990</text><text x="380" y="176">2003</text><text x="525" y="176">2018</text><text x="640" y="176">2021</text>
+</g>
+<g text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#8a2168">
+<text x="235" y="192">65th</text><text x="380" y="192">89th</text><text x="525" y="192">102nd</text><text x="640" y="192">105th</text>
+</g>
+<g text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#33344f">
+<text x="90" y="122">Special Officer</text><text x="90" y="107">SC + ST</text>
+<text x="235" y="122">Joint Commission</text><text x="235" y="107">multi-member</text>
+<text x="380" y="122">Split: 338 / 338A</text><text x="380" y="107">NCSC + NCST</text>
+<text x="525" y="122">NCBC → 338B</text><text x="525" y="107">+ Art 342A</text>
+</g>
+<text x="640" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#9a6b04">States' power</text>
+<text x="640" y="107" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="#9a6b04">restored</text>
+<text x="350" y="228" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#565884">Art 350B — the Special Officer for Linguistic Minorities — came separately, by the 7th Amendment in 1956,</text>
+<text x="350" y="246" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#565884">and was never converted into a commission. It is still one officer.</text>
+</svg>
+<figcaption><b>Fig 2.</b> Four amendments, four different years. The <b>102nd</b> gave and the <b>105th</b> gave back — a judgment followed by a corrective amendment, the same shape as the Governor-assent saga.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Article 350B — the one that is not a commission</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>What it creates</th><td>A <b>Special Officer for Linguistic Minorities</b> — <b>one officer</b>, not a commission. Appointed by the <b>President</b>.</td></tr>
+<tr><th>Inserted by</th><td>The <b>7th Amendment, 1956</b>, on the recommendation of the <b>States Reorganisation Commission</b> — which is why it sits with the language articles rather than with the safeguard commissions.</td></tr>
+<tr><th>Duty</th><td>To <b>investigate all matters relating to the safeguards</b> provided for linguistic minorities under the Constitution, and to report to the <b>President</b> on such intervals as the President may direct.</td></tr>
+<tr><th>Reporting</th><td>The President lays all such reports before each House of <b>Parliament</b> and sends them to the Governments of the <b>States</b> concerned.</td></tr>
+<tr><th>In practice</th><td>Designated the <b>Commissioner for Linguistic Minorities</b>, under the Ministry of Minority Affairs, headquartered at Allahabad.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The three swaps built on Art 350B.</b> <b>(1)</b> It is a <b>Special Officer</b>, not a Commission — a statement calling it the &ldquo;National Commission for Linguistic Minorities&rdquo; is false. <b>(2)</b> The <b>National Commission for Minorities</b> is a different body entirely and is <b>statutory</b>, under the NCM Act, <b>1992</b> — not constitutional. <b>(3)</b> Art <b>350A</b> is the neighbouring duty on every State to provide <b>primary education in the mother tongue</b> to children of linguistic minority groups; <b>350B</b> is the officer who watches it. Adjacent numbers, adjacent subjects.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Hold the language cluster together, since 350B drags it in.</b> <b>Art 343</b> — Hindi in Devanagari as the official language of the Union. <b>Art 344</b> — an Official Language Commission and a Parliamentary Committee on official language. <b>Art 345–347</b> — official languages of a State. <b>Art 348</b> — the language of the Supreme Court and High Courts remains <b>English</b> until Parliament provides otherwise. <b>Art 351</b> — the directive to promote the spread of Hindi. The <b>Eighth Schedule</b> now lists <b>22</b> languages; Sindhi was added by the <b>21st Amendment (1967)</b>, Konkani, Manipuri and Nepali by the <b>71st (1992)</b>, and Bodo, Dogri, Maithili and Santhali by the <b>92nd (2003)</b>.</div></div>
+</section>
+
+<section id="s4" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Deep reference · exceptions · the red-pen grid</h2></div>
+<hr class="divider">
+
+<h3>Articles at a glance</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td><b>338</b></td><td>National Commission for <b>Scheduled Castes</b> — also functions for the <b>Anglo-Indian</b> community</td></tr>
+<tr><td><b>338A</b></td><td>National Commission for <b>Scheduled Tribes</b> — 89th Amendment, 2003</td></tr>
+<tr><td><b>338B</b></td><td>National Commission for <b>Backward Classes</b> — 102nd Amendment, 2018</td></tr>
+<tr><td><b>341 / 342</b></td><td>The <b>President</b>, in consultation with the Governor, specifies <b>Scheduled Castes / Scheduled Tribes</b>; only <b>Parliament</b> may include or exclude by law</td></tr>
+<tr><td><b>342A</b></td><td>Socially and educationally backward classes — inserted by the 102nd, amended by the <b>105th</b> to restore the States' list</td></tr>
+<tr><td><b>366(26C)</b></td><td>Defines &ldquo;socially and educationally backward classes&rdquo; — added by the 105th Amendment</td></tr>
+<tr><td><b>350A</b></td><td>Facilities for instruction in the <b>mother tongue</b> at the primary stage</td></tr>
+<tr><td><b>350B</b></td><td><b>Special Officer</b> for Linguistic Minorities — 7th Amendment, 1956</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Articles 341 and 342 carry an exception worth more than the rule.</b> The <b>President</b> specifies which castes or tribes are Scheduled, by public notification, in consultation with the <b>Governor</b> where a State is concerned. But once that first notification is issued, <b>only Parliament by law</b> may include or exclude any group — the President cannot vary his own list a second time. A statement saying the President may amend the list by a later notification is <b>false</b>, and it is exactly the kind of &ldquo;who may, and only once&rdquo; distinction this setter builds on.</div></div>
+
+<h3>★ The examiner's red pen — eight questions on these bodies</h3>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody>
+<tr><th>Who appoints</th><td>The <b>President</b>, by <b>warrant under his hand and seal</b>, for all three commissions and for the Art 350B officer.</td></tr>
+<tr><th>What composition</th><td><b>Chairperson + Vice-Chairperson + three members = five</b>, for all three commissions. Art 350B is <b>one officer</b>.</td></tr>
+<tr><th>What article</th><td><b>338</b> SC · <b>338A</b> ST · <b>338B</b> OBC · <b>350B</b> linguistic minorities.</td></tr>
+<tr><th>What amendment</th><td><b>65th</b> 1990 · <b>89th</b> 2003 · <b>102nd</b> 2018 · <b>105th</b> 2021 · <b>7th</b> 1956 for 350B.</td></tr>
+<tr><th>What exception</th><td>Only the <b>NCSC</b> covers <b>Anglo-Indians</b>. Only the <b>NCST</b> deals with <b>Scheduled and Tribal Areas</b>. Only <b>350B</b> is not a commission.</td></tr>
+<tr><th>Constitutional or statutory</th><td>All three commissions are <b>constitutional</b>. The <b>National Commission for Minorities</b> (1992), the <b>NHRC</b> (1993), the <b>Law Commission</b> and the <b>NCDRC</b> are <b>not</b>.</td></tr>
+<tr><th>Binding or advisory</th><td>Recommendations are <b>advisory</b>. The force is the <b>consultation duty</b> plus the tabling of reports with an action-taken memorandum.</td></tr>
+<tr><th>Shall or may</th><td>The Union and States <b>shall</b> consult on all major policy matters. The Commission <b>may</b> report at such other times as it thinks fit.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Exceptions ledger — this note's entries</h3>
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>All three commissions share one template — <b>except</b> that only the NCSC covers <b>Anglo-Indians</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>The President specifies SC/ST lists — <b>but only Parliament</b> may later include or exclude.</div></div>
+<div class="item"><span class="dot">◆</span><div>Art 350B is in the safeguard family — <b>but is a single officer</b>, not a commission.</div></div>
+<div class="item"><span class="dot">◆</span><div>The 102nd Amendment gave the NCBC status — <b>and</b> took away the States' SEBC power, which the <b>105th</b> gave back.</div></div>
+<div class="item"><span class="dot">◆</span><div>No <b>qualification</b> and no <b>tenure</b> is fixed by the Constitution for any member.</div></div>
+<div class="item"><span class="dot">◆</span><div>Reports go to the President — <b>except</b> State-related reports, a copy of which goes to the <b>Governor</b>.</div></div>
+</div>
+</div>
+</section>
+<section id="spass" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Pass 2 — the adjacent surface</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">◆ Why this section exists</div>
+<p>Week 4 lost <b>eleven</b> questions to material one step outside the schedule's wording. The schedule here says &ldquo;NCSC, NCST, NCBC, Linguistic Minorities&rdquo;. The predictable reach is to the <b>statutory</b> commissions that look identical from a distance, the <b>reservation case law</b> that gives these bodies their subject matter, and the <b>Fifth and Sixth Schedule</b> machinery that only the NCST touches.</p>
+</div>
+
+<h3>The look-alike commissions that are NOT constitutional</h3>
+<p class="lead">This is the single highest-yield table in the note. Prelims 2023 asked it almost verbatim.</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Body</th><th>Status</th><th>Basis</th></tr></thead>
+<tbody>
+<tr><td><b>NCSC · NCST · NCBC</b></td><td><b>Constitutional</b></td><td>Arts 338, 338A, 338B</td></tr>
+<tr><td><b>National Commission for Minorities</b></td><td><b>Statutory</b></td><td>NCM Act, <b>1992</b>. Six notified minorities — Muslims, Christians, Sikhs, Buddhists, Parsis, and <b>Jains</b> (added <b>2014</b>).</td></tr>
+<tr><td><b>National Human Rights Commission</b></td><td><b>Statutory</b></td><td>Protection of Human Rights Act, <b>1993</b>. Chairperson: a former <b>Chief Justice of India or a Judge of the Supreme Court</b> (widened in 2019). Cannot inquire into a matter more than <b>one year</b> old; over the <b>armed forces</b> it may only seek a report from the Union Government.</td></tr>
+<tr><td><b>National Commission for Women</b></td><td><b>Statutory</b></td><td>NCW Act, <b>1990</b>.</td></tr>
+<tr><td><b>National Commission for Protection of Child Rights</b></td><td><b>Statutory</b></td><td>CPCR Act, <b>2005</b>.</td></tr>
+<tr><td><b>Law Commission of India</b></td><td><b>Executive</b></td><td>Constituted by <b>government resolution</b>, term by term. Neither constitutional nor statutory.</td></tr>
+<tr><td><b>NCDRC</b></td><td><b>Statutory</b></td><td>Consumer Protection Act — see <b>Topic 9, Note 00</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The 2023 question in one line.</b> Of the NCBC, the NHRC, the Law Commission and the NCDRC, exactly <b>one</b> is constitutional — the <b>NCBC</b>, and only since <b>2018</b>. Had the same question been set in 2017 the answer would have been <b>none</b>. A body's status is a <b>dated</b> fact, not a permanent one, and this setter knows it.</div></div>
+
+<h3>The reservation case law these commissions sit on</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Case</th><th>What it settled</th></tr></thead>
+<tbody>
+<tr><td><b><i>Indra Sawhney</i> (1992)</b></td><td>Upheld <b>27%</b> OBC reservation; imposed the <b>50% ceiling</b>; excluded the <b>creamy layer</b>; barred reservation in <b>promotions</b>. Directed a permanent body to examine backward-class claims — which produced the <b>statutory NCBC in 1993</b>.</td></tr>
+<tr><td><b>77th (1995) · 81st (2000) · 82nd (2000) · 85th (2001)</b></td><td>Restored reservation in <b>promotion</b> for SC/ST, allowed the <b>backlog</b> carry-forward outside the 50% ceiling, permitted relaxation in qualifying marks, and gave <b>consequential seniority</b>.</td></tr>
+<tr><td><b><i>M. Nagaraj</i> (2006)</b></td><td>Upheld promotion reservation but required the State to show <b>backwardness</b>, <b>inadequacy of representation</b> and <b>administrative efficiency</b> on quantifiable data.</td></tr>
+<tr><td><b><i>Jarnail Singh</i> (2018)</b></td><td>Removed the need to prove <b>backwardness</b> of SC/ST, but applied the <b>creamy layer</b> exclusion to promotions.</td></tr>
+<tr><td><b><i>Janhit Abhiyan</i> (2022)</b></td><td>Upheld the <b>103rd Amendment</b> and <b>10% EWS</b> reservation, which stands <b>outside</b> the 50% ceiling — the ceiling is therefore no longer absolute.</td></tr>
+<tr><td><b><i>Davinder Singh</i> (2024)</b></td><td>A seven-judge Bench permitted <b>sub-classification within</b> Scheduled Castes, overruling <i>E.V. Chinnaiah</i> (2004). Directly relevant to the NCSC's remit and squarely inside the 18-month currency window.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The Fifth and Sixth Schedules — the NCST's exclusive surface</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Item</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Fifth Schedule</th><td>Administration of <b>Scheduled Areas</b> and Scheduled Tribes in States <b>other than</b> Assam, Meghalaya, Tripura and Mizoram. A <b>Tribes Advisory Council</b> of up to <b>20</b> members, three-fourths of them ST members of the State Assembly. The <b>Governor</b> reports to the President and may direct that a law of Parliament or the State legislature shall not apply, or apply with modification.</td></tr>
+<tr><th>Sixth Schedule</th><td>Administration of <b>Tribal Areas</b> in <b>Assam, Meghalaya, Tripura and Mizoram</b>, through <b>Autonomous District Councils</b> — up to <b>30</b> members, four nominated by the Governor, a five-year term, with law-making, judicial and taxation powers.</td></tr>
+<tr><th>PESA, 1996</th><td>Extends Part IX (panchayats) to Fifth Schedule areas, giving the <b>Gram Sabha</b> primacy over local resources and consultation before land acquisition.</td></tr>
+<tr><th>Forest Rights Act, 2006</th><td>Recognises individual and community forest rights; the <b>Gram Sabha</b> initiates the determination of rights; the nodal ministry is <b>Tribal Affairs</b>, not Environment — both asked directly in Prelims.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="prelims">
+<h3>🔴 Pass-2 checklist for this topic</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>Status of every look-alike:</b> NCM, NHRC, NCW, NCPCR are <b>statutory</b>; the Law Commission is <b>executive</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Who specifies the lists:</b> President by notification; thereafter <b>only Parliament</b> (Arts 341/342).</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Which schedule for which State:</b> Sixth Schedule is <b>only</b> Assam, Meghalaya, Tripura, Mizoram.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>The ceiling:</b> 50% from <i>Indra Sawhney</i> — but <b>EWS sits outside it</b> after <i>Janhit Abhiyan</i>.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Recent:</b> <i>Davinder Singh</i> (2024) permits <b>sub-classification within SCs</b>, overruling <i>E.V. Chinnaiah</i>.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>The Eighth Schedule</b> carries <b>22</b> languages — the 350B neighbour most often asked.</div></div>
+</div>
+</div>
+</section>
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+<p class="lead">(A) genuine verified PYQs · (B) practice in identical format · (C) trap statements.</p>
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="mentor">
+<div class="tag">◆ An honest note on this bucket</div>
+<p>UPSC has asked <b>very few</b> direct questions on the NCSC and NCST themselves. A search of the 2009–2025 PYQ compilation turns up <b>one</b> question that touches this note squarely — the 2023 constitutional-status question below — and none at all on Article 350B.</p>
+<p>That is worth knowing rather than papering over. It does <b>not</b> mean the topic is low-yield: it means the examiner attacks it <b>through status and amendment questions</b> rather than by asking about the commissions directly. Build for that angle, and treat the practice bucket below as the real drill.</p>
+</div>
+
+<div class="pyq">
+<span class="yr">2023</span><span class="stg">UPSC Prelims · How many</span>
+<p class="qtext">Consider the following organizations/bodies in India:</p>
+<ol class="subs"><li>The National Commission for Backward Classes</li><li>The National Human Rights Commission</li><li>The National Law Commission</li><li>The National Consumer Disputes Redressal Commission</li></ol>
+<p class="qtext">How many of the above are constitutional bodies?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — Only one</b>
+<ul class="vwhy"><li>Only the <b>NCBC</b> is constitutional, under <b>Art 338B</b>, and only since the <b>102nd Amendment, 2018</b>.</li><li>The <b>NHRC</b> is statutory (1993), the <b>Law Commission</b> is a body constituted by executive resolution, and the <b>NCDRC</b> is statutory under the Consumer Protection Act.</li><li>The transferable lesson: a body's status is a <b>dated</b> fact. The same question set before 2018 would have answered <b>none</b>.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2015</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">The Government of India has established NITI Aayog to replace the</p>
+<ul class="opts single"><li>(a) Human Rights Commission</li><li>(b) Finance Commission</li><li>(c) Law Commission</li><li>(d) Planning Commission</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Planning Commission</b>
+<ul class="vwhy"><li>Included here because it drills the same reflex this note trains: <b>which body is which, and what status does it hold</b>.</li><li>Both NITI Aayog and the Planning Commission are <b>executive</b> bodies created by resolution — neither is constitutional, unlike the <b>Finance Commission</b> in option (b).</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions</h3>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the National Commission for Scheduled Castes:</p>
+<ol class="subs"><li>It consists of a Chairperson, a Vice-Chairperson and three other members.</li><li>Its members are appointed by the President by warrant under his hand and seal.</li><li>It also discharges functions in relation to the Anglo-Indian community.</li><li>The Constitution prescribes a fixed term of five years for its members.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements <b>1, 2 and 3</b> are correct — the five-member template, the warrant, and the Anglo-Indian remit unique to the NCSC.</li><li>Statement 4 is false: the Constitution fixes <b>no term</b>. Conditions of service and tenure are prescribed by the <b>President by rule</b>.</li><li>Same pattern as the Election Commission's six-year term — a widely known figure that is <b>statutory or by rule</b>, never constitutional.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following pairs of Commission and the Amendment that gave it constitutional status:</p>
+<ol class="subs"><li>National Commission for Scheduled Tribes — 89th Amendment</li><li>National Commission for Backward Classes — 102nd Amendment</li><li>National Commission for Minorities — 93rd Amendment</li><li>Replacement of the Special Officer for SC and ST by a Commission — 65th Amendment</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Pairs <b>1, 2 and 4</b> are correct.</li><li>Pair 3 is false at its root: the <b>National Commission for Minorities has never been given constitutional status</b>. It remains <b>statutory</b> under the NCM Act, <b>1992</b>. The 93rd Amendment concerned admissions to educational institutions.</li><li>Watch for a pair whose <b>premise</b> is wrong rather than its number — a false pair need not contain a false date.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) Article 350B provides for a Special Officer for Linguistic Minorities</li><li>(b) The Special Officer for Linguistic Minorities is appointed by the President</li><li>(c) Article 350B was inserted by the Seventh Amendment on the recommendation of the States Reorganisation Commission</li><li>(d) Article 350B establishes the National Commission for Linguistic Minorities</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) is NOT correct</b>
+<ul class="vwhy"><li>Art 350B creates a <b>single Special Officer</b>, not a commission. There is no National Commission for Linguistic Minorities in the Constitution.</li><li>Do not confuse it with the <b>National Commission for Minorities</b>, which exists but is <b>statutory</b> (1992) and covers religious minorities.</li><li>Art <b>350A</b> is the neighbouring duty — primary education in the <b>mother tongue</b>.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Statements</span>
+<p class="qtext">Consider the following statements about Articles 341 and 342:</p>
+<ol class="subs"><li>The President specifies the castes and tribes to be deemed Scheduled Castes and Scheduled Tribes, in consultation with the Governor where a State is concerned.</li><li>Once the first notification is issued, the President may include or exclude any group by a subsequent notification.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a) — 1 only</b>
+<ul class="vwhy"><li>Statement 2 is false: after the first notification, <b>only Parliament by law</b> may include or exclude a group. The President's power is exhausted at the first list.</li><li>This is a &ldquo;who may, and only once&rdquo; exception — precisely the family of edges the Exceptions Ledger exists to collect.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> Parliament enacted the 105th Constitutional Amendment in 2021.</li><li><b>Statement-II:</b> The Supreme Court had read the 102nd Amendment as taking away the power of States to identify socially and educationally backward classes.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both correct and Statement-II explains Statement-I</li><li>(b) Both correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not</li><li>(d) Statement-I is not correct but Statement-II is</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both correct, and the second is the direct cause of the first — the 105th was enacted <b>to reverse</b> that reading and restore the States' lists.</li><li>The shape recurs across your notes: a judgment, then a corrective amendment. Compare the Governor-assent saga and the CEC appointment saga.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs:</p>
+<ol class="subs"><li>Fifth Schedule — Autonomous District Councils in Assam, Meghalaya, Tripura and Mizoram</li><li>Sixth Schedule — Tribes Advisory Council</li><li>PESA, 1996 — extension of panchayats to Scheduled Areas</li><li>Forest Rights Act, 2006 — Gram Sabha initiates determination of rights</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li>Pairs <b>3 and 4</b> are correct.</li><li>Pairs 1 and 2 are <b>swapped</b>: the <b>Sixth</b> Schedule has the Autonomous District Councils in those four States; the <b>Fifth</b> Schedule has the Tribes Advisory Council.</li><li>A straight swap of two adjacent items is the cheapest false pair to build and the easiest to miss when reading quickly.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about reservation jurisprudence:</p>
+<ol class="subs"><li>Indra Sawhney (1992) imposed a ceiling of 50 per cent on reservation.</li><li>The 10 per cent EWS reservation operates within that 50 per cent ceiling.</li><li>Jarnail Singh (2018) applied the creamy layer exclusion to promotions for SC and ST.</li><li>In 2024 the Supreme Court permitted sub-classification within the Scheduled Castes.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Statements <b>1, 3 and 4</b> are correct.</li><li>Statement 2 is false: <b>EWS sits outside</b> the 50% ceiling, upheld in <i>Janhit Abhiyan</i> (2022). The ceiling is therefore no longer absolute — a point worth a full sentence in any Mains answer on reservation.</li><li><i>Davinder Singh</i> (2024) overruled <i>E.V. Chinnaiah</i> (2004) to permit sub-classification within SCs.</li></ul>
+</div>
+</div>
+
+<h3>(C) Trap statements — True or False</h3>
+<div class="mentor">
+<div class="tag">◆ Why this bucket exists, and how to work it</div>
+<p><b>Twenty-one of the fifty questions in the Week 4 paper were &ldquo;how many of the above&rdquo;</b> &mdash; 42 per cent &mdash; scoring <b>52 per cent</b>. The format cannot be solved by elimination; each statement stands alone.</p>
+<p>Twenty statements from this note. Decide before you click. In a chapter built on three near-identical bodies, most false statements are a <b>feature moved from one commission to another</b>.</p>
+</div>
+
+<div class="pyq"><span class="stg">Trap 1 &middot; True or False</span>
+<p class="qtext">The National Commission for Scheduled Castes consists of a Chairperson, a Vice-Chairperson and three other members.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li><b>Five in all</b> — and the same template governs the NCST and NCBC.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 2 &middot; True or False</span>
+<p class="qtext">The National Commission for Scheduled Tribes was created by the 89th Amendment.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li><b>2003</b>, splitting the joint SC/ST commission; the NCST began functioning in <b>2004</b> under <b>Art 338A</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 3 &middot; True or False</span>
+<p class="qtext">The National Commission for Backward Classes has been a constitutional body since 1993.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Statutory</b> from 1993; <b>constitutional</b> only from the <b>102nd Amendment, 2018</b>. The true-sounding date is the trap.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 4 &middot; True or False</span>
+<p class="qtext">The National Commission for Scheduled Tribes discharges functions in relation to the Anglo-Indian community.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>That belongs to the <b>NCSC</b> alone. It is the cleanest single discriminator between the two commissions.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 5 &middot; True or False</span>
+<p class="qtext">These Commissions have the powers of a civil court while investigating.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Summoning witnesses, requiring documents, receiving affidavit evidence — the standard investigative-body package.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 6 &middot; True or False</span>
+<p class="qtext">The Constitution prescribes qualifications for members of the NCSC.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>No qualification and no fixed tenure for any of the three. Both are left to the <b>President</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 7 &middot; True or False</span>
+<p class="qtext">Reports of these Commissions are submitted to the Prime Minister.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>To the <b>President</b>, who lays them before Parliament with an action-taken memorandum. State-related reports go additionally to the <b>Governor</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 8 &middot; True or False</span>
+<p class="qtext">The Union and State Governments must consult these Commissions on all major policy matters affecting the groups concerned.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>A <b>shall</b>, not a may — and it is the strongest power these bodies have, since their recommendations do not bind.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 9 &middot; True or False</span>
+<p class="qtext">The recommendations of the NCSC are binding on the Government.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Advisory.</b> The force is consultation plus publicity — the same model as the Public Service Commissions under Art 320(3).</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 10 &middot; True or False</span>
+<p class="qtext">Article 350B provides for a National Commission for Linguistic Minorities.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>A <b>Special Officer</b>, singular. No commission exists under 350B.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 11 &middot; True or False</span>
+<p class="qtext">The National Commission for Minorities is a constitutional body.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Statutory</b>, NCM Act <b>1992</b>. Jains were notified as the sixth minority in <b>2014</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 12 &middot; True or False</span>
+<p class="qtext">The National Human Rights Commission is a statutory body.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Protection of Human Rights Act, <b>1993</b>. It cannot inquire into a matter more than <b>one year</b> old, and over the <b>armed forces</b> may only seek a report.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 13 &middot; True or False</span>
+<p class="qtext">The Law Commission of India is a statutory body.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Executive</b> — constituted by government resolution, term by term. Neither constitutional nor statutory, and the 2023 PYQ turned on exactly this.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 14 &middot; True or False</span>
+<p class="qtext">After the first notification under Article 341, the President may add a caste to the list by a further notification.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>Thereafter <b>only Parliament by law</b>. The President's power is spent at the first list.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 15 &middot; True or False</span>
+<p class="qtext">The 105th Amendment restored to the States the power to identify socially and educationally backward classes.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li><b>2021</b>, reversing the Supreme Court's reading of the <b>102nd</b> in the Maratha reservation case.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 16 &middot; True or False</span>
+<p class="qtext">The 10 per cent EWS reservation operates within the 50 per cent ceiling laid down in Indra Sawhney.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>It sits <b>outside</b> the ceiling, upheld in <i>Janhit Abhiyan</i> (2022). The ceiling is no longer absolute.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 17 &middot; True or False</span>
+<p class="qtext">The Sixth Schedule applies to Assam, Meghalaya, Tripura and Mizoram.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Those four States only, through <b>Autonomous District Councils</b>. Everywhere else with tribal areas, the <b>Fifth</b> Schedule applies.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 18 &middot; True or False</span>
+<p class="qtext">The Tribes Advisory Council is a feature of the Sixth Schedule.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Fifth</b> Schedule — up to 20 members, three-fourths of them ST members of the State Assembly.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 19 &middot; True or False</span>
+<p class="qtext">The Eighth Schedule currently lists 22 languages.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>The last four — Bodo, Dogri, Maithili and Santhali — were added by the <b>92nd Amendment, 2003</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 20 &middot; True or False</span>
+<p class="qtext">In 2024 the Supreme Court held that Scheduled Castes cannot be sub-classified.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>The opposite: <i>Davinder Singh</i> (2024) <b>permitted</b> sub-classification, overruling <i>E.V. Chinnaiah</i> (2004). Fix the <b>direction</b> of a recent holding before anything else.</li></ul></div></div>
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">07</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard — budget-checked, lineage first, trade shown.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M50</span><span class="prac">Practice · Week 6</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">The constitutional commissions for Scheduled Castes, Scheduled Tribes and Backward Classes are built on an identical template but have delivered unequal results. Examine.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Examine."</b> Take the claim apart. The template is genuinely identical — so the explanation for unequal results must lie elsewhere, and that is the answer.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The shared template</li><li>The structural weakness common to all</li><li>Why outcomes still differ</li><li>Reform</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p>Articles <b>338, 338A and 338B</b> create three commissions on one blueprint: a Chairperson, Vice-Chairperson and three members appointed by the <b>President</b>; the powers of a <b>civil court</b> while inquiring; a duty on the Union and the States to <b>consult</b> on major policy; and reports laid before Parliament with an action-taken memorandum.</p>
+<p><span class="sh">The common weakness</span></p>
+<p>The template's authority is <b>recommendatory</b>. None of the three can compel, and none has a fixed constitutional tenure or prescribed qualifications — both are left to presidential rule, leaving composition open to patronage. Their real leverage is publicity, which works only where the group already has political voice.</p>
+<p><span class="sh">Why outcomes diverge</span></p>
+<p>Three reasons. <b>Age</b>: the NCSC has functioned since <b>1990</b> and the NCST since <b>2004</b>, while the NCBC has held constitutional status only since <b>2018</b>. <b>Subject matter</b>: the NCST alone confronts the <b>Fifth and Sixth Schedule</b> machinery, PESA and forest rights — questions of land and self-government that no advisory body can settle. <b>Legal churn</b>: the NCBC's remit was destabilised within three years, as the <b>102nd Amendment</b> was read to strip States of their SEBC power and the <b>105th</b> restored it.</p>
+<p><span class="sh">Reform</span></p>
+<p>Fix tenure and qualifications in the Constitution as with the Election Commission; require a <b>time-bound government response</b> to each recommendation; and give the NCST a statutory role in Fifth Schedule administration rather than an advisory one.</p>
+<p>An identical template does not produce identical institutions. Where the subject matter is contested and the mandate recent, an advisory body will underperform — the design guarantees a voice, not an outcome.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Arts 338/338A/338B with the shared template · the 65th, 89th, 102nd and 105th Amendments · civil-court powers and the consultation duty · Fifth and Sixth Schedules, PESA, FRA · the Maratha reservation case.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 279 / 250 words.</b> <b>Cut:</b> the Anglo-Indian remit of the NCSC and the Art 350B officer — both are Prelims discriminators and neither bears on unequal outcomes. <b>Bought:</b> the three-reason diagnosis, which is what converts a descriptive answer into an analytical one, and the closing formulation that a design guarantees voice rather than outcome.</div>
+<div class="cost"><b>What would cost you marks:</b> describing all three commissions in turn — the question grants that they are identical, so description earns nothing; and dating the NCBC's constitutional status to 1993, which is when it became statutory.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — NCSC, NCST, NCBC &amp; Art 350B</h2>
+<ul>
+<li><b>Template for all three:</b> Chairperson + Vice-Chairperson + <b>3</b> members = <b>5</b>. Appointed by the <b>President by warrant under hand and seal</b>. <b>Civil court</b> powers. Report to the <b>President</b> → Parliament with action-taken memorandum; State reports → <b>Governor</b> → State legislature.</li>
+<li><b>No constitutional qualification. No constitutional tenure.</b> Both by presidential rule.</li>
+<li><b>Art 338 NCSC</b> — also <b>Anglo-Indians</b>. <b>Art 338A NCST</b> — also <b>Scheduled &amp; Tribal Areas</b>. <b>Art 338B NCBC</b>.</li>
+<li><b>Lineage: 65th (1990)</b> Special Officer → joint Commission · <b>89th (2003)</b> split into NCSC + NCST, NCST works from <b>2004</b> · <b>102nd (2018)</b> NCBC constitutional + Art <b>342A</b> · <b>105th (2021)</b> States' SEBC power restored, Art <b>366(26C)</b>.</li>
+<li><b>Art 350B</b> — <b>Special Officer</b> for Linguistic Minorities, <b>7th Amendment 1956</b>, on the <b>States Reorganisation Commission's</b> recommendation. <b>Not</b> a commission. <b>Art 350A</b> — mother-tongue primary education.</li>
+<li><b>Arts 341/342</b> — President specifies the first list in consultation with the Governor; thereafter <b>only Parliament</b> may include or exclude.</li>
+<li><b>NOT constitutional:</b> National Commission for <b>Minorities</b> (1992) · <b>NHRC</b> (1993) · <b>NCW</b> (1990) · <b>NCPCR</b> (2005) · <b>NCDRC</b> · <b>Law Commission</b> (executive). <b>Prelims 2023 — only one of four was constitutional.</b></li>
+<li><b>Reservation ladder:</b> <i>Indra Sawhney</i> 1992 — 27%, <b>50% ceiling</b>, creamy layer, no promotion quota · <b>77th/81st/82nd/85th</b> restored promotion, backlog, relaxation, consequential seniority · <i>M. Nagaraj</i> 2006 · <i>Jarnail Singh</i> 2018 — creamy layer in promotions · <i>Janhit Abhiyan</i> 2022 — EWS <b>outside</b> the ceiling · <b><i>Davinder Singh</i> 2024 — sub-classification within SCs allowed</b>.</li>
+<li><b>Fifth Schedule</b> — Tribes Advisory Council (up to 20, ¾ ST MLAs), Governor's report and modification power. <b>Sixth Schedule</b> — Autonomous District Councils, only <b>Assam, Meghalaya, Tripura, Mizoram</b>.</li>
+<li><b>Eighth Schedule — 22 languages.</b> 21st (Sindhi) · 71st (Konkani, Manipuri, Nepali) · 92nd (Bodo, Dogri, Maithili, Santhali).</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> read after <b>02 Finance Commission &amp; GST Council</b> and before <b>04 Attorney General &amp; Advocate General</b>. The status table in Pass 2 is shared with <b>Topic 9, Note 00</b> — the NCDRC appears in both.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='02%20Finance%20Commission%20and%20GST%20Council.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">02 · Finance Commission &amp; GST Council</span></button>
+<button class="tabflow-btn tabflow-next" onclick="location.href='04%20Attorney%20General%20and%20Advocate%20General.html'"><span class="tabflow-dir">Next →</span><span class="tabflow-label">04 · Attorney General &amp; Advocate General</span></button>
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 8 — Constitutional Bodies · Note 03 of 5<br>
+Built for focused revision, not first-time learning — pair with Laxmikanth Ch. 48–51 and the bare Constitution, Articles 338–342A and 350A–350B.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attorney General &amp; Advocate General | GS-II Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:26px 22px 90px;flex:1;min-width:0;}
+.hero{position:relative;margin:0 -22px 40px;padding:52px 40px 46px;
+background:radial-gradient(1200px 380px at 78% -10%,#3a2a72 0,transparent 60%),radial-gradient(900px 420px at 8% 120%,#7a1f66 0,transparent 55%),linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);
+color:#fff;overflow:hidden;border-radius:0 0 26px 26px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--star);margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.4px;}
+.hero p.sub{max-width:640px;font-size:15.5px;color:#D9D9F2;margin:0 0 22px;}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.28);color:#EDE9FF;background:rgba(255,255,255,.06);}
+.hero .bignum{position:absolute;right:34px;bottom:20px;text-align:right;line-height:1;}
+.hero .bignum b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,7vw,58px);color:var(--star);letter-spacing:-1px;}
+.hero .bignum span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9C6EE;}
+@media(max-width:680px){.hero .bignum{position:static;text-align:left;margin-top:16px;}}
+.mentor{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:24px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mentor .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--nebula);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mentor p{margin:0;color:#33344f;font-size:14.5px;}
+.mentor p+p{margin-top:8px;}
+.starthere{background:#fff;border:1.5px dashed var(--line-strong);border-radius:16px;padding:20px 22px;margin:20px 0;}
+.starthere .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.starthere p{margin:0 0 10px;color:#33344f;font-size:14.5px;line-height:1.68;}
+.starthere p:last-child{margin-bottom:0;}
+.starthere b{color:var(--deep);}
+.starthere .bridge{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+.progress{background:var(--card);border:1px dashed var(--line-strong);border-radius:14px;padding:16px 20px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.progress b{color:var(--deep2);}
+.progress .done{color:#177a4d;font-weight:600;}
+.progress .todo{color:#9a6b04;}
+section{margin:0;scroll-margin-top:20px;}
+.sec-head{margin-top:2px;display:flex;align-items:baseline;gap:13px;margin-bottom:6px;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3.8vw,30px);color:var(--deep);margin:0;letter-spacing:-.3px;line-height:1.12;}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:18.5px;color:var(--deep2);margin:26px 0 10px;}
+.divider{height:1px;background:var(--line);border:0;margin:8px 0 18px;}
+p.lead{color:#33344f;}
+figure{margin:24px 0;}
+.fig-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 10px;box-shadow:0 4px 16px rgba(20,21,46,.045);}
+figcaption{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;}
+figcaption b{color:var(--deep2);}
+svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.table-scroll{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;font-size:14.2px;min-width:560px;}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-align:left;padding:10px 13px;font-size:13px;}
+tbody td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;color:#2d2e4a;}
+tbody tr:nth-child(even){background:#FAFBFE;}
+tbody th{padding:10px 13px;border-top:1px solid var(--line);text-align:left;font-weight:600;color:var(--deep2);background:#F1F2FA;white-space:normal;min-width:118px;overflow-wrap:break-word;}
+table.t2{table-layout:fixed;}
+table.t2 tbody th{min-width:0;}
+table.t2 col.a{width:47%;} table.t2 col.b{width:53%;}
+.prelims{background:linear-gradient(180deg,#fffdf7,#fdf6e4);border:1px solid #EBD9A8;border-radius:16px;padding:20px 22px 8px;margin:22px 0;}
+.prelims h3{margin-top:0;color:#9a6b04;display:flex;align-items:center;gap:9px;}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 16px;margin-top:4px;}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr;}}
+.pgrid .item{display:flex;gap:9px;font-size:13.5px;color:#4a3d18;padding-bottom:9px;border-bottom:1px dashed #E4D2A2;}
+.pgrid .item .dot{color:var(--gold);font-weight:700;flex:none;}
+.pgrid .item b{color:#7a5502;}
+.tip{display:flex;gap:12px;background:var(--teal-soft);border:1px solid #B7DFE8;border-radius:12px;padding:13px 15px;margin:16px 0;font-size:14px;color:#134b59;}
+.tip .ic{font-size:17px;flex:none;line-height:1.4;}
+.tip b{color:#0d3d49;}
+.trap{background:var(--nebula-soft);border-color:#EBC4DE;color:#6d1f52;}
+.trap b{color:#8a2168;}
+.pyq{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0;background:var(--card);}
+.pyq .yr{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;margin-right:8px;}
+.pyq .stg{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+.pyq p{margin:8px 0 0;font-size:14px;color:#2d2e4a;}
+.pyq .qtext{margin:8px 0 2px;font-size:14px;color:#22233d;}
+.pyq .subs{margin:6px 0 4px 20px;padding:0;color:#33344f;font-size:13.5px;}
+.pyq .subs li{margin:2px 0;}
+.opts{list-style:none;margin:9px 0 2px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;}
+@media(max-width:620px){.opts{grid-template-columns:1fr;}}
+.opts li{padding:6px 11px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:#2d2e4a;background:#FAFBFE;}
+.opts.single{grid-template-columns:1fr;}
+.pyq .verdict{font-family:'Inter',system-ui,sans-serif;font-size:13.4px;text-transform:none;letter-spacing:0;color:#2c3f45;margin-top:10px;display:block;background:#F3FAFB;border:1px solid #C9E4EB;border-left:3px solid var(--teal);border-radius:10px;padding:11px 14px 10px;}
+.pyq .verdict .vans{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#12707f;margin-bottom:7px;}
+.pyq .verdict ul.vwhy{margin:0;padding-left:16px;}
+.pyq .verdict ul.vwhy li{margin:4px 0;line-height:1.62;}
+.pyq .verdict ul.vwhy li::marker{color:var(--teal);}
+.pyq .verdict p.vone{margin:0;line-height:1.62;}
+.recall{background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:44px 0 0;box-shadow:0 12px 32px rgba(27,29,81,.28);}
+.recall h2{color:#fff;margin-bottom:4px;}
+.recall .rk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--star);text-transform:uppercase;}
+.recall ul{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;}
+@media(max-width:620px){.recall ul{grid-template-columns:1fr;}}
+.recall li{font-size:13.5px;color:#D8D6F5;padding-left:18px;position:relative;line-height:1.5;}
+.recall li::before{content:"★";position:absolute;left:0;color:var(--star);font-size:11px;top:3px;}
+.recall li b{color:#fff;}
+.series{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 0;font-size:13.5px;color:var(--muted);}
+.series b{color:var(--deep2);}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.8;}
+@media print{body{background:#fff;}.hero{border-radius:0;}.fig-card,.mentor,table,.recall,.pyq{box-shadow:none;}section{page-break-inside:avoid;}}
+.pagecenter{max-width:1220px;margin:0 auto;display:flex;align-items:flex-start;}
+.tabrail{width:238px;flex:none;position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;padding:30px 16px 26px 0;display:flex;flex-direction:column;gap:4px;}
+.railhead{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 4px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line);}
+.notetab{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--deep2);background:transparent;border:1px solid transparent;border-left:3px solid transparent;border-radius:8px;padding:9px 12px 9px 13px;cursor:pointer;text-align:left;transition:background .14s ease,color .14s ease,border-color .14s ease,transform .14s ease;}
+.notetab:hover{background:var(--gold-soft);border-left-color:var(--gold);transform:translateX(2px);}
+.notetab.active{background:var(--deep);color:#fff;border-left-color:var(--star);box-shadow:0 4px 14px rgba(27,29,81,.22);}
+.notetab.railinfo{border-left-color:var(--nebula-soft);}
+.notetab.railinfo.active{border-left-color:var(--nebula);}
+.notetab.railrevision{border-left-color:var(--gold-soft);margin-top:8px;padding-top:12px;border-top:1px solid var(--line);border-radius:0 8px 8px 0;}
+.notetab.railrevision.active{border-left-color:var(--gold);}
+section.tabsection{display:none;}
+section.tabsection.active{display:block;animation:tabin .18s ease;}
+@keyframes tabin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+@media print{.tabrail{display:none;}section.tabsection{display:block !important;}.tabflow{display:none;}}
+@media(max-width:880px){
+  body{flex-direction:column;}
+  .pagecenter{flex-direction:column;align-items:stretch;}
+  .tabrail{width:100%;height:auto;position:relative;flex-direction:row;flex-wrap:wrap;padding:14px 0;gap:6px;overflow:visible;}
+  .railhead{display:none;}
+  .notetab{border-left:1px solid var(--line-strong);}
+  .notetab.railrevision{margin-top:0;padding-top:9px;border-top:none;border-left:1px solid var(--line-strong);}
+  .wrap{max-width:100%;}
+}
+.tabflow{display:flex;gap:14px;margin:44px 0 0;}
+.tabflow-btn{flex:1;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;box-shadow:0 4px 16px rgba(20,21,46,.045);font-family:inherit;}
+.tabflow-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,21,46,.1);border-color:var(--line-strong);}
+.tabflow-btn:disabled{opacity:.38;cursor:default;}
+.tabflow-next{text-align:right;align-items:flex-end;}
+.tabflow-dir{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.tabflow-label{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--deep);line-height:1.3;}
+@media(max-width:620px){.tabflow{flex-direction:column;}.tabflow-next{text-align:left;align-items:flex-start;}}
+
+/* ===== attempt-before-reveal: answers hidden until you choose ===== */
+.pyq .verdict{display:none;}
+.pyq.revealed .verdict{display:block;animation:revealin .18s ease;}
+@keyframes revealin{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.revealbar{margin-top:10px;}
+.revealbtn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--deep2);background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:6px 14px;cursor:pointer;}
+.revealbtn:hover{background:var(--gold-soft);border-color:var(--gold);color:#7a5502;}
+.pyq .opts li{cursor:pointer;transition:background .12s ease,border-color .12s ease;}
+.pyq .opts li:hover{background:var(--teal-soft);border-color:#B7DFE8;}
+.pyq.revealed .opts li{cursor:default;}
+.pyq.revealed .opts li:hover{background:#FAFBFE;border-color:var(--line);}
+.pyq .opts li.chosen{box-shadow:0 0 0 1.5px var(--deep2) inset;border-color:var(--deep2);}
+.pyq.revealed .opts li.correct{background:#E9F7EE;border-color:#177a4d;color:#0f5c39;font-weight:600;}
+.pyq.revealed .opts li.correct:hover{background:#E9F7EE;border-color:#177a4d;}
+.pyq.revealed .opts li.wrong{background:#fdecec;border-color:#c22525;color:#8f1c1c;}
+.pyq.revealed .opts li.wrong:hover{background:#fdecec;border-color:#c22525;}
+@media print{.pyq .verdict{display:block;}.revealbar{display:none;}}
+
+/* ===== Mains model-answer blocks ===== */
+.mainsans{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 4px 18px rgba(20,21,46,.05);}
+.mainsans .qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;}
+.mainsans .qn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--deep2);border-radius:20px;padding:3px 11px;}
+.mainsans .yr{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3a2a00;background:var(--star);border-radius:20px;padding:3px 10px;}
+.mainsans .prac{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line-strong);border-radius:20px;padding:2px 10px;}
+.mainsans .mk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+.mainsans .qtext{font-size:15px;color:#22233d;font-weight:500;margin:0 0 14px;line-height:1.55;}
+.mainsans .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
+@media(max-width:680px){.mainsans .meta{grid-template-columns:1fr;}}
+.mainsans .box{border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.6;}
+.mainsans .dir{background:var(--nebula-soft);border:1px solid #EBC4DE;color:#6d1f52;}
+.mainsans .dir b{color:#8a2168;}
+.mainsans .skel{background:var(--teal-soft);border:1px solid #B7DFE8;color:#134b59;}
+.mainsans .skel b{color:#0d3d49;}
+.mainsans .skel ol{margin:6px 0 0 18px;padding:0;}
+.mainsans .skel li{margin:2px 0;}
+.mainsans .model{background:#FCFCFE;border:1px solid var(--line);border-left:4px solid #177a4d;border-radius:11px;padding:16px 18px;margin:0 0 14px;}
+.mainsans .model h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#177a4d;margin:0 0 10px;font-weight:700;}
+.mainsans .model p{margin:0 0 9px;font-size:14px;color:#2d2e4a;}
+.mainsans .model p:last-child{margin-bottom:0;}
+.mainsans .model .sh{font-weight:700;color:var(--deep);text-decoration:underline;text-underline-offset:3px;}
+.mainsans .va{background:var(--gold-soft);border:1px solid #EBD9A8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#4a3d18;margin:0 0 10px;}
+.mainsans .va b{color:#7a5502;}
+.mainsans .cost{background:#fdecec;border:1px solid #f3c9c9;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8f1c1c;}
+.mainsans .cost b{color:#6d1414;}
+.mainsintro{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:16px 18px;margin:14px 0 6px;font-size:13.5px;color:#33344f;}
+.mainsintro b{color:var(--deep);}
+
+@media(max-width:620px){
+  .wrap{padding:16px 14px 70px;}
+  .hero{margin:0 -14px 26px;padding:30px 20px 26px;border-radius:0 0 18px 18px;}
+  .hero h1{font-size:clamp(23px,7vw,32px);}
+  .notetab{font-size:11.5px;padding:7px 10px;}
+  .mentor,.starthere,.progress,.fig-card,.prelims{padding:14px 15px;}
+  table{font-size:13.2px;}
+  .pyq,.tc2 .zone{padding:12px 13px;}
+  .recall{padding:18px 16px;}
+  .tabflow{flex-direction:column;}
+}
+</style>
+</head><body>
+<div class="pagecenter">
+<nav class="tabrail">
+<div class="railhead">Contents</div>
+<button class="notetab railinfo active" data-tab="info">✦ Overview</button>
+<button class="notetab" data-tab="s1">01 · The office — Article 76</button>
+<button class="notetab" data-tab="s2">02 · Advocate General — Art 165</button>
+<button class="notetab" data-tab="s3">03 · Deep reference · exceptions · red pen</button>
+<button class="notetab" data-tab="spass">04 · Pass 2 — the adjacent surface</button>
+<button class="notetab" data-tab="s5">05 · Prelims Questions</button>
+<button class="notetab" data-tab="mains">06 · Mains Questions</button>
+<button class="notetab railrevision" data-tab="revision">★ Last-mile Revision</button>
+</nav>
+
+<div class="wrap">
+
+<section id="info" class="tabsection active">
+<header class="hero">
+<div class="eyebrow">Polity &amp; Constitution · GS Paper II · Topic 8 · Note 04 — Week 6, Day 3</div>
+<h1>Attorney General &amp; Advocate General</h1>
+<p class="sub">Articles 76 and 165 — the government's lawyers, not the government's officers. Almost every question here turns on a single idea: they may <b>speak</b> in the legislature but never <b>vote</b>, and they hold office at <b>pleasure</b> with no security at all.</p>
+<div class="chips">
+<span class="chip">Art 76 · AG</span>
+<span class="chip">Art 165 · AG of a State</span>
+<span class="chip">Speak, never vote</span>
+<span class="chip">Pleasure doctrine</span>
+<span class="chip">Not a whole-time counsel</span>
+</div>
+<div class="bignum"><b>0</b><span>security of tenure · and <b>0</b> votes in either House</span></div>
+</header>
+
+<div class="mentor">
+<div class="tag">◆ Where the marks are, and where they are not</div>
+<p>This is a <b>short</b> chapter with a <b>high</b> question yield, because the office sits at the junction of three things the examiner loves: the <b>legislature</b> (rights of audience and participation), the <b>executive</b> (appointment and pleasure), and the <b>judiciary</b> (qualification and right of audience in any court).</p>
+<p>The dominant trap is the participation rule. The Attorney General has the <b>right to speak in and take part in the proceedings</b> of both Houses, their joint sitting and any committee of which he is named a member — <b>but no right to vote</b>. UPSC has asked this twice in the years covered by your PYQ compilation, in <b>2013</b> and <b>2022</b>, and both are reproduced below.</p>
+<p>Week 6, Day 3 of the study plan, alongside the Election Commission note. Sourced from Laxmikanth Chapters 53–54 and the bare Constitution.</p>
+</div>
+
+<div class="starthere">
+<div class="tag">🌱 Start here — plain English first</div>
+<p>The Government of India goes to court constantly, and it needs a lawyer. That lawyer is the <b>Attorney General for India</b> under Article 76 — the country's <b>first law officer</b>. Every State needs the same thing, so Article 165 creates an <b>Advocate General</b> for each State.</p>
+<p>Two features make the office strange, and both are examinable. First, he is <b>not a whole-time government servant</b>. He may take private clients, though not against the Government. Second, he has <b>no security of tenure whatsoever</b> — he holds office during the <b>pleasure</b> of the President, and the Constitution fixes <b>no term</b> and prescribes <b>no removal procedure</b>. Compare that with everything else in Topic 8: the CEC, the UPSC Chairman, the CAG all have elaborate removal protections. The law officer has none, deliberately, because he must share the Government's confidence.</p>
+<p>The third feature is the one that produces questions: he may <b>sit and speak</b> in Parliament without being a member — and may never <b>vote</b>. He has the rights of a member, minus the one that counts.</p>
+<div class="bridge">Next → the office, its qualification, and the pleasure doctrine</div>
+</div>
+</section>
+
+<section id="s1" class="tabsection">
+<div class="sec-head"><span class="sec-num">01</span><h2>The office — Article 76</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>Point</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Appointment</th><td>By the <b>President</b>. The Attorney General is the <b>first law officer</b> of the Government of India.</td></tr>
+<tr><th>Qualification</th><td>A person <b>qualified to be appointed a Judge of the Supreme Court</b> — that is, a citizen of India who has been a judge of a High Court for five years, or an advocate of a High Court for <b>ten</b> years, or a distinguished jurist in the President's opinion.</td></tr>
+<tr><th>Term</th><td>The Constitution prescribes <b>none</b>.</td></tr>
+<tr><th>Removal</th><td>The Constitution prescribes <b>no procedure and no ground</b>. He holds office during the <b>pleasure of the President</b>.</td></tr>
+<tr><th>Remuneration</th><td>Such as the <b>President may determine</b>. It is <b>not fixed by the Constitution</b> and is <b>not charged</b> on the Consolidated Fund.</td></tr>
+<tr><th>Duties</th><td>To <b>give advice</b> to the Government of India on legal matters referred by the President; to perform other duties of a <b>legal character</b> assigned by the President; and to discharge functions conferred by the Constitution or any other law.</td></tr>
+<tr><th>Rights of audience</th><td>A <b>right of audience in all courts</b> in the territory of India.</td></tr>
+<tr><th>Rights in Parliament</th><td>Under <b>Art 88</b> — the right to <b>speak in and take part in the proceedings</b> of <b>both Houses</b>, any <b>joint sitting</b>, and any <b>committee of which he is named a member</b>. <b>No right to vote.</b></td></tr>
+<tr><th>Privileges</th><td>Enjoys all the <b>privileges and immunities of a member of Parliament</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Three statements that look right and are not.</b> <b>(1)</b> &ldquo;The Attorney General is a whole-time counsel for the Government&rdquo; — <b>false</b>. He is <b>not</b> debarred from private practice; the only bar is that he may not advise or hold a brief <b>against</b> the Government of India, and may not defend an accused in a criminal prosecution without the Government's permission. <b>(2)</b> &ldquo;He must resign when the Government that appointed him resigns&rdquo; — <b>false</b> as a matter of constitutional law. The Constitution says nothing of the kind; it is a <b>convention</b>, and UPSC tested exactly this distinction in <b>2022</b>. <b>(3)</b> &ldquo;He is a member of the Union Council of Ministers&rdquo; — <b>false</b>. He is not a minister and not a member of the Cabinet.</div></div>
+
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What the Attorney General may and may not do in Parliament">
+<text x="350" y="26" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">Every right of a member — except the one that counts</text>
+
+<rect x="40" y="52" width="300" height="150" rx="12" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<text x="190" y="76" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#0d3d49">MAY — Article 88</text>
+<g font-family="Inter, sans-serif" font-size="12" fill="#134b59">
+<text x="66" y="102">◆ Speak in either House</text>
+<text x="66" y="124">◆ Take part in proceedings</text>
+<text x="66" y="146">◆ Sit in a joint sitting</text>
+<text x="66" y="168">◆ Take part in any committee</text>
+<text x="80" y="186">of which he is NAMED a member</text>
+</g>
+
+<rect x="360" y="52" width="300" height="150" rx="12" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+<text x="510" y="76" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#8a2168">MAY NOT</text>
+<g font-family="Inter, sans-serif" font-size="12" fill="#6d1f52">
+<text x="386" y="102">✕ Vote in either House</text>
+<text x="386" y="124">✕ Vote in a committee</text>
+<text x="386" y="146">✕ Hold a brief against the Union</text>
+<text x="386" y="168">✕ Defend an accused without</text>
+<text x="400" y="186">the Government's permission</text>
+</g>
+<text x="350" y="228" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#565884">He enjoys the privileges and immunities of a member of Parliament — but he is not a member.</text>
+</svg>
+<figcaption><b>Fig 1.</b> Asked in <b>2013</b> ("can he vote?") and again in <b>2022</b>. If a stem offers <b>vote</b>, the answer is no; if it offers <b>speak</b> or <b>take part</b>, the answer is yes.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="s2" class="tabsection">
+<div class="sec-head"><span class="sec-num">02</span><h2>Advocate General — Article 165, and the mirror</h2></div>
+<hr class="divider">
+
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<thead><tr><th>Attorney General — Art 76</th><th>Advocate General — Art 165</th></tr></thead>
+<tbody>
+<tr><td>Appointed by the <b>President</b>.</td><td>Appointed by the <b>Governor</b>.</td></tr>
+<tr><td>Qualified to be a judge of the <b>Supreme Court</b>.</td><td>Qualified to be a judge of a <b>High Court</b> — five years as a judicial officer or <b>ten</b> years as an advocate of a High Court.</td></tr>
+<tr><td>Holds office during the <b>pleasure of the President</b>.</td><td>Holds office during the <b>pleasure of the Governor</b>.</td></tr>
+<tr><td>Remuneration determined by the <b>President</b>.</td><td>Remuneration determined by the <b>Governor</b>.</td></tr>
+<tr><td>Advises on matters referred by the <b>President</b>.</td><td>Advises on matters referred by the <b>Governor</b>.</td></tr>
+<tr><td>Right of audience in <b>all courts in India</b>.</td><td>Right of audience in <b>all courts within the State</b>.</td></tr>
+<tr><td><b>Art 88</b> — speak and take part in both Houses, joint sittings and committees; <b>no vote</b>.</td><td><b>Art 177</b> — the same rights in the State legislature; <b>no vote</b>.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The mirror is exact, so the swaps are cheap.</b> The distinguishing pairs are: <b>President / Governor</b> · <b>Supreme Court / High Court</b> qualification · <b>all courts in India / all courts in the State</b> · <b>Art 88 / Art 177</b>. A statement that the Advocate General is appointed by the Chief Minister, or must be qualified to be a Supreme Court judge, is false — and both are standard distractors.</div></div>
+
+<div class="tip"><span class="ic">◆</span><div><b>The law officers below the Attorney General are not constitutional at all.</b> The <b>Solicitor General of India</b> and the <b>Additional Solicitors General</b> assist the AG, but they are <b>not mentioned in the Constitution</b> — they are appointed by the <b>Appointments Committee of the Cabinet</b>, and Article 76 names only the Attorney General. This is the exact point on which the <b>2022</b> question below was built: a statement bracketing the AG and the SG together as the officers allowed to participate in Parliament is <b>false</b>, because <b>Art 88 covers the Attorney General alone</b>.</div></div>
+
+<div class="prelims">
+<h3>🔴 Prelims — the office in one screen</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>No fixed term, no removal procedure, no security</b> — the pleasure doctrine, pure.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Not a whole-time counsel</b> — private practice permitted, but never against the Government.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Not a member</b> of the Council of Ministers, and not a civil servant.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Art 88 covers the AG alone</b> — the Solicitor General has no such right.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Remuneration is not charged</b> on the Consolidated Fund — unlike the CAG's or the UPSC's.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Resignation on a change of government is convention</b>, not constitutional command.</div></div>
+</div>
+</div>
+</section>
+
+<section id="s3" class="tabsection">
+<div class="sec-head"><span class="sec-num">03</span><h2>Deep reference · exceptions · the red-pen grid</h2></div>
+<hr class="divider">
+
+<h3>Articles at a glance</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Article</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td><b>76</b></td><td><b>Attorney General for India</b> — appointment, duties, pleasure, remuneration</td></tr>
+<tr><td><b>88</b></td><td>Rights of <b>Ministers and the Attorney General</b> as respects the Houses — speak and take part, <b>no vote</b></td></tr>
+<tr><td><b>105</b></td><td>Powers and privileges of the Houses and their members — the privileges the AG shares</td></tr>
+<tr><td><b>165</b></td><td><b>Advocate General for the State</b></td></tr>
+<tr><td><b>177</b></td><td>Rights of Ministers and the <b>Advocate General</b> as respects the State legislature</td></tr>
+<tr><td><b>143</b></td><td>Presidential reference to the Supreme Court — the AG appears for the Union in such references</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>Article 88 has a second name in it, and it is the one candidates forget.</b> The marginal heading is &ldquo;Rights of <b>Ministers</b> and Attorney-General as respects the Houses&rdquo;. It confers the same speak-but-not-vote right on a <b>Minister who is not a member of that particular House</b> — which is how a Rajya Sabha minister speaks in the Lok Sabha. So a question asking who may take part in the proceedings of a House without being its member has <b>two</b> correct classes of answer, not one.</div></div>
+
+<h3>★ The examiner's red pen — eight questions on this office</h3>
+<div class="table-scroll">
+<table class="t2"><colgroup><col class="a"><col class="b"></colgroup>
+<tbody>
+<tr><th>Who appoints</th><td><b>President</b> (AG) · <b>Governor</b> (Advocate General). Not the Prime Minister, not the Chief Minister.</td></tr>
+<tr><th>Who removes</th><td>Nobody, by procedure. Both hold office during <b>pleasure</b> — there is no removal machinery to learn, and that absence is itself the answer.</td></tr>
+<tr><th>What qualification</th><td>Fit to be a judge of the <b>Supreme Court</b> (AG) or of a <b>High Court</b> (AdvG). <b>Ten</b> years as an advocate in each case.</td></tr>
+<tr><th>What article</th><td><b>76</b> AG · <b>88</b> his rights in Parliament · <b>165</b> Advocate General · <b>177</b> his rights in the State legislature.</td></tr>
+<tr><th>What exception</th><td>He has every right of a member <b>except the vote</b>. He may practise privately <b>except against the Government</b>. Art 88 covers ministers and the AG <b>only</b> — not the Solicitor General.</td></tr>
+<tr><th>Constitutional or not</th><td><b>Attorney General</b> and <b>Advocate General</b> — constitutional. <b>Solicitor General</b> and <b>Additional Solicitors General</b> — <b>not</b> mentioned in the Constitution.</td></tr>
+<tr><th>Charged or voted</th><td>His remuneration is <b>determined by the President</b> and is <b>not charged</b> on the Consolidated Fund — unlike the CAG, the CEC and the UPSC.</td></tr>
+<tr><th>Convention or law</th><td>Resigning when the government changes is <b>convention</b>. The <b>2022</b> question turned on precisely this word.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Exceptions ledger — this note's entries</h3>
+<div class="prelims">
+<h3>🔴 Every rule here that has an edge</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div>Has the rights of a member of Parliament — <b>except the right to vote</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>May practise privately — <b>except against the Government of India</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Art 88 covers the AG — <b>and ministers who are not members of that House</b>; it does <b>not</b> cover the Solicitor General.</div></div>
+<div class="item"><span class="dot">◆</span><div>Every other office in Topic 8 has removal machinery — <b>this one has none</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Salaries of the CAG, CEC and PSCs are <b>charged</b> — the law officer's is <b>not</b>.</div></div>
+<div class="item"><span class="dot">◆</span><div>Resignation on a change of government is <b>convention</b>, not a constitutional requirement.</div></div>
+</div>
+</div>
+<figure>
+<div class="fig-card">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Security of tenure across the constitutional offices in Topic 8, from strongest to none">
+<text x="350" y="24" text-anchor="middle" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#1B1D51">Security of tenure across Topic 8 — and the office that has none</text>
+
+<rect x="60" y="46" width="580" height="40" rx="9" fill="#1B1D51" stroke="#1B1D51"></rect>
+<text x="80" y="63" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#ffffff">CEC · CAG</text>
+<text x="80" y="79" font-family="Inter, sans-serif" font-size="11" fill="#D8D6F5">removable only like a Supreme Court judge — parliamentary address, special majority</text>
+
+<rect x="60" y="96" width="580" height="40" rx="9" fill="#33357F" stroke="#33357F"></rect>
+<text x="80" y="113" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#ffffff">UPSC / State PSC members</text>
+<text x="80" y="129" font-family="Inter, sans-serif" font-size="11" fill="#D8D6F5">President only — and for misbehaviour, a BINDING Supreme Court inquiry under Art 317(1)</text>
+
+<rect x="60" y="146" width="580" height="40" rx="9" fill="#DDF0F5" stroke="#B7DFE8"></rect>
+<text x="80" y="163" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#0d3d49">Election Commissioners (not the CEC)</text>
+<text x="80" y="179" font-family="Inter, sans-serif" font-size="11" fill="#134b59">President, but only on the CEC's recommendation</text>
+
+<rect x="60" y="196" width="580" height="40" rx="9" fill="#FBF1D8" stroke="#EBD9A8"></rect>
+<text x="80" y="213" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#9a6b04">NCSC · NCST · NCBC members</text>
+<text x="80" y="229" font-family="Inter, sans-serif" font-size="11" fill="#4a3d18">no constitutional tenure — conditions of service fixed by presidential rule</text>
+
+<rect x="60" y="246" width="580" height="42" rx="9" fill="#F7E4F1" stroke="#EBC4DE"></rect>
+<text x="80" y="264" font-family="Fraunces, serif" font-size="13.5" font-weight="700" fill="#8a2168">Attorney General · Advocate General</text>
+<text x="80" y="281" font-family="Inter, sans-serif" font-size="11.5" fill="#6d1f52">PLEASURE — no term, no grounds, no procedure. Nothing at all.</text>
+</svg>
+<figcaption><b>Fig 2.</b> Read the ladder downward. The law officer sits at the bottom <b>by design</b>, not by oversight — a counsel who cannot be dismissed is a counsel who cannot be trusted. That single sentence answers both the Prelims contrast and the Mains question.</figcaption>
+</div>
+</figure>
+</section>
+
+<section id="spass" class="tabsection">
+<div class="sec-head"><span class="sec-num">04</span><h2>Pass 2 — the adjacent surface</h2></div>
+<hr class="divider">
+
+<div class="mentor">
+<div class="tag">◆ Why this section exists</div>
+<p>The schedule bullet says &ldquo;Attorney General, Advocate General&rdquo;. Week 4 proved this setter reads such a bullet as a <b>chapter reference</b>, and the eleven questions lost that week were all one step outside the wording. For a two-article topic, that adjacent step is short and entirely predictable: the <b>other</b> law officers, the <b>other</b> people who may speak in a House without being members, and the <b>advisory jurisdiction</b> the AG appears in.</p>
+</div>
+
+<h3>The other law officers — none of them constitutional</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Officer</th><th>Status</th><th>The tested fact</th></tr></thead>
+<tbody>
+<tr><th>Attorney General</th><td><b>Constitutional</b></td><td>Art 76. The only law officer the Constitution names.</td></tr>
+<tr><th>Solicitor General</th><td><b>Not constitutional</b></td><td>Appointed by the <b>Appointments Committee of the Cabinet</b>. Assists the AG. Has <b>no</b> Art 88 right.</td></tr>
+<tr><th>Additional Solicitors General</th><td><b>Not constitutional</b></td><td>Same route, same absence of parliamentary rights.</td></tr>
+<tr><th>Advocate General</th><td><b>Constitutional</b></td><td>Art 165 — the State's counterpart, and the only law officer named for a State.</td></tr>
+<tr><th>Public Prosecutor / Director of Prosecution</th><td><b>Statutory</b></td><td>Under the criminal procedure code, not the Constitution.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Who else may speak in a House without being its member</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Person</th><th>Basis</th><th>Vote?</th></tr></thead>
+<tbody>
+<tr><td><b>Attorney General</b></td><td>Art 88</td><td><b>No</b></td></tr>
+<tr><td><b>A Minister who is not a member of that House</b></td><td>Art 88 — the same article</td><td><b>No</b> in that House; he votes only in the House he belongs to</td></tr>
+<tr><td><b>Advocate General</b>, in a State legislature</td><td>Art 177</td><td><b>No</b></td></tr>
+<tr><td><b>A Minister who is not a member of either House</b></td><td>Art 75(5) / 164(4) — must become a member within <b>six months</b></td><td>Not until he becomes a member</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip trap"><span class="ic">!</span><div><b>The six-month rule sits one step away and is asked far more often than the AG himself.</b> A non-member may be a Minister for <b>six months</b> under Arts <b>75(5)</b> and <b>164(4)</b>, and must be qualified to be a member of the legislature — which is more than being <b>eligible to vote</b>. Prelims <b>2020</b> built a whole question on that difference. The Attorney General, by contrast, is under <b>no</b> such time limit, because he never becomes a member at all.</div></div>
+
+<h3>Where the Attorney General actually appears</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Setting</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><th>Article 143 references</th><td>The President may refer a question of law or fact of public importance to the Supreme Court; the AG appears for the Union. The opinion is <b>advisory and not binding</b>, and the Court may <b>decline</b> to answer — except a reference under the proviso concerning <b>pre-Constitution treaties</b>, which it must answer. The <b>2025 Presidential reference</b> on the Governor's assent timelines is the live example, answered by a Constitution Bench in <b>November 2025</b>.</td></tr>
+<tr><th>Contempt of court</th><td>A criminal contempt petition by a private citizen requires the <b>written consent of the Attorney General</b> — a genuine gatekeeping power, and one of the very few places his consent is a legal precondition.</td></tr>
+<tr><th>Constitution Bench matters</th><td>He appears for the Union in every major constitutional challenge, and is entitled to notice where a substantial question of constitutional interpretation arises.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><span class="ic">◆</span><div><b>Current, as of this note's writing.</b> <b>R. Venkataramani</b> is the Attorney General for India, the <b>16th</b> holder of the office, appointed <b>28 September 2022</b>; his term was extended in <b>September 2025</b> for a further two years, to <b>30 September 2027</b>. Two names worth carrying for context: <b>M.C. Setalvad</b>, the first and longest-serving AG, and the fact that the office has <b>no fixed term</b> is exactly why an extension is announced rather than a reappointment.</div></div>
+
+<div class="prelims">
+<h3>🔴 Pass-2 checklist for this topic</h3>
+<div class="pgrid">
+<div class="item"><span class="dot">◆</span><div><b>Which law officers are constitutional:</b> AG and Advocate General only — <b>not</b> the Solicitor General.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Who else speaks without membership:</b> ministers under the same Art 88, and the AdvG under Art 177.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>The six-month rule:</b> Arts 75(5) and 164(4), and the qualification-versus-eligibility trap.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>The AG's consent</b> is required for a private criminal contempt petition.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Art 143</b> — advisory, non-binding, may be declined, <b>except</b> the pre-Constitution treaty proviso.</div></div>
+<div class="item"><span class="dot">◆</span><div><b>Current:</b> R. Venkataramani, 16th AG, extended to <b>30 September 2027</b>.</div></div>
+</div>
+</div>
+</section>
+<section id="s5" class="tabsection">
+<div class="sec-head"><span class="sec-num">05</span><h2>Prelims Questions</h2></div>
+<hr class="divider">
+<p class="lead">(A) genuine verified PYQs · (B) practice in identical format · (C) trap statements.</p>
+
+<h3>(A) Genuine previous-year questions</h3>
+
+<div class="pyq">
+<span class="yr">2022</span><span class="stg">UPSC Prelims · Statements</span>
+<p class="qtext">Consider the following statements:</p>
+<ol class="subs"><li>Attorney General of India and Solicitor General of India are the only officers of the Government who are allowed to participate in the meetings of the Parliament of India.</li><li>According to the Constitution of India, the Attorney General of India submits his resignation when the Government which appointed him resigns.</li></ol>
+<p class="qtext">Which of the statements given above is/are correct?</p>
+<ul class="opts"><li>(a) 1 only</li><li>(b) 2 only</li><li>(c) Both 1 and 2</li><li>(d) Neither 1 nor 2</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (d) — Neither 1 nor 2</b>
+<ul class="vwhy"><li>Statement 1 fails on <b>two</b> counts. <b>Art 88</b> covers the <b>Attorney General alone</b> — the <b>Solicitor General</b> has no such right and is not even mentioned in the Constitution. And the AG is not the <b>only</b> such officer: <b>ministers</b> who are not members of a particular House take part under the very same article.</li><li>Statement 2 fails on the words <b>&ldquo;According to the Constitution&rdquo;</b>. Resignation on a change of government is a <b>convention</b>; the Constitution prescribes no term, no ground and no procedure — he simply holds office during <b>pleasure</b>.</li><li>The transferable habit: when a stem attributes a practice to the Constitution, ask whether the text actually says it. Two of your Week 5 losses were the same failure.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="yr">2013</span><span class="stg">UPSC Prelims · Direct</span>
+<p class="qtext">The Attorney General of India can</p>
+<ul class="opts single"><li>(a) take part in the proceedings of the Lok Sabha</li><li>(b) be a member of a committee of the Lok Sabha</li><li>(c) speak in the Lok Sabha</li><li>(d) vote in the Lok Sabha</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — speak in the Lok Sabha</b>
+<ul class="vwhy"><li>The examiner is separating <b>speaking</b> from <b>voting</b>: option (d) is the trap and is squarely wrong.</li><li>Note carefully why (b) is not the keyed answer — Art 88 lets him take part in a committee <b>of which he is named a member</b>, which is a qualified right rather than a free-standing entitlement to committee membership. The unambiguous, unqualified power in this list is the right to <b>speak</b>.</li><li>Read together with the 2022 question, the pattern is plain: this office is examined almost entirely through <b>Article 88</b>.</li></ul>
+</div>
+</div>
+
+<h3>(B) Practice questions</h3>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the Attorney General for India:</p>
+<ol class="subs"><li>He must be qualified to be appointed a Judge of the Supreme Court.</li><li>He holds office during the pleasure of the President.</li><li>His remuneration is charged on the Consolidated Fund of India.</li><li>The Constitution prescribes a term of five years for his office.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li>Statements <b>1 and 2</b> are correct.</li><li>Statement 3 is false: remuneration is <b>determined by the President</b> and is <b>not charged</b>. Compare the <b>CAG</b>, the <b>CEC</b> and the <b>Public Service Commissions</b>, whose salaries all <i>are</i> charged — the law officer is the odd one out.</li><li>Statement 4 is false: <b>no term</b> is prescribed at all.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following statements about the Attorney General is <b>NOT</b> correct?</p>
+<ul class="opts single"><li>(a) He has the right of audience in all courts in the territory of India</li><li>(b) He enjoys the privileges and immunities of a member of Parliament</li><li>(c) He is debarred from private legal practice during his term</li><li>(d) He is appointed by the President</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) is NOT correct</b>
+<ul class="vwhy"><li>He is <b>not a whole-time counsel</b> and private practice is permitted. The bar is narrower: he may not advise or hold a brief <b>against the Government of India</b>, and may not defend an accused in a criminal prosecution without permission.</li><li>Contrast the <b>UPSC Chairman</b> under Art 319, whose post-office bar is total. Different offices, opposite treatment — and that contrast is itself examinable.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Pairs</span>
+<p class="qtext">Consider the following pairs:</p>
+<ol class="subs"><li>Article 76 — Attorney General for India</li><li>Article 88 — rights of the Attorney General as respects the Houses</li><li>Article 165 — Advocate General for the State</li><li>Article 178 — rights of the Advocate General in the State legislature</li></ol>
+<p class="qtext">How many of the pairs given above are correctly matched?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (c) — only three</b>
+<ul class="vwhy"><li>Pairs <b>1, 2 and 3</b> are correct.</li><li>Pair 4 is off by one: the Advocate General's rights are in <b>Article 177</b>. <b>Article 178</b> is the Speaker and Deputy Speaker of the Assembly.</li><li>Learn 88 and 177 as a couplet — Union and State versions of the same right.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Assertion–Reason</span>
+<p class="qtext">Consider the following two statements:</p>
+<ol class="subs"><li><b>Statement-I:</b> The Constitution lays down no procedure for the removal of the Attorney General.</li><li><b>Statement-II:</b> The Attorney General must enjoy the confidence of the Government he advises.</li></ol>
+<p class="qtext">Which one of the following is correct in respect of the above statements?</p>
+<ul class="opts single"><li>(a) Both correct and Statement-II explains Statement-I</li><li>(b) Both correct but Statement-II does not explain Statement-I</li><li>(c) Statement-I is correct but Statement-II is not</li><li>(d) Statement-I is not correct but Statement-II is</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (a)</b>
+<ul class="vwhy"><li>Both correct, and the second is the design reason for the first. Security of tenure exists to let an office <b>defy</b> the executive; a lawyer who must share his client's confidence needs the opposite arrangement.</li><li>That single sentence is the cleanest way to justify the pleasure doctrine in a Mains answer — and the cleanest way to distinguish this office from the CEC, the CAG and the PSCs in Prelims.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · How many</span>
+<p class="qtext">Consider the following statements about the Advocate General of a State:</p>
+<ol class="subs"><li>He is appointed by the Chief Minister of the State.</li><li>He must be qualified to be appointed a Judge of a High Court.</li><li>He has the right to speak in the proceedings of the State legislature.</li><li>He has the right of audience in all courts in the territory of India.</li></ol>
+<p class="qtext">How many of the statements given above are correct?</p>
+<ul class="opts"><li>(a) Only one</li><li>(b) Only two</li><li>(c) Only three</li><li>(d) All four</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — only two</b>
+<ul class="vwhy"><li>Statements <b>2 and 3</b> are correct.</li><li>Statement 1 puts the <b>Chief Minister</b> where the <b>Governor</b> belongs — the standard authority swap.</li><li>Statement 4 over-extends the territory: his audience right runs <b>within the State</b>. The <b>all-India</b> right belongs to the Attorney General. Same sentence, one word moved.</li></ul>
+</div>
+</div>
+
+<div class="pyq">
+<span class="stg">Practice · Negative</span>
+<p class="qtext">Which one of the following is <b>NOT</b> a constitutional office?</p>
+<ul class="opts single"><li>(a) Attorney General for India</li><li>(b) Solicitor General of India</li><li>(c) Advocate General of a State</li><li>(d) Comptroller and Auditor-General of India</li></ul>
+<div class="verdict">
+<b class="vans">Answer: (b) — Solicitor General of India</b>
+<ul class="vwhy"><li>The Constitution names the <b>Attorney General</b> (Art 76) and the <b>Advocate General</b> (Art 165) — and nobody else among the law officers.</li><li>The Solicitor General and the Additional Solicitors General are appointed by the <b>Appointments Committee of the Cabinet</b>. This is the precise error the <b>2022</b> PYQ was built to catch.</li></ul>
+</div>
+</div>
+
+<h3>(C) Trap statements — True or False</h3>
+<div class="mentor">
+<div class="tag">◆ Why this bucket exists, and how to work it</div>
+<p><b>Twenty-one of the fifty questions in the Week 4 paper were &ldquo;how many of the above&rdquo;</b> &mdash; 42 per cent &mdash; scoring <b>52 per cent</b>. Elimination does not work on it; each statement must be judged alone.</p>
+<p>Twenty statements from this note. In a two-article chapter, nearly every false one moves a <b>word</b>: an authority, a court, an article number, or the difference between the Constitution and a convention.</p>
+</div>
+
+<div class="pyq"><span class="stg">Trap 1 &middot; True or False</span>
+<p class="qtext">The Attorney General is appointed by the President.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Art <b>76</b>. Not the Prime Minister, and not the Chief Justice.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 2 &middot; True or False</span>
+<p class="qtext">The Attorney General holds office for a fixed term of five years.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>No term at all.</b> He holds office during the <b>pleasure</b> of the President — which is why an <b>extension</b> is announced rather than a reappointment.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 3 &middot; True or False</span>
+<p class="qtext">The Constitution prescribes the grounds on which the Attorney General may be removed.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>No grounds, no procedure, no machinery. Every other office in Topic 8 has removal rules; this one has none, deliberately.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 4 &middot; True or False</span>
+<p class="qtext">The Attorney General may vote in the Lok Sabha.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>He may <b>speak and take part</b> under Art 88 — never vote. Asked directly in <b>2013</b>.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 5 &middot; True or False</span>
+<p class="qtext">The Attorney General enjoys the privileges and immunities of a member of Parliament.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>All the privileges of a member — while not being one, and without the vote.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 6 &middot; True or False</span>
+<p class="qtext">The Solicitor General of India is mentioned in the Constitution.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>Not mentioned anywhere. Appointed by the <b>Appointments Committee of the Cabinet</b>, and he has <b>no</b> Art 88 right.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 7 &middot; True or False</span>
+<p class="qtext">Under the Constitution the Attorney General must resign when the government that appointed him resigns.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>It is a <b>convention</b>. The 2022 PYQ turned on the phrase &ldquo;according to the Constitution&rdquo; — the practice is real, the constitutional command is not.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 8 &middot; True or False</span>
+<p class="qtext">The Attorney General is barred from all private legal practice.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>He is <b>not a whole-time counsel</b>. The only bars are appearing <b>against</b> the Government and defending an accused without permission.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 9 &middot; True or False</span>
+<p class="qtext">The Attorney General is a member of the Union Council of Ministers.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>Neither a minister nor a civil servant. He is the Government's <b>counsel</b>, which is a third category.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 10 &middot; True or False</span>
+<p class="qtext">The remuneration of the Attorney General is charged on the Consolidated Fund of India.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Determined by the President</b>, not charged. The CAG, the CEC and the PSCs <i>are</i> charged — he is the exception in his own topic.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 11 &middot; True or False</span>
+<p class="qtext">The Advocate General of a State is appointed by the Governor.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Art <b>165</b>. Not the Chief Minister — the standard authority swap in this chapter.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 12 &middot; True or False</span>
+<p class="qtext">The Advocate General must be qualified to be appointed a Judge of the Supreme Court.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>Of a <b>High Court</b>. Supreme Court is the <b>Attorney General's</b> standard. One word, two offices.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 13 &middot; True or False</span>
+<p class="qtext">The Advocate General has a right of audience in all courts in the territory of India.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Within the State</b>. The all-India right belongs to the Attorney General alone.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 14 &middot; True or False</span>
+<p class="qtext">The Advocate General's rights in the State legislature come from Article 177.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li><b>88</b> for the Union, <b>177</b> for the State. Learn them as a couplet; 178 is the Assembly Speaker.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 15 &middot; True or False</span>
+<p class="qtext">Article 88 also allows a Minister who is not a member of a House to speak in it.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>The marginal heading reads &ldquo;Rights of <b>Ministers</b> and Attorney-General&rdquo;. This is why the 2022 statement's word <b>&ldquo;only&rdquo;</b> was fatal.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 16 &middot; True or False</span>
+<p class="qtext">A person who is not a member of either House may remain a Minister for six months.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>Arts <b>75(5)</b> and <b>164(4)</b> — and he must be <b>qualified to be a member</b>, which is more than being eligible to vote. Prelims 2020 was built on that gap.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 17 &middot; True or False</span>
+<p class="qtext">A private citizen may file a criminal contempt petition without the Attorney General's consent.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>His <b>written consent</b> is required — one of the very few places the AG's approval is a legal precondition rather than advice.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 18 &middot; True or False</span>
+<p class="qtext">The Supreme Court must answer every reference made to it under Article 143.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li>It <b>may decline</b> — except a reference under the proviso on <b>pre-Constitution treaties</b>, which it must answer. A rule with exactly one carve-out.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 19 &middot; True or False</span>
+<p class="qtext">An opinion given by the Supreme Court under Article 143 is binding on the President.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (b) — False</b>
+<ul class="vwhy"><li><b>Advisory only.</b> Contrast <b>Art 317(1)</b>, where the Court's advice on removing a PSC member <b>does</b> bind — the exception you met in Note 01.</li></ul></div></div>
+
+<div class="pyq"><span class="stg">Trap 20 &middot; True or False</span>
+<p class="qtext">The Attorney General is the first law officer of the Government of India.</p>
+<ul class="opts"><li>(a) True</li><li>(b) False</li></ul>
+<div class="verdict"><b class="vans">Answer: (a) — True</b>
+<ul class="vwhy"><li>The Solicitor General is the <b>second</b>, and holds no constitutional office at all.</li></ul></div></div>
+</section>
+
+<section id="mains" class="tabsection">
+<div class="sec-head"><span class="sec-num">06</span><h2>Mains Questions</h2></div>
+<hr class="divider">
+<div class="mainsintro"><p>Written to the <b>MAINS_ANSWER_CRAFT.md</b> standard — budget-checked, lineage first, trade shown.</p></div>
+
+<div class="mainsans">
+<div class="qhead"><span class="qn">M51</span><span class="prac">Practice · Week 6</span><span class="mk">15 marks · 250 words</span></div>
+<p class="qtext">The Attorney General is the only constitutional functionary who holds office wholly at the pleasure of the executive. Is that a defect in constitutional design, or its point? Critically examine.</p>
+<div class="meta">
+<div class="box dir"><b>Directive: "Critically examine."</b> The question offers two readings and expects you to choose. Take the second — the absence of tenure is deliberate — then concede where it genuinely bites.</div>
+<div class="box skel"><b>Skeleton</b><ol><li>The office and its bare terms</li><li>Why no security was given</li><li>Where the design fails</li><li>Comparison and reform</li><li>Verdict</li></ol></div>
+</div>
+<div class="model"><h4>Model answer</h4>
+<p><b>Article 76</b> creates the Attorney General as the first law officer, requires only that he be <b>fit to be a Supreme Court judge</b>, and then stops: <b>no term, no grounds of removal, no procedure</b>, and remuneration as the <b>President may determine</b>. He holds office during <b>pleasure</b>.</p>
+<p><span class="sh">Why the silence is deliberate</span></p>
+<p>Security of tenure exists so that an office may <b>defy</b> the executive — which is why the <b>CEC</b> is removable only like a Supreme Court judge and the <b>CAG</b> carries a complete post-retirement bar. The Attorney General's function is the opposite: he is <b>counsel</b>, and the relationship of counsel and client rests on confidence. A lawyer his client cannot dismiss is a lawyer his client cannot trust. On that reading the silence in Article 76 is not an omission but a <b>design choice</b>.</p>
+<p><span class="sh">Where it nonetheless bites</span></p>
+<p>Two ways. He exercises genuinely <b>public</b> functions that are not client work — most clearly the <b>statutory consent</b> required before a private criminal contempt petition, where he acts as a gatekeeper for the court rather than an advocate for the Union. And he alone among law officers may <b>speak in Parliament</b> under <b>Art 88</b>, a role in which the House is entitled to a view that is not merely the Government's brief.</p>
+<p><span class="sh">Reform</span></p>
+<p>Not tenure, which would defeat the purpose — but a <b>reasoned public record</b> for contempt consents, and a convention that the office is not filled by someone who has recently held political office.</p>
+<p>The design is sound where he is counsel and thin where he is a public gatekeeper. The fix belongs to those functions, not to the tenure.</p>
+</div>
+<div class="va"><b>Value additions used:</b> Art 76 with all four silences · the counsel-confidence rationale · contrast with the CEC's and CAG's protections · Art 88 · the contempt-consent gatekeeping power.</div>
+<div class="va" style="background:#EEF3FF;border-color:#C3C7E3;color:#33344f;"><b>Budget check: 276 / 250 words.</b> <b>Cut:</b> the Advocate General mirror and the Solicitor General's status — both are Prelims discriminators and neither advances the argument. <b>Bought:</b> the counsel-versus-watchdog distinction, which is the whole answer, and the two named functions where the office is not acting as counsel — without those the &ldquo;critically&rdquo; half is unearned.</div>
+<div class="cost"><b>What would cost you marks:</b> listing the AG's duties and rights as though the question asked what he does; and asserting that he must resign with the government, which is convention, not constitutional law — the same error the 2022 Prelims question punished.</div>
+</div>
+</section>
+
+<section id="revision" class="tabsection">
+<div class="recall">
+<h2>Last-mile revision — Attorney General &amp; Advocate General</h2>
+<ul>
+<li><b>Art 76</b> — Attorney General, <b>first law officer</b>, appointed by the <b>President</b>, qualified to be a <b>Supreme Court</b> judge (<b>10</b> years as an advocate).</li>
+<li><b>No term · no removal ground · no procedure.</b> Holds office during <b>pleasure</b>. Remuneration <b>as the President determines</b> — <b>not charged</b> on the Consolidated Fund.</li>
+<li><b>Art 88</b> — right to <b>speak and take part</b> in both Houses, joint sittings, and committees <b>of which he is named a member</b>. <b>NO VOTE.</b> Has the <b>privileges of an MP</b>. Art 88 also covers <b>ministers</b> not belonging to that House.</li>
+<li><b>Not a whole-time counsel</b> — private practice allowed, but never <b>against the Government</b>, and no defending an accused without permission. <b>Not</b> a minister, <b>not</b> a civil servant.</li>
+<li><b>Art 165</b> — Advocate General, appointed by the <b>Governor</b>, qualified to be a <b>High Court</b> judge, pleasure of the <b>Governor</b>, audience <b>within the State</b>, rights under <b>Art 177</b>.</li>
+<li><b>Solicitor General &amp; Additional SGs — NOT in the Constitution.</b> Appointed by the <b>Appointments Committee of the Cabinet</b>. No Art 88 right. <b>Prelims 2022</b> was built on this.</li>
+<li><b>PYQ pattern:</b> 2013 — can he <b>vote</b>? No, he may <b>speak</b>. 2022 — is the AG-and-SG bracket right? No. Is resignation constitutional? No, <b>convention</b>.</li>
+<li><b>AG's consent</b> in writing is required for a <b>private criminal contempt</b> petition.</li>
+<li><b>Art 143</b> — advisory, <b>not binding</b>, Court <b>may decline</b> — <b>except</b> the pre-Constitution treaty proviso. Contrast <b>Art 317(1)</b>, where the Court's advice <b>binds</b>.</li>
+<li><b>Six-month rule</b> — Arts <b>75(5)</b> / <b>164(4)</b>; a non-member minister must be <b>qualified to be a member</b>, which is more than being eligible to vote.</li>
+<li><b>Current:</b> <b>R. Venkataramani</b>, <b>16th</b> AG, appointed <b>28 Sept 2022</b>, extended <b>Sept 2025</b> to <b>30 Sept 2027</b>. First AG: <b>M.C. Setalvad</b>.</li>
+</ul>
+</div>
+
+<div class="series">
+<b>Series note:</b> the other <b>Week 6, Day 3</b> topic, to be read alongside <b>00 Election Commission</b>. It closes <b>Topic 8</b>; the week's Days 1–2 material is in <b>Topic 9, Note 00 — Consumer Protection &amp; Consumer Commissions</b>.
+</div>
+
+<div class="tabflow">
+<button class="tabflow-btn" onclick="location.href='03%20NCSC%20NCST%20NCBC%20and%20Special%20Officer%20for%20Linguistic%20Minorities.html'"><span class="tabflow-dir">← Previous</span><span class="tabflow-label">03 · NCSC, NCST, NCBC &amp; Art 350B</span></button>
+</div>
+</section>
+
+</div>
+</div>
+
+<footer>
+Polity &amp; Constitution · GS Paper II · Topic 8 — Constitutional Bodies · Note 04 of 5<br>
+Built for focused revision, not first-time learning — pair with Laxmikanth Ch. 53–54 and the bare Constitution, Articles 76, 88, 165 and 177.
+</footer>
+<script>
+(function(){
+var tabs = document.querySelectorAll('.notetab');
+var sections = document.querySelectorAll('.tabsection');
+tabs.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = btn.getAttribute('data-tab');
+    tabs.forEach(function(b){ b.classList.remove('active'); });
+    sections.forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+})();
+</script>
+
+<script>
+/* Attempt-before-reveal: hides each answer until an option is clicked (or the button is pressed). */
+(function(){
+  function answerIndex(vtext, lis){
+    var m = vtext.match(/[Aa]ns(?:wer)?\.?\s*:?\s*\(?([a-d])\)/);
+    if(m) return m[1].charCodeAt(0)-97;
+    var after = vtext.split(/[Aa]ns(?:wer)?\.?\s*:?/)[1];
+    if(after){
+      var head = after.slice(0,60).toLowerCase();
+      for(var i=0;i<lis.length;i++){
+        var t = lis[i].textContent.replace(/^\([a-d]\)\s*/,'').trim().toLowerCase();
+        if(t && head.indexOf(t)>-1) return i;
+      }
+    }
+    return -1;
+  }
+  document.querySelectorAll('.pyq').forEach(function(q){
+    var verdict = q.querySelector('.verdict');
+    if(!verdict) return;
+    var optList = q.querySelector('.opts');
+    var lis = optList ? Array.prototype.slice.call(optList.querySelectorAll('li')) : [];
+    var bar = document.createElement('div');
+    bar.className = 'revealbar';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'revealbtn';
+    btn.textContent = lis.length ? 'Show answer' : 'Show approach';
+    bar.appendChild(btn);
+    verdict.parentNode.insertBefore(bar, verdict);
+    function reveal(){ q.classList.add('revealed'); bar.style.display = 'none'; }
+    btn.addEventListener('click', reveal);
+    if(!lis.length) return;
+    var ci = answerIndex(verdict.textContent || '', lis);
+    lis.forEach(function(li, idx){
+      li.addEventListener('click', function(){
+        if(q.classList.contains('revealed')) return;
+        lis.forEach(function(x){ x.classList.remove('chosen'); });
+        li.classList.add('chosen');
+        if(ci > -1){
+          lis[ci].classList.add('correct');
+          if(idx !== ci) li.classList.add('wrong');
+        }
+        reveal();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
