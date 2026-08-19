@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 6 Mock Test — 50 Questions | GS-II</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7FB; --card:#FFFFFF; --ink:#14152E; --muted:#565884;
+--deep:#1B1D51; --deep2:#33357F; --gold:#E0A11C; --gold-soft:#FBF1D8;
+--nebula:#B5388B; --nebula-soft:#F7E4F1; --teal:#1F8AA6; --teal-soft:#DDF0F5;
+--line:#DCDFEF; --line-strong:#C3C7E3; --star:#FFD25A; --green:#177a4d; --red:#c22525;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15.5px;line-height:1.6;}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 90px;}
+.hero{margin:0 -20px 30px;padding:44px 34px 38px;background:linear-gradient(160deg,#141541 0,#1B1D51 55%,#241a4d 100%);color:#fff;border-radius:0 0 24px 24px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--star);margin-bottom:12px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,5vw,40px);margin:0 0 12px;}
+.hero p{max-width:640px;font-size:14.5px;color:#D9D9F2;margin:0 0 8px;}
+.rules{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:18px 20px;margin:0 0 24px;font-size:14px;color:#33344f;}
+.rules b{color:var(--deep);}
+.timerbar{position:sticky;top:0;z-index:50;background:var(--deep);color:#fff;border-radius:0 0 14px 14px;padding:10px 18px;display:flex;align-items:center;gap:16px;margin:0 0 24px;box-shadow:0 8px 22px rgba(27,29,81,.3);}
+.timerbar .t{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--star);min-width:96px;}
+.timerbar button{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.06em;background:var(--gold);color:#3a2a00;border:0;border-radius:9px;padding:9px 16px;cursor:pointer;}
+.timerbar button.secondary{background:rgba(255,255,255,.14);color:#EDECFF;}
+.timerbar button.secondary:hover{background:rgba(255,255,255,.24);}
+.timerbar .note{font-size:12px;color:#C9C6EE;}
+.timerbar .shufflewrap{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#C9C6EE;display:flex;align-items:center;gap:5px;cursor:pointer;}
+@media(max-width:760px){.timerbar{flex-wrap:wrap;gap:8px;}.timerbar .note{width:100%;}}
+.histtable{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px;}
+.histtable th,.histtable td{padding:6px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.histtable th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.histtable .up{color:#7fe0a7;}
+.histtable .down{color:#ff9d9d;}
+.retakerow{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+.retakerow button{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;letter-spacing:.06em;border:0;border-radius:10px;padding:11px 20px;cursor:pointer;background:var(--star);color:#3a2a00;}
+.retakerow button.ghost{background:rgba(255,255,255,.14);color:#EDECFF;}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 16px;}
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.qnum{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;color:#fff;background:var(--deep2);border-radius:18px;padding:3px 11px;}
+.fmt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:14px;padding:2px 9px;}
+.fmt.hot{color:var(--nebula);border-color:#EBC4DE;background:var(--nebula-soft);}
+.q p.stem{margin:6px 0 10px;color:#22233d;}
+.q ol.subs{margin:0 0 10px 20px;padding:0;color:#33344f;}
+.q ol.subs li{margin:3px 0;}
+.opt{display:block;padding:8px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-size:14.5px;color:#2d2e4a;transition:background .12s;}
+.opt:hover{background:var(--teal-soft);}
+.opt input{margin-right:9px;}
+.q.graded .opt{cursor:default;}
+.q.graded .opt.correct{border-color:var(--green);background:#E9F7EE;}
+.q.graded .opt.chosenwrong{border-color:var(--red);background:#fdecec;}
+.expl{display:none;margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid #EBD9A8;font-size:13.5px;color:#4a3d18;}
+.expl b{color:#7a5502;}
+.q.graded .expl{display:block;}
+.verdict-chip{display:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;border-radius:14px;padding:2px 10px;margin-left:auto;}
+.q.graded .verdict-chip{display:inline-block;}
+.q.graded.right .verdict-chip{background:#E9F7EE;color:var(--green);}
+.q.graded.wrong .verdict-chip{background:#fdecec;color:var(--red);}
+.q.graded.skip .verdict-chip{background:#eef;color:var(--deep2);}
+.submitrow{margin:30px 0;text-align:center;}
+.submitrow button{font-family:'Fraunces',serif;font-weight:600;font-size:18px;background:var(--deep);color:#fff;border:0;border-radius:14px;padding:16px 34px;cursor:pointer;box-shadow:0 10px 26px rgba(27,29,81,.3);}
+.results{display:none;background:var(--deep);color:#EDECFF;border-radius:18px;padding:26px 24px;margin:30px 0;}
+.results.show{display:block;}
+.results h2{font-family:'Fraunces',serif;color:#fff;margin:0 0 6px;}
+.score-big{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--star);}
+.results table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px;}
+.results th,.results td{padding:7px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);}
+.results th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#C9C6EE;}
+.results .good{color:#7fe0a7;}
+.results .bad{color:#ff9d9d;}
+h2.sec{font-family:'Fraunces',serif;font-weight:600;color:var(--deep);margin:36px 0 12px;}
+.mains{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nebula);border-radius:14px;padding:18px 20px;margin:0 0 16px;font-size:14.5px;}
+.mains b{color:var(--deep2);}
+.mains .skel{margin-top:10px;padding:12px 14px;background:#FAFBFE;border:1px dashed var(--line-strong);border-radius:10px;font-size:13.5px;color:#33344f;}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-align:center;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+<div class="eyebrow">Week 6 · UGSSP Format Simulation · Take before Sunday 8 AM</div>
+<h1>Week 6 Mock Test — 50 Questions</h1>
+<p>Exact test format: +2 per correct, &minus;0.66 per wrong, 0 for skipped. 60 minutes. Covers the full Week 6 syllabus — consumer commissions, Lok Adalats and the other courts (Days 1&ndash;2), the Election Commission with the Attorney General and Advocate General (Day 3), the Public Service Commissions (Day 4), the SC/ST/BC Commissions and Article 350B (Day 5), and the Finance Commission with GST (Day 6).</p>
+<p><b>Weighted to the rolling three-week average, not to the last paper.</b> Week 5 proved the cost of over-fitting: after Week 4 ran 42% how-many, the Week 5 mock was re-weighted to match and the real paper came in at 20%. So the mix here is DIRECT <b>14</b> · HOW MANY <b>12</b> · STATEMENTS <b>9</b> · NEGATIVE <b>7</b> · ASSERTION&ndash;REASON <b>4</b> · PAIRS <b>4</b>. The key is balanced across (a)&ndash;(d) at <b>12 / 13 / 13 / 12</b>, and there is one <b>deliberate duplicate pair</b> — answer it identically both times.</p>
+</header>
+
+<div class="rules">
+<b>The five rules:</b> (1) <b>Attempt rate is now the binding constraint, not accuracy.</b> Week 5 was 74.4% accurate with <b>eleven blanks</b> and ten minutes left on the clock — attempting those eleven at your own accuracy would have equalled the topper exactly. (2) At <b>90 seconds</b> a question is a two-way guess at best: take the guess and move, because spending another minute and then leaving it blank is the worst of both outcomes. (3) On a how-many question, verify each statement independently — it cannot be solved by elimination; skip only if <i>two or more</i> are genuinely unknown. (4) Hunt absolutes — <b>any, all, only, never, must</b>. Several questions here turn on a single qualifier. (5) Keep the NOT discipline: mark each statement T/F, then re-read the stem before answering.
+</div>
+
+<div class="rules" style="border-left-color:#B5388B;">
+<b>Four things in this paper are newer than most textbooks. All are deliberate.</b> The consumer pecuniary limits are <b>&#8377;50 lakh / &#8377;2 crore</b> (revised down from &#8377;1 crore / &#8377;10 crore in <b>December 2021</b>); the <b>SIR</b> of electoral rolls was <b>upheld</b> in May 2026; the <b>NCBC</b> has been constitutional only since <b>2018</b>, and the States' power to identify backward classes was restored by the <b>105th</b> Amendment in 2021; and <i>Davinder Singh</i> (<b>2024</b>) permits <b>sub-classification within Scheduled Castes</b>. Answer any of them from an older source and you will get it wrong — which is the point of including them.
+</div>
+
+<div class="timerbar">
+<span class="t" id="timer">60:00</span>
+<button id="startbtn" type="button">Start timer</button>
+<button id="resetbtn" type="button" class="secondary">Reset &amp; retake</button>
+<label class="shufflewrap"><input type="checkbox" id="shufflechk"> Shuffle on reset</label>
+<span class="note" id="attemptnote">Attempt 1 &middot; simulate honestly, no notes open.</span>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q1</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the Consumer Protection Act, 2019, consider the following statements:</p><ol class="subs"><li>The District Commission has jurisdiction where the consideration paid does not exceed fifty lakh rupees.</li><li>Pecuniary jurisdiction is determined by the amount of compensation claimed.</li><li>A complaint may be filed where the consumer ordinarily resides or works.</li><li>An appeal from the State Commission to the National Commission must be filed within sixty days.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q1" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q1" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q1" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q1" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Statements 1 and 3 are correct. <b>Statement 2 is the chapter's central error</b> — jurisdiction follows the <b>consideration paid</b>, never the compensation claimed, so a &#8377;40 lakh purchase with a &#8377;5 crore claim stays in the <b>District</b> Commission. <b>Statement 4 doubles the period</b>: the appeal window is <b>thirty</b> days at each stage, not sixty. <b>Topic 9 Note 00, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q2</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">The National Commission (NCDRC) exercises original jurisdiction where the consideration paid exceeds</p>
+<label class="opt"><input type="radio" name="q2" value="1">(a) &#8377;2 crore</label><label class="opt"><input type="radio" name="q2" value="2">(b) &#8377;50 lakh</label><label class="opt"><input type="radio" name="q2" value="3">(c) &#8377;1 crore</label><label class="opt"><input type="radio" name="q2" value="4">(d) &#8377;10 crore</label>
+<div class="expl"><b>(a) &#8377;2 crore.</b> The thresholds are <b>&#8377;50 lakh</b> and <b>&#8377;2 crore</b>, set by rules notified on <b>31 December 2021</b>. Options (b) and (d) are the figures in the Act <b>as enacted</b> in 2019 — superseded, because the original limits pushed a flood of cases into the District Commissions. Any source written 2019&ndash;2021 carries the wrong pair. <b>Topic 9 Note 00, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q3</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div><p class="stem">Which one of the following is <b>NOT</b> a relief that a Consumer Commission may order under the Consumer Protection Act, 2019?</p>
+<label class="opt"><input type="radio" name="q3" value="1">(a) Issue of a corrective advertisement at the opposite party's cost</label><label class="opt"><input type="radio" name="q3" value="2">(b) Imprisonment of the manufacturer for selling a defective product</label><label class="opt"><input type="radio" name="q3" value="3">(c) Award of punitive damages</label><label class="opt"><input type="radio" name="q3" value="4">(d) Return of the price paid, with interest</label>
+<div class="expl"><b>(b) is NOT a relief.</b> A Commission's reliefs under <b>section 39</b> are civil — remove the defect, replace, return the price with interest, compensation, <b>punitive damages</b>, discontinue the unfair trade practice, <b>corrective advertisement</b>, withdraw hazardous goods, costs. Imprisonment arises only under <b>section 72</b>, and then for <b>non-compliance with an order</b>, not for the original defect. <b>Topic 9 Note 00, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q4</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">Failure to comply with an order of a Consumer Commission is punishable under section 72 with imprisonment of</p>
+<label class="opt"><input type="radio" name="q4" value="1">(a) not less than three months, extending to two years</label><label class="opt"><input type="radio" name="q4" value="2">(b) up to six months only</label><label class="opt"><input type="radio" name="q4" value="3">(c) not less than one month, extending to three years</label><label class="opt"><input type="radio" name="q4" value="4">(d) not less than one year, extending to five years</label>
+<div class="expl"><b>(c).</b> Imprisonment of <b>not less than one month, extending to three years</b>, or a fine of <b>not less than &#8377;25,000 extending to &#8377;1 lakh</b>, or both. Note the shape — a <b>minimum and a maximum on both limbs</b>. This setter builds &ldquo;numbers with a twin&rdquo; questions out of exactly that structure. <b>Topic 9 Note 00, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q5</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the Central Consumer Protection Authority (CCPA), consider the following statements:</p><ol class="subs"><li>It was established in 2020 under the Consumer Protection Act, 2019.</li><li>It may initiate an inquiry on its own motion, without any complaint.</li><li>It has an investigation wing headed by a Director-General.</li><li>It may file a class action where a complaint affects more than one consumer.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q5" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q5" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q5" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q5" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> A deliberate all-correct set — the instinct to assume one item must be wrong is what this trains out. The <b>suo motu</b> power and the <b>class action</b> are the whole reason a regulator was added to a system that already had adjudicators: a Commission moves only when someone complains, and the consumers a market harms most are the least able to complain. Keep the division clean — the CCPA <b>regulates</b>, the Commissions <b>adjudicate</b>. <b>Topic 9 Note 00, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q6</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements about Lok Adalats:</p><ol class="subs"><li>An award of a Lok Adalat is deemed to be a decree of a civil court.</li><li>An appeal lies against an award of a Lok Adalat to the District Court.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q6" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q6" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q6" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q6" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> The award is deemed a <b>decree of a civil court</b> and is <b>final and binding</b> — and precisely because it rests on the parties' own consent, <b>no appeal lies against it to any court</b>. If no settlement is reached the case simply returns to the referring court, and court fees already paid are <b>refunded</b>. <b>Topic 6 Note 07, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q7</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to a Permanent Lok Adalat, consider the following statements:</p><ol class="subs"><li>It was created in 1987 by the Legal Services Authorities Act as first enacted.</li><li>Its pecuniary jurisdiction extends up to ten lakh rupees.</li><li>If the parties fail to settle, it may decide the dispute on merits.</li><li>It consists exclusively of serving judicial officers.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q7" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q7" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q7" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q7" value="4">(d) All four</label>
+<div class="expl"><b>(a) Only one.</b> Only statement 3 is correct, and it is the real discriminator: an <b>ordinary</b> Lok Adalat can only record a settlement, a <b>Permanent</b> one may <b>decide on merits</b>. Statement 1 is wrong on the date — Permanent Lok Adalats came by the <b>2002 amendment</b>, not the 1987 Act as enacted. Statement 2 understates the limit, which is <b>&#8377;1 crore</b>. Statement 4 is wrong on composition — a judicial officer sits <b>with</b> others, typically a lawyer and a social worker (Prelims <b>2010</b>). <b>Topic 6 Note 07, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q8</span><span class="fmt">Assertion&ndash;Reason</span><span class="verdict-chip"></span></div><p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> Free legal aid has been held to be an essential ingredient of a reasonable, fair and just procedure.</li><li><b>Statement-II:</b> Article 39A was inserted into the Constitution by the 42nd Amendment.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q8" value="1">(a) Both correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q8" value="2">(b) Both correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q8" value="3">(c) Statement-I is correct but Statement-II is not</label><label class="opt"><input type="radio" name="q8" value="4">(d) Statement-I is not correct but Statement-II is</label>
+<div class="expl"><b>(b) Both correct, but II does not explain I.</b> Both statements are true — but the <b>date of insertion</b> is not the reason free legal aid became enforceable. The reason is that <b>Art 39A is a non-justiciable Directive Principle</b>, so the Court read legal aid <b>into Article 21</b> instead: <i>M.H. Hoskot</i> (1978), <i>Hussainara Khatoon</i> (1979), and <i>Khatri</i> (1981), which fixed the duty at the moment the accused is <b>first produced before a magistrate</b>. This is the trap the assertion-reason format is built on — both true, no causal link. <b>Topic 6 Note 07, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q9</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div><p class="stem">Which one of the following statements about Family Courts is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q9" value="1">(a) They are established under the Family Courts Act, 1984</label><label class="opt"><input type="radio" name="q9" value="2">(b) They are mandatory in cities with a population exceeding one million</label><label class="opt"><input type="radio" name="q9" value="3">(c) An appeal from a Family Court lies to the High Court</label><label class="opt"><input type="radio" name="q9" value="4">(d) A party has a right to be represented by a legal practitioner</label>
+<div class="expl"><b>(d) is NOT correct.</b> There is <b>no right to legal representation as of right</b> — the court <b>may</b> permit a legal expert as <i>amicus curiae</i>. The Act's design is settlement-first: the court must attempt conciliation and is <b>not bound by the Indian Evidence Act</b>. Preference is also given to <b>women</b> in appointing judges. <b>Topic 6 Note 07, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q10</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div><p class="stem">Consider the following pairs:</p><ol class="subs"><li>Gram Nyayalayas &mdash; intermediate panchayat level, mobile court</li><li>Fast Track Special Courts &mdash; rape and POCSO cases</li><li>Special courts for MPs and MLAs &mdash; created by an Act of Parliament</li><li>Commercial Courts &mdash; Act of 2015</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q10" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q10" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q10" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q10" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Pairs 1, 2 and 4 are correct. <b>Pair 3 is false</b> — the special courts for legislators rest on <b>Supreme Court directions</b> from <b>2017</b>, not on any statute, which is precisely what makes them examinable: a court-directed forum rather than a legislated one. <b>Topic 6 Note 07, Section 06.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q11</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">Which one of the following is the correct statutory basis of Lok Adalats?</p>
+<label class="opt"><input type="radio" name="q11" value="1">(a) The Legal Services Authorities Act, 1987</label><label class="opt"><input type="radio" name="q11" value="2">(b) The Arbitration and Conciliation Act, 1996</label><label class="opt"><input type="radio" name="q11" value="3">(c) The Mediation Act, 2023</label><label class="opt"><input type="radio" name="q11" value="4">(d) The Gram Nyayalayas Act, 2008</label>
+<div class="expl"><b>(a) The Legal Services Authorities Act, 1987</b> — which also creates <b>NALSA</b>, the State and District authorities, and (by the 2002 amendment) Permanent Lok Adalats. Keep the ADR statutes apart: <b>1996</b> arbitration and conciliation, <b>1987</b> legal services and Lok Adalats, <b>2023</b> India's first standalone mediation statute with a Mediation Council and pre-litigation mediation. <b>Topic 6 Note 07, Section 06.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q12</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements about the Election Commission of India:</p><ol class="subs"><li>The Constitution fixes the number of Election Commissioners at three.</li><li>The Chief Election Commissioner has a casting vote in case of a difference of opinion.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q12" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q12" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q12" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q12" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(d) Neither.</b> <b>Art 324(2)</b> leaves the number to the <b>President</b> — three is the current strength, not a constitutional requirement. And decisions are by <b>majority</b>: the CEC has <b>no casting vote and no veto</b>, being <i>primus inter pares</i>. That equality of vote is what makes the removal asymmetry so pointed. <b>Topic 8 Note 00, Sections 01&ndash;02.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q13</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the appointment of the Chief Election Commissioner, consider the following statements:</p><ol class="subs"><li>In <i>Anoop Baranwal</i> (2023) the Supreme Court prescribed a committee of the Prime Minister, the Leader of the Opposition and the Chief Justice of India.</li><li>The Act of 2023 replaced the Chief Justice of India on that committee with a Union Cabinet Minister.</li><li>The Court's formula was expressly to operate only until Parliament made a law.</li><li>Article 324(2) always made appointment subject to any law made by Parliament.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q13" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q13" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q13" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q13" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> A deliberate all-correct set — your measured instinct is to reject option (d) assuming something must be wrong, and that instinct costs marks. Statement 4 is the one most often missed: the words <b>&ldquo;subject to the provisions of any law made in that behalf by Parliament&rdquo;</b> were always in Art 324(2); the gap was that Parliament did not legislate for <b>seventy-three years</b>. <b>Topic 8 Note 00, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q14</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements:</p><ol class="subs"><li>The Chief Election Commissioner may be removed in the same manner and on the same grounds as a judge of the Supreme Court.</li><li>An Election Commissioner may be removed by the President at his discretion.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q14" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q14" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q14" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q14" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> The two Election Commissioners are removable by the President <b>only on the recommendation of the CEC</b> — dropping those six words is the standard way this statement is falsified. The asymmetry is the institution's central design flaw: <b>equal power, unequal protection</b>, and both the <b>2nd ARC</b> and the <b>Law Commission's 255th Report</b> recommended extending the CEC's protection to all three. <b>Topic 8 Note 00, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q15</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div><p class="stem">Which one of the following is <b>NOT</b> a function of the Election Commission of India?</p>
+<label class="opt"><input type="radio" name="q15" value="1">(a) Granting recognition to political parties and allotting symbols</label><label class="opt"><input type="radio" name="q15" value="2">(b) Deciding an election petition challenging a completed election</label><label class="opt"><input type="radio" name="q15" value="3">(c) Advising the President on the disqualification of a sitting member of Parliament</label><label class="opt"><input type="radio" name="q15" value="4">(d) Notifying the schedule for general elections and bye-elections</label>
+<div class="expl"><b>(b) is NOT a function.</b> An <b>election petition</b> is decided by the <b>High Court</b>, with appeal to the Supreme Court; <b>Art 329</b> bars every other route of court interference. Option (d) is the classic distractor in reverse — Prelims <b>2017</b> offered the <b>Ministry of Home Affairs</b> as the scheduling authority, which is false. <b>Topic 8 Note 00, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q16</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">The State Election Commissioner is appointed by</p>
+<label class="opt"><input type="radio" name="q16" value="1">(a) the Chief Election Commissioner</label><label class="opt"><input type="radio" name="q16" value="2">(b) the President</label><label class="opt"><input type="radio" name="q16" value="3">(c) the Governor</label><label class="opt"><input type="radio" name="q16" value="4">(d) the State Legislature</label>
+<div class="expl"><b>(c) the Governor.</b> Under <b>Arts 243K / 243ZA</b>, and he is removable only in the manner and on the grounds prescribed for a <b>High Court</b> judge — against the CEC's <b>Supreme Court</b> judge standard. The two commissions mirror each other closely and are institutionally unconnected, which is exactly why the setter joins them. <b>Topic 8 Note 00, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q17</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the Special Intensive Revision (SIR) of electoral rolls, consider the following statements:</p><ol class="subs"><li>It involves house-to-house enumeration rather than revision at the margins.</li><li>It began with Bihar ahead of that State's Assembly election.</li><li>In 2026 the Supreme Court upheld it as within the Election Commission's powers.</li><li>The Court located the power in the Representation of the People Act, 1950 read with Article 324.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q17" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q17" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q17" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q17" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> <i>Association for Democratic Reforms v. ECI</i>, <b>27 May 2026</b>, upheld the SIR on the roll-preparation power in the <b>RPA 1950</b> read with <b>Art 324</b> — not on any new doctrine. Phase II ran <b>October 2025 to April 2026</b> across nine States and three Union Territories. On any recent judgment, fix the <b>direction</b> of the outcome first; half of these statements are built by flipping it. <b>Topic 8 Note 00, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q18</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">How many Delimitation Commissions have been constituted in India so far?</p>
+<label class="opt"><input type="radio" name="q18" value="1">(a) Two</label><label class="opt"><input type="radio" name="q18" value="2">(b) Three</label><label class="opt"><input type="radio" name="q18" value="3">(c) Five</label><label class="opt"><input type="radio" name="q18" value="4">(d) Four</label>
+<div class="expl"><b>(d) Four</b> &mdash; <b>1952, 1963, 1973 and 2002</b>, asked directly in Prelims <b>2024</b>. Attach the two amendments: the <b>84th (2001)</b> froze inter-State seat allocation on the <b>1971</b> census; the <b>87th (2003)</b> allowed readjustment <i>within</i> States on the <b>2001</b> census. The freeze runs until the first census after <b>2026</b>. <b>Topic 8 Note 00, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q19</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div><p class="stem">Consider the following pairs of Article and subject:</p><ol class="subs"><li>Article 324 &mdash; superintendence, direction and control of elections</li><li>Article 325 &mdash; one general electoral roll for every constituency</li><li>Article 327 &mdash; elections on the basis of adult suffrage</li><li>Article 328 &mdash; bar to interference by courts in electoral matters</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q19" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q19" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q19" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q19" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Pairs 1 and 2 are correct. <b>Pair 3</b> moves adult suffrage one article: it is <b>326</b>; <b>327</b> is Parliament's power to make provision with respect to elections. <b>Pair 4</b> is off by one the other way: the bar on court interference is <b>329</b>; <b>328</b> is a State legislature's power. Learn Part XV as an unbroken block of six — <b>324, 325, 326, 327, 328, 329</b> — because this setter tests the boundaries between them, not the articles themselves. <b>Topic 8 Note 00, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q20</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">The Attorney General of India can</p>
+<label class="opt"><input type="radio" name="q20" value="1">(a) speak in the Lok Sabha</label><label class="opt"><input type="radio" name="q20" value="2">(b) vote in the Lok Sabha</label><label class="opt"><input type="radio" name="q20" value="3">(c) be a member of the Union Council of Ministers</label><label class="opt"><input type="radio" name="q20" value="4">(d) be removed only by a parliamentary address</label>
+<div class="expl"><b>(a) speak in the Lok Sabha.</b> Under <b>Art 88</b> he may <b>speak and take part</b> in the proceedings of both Houses, joint sittings and committees of which he is <i>named</i> a member — but he may <b>never vote</b>. Asked in this exact form in Prelims <b>2013</b>. He is neither a minister nor a civil servant, and holds office purely during <b>pleasure</b>. <b>Topic 8 Note 04, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q21</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements:</p><ol class="subs"><li>The Attorney General of India and the Solicitor General of India are the only officers of the Government allowed to participate in the proceedings of Parliament.</li><li>According to the Constitution, the Attorney General submits his resignation when the Government which appointed him resigns.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q21" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q21" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q21" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q21" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(d) Neither.</b> This is Prelims <b>2022</b> reproduced. Statement 1 fails twice: <b>Art 88 covers the Attorney General alone</b> — the <b>Solicitor General</b> is not mentioned in the Constitution at all — and the AG is not the <b>only</b> such participant, since <b>ministers</b> who are not members of a House take part under the same article. Statement 2 fails on <b>&ldquo;according to the Constitution&rdquo;</b>: resigning with the government is a <b>convention</b>. <b>Topic 8 Note 04, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q22</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div><p class="stem">Which one of the following statements about the Attorney General is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q22" value="1">(a) He is appointed by the President</label><label class="opt"><input type="radio" name="q22" value="2">(b) He is debarred from private legal practice during his term</label><label class="opt"><input type="radio" name="q22" value="3">(c) He enjoys the privileges of a member of Parliament</label><label class="opt"><input type="radio" name="q22" value="4">(d) He must be qualified to be appointed a judge of the Supreme Court</label>
+<div class="expl"><b>(b) is NOT correct.</b> He is <b>not a whole-time counsel</b>; private practice is permitted. The bars are narrower — he may not advise or hold a brief <b>against the Government of India</b>, and may not defend an accused in a criminal prosecution without permission. Contrast the <b>UPSC Chairman</b> under Art 319, whose post-office bar is total. <b>Topic 8 Note 04, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q23</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the Attorney General for India, consider the following statements:</p><ol class="subs"><li>The Constitution prescribes a term of six years for the Attorney General.</li><li>The Constitution prescribes no procedure for his removal.</li><li>His remuneration is charged on the Consolidated Fund of India.</li><li>The written consent of the Attorney General is required for a private citizen to move a criminal contempt petition.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q23" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q23" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q23" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q23" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Statements 2 and 4 are correct. <b>Statement 1 is false</b> — the Constitution prescribes <b>no term at all</b>; he holds office during <b>pleasure</b>, which is why an <b>extension</b> is announced rather than a reappointment. <b>Statement 3 is false</b> — his remuneration is <b>determined by the President</b> and is <b>not charged</b>, making him the odd one out beside the CAG, the CEC and the Public Service Commissions. <b>Topic 8 Note 04, Sections 01 and 04.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q24</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">The Advocate General of a State must be qualified to be appointed a judge of</p>
+<label class="opt"><input type="radio" name="q24" value="1">(a) the Supreme Court</label><label class="opt"><input type="radio" name="q24" value="2">(b) a District Court</label><label class="opt"><input type="radio" name="q24" value="3">(c) a High Court</label><label class="opt"><input type="radio" name="q24" value="4">(d) either the Supreme Court or a High Court</label>
+<div class="expl"><b>(c) a High Court.</b> The Supreme Court standard belongs to the <b>Attorney General</b> — one word, two offices. The rest of the mirror: appointed by the <b>Governor</b>, holds office during the <b>Governor's pleasure</b>, right of audience <b>within the State</b>, and rights in the legislature under <b>Art 177</b> rather than Art 88. <b>Topic 8 Note 04, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q25</span><span class="fmt">Assertion&ndash;Reason</span><span class="verdict-chip"></span></div><p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> The Constitution lays down no procedure and no grounds for the removal of the Attorney General.</li><li><b>Statement-II:</b> The Attorney General must enjoy the confidence of the Government he advises.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q25" value="1">(a) Both correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q25" value="2">(b) Both correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q25" value="3">(c) Statement-I is correct but Statement-II is not</label><label class="opt"><input type="radio" name="q25" value="4">(d) Statement-I is not correct but Statement-II is</label>
+<div class="expl"><b>(a).</b> Both correct, and the second is the design reason for the first. Security of tenure exists so an office can <b>defy</b> the executive — which is why the CEC is removable only like a Supreme Court judge. A <b>counsel</b> needs the opposite arrangement: a lawyer his client cannot dismiss is a lawyer his client cannot trust. That one sentence answers both the Prelims contrast and the Mains question. <b>Topic 8 Note 04, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q26</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the removal of a member of a State Public Service Commission, consider the following statements:</p><ol class="subs"><li>He may be removed by the Governor who appointed him.</li><li>On the ground of misbehaviour he may be removed only after an inquiry by the Supreme Court.</li><li>The Supreme Court's advice in such a reference is binding on the President.</li><li>He may be removed for engaging in paid employment outside his duties without any reference to the Supreme Court.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q26" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q26" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q26" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q26" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 2, 3 and 4 are correct. <b>Statement 1 is the chapter's most reliable trap</b> — the <b>Governor appoints</b>, but only the <b>President</b> removes, on any ground. Note the pairing of 2 and 4: <b>only misbehaviour</b> needs the Supreme Court reference; insolvency, paid employment and infirmity are direct presidential removals. <b>Topic 8 Note 01, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q27</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">A member of the Union Public Service Commission holds office for a term of six years or until he attains the age of</p>
+<label class="opt"><input type="radio" name="q27" value="1">(a) 60 years</label><label class="opt"><input type="radio" name="q27" value="2">(b) 62 years</label><label class="opt"><input type="radio" name="q27" value="3">(c) 70 years</label><label class="opt"><input type="radio" name="q27" value="4">(d) 65 years</label>
+<div class="expl"><b>(d) 65 years</b> — against <b>62</b> for a State PSC and for a <b>Joint</b> State PSC. The <b>65 / 62</b> split is the single most reusable number pair in the chapter. Note also that neither figure is constitutional in origin for the Election Commission's parallel — but here the ages <i>are</i> in <b>Art 316</b>. <b>Topic 8 Note 01, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q28</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements about Article 320(3):</p><ol class="subs"><li>The advice tendered by a Public Service Commission is binding on the Government.</li><li>Where the advice is not accepted, the reasons must be recorded and laid before the legislature.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q28" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q28" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q28" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q28" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(b) 2 only.</b> The duty is to <b>consult</b>, not to obey — accountability by <b>publicity</b>, not by compulsion, and the most important limit in the chapter. There is a further exit: the <b>proviso</b> to Art 320(3) lets regulations specify matters on which the Commission need <b>not</b> be consulted at all, laid before the legislature for <b>fourteen days</b>. <b>Topic 8 Note 01, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q29</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div><p class="stem">Under Article 319, which one of the following appointments is <b>NOT</b> permissible?</p>
+<label class="opt"><input type="radio" name="q29" value="1">(a) A UPSC member as Chairman of a State Public Service Commission</label><label class="opt"><input type="radio" name="q29" value="2">(b) A former UPSC Chairman as Chairman of a State Public Service Commission</label><label class="opt"><input type="radio" name="q29" value="3">(c) A State PSC Chairman as a member of the UPSC</label><label class="opt"><input type="radio" name="q29" value="4">(d) A State PSC member as Chairman of another State Public Service Commission</label>
+<div class="expl"><b>(b) is NOT permissible.</b> The bar on the <b>UPSC Chairman</b> is <b>complete</b> — no further office under the Union or any State. Read the ladder as having a <b>closed roof</b>: everyone else may move up or sideways <i>within</i> the Commission system, but nobody may step <b>out</b> into ordinary government employment. <b>Topic 8 Note 01, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q30</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">Consider the following bodies:</p><ol class="subs"><li>Union Public Service Commission</li><li>Staff Selection Commission</li><li>Joint State Public Service Commission</li><li>Central Vigilance Commission</li></ol><p class="stem">How many of the bodies given above are constitutional bodies?</p>
+<label class="opt"><input type="radio" name="q30" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q30" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q30" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q30" value="4">(d) All four</label>
+<div class="expl"><b>(a) Only one.</b> Only the <b>UPSC</b>. The <b>Joint State PSC</b> is <b>statutory</b> — Art 315(2) <i>authorises</i> Parliament to create one on the States' request; it does not itself create it. The <b>SSC</b> is merely <b>executive</b>, born of a government resolution, and the <b>CVC</b> became statutory only in <b>2003</b>, having been executive from 1964 on the <b>Santhanam Committee's</b> recommendation. <b>Topic 8 Note 01, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q31</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div><p class="stem">Consider the following pairs:</p><ol class="subs"><li>Article 316 &mdash; term of office and the one-half rule</li><li>Article 317 &mdash; removal and suspension of a member</li><li>Article 321 &mdash; power to extend the functions of a Commission</li><li>Article 322 &mdash; annual report to the President or Governor</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q31" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q31" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q31" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q31" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Pairs 1, 2 and 3 are correct. <b>Pair 4 misplaces the article</b> — <b>Art 322</b> is <b>expenses charged</b> on the Consolidated Fund; the <b>annual report</b> is <b>Art 323</b>. Adjacent numbers, adjacent subjects: exactly how this family of errors is built. <b>Topic 8 Note 01, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q32</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">A new All India Service may be created only after a resolution supported by</p>
+<label class="opt"><input type="radio" name="q32" value="1">(a) two-thirds of the total membership of the Rajya Sabha</label><label class="opt"><input type="radio" name="q32" value="2">(b) a simple majority of both Houses sitting together</label><label class="opt"><input type="radio" name="q32" value="3">(c) two-thirds of the members of the Rajya Sabha present and voting</label><label class="opt"><input type="radio" name="q32" value="4">(d) two-thirds of the total membership of the Lok Sabha</label>
+<div class="expl"><b>(c).</b> <b>Art 312</b> — the <b>Rajya Sabha</b> alone can initiate, and the majority is <b>two-thirds present and voting</b>, not of total membership. Watch the base of the fraction; that is the whole question. The three All India Services are the IAS, the IPS and the <b>Indian Forest Service</b> (1966), and Art 312 also permits an <b>all-India judicial service</b> that has never been created. <b>Topic 8 Note 01, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q33</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements about the jurisdiction of a State Public Service Commission:</p><ol class="subs"><li>Its functions may be extended by the State Legislature.</li><li>A Public Service Commission is consulted on reservations for backward classes in government posts.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q33" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q33" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q33" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q33" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> <b>Art 321</b> — the <b>legislature</b> extends functions (Parliament for the UPSC, the State legislature for a State PSC), never the executive and never the Commission itself. The Week 5 paper asked this a week before the topic was scheduled. Statement 2 is expressly excluded by <b>Art 320(4)</b>, along with the claims of SCs and STs to posts. <b>Topic 8 Note 01, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q34</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the National Commission for Scheduled Castes, consider the following statements:</p><ol class="subs"><li>It consists of a Chairperson, a Vice-Chairperson and three other members.</li><li>Its members are appointed by the President by warrant under his hand and seal.</li><li>It also discharges functions in relation to the Anglo-Indian community.</li><li>Its reports are laid before Parliament with a memorandum on the action taken.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q34" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q34" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q34" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q34" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> Another all-correct set. The template is shared by all three Commissions — five members, presidential warrant, civil-court powers, a duty on the Union and States to consult, and reports laid with an action-taken memorandum. The <b>Anglo-Indian</b> remit in statement 3 is the one item unique to the <b>NCSC</b>, and the cleanest discriminator against the NCST. What the Constitution does <b>not</b> supply is any qualification or fixed tenure. <b>Topic 8 Note 03, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q35</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">The National Commission for Backward Classes was given constitutional status by</p>
+<label class="opt"><input type="radio" name="q35" value="1">(a) the 89th Amendment, 2003</label><label class="opt"><input type="radio" name="q35" value="2">(b) the 105th Amendment, 2021</label><label class="opt"><input type="radio" name="q35" value="3">(c) the National Commission for Backward Classes Act, 1993</label><label class="opt"><input type="radio" name="q35" value="4">(d) the 102nd Amendment, 2018</label>
+<div class="expl"><b>(d) the 102nd Amendment, 2018</b>, inserting <b>Art 338B</b>. Option (d) is the trap — 1993 is when it became <b>statutory</b>, after <i>Indra Sawhney</i>: a real date attached to the wrong status. The <b>89th</b> split the SC/ST commission in 2003; the <b>105th</b> restored the States' power to identify their own SEBCs in 2021. <b>Topic 8 Note 03, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q36</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements about Articles 341 and 342:</p><ol class="subs"><li>The President specifies the castes and tribes to be deemed Scheduled Castes and Scheduled Tribes, in consultation with the Governor where a State is concerned.</li><li>After the first notification, the President may include or exclude any group by a subsequent notification.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q36" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q36" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q36" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q36" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(a) 1 only.</b> Once the first list is notified, <b>only Parliament by law</b> may include or exclude a group — the President's power is <b>spent at the first notification</b>. This is a &ldquo;who may, and only once&rdquo; exception, precisely the family of edges the Exceptions Ledger exists to collect. <b>Topic 8 Note 03, Section 04.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q37</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div><p class="stem">Which one of the following statements is <b>NOT</b> correct?</p>
+<label class="opt"><input type="radio" name="q37" value="1">(a) Article 350B provides for a Special Officer for Linguistic Minorities</label><label class="opt"><input type="radio" name="q37" value="2">(b) Article 350B establishes the National Commission for Linguistic Minorities</label><label class="opt"><input type="radio" name="q37" value="3">(c) The Special Officer for Linguistic Minorities is appointed by the President</label><label class="opt"><input type="radio" name="q37" value="4">(d) Article 350A requires provision for instruction in the mother tongue at the primary stage</label>
+<div class="expl"><b>(b) is NOT correct.</b> Art 350B creates a <b>single Special Officer</b>, not a commission — inserted by the <b>7th Amendment, 1956</b> on the <b>States Reorganisation Commission's</b> recommendation. Do not confuse it with the <b>National Commission for Minorities</b>, which exists but is <b>statutory</b> (1992) and covers religious minorities. <b>Topic 8 Note 03, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="PAIRS"><div class="qhead"><span class="qnum">Q38</span><span class="fmt">Pairs</span><span class="verdict-chip"></span></div><p class="stem">Consider the following pairs:</p><ol class="subs"><li>National Commission for Scheduled Castes &mdash; Article 338</li><li>National Commission for Scheduled Tribes &mdash; Article 338A</li><li>National Commission for Backward Classes &mdash; Article 338B</li><li>Special Officer for Linguistic Minorities &mdash; Article 350B</li></ol><p class="stem">How many of the pairs given above are correctly matched?</p>
+<label class="opt"><input type="radio" name="q38" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q38" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q38" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q38" value="4">(d) All four</label>
+<div class="expl"><b>(d) All four.</b> All correctly matched — and worth knowing as a block, because the setter's usual move is to slip a <b>fifth</b> body into this list. There is no <b>Article 338C</b>, and the <b>National Commission for Minorities</b> has never had constitutional status: it is <b>statutory</b> under the NCM Act, <b>1992</b>. Art <b>350B</b> is also the odd one out in kind — a single <b>Special Officer</b>, not a commission. <b>Topic 8 Note 03, Sections 01 and 03.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q39</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to reservation jurisprudence, consider the following statements:</p><ol class="subs"><li><i>Indra Sawhney</i> (1992) imposed a ceiling of 50 per cent on reservation.</li><li>The 10 per cent EWS reservation operates within that 50 per cent ceiling.</li><li><i>Jarnail Singh</i> (2018) applied the creamy layer exclusion to promotions for SCs and STs.</li><li>In 2024 the Supreme Court permitted sub-classification within the Scheduled Castes.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q39" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q39" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q39" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q39" value="4">(d) All four</label>
+<div class="expl"><b>(c) Only three.</b> Statements 1, 3 and 4 are correct. <b>Statement 2 is false</b> — EWS sits <b>outside</b> the ceiling, upheld in <i>Janhit Abhiyan</i> (2022), so the 50% ceiling is no longer absolute. That single sentence is worth a full line in any Mains answer on reservation. <i>Davinder Singh</i> (2024) overruled <i>E.V. Chinnaiah</i> to permit sub-classification within SCs. <b>Topic 8 Note 03, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q40</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">The Rohini Commission, which examined sub-categorisation of Other Backward Classes, was appointed under</p>
+<label class="opt"><input type="radio" name="q40" value="1">(a) Article 338B</label><label class="opt"><input type="radio" name="q40" value="2">(b) Article 342A</label><label class="opt"><input type="radio" name="q40" value="3">(c) Article 340</label><label class="opt"><input type="radio" name="q40" value="4">(d) Article 16(4)</label>
+<div class="expl"><b>(c) Article 340</b> — the President's power to appoint a Commission to investigate the conditions of socially and educationally backward classes, the same article behind the <b>Kaka Kalelkar</b> (1953) and <b>Mandal</b> (1979) Commissions. Keep the family apart: <b>340</b> an investigating commission, <b>338B</b> the permanent NCBC, <b>342A</b> specifying the list. It reported on <b>31 July 2023</b> and remains unpublished. <b>Topic 8 Note 03, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q41</span><span class="fmt">Assertion&ndash;Reason</span><span class="verdict-chip"></span></div><p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> Parliament enacted the 105th Constitutional Amendment in 2021.</li><li><b>Statement-II:</b> The Supreme Court had read the 102nd Amendment as taking away the power of States to identify socially and educationally backward classes.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q41" value="1">(a) Both correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q41" value="2">(b) Both correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q41" value="3">(c) Statement-I is correct but Statement-II is not</label><label class="opt"><input type="radio" name="q41" value="4">(d) Statement-I is not correct but Statement-II is</label>
+<div class="expl"><b>(a).</b> Both correct, and the second is the direct cause of the first — the 105th was enacted <b>to reverse</b> that reading and restore the States' lists. You have now met this arc four times: <b>judgment &rarr; corrective amendment</b>, as with <i>Anoop Baranwal</i> and the CEC Act, the Governor's assent saga, and <i>Mahajan</i> &rarr; section 18A. <b>Topic 8 Note 03, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q42</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements about the SC/ST (Prevention of Atrocities) Act, 1989:</p><ol class="subs"><li>In 2018 the Supreme Court required a preliminary enquiry before registration of an FIR under the Act.</li><li>Parliament reversed that requirement by inserting section 18A in the same year.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q42" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q42" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q42" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q42" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(c) Both.</b> <i>Subhash Kashinath Mahajan</i> (March 2018) layered safeguards on to the Act — preliminary enquiry, prior sanction for arrest — and the <b>2018 Amendment</b> inserted <b>s.18A</b> to remove them. <i>Prathvi Raj Chauhan</i> (2020) then <b>upheld</b> the amendment. Another deliberate both-correct set. <b>Topic 8 Note 03, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="4" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q43</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">Which Finance Commission raised the States' share in the divisible pool from 32 per cent to 42 per cent?</p>
+<label class="opt"><input type="radio" name="q43" value="1">(a) The Thirteenth</label><label class="opt"><input type="radio" name="q43" value="2">(b) The Fifteenth</label><label class="opt"><input type="radio" name="q43" value="3">(c) The Sixteenth</label><label class="opt"><input type="radio" name="q43" value="4">(d) The Fourteenth</label>
+<div class="expl"><b>(d) the Fourteenth.</b> The ladder to hold is <b>32 &rarr; 42 &rarr; 41 &rarr; 41</b>. The 14th's jump is the largest single increase in the institution's history and the most-asked number in the chapter; the 15th's fall to 41 reflected the <b>reorganisation of Jammu &amp; Kashmir</b>, not a squeeze on the States. <b>Topic 8 Note 02, Section 02.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q44</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the GST Council, consider the following statements:</p><ol class="subs"><li>A decision requires a majority of not less than three-fourths of the weighted votes of the members present and voting.</li><li>The vote of the Union Government has a weightage of one-third of the total votes cast.</li><li>The quorum is one-third of the total number of members.</li><li>Its recommendations are binding on Parliament and the State legislatures.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q44" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q44" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q44" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q44" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Statements 1 and 2 are correct. <b>Statement 3 moves the fraction</b> — the quorum is <b>one-half</b> of total membership. <b>Statement 4 is false</b> after <i>Mohit Minerals</i> (2022): the recommendations are <b>persuasive, not binding</b>, both legislatures holding simultaneous power under <b>Art 246A</b>. The arithmetic to carry: the Union's <b>1/3</b> falls short of the <b>3/4</b> needed to pass but exceeds the <b>1/4</b> needed to block — it can <b>veto, never dictate</b>. <b>Topic 8 Note 02, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="STATEMENTS"><div class="qhead"><span class="qnum">Q45</span><span class="fmt">Statements</span><span class="verdict-chip"></span></div><p class="stem">Consider the following statements:</p><ol class="subs"><li>Cesses and surcharges levied by the Union form part of the divisible pool.</li><li>Article 271 permits Parliament to levy a surcharge whose proceeds go wholly to the Union.</li></ol><p class="stem">Which of the statements given above is/are correct?</p>
+<label class="opt"><input type="radio" name="q45" value="1">(a) 1 only</label><label class="opt"><input type="radio" name="q45" value="2">(b) 2 only</label><label class="opt"><input type="radio" name="q45" value="3">(c) Both 1 and 2</label><label class="opt"><input type="radio" name="q45" value="4">(d) Neither 1 nor 2</label>
+<div class="expl"><b>(b) 2 only.</b> Cesses and surcharges are <b>outside</b> the divisible pool — the single strongest point available in any fiscal-federalism answer, because it means a <b>41%</b> share is 41% of a pool that already excludes them, and the States' share of <b>gross</b> central revenue is materially lower than the headline. <b>Topic 8 Note 02, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="NEGATIVE"><div class="qhead"><span class="qnum">Q46</span><span class="fmt">Negative</span><span class="verdict-chip"></span></div><p class="stem">Which one of the following is <b>NOT</b> a constitutional body?</p>
+<label class="opt"><input type="radio" name="q46" value="1">(a) Finance Commission</label><label class="opt"><input type="radio" name="q46" value="2">(b) GST Council</label><label class="opt"><input type="radio" name="q46" value="3">(c) NITI Aayog</label><label class="opt"><input type="radio" name="q46" value="4">(d) State Finance Commission</label>
+<div class="expl"><b>(c) NITI Aayog</b> — created by a <b>Cabinet resolution on 1 January 2015</b>, neither constitutional nor statutory, exactly like the Planning Commission it replaced. The others are <b>Art 280</b>, <b>Art 279A</b> and <b>Arts 243-I / 243Y</b>. UPSC has asked the constitutional-status question repeatedly; fix status before anything else about a body. <b>Topic 8 Note 02, Section 05.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q47</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">A State Finance Commission is constituted by</p>
+<label class="opt"><input type="radio" name="q47" value="1">(a) the President, every fifth year</label><label class="opt"><input type="radio" name="q47" value="2">(b) the Union Finance Commission</label><label class="opt"><input type="radio" name="q47" value="3">(c) the Governor, every fifth year</label><label class="opt"><input type="radio" name="q47" value="4">(d) the State Legislature, every fourth year</label>
+<div class="expl"><b>(c) the Governor, every fifth year</b> — <b>Arts 243-I</b> (panchayats) and <b>243Y</b> (municipalities), with composition and qualifications prescribed by the <b>State legislature</b>. This was a Week 4 gap. Note the division: the <b>Union</b> Commission recommends <b>measures to augment</b> a State's Consolidated Fund under Art 280(3)(c); the <b>State</b> Commission does the actual distribution to local bodies. <b>Topic 8 Note 02, Section 01.</b></div>
+</div>
+
+<div class="q" data-ans="2" data-fmt="HOWMANY"><div class="qhead"><span class="qnum">Q48</span><span class="fmt">How many</span><span class="verdict-chip"></span></div><p class="stem">With reference to the Finance Commission, consider the following statements:</p><ol class="subs"><li>It is constituted by the President every fifth year or earlier if he considers it necessary.</li><li>It consists of a Chairman and four other members.</li><li>Its recommendations are binding on the Government of India.</li><li>The qualifications of its members are laid down in the Constitution.</li></ol><p class="stem">How many of the statements given above are correct?</p>
+<label class="opt"><input type="radio" name="q48" value="1">(a) Only one</label><label class="opt"><input type="radio" name="q48" value="2">(b) Only two</label><label class="opt"><input type="radio" name="q48" value="3">(c) Only three</label><label class="opt"><input type="radio" name="q48" value="4">(d) All four</label>
+<div class="expl"><b>(b) Only two.</b> Statements 1 and 2 are correct. <b>Statement 3 is false</b> — the recommendations are <b>advisory</b>, accepted by long <b>convention</b>, with the report laid before Parliament under <b>Art 281</b> with an action-taken memorandum. <b>Statement 4 is false</b> — <b>Art 280(2)</b> leaves qualifications to <b>Parliament</b>, supplied by the Finance Commission (Miscellaneous Provisions) Act, <b>1951</b>. Contrast the two advice regimes: the <b>Election Commission's</b> advice on disqualification <b>binds</b>; this one does not. <b>Topic 8 Note 02, Sections 01 and 04.</b></div>
+</div>
+
+<div class="q" data-ans="1" data-fmt="ASSERTION"><div class="qhead"><span class="qnum">Q49</span><span class="fmt">Assertion&ndash;Reason</span><span class="verdict-chip"></span></div><p class="stem">Consider the following two statements:</p><ol class="subs"><li><b>Statement-I:</b> The GST Council was designed so that neither the Union nor the States can carry a decision alone.</li><li><b>Statement-II:</b> Both Parliament and the State legislatures surrendered taxing powers when GST was introduced.</li></ol><p class="stem">Which one of the following is correct in respect of the above statements?</p>
+<label class="opt"><input type="radio" name="q49" value="1">(a) Both correct and Statement-II explains Statement-I</label><label class="opt"><input type="radio" name="q49" value="2">(b) Both correct but Statement-II does not explain Statement-I</label><label class="opt"><input type="radio" name="q49" value="3">(c) Statement-I is correct but Statement-II is not</label><label class="opt"><input type="radio" name="q49" value="4">(d) Statement-I is not correct but Statement-II is</label>
+<div class="expl"><b>(a).</b> Both correct, and the mutual surrender of taxing power is precisely <b>why</b> the voting rule was engineered that way. Had either side been able to set rates alone, the other would have surrendered sovereignty for nothing; the <b>three-fourths</b> threshold is the constitutional expression of that bargain. <b>Topic 8 Note 02, Section 03.</b></div>
+</div>
+
+<div class="q" data-ans="3" data-fmt="DIRECT"><div class="qhead"><span class="qnum">Q50</span><span class="fmt">Direct</span><span class="verdict-chip"></span></div><p class="stem">The Attorney General of India can</p>
+<label class="opt"><input type="radio" name="q50" value="1">(a) vote in the Lok Sabha</label><label class="opt"><input type="radio" name="q50" value="2">(b) be a member of the Union Council of Ministers</label><label class="opt"><input type="radio" name="q50" value="3">(c) speak in the Lok Sabha</label><label class="opt"><input type="radio" name="q50" value="4">(d) be removed only by a parliamentary address</label>
+<div class="expl"><b>(c) speak in the Lok Sabha &mdash; and this is the deliberate duplicate.</b> It is the same question as <b>Q20</b>. If you answered them differently, that is the Week 2 failure repeating: Q39 and Q50 were identical there and you got both wrong. <b>When a question repeats, answer it identically and do not re-litigate</b> — re-reading a stem you have already solved is how a correct answer becomes a wrong one. <b>Topic 8 Note 04, Section 01.</b></div>
+</div>
+<div class="submitrow"><button id="gradebtn" type="button">Submit &amp; Score (+2 / −0.66)</button></div>
+
+<div class="results" id="results">
+<h2>Result</h2>
+<div class="score-big" id="scoreline">—</div>
+<div id="summaryline" style="margin-top:4px;font-size:14px;"></div>
+<table>
+<thead><tr><th>Format</th><th>Right</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Week 4 actual</th></tr></thead>
+<tbody id="fmtrows"></tbody>
+</table>
+<p style="font-size:13px;color:#C9C6EE;margin-top:14px;">Baselines are your <b>Week 4</b> per-format accuracy — the last paper for which a full format breakdown exists. <b>Pairs at 0% and how-many at 52% are the two to beat.</b> Scroll up — every question now shows the correct answer and the note section to revise.</p>
+
+<div id="histwrap" style="display:none;">
+<h2 style="font-size:19px;margin:22px 0 0;">Attempt history</h2>
+<table class="histtable">
+<thead><tr><th>Attempt</th><th>Score</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Accuracy</th><th>Change</th></tr></thead>
+<tbody id="histrows"></tbody>
+</table>
+<p style="font-size:12px;color:#C9C6EE;margin-top:10px;">History is kept for this browser session — it clears if you close or reload the page. What matters is the trend within a sitting: your second attempt should show the ⚠ formats climbing, not the total score (which rises anyway once you've seen the answers).</p>
+</div>
+
+<div class="retakerow">
+<button id="retakebtn" type="button">↻ Retake this test</button>
+<button id="retakeshufflebtn" type="button" class="ghost">↻ Retake with questions shuffled</button>
+</div>
+</div>
+
+
+<h2 class="sec">Mains practice — write these out by hand, 10 minutes each</h2>
+
+<div class="mains">
+<b>M1.</b> "The independence of the Election Commission rests on one man's security of tenure and the goodwill of the executive." Critically examine in the light of recent legislative and judicial developments. <i>(15 marks &middot; 250 words)</i>
+<div class="skel"><b>Skeleton:</b> Art 324's three safeguards &rarr; the asymmetry — equal vote, unequal protection; only the CEC has the Supreme Court judge standard &rarr; <i>Anoop Baranwal</i> (2023) filled a 73-year vacuum expressly "until Parliament legislates" &rarr; the CEC Act 2023 legislated and restored a 2:1 executive majority; challenge still pending &rarr; 2nd ARC and Law Commission 255th Report; no post-retirement bar &rarr; independence real but <b>narrow and personal</b>.</div>
+</div>
+
+<div class="mains">
+<b>M2.</b> The constitutional commissions for Scheduled Castes, Scheduled Tribes and Backward Classes are built on an identical template but have delivered unequal results. Examine. <i>(15 marks &middot; 250 words)</i>
+<div class="skel"><b>Skeleton:</b> the shared template (five members, presidential warrant, civil-court powers, consultation duty) &rarr; the common weakness: recommendatory only, no fixed tenure or qualifications &rarr; why outcomes diverge — age (1990 / 2004 / 2018), subject matter (only the NCST faces the Fifth and Sixth Schedules), and legal churn (102nd read down, 105th restoring) &rarr; reform: constitutional tenure, time-bound government response &rarr; a design guarantees <b>voice, not outcome</b>.</div>
+</div>
+
+<div class="mains">
+<b>M3.</b> "The Consumer Protection Act, 2019 shifted consumer justice from adjudication alone to regulation." Examine the significance of that shift and the limits it has run into. <i>(15 marks &middot; 250 words)</i>
+<div class="skel"><b>Skeleton:</b> the 1986 pyramid was <b>reactive</b> — a Commission moves only when someone complains &rarr; 2019 added the CCPA (suo motu, recall, class action, endorser liability), product liability across manufacturer/seller/service provider, and e-commerce &rarr; why regulation was the missing piece: a misleading advertisement injures millions in sums too small for any of them to litigate &rarr; limits: the 2019 thresholds worsened District pendency until revised in Dec 2021; vacancies and infrastructure bind &rarr; correct in principle, delivery turns on administrative capacity.</div>
+</div>
+
+<div class="mains">
+<b>M4.</b> "Cesses and surcharges have hollowed out the divisible pool." Discuss with reference to the Finance Commission's mandate and the working of fiscal federalism. <i>(15 marks &middot; 250 words)</i>
+<div class="skel"><b>Skeleton:</b> Art 280 and the vertical/horizontal split &rarr; Art 270 shares <b>net proceeds</b>, but Art 271 sends a surcharge <b>wholly to the Union</b> and cesses sit outside &rarr; so 41% is 41% of a shrunken pool; the States' share of <b>gross</b> revenue is lower than the headline &rarr; add Art 282 discretionary grants funding State subjects &rarr; the GST Council as the counter-model: 1/3 &middot; 2/3 &middot; 3/4, veto but not dictation &rarr; way forward: cap cess share, widen the pool.</div>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var total = 50;
+  var baselines = { NEGATIVE:'80% (Week 4)', HOWMANY:'52% (Week 4)', ASSERTION:'50% (Week 4)', PAIRS:'0% (Week 4)', STATEMENTS:'50% (Week 4)', DIRECT:'60% (Week 4)' };
+  var timerEl = document.getElementById('timer');
+  var startBtn = document.getElementById('startbtn');
+  var resetBtn = document.getElementById('resetbtn');
+  var shuffleChk = document.getElementById('shufflechk');
+  var attemptNote = document.getElementById('attemptnote');
+  var remaining = 3600, ticking = null;
+  var attempt = 1, history = [];
+  function fmtTime(s){ var m = Math.floor(s/60), r = s%60; return (m<10?'0':'')+m+':'+(r<10?'0':'')+r; }
+  function startTimer(){
+    if (ticking) return;
+    ticking = setInterval(function(){
+      remaining--;
+      timerEl.textContent = fmtTime(Math.max(remaining,0));
+      if (remaining === 900) timerEl.style.color = '#FFB37E';
+      if (remaining <= 0){ clearInterval(ticking); ticking = null; grade(); }
+    }, 1000);
+    startBtn.textContent = 'Running…';
+  }
+  startBtn.addEventListener('click', startTimer);
+
+  function shuffleQuestions(){
+    var qs = Array.prototype.slice.call(document.querySelectorAll('.q'));
+    var anchor = document.querySelector('.submitrow');
+    for (var i = qs.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = qs[i]; qs[i] = qs[j]; qs[j] = t;
+    }
+    qs.forEach(function(q, idx){
+      q.querySelector('.qnum').textContent = 'Q' + (idx + 1);
+      anchor.parentNode.insertBefore(q, anchor);
+    });
+  }
+
+  function resetTest(doShuffle){
+    if (ticking){ clearInterval(ticking); ticking = null; }
+    remaining = 3600;
+    timerEl.textContent = '60:00';
+    timerEl.style.color = '';
+    startBtn.textContent = 'Start timer';
+    delete document.body.dataset.graded;
+    document.querySelectorAll('.q').forEach(function(q){
+      q.classList.remove('graded','right','wrong','skip');
+      q.querySelector('.verdict-chip').textContent = '';
+      q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('correct','chosenwrong'); });
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = false; i.checked = false; });
+    });
+    document.getElementById('results').classList.remove('show');
+    document.getElementById('fmtrows').innerHTML = '';
+    if (doShuffle) shuffleQuestions();
+    attempt++;
+    attemptNote.textContent = 'Attempt ' + attempt + ' · ' + (doShuffle ? 'questions shuffled · ' : '') + 'no notes open.';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  resetBtn.addEventListener('click', function(){ resetTest(shuffleChk.checked); });
+  document.getElementById('retakebtn').addEventListener('click', function(){ resetTest(false); });
+  document.getElementById('retakeshufflebtn').addEventListener('click', function(){ resetTest(true); });
+
+  function renderHistory(){
+    if (history.length < 1) return;
+    document.getElementById('histwrap').style.display = 'block';
+    var rows = document.getElementById('histrows');
+    rows.innerHTML = '';
+    history.forEach(function(h, i){
+      var delta = '—';
+      if (i > 0){
+        var d = h.score - history[i-1].score;
+        delta = '<span class="' + (d >= 0 ? 'up' : 'down') + '">' + (d >= 0 ? '+' : '') + d.toFixed(2) + '</span>';
+      }
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + h.n + '</td><td>' + h.score.toFixed(2) + '</td><td>' + h.right + '</td><td>' + h.wrong +
+                     '</td><td>' + h.skip + '</td><td>' + h.acc + '%</td><td>' + delta + '</td>';
+      rows.appendChild(tr);
+    });
+  }
+
+  function grade(){
+    if (document.body.dataset.graded) return;
+    document.body.dataset.graded = '1';
+    if (ticking) clearInterval(ticking);
+    var score = 0, right = 0, wrong = 0, skip = 0;
+    var fmtAgg = {};
+    var qs = document.querySelectorAll('.q');
+    qs.forEach(function(q, idx){
+      var ans = q.getAttribute('data-ans');
+      var fmt = q.getAttribute('data-fmt');
+      if (!fmtAgg[fmt]) fmtAgg[fmt] = {r:0,w:0,s:0};
+      var chosen = q.querySelector('input:checked');
+      var chip = q.querySelector('.verdict-chip');
+      q.classList.add('graded');
+      q.querySelectorAll('.opt').forEach(function(opt){
+        var inp = opt.querySelector('input');
+        if (inp.value === ans) opt.classList.add('correct');
+      });
+      if (!chosen){
+        skip++; fmtAgg[fmt].s++;
+        q.classList.add('skip'); chip.textContent = 'SKIPPED · 0';
+      } else if (chosen.value === ans){
+        right++; score += 2; fmtAgg[fmt].r++;
+        q.classList.add('right'); chip.textContent = 'CORRECT · +2';
+      } else {
+        wrong++; score -= 0.66; fmtAgg[fmt].w++;
+        q.classList.add('wrong'); chip.textContent = 'WRONG · −0.66';
+        chosen.closest('.opt').classList.add('chosenwrong');
+      }
+      q.querySelectorAll('input').forEach(function(i){ i.disabled = true; });
+    });
+    var res = document.getElementById('results');
+    res.classList.add('show');
+    var acc = (right+wrong ? Math.round(100*right/(right+wrong)) : 0);
+    document.getElementById('scoreline').textContent = score.toFixed(2) + ' / 100';
+    document.getElementById('summaryline').textContent =
+      'Attempt ' + attempt + ' — ' + right + ' correct · ' + wrong + ' wrong (−' + (wrong*0.66).toFixed(2) + ' marks) · ' + skip + ' skipped. Accuracy on attempts: ' + acc + '%.';
+    history.push({ n: attempt, score: score, right: right, wrong: wrong, skip: skip, acc: acc });
+    renderHistory();
+    var rows = document.getElementById('fmtrows');
+    var order = ['NEGATIVE','HOWMANY','ASSERTION','PAIRS','STATEMENTS','DIRECT'];
+    order.forEach(function(f){
+      var a = fmtAgg[f] || {r:0,w:0,s:0};
+      var att = a.r + a.w;
+      var acc = att ? Math.round(100*a.r/att) + '%' : '—';
+      var cls = att && (a.r/att) >= 0.7 ? 'good' : (att ? 'bad' : '');
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + f + '</td><td>' + a.r + '</td><td>' + a.w + '</td><td>' + a.s + '</td><td class="' + cls + '">' + acc + '</td><td>' + (baselines[f] || '—') + '</td>';
+      rows.appendChild(tr);
+    });
+    res.scrollIntoView({behavior:'smooth'});
+  }
+  document.getElementById('gradebtn').addEventListener('click', grade);
+})();
+</script>
+</body>
+</html>
