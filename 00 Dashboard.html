@@ -153,6 +153,18 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
   #readerFrame{height:70vh;flex:none;}
 }
 
+.hubtabs{display:flex;gap:4px;margin:0 0 20px;border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.hubtab{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);background:transparent;border:none;border-bottom:2px solid transparent;padding:9px 15px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:color .12s ease,border-color .12s ease;}
+.hubtab:hover{color:var(--deep2);}
+.hubtab.active{color:var(--deep);border-bottom-color:var(--nebula);}
+.hubtab .tcnt{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;background:#F1F2FA;color:var(--muted);border-radius:10px;padding:1px 7px;}
+.hubtab.active .tcnt{background:var(--nebula-soft);color:#8a2168;}
+.hubpane{display:none;}
+.hubpane.active{display:block;animation:panein .16s ease;}
+@keyframes panein{from{opacity:0;transform:translateY(3px);}to{opacity:1;transform:none;}}
+.paneempty{background:var(--card);border:1.5px dashed var(--line-strong);border-radius:14px;padding:22px 24px;color:var(--muted);font-size:13.5px;line-height:1.65;}
+.paneempty b{color:var(--deep2);}
+@media(max-width:620px){.hubtab{padding:8px 10px;font-size:10.5px;}}
 .foldergroup{margin:0 0 30px;}
 .folderhead{display:flex;align-items:baseline;gap:11px;margin:0 0 4px;padding:0 2px;}
 .folderhead .fh-ic{font-size:15px;line-height:1;color:var(--gold);}
@@ -232,7 +244,7 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 
 <div class="navgroup">
 <div class="navhead">Reference</div>
-<button class="navitem" data-view="resources"><span class="nav-label">Resources &amp; Syllabus</span> <span class="cnt">25</span></button>
+<button class="navitem" data-view="resources"><span class="nav-label">Reference &amp; Prompts</span> <span class="cnt">5</span></button>
 <button class="navitem" data-view="kb"><span class="nav-label">Knowledge Base</span> <span class="cnt">8</span></button>
 </div>
 
@@ -257,6 +269,8 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 <span class="pagenote">Pick a topic to see its notes · 5 of 9 topics started</span>
 <div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
 </div>
+<div class="hubtabs"><button class="hubtab active" data-pane="topics" onclick="setHubPane('polity','topics')">Topics<span class="tcnt">9</span></button><button class="hubtab" data-pane="resources" onclick="setHubPane('polity','resources')">Resources<span class="tcnt">22</span></button></div>
+<div class="hubpane active" data-pane="topics">
 <div class="hubprogress" id="hubprogress-polity">
 <div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-polity">0 of 32 notes read (0%)</span></div>
 <div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-polity"></div></div>
@@ -329,6 +343,171 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 <span class="tc-progress-frac" id="tcfrac-polity-t9">0/1 read</span>
 </div>
 
+</div>
+</div>
+
+<div class="hubpane" data-pane="resources">
+<p class="pagenote" style="margin:0 0 18px;">Everything that feeds this subject: the annotated GS Paper II syllabus, and each week&rsquo;s plan with its papers, keys, mock, analysis and Mains answers &mdash; ordered as the folders sit on disk.</p>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">◆</span><h3>Syllabus</h3><span class="fh-count">1 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / CLAUDE_NOTES</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="gs2 syllabus annotated" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-ref">Syllabus</span></div>
+<h3>GS Paper II Syllabus (annotated)</h3>
+<p>The syllabus-analysis copy every note is mapped against. Start here when deciding what to build next.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">①</span><h3>Week 1 Plan</h3><span class="fh-count">6 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 1 Plan</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="week 1 study plan polity governance" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/Week%201%20Study%20Plan%20Indian%20Polity%20%26%20Governance.pdf" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 1 Study Plan" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-plan">Plan</span></div>
+<h3>Week 1 Study Plan</h3>
+<p>Day-wise NCERT and Laxmikanth chapter sequence.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 prelims test paper" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/1910326UG%20SSP%20Week%20-%201%20Polity.pdf_UG%20SSP%20Week%20-%201%20Polity.pdf" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Prelims Test — 50 questions" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-paper">Question paper</span></div>
+<h3>Prelims Test — 50 questions</h3>
+<p>The Week 1 objective paper as set.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 prelims answers explanations key" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/6488391UG%20SSP%20Week%20-%201%20Polity%20Ans%20Sheet.pdf_UG%20SSP%20Week%20-%201%20Polity%20Ans%20Sheet.pdf" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Prelims Answers &amp; Explanations" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-key">Answer key</span></div>
+<h3>Prelims Answers &amp; Explanations</h3>
+<p>Official solutions — the source for the depth calibration in TEST_INTELLIGENCE.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 mains test paper" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/706563612717736300.pdf" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Mains Test — 5 questions" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-paper">Question paper</span></div>
+<h3>Mains Test — 5 questions</h3>
+<p>The Week 1 Mains paper.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 mains model answers" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/227308823029341600.pdf" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Mains Model Answers" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-key">Answer key</span></div>
+<h3>Mains Model Answers</h3>
+<p>Official model answers for the Week 1 Mains paper.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 1 test result rank 6 38.78" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/Test%20Result.pdf" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Test Result — 38.78 / 100" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-result">Result</span></div>
+<h3>Test Result — 38.78 / 100</h3>
+<p>Rank 6. 25 correct, 17 wrong, 7 skipped.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">②</span><h3>Week 2 Plan</h3><span class="fh-count">3 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 2 Plan</div>
+<div class="grid">
+<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
+<h3>Week 2 Schedule</h3>
+<p>Day-wise topic schedule for Week 2.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="week 2 test result 18.80" data-href="UPSC-CSE/GS%20Paper%20II/Week%202%20Plan/Test%20Result.pdf" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Test Result — 18.80 / 100" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-result">Result</span></div>
+<h3>Test Result — 18.80 / 100</h3>
+<p>Rank 2. The endgame collapse: 13 unattempted, 8 of them in the last 11 questions.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 2 battle plan postmortem question dna" data-href="UPSC-CSE/GS%20Paper%20II/Week%202%20Plan/Week%202%20Battle%20Plan.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 2 Battle Plan" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-ref">Analysis</span></div>
+<h3>Week 2 Battle Plan</h3>
+<p>Postmortem and question-DNA analysis written after the Week 2 paper.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">③</span><h3>Week 3 Plan</h3><span class="fh-count">3 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 3 Plan</div>
+<div class="grid">
+<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
+<h3>Week 3 Plan</h3>
+<p>President, Vice-President, Governor, PM &amp; Council, Parliament.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="week 3 mock test 50 questions ugssp" data-href="UPSC-CSE/GS%20Paper%20II/Week%203%20Plan/Week%203%20Mock%20Test.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 3 Mock Test" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
+<h3>Week 3 Mock Test</h3>
+<p>50 questions, 60 minutes. Scored 92.68 — but built from your own notes.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 3 test result 62.08" data-href="UPSC-CSE/GS%20Paper%20II/Week%203%20Plan/Test%20Result%20Week%203.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Test Result — 62.08 / 100" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-result">Result</span></div>
+<h3>Test Result — 62.08 / 100</h3>
+<p>35 correct, 12 wrong, 3 skipped. Negative format 2/2, Statements 64%.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">④</span><h3>Week 4 Plan</h3><span class="fh-count">2 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 4 Plan</div>
+<div class="grid">
+<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
+<h3>Week 4 Plan</h3>
+<p>Committees &amp; devices, CM &amp; State CoM, Emergency (2 days), Cabinet Committees, State Legislature.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
+</div>
+
+<div class="card" tabindex="0" data-s="week 4 mock test 50 questions statements" data-href="UPSC-CSE/GS%20Paper%20II/Week%204%20Plan/Week%204%20Mock%20Test.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 4 Mock Test" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
+<h3>Week 4 Mock Test</h3>
+<p>50 questions weighted to Statements (18 of 50), with a balanced a/b/c/d key.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">◆</span><h3>Week 5 Plan</h3><span class="fh-count">5 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 5 Plan</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="week 5 plan schedule polity judiciary supreme court high court subordinate courts judicial review" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Schedule%20-%20Polity%20Week%205.pdf" data-embed="false" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 5 Plan" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-plan">On your PC only</span></div>
+<h3>Week 5 Plan</h3>
+<p>State Legislature (2 days), Supreme Court, High Court, Subordinate Courts, and Judicial Review &amp; PIL.</p>
+<p class="folderpath">A large scanned plan (34&ndash;42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 5 study plan schedule retrieval revision timetable judiciary" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Study%20Plan.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 5 Study Plan" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-plan">Study plan</span></div>
+<h3>Week 5 Study Plan &mdash; 19 hours</h3>
+<p>Hour-by-hour to Sunday's test. Reading the four remaining notes takes 5.4 hours of your 19 &mdash; the plan spends the rest on retrieval, because Week 4 showed reading was never the problem.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 5 test analysis postmortem wrong answers unattempted retrospection what went wrong learn from test" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Test%20Analysis.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 5 Test Analysis" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-result">Post-test</span></div>
+<h3>Week 5 Test Analysis</h3>
+<p>Every one of the 21 questions lost &mdash; what it tested, whether the notes had it, why it was missed, and the correct position. <b>18 of 21 were already in the notes.</b></p>
+</div>
+<div class="card" tabindex="0" data-s="week 5 mains answers model answer writing article 200 review petition judicial independence removal of judges contempt court of record" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Mains%20Answers.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 5 Mains Answers" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-key">Mains</span></div>
+<h3>Week 5 Mains &mdash; five model answers</h3>
+<p>The actual UGSSP Mains paper: Article 200, review vs judicial review, judicial independence, judge removal, contempt. M42&ndash;M46, all budget-checked.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 5 mock test judiciary 50 questions statements negative how many assertion reason pairs" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Mock%20Test.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 5 Mock Test" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
+<h3>Week 5 Mock Test</h3>
+<p><b>Rebuilt after the Week 4 postmortem.</b> 21 of 50 are &ldquo;how many of the above&rdquo; &mdash; the format that was 42% of the real Week 4 paper and where you scored 52%. One deliberate duplicate pair.</p>
+</div>
+</div>
+</div>
+<div class="foldergroup">
+<div class="folderhead"><span class="fh-ic">◆</span><h3>Week 6 Plan</h3><span class="fh-count">2 items</span></div>
+<div class="folderpath">UPSC-CSE / GS Paper II / Week 6 Plan</div>
+<div class="grid">
+<div class="card" tabindex="0" data-s="week 6 plan schedule consumer commissions lok adalats election commission attorney general advocate general upsc state psc ncsc ncst ncbc linguistic minorities finance commission gst" data-href="UPSC-CSE/GS%20Paper%20II/Week%206%20Plan/Week%206%20Self%20Study%20Plan.pdf" data-embed="false" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 6 Plan" onclick="cardClick(this)">
+<div class="top"><span class="ftype">PDF</span><span class="kind kind-plan">On your PC only</span></div>
+<h3>Week 6 Plan</h3>
+<p>Tribunals, Consumer Commissions, Lok Adalats and other courts (Days 1&ndash;2), Election Commission with the Attorney General and Advocate General (Day 3), the Public Service Commissions (Day 4), the SC/ST/BC Commissions and Article 350B (Day 5), Finance Commission and GST (Day 6).</p>
+<p class="folderpath">A large scanned plan (34 MB) with no text layer &mdash; not published to the web copy. Its schedule has been read page by page and audited against the notes; every sub-topic and current-affairs item is covered. Open it from your local Prep folder when you need the original.</p>
+</div>
+<div class="card" tabindex="0" data-s="week 6 mock test 50 questions consumer commissions election commission attorney general upsc psc ncsc ncst ncbc finance commission gst how many negative assertion reason pairs duplicate" data-href="UPSC-CSE/GS%20Paper%20II/Week%206%20Plan/Week%206%20Mock%20Test.html" data-parent="polity" data-parentlabel="Polity &amp; Constitution &middot; Resources" data-title="Week 6 Mock Test" onclick="cardClick(this)">
+<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
+<h3>Week 6 Mock Test</h3>
+<p><b>Weighted to the rolling three-week average, not to the last paper</b> &mdash; the mistake Week 5 exposed. 50 questions across all six days, key balanced at 12/13/13/12, with one deliberate duplicate pair.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -716,6 +895,8 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 <span class="pagenote">Cheapest cluster — piggybacks on the other three · 0 of 3 topics started</span>
 <div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="governance" data-parentlabel="Governance" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
 </div>
+<div class="hubtabs"><button class="hubtab active" data-pane="topics" onclick="setHubPane('governance','topics')">Topics<span class="tcnt">3</span></button><button class="hubtab" data-pane="resources" onclick="setHubPane('governance','resources')">Resources<span class="tcnt">0</span></button></div>
+<div class="hubpane active" data-pane="topics">
 <div class="hubprogress empty" id="hubprogress-governance">
 <div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-governance">No notes written yet — nothing to mark read</span></div>
 <div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-governance"></div></div>
@@ -743,6 +924,11 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 </div>
 </div>
 
+<div class="hubpane" data-pane="resources">
+<div class="paneempty">No resources of its own yet. Governance is examined off the same GS Paper II syllabus and weekly plans, and every weekly plan so far has been a Polity plan &mdash; so they sit under <b>Polity &amp; Constitution &rarr; Resources</b>.</div>
+</div>
+</div>
+
 <!-- ================= INTERNATIONAL RELATIONS — TOPIC HUB ================= -->
 <div class="view" id="view-ir">
 <div class="pageheader">
@@ -751,6 +937,8 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 <span class="pagenote">Frameworks + headlines, kept light but continuous · 0 of 4 topics started</span>
 <div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="ir" data-parentlabel="International Relations" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
 </div>
+<div class="hubtabs"><button class="hubtab active" data-pane="topics" onclick="setHubPane('ir','topics')">Topics<span class="tcnt">4</span></button><button class="hubtab" data-pane="resources" onclick="setHubPane('ir','resources')">Resources<span class="tcnt">0</span></button></div>
+<div class="hubpane active" data-pane="topics">
 <div class="hubprogress empty" id="hubprogress-ir">
 <div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-ir">No notes written yet — nothing to mark read</span></div>
 <div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-ir"></div></div>
@@ -784,6 +972,11 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 </div>
 </div>
 
+<div class="hubpane" data-pane="resources">
+<div class="paneempty">No resources of its own yet. When an International Relations week is scheduled, its plan, papers and keys will appear here.</div>
+</div>
+</div>
+
 <!-- ================= SOCIAL JUSTICE — TOPIC HUB ================= -->
 <div class="view" id="view-socialjustice">
 <div class="pageheader">
@@ -792,6 +985,8 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 <span class="pagenote">Your differentiator — most aspirants write it poorly · 0 of 4 topics started</span>
 <div class="syllink" tabindex="0" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="socialjustice" data-parentlabel="Social Justice" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">📖 View GS Paper II Syllabus</div>
 </div>
+<div class="hubtabs"><button class="hubtab active" data-pane="topics" onclick="setHubPane('socialjustice','topics')">Topics<span class="tcnt">4</span></button><button class="hubtab" data-pane="resources" onclick="setHubPane('socialjustice','resources')">Resources<span class="tcnt">0</span></button></div>
+<div class="hubpane active" data-pane="topics">
 <div class="hubprogress empty" id="hubprogress-socialjustice">
 <div class="hubprogress-top"><span class="hubprogress-label">Reading progress</span><span class="hubprogress-frac" id="hubfrac-socialjustice">No notes written yet — nothing to mark read</span></div>
 <div class="hubprogress-track"><div class="hubprogress-fill" id="hubfill-socialjustice"></div></div>
@@ -825,6 +1020,11 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 </div>
 </div>
 
+<div class="hubpane" data-pane="resources">
+<div class="paneempty">No resources of its own yet. When a Social Justice week is scheduled, its plan, papers and keys will appear here.</div>
+</div>
+</div>
+
 <!-- ================= GEOGRAPHY (GS Paper I) ================= -->
 <div class="view" id="view-geography">
 <div class="pageheader">
@@ -832,12 +1032,19 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 <h2>Geography</h2>
 <div class="syllink disabled" title="GS Paper I syllabus not yet added — ask to have it built">📖 GS Paper I Syllabus — not added yet</div>
 </div>
+<div class="hubtabs"><button class="hubtab active" data-pane="topics" onclick="setHubPane('geography','topics')">Notes<span class="tcnt">1</span></button><button class="hubtab" data-pane="resources" onclick="setHubPane('geography','resources')">Resources<span class="tcnt">0</span></button></div>
+<div class="hubpane active" data-pane="topics">
 <div class="grid">
 <div class="card" tabindex="0" data-s="origin of the universe geography gs paper 1" data-href="UPSC-CSE/GS%20Paper%20I/Geography/Origin_of_Universe_Illustrated_UPSC_Notes.html" data-parent="geography" data-parentlabel="Geography" data-title="Origin of the Universe" onclick="cardClick(this)">
 <div class="top"><span class="ftype">HTML</span></div>
 <h3>Origin of the Universe</h3>
 <p>Illustrated concept note — the only GS Paper I note built so far.</p>
 </div>
+</div>
+</div>
+
+<div class="hubpane" data-pane="resources">
+<div class="paneempty">No resources of its own yet &mdash; the GS Paper I syllabus has not been added. The cross-subject PYQ compilation lives under <b>Reference &amp; prompts</b>.</div>
 </div>
 </div>
 
@@ -880,172 +1087,11 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-fa
 <!-- ================= RESOURCES & SYLLABUS ================= -->
 <div class="view" id="view-resources">
 <div class="pageheader">
-<div class="pageheader-top"><div class="crumb">UPSC-CSE → Reference material</div></div>
-<h2>Syllabus, plans &amp; source PDFs</h2>
-<p class="pagenote">Grouped exactly as the folders sit on disk. Within each week: the <b>plan</b>, then the <b>question papers</b>, then the <b>answer keys</b>, then the <b>result</b>. Notes are not listed here — they live under their own topics.</p>
+<div class="pageheader-top"><div class="crumb">UPSC-CSE → Reference</div></div>
+<h2>Reference &amp; prompts</h2>
+<p class="pagenote">The cross-subject material &mdash; source PDFs that span every paper, and the generator prompts that govern how notes are written. <b>Subject-specific plans now live with their subject:</b> the GS Paper II syllabus and every weekly plan are under <b>Polity &amp; Constitution &rarr; Resources</b>.</p>
 </div>
 
-<div class="foldergroup">
-<div class="folderhead"><span class="fh-ic">◆</span><h3>Syllabus</h3><span class="fh-count">1 items</span></div>
-<div class="folderpath">UPSC-CSE / GS Paper II / CLAUDE_NOTES</div>
-<div class="grid">
-<div class="card" tabindex="0" data-s="gs2 syllabus annotated" data-href="UPSC-CSE/GS%20Paper%20II/CLAUDE_NOTES/UPSC_GS2_Syllabus.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="GS Paper II Syllabus (annotated)" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-ref">Syllabus</span></div>
-<h3>GS Paper II Syllabus (annotated)</h3>
-<p>The syllabus-analysis copy every note is mapped against. Start here when deciding what to build next.</p>
-</div>
-</div>
-</div>
-<div class="foldergroup">
-<div class="folderhead"><span class="fh-ic">①</span><h3>Week 1 Plan</h3><span class="fh-count">6 items</span></div>
-<div class="folderpath">UPSC-CSE / GS Paper II / Week 1 Plan</div>
-<div class="grid">
-<div class="card" tabindex="0" data-s="week 1 study plan polity governance" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/Week%201%20Study%20Plan%20Indian%20Polity%20%26%20Governance.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 1 Study Plan" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-plan">Plan</span></div>
-<h3>Week 1 Study Plan</h3>
-<p>Day-wise NCERT and Laxmikanth chapter sequence.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 1 prelims test paper" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/1910326UG%20SSP%20Week%20-%201%20Polity.pdf_UG%20SSP%20Week%20-%201%20Polity.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Prelims Test — 50 questions" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-paper">Question paper</span></div>
-<h3>Prelims Test — 50 questions</h3>
-<p>The Week 1 objective paper as set.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 1 prelims answers explanations key" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/6488391UG%20SSP%20Week%20-%201%20Polity%20Ans%20Sheet.pdf_UG%20SSP%20Week%20-%201%20Polity%20Ans%20Sheet.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Prelims Answers &amp; Explanations" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-key">Answer key</span></div>
-<h3>Prelims Answers &amp; Explanations</h3>
-<p>Official solutions — the source for the depth calibration in TEST_INTELLIGENCE.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 1 mains test paper" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/706563612717736300.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Mains Test — 5 questions" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-paper">Question paper</span></div>
-<h3>Mains Test — 5 questions</h3>
-<p>The Week 1 Mains paper.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 1 mains model answers" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/227308823029341600.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Mains Model Answers" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-key">Answer key</span></div>
-<h3>Mains Model Answers</h3>
-<p>Official model answers for the Week 1 Mains paper.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 1 test result rank 6 38.78" data-href="UPSC-CSE/GS%20Paper%20II/Week%201%20Plan/Test%20Result.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Test Result — 38.78 / 100" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-result">Result</span></div>
-<h3>Test Result — 38.78 / 100</h3>
-<p>Rank 6. 25 correct, 17 wrong, 7 skipped.</p>
-</div>
-</div>
-</div>
-<div class="foldergroup">
-<div class="folderhead"><span class="fh-ic">②</span><h3>Week 2 Plan</h3><span class="fh-count">3 items</span></div>
-<div class="folderpath">UPSC-CSE / GS Paper II / Week 2 Plan</div>
-<div class="grid">
-<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
-<h3>Week 2 Schedule</h3>
-<p>Day-wise topic schedule for Week 2.</p>
-<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
-</div>
-
-<div class="card" tabindex="0" data-s="week 2 test result 18.80" data-href="UPSC-CSE/GS%20Paper%20II/Week%202%20Plan/Test%20Result.pdf" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Test Result — 18.80 / 100" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-result">Result</span></div>
-<h3>Test Result — 18.80 / 100</h3>
-<p>Rank 2. The endgame collapse: 13 unattempted, 8 of them in the last 11 questions.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 2 battle plan postmortem question dna" data-href="UPSC-CSE/GS%20Paper%20II/Week%202%20Plan/Week%202%20Battle%20Plan.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 2 Battle Plan" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-ref">Analysis</span></div>
-<h3>Week 2 Battle Plan</h3>
-<p>Postmortem and question-DNA analysis written after the Week 2 paper.</p>
-</div>
-</div>
-</div>
-<div class="foldergroup">
-<div class="folderhead"><span class="fh-ic">③</span><h3>Week 3 Plan</h3><span class="fh-count">3 items</span></div>
-<div class="folderpath">UPSC-CSE / GS Paper II / Week 3 Plan</div>
-<div class="grid">
-<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
-<h3>Week 3 Plan</h3>
-<p>President, Vice-President, Governor, PM &amp; Council, Parliament.</p>
-<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
-</div>
-
-<div class="card" tabindex="0" data-s="week 3 mock test 50 questions ugssp" data-href="UPSC-CSE/GS%20Paper%20II/Week%203%20Plan/Week%203%20Mock%20Test.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 3 Mock Test" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
-<h3>Week 3 Mock Test</h3>
-<p>50 questions, 60 minutes. Scored 92.68 — but built from your own notes.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 3 test result 62.08" data-href="UPSC-CSE/GS%20Paper%20II/Week%203%20Plan/Test%20Result%20Week%203.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Test Result — 62.08 / 100" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-result">Result</span></div>
-<h3>Test Result — 62.08 / 100</h3>
-<p>35 correct, 12 wrong, 3 skipped. Negative format 2/2, Statements 64%.</p>
-</div>
-</div>
-</div>
-<div class="foldergroup">
-<div class="folderhead"><span class="fh-ic">④</span><h3>Week 4 Plan</h3><span class="fh-count">2 items</span></div>
-<div class="folderpath">UPSC-CSE / GS Paper II / Week 4 Plan</div>
-<div class="grid">
-<div class="card" style="opacity:.72;cursor:default;border-top-color:var(--nebula);">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-local">On your PC only</span></div>
-<h3>Week 4 Plan</h3>
-<p>Committees &amp; devices, CM &amp; State CoM, Emergency (2 days), Cabinet Committees, State Legislature.</p>
-<p style="font-size:12.5px;color:var(--muted);margin-top:8px;">A large scanned plan (34–42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
-</div>
-
-<div class="card" tabindex="0" data-s="week 4 mock test 50 questions statements" data-href="UPSC-CSE/GS%20Paper%20II/Week%204%20Plan/Week%204%20Mock%20Test.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 4 Mock Test" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
-<h3>Week 4 Mock Test</h3>
-<p>50 questions weighted to Statements (18 of 50), with a balanced a/b/c/d key.</p>
-</div>
-</div>
-
-<div class="foldergroup">
-<div class="folderhead"><span class="fh-ic">◆</span><h3>Week 5 Plan</h3><span class="fh-count">5 items</span></div>
-<div class="folderpath">UPSC-CSE / GS Paper II / Week 5 Plan</div>
-<div class="grid">
-<div class="card" tabindex="0" data-s="week 5 plan schedule polity judiciary supreme court high court subordinate courts judicial review" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Schedule%20-%20Polity%20Week%205.pdf" data-embed="false" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 5 Plan" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-plan">On your PC only</span></div>
-<h3>Week 5 Plan</h3>
-<p>State Legislature (2 days), Supreme Court, High Court, Subordinate Courts, and Judicial Review &amp; PIL.</p>
-<p class="folderpath">A large scanned plan (34&ndash;42 MB). Not published to the web copy — its content is already extracted into the notes and the mock test. Open it from your local Prep folder when you need the original.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 5 study plan schedule retrieval revision timetable judiciary" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Study%20Plan.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 5 Study Plan" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-plan">Study plan</span></div>
-<h3>Week 5 Study Plan &mdash; 19 hours</h3>
-<p>Hour-by-hour to Sunday's test. Reading the four remaining notes takes 5.4 hours of your 19 &mdash; the plan spends the rest on retrieval, because Week 4 showed reading was never the problem.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 5 test analysis postmortem wrong answers unattempted retrospection what went wrong learn from test" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Test%20Analysis.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 5 Test Analysis" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-result">Post-test</span></div>
-<h3>Week 5 Test Analysis</h3>
-<p>Every one of the 21 questions lost &mdash; what it tested, whether the notes had it, why it was missed, and the correct position. <b>18 of 21 were already in the notes.</b></p>
-</div>
-<div class="card" tabindex="0" data-s="week 5 mains answers model answer writing article 200 review petition judicial independence removal of judges contempt court of record" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Mains%20Answers.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 5 Mains Answers" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-key">Mains</span></div>
-<h3>Week 5 Mains &mdash; five model answers</h3>
-<p>The actual UGSSP Mains paper: Article 200, review vs judicial review, judicial independence, judge removal, contempt. M42&ndash;M46, all budget-checked.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 5 mock test judiciary 50 questions statements negative how many assertion reason pairs" data-href="UPSC-CSE/GS%20Paper%20II/Week%205%20Plan/Week%205%20Mock%20Test.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 5 Mock Test" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
-<h3>Week 5 Mock Test</h3>
-<p><b>Rebuilt after the Week 4 postmortem.</b> 21 of 50 are &ldquo;how many of the above&rdquo; &mdash; the format that was 42% of the real Week 4 paper and where you scored 52%. One deliberate duplicate pair.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="foldergroup">
-<div class="folderhead"><span class="fh-ic">◆</span><h3>Week 6 Plan</h3><span class="fh-count">2 items</span></div>
-<div class="folderpath">UPSC-CSE / GS Paper II / Week 6 Plan</div>
-<div class="grid">
-<div class="card" tabindex="0" data-s="week 6 plan schedule consumer commissions lok adalats election commission attorney general advocate general upsc state psc ncsc ncst ncbc linguistic minorities finance commission gst" data-href="UPSC-CSE/GS%20Paper%20II/Week%206%20Plan/Week%206%20Self%20Study%20Plan.pdf" data-embed="false" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 6 Plan" onclick="cardClick(this)">
-<div class="top"><span class="ftype">PDF</span><span class="kind kind-plan">On your PC only</span></div>
-<h3>Week 6 Plan</h3>
-<p>Tribunals, Consumer Commissions, Lok Adalats and other courts (Days 1&ndash;2), Election Commission with the Attorney General and Advocate General (Day 3), the Public Service Commissions (Day 4), the SC/ST/BC Commissions and Article 350B (Day 5), Finance Commission and GST (Day 6).</p>
-<p class="folderpath">A large scanned plan (34 MB) with no text layer &mdash; not published to the web copy. Its schedule has been read page by page and audited against the notes; every sub-topic and current-affairs item is covered. Open it from your local Prep folder when you need the original.</p>
-</div>
-<div class="card" tabindex="0" data-s="week 6 mock test 50 questions consumer commissions election commission attorney general upsc psc ncsc ncst ncbc finance commission gst how many negative assertion reason pairs duplicate" data-href="UPSC-CSE/GS%20Paper%20II/Week%206%20Plan/Week%206%20Mock%20Test.html" data-parent="resources" data-parentlabel="Resources &amp; Syllabus" data-title="Week 6 Mock Test" onclick="cardClick(this)">
-<div class="top"><span class="ftype">HTML</span><span class="kind kind-mock">Mock test</span></div>
-<h3>Week 6 Mock Test</h3>
-<p><b>Weighted to the rolling three-week average, not to the last paper</b> &mdash; the mistake Week 5 exposed. 50 questions across all six days, key balanced at 12/13/13/12, with one deliberate duplicate pair.</p>
-</div>
-</div>
-</div>
 <div class="foldergroup">
 <div class="folderhead"><span class="fh-ic">◈</span><h3>Reference material</h3><span class="fh-count">3 items</span></div>
 <div class="folderpath">UPSC-CSE / Resources</div>
@@ -1199,6 +1245,21 @@ const sourceMap = collectSourceCards();
 
 const mainEl = document.querySelector('main');
 
+// Which tab each subject hub was last left on, so returning from the reader
+// lands back where you were instead of always on Topics.
+const hubPaneState = {};
+
+function setHubPane(view, pane, opts) {
+  const host = document.getElementById('view-' + view);
+  if (!host) return;
+  host.querySelectorAll(':scope > .hubtabs .hubtab').forEach(b =>
+    b.classList.toggle('active', b.dataset.pane === pane));
+  host.querySelectorAll(':scope > .hubpane').forEach(p =>
+    p.classList.toggle('active', p.dataset.pane === pane));
+  hubPaneState[view] = pane;
+  if (!opts || !opts.skipSave) saveNavState({ type: 'nav', name: view, pane: pane });
+}
+
 function setActiveNav(name, opts) {
   const topLevel = name.split('-')[0];
   navitems.forEach(b => b.classList.toggle('active', b.dataset.view === topLevel));
@@ -1206,8 +1267,14 @@ function setActiveNav(name, opts) {
   searchresults.classList.remove('active');
   mainEl.classList.toggle('reader-mode', name === 'reader');
   if (name !== 'reader') currentParent = name;
+  const pane = (opts && opts.pane) || hubPaneState[name];
+  if (pane) setHubPane(name, pane, { skipSave: true });
   window.scrollTo(0, 0);
-  if (!opts || !opts.skipSave) saveNavState({ type: 'nav', name: name });
+  if (!opts || !opts.skipSave) {
+    const st = { type: 'nav', name: name };
+    if (hubPaneState[name]) st.pane = hubPaneState[name];
+    saveNavState(st);
+  }
 }
 
 navitems.forEach(b => b.addEventListener('click', () => {
@@ -1262,7 +1329,7 @@ function restoreNavState() {
       return true;
     }
     if (state && state.type === 'nav' && state.name) {
-      setActiveNav(state.name, { skipSave: true });
+      setActiveNav(state.name, { skipSave: true, pane: state.pane });
       saveNavState(state);
       return true;
     }
